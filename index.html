@@ -361,7 +361,7 @@
       
         
           
-            <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Copyright (c) 2018 Quincy Liang</span></span><br><span class="line"><span class="comment"> * Under the GPL v3 license</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.github.deltaquincy.algorithms.algebra;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Exercise 1.1.33 - Matrix Library</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Quincy Liang</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Matrix</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * Returns product of two vectors.</span></span><br><span class="line"><span class="comment">   * </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> x vector 1</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> y vector 2</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> product of two vectors</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@throws</span> IllegalArgumentException when lengths of two arrays are not equal.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">dot</span><span class="params">(<span class="keyword">double</span>[] x, <span class="keyword">double</span>[] y)</span> <span class="keyword">throws</span> IllegalArgumentException </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x.length != y.length) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Lengths of two arrays are not equal."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span> dotResult = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; x.length; i++) &#123;</span><br><span class="line">      dotResult += x[i] * y[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dotResult;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * Returns matrix multiplication of two 2D arrays.</span></span><br><span class="line"><span class="comment">   * </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> a matrix 1</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> b matrix 2</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> matrix multiplication of two 2D arrays</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@throws</span> IllegalArgumentException when shapes are not appropriate.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span>[][] mult(<span class="keyword">double</span>[][] a, <span class="keyword">double</span>[][] b) <span class="keyword">throws</span> IllegalArgumentException &#123;</span><br><span class="line">    <span class="keyword">if</span> (a[<span class="number">0</span>].length != b.length) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Shapes are not appropriate"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span>[][] multResult = <span class="keyword">new</span> <span class="keyword">double</span>[a.length][b[<span class="number">0</span>].length];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; b[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; a[<span class="number">0</span>].length; k++) &#123;</span><br><span class="line">          multResult[i][j] += a[i][k] * b[k][j];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> multResult;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * Returns the transpose of a matrix.</span></span><br><span class="line"><span class="comment">   * </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> a matrix</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> transpose of the matrix</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span>[][] transpose(<span class="keyword">double</span>[][] a) &#123;</span><br><span class="line">    <span class="keyword">int</span> n = a.length;</span><br><span class="line">    <span class="keyword">int</span> m = a[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">double</span>[][] transposeResult = <span class="keyword">new</span> <span class="keyword">double</span>[m][n];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j++) &#123;</span><br><span class="line">        transposeResult[j][i] = a[i][j];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> transposeResult;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * Returns multiplication of a matrix and a vector.</span></span><br><span class="line"><span class="comment">   * </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> a the matrix</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> x the vector</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> multiplication of a matrix and a vector</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@throws</span> IllegalArgumentException when shapes are not appropriate.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span>[] mult(<span class="keyword">double</span>[][] a, <span class="keyword">double</span>[] x) <span class="keyword">throws</span> IllegalArgumentException &#123;</span><br><span class="line">    <span class="keyword">if</span> (a[<span class="number">0</span>].length != x.length) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Shapes are not appropriate"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span>[][] xWrapped = &#123;x&#125;;</span><br><span class="line">    xWrapped = transpose(xWrapped);</span><br><span class="line">    <span class="keyword">double</span>[] multResult = transpose(mult(a, xWrapped))[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">return</span> multResult;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * Returns multiplication of a vector and a matrix.</span></span><br><span class="line"><span class="comment">   * </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> y the vector</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> a the matrix</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> multiplication of a matrix and a vector</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@throws</span> IllegalArgumentException when shapes are not appropriate.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span>[] mult(<span class="keyword">double</span>[] y, <span class="keyword">double</span>[][] a) <span class="keyword">throws</span> IllegalArgumentException &#123;</span><br><span class="line">    <span class="keyword">if</span> (a.length != y.length) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Shapes are not appropriate"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span>[][] yWrapped = &#123;y&#125;;</span><br><span class="line">    <span class="keyword">double</span>[] multResult = mult(yWrapped, a)[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">return</span> multResult;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> hello;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"Hello, world!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1729,154 +1729,6 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/10/25.html" itemprop="url">重舒</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-25T00:00:00+08:00">2015-10-25</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/习作/" itemprop="url" rel="index"><span itemprop="name">习作</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="洋气"><a class="markdownIt-Anchor" href="#洋气"></a> 洋气</h2>
-<p>专学外语的学生，不论是否愿意承认，眉目动作间总带着点刻意模仿洋人的姿态。读阿拉伯语的，爱在肩上披大块的纱巾；读法语的，把嘴唇涂得厚厚的红红的；专攻英语的女孩子，头发染成棕色甚至金色，眼睑上的黑影画了一圈又一圈，男孩子则特别青睐皮衣和深色的毛料马甲。我刚刚考进清华的时候，觉得身边的这些同学的确是长于打扮和美化自己，长于化自己为异国的身份。不过我想这些姿态不能够称为造作，也不能冠上媚外的帽子。吃一口饭的人，总会被这口饭给感召得变成另外一种样子。</p>
-<p>不同的是，和我住在同一间屋子的重舒却始终没有被那些个洋打扮给感化。两年前的那一天我记得清楚，他戴了老式的眼镜，上身披一件马褂，一趟趟把行李运送上楼，然后拿马褂的袖子一挥，揩掉脸上的汗，坐在凳子上长舒一口气。那时的重舒还有一点微胖，可是不论怎样还是盖不下去他眉宇间的气概。我无论在哪里都没有见过这样的眉目，时而英武时而温润，刚刚结识的头几天我甚至不敢直着看他，好像一双眼睛要把一切话都说尽，要把一切的世界给吞进来。</p>
-<p>我和一切外语学生一样，不论是否会用得到，入学的时候都恨不得把书架上的英文书全都倒腾到大学宿舍里去。还没发放教材的时候我就已经把柜子旁边的书架塞满了。头一层是三本英文字典，两本西班牙语字典，一本法语字典和一本拉丁文参考书；第二层是一整套的英语写作参考；第三层是自己饶有兴致的书，甚至还把一本薄薄的从没看过的《希伯来语简史》摆在了架上。那时候，我高兴地拥有了自己的一片小天地，晚上睡觉前还要给书桌拍张照才能安眠。重舒那天收拾完行李就一屁股坐在桌子上，那着一本薄薄的小册子翻来翻去，偶尔抬头看看我们的忙乱情状。房间的一角是他的安静，另外三个角落是我们其他三人噼里啪啦把厚厚的书往书架上摆布的巨响。可能在我们看来这种巨响是一种自豪，在他看来书架上空空如也才是一种自豪。<br>
-那天晚上睡觉前，我们约定好闹钟的时间，我看到重舒的书架还是一层层裸露的木头，只是把那本小册子扔在了桌子一角。《干校六记》，呵，这哪里是读外语的学生。</p>
-<p>跟重舒稍稍熟络了之后，有天我们从饭厅归来，我说，咱们肯定和那些大哥大姐一样，一年以后都变得“洋气”不少。我俩忽然一同学着法语女学生一扭一扭的步态，然后一同大笑起来。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/10/25.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://deltaquincy.github.io/2015/10/25.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁昆西">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="昆西">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
                 <a class="post-title-link" href="/2015/10/25.html" itemprop="url">你在我对面（续）</a></h2>
         
 
@@ -1952,6 +1804,154 @@
 <p>我曾经以为睹物思旧是一种很没道理的事情，年轻的心一个劲儿地想向外追求，看不到身后的影子。我想我是偶然回头的那个，拼了命地爱上了屋子里的一切旧物，然后把忘掉的事都想了起来。从前我躺在潮热的床上，对于短暂的过去，我只记得有两个玻璃窗。这次出门和以往不同，年轻的心上负载了太多记忆，大概也就飞不快了。</p>
 <p>时间，时间。米开朗琪罗好像在什么地方说过，他在幼年就感觉到时间具体的流动，是一种知觉无法触及的知觉。有的时候我的时间很复杂，对我来说，包络了窗户旁边光影的变幻、我和李成的相继离开，还有我带有哭泣的一次又一次的歌声。时间的流逝不是拍一个Time-Lapse就能够表现清楚的，因为同一个桥段，不同的心会对时间会有迥然的变换，而所有的心交织在一起，也许才叫做时间吧。</p>
 <p>哲学我是不懂的，也许正因如此才有这样多的困局让我来面对。我回到学校来，这一次，没有小熊的玩具让我抱着我是断定睡不着的。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/10/25.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://deltaquincy.github.io/2015/10/25.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁昆西">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="昆西">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/10/25.html" itemprop="url">重舒</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-25T00:00:00+08:00">2015-10-25</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/习作/" itemprop="url" rel="index"><span itemprop="name">习作</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="洋气"><a class="markdownIt-Anchor" href="#洋气"></a> 洋气</h2>
+<p>专学外语的学生，不论是否愿意承认，眉目动作间总带着点刻意模仿洋人的姿态。读阿拉伯语的，爱在肩上披大块的纱巾；读法语的，把嘴唇涂得厚厚的红红的；专攻英语的女孩子，头发染成棕色甚至金色，眼睑上的黑影画了一圈又一圈，男孩子则特别青睐皮衣和深色的毛料马甲。我刚刚考进清华的时候，觉得身边的这些同学的确是长于打扮和美化自己，长于化自己为异国的身份。不过我想这些姿态不能够称为造作，也不能冠上媚外的帽子。吃一口饭的人，总会被这口饭给感召得变成另外一种样子。</p>
+<p>不同的是，和我住在同一间屋子的重舒却始终没有被那些个洋打扮给感化。两年前的那一天我记得清楚，他戴了老式的眼镜，上身披一件马褂，一趟趟把行李运送上楼，然后拿马褂的袖子一挥，揩掉脸上的汗，坐在凳子上长舒一口气。那时的重舒还有一点微胖，可是不论怎样还是盖不下去他眉宇间的气概。我无论在哪里都没有见过这样的眉目，时而英武时而温润，刚刚结识的头几天我甚至不敢直着看他，好像一双眼睛要把一切话都说尽，要把一切的世界给吞进来。</p>
+<p>我和一切外语学生一样，不论是否会用得到，入学的时候都恨不得把书架上的英文书全都倒腾到大学宿舍里去。还没发放教材的时候我就已经把柜子旁边的书架塞满了。头一层是三本英文字典，两本西班牙语字典，一本法语字典和一本拉丁文参考书；第二层是一整套的英语写作参考；第三层是自己饶有兴致的书，甚至还把一本薄薄的从没看过的《希伯来语简史》摆在了架上。那时候，我高兴地拥有了自己的一片小天地，晚上睡觉前还要给书桌拍张照才能安眠。重舒那天收拾完行李就一屁股坐在桌子上，那着一本薄薄的小册子翻来翻去，偶尔抬头看看我们的忙乱情状。房间的一角是他的安静，另外三个角落是我们其他三人噼里啪啦把厚厚的书往书架上摆布的巨响。可能在我们看来这种巨响是一种自豪，在他看来书架上空空如也才是一种自豪。<br>
+那天晚上睡觉前，我们约定好闹钟的时间，我看到重舒的书架还是一层层裸露的木头，只是把那本小册子扔在了桌子一角。《干校六记》，呵，这哪里是读外语的学生。</p>
+<p>跟重舒稍稍熟络了之后，有天我们从饭厅归来，我说，咱们肯定和那些大哥大姐一样，一年以后都变得“洋气”不少。我俩忽然一同学着法语女学生一扭一扭的步态，然后一同大笑起来。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2015/10/25.html#more" rel="contents">
