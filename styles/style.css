@@ -5,4 +5,4 @@ p, ul, ol {
   line-height: 1.8; }
 
 .katex-display {
-  overflow: scroll; }
+  overflow: auto; }
