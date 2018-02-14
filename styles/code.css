@@ -1,0 +1,37 @@
+pre, code {
+  font-family: "Fira Code", "SF Mono", Consolas, Menlo, monospace;
+}
+
+.highlight .title {
+  font-size: 1em;
+}
+
+.highlight td {
+  padding: 0 !important;
+}
+
+/* .highlight pre {
+  background-color: aliceblue;  
+} */
+
+.highlight .gutter {
+  width: 1px;
+}
+
+.highlight {
+  overflow: auto;
+  margin: 0 !important;
+  display: block;
+
+  
+}
+table {
+  overflow: auto;
+  margin: 0;
+  width: auto;
+  display: table;
+}
+
+code {
+  color: #4a4a4a;
+}
