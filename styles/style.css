@@ -1,2 +1,5 @@
 pre, code {
   font-family: "Fira Code", "SF Mono", Consolas, Menlo, Courier New, Courier, monospace; }
+
+p, ul, ol {
+  line-height: 1.8; }
