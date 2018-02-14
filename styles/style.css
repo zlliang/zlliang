@@ -5,5 +5,5 @@ p, ul, ol {
   line-height: 1.8; }
 
 .katex-display {
-  overflow-x: auto;
-  overflow-y: hidden; }
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto; }
