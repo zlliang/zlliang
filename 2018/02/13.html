@@ -1,81 +1,822 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+
+
+<html class="theme-next pisces" lang="zh-CN">
 <head>
-  <!-- Meta -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-<!-- CSS framework: Bulma -->
-<link href="https://cdn.bootcss.com/bulma/0.6.2/css/bulma.min.css" rel="stylesheet">
-<script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
-
-<!-- LaTeX rendering: KaTeX -->
-
-  <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
-<!-- Custom CSS -->
-<link rel="stylesheet" href="/styles/content.css">
-<link rel="stylesheet" href="/styles/code.css">
-<link rel="stylesheet" href="/styles/highlight.css">
 
-<!-- Page title -->
-<title>主题开发测试 - 昆西</title>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png?v=6.0.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v=6.0.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png?v=6.0.2">
+
+
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg?v=6.0.2" color="#222">
+
+
+  <link rel="manifest" href="/favicons/manifest.json">
+
+
+  <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.0.2',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="博客, 梁子龙, 梁昆西, 计算数学, 自然语言处理" />
+
+
+<meta name="description" content="这是一个主题开发测试，测试包括内容、排版、代码和公式的正常显示等。  标题测试  标题测试 2  标题测试 3 内容测试（中文假文字）：畫的死獨重致道！ 不的改是，日是自動而化樂的活列所大我進的山說能白照因突改，告注取手管家止自想的來那晚件國了業立子，回名由陸百，知和一國壓。品我解空好保度是給本管覺他人怎中什壓夠不實大要會生能並雙所……說樂子，德定你可界不物情管傳運事走條這叫此每治她品日作學我自道">
+<meta name="keywords" content="博客, 梁子龙, 梁昆西, 计算数学, 自然语言处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="主题开发测试">
+<meta property="og:url" content="https://deltaquincy.github.io/2018/02/13.html">
+<meta property="og:site_name" content="昆西">
+<meta property="og:description" content="这是一个主题开发测试，测试包括内容、排版、代码和公式的正常显示等。  标题测试  标题测试 2  标题测试 3 内容测试（中文假文字）：畫的死獨重致道！ 不的改是，日是自動而化樂的活列所大我進的山說能白照因突改，告注取手管家止自想的來那晚件國了業立子，回名由陸百，知和一國壓。品我解空好保度是給本管覺他人怎中什壓夠不實大要會生能並雙所……說樂子，德定你可界不物情管傳運事走條這叫此每治她品日作學我自道">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-02-14T06:01:03.479Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="主题开发测试">
+<meta name="twitter:description" content="这是一个主题开发测试，测试包括内容、排版、代码和公式的正常显示等。  标题测试  标题测试 2  标题测试 3 内容测试（中文假文字）：畫的死獨重致道！ 不的改是，日是自動而化樂的活列所大我進的山說能白照因突改，告注取手管家止自想的來那晚件國了業立子，回名由陸百，知和一國壓。品我解空好保度是給本管覺他人怎中什壓夠不實大要會生能並雙所……說樂子，德定你可界不物情管傳運事走條這叫此每治她品日作學我自道">
+
+
+
+
+
+
+  <link rel="canonical" href="https://deltaquincy.github.io/2018/02/13.html"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>主题开发测试 | 昆西</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
 
 </head>
-<body>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
   
-<header class="hero  is-light">
-  <div class="hero-head">
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="container">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/index.html">
-            <b>昆西</b>
-          </a>
-          <span class="navbar-burger burger" data-target="navbarMenuItems">
-            <span></span>
-            <span></span>
-            <span></span>
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">昆西</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-推荐文章">
+          <a href="/featured/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />推荐文章</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-日记">
+          <a href="/diary/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-book"></i> <br />日记</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://deltaquincy.github.io/2018/02/13.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁昆西">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="昆西">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">主题开发测试</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-13T18:15:31+08:00">2018-02-13</time>
+            
+
+            
+            
+
+            
           </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        <div class="navbar-menu" id="navbarMenuItems">
-          <div class="navbar-end">
-            <a class="navbar-item" href="/index.html">
-              首页
-            </a>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这是一个主题开发测试，测试包括内容、排版、代码和公式的正常显示等。</p>
+<h2 id="标题测试"><a class="markdownIt-Anchor" href="#标题测试"></a> 标题测试</h2>
+<h3 id="标题测试-2"><a class="markdownIt-Anchor" href="#标题测试-2"></a> 标题测试 2</h3>
+<h4 id="标题测试-3"><a class="markdownIt-Anchor" href="#标题测试-3"></a> 标题测试 3</h4>
+<p>内容测试（中文假文字）：畫的死獨重致道！</p>
+<p>不的改是，日是自動而化樂的活列所大我進的山說能白照因突改，告注取手管家止自想的來那晚件國了業立子，回名由陸百，知和一國壓。品我解空好保度是給本管覺他人怎中什壓夠不實大要會生能並雙所……說樂子，德定你可界不物情管傳運事走條這叫此每治她品日作學我自道在士東什星各問出班人他水痛後財聯結送點公。他兒小書家下著靈的黃又友不出愛育死計大選結其灣的可更期發？為間。</p>
+<p>心看引日科，生便反風。</p>
+<p>老格生的。間上能自的的他影在寫活對腦化體兒而的說形引倒次，起計醫定維生為大性在夠時結去，一接中他山人不點好臺如始，有明！</p>
+<p>地史過技常養省止樂們況色命感地醫各大一下信友放業，非構師蘭方多的現專童讓子工……數會道哥字！刻公女於爸萬詩業來的以正平建商，方車前班靜活石合力的活而停車出登不心神造要。的操兒細，改子百就麼用未人音且少先。一也女兒演己會友現方點科的任多，高母不成自星化德把不無語去！師口樓簡當，不山情，會她長的團我片無？他長明遊人河改間政來常刻到孩，美方景有家家特地多事傳些管，是大還燈到路推？別現族然層不來媽多其護此……選異天，光一施，事如小一過具有走神中濟西很年來來成竟教親風想建！麼子系學美發歡他統，招生時眾他很校格時名、家響求念金關題多，手面視品看用力易怎立到客作於館李當紅景說！手各真局其樣，照雙金隊公，發生母怎子學相住問方認位。</p>
+<p>内容测试（英文假文字）：</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sunt cum, dignissimos repellat aliquid voluptate totam ipsam harum voluptatem nobis et enim officiis voluptatibus, vitae eaque tenetur veritatis in quis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sunt cum, dignissimos repellat aliquid voluptate totam ipsam harum voluptatem nobis et enim officiis voluptatibus, vitae eaque tenetur veritatis in quis?</p>
+<p>代码测试：首先是 <code>inline-code-block</code> 行内代码，其次是代码块：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Toggle navbar on mobile clients.</span></span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Get all "navbar-burger" elements</span></span><br><span class="line">  <span class="keyword">var</span> $navbarBurgers = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">document</span>.querySelectorAll(<span class="string">'.navbar-burger'</span>), <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Check if there are any navbar burgers</span></span><br><span class="line">  <span class="keyword">if</span> ($navbarBurgers.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Add a click event on each of them</span></span><br><span class="line">    $navbarBurgers.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">$el</span>) </span>&#123;</span><br><span class="line">      $el.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Get the target from the "data-target" attribute</span></span><br><span class="line">        <span class="keyword">var</span> target = $el.dataset.target;</span><br><span class="line">        <span class="keyword">var</span> $target = <span class="built_in">document</span>.getElementById(target);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Toggle the class on both the "navbar-burger" and the "navbar-menu"</span></span><br><span class="line">        $el.classList.toggle(<span class="string">'is-active'</span>);</span><br><span class="line">        $target.classList.toggle(<span class="string">'is-active'</span>);</span><br><span class="line"></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sunt cum, dignissimos repellat aliquid voluptate totam ipsam harum voluptatem nobis et enim officiis voluptatibus, vitae eaque tenetur veritatis in quis?</p>
+<p>公式测试：首先，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mi>a</mi><mi>b</mi></msubsup><msub><mi>k</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_a^b k_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8501079999999999em;"></span><span class="strut bottom" style="height:1.150118em;vertical-align:-0.30001em;"></span><span class="base textstyle uncramped"><span class="mop"><span class="op-symbol small-op mop" style="top:-0.0000050000000000050004em;">∑</span><span class="vlist"><span style="top:0.30001em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">a</span></span></span><span style="top:-0.364em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">b</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03148em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> 行内公式，其次，行间公式：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi><mo>=</mo><msub><mi mathvariant="normal">Ω</mi><mi>k</mi></msub><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\int_a^b f(x) \, \mathrm{d} x = \Omega_k . 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.460108em;"></span><span class="strut bottom" style="height:2.372358em;vertical-align:-0.91225em;"></span><span class="base displaystyle textstyle uncramped"><span class="mop"><span class="op-symbol large-op mop" style="margin-right:0.44445em;top:-0.0011249999999999316em;">∫</span><span class="vlist"><span style="top:0.91225em;margin-left:-0.44445em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">a</span></span></span><span style="top:-0.9740000000000001em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">b</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mord mspace thinspace"></span><span class="mord displaystyle textstyle uncramped"><span class="mord mathrm">d</span></span><span class="mord mathit">x</span><span class="mrel">=</span><span class="mord"><span class="mord mathrm">Ω</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathrm">.</span></span></span></span></span></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/02.html" rel="next" title="耗尽一整天配置 VS Code">
+                <i class="fa fa-chevron-left"></i> 耗尽一整天配置 VS Code
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
           </div>
         </div>
-      </div>
-    </nav>
+      
+
+      
+      
+    </footer>
   </div>
   
-</header>
+  
+  
+  </article>
 
-  <section class="section">
-  <div class="container">
-    <div class="content">
-      <h1 class="title post-title">主题开发测试</h1>
-        <span class="tag">
-          <time datetime="2018-02-13T10:15:31.775Z" itemprop="datePublished">2018-02-13</time>
-        </span>
-      <p>这是第一个中文文档！And <code>this</code> is a inline block. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mi>a</mi><mi>b</mi></msubsup><mo>(</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\sum_a^b (\mathrm{math})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8501079999999999em;"></span><span class="strut bottom" style="height:1.150118em;vertical-align:-0.30001em;"></span><span class="base textstyle uncramped"><span class="mop"><span class="op-symbol small-op mop" style="top:-0.0000050000000000050004em;">∑</span><span class="vlist"><span style="top:0.30001em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">a</span></span></span><span style="top:-0.364em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">b</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord textstyle uncramped"><span class="mord mathrm">m</span><span class="mord mathrm">a</span><span class="mord mathrm">t</span><span class="mord mathrm">h</span></span><span class="mclose">)</span></span></span></span> also good.</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi><mo>=</mo><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\int_a^b f(x) \, \mathrm{d} x = \Omega 
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.460108em;"></span><span class="strut bottom" style="height:2.372358em;vertical-align:-0.91225em;"></span><span class="base displaystyle textstyle uncramped"><span class="mop"><span class="op-symbol large-op mop" style="margin-right:0.44445em;top:-0.0011249999999999316em;">∫</span><span class="vlist"><span style="top:0.91225em;margin-left:-0.44445em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">a</span></span></span><span style="top:-0.9740000000000001em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">b</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mord mspace thinspace"></span><span class="mord displaystyle textstyle uncramped"><span class="mord mathrm">d</span></span><span class="mord mathit">x</span><span class="mrel">=</span><span class="mord mathrm">Ω</span></span></span></span></span></p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis alias molestiae hic dignissimos incidunt aperiam corporis ad. Libero sint culpa nisi ipsa ratione, nostrum obcaecati neque adipisci maxime quas ipsum.</p>
-<p><img src="http://p437mwsjc.bkt.clouddn.com/images/logo-compressed.png" alt="LOGO"></p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis alias molestiae hic dignissimos incidunt aperiam corporis ad. Libero sint culpa nisi ipsa ratione, nostrum obcaecati neque adipisci maxime quas ipsum.</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * HelloWorld</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Quincy</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> <span class="keyword">extends</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"Great!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    demo();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>做平樣果導有去，濟事力選，下看價響面除樂集下座看例出光適臺有不黨樣上女我當雨錯；經最謝雄一進臉動自我包領燈告：理價總告助不亞的當。存春教；像一有，種女幾為環大，民際適了向子我自傳先屋待在發：然都相會們食無回花發點層答。雙你。</p>
-<p>鄉樣行一最人館角定是機可生每愛，大少漸每而得、論從以產與臺，的的部況火性？得子界，的局作而！的話工火市發務到靜北團麼、英了力西轉，隨把後以！說士買死滿裡種門：合輕公大：喜工升們照和商策由。角失著大在冷而出明也養得行反觀題灣。界士盡人！學哥車斯。一集是可告清成臺以和那後光下，面如果，實眼任，黃故改下眼角看看：越會光超分口爸落部個一不我天物，美式色活問現情記；前有像；的子優分再老禮營來？出月隨以漸有不了中當環著力放了。</p>
-<p>度歌業本作一開員計院力行是化。於也確、指大所；世一度叫心！數不會我市正詩外使成定不地得值見可英回熱。運一中始的童巴夫北治生了獲升們是，知黨間美得；大的也排腦友他夫銀如爭眾些以講陸且是會。趣學因們十。業一經格年真先校美速媽期斷商。身不只一登鄉思去。</p>
 
+
+    <div class="post-spread">
+      
     </div>
   </div>
-</section>
 
-  <script src="/scripts/navbar.js"></script>
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">梁昆西</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/deltaquincy" target="_blank" title="GitHub" rel="external nofollow"></a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/mblquincy" target="_blank" title="Weibo" rel="external nofollow"></a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:mblquincy@outlook.com" target="_blank" title="E-Mail" rel="external nofollow"></a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标题测试"><span class="nav-number">1.</span> <span class="nav-text"> 标题测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标题测试-2"><span class="nav-number">1.1.</span> <span class="nav-text"> 标题测试 2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标题测试-3"><span class="nav-number">1.1.1.</span> <span class="nav-text"> 标题测试 3</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">梁昆西</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.2"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <link rel="stylesheet" href="//cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" type="text/css">
+
+   
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
