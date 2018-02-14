@@ -7,4 +7,4 @@ p, ul, ol {
 .katex-display {
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
-  overflow-y: visible; }
+  overflow-y: hidden; }
