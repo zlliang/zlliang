@@ -1,0 +1,19 @@
+/* Main CSS of zlliang.com */
+
+/* Set up font smoothing, covering Bulma */
+html {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+#site-brand {
+  /* padding: 5px 10px;
+  color: white;
+  background-color: black; */
+  font-weight: bold;
+}
+
+
+#index-news-more-button {
+  text-decoration: underline;
+}
