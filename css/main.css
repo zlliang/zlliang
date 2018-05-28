@@ -17,3 +17,14 @@ html {
 #index-news-more-button {
   text-decoration: underline;
 }
+
+#profile-picture {
+  width: 128px;
+  border-radius: 50%;
+}
+
+.column.has-text-vcenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
