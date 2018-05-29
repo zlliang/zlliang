@@ -28,3 +28,18 @@ html {
   flex-direction: column;
   justify-content: center;
 }
+
+.pub-author {
+  color: grey;
+  font-style: italic;
+}
+.pub-author strong {
+  color: inherit;
+}
+
+.pub-title {
+  font-weight: bolder;
+}
+.pub-item {
+  margin-top: 2em;
+}
