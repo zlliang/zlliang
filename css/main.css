@@ -6,6 +6,12 @@ html {
   -moz-osx-font-smoothing: auto;
 }
 
+@media screen and (min-width: 1025px) {
+  .container {
+    max-width: 1025px;
+  }
+}
+
 #site-brand {
   /* padding: 5px 10px;
   color: white;
