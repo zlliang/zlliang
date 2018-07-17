@@ -47,7 +47,7 @@
             <div class="content">
               <h2 class="title">News</h2>
             </div>
-            <p>TODO</p>
+            <NewsList/>
           </div>
         </div>
       </div>
@@ -63,6 +63,14 @@
     </section>
   </div>
 </template>
+
+<script>
+import NewsList from './components/NewsList.vue'
+export default {
+  components: { NewsList }
+}
+</script>
+
 
 <style scoped>
 #profile-picture {
