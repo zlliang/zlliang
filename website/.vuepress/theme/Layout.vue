@@ -17,11 +17,20 @@
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Home from './Home.vue'
+import dayjs from 'dayjs'
 export default {
   components: {
     Header,
     Footer,
     Home
+  },
+  created: function() {
+    // Convert date string to dayjs object
+    this.$site.pages.forEach(page => {
+      if (page.frontmatter.date) {
+        page.frontmatter.date = dayjs(page.frontmatter.date)
+      }
+    })
   }
 }
 </script>
