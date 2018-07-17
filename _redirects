@@ -1,2 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-https://zlliang.netlify.com/* https://zlliang.com/:splat 301!
