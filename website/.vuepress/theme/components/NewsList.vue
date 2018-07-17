@@ -1,8 +1,10 @@
 <template>
   <div class="newslist-container">
     <ul>
-      <li v-for="news in newsList.headers" v-if="news.level == 2">
-        <router-link v-bind:to="'/news/#' + news.title">{{ news.title }}</router-link>
+      <li v-for="news in newsList">
+        <a v-bind:href="news.frontmatter.link" v-if="news.frontmatter.link">{{ news.title }}</a>
+        <router-link v-bind:to="news.path" v-else>{{ news.title }}</router-link>
+        <span class="news-date">{{ news.frontmatter.date.format('MMM DD') }}</span>
       </li>
     </ul>
   </div>
@@ -13,8 +15,9 @@
 export default {
   computed: {
     newsList: function() {
-      var newsPage = this.$site.pages.find(item => { return item.frontmatter.news == true })
-      return newsPage
+      var newsPages = this.$site.pages.filter(item => { return item.path.substring(0, 6) == "/news/" && !item.frontmatter.news})
+      var newsPages = newsPages.sort((a, b) => { return(b.frontmatter.date.isBefore(a.frontmatter.date)) })
+      return newsPages
     }
   }
 }
