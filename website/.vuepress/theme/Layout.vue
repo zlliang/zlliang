@@ -22,7 +22,7 @@ export default {
     Header,
     Footer,
     Home
-  },
+  }
 }
 </script>
 
@@ -57,10 +57,6 @@ html {
   text-decoration: underline;
 }
 
-#profile-picture {
-  width: 128px;
-  border-radius: 50%;
-}
 
 .column.has-text-vcenter {
   display: flex;

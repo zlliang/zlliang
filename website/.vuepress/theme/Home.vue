@@ -65,6 +65,11 @@
 </template>
 
 <style scoped>
+#profile-picture {
+  width: 160px;
+  border-radius: 50%;
+}
+
 #construction-banner {
   font-size: 1.2em;
   padding: 1em 30px;
