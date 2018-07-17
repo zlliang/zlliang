@@ -6,6 +6,10 @@ html {
   -moz-osx-font-smoothing: auto;
 }
 
+* {
+  font-family: Roboto;
+}
+
 @media screen and (min-width: 1025px) {
   .container {
     max-width: 1025px;
