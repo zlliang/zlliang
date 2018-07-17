@@ -17,10 +17,10 @@
               <span class="icon"><i class="fa fa-github"></i></span>
               <span>GitHub</span>
             </a>
-            <a href="https://blog.zlliang.com" class="button is-white">
+            <router-link to="/blog/" class="button is-white">
               <span class="icon"><i class="fa fa-book"></i></span>
               <span>Blog</span>
-            </a>
+            </router-link>
           </p>
         </div>
       </div>
