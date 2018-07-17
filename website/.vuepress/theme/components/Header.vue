@@ -10,7 +10,7 @@
         </div>
         <div class="navbar-menu" id="main-navbar-menu">
           <div class="navbar-end">
-            <a href="https://blog.zlliang.com" class="navbar-item">Blog</a>
+            <router-link to="/blog/" class="navbar-item">Blog</router-link>
             <a href="/news/" class="navbar-item">News</a>
             <a href="/publications/" class="navbar-item">Publications</a>
             <a href="/projects" class="navbar-item">Projects</a>
