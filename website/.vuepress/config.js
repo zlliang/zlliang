@@ -1,6 +1,9 @@
 module.exports = {
   title: 'Zilong Liang',
   description: 'TODO',
+  markdown: {
+    anchor: { permalink: false }
+  },
   head: [
     ['link', { rel: 'icon', href: `/logo.png` }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],

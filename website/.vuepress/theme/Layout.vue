@@ -2,13 +2,13 @@
   <div class="page-container">
     <Header/>
     <Home v-if="$page.frontmatter.home"/>
-    <div v-else>
+    <section class="section"v-else>
       <div class="container">
         <div class="content">
           <Content/>
         </div>
       </div>
-    </div>
+    </section>
     <Footer/>
   </div>
 </template>
