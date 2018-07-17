@@ -2,7 +2,7 @@ module.exports = {
   title: 'Zilong Liang',
   description: 'TODO',
   markdown: {
-    anchor: { permalink: true, permalinkBefore: true }
+    anchor: { permalink: false }
   },
   head: [
     ['link', { rel: 'icon', href: `/logo.png` }],
@@ -15,6 +15,7 @@ module.exports = {
     ['link', { rel: 'stylesheet', href: 'https://cdn.bootcss.com/bulma/0.7.1/css/bulma.min.css'}],
     ['link', { rel: 'stylesheet', href: 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'}],
     ['link', { rel: 'stylesheet', href: 'https://cdn.bootcss.com/KaTeX/0.9.0/katex.min.css'}],
-    ['link', { rel: 'stylesheet', href: 'https://fonts.proxy.ustclug.org/css?family=Roboto:400,400i,500,500i,700,700i'}]
+    ['link', { rel: 'stylesheet', href: 'https://fonts.proxy.ustclug.org/css?family=Roboto:400,400i,500,500i,700,700i|Roboto+Mono'}],
+    ['link', { rel: 'stylesheet', href: 'https://cdn.bootcss.com/prism/9000.0.1/themes/prism.min.css'}]
   ],
 }

@@ -97,4 +97,33 @@ html {
   color: grey;
 }
 
+.content {
+  color: black;
+}
+
+.content pre code, .content pre code * {
+  font-family: 'Roboto Mono';
+  vertical-align: baseline !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 14px !important;
+}
+
+.content p code {
+  font-family: 'Roboto Mono';
+  padding: 0.16em 0.3em;
+  border-radius: 3px;
+  color: black;
+}
+
+.content pre {
+  color: black;
+  border-radius: 5px;
+  line-height: 1.4em;
+  padding: 0.5em 1em;
+}
+
 </style>
