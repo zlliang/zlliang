@@ -2,7 +2,7 @@ module.exports = {
   title: 'Zilong Liang',
   description: 'TODO',
   markdown: {
-    anchor: { permalink: false }
+    anchor: { permalink: true, permalinkBefore: true }
   },
   head: [
     ['link', { rel: 'icon', href: `/logo.png` }],

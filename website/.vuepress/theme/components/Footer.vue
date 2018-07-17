@@ -21,7 +21,7 @@ import dayjs from 'dayjs'
 export default {
   data: function() {
     return {
-      siteUpdated: dayjs().format('DD MMMM, YYYY')
+      siteUpdated: dayjs().format('MMM DD, YYYY')
     }
   }
 }
