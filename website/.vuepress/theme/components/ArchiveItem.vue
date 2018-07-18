@@ -6,7 +6,7 @@
           <router-link v-bind:to="post.path"><h2 v-html="post.title" class="archive-title"></h2></router-link>
           <p v-html="post.date.format('MMM DD, YYYY')" class="archive-date"></p>
         </div>
-        <div class="column is-hidden-mobile">
+        <div class="column" v-bind:class="{ 'is-hidden-mobile': !post.frontmatter.abstract }">
           <p v-if="post.frontmatter.abstract" v-html="post.frontmatter.abstract" class="archive-abstract"></p>
           <p v-else class="archive-abstract">No abstract.</p>
         </div>
