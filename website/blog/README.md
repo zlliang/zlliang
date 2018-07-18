@@ -70,9 +70,3 @@ d & k & l
 $$
 
 你好，我在 `fira mono` 等您。
-
-```python
-#!/usr/bin/env python
-def hello():
-    print("Hello!")
-```
