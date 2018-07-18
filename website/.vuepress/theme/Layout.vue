@@ -17,7 +17,12 @@
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Home from './Home.vue'
+
+import vue from 'vue'
 import dayjs from 'dayjs'
+import nprogress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 export default {
   components: {
     Header,
@@ -30,6 +35,19 @@ export default {
       if (page.frontmatter.date) {
         page.frontmatter.date = dayjs(page.frontmatter.date)
       }
+    })
+  },
+  mounted: function() {
+    // Progress bar
+    nprogress.configure({ showSpinner: false })
+    this.$router.beforeEach((to, from, next) => {
+      if (to.path !== from.path && !vue.component(to.name)) {
+        nprogress.start()
+      }
+      next()
+    })
+    this.$router.afterEach(() => {
+      nprogress.done()
     })
   }
 }
@@ -125,5 +143,18 @@ html {
   line-height: 1.4em;
   padding: 0.5em 1em;
 }
+
+/* .katex {
+  font-size: 1.1em;
+  -webkit-font-smoothing: antialiased;
+}
+
+.katex-display {
+  padding-top: 0.08em;
+  padding-bottom: 0.08em;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  overflow-y: hidden;
+} */
 
 </style>
