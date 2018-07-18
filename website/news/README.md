@@ -1,5 +1,4 @@
 ---
 news: true
+title: News
 ---
-
-# News
