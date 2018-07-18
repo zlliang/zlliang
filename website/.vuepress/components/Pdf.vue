@@ -1,6 +1,7 @@
 <template>
-  <div class="pdf-container">
-    <canvas v-bind:id="file" class="pdf-canvas"></canvas>
+  <div class="pdf-container box">
+    <canvas v-bind:id="file" class="pdf-canvas is-hidden-mobile"></canvas>
+    <p class="is-hidden-tablet">PDF Preview is not avaliable on mobile phones. Please <a v-bind:href="file">download</a> the file directly.</p>
   </div>
 </template>
 
