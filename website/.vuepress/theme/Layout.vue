@@ -11,11 +11,12 @@
 <script>
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
+
 import Home from './pages/Home.vue'
 import Archive from './pages/Archive.vue'
 import Post from './pages/Post.vue'
 
-import vue from 'vue'
+import Vue from 'vue'
 import dayjs from 'dayjs'
 import nprogress from 'nprogress'
 import 'nprogress/nprogress.css'
@@ -36,7 +37,7 @@ export default {
     // Progress bar
     nprogress.configure({ showSpinner: false })
     this.$router.beforeEach((to, from, next) => {
-      if (to.path !== from.path && !vue.component(to.name)) {
+      if (to.path !== from.path && !Vue.component(to.name)) {
         nprogress.start()
       }
       next()
