@@ -59,6 +59,8 @@ export default {
 }
 </script>
 
+<style src="./css/bulma.min.css"></style>
+
 <style>
 /* Main CSS of zlliang.com */
 
@@ -68,15 +70,11 @@ html {
   -moz-osx-font-smoothing: auto;
 }
 
-body {
-  font-family: Roboto;
-}
-
-@media screen and (min-width: 1025px) {
+/* @media screen and (min-width: 1025px) {
   .container {
     max-width: 1025px;
   }
-}
+} */
 
 #site-brand {
   /* padding: 5px 10px;
@@ -109,11 +107,11 @@ body {
   font-weight: bolder;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .pub-badge {
     margin-top: -1.2em;
   }
-}
+} */
 
 .news-date {
   margin: 0 0.5em;
@@ -121,12 +119,11 @@ body {
   color: grey;
 }
 
-.content {
+/* .content {
   color: black;
-}
+} */
 
 .content pre code, .content pre code * {
-  font-family: 'Roboto Mono';
   vertical-align: baseline !important;
   height: 0 !important;
   min-width: 0 !important;
@@ -138,15 +135,14 @@ body {
 
 .content p code {
   background-color: hsl(0, 0%, 96%);
-  font-family: 'Roboto Mono';
   padding: 0.16em 0.3em;
   border-radius: 3px;
-  color: black;
+  /* color: black; */
 }
 
 .content pre {
   background-color: hsl(0, 0%, 96%);
-  color: black;
+  /* color: black; */
   border-radius: 5px;
   line-height: 1.4em;
   padding: 0.5em 1em;
