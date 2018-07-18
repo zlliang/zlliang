@@ -5,6 +5,7 @@
     <section class="section"v-else>
       <div class="container">
         <div class="content">
+          <h1 class="title">{{ this.$page.title }}</h1>
           <Content/>
         </div>
       </div>
@@ -62,7 +63,7 @@ html {
   -moz-osx-font-smoothing: auto;
 }
 
-* {
+body {
   font-family: Roboto;
 }
 
@@ -131,6 +132,7 @@ html {
 }
 
 .content p code {
+  background-color: hsl(0, 0%, 96%);
   font-family: 'Roboto Mono';
   padding: 0.16em 0.3em;
   border-radius: 3px;
@@ -138,15 +140,16 @@ html {
 }
 
 .content pre {
+  background-color: hsl(0, 0%, 96%);
   color: black;
   border-radius: 5px;
   line-height: 1.4em;
   padding: 0.5em 1em;
 }
 
-/* .katex {
+.katex {
   font-size: 1.1em;
-  -webkit-font-smoothing: antialiased;
+  /* -webkit-font-smoothing: antialiased; */
 }
 
 .katex-display {
@@ -155,6 +158,6 @@ html {
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
   overflow-y: hidden;
-} */
+}
 
 </style>

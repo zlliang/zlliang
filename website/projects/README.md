@@ -1,1 +1,3 @@
-# Projects
+---
+title: Projects
+---
