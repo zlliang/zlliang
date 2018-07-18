@@ -5,10 +5,12 @@
         <div class="column is-4 has-text-right-tablet">
           <router-link v-bind:to="post.path"><h2 v-html="post.title" class="archive-title"></h2></router-link>
           <p v-html="post.date.format('MMM DD, YYYY')" class="archive-date"></p>
+          <p v-if="post.frontmatter.abstract && post.frontmatter.pic" v-html="post.frontmatter.abstract" class="archive-abstract-left"></p>
         </div>
-        <div class="column" v-bind:class="{ 'is-hidden-mobile': !post.frontmatter.abstract }">
-          <p v-if="post.frontmatter.abstract" v-html="post.frontmatter.abstract" class="archive-abstract"></p>
-          <p v-else class="archive-abstract">No abstract.</p>
+        <div class="column" v-bind:class="{ 'is-hidden-mobile': !post.frontmatter.abstract && !post.frontmatter.pic }">
+          <img v-if="post.frontmatter.pic" class="archive-pic" v-bind:src="post.frontmatter.pic" v-bind:alt="post.title">
+          <p v-if="post.frontmatter.abstract && !post.frontmatter.pic" v-html="post.frontmatter.abstract" class="archive-abstract"></p>
+          <p v-else-if="!post.frontmatter.pic" class="archive-abstract">No abstract.</p>
         </div>
       </div>
     </div>
@@ -23,6 +25,7 @@ export default {
 
 <style scoped>
 .archive-item {
+  border-radius: 15px;
   margin: 2em 0em !important;
   box-shadow: 0px 5px 20px 5px #eee;
   /* border: 1px solid green; */
@@ -36,7 +39,14 @@ export default {
   font-style: italic;
   color: grey;
 }
+.archive-abstract-left {
+  margin-top: 1em;
+  color: #444;
+}
 .archive-abstract {
-  color: #555;
+  color: #444;
+}
+.archive-pic {
+  border-radius: 15px;
 }
 </style>
