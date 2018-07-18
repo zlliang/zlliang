@@ -88,7 +88,7 @@ export default {
 
 .about-photo {
   max-height: 150px;
-  margin: 5px 5px;
+  margin: 2px 5px;
   border-radius: 7px;
 }
 </style>
