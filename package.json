@@ -13,8 +13,8 @@
     "build": "vuepress build website"
   },
   "devDependencies": {
+    "@iktakahiro/markdown-it-katex": "^3.0.3",
     "dayjs": "^1.7.4",
-    "markdown-it-katex": "^2.0.3",
     "node-sass": "^4.9.2",
     "nprogress": "^0.2.0",
     "sass-loader": "^7.0.3",
