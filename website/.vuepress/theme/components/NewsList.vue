@@ -6,6 +6,7 @@
         <router-link v-bind:to="news.path" v-else>{{ news.title }}</router-link>
         <span class="news-date">{{ news.date.format('MMM DD') }}</span>
       </li>
+      <li><router-link to="/news/" class="has-text-dark" id="index-news-more-button">More...</router-link></li>
     </ul>
   </div>
 </template>
