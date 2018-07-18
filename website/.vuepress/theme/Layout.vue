@@ -21,13 +21,7 @@ import nprogress from 'nprogress'
 import 'nprogress/nprogress.css'
 
 export default {
-  components: {
-    Header,
-    Footer,
-    Home,
-    Archive,
-    Post
-  },
+  components: { Header, Footer, Home, Archive, Post },
   created: function() {
     // Convert date string to dayjs object
     this.$site.pages.forEach(page => {

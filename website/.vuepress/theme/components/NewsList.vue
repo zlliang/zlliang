@@ -16,7 +16,8 @@ export default {
   computed: {
     newsList: function() {
       var newsPages = this.$site.pages.filter(item => { return item.path.substring(0, 6) == "/news/" && !item.frontmatter.archive })
-      var newsPages = newsPages.sort((a, b) => { return(a.date.isBefore(b.date)) })
+      newsPages = newsPages.sort((a, b) => { return(a.date.isBefore(b.date)) })
+      newsPages = newsPages.slice(0, 6)
       return newsPages
     }
   }
