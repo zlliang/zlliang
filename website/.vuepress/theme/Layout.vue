@@ -2,7 +2,7 @@
   <div class="page-container">
     <Header/>
     <Home v-if="$page.frontmatter.home"/>
-    <section class="section"v-else>
+    <section class="section" v-else>
       <div class="container">
         <div class="content">
           <h1 class="title">{{ this.$page.title }}</h1>
@@ -18,6 +18,7 @@
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Home from './Home.vue'
+import Archive from './Archive.vue'
 
 import vue from 'vue'
 import dayjs from 'dayjs'
@@ -28,7 +29,8 @@ export default {
   components: {
     Header,
     Footer,
-    Home
+    Home,
+    Archive
   },
   created: function() {
     // Convert date string to dayjs object
