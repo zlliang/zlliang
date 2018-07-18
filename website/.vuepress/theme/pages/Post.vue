@@ -3,7 +3,7 @@
       <div class="container">
         <div class="content">
           <h1 class="title">{{ $page.title }}</h1>
-          <div class="line-spread" v-if="$page.frontmatter.chinese"><Content/></div>
+          <div class="line-spread" v-if="$page.frontmatter.spread"><Content/></div>
           <div v-else><Content/></div>
         </div>
       </div>
