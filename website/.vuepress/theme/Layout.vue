@@ -156,4 +156,9 @@ html {
   overflow-y: hidden;
 }
 
+/* Just for now */
+svg.icon.outbound {
+  display: none;
+}
+
 </style>
