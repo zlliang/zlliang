@@ -27,8 +27,13 @@ export default {
 .archive-item {
   border-radius: 15px;
   margin: 2em 0em !important;
-  box-shadow: 0px 5px 20px 5px #eee;
-  /* border: 1px solid green; */
+  box-shadow: 0px 5px 20px 5px #e5e5e5;
+  transition: all 200ms;
+}
+.archive-item:hover {
+  border-radius: 15px;
+  margin: 2em 0em !important;
+  box-shadow: 0px 1px 10px 1px #e5e5e5;
 }
 .archive-title {
   font-size: 1.4em;
