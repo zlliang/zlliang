@@ -2,6 +2,9 @@ module.exports = {
   title: 'Zilong Liang',
   description: 'Personal website of Zilong Liang',
   markdown: {
+    externalLinkSymbol: {
+      icon: false
+    },
     anchor: { permalink: false },
     config: function(md) {
       md.use(require('@iktakahiro/markdown-it-katex'), {
