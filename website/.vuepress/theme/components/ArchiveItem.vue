@@ -1,16 +1,18 @@
 <template>
-  <div class="archive-item box">
-    <div class="columns">
-      <div class="column is-4 has-text-right-tablet">
-        <router-link v-bind:to="post.path"><h2 v-html="post.title" class="archive-title"></h2></router-link>
-        <p v-html="post.date.format('MMM DD, YYYY')" class="archive-date"></p>
-      </div>
-      <div class="column">
-        <p v-if="post.frontmatter.abstract" v-html="post.frontmatter.abstract" class="archive-abstract"></p>
-        <p v-else class="archive-abstract">No abstract.</p>
+  <router-link v-bind:to="post.path">
+    <div class="archive-item box">
+      <div class="columns">
+        <div class="column is-4 has-text-right-tablet">
+          <router-link v-bind:to="post.path"><h2 v-html="post.title" class="archive-title"></h2></router-link>
+          <p v-html="post.date.format('MMM DD, YYYY')" class="archive-date"></p>
+        </div>
+        <div class="column is-hidden-mobile">
+          <p v-if="post.frontmatter.abstract" v-html="post.frontmatter.abstract" class="archive-abstract"></p>
+          <p v-else class="archive-abstract">No abstract.</p>
+        </div>
       </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
