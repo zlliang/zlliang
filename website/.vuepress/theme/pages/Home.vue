@@ -40,7 +40,10 @@
           <div class="column is-8">
             <div class="content">
               <h2 class="title">About Me</h2>
-              <p>TODO</p>
+              <p>I am currently an undergraduate in School of Mathematical Sciences, Fudan University.</p>
+              <a href="/images/about1.jpg"><img class="about-photo" src="/images/about1.jpg" alt="about1"></a>
+              <a href="/images/about2.jpg"><img class="about-photo" src="/images/about2.jpg" alt="about2"></a>
+              <a href="/images/about3.jpg"><img class="about-photo" src="/images/about3.jpg" alt="about3"></a>
             </div>
           </div>
           <div class="column">
@@ -81,5 +84,11 @@ export default {
 #construction-banner {
   font-size: 1.2em;
   padding: 1em 30px;
+}
+
+.about-photo {
+  max-height: 150px;
+  margin: 5px 5px;
+  border-radius: 7px;
 }
 </style>
