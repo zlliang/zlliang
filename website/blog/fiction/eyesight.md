@@ -2,6 +2,7 @@
 title: 眼神
 date: 2015-08-18
 categories: fiction
+chinese: true
 ---
 
 ## 上
