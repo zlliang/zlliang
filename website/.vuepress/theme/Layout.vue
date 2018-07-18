@@ -2,15 +2,8 @@
   <div class="page-container">
     <Header/>
     <Home v-if="$page.frontmatter.home"/>
-    <Archive v-if="$page.frontmatter.archive"/>
-    <section class="section" v-else>
-      <div class="container">
-        <div class="content">
-          <h1 class="title">{{ $page.title }}</h1>
-          <Content/>
-        </div>
-      </div>
-    </section>
+    <Archive v-else-if="$page.frontmatter.archive"/>
+    <Post v-else/>
     <Footer/>
   </div>
 </template>
@@ -18,8 +11,9 @@
 <script>
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
-import Home from './Home.vue'
-import Archive from './Archive.vue'
+import Home from './pages/Home.vue'
+import Archive from './pages/Archive.vue'
+import Post from './pages/Post.vue'
 
 import vue from 'vue'
 import dayjs from 'dayjs'
@@ -31,7 +25,8 @@ export default {
     Header,
     Footer,
     Home,
-    Archive
+    Archive,
+    Post
   },
   created: function() {
     // Convert date string to dayjs object
@@ -59,7 +54,7 @@ export default {
 }
 </script>
 
-<style src="./css/bulma.min.css"></style>
+<style src="./assets/css/bulma.min.css"></style>
 
 <style>
 /* Main CSS of zlliang.com */

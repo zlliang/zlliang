@@ -12,7 +12,6 @@
           <div class="navbar-end">
             <router-link to="/blog/" class="navbar-item"><div v-on:click="forcedUntoggle">Blog</div></router-link>
             <router-link to="/news/" class="navbar-item"><div v-on:click="forcedUntoggle">News</div></router-link>
-            <!-- <router-link to="/publications/" class="navbar-item"><div v-on:click="forcedUntoggle">Publications</div></router-link> -->
             <router-link to="/projects/" class="navbar-item"><div v-on:click="forcedUntoggle">Projects</div></router-link>
           </div>
         </div>

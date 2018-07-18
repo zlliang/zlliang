@@ -11,7 +11,7 @@
         <div class="columns archive-item">
           <!-- When tablet and desktop -->
           <div class="column is-7 is-hidden-mobile has-text-left archive-title">
-            <router-link to="post.path" v-html="post.title" class="archive-title"></router-link>
+            <router-link v-bind:to="post.path" v-html="post.title" class="archive-title"></router-link>
           </div>
           <div class="column is-hidden-mobile has-text-right archive-date">
             {{ post.date.format('MMMM DD, YYYY') }}
@@ -21,7 +21,7 @@
             {{ post.date.format('MMMM DD, YYYY') }}
           </div>
           <div class="column is-hidden-tablet archive-title">
-            <router-link to="post.path" v-html="post.title" class="archive-title"></router-link>
+            <router-link v-bind:to="post.path" v-html="post.title" class="archive-title"></router-link>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@ export default {
   computed: {
     postList: function() {
       var posts = this.$site.pages.filter(item => { return item.path.indexOf(this.$page.path) == 0 && !item.frontmatter.archive })
-      var posts = posts.sort((a, b) => { return(b.date.isBefore(a.date)) })
+      var posts = posts.sort((a, b) => { return(a.date.isBefore(b.date)) })
       return posts
     },
     lastListYear: function() {
@@ -53,7 +53,7 @@ export default {
 }
 
 .archive-year {
-  padding-top: 1.5em;
+  margin-top: 1.5em;
   font-size: 1.7em;
   font-weight: lighter;
 }
@@ -63,8 +63,8 @@ export default {
 }
 
 .archive-item {
-  margin-top: 2em;
-  margin-bottom: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em !important;
 }
 
 .archive-title {

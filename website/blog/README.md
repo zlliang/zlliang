@@ -1,5 +1,6 @@
 ---
 title: Blog
+archive: true
 ---
 
 ## 键入测试

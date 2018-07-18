@@ -1,9 +1,9 @@
 module.exports = {
   title: 'Zilong Liang',
-  description: 'TODO',
+  description: 'Personal website of Zilong Liang',
   markdown: {
     anchor: { permalink: false },
-    config: md => {
+    config: function(md) {
       md.use(require('markdown-it-katex'))
     }
   },
