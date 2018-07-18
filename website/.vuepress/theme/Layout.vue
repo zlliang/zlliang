@@ -2,10 +2,11 @@
   <div class="page-container">
     <Header/>
     <Home v-if="$page.frontmatter.home"/>
+    <Archive v-if="$page.frontmatter.archive"/>
     <section class="section" v-else>
       <div class="container">
         <div class="content">
-          <h1 class="title">{{ this.$page.title }}</h1>
+          <h1 class="title">{{ $page.title }}</h1>
           <Content/>
         </div>
       </div>
@@ -36,7 +37,9 @@ export default {
     // Convert date string to dayjs object
     this.$site.pages.forEach(page => {
       if (page.frontmatter.date) {
-        page.frontmatter.date = dayjs(page.frontmatter.date)
+        page.date = dayjs(page.frontmatter.date)
+      } else {
+        page.date = dayjs(page.lastUpdated)
       }
     })
   },
