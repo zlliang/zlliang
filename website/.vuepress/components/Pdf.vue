@@ -1,17 +1,30 @@
 <template>
   <div class="pdf-container">
-    <div class="pdf-tools">
+    <div class="pdf-tools has-text-right-tablet">
+      <span class="pdf-tools-span has-text-light" v-html="fileName"></span>
       <a v-bind:href="file" class="pdf-download-button pdf-tools-span">{{ $themeLocaleConfig.download }}</a>
-      <span class="pdf-tools-span has-text-light" v-html="file"></span>
     </div>
     <div class="pdf-pages" v-bind:id="file + 'pages'"></div>
-    <p class="is-hidden-tablet pdf-instruction">PDF Preview is not avaliable on mobile phones. Please <a v-bind:href="file">download</a> the file directly.</p>
+    <p class="is-hidden-tablet pdf-instruction" v-html="localeInstruction"></p>
   </div>
 </template>
 
 <script>
 export default {
   props: ['file'],
+  computed: {
+    fileName: function() {
+      var index = this.file.lastIndexOf('/')
+      return this.file.substring(index + 1)
+    },
+    localeInstruction: function() {
+      if (this.$lang == 'zh-CN') {
+        return "PDF 预览在手机上不可用。您可以直接<a href=" + this.file + ">下载</a>该文件."
+      } else {
+        return "PDF preview is not avaliable on mobile phones. Please <a href=" + this.file + ">download</a> the file directly."
+      }
+    }
+  },
   mounted: function() {
     var filePath = this.file
     var instruction = document.getElementById(filePath + 'ins')
@@ -62,20 +75,23 @@ function renderPDF(filePath, pdf, j) {
   padding: 0.5em 1em;
 }
 .pdf-tools-span {
-  margin: 0 1em;
+  margin-right: 1em;
 }
-.pdf-tools-span:first-child {
-  margin: 0;
+.pdf-tools-span:last-child {
+  margin-right: 0;
 }
 .pdf-download-button {
-  color: white;
+  border-radius: 5px;
+  background-color: #eee;
+  padding: 0.25em 0.45em;
+  font-size: 0.9em;
+  color: black;
 }
 .pdf-download-button:hover {
-  color: #ddd;
-  text-decoration: underline;
+  background-color: #d3d3d3;
+  color: black;
 }
 .pdf-container {
-  /* border: 1px solid red; */
   box-shadow: 0px 10px 50px 10px #eee;
   border-radius: 15px;
   max-width: 100%;

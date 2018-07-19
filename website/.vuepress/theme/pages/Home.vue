@@ -18,7 +18,7 @@
               <span class="icon"><i class="fa fa-github"></i></span>
               <span>GitHub</span>
             </a>
-            <router-link to="/blog/" class="button is-white">
+            <router-link :to="$localePath + 'blog/'" class="button is-white">
               <span class="icon"><i class="fa fa-book"></i></span>
               <span>{{ $themeLocaleConfig.blog }}</span>
             </router-link>
