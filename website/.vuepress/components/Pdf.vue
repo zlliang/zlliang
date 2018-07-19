@@ -100,11 +100,16 @@ function renderPDF(filePath, pdf, j) {
   max-width: 100%;
 }
 .pdf-canvas {
-  /* border: 1px dashed grey; */
   max-width: 100%;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+.pdf-canvas:first-child {
+  border-top: 0;
 }
 .pdf-canvas:last-child {
   margin-bottom: 10px;
+  border-bottom: 0;
 }
 .pdf-instruction {
   padding: 1em;
