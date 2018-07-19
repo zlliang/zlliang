@@ -5,6 +5,8 @@ abstract: To take advantage of new technologies such as Vue, I am now working on
 pic: /images/news1.png
 ---
 
+![](/images/news1.png)
+
 To take advantage of new technologies such as [Vue](https://vuejs.org/), I am now working on migrating this site from [Hexo](https://hexo.io/) to [VuePress](https://vuepress.vuejs.org/).
 
 Also, I decided to abandon [GitHub Pages](https://pages.github.com/) and start using [Netlify](https://netlify.com/), for its outstanding service and seemless integration with GitHub.

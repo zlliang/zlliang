@@ -4,7 +4,7 @@
       <li v-for="news in newsList">
         <a v-bind:href="news.frontmatter.link" v-if="news.frontmatter.link">{{ news.title }}</a>
         <router-link :to="$localePath + news.path.substring(1)" v-else>{{ news.title }}</router-link>
-        <span class="news-date">{{ news.date.format('MMM DD') }}</span>
+        <span class="news-date">{{ news.date.format($lang == 'en-US' ? 'MMM DD' : 'M月D日') }}</span>
       </li>
       <li><router-link :to="$localePath + 'news/'" class="has-text-dark" id="index-news-more-button">{{ $lang === 'en-US' ? 'More...' : '查看更多...'}}</router-link></li>
     </ul>
