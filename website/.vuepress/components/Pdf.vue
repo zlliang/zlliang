@@ -1,8 +1,9 @@
 <template>
   <div class="pdf-container">
     <div class="pdf-tools has-text-right-tablet">
+      <a v-bind:href="file" class="pdf-download-button pdf-tools-span is-hidden-tablet">{{ $themeLocaleConfig.download }}</a>
       <span class="pdf-tools-span has-text-light" v-html="fileName"></span>
-      <a v-bind:href="file" class="pdf-download-button pdf-tools-span">{{ $themeLocaleConfig.download }}</a>
+      <a v-bind:href="file" class="pdf-download-button pdf-tools-span is-hidden-mobile">{{ $themeLocaleConfig.download }}</a>
     </div>
     <div class="pdf-pages" v-bind:id="file + 'pages'"></div>
     <p class="is-hidden-tablet pdf-instruction" v-html="localeInstruction"></p>
@@ -95,6 +96,8 @@ function renderPDF(filePath, pdf, j) {
   box-shadow: 0px 10px 50px 10px #eee;
   border-radius: 15px;
   max-width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .pdf-pages {
   max-width: 100%;
