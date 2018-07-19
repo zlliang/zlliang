@@ -135,6 +135,14 @@ html {
   border-radius: 5px;
   line-height: 1.4em;
   padding: 0.5em 1em;
+  margin-bottom: 1.2em;
+}
+
+.token.tag {
+  align-items: baseline;
+}
+.token.attr-name {
+  padding-left: 0.5em !important;
 }
 
 .katex {
@@ -157,7 +165,7 @@ svg.icon.outbound {
 
 .content img {
   border-radius: 15px;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  /* margin-top: 1em;
+  margin-bottom: 1em; */
 }
 </style>
