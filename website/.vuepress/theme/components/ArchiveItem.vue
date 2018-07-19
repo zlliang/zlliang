@@ -1,20 +1,38 @@
 <template>
-  <router-link v-bind:to="post.path">
-    <div class="archive-item box">
-      <div class="columns">
-        <div class="column is-4 has-text-right-tablet">
-          <router-link v-bind:to="post.path"><h2 v-html="post.title" class="archive-title"></h2></router-link>
-          <p v-html="post.date.format($themeLocaleConfig.dateFormat)" class="archive-date"></p>
-          <p v-if="post.frontmatter.abstract && post.frontmatter.pic" v-html="post.frontmatter.abstract" class="archive-abstract-left"></p>
-        </div>
-        <div class="column" v-bind:class="{ 'is-hidden-mobile': !post.frontmatter.abstract && !post.frontmatter.pic }">
-          <img v-if="post.frontmatter.pic" class="archive-pic" v-bind:src="post.frontmatter.pic" v-bind:alt="post.title">
-          <p v-if="post.frontmatter.abstract && !post.frontmatter.pic" v-html="post.frontmatter.abstract" class="archive-abstract"></p>
-          <p v-else-if="!post.frontmatter.pic" class="archive-abstract">No abstract.</p>
+  <div class="archive-item-container">
+    <a v-bind:href="post.frontmatter.link" v-if="post.frontmatter.link">
+      <div class="archive-item box">
+        <div class="columns">
+          <div class="column is-4 has-text-right-tablet">
+            <a v-bind:href="post.frontmatter.link"><h2 v-html="post.title" class="archive-title"></h2></a>
+            <p v-html="post.date.format($themeLocaleConfig.dateFormat)" class="archive-date"></p>
+            <p v-if="post.frontmatter.abstract && post.frontmatter.pic" v-html="post.frontmatter.abstract" class="archive-abstract-left"></p>
+          </div>
+          <div class="column" v-bind:class="{ 'is-hidden-mobile': !post.frontmatter.abstract && !post.frontmatter.pic }">
+            <img v-if="post.frontmatter.pic" class="archive-pic" v-bind:src="post.frontmatter.pic" v-bind:alt="post.title">
+            <p v-if="post.frontmatter.abstract && !post.frontmatter.pic" v-html="post.frontmatter.abstract" class="archive-abstract"></p>
+            <p v-else-if="!post.frontmatter.pic" class="archive-abstract">No abstract.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </router-link>
+    </a>
+    <router-link v-bind:to="post.path" v-else>
+      <div class="archive-item box">
+        <div class="columns">
+          <div class="column is-4 has-text-right-tablet">
+            <router-link v-bind:to="post.path"><h2 v-html="post.title" class="archive-title"></h2></router-link>
+            <p v-html="post.date.format($themeLocaleConfig.dateFormat)" class="archive-date"></p>
+            <p v-if="post.frontmatter.abstract && post.frontmatter.pic" v-html="post.frontmatter.abstract" class="archive-abstract-left"></p>
+          </div>
+          <div class="column" v-bind:class="{ 'is-hidden-mobile': !post.frontmatter.abstract && !post.frontmatter.pic }">
+            <img v-if="post.frontmatter.pic" class="archive-pic" v-bind:src="post.frontmatter.pic" v-bind:alt="post.title">
+            <p v-if="post.frontmatter.abstract && !post.frontmatter.pic" v-html="post.frontmatter.abstract" class="archive-abstract"></p>
+            <p v-else-if="!post.frontmatter.pic" class="archive-abstract">No abstract.</p>
+          </div>
+        </div>
+      </div>
+    </router-link>
+  </div>
 </template>
 
 <script>
