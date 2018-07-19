@@ -1,4 +1,4 @@
 ---
 archive: true
-title: News
+title: 动态
 ---
