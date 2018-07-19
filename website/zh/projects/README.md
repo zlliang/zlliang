@@ -1,8 +1,7 @@
 ---
-title: Projects
+title: 项目
 ---
 
-## PJ01
-<Tag content="Hello3" content2="GitHub"/>
+PDF 显示测试
 
 <Pdf file="/pdfs/report.pdf"/>
