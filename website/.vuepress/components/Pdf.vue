@@ -1,7 +1,7 @@
 <template>
   <div class="pdf-container">
     <div class="pdf-tools">
-      <a v-bind:href="file" class="pdf-download-button pdf-tools-span">Download</a>
+      <a v-bind:href="file" class="pdf-download-button pdf-tools-span">{{ $themeLocaleConfig.download }}</a>
       <span class="pdf-tools-span has-text-light" v-html="file"></span>
     </div>
     <div class="pdf-pages" v-bind:id="file + 'pages'"></div>
@@ -22,10 +22,7 @@ export default {
       for (var j = 1; j <= numPages; j++) {
         var canvas = document.createElement('canvas')
         canvas.id = filePath + 'page' + j
-        canvas.classList.add('pdf-canvas')
-        canvas.classList.add('is-hidden-mobile')
-        canvas.removeAttribute('height')
-        canvas.removeAttribute('width')
+        canvas.className = 'pdf-canvas is-hidden-mobile'
         pagesElement.appendChild(canvas)
       }
       

@@ -8,8 +8,9 @@
               <img src="/images/profile.jpg" alt="profile picture" id="profile-picture">
             </div>
             <div class="column has-text-left-tablet has-text-vcenter">
-              <h1 class="title">Zilong Liang</h1>
-              <p>Computational Mathematics, Fudan University.</p>
+              <h1 class="title">{{ $lang === 'en-US' ? 'Zilong Liang' : '梁子龙'}}</h1>
+              <h2 class="subtitle">{{ $lang === 'zh-CN' ? 'Zilong Liang' : '梁子龙'}}</h2>
+              <p>{{ $themeLocaleConfig.bio }}</p>
             </div>
           </div>
           <p>
@@ -19,7 +20,7 @@
             </a>
             <router-link to="/blog/" class="button is-white">
               <span class="icon"><i class="fa fa-book"></i></span>
-              <span>Blog</span>
+              <span>{{ $themeLocaleConfig.blog }}</span>
             </router-link>
           </p>
         </div>
@@ -31,7 +32,7 @@
         <div class="columns">
           <div class="column is-8">
             <div class="content">
-              <h2 class="title">About Me</h2>
+              <h2 class="title">{{ $themeLocaleConfig.aboutme }}</h2>
               <p>I am currently an undergraduate in School of Mathematical Sciences, Fudan University.</p>
               <a href="/images/about1.jpg"><img class="about-photo" src="/images/about1.jpg" alt="about1"></a>
               <a href="/images/about2.jpg"><img class="about-photo" src="/images/about2.jpg" alt="about2"></a>

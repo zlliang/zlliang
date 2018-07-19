@@ -70,7 +70,7 @@ html {
   /* padding: 5px 10px;
   color: white;
   background-color: black; */
-  font-weight: bold;
+  font-weight: 700;
 }
 
 
