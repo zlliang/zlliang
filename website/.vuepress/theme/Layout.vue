@@ -125,7 +125,6 @@ html {
 
 .content p code {
   background-color: hsl(0, 0%, 96%);
-  padding: 0.16em 0.3em;
   border-radius: 3px;
   /* color: black; */
 }
