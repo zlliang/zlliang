@@ -1,7 +1,4 @@
 ---
 title: 项目
+archive: true
 ---
-
-PDF 显示测试
-
-<Pdf file="/pdfs/assignment03.pdf"/>

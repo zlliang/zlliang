@@ -1,7 +1,4 @@
 ---
 title: Projects
+archive: true
 ---
-
-PDF preview test
-
-<Pdf file="/pdfs/report.pdf"/>

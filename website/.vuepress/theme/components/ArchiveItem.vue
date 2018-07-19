@@ -5,10 +5,11 @@
         <div class="columns">
           <div class="column is-4 has-text-right-tablet">
             <a v-bind:href="post.frontmatter.link"><h2 v-html="post.title" class="archive-title"></h2></a>
-            <p v-html="post.date.format($themeLocaleConfig.dateFormat)" class="archive-date"></p>
+            <p v-html="post.date.format($themeLocaleConfig.dateFormat)" class="archive-date" v-if="post.frontmatter.date"></p>
             <p v-if="post.frontmatter.abstract && post.frontmatter.pic" v-html="post.frontmatter.abstract" class="archive-abstract-left"></p>
           </div>
           <div class="column" v-bind:class="{ 'is-hidden-mobile': !post.frontmatter.abstract && !post.frontmatter.pic }">
+            <ProjectTags/>
             <img v-if="post.frontmatter.pic" class="archive-pic" v-bind:src="post.frontmatter.pic" v-bind:alt="post.title">
             <p v-if="post.frontmatter.abstract && !post.frontmatter.pic" v-html="post.frontmatter.abstract" class="archive-abstract"></p>
             <p v-else-if="!post.frontmatter.pic" class="archive-abstract">No abstract.</p>
@@ -21,10 +22,12 @@
         <div class="columns">
           <div class="column is-4 has-text-right-tablet">
             <router-link v-bind:to="post.path"><h2 v-html="post.title" class="archive-title"></h2></router-link>
-            <p v-html="post.date.format($themeLocaleConfig.dateFormat)" class="archive-date"></p>
+            <p v-html="post.date.format($themeLocaleConfig.dateFormat)" class="archive-date" v-if="post.frontmatter.date"></p>
+            <ProjectTags v-bind:tags="post.frontmatter.tags" class="is-hidden-tablet project-tags-left"/>
             <p v-if="post.frontmatter.abstract && post.frontmatter.pic" v-html="post.frontmatter.abstract" class="archive-abstract-left"></p>
           </div>
           <div class="column" v-bind:class="{ 'is-hidden-mobile': !post.frontmatter.abstract && !post.frontmatter.pic }">
+            <ProjectTags v-bind:tags="post.frontmatter.tags" class="is-hidden-mobile project-tags-right"/>
             <img v-if="post.frontmatter.pic" class="archive-pic" v-bind:src="post.frontmatter.pic" v-bind:alt="post.title">
             <p v-if="post.frontmatter.abstract && !post.frontmatter.pic" v-html="post.frontmatter.abstract" class="archive-abstract"></p>
             <p v-else-if="!post.frontmatter.pic" class="archive-abstract">No abstract.</p>
@@ -36,7 +39,9 @@
 </template>
 
 <script>
+import ProjectTags from './ProjectTags.vue'
 export default {
+  components: { ProjectTags },
   props: ['post']
 }
 </script>
@@ -71,5 +76,12 @@ export default {
 }
 .archive-pic {
   border-radius: 15px;
+}
+
+.project-tags-left {
+  margin-top: 0.5em;
+}
+.project-tags-right {
+  margin-bottom: 0.5em;
 }
 </style>
