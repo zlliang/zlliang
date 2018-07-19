@@ -155,4 +155,9 @@ svg.icon.outbound {
   display: none;
 }
 
+.content img {
+  border-radius: 15px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 </style>
