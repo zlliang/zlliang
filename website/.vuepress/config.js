@@ -1,6 +1,42 @@
 module.exports = {
-  title: 'Zilong Liang',
-  description: 'Personal website of Zilong Liang',
+  locales: {
+    '/': {
+      lang: 'en-US',
+      title: 'Zilong Liang',
+      description: 'Personal website of Zilong Liang'
+    },
+    '/zh/': {
+      lang: 'zh-CN',
+      title: '梁子龙',
+      description: '梁子龙的个人网站'
+    }
+  },
+
+  themeConfig: {
+    locales: {
+      '/': {
+        brand: 'Z. LIANG',
+        blog: 'Blog',
+        news: 'News',
+        projects: 'Projects',
+        selectText: 'Languages',
+        bio: 'Computational Mathematics, Fudan University.',
+        aboutme: 'About Me',
+        download: 'Download'
+      },
+      '/zh/': {
+        brand: '梁子龙',
+        blog: '博客',
+        news: '动态',
+        projects: '项目',
+        selectText: '选择语言',
+        bio: '复旦大学数学科学学院 本科生',
+        aboutme: '关于我',
+        download: '下载'
+      }
+    }
+  },
+
   markdown: {
     externalLinkSymbol: {
       icon: false
