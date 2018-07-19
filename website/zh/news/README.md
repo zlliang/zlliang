@@ -1,0 +1,4 @@
+---
+archive: true
+title: News
+---
