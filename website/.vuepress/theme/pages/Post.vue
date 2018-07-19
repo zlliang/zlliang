@@ -3,7 +3,7 @@
       <div class="container">
         <div class="content">
           <h1 class="title">{{ $page.title }}</h1>
-          <p class="subtitle" v-if="$page.frontmatter.date && !$page.frontmatter.subtitle">{{ $page.date.format('MMMM DD, YYYY') }}</p>
+          <p class="subtitle" v-if="$page.frontmatter.date && !$page.frontmatter.subtitle">{{ $page.date.format($themeLocaleConfig.dateFormat) }}</p>
           <div class="line-spread" v-if="$page.frontmatter.spread"><Content/></div>
           <div v-else><Content/></div>
         </div>
