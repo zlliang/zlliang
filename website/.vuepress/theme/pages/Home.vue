@@ -41,7 +41,7 @@
           </div>
           <div class="column">
             <div class="content">
-              <h2 class="title">News</h2>
+              <h2 class="title">{{ $themeLocaleConfig.news }}</h2>
             </div>
             <NewsList/>
           </div>
@@ -52,7 +52,7 @@
     <section class="section">
       <div class="container">
         <div class="content">
-          <h2 class="title">Featured Work</h2>
+          <h2 class="title">{{ $themeLocaleConfig.featured }}</h2>
           <p>TODO</p>
         </div>
       </div>
