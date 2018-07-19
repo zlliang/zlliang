@@ -53,8 +53,9 @@
       <div class="container">
         <div class="content">
           <h2 class="title">{{ $themeLocaleConfig.featured }}</h2>
-          <p>TODO</p>
         </div>
+        <!-- <Featured/> -->
+        <p>TODO</p>
       </div>
     </section>
   </div>
@@ -62,8 +63,9 @@
 
 <script>
 import NewsList from '../components/NewsList.vue'
+import Featured from './Featured.vue'
 export default {
-  components: { NewsList }
+  components: { NewsList, Featured }
 }
 </script>
 
