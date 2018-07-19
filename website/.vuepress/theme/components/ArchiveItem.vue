@@ -4,7 +4,7 @@
       <div class="columns">
         <div class="column is-4 has-text-right-tablet">
           <router-link v-bind:to="post.path"><h2 v-html="post.title" class="archive-title"></h2></router-link>
-          <p v-html="post.date.format('MMM DD, YYYY')" class="archive-date"></p>
+          <p v-html="post.date.format($themeLocaleConfig.dateFormat)" class="archive-date"></p>
           <p v-if="post.frontmatter.abstract && post.frontmatter.pic" v-html="post.frontmatter.abstract" class="archive-abstract-left"></p>
         </div>
         <div class="column" v-bind:class="{ 'is-hidden-mobile': !post.frontmatter.abstract && !post.frontmatter.pic }">
@@ -41,7 +41,7 @@ export default {
   line-height: 1.2em;
 }
 .archive-date {
-  font-style: italic;
+  /* font-style: italic; */
   color: grey;
 }
 .archive-abstract-left {

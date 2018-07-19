@@ -23,7 +23,8 @@ module.exports = {
         bio: 'Computational Mathematics, Fudan University.',
         aboutme: 'About Me',
         download: 'Download',
-        featured: 'Featured Work'
+        featured: 'Featured Work',
+        dateFormat: 'MMMM DD, YYYY'
       },
       '/zh/': {
         brand: '梁子龙',
@@ -34,7 +35,8 @@ module.exports = {
         bio: '复旦大学数学科学学院 本科生',
         aboutme: '关于我',
         download: '下载',
-        featured: '精选'
+        featured: '精选',
+        dateFormat: 'YYYY年M月D日'
       }
     }
   },
