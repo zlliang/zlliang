@@ -22,7 +22,8 @@ module.exports = {
         selectText: 'Languages',
         bio: 'Computational Mathematics, Fudan University.',
         aboutme: 'About Me',
-        download: 'Download'
+        download: 'Download',
+        featured: 'Featured Work'
       },
       '/zh/': {
         brand: '梁子龙',
@@ -32,7 +33,8 @@ module.exports = {
         selectText: '选择语言',
         bio: '复旦大学数学科学学院 本科生',
         aboutme: '关于我',
-        download: '下载'
+        download: '下载',
+        featured: '精选'
       }
     }
   },

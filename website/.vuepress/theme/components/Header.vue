@@ -16,8 +16,8 @@
             <div class="navbar-item has-dropdown is-hoverable">
               <div class="navbar-link">{{ $themeLocaleConfig.selectText }}</div>
               <div class="navbar-dropdown">
-                <router-link to="/" class="navbar-item"><div v-on:click="forcedUntoggle">English</div></router-link>
-                <router-link to="/zh/" class="navbar-item"><div v-on:click="forcedUntoggle">简体中文</div></router-link>
+                <router-link :to="enPath" class="navbar-item"><div v-on:click="forcedUntoggle">English</div></router-link>
+                <router-link :to="zhPath" class="navbar-item"><div v-on:click="forcedUntoggle">简体中文</div></router-link>
               </div>
             </div>
           </div>
@@ -32,6 +32,23 @@ export default {
   data: function() {
     return {
       isActive: false
+    }
+  },
+  computed: {
+    // TODO
+    enPath: function() {
+      var path = this.$page.path
+      if (path.indexOf('/zh/') == 0) {
+        path = path.substring(3)
+      }
+      return path
+    },
+    zhPath: function() {
+      var path = this.$page.path
+      if (path.indexOf('/zh/') != 0) {
+        path = '/zh' + path
+      }
+      return path
     }
   },
   methods: {
