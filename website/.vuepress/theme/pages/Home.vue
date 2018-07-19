@@ -26,14 +26,6 @@
       </div>
     </section>
 
-    <section class="has-background-danger" id="construction-banner">
-      <div class="container">
-        <div class="content has-text-centered">
-          <p><strong class="has-text-white">This site is under construction this summer, and errors may occur!</strong></p>
-        </div>
-      </div>
-    </section>
-
     <section class="section has-background-light has-text-black">
       <div class="container">
         <div class="columns">

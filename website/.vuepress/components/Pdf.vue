@@ -15,7 +15,7 @@ export default {
   mounted: function() {
     var filePath = this.file
     var instruction = document.getElementById(filePath + 'ins')
-
+    
     var desiredWidth = 2048
     pdfjsLib.getDocument(filePath).then(function(pdf) {
       
