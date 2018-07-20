@@ -49,6 +49,8 @@ export default {
 
 <style scoped>
 .archive-item {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: 0;
   border-radius: 15px;
   margin: 2em 0em !important;
   box-shadow: 0px 5px 20px 5px #e5e5e5;
