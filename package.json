@@ -10,8 +10,8 @@
   },
   "scripts": {
     "sync": "bash scripts/sync.sh",
-    "dev": "vuepress dev website",
-    "build": "vuepress build website"
+    "dev": "yarn sync; vuepress dev website",
+    "build": "yarn sync; vuepress build website"
   },
   "devDependencies": {
     "@iktakahiro/markdown-it-katex": "^3.0.3",

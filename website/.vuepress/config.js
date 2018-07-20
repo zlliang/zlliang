@@ -16,8 +16,9 @@ module.exports = {
     locales: {
       '/': {
         brand: 'Z. LIANG',
-        blog: 'Blog',
         news: 'News',
+        notes: 'Notes',
+        blog: 'Blog',
         projects: 'Projects',
         selectText: 'Languages',
         bio: 'Computational Mathematics, Fudan University.',
@@ -28,8 +29,9 @@ module.exports = {
       },
       '/zh/': {
         brand: '梁子龙',
-        blog: '博客',
         news: '动态',
+        notes: '笔记',
+        blog: '博客',
         projects: '项目',
         selectText: '选择语言',
         bio: '复旦大学数学科学学院 本科生',
