@@ -64,7 +64,7 @@ export default {
 </script>
 
 <style scoped>
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 751px) {
   .navbar-brand {
     background-color: white;
   }
@@ -77,7 +77,7 @@ export default {
     opacity: 0;
     width: 100%;
     transform: translate(0, -300px);
-    position: fixed;
+    position: absolute;
     top: 0px;
     
   }
@@ -85,7 +85,7 @@ export default {
     display: block;
     opacity: 1;
     transform: translate(0, 52px);
-    position: fixed;
+    position: absolute;
     top: 0px;
     width: 100%;
   }
