@@ -6,6 +6,7 @@
       </div>
     </div>
     <div class="container">
+      <Content/>
       <div v-for="post in postList">
         <ArchiveItem v-bind:post="post"/>
       </div>

@@ -10,8 +10,9 @@
         </div>
         <div class="navbar-menu" v-bind:class="{ 'is-active': isActive }" id="main-navbar-menu">
           <div class="navbar-end">
-            <router-link :to="$localePath + 'blog/'" class="navbar-item"><div v-on:click="forcedUntoggle">{{ $themeLocaleConfig.blog }}</div></router-link>
             <router-link :to="$localePath + 'news/'" class="navbar-item"><div v-on:click="forcedUntoggle">{{ $themeLocaleConfig.news }}</div></router-link>
+            <router-link :to="$localePath + 'notes/'" class="navbar-item"><div v-on:click="forcedUntoggle">{{ $themeLocaleConfig.notes }}</div></router-link>
+            <router-link :to="$localePath + 'blog/'" class="navbar-item"><div v-on:click="forcedUntoggle">{{ $themeLocaleConfig.blog }}</div></router-link>
             <router-link :to="$localePath + 'projects/'" class="navbar-item"><div v-on:click="forcedUntoggle">{{ $themeLocaleConfig.projects }}</div></router-link>
             <div class="navbar-item has-dropdown is-hoverable">
               <div class="navbar-link">{{ $themeLocaleConfig.selectText }}</div>

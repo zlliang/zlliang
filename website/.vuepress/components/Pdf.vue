@@ -93,7 +93,8 @@ function renderPDF(filePath, pdf, j) {
   color: black;
 }
 .pdf-container {
-  box-shadow: 0px 10px 50px 10px #eee;
+  box-shadow: 0px 5px 20px 5px #e5e5e5;
+  /* box-shadow: 0px 10px 50px 10px #eee; */
   border-radius: 15px;
   max-width: 100%;
   margin-top: 1em;
