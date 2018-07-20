@@ -58,6 +58,7 @@ export default {
   border-radius: 15px;
   margin: 2em 0em !important;
   box-shadow: 0px 1px 10px 1px #e5e5e5;
+  transform: scale(0.995);
 }
 .archive-title {
   font-size: 1.4em;
