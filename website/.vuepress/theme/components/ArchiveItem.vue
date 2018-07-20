@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 .archive-item {
-  -webkit-touch-callout: none;
+  /* -webkit-touch-callout: none; */
   
   border-radius: 15px;
   margin: 2em 0em !important;
@@ -64,11 +64,11 @@ export default {
 }
 .archive-item:active {
   transform: scale(0.95);
-  transition: transform 100ms;
+  transition: transform 150ms;
 }
 .archive-item:visited {
   transform: scale(0.995);
-  transition: transform 100ms;
+  transition: transform 150ms;
 }
 .archive-title {
   font-size: 1.4em;
