@@ -79,9 +79,11 @@ export default {
     transform: translate(0, -320px);
     position: absolute;
     top: 0px;
-    
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
   .navbar-menu.is-active {
+    box-shadow: 0px 5px 20px 10px #eee;
     display: block;
     opacity: 1;
     transform: translate(0, 52px);
