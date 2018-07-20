@@ -18,7 +18,7 @@ html {
 }
 ```
 
-That's it, solved! But additionaly, the following JavaScript fragment allows :active styles to work in your CSS on a page in mobile Safari:
+That's it, solved! But additionaly, the following JavaScript fragment allows `:active` styles to work in your CSS on a page in mobile Safari:
 ```js
 document.addEventListener("touchstart", function(){}, true);
 ```
