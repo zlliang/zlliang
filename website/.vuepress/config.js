@@ -43,6 +43,8 @@ module.exports = {
     }
   },
 
+  ga: 'UA-122649115-1',
+
   markdown: {
     externalLinkSymbol: {
       icon: false
