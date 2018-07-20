@@ -62,3 +62,33 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@media screen and (max-width: 750px) {
+  .navbar-brand {
+    background-color: white;
+  }
+  .navbar-menu {
+    max-height: 300px;
+    overflow-y: scroll;
+    transition: all 200ms cubic-bezier(0.4, 0, 0, 1);
+    display: block;
+    z-index: -5000;
+    opacity: 0;
+    width: 100%;
+    transform: translate(0, -300px);
+    position: fixed;
+    top: 0px;
+    
+  }
+  .navbar-menu.is-active {
+    display: block;
+    opacity: 1;
+    transform: translate(0, 52px);
+    position: fixed;
+    top: 0px;
+    width: 100%;
+  }
+}
+
+</style>
