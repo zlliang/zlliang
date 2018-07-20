@@ -34,6 +34,8 @@ export default {
     })
   },
   mounted: function() {
+    // Allow iOS devices tapping
+    document.addEventListener("touchstart", function(){}, true);
     // Progress bar
     nprogress.configure({ showSpinner: false })
     this.$router.beforeEach((to, from, next) => {
