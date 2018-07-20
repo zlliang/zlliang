@@ -69,14 +69,14 @@ export default {
     background-color: white;
   }
   .navbar-menu {
-    max-height: 300px;
+    max-height: 320px;
     overflow-y: scroll;
     transition: all 200ms cubic-bezier(0.4, 0, 0, 1);
     display: block;
     z-index: -5000;
     opacity: 0;
     width: 100%;
-    transform: translate(0, -300px);
+    transform: translate(0, -320px);
     position: absolute;
     top: 0px;
     
