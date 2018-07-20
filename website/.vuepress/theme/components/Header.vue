@@ -83,7 +83,7 @@ export default {
     border-bottom-right-radius: 20px;
   }
   .navbar-menu.is-active {
-    box-shadow: 0px 5px 20px 10px #eee;
+    box-shadow: 0 2px 43px -4px rgba(0, 0, 0, .19);
     display: block;
     opacity: 1;
     transform: translate(0, 52px);
