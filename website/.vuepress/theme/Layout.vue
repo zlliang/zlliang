@@ -54,12 +54,17 @@ export default {
 <style src="./assets/css/bulma.min.css"></style>
 
 <style>
+
 /* Main CSS of zlliang.com */
 
 /* Set up font smoothing, covering Bulma */
 html {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
 }
 
 /* @media screen and (min-width: 1025px) {
