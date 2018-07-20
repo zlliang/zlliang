@@ -53,13 +53,14 @@ export default {
   
   border-radius: 15px;
   margin: 2em 0em !important;
-  box-shadow: 0px 5px 20px 5px #e5e5e5;
+  /* box-shadow: 0px 5px 20px 5px #e5e5e5; */
+  box-shadow: 0 2px 43px -4px rgba(0, 0, 0, .19);
   transition: all 150ms;
 }
 .archive-item:hover {
   border-radius: 15px;
   margin: 2em 0em !important;
-  box-shadow: 0px 1px 10px 1px #e5e5e5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1), 0 1px 2px rgba(0, 0, 0, .05);
   transform: scale(0.995);
 }
 .archive-item:active {

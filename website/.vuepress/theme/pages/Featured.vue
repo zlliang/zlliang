@@ -41,11 +41,11 @@ export default {
 
 <style scoped>
 .is-child {
-  box-shadow: 0px 5px 20px 5px #bbb;
+  box-shadow: 0 2px 43px -4px rgba(0, 0, 0, .19);
   transition: all 200ms;
 }
 .is-child:hover {
-  box-shadow: 0px 1px 10px 1px #bbb;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1), 0 1px 2px rgba(0, 0, 0, .05);
   transition: all 200ms;
 }
 </style>
