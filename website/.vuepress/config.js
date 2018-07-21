@@ -51,6 +51,7 @@ module.exports = {
     },
     anchor: { permalink: false },
     config: function(md) {
+      // md.set({ highlight: function(){ return ''; } })
       md.use(require('@iktakahiro/markdown-it-katex'), {
         macros: {
           '\\numset': '\\mathbb',
