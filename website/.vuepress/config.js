@@ -46,9 +46,9 @@ module.exports = {
   ga: 'UA-122649115-1',
 
   markdown: {
-    externalLinkSymbol: {
-      icon: false
-    },
+    // externalLinkSymbol: {
+    //   icon: false
+    // },
     anchor: { permalink: false },
     config: function(md) {
       // md.set({ highlight: function(){ return ''; } })
