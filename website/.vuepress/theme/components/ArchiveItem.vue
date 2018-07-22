@@ -69,8 +69,8 @@ export default {
   transform: scale(0.995);
 }
 .archive-item:active {
-  transform: scale(0.95);
-  transition: transform 150ms;
+  transform: scale(0.97);
+  transition: transform 100ms;
 }
 .archive-item:visited {
   transform: scale(0.995);
