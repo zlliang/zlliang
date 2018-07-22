@@ -51,6 +51,8 @@ export default {
 }
 </script>
 
+
+
 <style src="./assets/css/bulma.min.css"></style>
 
 <style>

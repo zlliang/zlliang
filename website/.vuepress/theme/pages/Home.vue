@@ -54,8 +54,7 @@
         <div class="content">
           <h2 class="title">{{ $themeLocaleConfig.featured }}</h2>
         </div>
-        <!-- <Featured/> -->
-        <p>TODO</p>
+        <Featured/>
       </div>
     </section>
   </div>
