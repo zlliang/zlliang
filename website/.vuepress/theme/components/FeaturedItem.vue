@@ -1,10 +1,10 @@
 <template>
 <div class="featured-item-container" v-bind:id="id" v-bind:class="{ 'is-empty': empty }">
-  <router-link class="featured-item" :to="toLocaleLink" v-if="internalLink" :style="'background-color:'+bgc+';color:'+color">
+  <router-link class="featured-item" :to="toLocaleLink" v-if="internalLink" :style="'background:'+bgc+';color:'+color+';'">
     <p class="featured-item-title" v-html="empty ? 'E M P T Y' : title"></p>
     <p class="featured-item-content" v-html="content" v-if="!empty"></p>
   </router-link>
-  <a class="featured-item" :to="link" v-else :style="'background-color:'+bgc">
+  <a class="featured-item" :to="link" v-else :style="'background:'+bgc+';color:'+color+';'">
     <p class="featured-item-title" v-html="empty ? 'E M P T Y' : title"></p>
     <p class="featured-item-content" v-html="content" v-if="!empty"></p>
   </a>
