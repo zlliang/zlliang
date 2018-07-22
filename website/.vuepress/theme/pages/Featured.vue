@@ -43,6 +43,24 @@ var text = {
   content3: {
     'en-US': 'EssaySense is an NLP project on Automated Essay Scoring, based on neural network technologies. As the final project of an NLP course in Fudan University, I complete it along with a classmate.',
     'zh-CN': '这是我在复旦大学《文本数据管理与分析》课上与一位同学合作的自然语言处理实验项目，它利用神经网络训练了一个英语作文的自动评分系统。'
+  },
+  title4: {
+
+  },
+  content4: {
+
+  },
+  title5: {
+
+  },
+  content5: {
+
+  },
+  title6: {
+
+  },
+  content6: {
+    
   }
 }
 export default {
