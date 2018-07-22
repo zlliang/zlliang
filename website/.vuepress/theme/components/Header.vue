@@ -64,6 +64,11 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (min-width: 752px) {
+  .navbar-dropdown {
+    width: 100% !important;
+  }
+}
 @media screen and (max-width: 751px) {
   .navbar-brand {
     background-color: white;
