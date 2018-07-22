@@ -5,13 +5,13 @@
          :title="text['title2'][$lang]"
          :content="text['content2'][$lang]"
          link="/news/migrating.html"
-         bgc="#91b493"
+         bgc="linear-gradient(to right bottom, #227d51, #91b493)"
          color="white"/>
   <FItem id="featured-item-3" 
          :title="text['title3'][$lang]"
          :content="text['content3'][$lang]"
          link="/projects/essaysense.html"
-         bgc="#81c7d4"
+         bgc="linear-gradient(to right bottom, #0089a7, #81c7d4)"
          color="white"/>
   <FItem id="featured-item-4" empty="true"/>
   <FItem id="featured-item-5" empty="true"/>
