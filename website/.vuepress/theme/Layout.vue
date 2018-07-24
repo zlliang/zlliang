@@ -122,7 +122,36 @@ html {
   color: black;
 } */
 
-.content pre code, .content pre code * {
+div[class*='language-'] {
+  position: relative;
+  background-color: hsl(0, 0%, 96%);
+  border-radius: 10px;
+}
+
+pre, pre[class*='language-'] {
+  background: transparent;
+  position: relative;
+  line-height: 1.4em;
+  padding: 0.8rem 1rem;
+  margin: 0.85rem 0;
+}
+
+div[class*='language-'] .highlight-lines {
+  font-size: 0.9em;
+  padding-top: 0.95em;
+  user-select: none;
+  position: absolute;
+  width: 100%;
+  line-height: 1.4em;
+}
+.highlight-lines .highlighted {
+  background: linear-gradient(to right, rgba(36, 82, 85, 0.10), rgba(36, 82, 85 ,0));
+}
+.highlight-lines br {
+  background: red;
+}
+
+pre code, pre code * {
   vertical-align: baseline !important;
   height: 0 !important;
   min-width: 0 !important;
@@ -133,19 +162,18 @@ html {
 }
 
 .content p code {
+  font-size: 0.85em;
   background-color: hsl(0, 0%, 96%);
   border-radius: 3px;
-  /* color: black; */
 }
 
-.content pre {
+/* .content pre {
   background-color: hsl(0, 0%, 96%);
-  /* color: black; */
   border-radius: 5px;
   line-height: 1.4em;
   padding: 0.5em 1em;
   margin-bottom: 1.2em;
-}
+} */
 
 .token.tag {
   align-items: baseline;
