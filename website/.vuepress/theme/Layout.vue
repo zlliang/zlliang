@@ -121,37 +121,36 @@ html {
 /* .content {
   color: black;
 } */
-
 div[class*='language-'] {
   position: relative;
   background-color: hsl(0, 0%, 96%);
   border-radius: 10px;
 }
 
-pre, pre[class*='language-'] {
+pre[class*='language-'] {
   background: transparent;
   position: relative;
-  line-height: 1.4em;
+  line-height: 1.4;
   padding: 0.8rem 1rem;
-  margin: 0.85rem 0;
+  margin: 0.85rem 0rem;
+  /* font-size: 14px !important; */
 }
 
 div[class*='language-'] .highlight-lines {
+  /* font-size: 14px !important; */
   font-size: 0.9em;
   padding-top: 0.95em;
   user-select: none;
   position: absolute;
+  /* top: 0; */
   width: 100%;
-  line-height: 1.4em;
+  line-height: 1.4;
 }
 .highlight-lines .highlighted {
   background: linear-gradient(to right, rgba(36, 82, 85, 0.10), rgba(36, 82, 85 ,0));
 }
-.highlight-lines br {
-  background: red;
-}
 
-pre code, pre code * {
+pre[class*='language-'] code, pre[class*='language-'] code * {
   vertical-align: baseline !important;
   height: 0 !important;
   min-width: 0 !important;
