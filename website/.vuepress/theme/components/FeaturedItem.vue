@@ -4,7 +4,7 @@
     <p class="featured-item-title" v-html="empty ? 'E M P T Y' : title"></p>
     <p class="featured-item-content" v-html="content" v-if="!empty"></p>
   </router-link>
-  <a class="featured-item" :to="link" v-else :style="'background:'+bgc+';color:'+color+';'">
+  <a class="featured-item" :href="link" v-else :style="'background:'+bgc+';color:'+color+';'">
     <p class="featured-item-title" v-html="empty ? 'E M P T Y' : title"></p>
     <p class="featured-item-content" v-html="content" v-if="!empty"></p>
   </a>
