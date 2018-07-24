@@ -1,6 +1,11 @@
 <template>
 <div class="featured-container">
-  <FItem id="featured-item-1" empty="true"/>
+  <FItem id="featured-item-1"
+         :title="text['title1'][$lang]"
+         :content="text['content1'][$lang]"
+         link="https://github.com/zlliang/jacobi-svd/"
+         bgc="linear-gradient(to right bottom, #9f353a, #d75455)"
+         color="white"/>
   <FItem id="featured-item-2"
          :title="text['title2'][$lang]"
          :content="text['content2'][$lang]"
@@ -23,10 +28,12 @@
 import FItem from '../components/FeaturedItem.vue'
 var text = {
   title1: {
-
+    'en-US': 'Jacobi SVD algorithm',
+    'zh-CN': 'Jacobi SVD 算法'
   },
   content1: {
-
+    'en-US': 'I implemented Jacobi SVD algorithm in 2018 Seminar of Numerical Linear Algebra at School of Mathematical Sciences, Fudan University. It\'s a fast and accurate algorithm to compute eigenvalues and SVD.',
+    'zh-CN': 'Jacobi SVD 算法是一种快速而准确的求矩阵特征值或奇异值分解的算法。我在 2018 年春季《数值代数》讨论班上用 MATLAB 实现了这一算法。'
   },
   title2: {
     'en-US': 'zlliang.com',
@@ -79,7 +86,7 @@ export default {
   .featured-container {
     display: grid;
     grid-template-columns: repeat(5, calc(20% - 24px));
-    grid-template-rows: repeat(5, 130px); 
+    grid-template-rows: repeat(5); 
     grid-gap: 30px;
   }
   #featured-item-1 {
