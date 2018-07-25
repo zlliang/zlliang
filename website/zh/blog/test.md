@@ -11,3 +11,15 @@ $$
 
 
 <!-- more -->
+
+```cpp
+#include <iostream>
+
+int main() {
+    std::cout << "Hello world!" << std::endl;
+}
+```
+
+```fortran
+program main
+```
