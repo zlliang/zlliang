@@ -13,6 +13,7 @@ module.exports = {
   },
 
   themeConfig: {
+    lastUpdates: true,
     locales: {
       '/': {
         brand: 'Z. LIANG',
