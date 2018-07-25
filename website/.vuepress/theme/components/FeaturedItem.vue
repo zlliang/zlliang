@@ -32,21 +32,26 @@ export default {
   height: 100%;
   border-radius: 15px;
   padding: 1em 1.2em;
+  box-shadow: 0 6px 20px -4px rgba(0, 0, 0, .20);
   /* border: 1px solid grey; */
-  box-shadow: 0 2px 30px -4px rgba(0, 0, 0, .35);
-  transition: all 150ms;
+  /* box-shadow: 0 2px 10px -4px rgba(0, 0, 0, .35); */
+  transition: all 400ms;
 }
 .featured-item:hover {
-  border-radius: 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .10), 0 1px 2px rgba(0, 0, 0, .3);
-  transform: scale(0.995);
+  box-shadow: 0 10px 20px -4px rgba(0, 0, 0, .30);
+  /* border-radius: 15px; */
+  /* box-shadow: 0 2px 30px -4px rgba(0, 0, 0, .19); */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, .10), 0 1px 2px rgba(0, 0, 0, .3); */
+  /* transform: scale(0.995); */
+  /* transition: all 250ms; */
 }
-.featured-item:active {
-  transform: scale(0.97);
-  transition: transform 100ms;
-}
+/* .featured-item:active { */
+  /* transition: all 250ms; */
+  /* transform: scale(0.97); */
+  /* transition: transform 100ms; */
+/* } */
 .featured-item-container.is-empty {
-  display: grid;
+  display: none;
 }
 .featured-item-container a {
   display: block;
