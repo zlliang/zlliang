@@ -11,7 +11,8 @@
   "scripts": {
     "sync": "bash scripts/sync.sh",
     "dev": "yarn sync; vuepress dev website",
-    "build": "yarn sync; vuepress build website"
+    "build": "yarn sync; vuepress build website",
+    "deploy": "yarn sync; git add .; git ci -m 'Update site'; git push"
   },
   "devDependencies": {
     "@iktakahiro/markdown-it-katex": "^3.0.3",
