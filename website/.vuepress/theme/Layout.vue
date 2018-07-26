@@ -34,6 +34,8 @@ export default {
     })
   },
   mounted: function() {
+    // TypeKit
+    try{Typekit.load({ async: true });}catch(e){}
     // Allow iOS devices tapping
     document.addEventListener("touchstart", function(){}, true);
     // Progress bar

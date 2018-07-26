@@ -83,6 +83,7 @@ module.exports = {
     ['link', { rel: 'stylesheet', href: 'https://cdn.bootcss.com/KaTeX/0.9.0/katex.min.css'}],
     ['link', { rel: 'stylesheet', href: 'https://fonts.proxy.ustclug.org/css?family=Roboto:400,400i,500,500i,700,700i|Roboto+Mono'}],
     ['link', { rel: 'stylesheet', href: 'https://cdn.bootcss.com/prism/9000.0.1/themes/prism.min.css'}],
-    ['script', { src: 'https://cdn.bootcss.com/pdf.js/2.0.489/pdf.min.js' }]
+    ['script', { src: 'https://cdn.bootcss.com/pdf.js/2.0.489/pdf.min.js' }],
+    ['script', { src: 'https://use.typekit.net/hsx0jnm.js'} ]
   ],
 }
