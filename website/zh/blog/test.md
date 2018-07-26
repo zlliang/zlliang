@@ -23,3 +23,9 @@ int main() {
 ```fortran
 program main
 ```
+
+
+<p class="ten-mincho">
+ありがとうございました。
+ご苦労様でした。
+</p>
