@@ -44,6 +44,7 @@ export default {
 .toc {
   position: fixed;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   background-color: rgba(255,255,255,0.95);
   color: #2d2d2d;
   font-size: 0.9rem;
