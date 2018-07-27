@@ -7,9 +7,9 @@
             <div class="column has-text-right-tablet">
               <img src="/images/profile.jpg" alt="profile picture" id="profile-picture">
             </div>
-            <div class="column has-text-left-tablet has-text-vcenter">
-              <h1 class="title">{{ $lang === 'en-US' ? 'Zilong Liang' : '梁子龙'}}</h1>
-              <h2 class="subtitle">{{ $lang === 'zh-CN' ? 'Zilong Liang' : '梁子龙'}}</h2>
+            <div class="column has-text-left-tablet" id="the-hero">
+              <h1 class="title">梁子龙</h1>
+              <h2 class="subtitle">LIANG Zilong</h2>
               <p>{{ $themeLocaleConfig.bio }}</p>
             </div>
           </div>
@@ -61,8 +61,8 @@
 </template>
 
 <script>
-import NewsList from '../components/NewsList.vue'
-import Featured from './Featured.vue'
+import NewsList from '../components/NewsList.vue';
+import Featured from './Featured.vue';
 export default {
   components: { NewsList, Featured }
 }
@@ -73,6 +73,7 @@ export default {
 #profile-picture {
   width: 160px;
   border-radius: 50%;
+  box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
 }
 
 #construction-banner {
@@ -84,5 +85,11 @@ export default {
   max-height: 150px;
   margin: 2px 5px;
   border-radius: 7px;
+}
+
+#the-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 </style>

@@ -1,35 +1,35 @@
 <template>
   <div class="archive-item-container">
-    <a v-bind:href="post.frontmatter.link" v-if="post.frontmatter.link">
+    <a :href="post.frontmatter.link" v-if="post.frontmatter.link">
       <div class="archive-item box">
         <div class="columns">
           <div class="column is-4 has-text-right-tablet">
-            <a v-bind:href="post.frontmatter.link"><h2 v-html="post.title" class="archive-title"></h2></a>
+            <a :href="post.frontmatter.link"><h2 v-html="post.title" class="archive-title"></h2></a>
             <p v-html="post.date.format($themeLocaleConfig.dateFormat)" class="archive-date" v-if="post.frontmatter.date"></p>
-            <ProjectTags v-bind:tags="post.frontmatter.tags" class="is-hidden-tablet project-tags-left"/>
+            <ProjectTags :tags="post.frontmatter.tags" class="is-hidden-tablet project-tags-left"/>
             <p v-if="abstract && post.frontmatter.pic" v-html="abstract" class="archive-abstract-left"></p>
           </div>
-          <div class="column" v-bind:class="{ 'is-hidden-mobile': !abstract && !post.frontmatter.pic }">
-            <ProjectTags v-bind:tags="post.frontmatter.tags" class="is-hidden-mobile project-tags-right"/>
-            <img v-if="post.frontmatter.pic" class="archive-pic" v-bind:src="post.frontmatter.pic" v-bind:alt="post.title">
+          <div class="column" :class="{ 'is-hidden-mobile': !abstract && !post.frontmatter.pic }">
+            <ProjectTags :tags="post.frontmatter.tags" class="is-hidden-mobile project-tags-right"/>
+            <img v-if="post.frontmatter.pic" class="archive-pic" :src="post.frontmatter.pic" :alt="post.title">
             <p v-if="abstract && !post.frontmatter.pic" v-html="abstract" class="archive-abstract"></p>
             <p v-else-if="!post.frontmatter.pic" class="archive-abstract">No abstract.</p>
           </div>
         </div>
       </div>
     </a>
-    <router-link v-bind:to="post.path" v-else>
+    <router-link :to="post.path" v-else>
       <div class="archive-item box">
         <div class="columns">
           <div class="column is-4 has-text-right-tablet">
-            <router-link v-bind:to="post.path"><h2 v-html="post.title" class="archive-title"></h2></router-link>
+            <router-link :to="post.path"><h2 v-html="post.title" class="archive-title"></h2></router-link>
             <p v-html="post.date.format($themeLocaleConfig.dateFormat)" class="archive-date" v-if="post.frontmatter.date"></p>
-            <ProjectTags v-bind:tags="post.frontmatter.tags" class="is-hidden-tablet project-tags-left"/>
+            <ProjectTags :tags="post.frontmatter.tags" class="is-hidden-tablet project-tags-left"/>
             <p v-if="abstract && post.frontmatter.pic" v-html="abstract" class="archive-abstract-left"></p>
           </div>
-          <div class="column" v-bind:class="{ 'is-hidden-mobile': !abstract && !post.frontmatter.pic }">
-            <ProjectTags v-bind:tags="post.frontmatter.tags" class="is-hidden-mobile project-tags-right"/>
-            <img v-if="post.frontmatter.pic" class="archive-pic" v-bind:src="post.frontmatter.pic" v-bind:alt="post.title">
+          <div class="column" :class="{ 'is-hidden-mobile': !abstract && !post.frontmatter.pic }">
+            <ProjectTags :tags="post.frontmatter.tags" class="is-hidden-mobile project-tags-right"/>
+            <img v-if="post.frontmatter.pic" class="archive-pic" :src="post.frontmatter.pic" :alt="post.title">
             <p v-if="abstract && !post.frontmatter.pic" v-html="abstract" class="archive-abstract"></p>
             <p v-else-if="!post.frontmatter.pic" class="archive-abstract">No abstract.</p>
           </div>
@@ -40,13 +40,13 @@
 </template>
 
 <script>
-import ProjectTags from './ProjectTags.vue'
+import ProjectTags from './ProjectTags.vue';
 export default {
   components: { ProjectTags },
   props: ['post'],
   computed: {
     abstract: function() {
-      return this.post.frontmatter.abstract ? this.post.frontmatter.abstract : this.post.excerpt
+      return this.post.frontmatter.abstract ? this.post.frontmatter.abstract : this.post.excerpt;
     }
   }
 }

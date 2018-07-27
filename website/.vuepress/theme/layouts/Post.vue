@@ -4,7 +4,7 @@
         <div class="content">
           <h1 class="title">{{ $page.title }}</h1>
           <p class="subtitle" v-if="$page.frontmatter.date && !$page.frontmatter.subtitle">{{ $page.date.format($themeLocaleConfig.dateFormat) }}</p>
-          <ProjectTags v-bind:tags="$page.frontmatter.tags" v-if="$page.frontmatter.tags"/>
+          <ProjectTags :tags="$page.frontmatter.tags" v-if="$page.frontmatter.tags"/>
           <div class="line-spread" v-if="$page.frontmatter.spread"><Content/></div>
           <div v-else><Content/></div>
         </div>
@@ -13,14 +13,14 @@
 </template>
 
 <script>
-import ProjectTags from '../components/ProjectTags.vue'
+import ProjectTags from '../components/ProjectTags.vue';
 export default {
   components: { ProjectTags }
 }
 </script>
 
-
 <style scoped>
+/* Spread line height for pure-Chinese articles */
 .line-spread {
   line-height: 2em;
 }

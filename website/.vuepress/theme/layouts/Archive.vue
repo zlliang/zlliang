@@ -8,21 +8,21 @@
     <div class="container">
       <Content/>
       <div v-for="post in postList">
-        <ArchiveItem v-bind:post="post"/>
+        <ArchiveItem :post="post"/>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import ArchiveItem from '../components/ArchiveItem.vue'
+import ArchiveItem from '../components/ArchiveItem.vue';
 export default {
   components: { ArchiveItem },
   computed: {
     postList: function() {
-      var posts = this.$site.pages.filter(item => { return item.path.indexOf(this.$page.path) == 0 && !item.frontmatter.archive })
-      var posts = posts.sort((a, b) => { return(a.date.isBefore(b.date)) })
-      return posts
+      var posts = this.$site.pages.filter(item => { return !item.frontmatter.archive && item.path.indexOf(this.$page.path) == 0;  });
+      var posts = posts.sort((a, b) => { return(a.date.isBefore(b.date)); });
+      return posts;
     }
   }
 }

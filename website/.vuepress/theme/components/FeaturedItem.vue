@@ -1,6 +1,6 @@
 <template>
-<div class="featured-item-container" v-bind:id="id" v-bind:class="{ 'is-empty': empty }">
-  <router-link class="featured-item" :to="toLocaleLink" v-if="internalLink" :style="'background:'+bgc+';color:'+color+';'">
+<div class="featured-item-container" :id="id" :class="{ 'is-empty': empty }">
+  <router-link class="featured-item" :to="link" v-if="internalLink" :style="'background:'+bgc+';color:'+color+';'">
     <p class="featured-item-title" v-html="empty ? 'E M P T Y' : title"></p>
     <p class="featured-item-content" v-html="content" v-if="!empty"></p>
   </router-link>
@@ -16,11 +16,8 @@ export default {
   props: ['title', 'content', 'pic', 'empty', 'id', 'link', 'bgc', 'color'],
   computed: {
     internalLink: function() {
-      if (!this.link) { return false }
-      else { return this.link[0] == '/' ? true : false }
-    },
-    toLocaleLink: function() {
-      return this.$lang == 'en-US' ? this.link : '/zh' + this.link
+      if (!this.link) { return false; }
+      else { return this.link[0] == '/' ? true : false; }
     }
   }
 }
