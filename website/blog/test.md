@@ -1,6 +1,7 @@
 ---
 title: 测试文档
 date: 2018-07-22
+sidebar: true
 ---
 
 $$
@@ -26,4 +27,4 @@ var _self = (typeof window !== 'undefined')
 	);
 ```
 
-## hello## hello
+## hellohello
