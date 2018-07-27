@@ -1,0 +1,102 @@
+/**
+ * Code style for zlliang.com
+ * (Prism theme adapted from https://github.com/LukeAskew/prism-github)
+ */
+
+/* Layouts */
+code,
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #333;
+	text-align: left;
+	white-space: pre;
+  word-spacing: normal;
+	tab-size: 2;
+	hyphens: none;
+	direction: ltr;
+}
+code,
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	background-color: #f7f7f7;
+}
+pre[class*='language-'] {
+	margin: 1em 0;
+	padding: 1.2em;
+	border-radius: 3px;
+}
+:not(pre) > code {
+  font-size: 0.9rem;
+	border-radius: 5px;
+	padding: 0.1rem 0.3em;
+}
+pre[class*='language-'] {
+  line-height: 1.4;
+  padding: 0.8rem 1rem;
+	margin: 1rem 0rem;
+	border-radius: 10px;
+  /* font-size: 14px !important; */
+}
+pre[class*='language-'] code,
+pre[class*='language-'] code * {
+	font-size: 0.9rem;
+  vertical-align: baseline !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+ 
+
+/* Colors */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #969896;
+}
+.token.punctuation,
+.token.string,
+.token.atrule,
+.token.attr-value {
+	color: #183691;
+}
+.token.property,
+.token.tag {
+	color: #63a35c;
+}
+.token.boolean,
+.token.number {
+	color: #0086b3;
+}
+.token.selector,
+.token.attr-name,
+.token.attr-value
+.punctuation:first-child,
+.token.keyword,
+.token.regex,
+.token.important {
+	color: #795da3;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css
+.token.string {
+	color: #a71d5d;
+}
+.token.entity {
+	cursor: help;
+}
+.namespace {
+	opacity: 0.7;
+}
+
+/* Override framework side-effects */
+.token.tag {
+  align-items: baseline;
+}
+.token.attr-name {
+  padding-left: 0.5em !important;
+}

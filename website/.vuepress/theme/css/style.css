@@ -1,0 +1,39 @@
+/* Font smoothing */
+html {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+/* Disable grey highlight on iOS Safari */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+
+.column.has-text-vcenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* KaTeX rendering */
+.katex {
+  font-size: 1.1em;
+}
+
+.katex-display {
+  padding-top: 0.08em;
+  padding-bottom: 0.08em;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide icons of out-bound link */
+svg.icon.outbound {
+  display: none;
+}
+
+/* Styles */
+.content img {
+  border-radius: 15px;
+}

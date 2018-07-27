@@ -6,26 +6,24 @@ date: 2018-07-22
 $$
 \int_a^b f(x) \diff x
 $$
-
-
-
-
 <!-- more -->
+hey `code` 这是
 
-```cpp
-#include <iostream>
 
-int main() {
-    std::cout << "Hello world!" << std::endl;
-}
+
+
+```js
+/* **********************************************
+     Begin prism-core.js
+********************************************** */
+
+var _self = (typeof window !== 'undefined')
+	? window   // if in browser
+	: (
+		(typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope)
+		? self // if in worker
+		: {}   // if in node js
+	);
 ```
 
-```fortran
-program main
-```
-
-
-<p class="ten-mincho">
-ありがとうございました。
-ご苦労様でした。
-</p>
+## hello## hello

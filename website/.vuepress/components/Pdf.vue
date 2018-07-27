@@ -1,11 +1,11 @@
 <template>
   <div class="pdf-container">
     <div class="pdf-tools has-text-right-tablet">
-      <a v-bind:href="file" class="pdf-download-button pdf-tools-span is-hidden-tablet">{{ $themeLocaleConfig.download }}</a>
+      <a :href="file" class="pdf-download-button pdf-tools-span is-hidden-tablet">{{ $themeLocaleConfig.download }}</a>
       <span class="pdf-tools-span has-text-light" v-html="fileName"></span>
-      <a v-bind:href="file" class="pdf-download-button pdf-tools-span is-hidden-mobile">{{ $themeLocaleConfig.download }}</a>
+      <a :href="file" class="pdf-download-button pdf-tools-span is-hidden-mobile">{{ $themeLocaleConfig.download }}</a>
     </div>
-    <div class="pdf-pages" v-bind:id="file + 'pages'"></div>
+    <div class="pdf-pages" :id="file + 'pages'"></div>
     <p class="is-hidden-tablet pdf-instruction" v-html="localeInstruction"></p>
   </div>
 </template>
@@ -86,11 +86,11 @@ function renderPDF(filePath, pdf, j) {
   background-color: #eee;
   padding: 0.25em 0.45em;
   font-size: 0.9em;
-  color: black;
+  color: #2d2d2d;
 }
 .pdf-download-button:hover {
   background-color: #d3d3d3;
-  color: black;
+  color: #2d2d2d;
 }
 .pdf-container {
   box-shadow: 0 6px 20px -4px rgba(0, 0, 0, .20);
