@@ -9,13 +9,16 @@
           <div v-else><Content/></div>
         </div>
       </div>
+      <Toc v-if="$page.frontmatter.sidebar"/>
     </section>
 </template>
 
 <script>
 import ProjectTags from '../components/ProjectTags.vue';
+import Toc from '../components/Toc.vue';
+
 export default {
-  components: { ProjectTags }
+  components: { ProjectTags, Toc }
 }
 </script>
 
