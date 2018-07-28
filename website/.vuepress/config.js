@@ -8,6 +8,7 @@ module.exports = {
   },
 
   themeConfig: {
+    
     lastUpdated: true,
     locales: {
       '/': {
@@ -21,7 +22,9 @@ module.exports = {
         featured: '精选',
         bio: '复旦大学数学科学学院 本科生',
         download: '下载',
-        dateFormat: 'YYYY年M月D日'
+        dateFormat: 'YYYY年M月D日',
+        
+        sidebar: 'auto',
       }
     }
   },
@@ -29,7 +32,7 @@ module.exports = {
   ga: 'UA-122649115-1',
 
   markdown: {
-    anchor: { permalink: false },
+    // anchor: { permalink: false },
     config: md => {
       md.use(require('@iktakahiro/markdown-it-katex'), {
         macros: {
