@@ -101,7 +101,7 @@ function resolveOpenGroupIndex (route, items) {
   .toc {
     top: 0;
     bottom: 0;
-    min-width: 50%;
+    min-width: 65%;
     max-width: 100%;
     right: 0;
     box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.2);
