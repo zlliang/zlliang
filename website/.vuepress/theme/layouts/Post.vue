@@ -9,7 +9,7 @@
         <div v-else><Content/></div>
       </div>
     </div>
-    <div class="toc-container">
+    <div class="toc-container" v-if="$page.frontmatter.toc">
       <transition name="toc"><TocList v-show="isActive"/></transition>
       <button class="toc-btn" @click="isActive = !isActive" :class="{ 'is-opened': isActive }">
         <transition name="mulu"><span v-if="!isActive" class="txt">目录</span></transition>
