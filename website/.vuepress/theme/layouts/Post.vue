@@ -40,14 +40,14 @@ export default {
 /* TOC */
 .toc-btn {
   position: fixed;
-  background-color: #66bab7;
+  background-color: #3a8fb7;
   border: 0;
   border-radius: 50%;
   box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
   z-index: 200;
   color: white;
   cursor: pointer;
-  transition: all 300ms;
+  transition: all 300ms ease-in-out;
 }
 .toc-btn.is-opened {
   background-color: #77428d;
@@ -94,7 +94,7 @@ export default {
 }
 .toc-enter, .toc-leave-to {
   opacity: 0;
-  transform: translate(0, 100%);
+  transform: translate(100%, 0);
 }
 
 .mulu-enter-active, .mulu-leave-active {
@@ -102,11 +102,11 @@ export default {
 }
 .mulu-enter {
   opacity: 0;
-  transform: translate(0, 30px);
+  transform: translate(30px, 0);
 }
 .mulu-leave-to {
   opacity: 0;
-  transform: translate(0, -30px);
+  transform: translate(-30px, 0);
 }
 
 .tuichu-enter-active, .tuichu-leave-active {
@@ -114,10 +114,10 @@ export default {
 }
 .tuichu-enter {
   opacity: 0;
-  transform: translate(0, 30px);
+  transform: translate(30px, 0);
 }
 .tuichu-leave-to {
   opacity: 0;
-  transform: translate(0, -30px);
+  transform: translate(-30px, 0);
 }
 </style>
