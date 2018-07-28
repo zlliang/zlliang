@@ -33,6 +33,7 @@ export default {
     });
   },
   mounted: function() {
+    window.addEventListener('scroll', this.onScroll)
     // Allow iOS devices tapping
     document.addEventListener("touchstart", function(){}, true);
     // Progress bar

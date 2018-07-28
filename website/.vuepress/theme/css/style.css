@@ -33,6 +33,11 @@ svg.icon.outbound {
   display: none;
 }
 
+/* Hide header anchor */
+.header-anchor {
+  display: none;
+}
+
 /* Styles */
 .content img {
   border-radius: 15px;
