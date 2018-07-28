@@ -53,13 +53,15 @@ export default {
 .sidebar-link {
   color: #444;
   font-size: 1.1em;
-  line-height: 1.6em;;
+  line-height: 1.6em;
+  transition: all 100ms;
 }
 .sidebar-link:hover {
-  color: #3a8fb7;
+  color: #795da3;
 }
 .sidebar-link.active {
-  border-bottom: 2px solid #77428d;
+  color: #795da3;
+  border-bottom: 2px solid #795da3;
 }
 
 .sidebar-sub-header > .sidebar-link {
@@ -69,12 +71,12 @@ export default {
 }
 .sidebar-sub-header > .sidebar-link.active {
   border-bottom: 0;
-  color: #77428d;
+  color: #795da3;
   font-size: 1em;
   margin-top: 0;
   margin-left: 1em;
 }
 .sidebar-sub-header > .sidebar-link:hover {
-  color: #3a8fb7;
+  color: #795da3;
 }
 </style>
