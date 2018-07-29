@@ -47,13 +47,10 @@ module.exports = {
 
   head: [
     // Site metadata
-    ['link', { rel: 'icon', href: '/logo.png' }],
+    ['link', { rel: 'icon', href: '/favicons/logo.png' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['meta', { name: 'theme-color', content: '#ffffff' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: 'TODO' }],
-    ['link', { rel: 'mask-icon', href: 'TODO', color: '#ffffff' }],
+    ['meta', { name: 'theme-color', content: '#0089a7' }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicons/logo-touch.png' }],
 
     // Libraries
     ['link', { rel: 'stylesheet', href: 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'}],

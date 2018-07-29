@@ -19,11 +19,7 @@ export default {
       return this.file.substring(index + 1)
     },
     localeInstruction: function() {
-      if (this.$lang == 'zh-CN') {
-        return "PDF 预览在手机上不可用。您可以直接<a href=" + this.file + ">下载</a>该文件."
-      } else {
-        return "PDF preview is not avaliable on mobile phones. Please <a href=" + this.file + ">download</a> the file directly."
-      }
+      return "PDF 预览在手机上不可用。您可以直接<a href=" + this.file + ">下载</a>该文件."
     }
   },
   mounted: function() {
