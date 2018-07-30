@@ -57,9 +57,3 @@ svg.icon.outbound {
 .content img {
   border-radius: 15px;
 }
-
-@media screen and (min-width: 752px) {
-  .content {
-    font-size: 1.1rem;
-  }
-}
