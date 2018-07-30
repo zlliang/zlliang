@@ -6,7 +6,7 @@
         <router-link :to="$localePath + news.path.substring(1)" v-else>{{ news.title }}</router-link>
         <span class="news-date">{{ news.date.format('M月D日') }}</span>
       </li>
-      <li><router-link to="/news/'" class="has-text-dark" id="index-news-more-button">更多...</router-link></li>
+      <li><router-link to="/news/" class="has-text-dark" id="index-news-more-button">更多...</router-link></li>
     </ul>
   </div>
 </template>
