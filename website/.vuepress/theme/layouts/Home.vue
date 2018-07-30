@@ -93,11 +93,7 @@ export default {
   justify-content: center;
 }
 
-.aboutme {
+.content {
   font-size: 1rem;
-}
-
-.content h2 {
-  border: 0;
 }
 </style>
