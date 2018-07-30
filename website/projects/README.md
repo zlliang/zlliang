@@ -1,4 +1,4 @@
 ---
-title: Projects
+title: 项目
 archive: true
 ---

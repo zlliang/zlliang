@@ -33,7 +33,7 @@
           <div class="column is-8">
             <div class="content">
               <h2 class="title">{{ $themeLocaleConfig.aboutme }}</h2>
-              <Content/>
+              <Content class="aboutme"/>
               <a href="/images/about1.jpg"><img class="about-photo" src="/images/about1.jpg" alt="about1"></a>
               <a href="/images/about2.jpg"><img class="about-photo" src="/images/about2.jpg" alt="about2"></a>
               <a href="/images/about3.jpg"><img class="about-photo" src="/images/about3.jpg" alt="about3"></a>
@@ -91,5 +91,13 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.aboutme {
+  font-size: 1rem;
+}
+
+.content h2 {
+  border: 0;
 }
 </style>
