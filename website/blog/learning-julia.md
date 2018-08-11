@@ -4,10 +4,11 @@ date: 2018-07-29
 toc: true
 ---
 
-Julia 语言
-
+## 数值字面量系数
+在 Julia 中，你可以这样做：
 ```julia
-println("Hello, world!")
-```
+julia> x = 5
 
-## 基本语法
+julia> 2x + 3x
+25
+```
