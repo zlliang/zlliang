@@ -2,4 +2,4 @@
 home: true
 ---
 
-I am currently an undergraduate in School of Mathematical Sciences, Fudan University.
+我目前在[复旦大学](http://www.fudan.edu.cn/)数学科学学院读本科四年级，信息与计算科学专业。
