@@ -9,11 +9,14 @@ abstract: 这里收集了我认为超级有用的网站们。
 * [Nick Higham](https://nickhigham.wordpress.com/)
 * [Undocumented MATLAB](https://undocumentedmatlab.com/)
 * [MPI Tutorial](http://mpitutorial.com/)
+* [Fortran Tutorial](https://www.fortrantutorial.com)
+* [Netlib](http://www.netlib.org)
+* [SIAM](https://www.siam.org)
 
 ## 前端技术
-### Flexbox 和 Grid 网页布局
 * [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+* [The Complete Guide to Lazy Loading Images](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/)
 
 ## 数码设计
 * [Design - Apple Developer](https://developer.apple.com/design/)
