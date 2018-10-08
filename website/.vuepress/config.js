@@ -55,7 +55,7 @@ module.exports = {
     // Libraries
     ['link', { rel: 'stylesheet', href: 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'}],
     ['link', { rel: 'stylesheet', href: 'https://cdn.bootcss.com/KaTeX/0.9.0/katex.min.css'}],
-    ['link', { rel: 'stylesheet', href: 'https://fonts.proxy.ustclug.org/css?family=Roboto:400,400i,500,500i,700,700i|Roboto+Mono'}],
+    ['link', { rel: 'stylesheet', href: 'https://fonts.proxy.ustclug.org/css?family=IBM+Plex+Sans:400,400i,500,500i,600,600i|IBM+Plex+Mono'}],
     ['script', { src: 'https://cdn.bootcss.com/pdf.js/2.0.489/pdf.min.js' }],
   ],
 }

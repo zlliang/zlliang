@@ -9,7 +9,6 @@
     "url": "git+https://github.com/zlliang/zlliang.com.git"
   },
   "scripts": {
-    "sync": "bash scripts/sync.sh",
     "dev": "vuepress dev website",
     "build": "vuepress build website",
     "deploy": "git add .; git ci -m 'Update site'; git push"
