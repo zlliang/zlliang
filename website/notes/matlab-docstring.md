@@ -1,5 +1,5 @@
 ---
-title: 写好 MATLAB 的文档字符串
+title: 写好 MATLAB 的函数文档
 ---
 
 > The second line of a function file is called the H1 (help 1) line. It should be a comment line of a special form: a line beginning with a `%` character, followed without any space by the function name in capital letters, followed by one or more spaces and then a brief description. The description should begin with a capital letter, end with a period, and omit the words “the” and “a”.

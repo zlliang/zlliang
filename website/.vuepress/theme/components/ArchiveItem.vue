@@ -13,7 +13,7 @@
             <ProjectTags :tags="post.frontmatter.tags" class="is-hidden-mobile project-tags-right"/>
             <img v-if="post.frontmatter.pic" class="archive-pic" :src="post.frontmatter.pic" :alt="post.title">
             <p v-if="abstract && !post.frontmatter.pic" v-html="abstract" class="archive-abstract"></p>
-            <p v-else-if="!post.frontmatter.pic" class="archive-abstract">No abstract.</p>
+            <p v-else-if="!post.frontmatter.pic" class="archive-abstract">暂无摘要。点击查看详细内容。</p>
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@
             <ProjectTags :tags="post.frontmatter.tags" class="is-hidden-mobile project-tags-right"/>
             <img v-if="post.frontmatter.pic" class="archive-pic" :src="post.frontmatter.pic" :alt="post.title">
             <p v-if="abstract && !post.frontmatter.pic" v-html="abstract" class="archive-abstract"></p>
-            <p v-else-if="!post.frontmatter.pic" class="archive-abstract">No abstract.</p>
+            <p v-else-if="!post.frontmatter.pic" class="archive-abstract">暂无摘要。点击查看详细内容。</p>
           </div>
         </div>
       </div>
