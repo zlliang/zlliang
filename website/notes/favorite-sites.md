@@ -33,6 +33,11 @@ abstract: 这里收集了我认为超级有用的网站们。
 - 以 [React](https://reactjs.org/) 为核心的生态系统
     - 应用框架 [Next](https://nextjs.org/)
     - 静态网站生成器 [Gatsby](https://gatsbyjs.org/)
+### 项目工具
+- 版本控制工具 [Git](https://git-scm.com/)
+- Git commit 规范化工具 [Commitizen](https://github.com/commitizen/cz-cli/)
+- 语义化版本系统 [SemVer](https://semver.org/)
+- 语义化 release 规范化工具 [semantic-release](https://github.com/semantic-release/semantic-release/)
 
 ## 数码设计
 - [Design -Apple Developer](https://developer.apple.com/design/)
