@@ -25,7 +25,7 @@ abstract: 这里收集了我认为超级有用的网站们。
 前端近几年发展很旺盛，围绕 Node.js 的各种工具层出不穷，甚至有些混乱。
 - 构建工具 [Webpack](https://webpack.js.org/) 和 [Rollup](https://www.rollupjs.com/)
 - 语言增强工具
-    - JavaScript 解决方案：[TypeScript](https://typescriptlang.org) 与 [Babel](https://babeljs.io)
+    - JavaScript 解决方案：[TypeScript](http://www.typescriptlang.org) 与 [Babel](https://babeljs.io)
     - CSS 预处理：[Sass](http://sass-lang.com/) 与 [PostCSS](https://postcss.org/)
 - 以 [Vue](https://vuejs.org/) 为核心的生态系统
     - 应用框架 [Nuxt](https://nuxtjs.org/)
