@@ -23,7 +23,7 @@ abstract: 这里收集了我认为超级有用的网站们。
 - [IBM DeveloperWorks](https://developer.ibm.com/)
 ### 前端工具
 前端近几年发展很旺盛，围绕 Node.js 的各种工具层出不穷，甚至有些混乱。
-- 构建工具 [Webpack](https://webpack.js.org/) 和 [Rollup](https://www.rollupjs.com/)
+- 构建工具 [Webpack](https://webpack.js.org/) 和 [Rollup](https://rollupjs.org/)
 - 语言增强工具
     - JavaScript 解决方案：[TypeScript](http://www.typescriptlang.org) 与 [Babel](https://babeljs.io)
     - CSS 预处理：[Sass](http://sass-lang.com/) 与 [PostCSS](https://postcss.org/)
@@ -40,7 +40,7 @@ abstract: 这里收集了我认为超级有用的网站们。
 - 语义化 release 规范化工具 [semantic-release](https://github.com/semantic-release/semantic-release/)
 
 ## 数码设计
-- [Design -Apple Developer](https://developer.apple.com/design/)
+- [Design - Apple Developer](https://developer.apple.com/design/)
 - [Material Design](https://material.io)
 - [IBM Design Language](https://www.ibm.com/design/language/), and [Carbon Design System](http://www.carbondesignsystem.com)
 - [IBM Plex Font](https://www.ibm.com/plex/)
