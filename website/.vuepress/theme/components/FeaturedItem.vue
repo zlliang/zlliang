@@ -27,7 +27,7 @@ export default {
 .featured-item {
   width: 100%;
   height: 100%;
-  border-radius: 15px;
+  border-radius: 25px;
   padding: 1em 1.2em;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.10);;
   border: 2px solid rgba(0, 0, 0, 0.1);

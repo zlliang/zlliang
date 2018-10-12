@@ -55,7 +55,7 @@ export default {
 <style scoped>
 .archive-item {
   /* -webkit-touch-callout: none; */
-  border-radius: 15px;
+  border-radius: 25px;
   margin: 2em 0em !important;
   /* box-shadow: 0 6px 20px -4px rgba(0, 0, 0, .20); */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.10);;
@@ -63,7 +63,6 @@ export default {
   transition: all 300ms;
 }
 .archive-item:hover {
-  border-radius: 15px;
   margin: 2em 0em !important;
   /* box-shadow: 0 10px 20px -4px rgba(0, 0, 0, .30); */
   /* box-shadow: 0 6px 12px 0 rgba(0,0,0,0.10); */
@@ -86,6 +85,8 @@ export default {
 }
 .archive-pic {
   border-radius: 15px;
+  width: 100%;
+  margin-bottom: -3px;
 }
 
 .project-tags-left {
