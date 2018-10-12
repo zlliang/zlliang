@@ -12,7 +12,7 @@ pic: /images/latex-tricks-cover.svg
 ## EP01 调整矩阵乘法的间距
 
 <div align="center">
-    <img src="./images/latex-tricks-01.png" width="300px">
+    <img src="./images/latex-tricks-01.svg" width="250px">
 </div>
 
 ```latex
