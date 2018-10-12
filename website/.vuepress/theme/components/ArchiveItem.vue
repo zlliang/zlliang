@@ -55,36 +55,26 @@ export default {
 <style scoped>
 .archive-item {
   /* -webkit-touch-callout: none; */
-  
   border-radius: 15px;
   margin: 2em 0em !important;
-  /* box-shadow: 0px 0px 0px 0px; */
-  /* box-shadow: 0px 5px 20px 5px #e5e5e5; */
-  box-shadow: 0 6px 20px -4px rgba(0, 0, 0, .20);
-  transition: all 400ms;
+  /* box-shadow: 0 6px 20px -4px rgba(0, 0, 0, .20); */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.10);;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 300ms;
 }
 .archive-item:hover {
   border-radius: 15px;
   margin: 2em 0em !important;
-  box-shadow: 0 10px 20px -4px rgba(0, 0, 0, .30);
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, .1), 0 1px 2px rgba(0, 0, 0, .05); */
-  /* transform: scale(0.995); */
+  /* box-shadow: 0 10px 20px -4px rgba(0, 0, 0, .30); */
+  /* box-shadow: 0 6px 12px 0 rgba(0,0,0,0.10); */
+  border: 2px solid rgba(58,143,183, 0.6);
 }
-/* .archive-item:active {
-  transform: scale(0.97);
-  transition: transform 100ms;
-}
-.archive-item:visited {
-  transform: scale(0.995);
-  transition: transform 150ms;
-} */
 .archive-title {
   font-size: 1.4em;
   font-weight: 500;
   line-height: 1.2em;
 }
 .archive-date {
-  /* font-style: italic; */
   color: grey;
 }
 .archive-abstract-left {
