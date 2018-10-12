@@ -11,14 +11,20 @@ pic: /images/latex-tricks-cover.svg
 
 ## EP01 调整矩阵乘法的间距
 
-```latex
-Q^{\trans}AQ \longrightarrow Q^{\trans}\mskip-5mu AQ
-```
-$$ Q^{\trans}AQ \longrightarrow Q^{\trans}\mskip-5mu AQ $$
+<div align="center">
+    <img src="./images/latex-tricks-01.png" width="300px">
+</div>
 
 ```latex
-VD \longrightarrow V\mskip-3mu D
+Q^{\trans}AQ  % From
+Q^{\trans}\mskip-5mu AQ  % To
 ```
-$$ VD \longrightarrow V\mskip-3mu D$$
+效果： $Q^{\trans}AQ \longrightarrow Q^{\trans}\mskip-5mu AQ$
+
+```latex
+VD  % From
+V\mskip-3mu D  % To
+```
+效果：$VD \longrightarrow V\mskip-3mu D$
 
 【参考】Higham, N. J. (1998). **_Handbook of Writing for the Mathematical Sciences (Vol. 63)_**. SIAM.
