@@ -3,27 +3,19 @@
   <FItem id="featured-item-1"
          :title="text.title1"
          :content="text.content1"
-         :link="/demmel/"
-         bgc="linear-gradient(to right bottom, #9f353a, #d75455)"
-         color="white"/>
+         link="/demmel/"/>
   <FItem id="featured-item-2"
          :title="text.title2"
          :content="text.content2"
-         link="/news/migrating.html"
-         bgc="linear-gradient(to right bottom, #227d51, #91b493)"
-         color="white"/>
+         link="/news/migrating.html"/>
   <FItem id="featured-item-3" 
          :title="text.title3"
          :content="text.content3"
-         link="/projects/essaysense.html"
-         bgc="linear-gradient(to right bottom, #0089a7, #81c7d4)"
-         color="white"/>
+         link="/projects/essaysense.html"/>
   <FItem id="featured-item-4"
          :title="text.title4"
          :content="text.content4"
-         link="https://github.com/zlliang/jacobi-svd/"
-         bgc="linear-gradient(to right bottom, #ddd23b, #fbe251)"
-         color="#43341b"/>
+         link="https://github.com/zlliang/jacobi-svd/"/>
   <FItem id="featured-item-5" empty="true"/>
   <FItem id="featured-item-6" empty="true"/>
 </div>
