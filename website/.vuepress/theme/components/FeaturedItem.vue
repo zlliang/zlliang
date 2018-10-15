@@ -34,7 +34,6 @@ export default {
   transition: all 300ms;
 }
 .featured-item:hover {
-  /* box-shadow: 0 10px 20px -4px rgba(0, 0, 0, .30); */
   border: 2px solid rgba(58,143,183, 0.6);
 }
 /* .featured-item:active { */

@@ -1,3 +1,5 @@
+const my = require('../special')
+
 module.exports = {
   locales: {
     '/': {
@@ -8,10 +10,13 @@ module.exports = {
   },
 
   themeConfig: {
-    
     lastUpdated: true,
     locales: {
       '/': {
+        title: '梁子龙',
+        subtitle: 'LIANG Zilong',
+        my,
+        
         brand: '梁子龙',
         news: '动态',
         notes: '笔记',

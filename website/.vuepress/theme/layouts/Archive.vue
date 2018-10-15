@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import ArchiveItem from '../components/ArchiveItem.vue';
+import ArchiveItem from './partial/ArchiveItem.vue'
 export default {
   components: { ArchiveItem },
   computed: {

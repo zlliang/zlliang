@@ -40,13 +40,17 @@
 </template>
 
 <script>
-import ProjectTags from './ProjectTags.vue';
+import ProjectTags from '../../components/ProjectTags.vue'
 export default {
   components: { ProjectTags },
   props: ['post'],
   computed: {
     abstract: function() {
-      return this.post.frontmatter.abstract ? this.post.frontmatter.abstract : this.post.excerpt;
+      return (
+        this.post.frontmatter.abstract ?
+        this.post.frontmatter.abstract :
+        this.post.excerpt
+      )
     }
   }
 }
@@ -54,19 +58,15 @@ export default {
 
 <style scoped>
 .archive-item {
-  /* -webkit-touch-callout: none; */
-  border-radius: 25px;
   margin: 2em 0em !important;
-  /* box-shadow: 0 6px 20px -4px rgba(0, 0, 0, .20); */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.10);;
   border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   transition: all 300ms;
 }
 .archive-item:hover {
   margin: 2em 0em !important;
-  /* box-shadow: 0 10px 20px -4px rgba(0, 0, 0, .30); */
-  /* box-shadow: 0 6px 12px 0 rgba(0,0,0,0.10); */
-  border: 2px solid rgba(58,143,183, 0.6);
+  border: 2px solid rgba(58, 143, 183, 0.6);
 }
 .archive-title {
   font-size: 1.4em;
@@ -88,7 +88,6 @@ export default {
   width: 100%;
   margin-bottom: -3px;
 }
-
 .project-tags-left {
   margin-top: 0.5em;
 }
