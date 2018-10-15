@@ -57,3 +57,8 @@ svg.icon.outbound {
 .content img {
   border-radius: 15px;
 }
+
+/* Override framework side-effects */
+.content ul ul {
+  margin-top: 0.25em;
+}
