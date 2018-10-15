@@ -11,14 +11,14 @@
 <script>
 import Vue from 'vue'
 import dayjs from 'dayjs'
-import nprogress from 'nprogress';
+import nprogress from 'nprogress'
 
-import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
+import Header from './layouts/partial/Header.vue'
+import Footer from './layouts/partial/Footer.vue'
 
-import Home from './layouts/Home.vue';
-import Archive from './layouts/Archive.vue';
-import Post from './layouts/Post.vue';
+import Home from './layouts/Home.vue'
+import Archive from './layouts/Archive.vue'
+import Post from './layouts/Post.vue'
 
 export default {
   components: { Header, Footer, Home, Archive, Post },

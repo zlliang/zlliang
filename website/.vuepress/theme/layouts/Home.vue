@@ -8,8 +8,8 @@
               <img src="/images/profile.jpg" alt="profile picture" id="profile-picture">
             </div>
             <div class="column has-text-left-tablet" id="the-hero">
-              <h1 class="title">梁子龙</h1>
-              <h2 class="subtitle">LIANG Zilong</h2>
+              <h1 class="title">{{ $themeLocaleConfig.title }}</h1>
+              <h2 class="subtitle">{{ $themeLocaleConfig.subtitle }}</h2>
               <p>{{ $themeLocaleConfig.bio }}</p>
             </div>
           </div>
