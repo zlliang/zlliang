@@ -25,28 +25,26 @@ export default {
   created: function() {
     // Convert date string to dayjs object
     this.$site.pages.forEach(page => {
-      if (page.frontmatter.date) {
-        page.date = dayjs(page.frontmatter.date);
-      } else {
-        page.date = dayjs(page.lastUpdated);
-      }
-    });
+      page.date = page.frontmatter.date ?
+        dayjs(page.frontmatter.date) :
+        dayjs(page.lastUpdated)
+    })
   },
   mounted: function() {
     window.addEventListener('scroll', this.onScroll)
     // Allow iOS devices tapping
-    document.addEventListener("touchstart", function(){}, true);
+    document.addEventListener("touchstart", function(){}, true)
     // Progress bar
-    nprogress.configure({ showSpinner: false });
+    nprogress.configure({ showSpinner: false })
     this.$router.beforeEach((to, from, next) => {
       if (to.path !== from.path && !Vue.component(to.name)) {
-        nprogress.start();
+        nprogress.start()
       }
-      next();
-    });
+      next()
+    })
     this.$router.afterEach(function() {
-      nprogress.done();
-    });
+      nprogress.done()
+    })
   }
 }
 </script>

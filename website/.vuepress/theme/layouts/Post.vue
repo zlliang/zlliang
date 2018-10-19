@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import ProjectTags from '../components/ProjectTags.vue';
-import TocList from '../components/toc/TocList.vue';
+import ProjectTags from '../components/ProjectTags.vue'
+import TocList from '../components/toc/TocList.vue'
 
 export default {
   components: { ProjectTags, TocList },
