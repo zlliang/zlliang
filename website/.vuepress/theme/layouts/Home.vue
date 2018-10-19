@@ -61,8 +61,8 @@
 </template>
 
 <script>
-import NewsList from '../components/NewsList.vue';
-import Featured from './Featured.vue';
+import NewsList from '../components/NewsList.vue'
+import Featured from './Featured.vue'
 export default {
   components: { NewsList, Featured }
 }

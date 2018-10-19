@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import FItem from '../components/FeaturedItem.vue';
+import FItem from '../components/FeaturedItem.vue'
 var text = {
   title1: 'Applied Numerical Linear Algebra (English)',
   content1: '这是我在复旦大学《数值代数及其应用》课上的一些材料。',

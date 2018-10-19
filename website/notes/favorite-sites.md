@@ -15,6 +15,7 @@ abstract: 这里收集了我认为超级有用的网站们。
 - [Springer Link](https://link.springer.com)
 - [SIAM](https://www.siam.org), and [SIAM E-Publications](https://epubs.siam.org)
 - [ACM Transactions on Mathematical Software (TOMS)](https://toms.acm.org)
+- [LAPACK Working Notes](http://www.netlib.org/lapack/lawns/)
 ### C / C++ / Fortran 计算数学软件包
 - 基础子程序库 [BLAS](http://www.netlib.org/blas), [LAPACK](http://www.netlib.org/lapack), [OpenBLAS](http://www.openblas.net) and [Intel Math Kernel Library](https://software.intel.com/mkl)
 - 并行计算基础子程序库 [ScaLAPACK](https://www.netlib.org/scalapack/)
@@ -22,10 +23,13 @@ abstract: 这里收集了我认为超级有用的网站们。
 - GNU 多精度计算库 [GMP](https://gmplib.org)，多精度复数计算库 [MPC](http://www.multiprecision.org/mpc/)，多精度浮点数计算库 [MPFR](https://www.mpfr.org), 科学计算库 [GSL](https://www.gnu.org/software/gsl/)
 - C++ 高级 API：线性代数库 [Armadillo](http://arma.sourceforge.net), 模版库 [Eigen](https://eigen.tuxfamily.org/)
 ## 技术
+- [Algorithm, 4th Edition](https://algs4.cs.princeton.edu/)
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [The Complete Guide to Lazy Loading Images](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/)
 - [IBM DeveloperWorks](https://developer.ibm.com/)
+- [Red Hat Developer](https://developers.redhat.com)
+- [PEP 8](http://pep8.org/)
 ### 前端工具
 前端近几年发展很旺盛，围绕 Node.js 的各种工具层出不穷，甚至有些混乱。
 - 构建工具 [Webpack](https://webpack.js.org/) 和 [Rollup](https://rollupjs.org/)
@@ -43,11 +47,11 @@ abstract: 这里收集了我认为超级有用的网站们。
 - Git commit 规范化工具 [Commitizen](https://github.com/commitizen/cz-cli/)
 - 语义化版本系统 [SemVer](https://semver.org/)
 - 语义化 release 规范化工具 [semantic-release](https://github.com/semantic-release/semantic-release/)
+- 开源许可证选择 [Choose a License](https://choosealicense.com/)
 ### C / Fortran 工具
 - 编译器 [clang](https://clang.llvm.org)，[GCC](https://gcc.gnu.org) (gcc, g++, gfortran), and [Intel C++/Fortran Compiler](https://software.intel.com/intel-compilers/)
 - 构建工具 [GNU Make](https://www.gnu.org/software/make/)
 - 项目管理工具 [CMake](https://cmake.org/)
-
 
 ## 数码设计
 - [Design - Apple Developer](https://developer.apple.com/design/)
@@ -55,3 +59,15 @@ abstract: 这里收集了我认为超级有用的网站们。
 - [IBM Design Language](https://www.ibm.com/design/language/), and [Carbon Design System](http://www.carbondesignsystem.com)
 - [IBM Plex Font](https://www.ibm.com/plex/)
 - [Ant Design](https://ant.design/)
+
+## 杂篇博文
+- [别再用「六个点」当省略号了，这些标点都有更规范的输入方式](https://sspai.com/post/45516)
+- [理解数字世界中的纸张：PDF](https://sspai.com/post/47092)
+- [AppleScript 入门：探索 macOS 自动化](https://sspai.com/post/46912)
+- [Vue 技术内幕](http://hcysun.me/vue-design/)
+- [Design Tip: Never Use Black](https://ianstormtaylor.com/design-tip-never-use-black/)
+- [高速上手 C++ 11/14/17](https://changkun.de/modern-cpp/)
+- [系统设计入门](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md)
+- [Your Body Text Is Too Small](https://blog.marvelapp.com/body-text-small/)
+- [Reordering nodes with the Reverse Cuthill-McKee algorithm](http://www.juliafem.org/examples/2017-08-29-reordering-nodes-with-the-RCM-algorithm)
+- [Tricks and Tips in Numerical Computing](https://nickhigham.wordpress.com/2018/08/21/tricks-and-tips-in-numerical-computing/)
