@@ -1,14 +1,19 @@
 ---
-title: 实用网站合集
+title: 我的 Awesome 列表
 toc: true
-abstract: 这里收集了我认为超级有用的网站们。
 ---
 
+在 GitHub 上，整理各类资源列表的 “Awesome” 系列都非常流行。面对技术世界中纷乱繁杂的知识和兴趣点，这些列表为开发者、研究者梳理思路，提供路线参考。这篇文章中我整理了自己的 Awesome 列表，为我做备忘。
+
+<!-- more -->
+
+## MATLAB 相关
+- [MATLAB 中文文档](https://cn.mathworks.com/help/) 「MathWorks 产品官方文档」
+- [Undocumented MATLAB](https://undocumentedmatlab.com/)「文档中没有提及的 MATLAB 应用编程技巧以及与 Java 混编的隐藏技术」
+
 ## 数学
-- [MATLAB 中文文档](https://cn.mathworks.com/help/)
-- [Julia](https://julialang.org/)
-- [Nick Higham](https://nickhigham.wordpress.com/)
-- [Undocumented MATLAB](https://undocumentedmatlab.com/)
+- [Julia](https://julialang.org/)「新一代科学计算语言」
+- [Nick Higham](https://nickhigham.wordpress.com/) 
 - [MPI Tutorial](http://mpitutorial.com/)
 - [Fortran Tutorial](https://www.fortrantutorial.com)
 - [Netlib](http://www.netlib.org)
@@ -16,6 +21,7 @@ abstract: 这里收集了我认为超级有用的网站们。
 - [SIAM](https://www.siam.org), and [SIAM E-Publications](https://epubs.siam.org)
 - [ACM Transactions on Mathematical Software (TOMS)](https://toms.acm.org)
 - [LAPACK Working Notes](http://www.netlib.org/lapack/lawns/)
+- [NLEVP: A Collection of Nonlinear Eigenvalue Problems](http://www.maths.manchester.ac.uk/our-research/research-groups/numerical-analysis-and-scientific-computing/numerical-analysis/software/nlevp/)
 ### C / C++ / Fortran 计算数学软件包
 - 基础子程序库 [BLAS](http://www.netlib.org/blas), [LAPACK](http://www.netlib.org/lapack), [OpenBLAS](http://www.openblas.net) and [Intel Math Kernel Library](https://software.intel.com/mkl)
 - 并行计算基础子程序库 [ScaLAPACK](https://www.netlib.org/scalapack/)
