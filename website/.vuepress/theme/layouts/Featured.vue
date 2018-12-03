@@ -27,7 +27,6 @@ var text = {
   title1: 'Applied Numerical Linear Algebra (English)',
   content1: '这是我在复旦大学《数值代数及其应用》课上的一些材料。',
   
-
   title2: 'zlliang.com',
   content2: '这个夏天，我努力更新这个个人网站，把它迁移到了 VuePress 和 Netlify。',
   
