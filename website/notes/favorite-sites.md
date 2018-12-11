@@ -1,9 +1,9 @@
 ---
-title: 我的 Awesome 列表
+title: 我的收藏夹
 toc: true
 ---
 
-在 GitHub 上，整理各类资源列表的 “Awesome” 系列都非常流行。面对技术世界中纷乱繁杂的知识和兴趣点，这些列表为开发者、研究者梳理思路，提供路线参考。这篇文章中我整理了自己的 Awesome 列表，为我做备忘。
+在 GitHub 上，整理各类资源列表的 “Awesome” 系列都非常流行。面对技术世界中纷乱繁杂的知识和兴趣点，这些列表为开发者、研究者梳理思路，提供路线参考。这篇文章中我整理了自己的收藏夹，为我做备忘。
 
 <!-- more -->
 
@@ -21,6 +21,7 @@ toc: true
 - [SIAM](https://www.siam.org), and [SIAM E-Publications](https://epubs.siam.org)
 - [ACM Transactions on Mathematical Software (TOMS)](https://toms.acm.org)
 - [ACM Computing Surveys (CSUR)](https://csur.acm.org)
+- [IEEE Communications Surveys & Tutorials](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=9739)
 - [LAPACK Working Notes](http://www.netlib.org/lapack/lawns/)
 - [NLEVP: A Collection of Nonlinear Eigenvalue Problems](http://www.maths.manchester.ac.uk/our-research/research-groups/numerical-analysis-and-scientific-computing/numerical-analysis/software/nlevp/)
 ### C / C++ / Fortran 计算数学软件包
@@ -30,7 +31,7 @@ toc: true
 - GNU 多精度计算库 [GMP](https://gmplib.org)，多精度复数计算库 [MPC](http://www.multiprecision.org/mpc/)，多精度浮点数计算库 [MPFR](https://www.mpfr.org), 科学计算库 [GSL](https://www.gnu.org/software/gsl/)
 - C++ 高级 API：线性代数库 [Armadillo](http://arma.sourceforge.net), 模版库 [Eigen](https://eigen.tuxfamily.org/)
 ## 技术
-- [Algorithm, 4th Edition](https://algs4.cs.princeton.edu/)
+- [Algorithms, 4th Edition](https://algs4.cs.princeton.edu/)
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [The Complete Guide to Lazy Loading Images](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/)
@@ -68,6 +69,7 @@ toc: true
 - [Ant Design](https://ant.design/)
 
 ## 杂篇博文
+- [高效使用 Mac，从 Alfred 开始（博文合集）](https://sspai.com/topic/237)
 - [别再用「六个点」当省略号了，这些标点都有更规范的输入方式](https://sspai.com/post/45516)
 - [理解数字世界中的纸张：PDF](https://sspai.com/post/47092)
 - [AppleScript 入门：探索 macOS 自动化](https://sspai.com/post/46912)
