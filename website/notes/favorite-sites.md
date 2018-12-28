@@ -26,10 +26,13 @@ toc: true
 - [NLEVP: A Collection of Nonlinear Eigenvalue Problems](http://www.maths.manchester.ac.uk/our-research/research-groups/numerical-analysis-and-scientific-computing/numerical-analysis/software/nlevp/)
 ### C / C++ / Fortran 计算数学软件包
 - 基础子程序库 [BLAS](http://www.netlib.org/blas), [LAPACK](http://www.netlib.org/lapack), [OpenBLAS](http://www.openblas.net) and [Intel Math Kernel Library](https://software.intel.com/mkl)
+- 大规模特征值问题子程序库 [ARPACK](https://www.caam.rice.edu/software/ARPACK/)
 - 并行计算基础子程序库 [ScaLAPACK](https://www.netlib.org/scalapack/)
 - MPI 模型库 [MPICH](https://www.mpich.org)
 - GNU 多精度计算库 [GMP](https://gmplib.org)，多精度复数计算库 [MPC](http://www.multiprecision.org/mpc/)，多精度浮点数计算库 [MPFR](https://www.mpfr.org), 科学计算库 [GSL](https://www.gnu.org/software/gsl/)
 - C++ 高级 API：线性代数库 [Armadillo](http://arma.sourceforge.net), 模版库 [Eigen](https://eigen.tuxfamily.org/)
+### Rust
+- [The Rust Programming Language 中文版](https://kaisery.github.io/trpl-zh-cn/)
 ## 技术
 - [Algorithms, 4th Edition](https://algs4.cs.princeton.edu/)
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
