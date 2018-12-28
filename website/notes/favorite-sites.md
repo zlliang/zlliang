@@ -33,6 +33,8 @@ toc: true
 - C++ 高级 API：线性代数库 [Armadillo](http://arma.sourceforge.net), 模版库 [Eigen](https://eigen.tuxfamily.org/)
 ### Rust
 - [The Rust Programming Language 中文版](https://kaisery.github.io/trpl-zh-cn/)
+- [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/)
+- [Rust API Guidelines](https://rust-lang-nursery.github.io/api-guidelines/macros.html)
 ## 技术
 - [Algorithms, 4th Edition](https://algs4.cs.princeton.edu/)
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
