@@ -32,7 +32,7 @@ toc: true
 - GNU 多精度计算库 [GMP](https://gmplib.org)，多精度复数计算库 [MPC](http://www.multiprecision.org/mpc/)，多精度浮点数计算库 [MPFR](https://www.mpfr.org), 科学计算库 [GSL](https://www.gnu.org/software/gsl/)
 - C++ 高级 API：线性代数库 [Armadillo](http://arma.sourceforge.net), 模版库 [Eigen](https://eigen.tuxfamily.org/)
 ### Rust
-- [The Rust Programming Language 中文版](https://kaisery.github.io/trpl-zh-cn/)
+- [The Rust Programming Language](https://doc.rust-lang.org/book/)（[中文版](https://kaisery.github.io/trpl-zh-cn/)）
 - [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/)
 - [Rust API Guidelines](https://rust-lang-nursery.github.io/api-guidelines/macros.html)
 ## 技术
