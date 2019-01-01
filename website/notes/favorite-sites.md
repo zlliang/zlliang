@@ -35,6 +35,9 @@ toc: true
 - [The Rust Programming Language](https://doc.rust-lang.org/book/)（[中文版](https://kaisery.github.io/trpl-zh-cn/)）
 - [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/)
 - [Rust API Guidelines](https://rust-lang-nursery.github.io/api-guidelines/macros.html)
+### 并行计算
+- [MPI Tutorial](http://mpitutorial.com)
+- [An Introduction to Parallel Programming](https://www.sciencedirect.com/book/9780123742605/an-introduction-to-parallel-programming)
 ## 技术
 - [Algorithms, 4th Edition](https://algs4.cs.princeton.edu/)
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
