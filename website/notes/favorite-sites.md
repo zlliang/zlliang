@@ -43,6 +43,7 @@ toc: true
 - [IBM DeveloperWorks](https://developer.ibm.com/)
 - [Red Hat Developer](https://developers.redhat.com)
 - [PEP 8](http://pep8.org/)
+- [HDF5](https://www.hdfgroup.org)
 ### 前端工具
 前端近几年发展很旺盛，围绕 Node.js 的各种工具层出不穷，甚至有些混乱。
 - 构建工具 [Webpack](https://webpack.js.org/) 和 [Rollup](https://rollupjs.org/)
