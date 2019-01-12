@@ -68,6 +68,7 @@ toc: true
 - 语义化版本系统 [SemVer](https://semver.org/)
 - 语义化 release 规范化工具 [semantic-release](https://github.com/semantic-release/semantic-release/)
 - 开源许可证选择 [Choose a License](https://choosealicense.com/)
+- 元数据 Badge 生成 [shields.io](https://shields.io/)
 ### C / Fortran 工具
 - 编译器 [clang](https://clang.llvm.org)，[GCC](https://gcc.gnu.org) (gcc, g++, gfortran), and [Intel C++/Fortran Compiler](https://software.intel.com/intel-compilers/)
 - 构建工具 [GNU Make](https://www.gnu.org/software/make/)
