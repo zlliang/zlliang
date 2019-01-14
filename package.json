@@ -1,6 +1,6 @@
 {
   "name": "zlliang-site",
-  "version": "0.1.0",
+  "private": true,
   "description": "Personal website of Zilong Liang.",
   "author": "Zilong Liang",
   "license": "MIT",
