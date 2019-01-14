@@ -4,5 +4,8 @@
   "builds": [
     { "src": "package.json", "use": "@now/static-build" }
   ],
-  "alias": ["zlliang.com", "www.zlliang.com"]
+  "alias": ["zlliang.com", "www.zlliang.com"],
+  "github": {
+    "silent": true
+  }
 }
