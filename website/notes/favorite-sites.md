@@ -62,7 +62,7 @@ toc: true
     - 应用框架 [Next](https://nextjs.org/)
     - 静态网站生成器 [Gatsby](https://gatsbyjs.org/)
 - Google 的 Web 技术学习站点 [web.dev](https://web.dev)
-- [zeit.co](https://zeit.co/)
+- 现代的网站托管平台 [Netlify](https://www.netlify.com) 和 [Now](https://now.sh)
 ### 项目工具
 - 版本控制工具 [Git](https://git-scm.com/)
 - Git commit 规范化工具 [Commitizen](https://github.com/commitizen/cz-cli/)
@@ -70,6 +70,8 @@ toc: true
 - 语义化 release 规范化工具 [semantic-release](https://github.com/semantic-release/semantic-release/)
 - 开源许可证选择 [Choose a License](https://choosealicense.com/)
 - 元数据 Badge 生成 [shields.io](https://shields.io/)
+- 持续集成 / 持续部署（CI/CD）平台 [Travis CI](https://travis-ci.com/)
+  - 同类平台：[Circle CI](https://circleci.com)、[Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/)、[AppVeyor (Windows)](https://www.appveyor.com)
 ### C / Fortran 工具
 - 编译器 [clang](https://clang.llvm.org)，[GCC](https://gcc.gnu.org) (gcc, g++, gfortran), and [Intel C++/Fortran Compiler](https://software.intel.com/intel-compilers/)
 - 构建工具 [GNU Make](https://www.gnu.org/software/make/)
