@@ -55,11 +55,18 @@ toc: true
 - 语言增强工具
     - JavaScript 解决方案：[TypeScript](http://www.typescriptlang.org) 与 [Babel](https://babeljs.io)
     - CSS 预处理：[Sass](http://sass-lang.com/) 与 [PostCSS](https://postcss.org/)
-- 以 [Vue](https://vuejs.org/) 为核心的生态系统
-    - 应用框架 [Nuxt](https://nuxtjs.org/)
+- 以 [Vue](https://vuejs.org/) 为核心的工具链
+    - 脚手架 [Vue CLI](https://cli.vuejs.org/)
+    - 路由库 [Vue Router](https://router.vuejs.org/)
+    - 状态管理 [Vuex](https://vuex.vuejs.org/)
+    - 应用框架 [Nuxt.js](https://nuxtjs.org/)
     - 静态网站生成器 [VuePress](https://vuepress.vuejs.org/)
-- 以 [React](https://reactjs.org/) 为核心的生态系统
-    - 应用框架 [Next](https://nextjs.org/)
+- 以 [React](https://reactjs.org/) 为核心的工具链
+    - 脚手架 [create-react-app](https://facebook.github.io/create-react-app/)
+    - 路由库 [React Router](https://reacttraining.com/react-router/)
+    - 状态管理 [Redux](https://redux.js.org/) 与 [MobX](https://mobx.js.org/)
+    - CSS 解决方案 [CSS Modules](https://github.com/css-modules/css-modules) 与 [styled-components](https://www.styled-components.com/)
+    - 应用框架 [Next.js](https://nextjs.org/)
     - 静态网站生成器 [Gatsby](https://gatsbyjs.org/)
 - Google 的 Web 技术学习站点 [web.dev](https://web.dev)
 - 现代的网站托管平台 [Netlify](https://www.netlify.com) 和 [Now](https://now.sh)
