@@ -7,7 +7,7 @@ date: 2019-02-04
 
 <!-- more -->
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="js,result" data-user="zlliang" data-slug-hash="JxJNZP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="React autocomplete demo">
+<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="js,result" data-user="zlliang" data-slug-hash="JxJNZP" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="React autocomplete demo">
   <span>See the Pen <a href="https://codepen.io/zlliang/pen/JxJNZP/">
   React autocomplete demo</a> by Zilong Liang (<a href="https://codepen.io/zlliang">@zlliang</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
