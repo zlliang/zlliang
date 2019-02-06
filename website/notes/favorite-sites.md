@@ -58,6 +58,7 @@ toc: true
 - 语言增强工具
     - JavaScript 解决方案：[TypeScript](http://www.typescriptlang.org) 与 [Babel](https://babeljs.io)
     - CSS 预处理：[Sass](http://sass-lang.com/) 与 [PostCSS](https://postcss.org/)
+- 自动代码检查 [ESLint](https://eslint.org) 与测试框架 [Jest](https://jestjs.io/)
 - 以 [Vue](https://vuejs.org/) 为核心的工具链
     - 脚手架 [Vue CLI](https://cli.vuejs.org/)
     - 路由库 [Vue Router](https://router.vuejs.org/)
