@@ -15,7 +15,10 @@
     "export": "next export"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.7",
+    "@emotion/styled": "^10.0.7",
     "@zeit/next-css": "^1.0.1",
+    "babel-plugin-emotion": "^10.0.7",
     "next": "^7.0.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
