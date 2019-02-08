@@ -30,6 +30,8 @@ let TitleLine = styled.div`
   animation: ${keyframes.transIn} 0.4s ease-in-out;
 `
 
+const TitleLineWithoutAnimation = (props) => <div {...props} />
+
 const Title = styled.span`
   margin-right: 30px;
   font-size: 20px;
@@ -68,6 +70,10 @@ let NavBar = styled.div`
   }
 `
 
+const NavBarWithoutAnimation = styled(NavBar)`
+  animation: none;
+`
+
 const NavItem = styled.a`
   text-decoration: none;
   transition: all 100ms ease-in-out;
@@ -82,6 +88,10 @@ let Container = styled.div`
   animation: ${keyframes.transIn} 0.6s ease-in-out 0.6s both;
 `
 
+let ContainerWithoutDelay = styled.div`
+  animation: ${keyframes.transIn} 0.6s ease-in-out both;
+`
+
 export const Link = withRouter(({ children, router, href }) => {
   const style = {
     color: router.pathname === href ? color.black : color.link
@@ -91,13 +101,9 @@ export const Link = withRouter(({ children, router, href }) => {
     e.preventDefault()
 
     // Prevent animations
-    TitleLine = styled.div``
-    NavBar = styled(NavBar)`
-      animation: none;
-    `
-    Container = styled.div`
-      animation: ${keyframes.transIn} 0.6s ease-in-out both;
-    `
+    TitleLine = TitleLineWithoutAnimation
+    NavBar = NavBarWithoutAnimation
+    Container = ContainerWithoutDelay
 
     router.push(href)
   }
