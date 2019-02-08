@@ -8,22 +8,23 @@ import '../styles/global.css'
 import { size, media, color, keyframes } from '../styles/variants'
 
 const Page = styled.div`
+  cursor: auto;
   margin: 0 auto;
   margin-top: 60px;
   margin-bottom: 160px;
   max-width: ${size.tablet-80}px;
 
   color: ${color.black};
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.6em;
 
   ${media.tablet} {
-    margin: 40px 40px 0 40px;
+    margin: 40px 40px 100px 40px;
     font-size: 16px;
   }
 
   ${media.phone} {
-    margin: 40px 20px 0 20px;
+    margin: 40px 20px 100px 20px;
   }
 `
 
@@ -73,7 +74,7 @@ let NavBar = styled.div`
   animation: ${keyframes.transIn} 0.4s ease-in-out 0.3s both;
 
   a:not(:first-of-type) {
-    margin-left: 16px;
+    margin-left: 20px;
   }
 
   ${media.tablet} {
@@ -89,9 +90,8 @@ const NavItem = styled.a`
   cursor: pointer;
   text-decoration: none;
   
-
   &:hover {
-    color: ${color.linkHover};
+    color: ${color.linkHover} !important;
   }
 `
 

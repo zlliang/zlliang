@@ -1,6 +1,6 @@
 @import url('https://fonts.proxy.ustclug.org/css?family=IBM+Plex+Sans:400,400i,600,600i|IBM+Plex+Mono');
 @import url('https://use.fontawesome.com/releases/v5.7.1/css/all.css');
-@import url('https://cdn.bootcss.com/highlight.js/9.13.1/styles/arduino-light.min.css');
+@import url('https://cdn.bootcss.com/highlight.js/9.13.1/styles/github-gist.min.css');
 
 html {
   -webkit-font-smoothing: auto;
@@ -9,10 +9,24 @@ html {
 }
 
 h1 { font-size: 1.8em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.2em; }
-h2, h3 { margin-top: 2em; margin-bottom: 0em; }
+h2 { font-size: 1.5em; margin-top: 2em; margin-bottom: 0em; }
+h3 { font-size: 1.2em; margin-top: 2em; margin-bottom: 0em; }
 p { margin-top: 1em; }
+p code {
+  padding: 0.06em 0.3em;
+  background-color: rgba(113,124,136,0.08);
+  font-family: 'IBM Plex Mono', Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+blockquote { 
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 2em;
+  border-left: 2px solid rgba(113,124,136,0.5);
+  color: rgb(113,124,136);
+  font-size: 0.9em;
+  line-height: 1.6em;
+}
 
 /* For testing */
 * {
@@ -20,10 +34,10 @@ p { margin-top: 1em; }
   /* outline: 1px solid red; */
 }
 
-pre { font-size: 0.9rem; line-height: 1.3rem; }
+pre { font-size: 14px; line-height: 1.3rem; }
 
 pre code, .hljs {
-  background-color: #F3F5F9;
+  background-color: rgba(113,124,136,0.08);
   padding: 1rem 1.5rem;
   font-family: 'IBM Plex Mono', Menlo, Consolas, monospace;
   overflow-x: scroll;
