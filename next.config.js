@@ -4,10 +4,11 @@ const withMDX = require('@zeit/next-mdx')
 
 // MDX plugins
 const slug = require('rehype-slug')
+const highlight = require('rehype-highlight')
 
 module.exports = withCSS(
   withMDX({
-    options: { hastPlugins: [slug] }
+    options: { hastPlugins: [slug, highlight] }
   })({
     pageExtensions: ['js', 'jsx', 'mdx']
   })

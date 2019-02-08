@@ -25,6 +25,7 @@
     "next": "^7.0.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
+    "rehype-highlight": "^2.2.1",
     "rehype-slug": "^2.0.2",
     "sanitize.css": "^8.0.0"
   },

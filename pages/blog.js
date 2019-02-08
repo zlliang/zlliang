@@ -6,7 +6,7 @@ import Layout from '../components/layout/Layout'
 export default function Blog() {
   return (
     <Layout>
-      Blog page! <Link href='/'>Back to home</Link>
+      <Link href="/markdown-demo">Markdown Demo</Link>
     </Layout>
   )
 }

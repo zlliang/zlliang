@@ -10,11 +10,16 @@ import { size, media, color, keyframes } from '../styles/variants'
 const Page = styled.div`
   margin: 0 auto;
   margin-top: 60px;
+  margin-bottom: 160px;
   max-width: ${size.tablet-80}px;
+
   color: ${color.black};
+  font-size: 18px;
+  line-height: 1.6em;
 
   ${media.tablet} {
     margin: 40px 40px 0 40px;
+    font-size: 16px;
   }
 
   ${media.phone} {
@@ -23,7 +28,7 @@ const Page = styled.div`
 `
 
 const Header = styled.header`
-  margin-bottom: 40px;
+  margin-bottom: 100px;
 `
 
 let TitleLine = styled.div`
@@ -33,13 +38,15 @@ let TitleLine = styled.div`
 const TitleLineWithoutAnimation = (props) => <div {...props} />
 
 const Title = styled.span`
+  cursor: pointer;
   margin-right: 30px;
-  font-size: 20px;
+  font-size: 22px;
   color: ${color.black};
   font-weight: 600;
 
-  transition: all 100ms ease-in-out;
-  cursor: pointer;
+  ${media.tablet} {
+    font-size: 20px;
+  }
 
   &:hover {
     color: ${color.linkHover};
@@ -47,8 +54,12 @@ const Title = styled.span`
 `
 
 const Description = styled.span`
-  font-size: 20px;
+  font-size: 22px;
   color: ${color.grey};
+
+  ${media.tablet} {
+    font-size: 20px;
+  }
 
   ${media.phone} {
     display: block;
@@ -75,9 +86,9 @@ const NavBarWithoutAnimation = styled(NavBar)`
 `
 
 const NavItem = styled.a`
-  text-decoration: none;
-  transition: all 100ms ease-in-out;
   cursor: pointer;
+  text-decoration: none;
+  
 
   &:hover {
     color: ${color.linkHover};

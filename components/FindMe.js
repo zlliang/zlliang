@@ -9,16 +9,15 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  font-size: 16px;
 `
 
 const FindMeItem = styled.a`
+  cursor: pointer;
   display: block;
   width: 130px;
   padding: 20px;
-  text-decoration: none;
-
-  transition: all 100ms ease-in-out;
-  cursor: pointer;
+  text-decoration: none; 
 
   i {
     width: 100%;
@@ -26,7 +25,6 @@ const FindMeItem = styled.a`
     text-align: center;
     font-size: 30px;
     opacity: 0.5;
-    transition: all 100ms ease-in-out;
   }
 
   div {
@@ -34,7 +32,6 @@ const FindMeItem = styled.a`
     color: ${color.link};
     text-align: center;
     opacity: 0.5;
-    transition: all 100ms ease-in-out;
   }
   
   &:hover {

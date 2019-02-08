@@ -1,13 +1,31 @@
-@import url('https://fonts.proxy.ustclug.org/css?family=IBM+Plex+Sans:400,600');
+@import url('https://fonts.proxy.ustclug.org/css?family=IBM+Plex+Sans:400,400i,600,600i|IBM+Plex+Mono');
 @import url('https://use.fontawesome.com/releases/v5.7.1/css/all.css');
+@import url('https://cdn.bootcss.com/highlight.js/9.13.1/styles/arduino-light.min.css');
 
 html {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'IBM Plex Sans', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.2em; }
+h2, h3 { margin-top: 2em; margin-bottom: 0em; }
+p { margin-top: 1em; }
 
 /* For testing */
 * {
+  transition: all 100ms ease-in-out;
   /* outline: 1px solid red; */
+}
+
+pre { font-size: 0.9rem; line-height: 1.3rem; }
+
+pre code, .hljs {
+  background-color: #F3F5F9;
+  padding: 1rem 1.5rem;
+  font-family: 'IBM Plex Mono', Menlo, Consolas, monospace;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: auto;
 }

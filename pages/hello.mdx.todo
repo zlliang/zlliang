@@ -1,9 +1,0 @@
-import Md from '../components/Markdown.js'
-
-export default Md({
-  title: "Hello",
-})
-
-# Hello
-
-Hello, world!
