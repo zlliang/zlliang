@@ -11,7 +11,10 @@ export const media = {
 }
 
 export const color = {
-  black: 'black'
+  black: '#25292E',
+  grey: '#717C88',
+  link: '#467DBE',
+  linkHover: '#1A3A5F'
 }
 
 export default { size, media, color }

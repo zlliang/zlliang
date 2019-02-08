@@ -2,19 +2,23 @@ import React from 'react'
 import Head from 'next/head'
 import styled from '@emotion/styled'
 import 'sanitize.css'
+import '../styles/global.css'
 
 import Header from './Header'
 import { size, media, color } from '../styles/variants'
 
 const PageContainer = styled.div`
-  max-width: ${size.tablet-32}px;
-  margin: 16px auto;
+  max-width: ${size.tablet-80}px;
+  margin: 0 auto;
+  margin-top: 60px;
   color: ${color.black};
 
   ${media.tablet} {
-    margin-top: 16px;
-    margin-left: 16px;
-    margin-right: 16px;
+    margin: 40px 40px 0 40px;
+  }
+
+  ${media.phone} {
+    margin: 40px 20px 0 20px;
   }
 `
 
@@ -27,9 +31,8 @@ export default function Layout(props) {
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <title>{title}</title>
       </Head>
-      {/* <Header /> */}
       <PageContainer>
-        <Header />
+        <Header page={props.page}/>
         {props.children}
       </PageContainer>
     </>

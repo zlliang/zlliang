@@ -1,0 +1,11 @@
+@import url('https://fonts.proxy.ustclug.org/css?family=IBM+Plex+Sans:400,600');
+
+html {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+* {
+  /* outline: 1px solid red; */
+}
