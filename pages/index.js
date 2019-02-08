@@ -4,7 +4,7 @@ import Layout from '../components/layout/Layout'
 
 export default function Hello() {
   return (
-    <Layout page="home">
+    <Layout>
       Hello, world!
     </Layout>
   )

@@ -1,3 +1,5 @@
+import { keyframes as kf } from '@emotion/core'
+
 export const size = {
   phone: 575,
   tablet: 768,
@@ -17,4 +19,11 @@ export const color = {
   linkHover: '#1A3A5F'
 }
 
-export default { size, media, color }
+const transIn = kf`
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { transform: translateY(0); }
+`
+
+export const keyframes = { transIn }
+
+export default { size, media, color, keyframes }
