@@ -46,24 +46,24 @@ const FindMeItem = styled.a`
 export default function FindMe() {
   return (
     <Container>
-      <FindMeItem href="mailto:zlliang15@fudan.edu.cn">
-        <i className="far fa-envelope"></i>
+      <FindMeItem href='mailto:zlliang15@fudan.edu.cn'>
+        <i className='far fa-envelope'></i>
         <div>Email</div>
       </FindMeItem>
-      <FindMeItem href="https://twitter.com/zilongliang">
-        <i className="fab fa-twitter"></i>
+      <FindMeItem href='https://twitter.com/zilongliang' target='_blank'>
+        <i className='fab fa-twitter'></i>
         <div>Twitter</div>
       </FindMeItem>
-      <FindMeItem href="https://github.com/zlliang">
-        <i className="fab fa-github"></i>
+      <FindMeItem href='https://github.com/zlliang' target='_blank'>
+        <i className='fab fa-github'></i>
         <div>GitHub</div>
       </FindMeItem>
-      <FindMeItem href="https://medium.com/@zilongliang">
-        <i className="fab fa-medium"></i>
+      <FindMeItem href='https://medium.com/@zilongliang' target='_blank'>
+        <i className='fab fa-medium'></i>
         <div>Medium</div>
       </FindMeItem>
-      <FindMeItem href="https://beta.observablehq.com/@zlliang">
-        <i className="far fa-dot-circle"></i>
+      <FindMeItem href='https://beta.observablehq.com/@zlliang' target='_blank'>
+        <i className='far fa-dot-circle'></i>
         <div>Observable</div>
       </FindMeItem>
     </Container>
