@@ -9,6 +9,6 @@ module.exports = withCSS(
   withMDX({
     options: { hastPlugins: [slug] }
   })({
-    pageExtensions: ['mdx']
+    pageExtensions: ['js', 'jsx', 'mdx']
   })
 )
