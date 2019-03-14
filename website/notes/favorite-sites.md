@@ -31,6 +31,8 @@ toc: true
 - MPI 模型库 [MPICH](https://www.mpich.org)
 - GNU 多精度计算库 [GMP](https://gmplib.org)，多精度复数计算库 [MPC](http://www.multiprecision.org/mpc/)，多精度浮点数计算库 [MPFR](https://www.mpfr.org), 科学计算库 [GSL](https://www.gnu.org/software/gsl/)
 - C++ 高级 API：线性代数库 [Armadillo](http://arma.sourceforge.net), 模版库 [Eigen](https://eigen.tuxfamily.org/)
+- [Matrix Market](https://math.nist.gov/MatrixMarket/)
+- [SuiteSparse Matrix Collection](https://sparse.tamu.edu)
 ### 数据可视化
 - [D3.js](https://d3js.org)
 - [The Hitchhiker’s Guide to d3.js](https://medium.com/@enjalot/the-hitchhikers-guide-to-d3-js-a8552174733a)
