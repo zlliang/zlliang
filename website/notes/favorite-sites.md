@@ -28,7 +28,10 @@ toc: true
 - 基础子程序库 [BLAS](http://www.netlib.org/blas), [LAPACK](http://www.netlib.org/lapack), [OpenBLAS](http://www.openblas.net) and [Intel Math Kernel Library](https://software.intel.com/mkl)
 - 大规模特征值问题子程序库 [ARPACK](https://www.caam.rice.edu/software/ARPACK/)
 - 并行计算基础子程序库 [ScaLAPACK](https://www.netlib.org/scalapack/)
-- MPI 模型库 [MPICH](https://www.mpich.org)
+- 并行计算模型
+  - 分布式内存并行计算模型 MPI 库 [MPICH](https://www.mpich.org) 和 [open MPI](https://www.open-mpi.org)
+  - 多线程并行计算模型 [OpenMP](https://www.openmp.org)
+  - [OpenACC](https://www.openacc.org)
 - GNU 多精度计算库 [GMP](https://gmplib.org)，多精度复数计算库 [MPC](http://www.multiprecision.org/mpc/)，多精度浮点数计算库 [MPFR](https://www.mpfr.org), 科学计算库 [GSL](https://www.gnu.org/software/gsl/)
 - C++ 高级 API：线性代数库 [Armadillo](http://arma.sourceforge.net), 模版库 [Eigen](https://eigen.tuxfamily.org/)
 - Test Matrix Collections
