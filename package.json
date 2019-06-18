@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "vuepress dev website",
     "build": "vuepress build website",
+    "now-build": "yarn build && mv website/.vuepress/dist dist",
     "deploy": "git add . && git ci -m 'Update site' && git push"
   },
   "devDependencies": {
