@@ -115,3 +115,4 @@ toc: true
 - [Tricks and Tips in Numerical Computing](https://nickhigham.wordpress.com/2018/08/21/tricks-and-tips-in-numerical-computing/)
 - [It's Time To Do CMake Right](https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/)
 - [Linux from scratch](http://www.linuxfromscratch.org)
+- [Gilles Castel](https://castel.dev)
