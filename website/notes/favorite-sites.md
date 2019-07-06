@@ -123,3 +123,5 @@ toc: true
 - [Dynamic Wallpaper Club](https://dynamicwallpaper.club)
 - [An Even Easier Introduction to CUDA](https://devblogs.nvidia.com/even-easier-introduction-cuda/)
 - [It's Time To Do CMake Right](https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/)
+- [Beautiful Native Libraries](http://lucumr.pocoo.org/2013/8/18/beautiful-native-libraries/)
+- [Armin Ronacher's Thoughts and Writings](http://lucumr.pocoo.org)
