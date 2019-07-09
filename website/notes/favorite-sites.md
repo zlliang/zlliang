@@ -126,3 +126,4 @@ toc: true
 - [Beautiful Native Libraries](http://lucumr.pocoo.org/2013/8/18/beautiful-native-libraries/)
 - [Armin Ronacher's Thoughts and Writings](http://lucumr.pocoo.org)
 - [Rust for Python Programmers](http://lucumr.pocoo.org/2015/5/27/rust-for-pythonistas/)
+- [withoutboats' blog](https://boats.gitlab.io/blog/)
