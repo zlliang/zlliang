@@ -1,1 +1,3 @@
-export default () => <div>Hello, world!</div>
+export default function Index() {
+  return <div>Hello, world!</div>
+}
