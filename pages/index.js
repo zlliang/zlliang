@@ -1,3 +1,5 @@
+import Page from '../layouts/page'
+
 export default function Index() {
-  return <div>Hello, world!</div>
+  return <Page>Hello, world!</Page>
 }
