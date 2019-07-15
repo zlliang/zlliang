@@ -1,18 +1,32 @@
+import styled from '@emotion/styled'
 import Link from 'next/link'
+
+const NavItem = styled.span`
+  a {
+    color: gray;
+    :hover {
+      color: black;
+    }
+    text-decoration: none;
+  }
+  :not(:last-child) {
+    margin-right: 2em;
+  }
+`
 
 export default function Navbar() {
   return (
     <nav>
-      <span className='navitem'>
+      <NavItem>
         <Link href='/'>
           <a>Home</a>
         </Link>
-      </span>
-      <span className='navitem'>
+      </NavItem>
+      <NavItem>
         <Link href='/about'>
           <a>About</a>
         </Link>
-      </span>
+      </NavItem>
     </nav>
   )
 }
