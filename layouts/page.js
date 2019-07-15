@@ -1,11 +1,13 @@
 import Head from 'next/head'
 
+import PageContainer from '../components/pagecontainer'
+
 import Header from './utils/header'
 import Navbar from './utils/navbar'
 
 function Page(props) {
   return (
-    <>
+    <PageContainer>
       <Head>
         <meta charSet='UTF-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
@@ -26,7 +28,7 @@ function Page(props) {
         <Navbar />
         {props.children}
       </div>
-    </>
+    </PageContainer>
   )
 }
 
