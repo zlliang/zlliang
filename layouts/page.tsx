@@ -1,11 +1,11 @@
-import { ReactNode } from 'react'
+import { ReactNode, ReactElement } from 'react'
 import Head from 'next/head'
 
 interface PageProps {
   children: ReactNode
 }
 
-function Page(props: PageProps) {
+function Page(props: PageProps): ReactElement {
   return (
     <>
       <Head>
