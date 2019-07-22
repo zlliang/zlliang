@@ -63,6 +63,14 @@ const Page: FunctionComponent<PageProps> = props => {
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
         <base target='_blank' />
+
+        <link href='/static/favicons/favicon.jpg' rel='icon' />
+        <link
+          href='/static/favicons/favicon-touch.jpg'
+          rel='apple-touch-icon'
+          sizes='180x180'
+        />
+
         <link href='https://unpkg.com/modern-normalize' rel='stylesheet' />
         <link href='https://rsms.me/inter/inter.css' rel='stylesheet' />
         <title>
