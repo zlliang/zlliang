@@ -17,7 +17,7 @@ export const color = {
   orange: '#F2994A',
   yellow: '#F2C94C',
   green: '#27AE60',
-  blue: darken(0.1, '#2F80ED'),
+  blue: darken(0.15, '#2F80ED'),
   lightBlue: '#2F80ED',
   cyan: '#56CCF2',
   purple: '#9B51E0'
