@@ -903,6 +903,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-medium-image-zoom@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/@types/react-medium-image-zoom/download/@types/react-medium-image-zoom-3.0.0.tgz#b9b9fbad410039662a5d7ff16bf79108c4d7d69c"
+  integrity sha1-ubn7rUEAOWYqXX/xa/eRCMTX1pw=
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^16.8.23":
   version "16.8.23"
   resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-16.8.23.tgz#ec6be3ceed6353a20948169b6cb4c97b65b97ad2"
@@ -4288,6 +4295,11 @@ react-is@16.8.6, react-is@^16.8.1:
   version "16.8.6"
   resolved "https://registry.npm.taobao.org/react-is/download/react-is-16.8.6.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-is%2Fdownload%2Freact-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha1-W7weLSkUHJ+9/tRWND/ivEMKahY=
+
+react-medium-image-zoom@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.npm.taobao.org/react-medium-image-zoom/download/react-medium-image-zoom-3.1.1.tgz#6e48901e5e899fad4483e9a7251ad9a8e81ded23"
+  integrity sha1-bkiQHl6Jn61Eg+mnJRrZqOgd7SM=
 
 react@^16.8.6:
   version "16.8.6"

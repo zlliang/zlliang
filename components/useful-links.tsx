@@ -1,40 +1,14 @@
 import { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 
-const Section = styled.section`
-  /* DEBUG */
-  /* border: 0.1px solid red;
-  * {
-    border: 0.1px solid blue;
-  } */
-  margin: 32px 0;
-`
-
-const SectionTitle = styled.h3`
-  margin-top: 0;
-  margin-bottom: 16px;
-  font-weight: 600;
-  font-size: 1.2rem;
-`
-
-const List = styled.ul`
-  padding-inline-start: 0;
-  list-style-type: none;
-  li {
-    margin-block-start: 0.4rem;
-    margin-block-end: 0.4rem;
-  }
-  ul {
-    padding-inline-start: 1em;
-  }
-`
+import { Section, SectionTitle } from './content'
 
 const UsefulLinks: FunctionComponent = () => (
   <Section>
     <SectionTitle>Useful Links</SectionTitle>
-    <List>
+    <ul id='useful-links'>
       <li>Journals</li>
-      <List>
+      <ul id='journals'>
         <li>
           <a href='https://epubs.siam.org/loi/siread'>SIREV</a> - SIAM Review
         </li>
@@ -58,23 +32,43 @@ const UsefulLinks: FunctionComponent = () => (
             IEEE Communications Surveys & Tutorials
           </a>
         </li>
-      </List>
+      </ul>
+      <li>Homepages of scientists</li>
+      <ul id='homepages-of-scientists'>
+        <li>
+          <a href='https://web.cs.ucdavis.edu/~bai/'>Zhaojun Bai</a>
+        </li>
+        <li>
+          <a href='http://www.maths.manchester.ac.uk/~higham/'>
+            Nicholas J. Higham
+          </a>
+        </li>
+        <li>
+          <a href='https://crd-legacy.lbl.gov/~xiaoye/'>Xiaoye Sherry Li</a>
+        </li>
+        <li>
+          <a href='http://www.cs.cornell.edu/cv/'>Charles F. Van Loan</a>
+        </li>
+      </ul>
       <li>Blogs</li>
-      <List>
+      <ul id='blogs'>
         <li>
           <a href='https://overreacted.io'>Overreacted</a> - Personal blog by
           Dan Abramov
         </li>
         <li>
           <a href='http://lucumr.pocoo.org'>
-            Armin Ronacher&apos;s Thoughts and Writings
+            Armin Ronacher’s Thoughts and Writings
           </a>
         </li>
         <li>
-          <a href='https://boats.gitlab.io/blog/'>withoutboat&apos;s blog</a>
+          <a href='https://boats.gitlab.io/blog/'>withoutboat’s blog</a>
         </li>
-      </List>
-    </List>
+        <li>
+          <a href='https://castel.dev'>Gilles Castel</a>
+        </li>
+      </ul>
+    </ul>
   </Section>
 )
 
