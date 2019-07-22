@@ -1,9 +1,8 @@
 {
   "version": 2,
   "name": "personal-website",
-  "builds": [
-      { "src": "package.json", "use": "@now/static-build" }
-  ],
+  "alias": ["zlliang.com", "www.zlliang.com"],
+  "builds": [{ "src": "package.json", "use": "@now/next" }],
   "github": {
     "silent": true
   }

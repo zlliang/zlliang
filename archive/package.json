@@ -1,0 +1,25 @@
+{
+  "name": "zlliang-website",
+  "private": true,
+  "description": "Personal website of Zilong Liang.",
+  "author": "Zilong Liang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zlliang/zlliang.com.git"
+  },
+  "scripts": {
+    "dev": "vuepress dev website",
+    "build": "vuepress build website",
+    "now-build": "yarn build && mv website/.vuepress/dist dist",
+    "deploy": "git add . && git ci -m 'Update site' && git push"
+  },
+  "devDependencies": {
+    "@iktakahiro/markdown-it-katex": "^3.0.3",
+    "dayjs": "^1.7.4",
+    "node-sass": "^4.9.2",
+    "nprogress": "^0.2.0",
+    "sass-loader": "^7.0.3",
+    "vuepress": "^0.14.4"
+  }
+}

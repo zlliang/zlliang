@@ -1,7 +1,7 @@
 {
-  "name": "zlliang-website",
+  "name": "zlliang.com",
   "private": true,
-  "description": "Personal website of Zilong Liang.",
+  "description": "Personal website of Zilong Liang",
   "author": "Zilong Liang",
   "license": "MIT",
   "repository": {
@@ -9,17 +9,28 @@
     "url": "git+https://github.com/zlliang/zlliang.com.git"
   },
   "scripts": {
-    "dev": "vuepress dev website",
-    "build": "vuepress build website",
-    "now-build": "yarn build && mv website/.vuepress/dist dist",
-    "deploy": "git add . && git ci -m 'Update site' && git push"
+    "dev": "next dev"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.0.2",
+    "polished": "^3.4.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-medium-image-zoom": "^3.1.1"
   },
   "devDependencies": {
-    "@iktakahiro/markdown-it-katex": "^3.0.3",
-    "dayjs": "^1.7.4",
-    "node-sass": "^4.9.2",
-    "nprogress": "^0.2.0",
-    "sass-loader": "^7.0.3",
-    "vuepress": "^0.14.4"
+    "@types/node": "^12.6.8",
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-medium-image-zoom": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^1.12.0",
+    "@typescript-eslint/parser": "^1.12.0",
+    "eslint": "^6.0.1",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "typescript": "^3.5.3"
   }
 }
