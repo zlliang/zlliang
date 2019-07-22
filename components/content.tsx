@@ -34,6 +34,6 @@ export const Tag = styled.span`
   font-size: 0.7em;
   color: ${color.gray3};
   border: 1px solid ${color.gray3};
-  border-radius: 6px;
+  border-radius: 4px;
   margin-inline-start: 0.4em;
 `

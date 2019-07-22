@@ -6,7 +6,7 @@ import Footer from '../components/footer'
 
 import UsefulLinks from '../components/useful-links'
 import Projects from '../components/projects'
-// import Gallery from '../components/gallery'
+import Gallery from '../components/gallery'
 
 const Index: NextPage = () => {
   return (
@@ -14,7 +14,7 @@ const Index: NextPage = () => {
       <Header />
       <UsefulLinks />
       <Projects />
-      {/* <Gallery /> */}
+      <Gallery />
       <Footer />
     </Page>
   )
