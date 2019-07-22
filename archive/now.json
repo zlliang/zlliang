@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "personal-website",
+  "builds": [
+      { "src": "package.json", "use": "@now/static-build" }
+  ],
+  "github": {
+    "silent": true
+  }
+}
