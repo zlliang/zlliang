@@ -1,16 +1,18 @@
 import { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 
-export const avatarSizeDesktop = '11rem'
-export const avatarSizePhone = '10rem'
+import { mediaQuery } from '../utils/variables'
+
+export const avatarSizeDesktop = '176px'
+export const avatarSizePhone = '160px'
 
 const AvatarImg = styled.img`
   user-select: none;
-  @media (max-width: 46rem) {
+  ${mediaQuery.phone} {
     width: ${avatarSizePhone};
     height: ${avatarSizePhone};
   }
-  @media (min-width: 46rem) {
+  ${mediaQuery.desktop} {
     width: ${avatarSizeDesktop};
     height: ${avatarSizeDesktop};
   }

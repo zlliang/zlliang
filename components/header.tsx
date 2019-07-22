@@ -3,24 +3,26 @@ import styled from '@emotion/styled'
 
 import Avatar from './avatar'
 
+import { mediaQuery, color } from '../utils/variables'
+
 const HeaderContainer = styled.header`
-  /* border: 0.1px solid red;
+  border: 0.1px solid red;
   * {
     border: 0.1px solid blue;
-  } */
+  }
 
-  @media (max-width: 46rem) {
-    margin-top: 4rem;
+  ${mediaQuery.phone} {
+    margin-top: 64px;
     text-align: center;
   }
-  @media (min-width: 46rem) {
+  ${mediaQuery.desktop} {
     display: flex;
-    margin-top: 8rem;
+    margin-top: 128px;
   }
 `
 
 const TitleAndBioContainer = styled.div`
-  @media (min-width: 46rem) {
+  ${mediaQuery.desktop} {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -30,13 +32,13 @@ const TitleAndBioContainer = styled.div`
 const TitleContainer = styled.div`
   user-select: none;
   cursor: default;
-  @media (max-width: 46rem) {
+  ${mediaQuery.phone} {
     position: relative;
-    top: -1.5rem;
+    top: -24px;
   }
-  @media (min-width: 46rem) {
+  ${mediaQuery.desktop} {
     position: relative;
-    left: -3rem;
+    left: -48px;
     max-width: 21.5rem;
   }
 `
@@ -47,34 +49,33 @@ const Title = styled.div`
   font-style: italic;
   -webkit-text-stroke: 6px white;
   paint-order: stroke fill;
-  @media (max-width: 46rem) {
+  ${mediaQuery.phone} {
     font-size: 32px;
     text-align: center;
   }
-  @media (min-width: 46rem) {
-    font-size: 3rem;
+  ${mediaQuery.desktop} {
+    font-size: 48px;
   }
 `
 
 const Subtitle = styled.div`
   line-height: 1em;
-  color: #828282;
-  @media (max-width: 46rem) {
+  color: ${color.gray3};
+  ${mediaQuery.phone} {
     font-size: 16px;
   }
-  @media (min-width: 46rem) {
+  ${mediaQuery.desktop} {
     text-align: end;
-    font-size: 1.5rem;
+    font-size: 24px;
   }
 `
 
 const Bio = styled.div`
-  line-height: 1.2em; /* TODO */
-  color: #4f4f4f;
-  @media (max-width: 46rem) {
+  color: ${color.gray2};
+  ${mediaQuery.phone} {
     text-align: left;
   }
-  @media (min-width: 46rem) {
+  ${mediaQuery.desktop} {
     position: relative;
     left: 3.1rem;
     width: 29.9rem;

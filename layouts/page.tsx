@@ -5,23 +5,27 @@ import styled from '@emotion/styled'
 
 const globalCSS = css`
   html * {
+    line-height: 1.3em;
     font-family: 'Inter', sans-serif;
   }
   @supports (font-variation-settings: normal) {
     html * {
+      line-height: 1.3em;
       font-family: 'Inter var', sans-serif;
     }
   }
+
   html *::selection {
     background-color: #91e4df;
     color: black;
   }
-  @media (max-width: 46rem) {
+
+  @media (max-width: 736px) {
     html {
       font-size: 14px;
     }
   }
-  @media (min-width: 46rem) {
+  @media (min-width: 737px) {
     html {
       font-size: 16px;
     }
@@ -29,9 +33,9 @@ const globalCSS = css`
 `
 
 const PageContainer = styled.div`
-  max-width: 46rem;
+  max-width: 736px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 16px;
 `
 
 interface PageProps {
