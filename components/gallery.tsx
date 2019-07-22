@@ -19,7 +19,7 @@ const GalleryContainer = styled.div`
       height: 108px;
     }
     ${mediaQuery.desktop} {
-      height: 144px;
+      height: 176px;
     }
     margin: 4px;
     border-radius: 2px;
