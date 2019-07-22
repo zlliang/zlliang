@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { Global as GlobalStyle, css } from '@emotion/core'
 import styled from '@emotion/styled'
 
-import { color } from '../utils/variables'
+import { mediaQuery, color } from '../utils/variables'
 
 const globalCSS = css`
   html * {
@@ -30,6 +30,16 @@ const globalCSS = css`
   @media (min-width: 737px) {
     html {
       font-size: 16px;
+    }
+  }
+
+  body {
+    background-image: url('/static/images/background.svg');
+    background-repeat: no-repeat;
+  }
+  @media (max-width: 736px) {
+    body {
+      background-size: 117%;
     }
   }
 

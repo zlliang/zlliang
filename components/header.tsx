@@ -49,7 +49,7 @@ const Title = styled.h1`
   line-height: 1em;
   font-weight: 700;
   font-style: italic;
-  -webkit-text-stroke: 6px white;
+  -webkit-text-stroke: 7px white;
   paint-order: stroke fill;
   ${mediaQuery.phone} {
     font-size: 32px;
