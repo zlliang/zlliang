@@ -33,10 +33,10 @@ const globalCSS = css`
     }
   }
 
-  body {
+  /* body {
     background-image: url('/static/images/background.svg');
     background-repeat: no-repeat;
-  }
+  } */
   @media (max-width: 736px) {
     body {
       background-size: 117%;
