@@ -28,6 +28,8 @@ const TitleAndBioContainer = styled.div`
 `
 
 const TitleContainer = styled.div`
+  user-select: none;
+  cursor: default;
   @media (max-width: 46rem) {
     position: relative;
     top: -1.5rem;
@@ -46,7 +48,7 @@ const Title = styled.div`
   -webkit-text-stroke: 6px white;
   paint-order: stroke fill;
   @media (max-width: 46rem) {
-    font-size: 2rem;
+    font-size: 32px;
     text-align: center;
   }
   @media (min-width: 46rem) {
@@ -58,7 +60,7 @@ const Subtitle = styled.div`
   line-height: 1em;
   color: #828282;
   @media (max-width: 46rem) {
-    font-size: 1rem;
+    font-size: 16px;
   }
   @media (min-width: 46rem) {
     text-align: end;

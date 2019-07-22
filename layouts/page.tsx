@@ -5,7 +5,26 @@ import styled from '@emotion/styled'
 
 const globalCSS = css`
   html * {
-    font-family: Inter, sans-serif;
+    font-family: 'Inter', sans-serif;
+  }
+  @supports (font-variation-settings: normal) {
+    html * {
+      font-family: 'Inter var', sans-serif;
+    }
+  }
+  html *::selection {
+    background-color: #91e4df;
+    color: black;
+  }
+  @media (max-width: 46rem) {
+    html {
+      font-size: 14px;
+    }
+  }
+  @media (min-width: 46rem) {
+    html {
+      font-size: 16px;
+    }
   }
 `
 
