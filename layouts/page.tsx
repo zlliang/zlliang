@@ -18,7 +18,7 @@ const globalCSS = css`
   }
 
   html *::selection {
-    background-color: #91e4df;
+    background-color: ${color.cyan};
     color: black;
   }
 
