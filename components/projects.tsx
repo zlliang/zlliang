@@ -17,6 +17,10 @@ const Projects: FunctionComponent = () => (
       <li>Archived</li>
       <ul id='archived'>
         <li>
+          <a href='https://github.com/zlliang/jacobi-svd'>jacobi-svd</a> -
+          Numerical experiments on Jacobi SVD algorithm <Tag>MATLAB</Tag>
+        </li>
+        <li>
           <a href='https://github.com/zlliang/essaysense'>essaysense</a> - An
           experiment on Automated Essay Scoring <Tag>Python</Tag>
           <Tag>TensorFlow</Tag>

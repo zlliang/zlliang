@@ -1,4 +1,4 @@
-import { darken } from 'polished'
+import { lighten, darken } from 'polished'
 
 export const mediaQuery = {
   phone: '@media (max-width: 736px)',
@@ -19,6 +19,6 @@ export const color = {
   green: '#27AE60',
   blue: darken(0.15, '#2F80ED'),
   lightBlue: '#2F80ED',
-  cyan: '#56CCF2',
+  cyan: lighten(0.25, '#56CCF2'),
   purple: '#9B51E0'
 }
