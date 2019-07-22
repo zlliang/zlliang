@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { Global as GlobalStyle, css } from '@emotion/core'
 import styled from '@emotion/styled'
 
-import { mediaQuery, color } from '../utils/variables'
+import { color } from '../utils/variables'
 
 const globalCSS = css`
   html * {
