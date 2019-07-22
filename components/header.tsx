@@ -6,11 +6,12 @@ import Avatar from './avatar'
 import { mediaQuery, color } from '../utils/variables'
 
 const HeaderContainer = styled.header`
-  border: 0.1px solid red;
+  /* DEBUG */
+  /* border: 0.1px solid red;
   * {
     border: 0.1px solid blue;
-  }
-
+  } */
+  margin-bottom: 64px;
   ${mediaQuery.phone} {
     margin-top: 64px;
     text-align: center;
@@ -43,7 +44,8 @@ const TitleContainer = styled.div`
   }
 `
 
-const Title = styled.div`
+const Title = styled.h1`
+  margin: 0;
   line-height: 1em;
   font-weight: 700;
   font-style: italic;
@@ -58,8 +60,10 @@ const Title = styled.div`
   }
 `
 
-const Subtitle = styled.div`
+const Subtitle = styled.h2`
+  margin: 0;
   line-height: 1em;
+  font-weight: 500;
   color: ${color.gray3};
   ${mediaQuery.phone} {
     font-size: 16px;

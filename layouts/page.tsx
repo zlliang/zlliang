@@ -3,6 +3,8 @@ import Head from 'next/head'
 import { Global as GlobalStyle, css } from '@emotion/core'
 import styled from '@emotion/styled'
 
+import { color } from '../utils/variables'
+
 const globalCSS = css`
   html * {
     line-height: 1.3em;
@@ -30,6 +32,15 @@ const globalCSS = css`
       font-size: 16px;
     }
   }
+
+  a {
+    text-decoration: none;
+    color: ${color.blue};
+  }
+  a:hover {
+    text-decoration: underline;
+    color: ${color.lightBlue};
+  }
 `
 
 const PageContainer = styled.div`
@@ -51,6 +62,7 @@ const Page: FunctionComponent<PageProps> = props => {
         <meta charSet='UTF-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
+        <base target='_blank' />
         <link href='https://unpkg.com/modern-normalize' rel='stylesheet' />
         <link href='https://rsms.me/inter/inter.css' rel='stylesheet' />
         <title>
