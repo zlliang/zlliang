@@ -52,14 +52,17 @@ const Title: FunctionComponent<TitleProps> = props => (
         </Updated>
       )}
       {props.github && (
-        <EditOnGithub
-          href={`https://github.com/zlliang/zlliang.com/tree/master/${
-            props.github
-          }`}
-        >
+        <>
           {' '}
-          ・ Edit on GitHub
-        </EditOnGithub>
+          ・{' '}
+          <EditOnGithub
+            href={`https://github.com/zlliang/zlliang.com/tree/master/${
+              props.github
+            }`}
+          >
+            Edit on GitHub
+          </EditOnGithub>
+        </>
       )}
     </MetaContainer>
   </Container>
