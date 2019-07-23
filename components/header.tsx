@@ -32,9 +32,13 @@ const Title = styled.div`
   font-size: 18px;
   -webkit-text-stroke: 3px white;
   paint-order: stroke fill;
+  cursor: default;
+  user-select: none;
 `
 
-const Nav = styled.nav``
+const Nav = styled.nav`
+  user-select: none;
+`
 
 const NavItem = styled.div`
   display: inline-block;

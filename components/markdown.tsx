@@ -21,7 +21,7 @@ const Markdown: FunctionComponent<MarkdownProps> = ({ file }) => {
     highlight: (str, lang) => {
       if (lang && hljs.getLanguage(lang)) {
         try {
-          return `<pre class='hljs'><code>${
+          return `<pre class='hljs'><div><code class='hljs-lang'>${lang}</code></div><code>${
             hljs.highlight(lang, str, true).value
           }</code></pre>`
         } catch (_) {}
@@ -32,7 +32,7 @@ const Markdown: FunctionComponent<MarkdownProps> = ({ file }) => {
 
   const ref = useRef(null)
   useEffect(() => {
-    import(`../markdown/${file}`).then(res => {
+    import(`../markdown/${file}.md`).then(res => {
       // @ts-ignore
       ref.current.innerHTML = md.render(res.default)
     })
