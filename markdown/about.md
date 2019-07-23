@@ -1,5 +1,5 @@
 Hello, world!
 
-![snap1](/static/images/snapshots/snapshot-2018-08-1.png)
+![snap1](https://storage.zlliang.com/personal-website-images/snapshots/snapshot-2018-08-1.png)
 
-![snap2](https://zlliang.oss-cn-shanghai.aliyuncs.com/images/screenshot.png)
+![snap2](https://storage.zlliang.com/personal-website-images/screenshot.png)

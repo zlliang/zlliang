@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 
 import { Section, SectionTitle } from './content'
-import { mediaQuery } from '../../utils/variables'
+import { mediaQuery, imageHost } from '../../utils/variables'
 
 const GalleryContainer = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ const Gallery: FunctionComponent = () => (
       {[1, 2, 3, 4, 5, 6, 7, 8].map(i => (
         <img
           key={i}
-          src={`/static/images/gallery/pic-${i}.jpg`}
+          src={`${imageHost}/gallery/pic-${i}.jpg`}
           alt={`pic-${i}`}
         />
       ))}
