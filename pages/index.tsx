@@ -5,6 +5,7 @@ import Page from '../layouts/framework'
 import Header from '../components/index/header'
 
 import Contact from '../components/index/contact'
+import Posts from '../components/index/posts'
 import UsefulLinks from '../components/index/useful-links'
 import Projects from '../components/index/projects'
 import Gallery from '../components/index/gallery'
@@ -28,6 +29,7 @@ const Index: NextPage = () => {
       <GlobalStyle styles={globalCSS} />
       <Header />
       <Contact />
+      <Posts />
       <Projects />
       <UsefulLinks />
       <Gallery />

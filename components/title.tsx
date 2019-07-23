@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
 
-import { color } from '../../utils/variables'
+import { color } from '../utils/variables'
 
 const Container = styled.div`
   margin-bottom: 32px;
@@ -30,30 +30,35 @@ const EditOnGithub = styled.a`
 `
 
 interface TitleProps {
-  meta: {
-    title: string
-    updated?: string
-    github?: string
-  }
+  title: string
+  created: string
+  updated?: string
+  github?: string
 }
 
-const Title: FunctionComponent<TitleProps> = ({ meta }) => (
+const Title: FunctionComponent<TitleProps> = props => (
   <Container>
-    <TitleContainer>{meta.title}</TitleContainer>
+    <TitleContainer>{props.title}</TitleContainer>
     <MetaContainer>
-      {meta.updated && (
+      {props.created && (
         <Updated>
-          Updated - {dayjs(meta.updated).format('MMM DD, YYYY')}
+          Created - {dayjs(props.created).format('MMM DD, YYYY')}
         </Updated>
-      )}{' '}
-      ・{' '}
-      {meta.github && (
+      )}
+      {props.updated && (
+        <Updated>
+          {' '}
+          ・ Updated - {dayjs(props.updated).format('MMM DD, YYYY')}
+        </Updated>
+      )}
+      {props.github && (
         <EditOnGithub
           href={`https://github.com/zlliang/zlliang.com/tree/master/${
-            meta.github
+            props.github
           }`}
         >
-          Edit on GitHub
+          {' '}
+          ・ Edit on GitHub
         </EditOnGithub>
       )}
     </MetaContainer>
