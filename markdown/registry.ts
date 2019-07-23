@@ -6,7 +6,8 @@ import RedesignMyWebsiteContent from './redesign-my-website.md'
 const EnterGraduateMeta: PostMeta = {
   pid: 'enter-graduate',
   title: 'Enter Graduate',
-  created: '2019-07-24' // TODO
+  created: '2019-07-24', // TODO
+  inChinese: true // TODO
 }
 export const EnterGraduate: Post = {
   meta: EnterGraduateMeta,
