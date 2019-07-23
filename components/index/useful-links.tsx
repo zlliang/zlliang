@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
 
 import { Section, SectionTitle } from './content'
-import { color } from '../utils/variables'
+import { color } from '../../utils/variables'
 
 const UsefulLinks: FunctionComponent = () => (
   <Section>

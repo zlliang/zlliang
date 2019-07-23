@@ -1,104 +1,81 @@
 import { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
-
-import Avatar from './avatar'
+import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 import { mediaQuery, color } from '../utils/variables'
 
 const HeaderContainer = styled.header`
-  /* DEBUG */
-  /* border: 0.1px solid red;
-  * {
-    border: 0.1px solid blue;
-  } */
-  margin-bottom: 64px;
+  display: flex;
+  justify-content: space-between;
   ${mediaQuery.phone} {
-    margin-top: 64px;
-    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 64px;
   }
   ${mediaQuery.desktop} {
-    display: flex;
-    margin-top: 128px;
+    margin-top: 32px;
+    margin-bottom: 64px;
   }
+  border-radius: 4px;
+  background-color: black;
+  color: white;
 `
 
-const TitleAndBioContainer = styled.div`
-  ${mediaQuery.desktop} {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-`
-
-const TitleContainer = styled.div`
-  user-select: none;
-  cursor: default;
-  ${mediaQuery.phone} {
-    position: relative;
-    top: -24px;
-  }
-  ${mediaQuery.desktop} {
-    position: relative;
-    left: -48px;
-    max-width: 21.5rem;
-  }
-`
-
-const Title = styled.h1`
+const Title = styled.div`
   margin: 0;
+  padding: 8px 10px;
+  color: black;
   line-height: 1em;
-  font-weight: 700;
+  font-weight: 800;
   font-style: italic;
-  -webkit-text-stroke: 7px white;
+  font-size: 18px;
+  -webkit-text-stroke: 3px white;
   paint-order: stroke fill;
-  ${mediaQuery.phone} {
-    font-size: 32px;
-    text-align: center;
-  }
-  ${mediaQuery.desktop} {
-    font-size: 48px;
-  }
 `
 
-const Subtitle = styled.h2`
-  margin: 0;
-  line-height: 1em;
-  font-weight: 500;
-  color: ${color.gray3};
-  ${mediaQuery.phone} {
-    font-size: 16px;
-  }
-  ${mediaQuery.desktop} {
-    text-align: end;
-    font-size: 24px;
-  }
-`
+const Nav = styled.nav``
 
-const Bio = styled.div`
-  color: ${color.gray2};
-  ${mediaQuery.phone} {
-    text-align: left;
-  }
+const NavItem = styled.div`
+  display: inline-block;
   ${mediaQuery.desktop} {
-    position: relative;
-    left: 3.1rem;
-    width: 29.9rem;
+    padding: 7px 10px;
+  }
+  ${mediaQuery.phone} {
+    padding: 8px 10px;
+  }
+  cursor: pointer;
+  color: white;
+  :hover {
+    /* background-color: ${color.gray2}; */
+    border-bottom: 3px solid ${color.gray5};
+    ${mediaQuery.desktop} {
+    padding-bottom: 4px;
+    }
+    ${mediaQuery.phone} {
+      padding-bottom: 5px;
+    }
+  }
+  transition: all 100ms ease-in-out;
+  :last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
   }
 `
 
 const Header: FunctionComponent = () => (
   <HeaderContainer>
-    <Avatar />
-    <TitleAndBioContainer>
-      <TitleContainer>
-        <Title>ZILONG LIANG</Title>
-        <Subtitle>Applied Mathematics.</Subtitle>
-      </TitleContainer>
-      <Bio>
-        I am now a graduate student in School of Mathematical Sciences, Fudan
-        University, Shanghai, China.
-      </Bio>
-    </TitleAndBioContainer>
+    <Title>ZILONG LIANG</Title>
+    <Nav>
+      <Link href='/'>
+        <NavItem>
+          <FontAwesomeIcon icon={faArrowLeft} /> Home
+        </NavItem>
+      </Link>
+      <Link href='/about'>
+        <NavItem>About me</NavItem>
+      </Link>
+    </Nav>
   </HeaderContainer>
 )
 
