@@ -1,7 +1,8 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useEffect } from 'react'
 import Head from 'next/head'
 import { Global as GlobalStyle, css } from '@emotion/core'
 import styled from '@emotion/styled'
+import mediumZoom from 'medium-zoom'
 
 import Footer from '../components/footer'
 import { color } from '../utils/variables'
@@ -157,6 +158,10 @@ interface PageProps {
 const siteTitle = 'Zilong Liang'
 
 const Page: FunctionComponent<PageProps> = props => {
+  useEffect(() => {
+    mediumZoom('img:not(.nozoom)')
+  })
+
   return (
     <>
       <Head>
