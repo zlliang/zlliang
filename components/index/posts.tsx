@@ -15,7 +15,8 @@ const Posts: FunctionComponent = () => (
         <li key={p.pid}>
           <Link href={`/post/${p.pid}`}>
             <a>{p.title}</a>
-          </Link>
+          </Link>{' '}
+          {p.inChinese && <span className='inChinese'>(in Chinese)</span>}
           <span className='date'>
             {dayjs(p.created).format('MMM DD, YYYY')}
           </span>
@@ -23,6 +24,10 @@ const Posts: FunctionComponent = () => (
       ))}
     </ul>
     <style jsx>{`
+      .inChinese {
+        font-size: 0.9em;
+        color: ${color.gray3};
+      }
       .date {
         margin-inline-start: 0.8rem;
         font-size: 0.9em;

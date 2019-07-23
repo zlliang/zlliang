@@ -9,6 +9,7 @@ export interface PostMeta {
   title: string
   created: string
   updated?: string
+  inChinese?: boolean
   github?: string
 }
 
