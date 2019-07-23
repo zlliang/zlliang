@@ -66,7 +66,7 @@ const UsefulLinks: FunctionComponent = () => (
       <ul id='blogs'>
         <li>
           <a href='https://overreacted.io'>Overreacted</a>{' '}
-          <span className='description'>Personal blog by Dan Abramov</span>
+          <span className='description'>Personal blog of Dan Abramov</span>
         </li>
         <li>
           <a href='http://lucumr.pocoo.org'>
@@ -79,9 +79,14 @@ const UsefulLinks: FunctionComponent = () => (
         <li>
           <a href='https://castel.dev'>Gilles Castel</a>
         </li>
+        <li>
+          <a href='https://www.taniarascia.com'>Tania Rascia</a>{' '}
+          <span className='description'>
+            A software developer and writer specializing in modern JavaScript
+          </span>
+        </li>
       </ul>
       <li>Software documentations and tutorials</li>
-
       <ul id='docs'>
         <li>
           <a href='https://netlib.org'>Netlib</a>{' '}
