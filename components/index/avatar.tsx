@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 
-import { mediaQuery } from '../../utils/variables'
+import { mediaQuery, imageHost } from '../../utils/variables'
 
 export const avatarSizeDesktop = '176px'
 export const avatarSizePhone = '160px'
@@ -24,7 +24,7 @@ const Avatar: FunctionComponent = () => (
   <AvatarImg
     className='nozoom'
     draggable={false}
-    src='/static/images/avatar.jpg'
+    src={`${imageHost}/avatar.jpg`}
     alt='avatar'
   />
 )

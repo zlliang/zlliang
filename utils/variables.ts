@@ -22,3 +22,5 @@ export const color = {
   cyan: lighten(0.25, '#56CCF2'),
   purple: '#9B51E0'
 }
+
+export const imageHost = 'https://storage.zlliang.com/personal-website-images'
