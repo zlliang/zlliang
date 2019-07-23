@@ -1,8 +1,10 @@
 import { FunctionComponent, useEffect, useRef } from 'react'
 import styled from '@emotion/styled'
-
+import mediumZoom from 'medium-zoom'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
+
+import { mediaQuery } from '../utils/variables'
 
 const MarkdownContainer = styled.div`
   img {
@@ -35,6 +37,7 @@ const Markdown: FunctionComponent<MarkdownProps> = ({ file }) => {
     import(`../markdown/${file}.md`).then(res => {
       // @ts-ignore
       ref.current.innerHTML = md.render(res.default)
+      mediumZoom('img:not(.nozoom)')
     })
   })
   return <MarkdownContainer ref={ref} />
