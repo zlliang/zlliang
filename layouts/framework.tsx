@@ -7,6 +7,14 @@ import mediumZoom from 'medium-zoom'
 import Footer from '../components/footer'
 import { color } from '../utils/variables'
 
+const cssLinks = [
+  'https://unpkg.com/modern-normalize',
+  'https://unpkg.com/highlight.js/styles/xcode.css',
+  'https://unpkg.com/katex/dist/katex.min.css',
+  'https://rsms.me/inter/inter.css',
+  'https://fonts.googleapis.com/css?family=IBM+Plex+Mono'
+]
+
 const globalCSS = css`
   /* DEBUG */
   /* * {
@@ -29,6 +37,10 @@ const globalCSS = css`
   code * {
     font-size: 14px;
     font-family: 'IBM Plex Mono', monospace;
+  }
+  .katex,
+  .katex * {
+    font: normal 1em 'KaTeX_Main', 'Times New Roman', serif;
   }
 
   /* Font size */
@@ -132,6 +144,16 @@ const globalCSS = css`
     cursor: default;
     user-select: none;
   }
+
+  p.katex-block {
+    padding: 0 16px;
+    border: 1px solid ${color.gray5};
+    border-radius: 6px;
+    overflow-x: auto;
+  }
+  .katex-display {
+    margin: 10px 0;
+  }
 `
 
 const PageContainer = styled.div`
@@ -166,16 +188,10 @@ const Page: FunctionComponent<PageProps> = props => {
           sizes='180x180'
         />
 
-        <link href='https://unpkg.com/modern-normalize' rel='stylesheet' />
-        <link
-          href='https://unpkg.com/highlight.js/styles/xcode.css'
-          rel='stylesheet'
-        />
-        <link href='https://rsms.me/inter/inter.css' rel='stylesheet' />
-        <link
-          href='https://fonts.googleapis.com/css?family=IBM+Plex+Mono'
-          rel='stylesheet'
-        />
+        {cssLinks.map(link => (
+          <link key={link} rel='stylesheet' href={link} />
+        ))}
+
         <title>
           {props.title ? `${props.title} | ${siteTitle}` : siteTitle}
         </title>

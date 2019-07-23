@@ -915,6 +915,13 @@
     humps "^2.0.1"
     prop-types "^15.5.10"
 
+"@iktakahiro/markdown-it-katex@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.npm.taobao.org/@iktakahiro/markdown-it-katex/download/@iktakahiro/markdown-it-katex-3.1.0.tgz#cd40c1037f038ab00cbfee2464604435848deae9"
+  integrity sha1-zUDBA38DirAMv+4kZGBENYSN6uk=
+  dependencies:
+    katex "^0.10.0"
+
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/@types/eslint-visitor-keys/download/@types/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
@@ -3290,6 +3297,13 @@ jsx-ast-utils@^2.1.0:
   dependencies:
     array-includes "^3.0.3"
     object.assign "^4.1.0"
+
+katex@^0.10.0, katex@^0.10.2:
+  version "0.10.2"
+  resolved "https://registry.npm.taobao.org/katex/download/katex-0.10.2.tgz#39973edbb65eda5b6f9e7f41648781e557dd4932"
+  integrity sha1-OZc+27Ze2ltvnn9BZIeB5VfdSTI=
+  dependencies:
+    commander "^2.19.0"
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"

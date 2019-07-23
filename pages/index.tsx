@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 import { Global as GlobalStyle, css } from '@emotion/core'
 
-import Page from '../layouts/page-global'
+import Page from '../layouts/framework'
 import Header from '../components/index/header'
 
 import Contact from '../components/index/contact'

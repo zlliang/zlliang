@@ -1,13 +1,13 @@
 import { FunctionComponent } from 'react'
 
-import GeneralPage from './page-global'
+import PageFramework from './framework'
 import Header from '../components/header'
 
 const Page: FunctionComponent = props => (
-  <GeneralPage>
+  <PageFramework>
     <Header />
     {props.children}
-  </GeneralPage>
+  </PageFramework>
 )
 
 export default Page
