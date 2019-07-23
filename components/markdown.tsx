@@ -4,8 +4,6 @@ import mediumZoom from 'medium-zoom'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
 
-import { mediaQuery } from '../utils/variables'
-
 const MarkdownContainer = styled.div`
   img {
     max-width: 100%;
