@@ -34,7 +34,8 @@ const NavItem = styled.div`
   color: black;
   border-radius: 4px;
   :hover {
-    background-color: ${color.gray5};
+    color: white;
+    background-color: black;
   }
   transition: all 100ms ease-in-out;
 `
