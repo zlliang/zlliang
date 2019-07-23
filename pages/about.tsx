@@ -4,6 +4,8 @@ import Page from '../layouts/page'
 import Title from '../components/post/title'
 import Markdown from '../components/markdown'
 
+import content from '../markdown/about.md'
+
 const meta = {
   title: 'About Me',
   updated: '2019-07-23',
@@ -13,7 +15,7 @@ const meta = {
 const About: NextPage = () => (
   <Page>
     <Title meta={meta} />
-    <Markdown file='about' />
+    <Markdown content={content} />
   </Page>
 )
 
