@@ -40,7 +40,7 @@ const Markdown: FunctionComponent<MarkdownProps> = ({ file }) => {
       mediumZoom('img:not(.nozoom)')
     })
   })
-  return <MarkdownContainer ref={ref} />
+  return <MarkdownContainer ref={ref}>Loading...</MarkdownContainer>
 }
 
 export default Markdown
