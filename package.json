@@ -22,11 +22,11 @@
     "highlight.js": "^9.15.8",
     "isomorphic-unfetch": "^3.0.0",
     "markdown-it": "^9.0.1",
+    "medium-zoom": "^1.0.4",
     "next": "^9.0.2",
     "polished": "^3.4.1",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-medium-image-zoom": "^3.1.1"
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "@types/highlight.js": "^9.12.3",

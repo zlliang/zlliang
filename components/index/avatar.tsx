@@ -21,7 +21,12 @@ const AvatarImg = styled.img`
 `
 
 const Avatar: FunctionComponent = () => (
-  <AvatarImg draggable={false} src='/static/images/avatar.jpg' alt='avatar' />
+  <AvatarImg
+    className='nozoom'
+    draggable={false}
+    src='/static/images/avatar.jpg'
+    alt='avatar'
+  />
 )
 
 export default Avatar
