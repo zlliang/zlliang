@@ -1,16 +1,26 @@
-import { Post } from '../pages/post/[pid]'
+import { PostMeta, PostProps as Post } from '../components/post'
 
-// Import posts
-import RedesignMyWebsite from './redesign-my-website.md'
+import EnterGraduateContent from './enter-graduate.md'
+import RedesignMyWebsiteContent from './redesign-my-website.md'
 
-// Register posts
-const posts: Post[] = [
-  {
-    pid: 'redesign-my-website',
-    title: 'Redesign My Website',
-    content: RedesignMyWebsite,
-    created: '2019-07-24'
-  }
-]
+const EnterGraduateMeta: PostMeta = {
+  pid: 'enter-graduate',
+  title: 'Enter Graduate',
+  created: '2019-07-24' // TODO
+}
+export const EnterGraduate: Post = {
+  meta: EnterGraduateMeta,
+  content: EnterGraduateContent
+}
 
-export default posts
+const RedesignMyWebsiteMeta: PostMeta = {
+  pid: 'redesign-my-website',
+  title: 'Redesign My Website',
+  created: '2019-07-24'
+}
+export const RedesignMyWebsite: Post = {
+  meta: RedesignMyWebsiteMeta,
+  content: RedesignMyWebsiteContent
+}
+
+export const posts: PostMeta[] = [EnterGraduateMeta, RedesignMyWebsiteMeta]
