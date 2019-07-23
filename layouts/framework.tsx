@@ -15,6 +15,18 @@ const cssLinks = [
   'https://fonts.googleapis.com/css?family=IBM+Plex+Mono'
 ]
 
+const faviconLinks = [
+  {
+    href: '/static/favicons/favicon.jpg',
+    rel: 'icon'
+  },
+  {
+    href: '/static/favicons/favicon-touch.jpg',
+    rel: 'apple-touch-icon',
+    sizes: '180x180'
+  }
+]
+
 const globalCSS = css`
   /* DEBUG */
   /* * {
@@ -181,12 +193,9 @@ const Page: FunctionComponent<PageProps> = props => {
         <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
         <base target='_blank' />
 
-        <link href='/static/favicons/favicon.jpg' rel='icon' />
-        <link
-          href='/static/favicons/favicon-touch.jpg'
-          rel='apple-touch-icon'
-          sizes='180x180'
-        />
+        {faviconLinks.map(p => (
+          <link key={p.rel} {...p} />
+        ))}
 
         {cssLinks.map(link => (
           <link key={link} rel='stylesheet' href={link} />
