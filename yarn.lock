@@ -4367,7 +4367,7 @@ raw-body@2.4.0:
 
 raw-loader@^3.1.0:
   version "3.1.0"
-  resolved "https://registry.npm.taobao.org/raw-loader/download/raw-loader-3.1.0.tgz#5e9d399a5a222cc0de18f42c3bc5e49677532b3f"
+  resolved "https://registry.npm.taobao.org/raw-loader/download/raw-loader-3.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fraw-loader%2Fdownload%2Fraw-loader-3.1.0.tgz#5e9d399a5a222cc0de18f42c3bc5e49677532b3f"
   integrity sha1-Xp05mloiLMDeGPQsO8XklndTKz8=
   dependencies:
     loader-utils "^1.1.0"

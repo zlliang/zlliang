@@ -25,6 +25,7 @@
     "medium-zoom": "^1.0.4",
     "next": "^9.0.2",
     "polished": "^3.4.1",
+    "raw-loader": "^3.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
@@ -40,7 +41,6 @@
     "eslint": "^6.0.1",
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-react-hooks": "^1.6.1",
-    "raw-loader": "^3.1.0",
     "typescript": "^3.5.3"
   }
 }
