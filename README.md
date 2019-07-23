@@ -2,4 +2,4 @@
 
 Personal website of Zilong Liang. Please visit: https://zlliang.com/.
 
-![screenshot](static/images/screenshot.png)
+![screenshot](https://storage.zlliang.com/personal-website-images/screenshot.png)
