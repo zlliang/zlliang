@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 
-import { mediaQuery } from '../utils/variables'
+import { mediaQuery } from '../../utils/variables'
 
 export const avatarSizeDesktop = '176px'
 export const avatarSizePhone = '160px'

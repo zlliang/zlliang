@@ -6,6 +6,12 @@ import styled from '@emotion/styled'
 import { color } from '../utils/variables'
 
 const globalCSS = css`
+  /* DEBUG */
+  /* * {
+    border: 0.1px solid blue;
+  } */
+
+  /* Typography */
   html * {
     line-height: 1.3em;
     font-family: 'Inter', sans-serif;
@@ -16,12 +22,14 @@ const globalCSS = css`
       font-family: 'Inter var', sans-serif;
     }
   }
-
-  html *::selection {
-    background-color: ${color.cyan};
-    color: black;
+  pre,
+  code,
+  code * {
+    font-size: 14px;
+    font-family: 'IBM Plex Mono', monospace;
   }
 
+  /* Font size */
   @media (max-width: 736px) {
     html {
       font-size: 14px;
@@ -33,16 +41,52 @@ const globalCSS = css`
     }
   }
 
+  /* Selection */
+  html *::selection {
+    background-color: ${color.cyan};
+    color: black;
+  }
+
+  /* Background */
   /* body {
     background-image: url('/static/images/background.svg');
     background-repeat: no-repeat;
-  } */
+  }
   @media (max-width: 736px) {
     body {
       background-size: 117%;
     }
-  }
+  } */
 
+  /* Content style */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  hr {
+    margin: 16px 0;
+    border: none;
+    height: 1.5px;
+    background-color: ${color.gray5};
+  }
+  blockquote {
+    font-style: italic;
+    color: ${color.gray2};
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    border-left: 5px solid ${color.gray5};
+  }
+  strong {
+    font-weight: 600;
+  }
   a {
     text-decoration: none;
     color: ${color.blue};
@@ -50,6 +94,35 @@ const globalCSS = css`
   a:hover {
     text-decoration: underline;
     color: ${color.lightBlue};
+  }
+
+  ul {
+    padding-inline-start: 1.3em;
+  }
+  li {
+    margin-block-start: 0.4rem;
+    margin-block-end: 0.4rem;
+  }
+
+  code {
+    /* background-color: ${color.gray6}; */
+    border: 1px solid ${color.gray5};
+    color: ${color.blue};
+    padding: 0 4px;
+    border-radius: 3px;
+  }
+
+  pre code {
+    line-height: 1.1em;
+    color: black;
+    padding: 0;
+    border: none;
+  }
+  pre,
+  pre.hljs {
+    border: 1px solid ${color.gray5};
+    padding: 10px 16px;
+    border-radius: 6px;
   }
 `
 
@@ -82,7 +155,15 @@ const Page: FunctionComponent<PageProps> = props => {
         />
 
         <link href='https://unpkg.com/modern-normalize' rel='stylesheet' />
+        <link
+          href='https://unpkg.com/highlight.js/styles/xcode.css'
+          rel='stylesheet'
+        />
         <link href='https://rsms.me/inter/inter.css' rel='stylesheet' />
+        <link
+          href='https://fonts.googleapis.com/css?family=IBM+Plex+Mono'
+          rel='stylesheet'
+        />
         <title>
           {props.title ? `${props.title} | ${siteTitle}` : siteTitle}
         </title>

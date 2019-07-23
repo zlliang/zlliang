@@ -3,14 +3,9 @@ import styled from '@emotion/styled'
 import Image from 'react-medium-image-zoom'
 
 import { Section, SectionTitle } from './content'
-import { mediaQuery } from '../utils/variables'
+import { mediaQuery } from '../../utils/variables'
 
 const GalleryContainer = styled.div`
-  /* DEBUG */
-  /* border: 0.1px solid red;
-  * {
-    border: 0.1px solid blue;
-  } */
   display: flex;
   flex-wrap: wrap;
   margin: -4px;
