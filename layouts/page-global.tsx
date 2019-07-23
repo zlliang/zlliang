@@ -49,17 +49,6 @@ const globalCSS = css`
     color: black;
   }
 
-  /* Background */
-  /* body {
-    background-image: url('/static/images/background.svg');
-    background-repeat: no-repeat;
-  }
-  @media (max-width: 736px) {
-    body {
-      background-size: 117%;
-    }
-  } */
-
   /* Content style */
   h1,
   h2,
