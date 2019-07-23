@@ -18,7 +18,9 @@ const HeaderContainer = styled.header`
   }
 `
 
-const Nav = styled.nav``
+const Nav = styled.nav`
+  user-select: none;
+`
 
 const NavItem = styled.div`
   display: inline-block;
