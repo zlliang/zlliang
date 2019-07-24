@@ -22,7 +22,8 @@ const md = require('markdown-it')({
 module.exports = function(markdown) {
   this.cacheable()
   const content = md.render(markdown)
-  const meta = md.meta
+  let meta = md.meta
+  meta.github = meta.github || `pages/post/${meta.pid}.md`
   const imports = `
   import PostContainer from '../../components/post';
   import { 
