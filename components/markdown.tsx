@@ -1,21 +1,29 @@
-import { FunctionComponent, ComponentType } from 'react'
+import { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 
-const MarkdownContainer = styled.div`
+interface MarkdownProps {
+  inChinese?: boolean
+  content: string
+}
+
+const MarkdownContainer = styled.div<MarkdownProps>`
   img {
     max-width: 100%;
   }
+  p,
+  ul,
+  li,
+  blockquote {
+    line-height: ${props => (props.inChinese ? '1.7em' : 'inherit')};
+  }
 `
 
-interface MarkdownProps {
-  Content: ComponentType
-}
-
-const Markdown: FunctionComponent<MarkdownProps> = ({ Content }) => {
+const Markdown: FunctionComponent<MarkdownProps> = props => {
   return (
-    <MarkdownContainer>
-      <Content />
-    </MarkdownContainer>
+    <MarkdownContainer
+      {...props}
+      dangerouslySetInnerHTML={{ __html: props.content }}
+    />
   )
 }
 

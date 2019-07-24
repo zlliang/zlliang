@@ -4,13 +4,22 @@ import dayjs from 'dayjs'
 
 import { color } from '../utils/variables'
 
+interface TitleProps {
+  title: string
+  created: string
+  updated?: string
+  github?: string
+  inChinese?: boolean
+}
+
 const Container = styled.div`
   margin-bottom: 32px;
 `
-const TitleContainer = styled.h1`
+
+const TitleContainer = styled.h1<TitleProps>`
   margin-top: 0;
   margin-bottom: 4px;
-  font-style: italic;
+  font-style: ${p => (p.inChinese ? 'normal' : 'italic')};
   font-weight: 700;
 `
 
@@ -29,26 +38,24 @@ const EditOnGithub = styled.a`
   }
 `
 
-interface TitleProps {
-  title: string
-  created: string
-  updated?: string
-  github?: string
-}
-
 const Title: FunctionComponent<TitleProps> = props => (
   <Container>
-    <TitleContainer>{props.title}</TitleContainer>
+    <TitleContainer {...props}>{props.title}</TitleContainer>
     <MetaContainer>
       {props.created && (
         <Updated>
-          Created - {dayjs(props.created).format('MMM DD, YYYY')}
+          {props.inChinese
+            ? `创建于 ${dayjs(props.created).format('YYYY年MM月DD日')}`
+            : `Created - ${dayjs(props.created).format('MMM DD, YYYY')}`}
         </Updated>
       )}
       {props.updated && (
         <Updated>
           {' '}
-          ・ Updated - {dayjs(props.updated).format('MMM DD, YYYY')}
+          ・{' '}
+          {props.inChinese
+            ? `更新于 ${dayjs(props.created).format('YYYY年MM月DD日')}`
+            : `Updated - ${dayjs(props.created).format('MMM DD, YYYY')}`}
         </Updated>
       )}
       {props.github && (
@@ -60,7 +67,7 @@ const Title: FunctionComponent<TitleProps> = props => (
               props.github
             }`}
           >
-            Edit on GitHub
+            {props.inChinese ? `在 GihHub 上编辑` : `Edit on GitHub`}
           </EditOnGithub>
         </>
       )}

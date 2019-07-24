@@ -42,6 +42,7 @@ const Nav = styled.nav`
 
 const NavItem = styled.div`
   display: inline-block;
+  line-height: 1.3em;
   ${mediaQuery.desktop} {
     padding: 7px 10px;
   }

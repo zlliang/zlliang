@@ -2,7 +2,7 @@
 /// <reference types="next/types/global" />
 
 declare module '*.md' {
-  export const Content: React.ComponentType
+  export const content: string
   export const meta: PostMeta
   const Post: NextPage
   export default Post

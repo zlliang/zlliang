@@ -1,5 +1,6 @@
 const hljs = require('highlight.js')
 const mdMeta = require('markdown-it-meta')
+const mdCheckbox = require('markdown-it-checkbox')
 const mdKatex = require('@iktakahiro/markdown-it-katex')
 const md = require('markdown-it')({
   html: true,
@@ -17,6 +18,7 @@ const md = require('markdown-it')({
   }
 })
   .use(mdMeta)
+  .use(mdCheckbox)
   .use(mdKatex)
 
 module.exports = function(markdown) {
@@ -24,16 +26,11 @@ module.exports = function(markdown) {
   const content = md.render(markdown)
   let meta = md.meta
   meta.github = meta.github || `pages/post/${meta.pid}.md`
-  const imports = `
-  import PostContainer from '../../components/post';
-  import { 
-    Tag, Desc
-  } from "../../components/utils";
-  `
-  return `${imports}
-    export const Content = () => (<>${content}</>);
+  return `
+    import PostContainer from '../../components/post';
+    export const content = \`${content}\`;
     export const meta = JSON.parse('${JSON.stringify(meta)}');
-    const Post = () => <PostContainer meta={meta} Content={Content} />;
+    const Post = () => <PostContainer meta={meta} content={content} />;
     export default Post
   `
 }
