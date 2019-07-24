@@ -36,11 +36,13 @@ const globalCSS = css`
   /* Typography */
   html * {
     line-height: 1.6em;
+    color: ${color.gray1};
     font-family: 'Inter', sans-serif;
   }
   @supports (font-variation-settings: normal) {
     html * {
       line-height: 1.6em;
+      color: ${color.gray1};
       font-family: 'Inter var', sans-serif;
     }
   }
@@ -48,7 +50,7 @@ const globalCSS = css`
   code,
   code * {
     font-size: 14px;
-    line-height: 1.4em !important;
+    line-height: 1.4em;
     font-family: 'IBM Plex Mono', 'Roboto Mono', 'Menlo', 'Consolas', monospace;
   }
   @media (max-width: 736px) {
@@ -129,13 +131,13 @@ const globalCSS = css`
 
   code {
     border: 1px solid ${color.gray5};
-    color: ${color.blue};
+    color: ${color.gray2};
     padding: 0 4px;
     border-radius: 3px;
   }
 
   pre code {
-    color: black;
+    color: ${color.gray1};
     padding: 0;
     border: none;
   }
@@ -146,22 +148,6 @@ const globalCSS = css`
     padding: 10px 16px;
     border-radius: 6px;
     overflow-x: auto;
-  }
-  code.hljs-lang {
-    content: attr(rel);
-    position: relative;
-    top: -12px;
-    padding: 4px 8px;
-    font-size: 10px;
-    line-height: 1em;
-    color: ${color.gray2};
-    background-color: ${color.gray5};
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    cursor: default;
-    user-select: none;
   }
 
   p.katex-block {

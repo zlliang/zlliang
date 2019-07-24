@@ -1,8 +1,6 @@
 import { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 import { mediaQuery, color } from '../utils/variables'
 
@@ -73,9 +71,7 @@ const Header: FunctionComponent = () => (
     <Title>ZILONG LIANG</Title>
     <Nav>
       <Link href='/'>
-        <NavItem>
-          <FontAwesomeIcon icon={faArrowLeft} /> Home
-        </NavItem>
+        <NavItem>← Home</NavItem>
       </Link>
       <Link href='/about'>
         <NavItem>About me</NavItem>
