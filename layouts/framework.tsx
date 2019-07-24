@@ -112,7 +112,7 @@ const globalCSS = css`
   }
 
   ul {
-    padding-inline-start: 16px;
+    padding-inline-start: 18px;
   }
   li {
     margin-block-start: 0.4rem;
