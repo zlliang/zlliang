@@ -35,12 +35,12 @@ const globalCSS = css`
 
   /* Typography */
   html * {
-    line-height: 1.5em;
+    line-height: 1.6em;
     font-family: 'Inter', sans-serif;
   }
   @supports (font-variation-settings: normal) {
     html * {
-      line-height: 1.5em;
+      line-height: 1.6em;
       font-family: 'Inter var', sans-serif;
     }
   }
@@ -48,8 +48,15 @@ const globalCSS = css`
   code,
   code * {
     font-size: 14px;
+    line-height: 1.3em !important;
     font-family: 'IBM Plex Mono', 'Roboto Mono', 'Menlo', 'Consolas', monospace;
   }
+  @media (max-width: 736px) {
+    p code {
+      font-size: 13px;
+    }
+  }
+
   .katex,
   .katex * {
     font: normal 1em 'KaTeX_Main', 'Times New Roman', serif;
@@ -82,6 +89,7 @@ const globalCSS = css`
   h6 {
     margin-top: 32px;
     margin-bottom: 16px;
+    line-height: 1.2em;
     font-weight: 600;
   }
   hr {
@@ -115,8 +123,8 @@ const globalCSS = css`
     padding-inline-start: 18px;
   }
   li {
-    margin-block-start: 0.2rem;
-    margin-block-end: 0.2rem;
+    margin-block-start: 0.1rem;
+    margin-block-end: 0.1rem;
   }
 
   code {
