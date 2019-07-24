@@ -4,7 +4,7 @@ import Page from '../layouts/page'
 import Title from '../components/title'
 import Markdown from '../components/markdown'
 
-import content from '../markdown/about.md'
+import Content from '../markdown/about.md'
 
 const meta = {
   title: 'About Me',
@@ -15,7 +15,7 @@ const meta = {
 const About: NextPage = () => (
   <Page>
     <Title {...meta} />
-    <Markdown content={content} />
+    <Markdown Content={Content} />
   </Page>
 )
 

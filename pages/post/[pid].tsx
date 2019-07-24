@@ -1,34 +1,49 @@
-import { ReactNode } from 'react'
+import { ComponentType } from 'react'
 import { NextPage } from 'next'
-import PostContainer from '../../components/post'
+import { useRouter } from 'next/router'
+import dynamic from 'next/dynamic'
 
-import { PostMeta } from '../../components/post'
+import PostContainer, { PostMeta } from '../../components/post'
 import posts from '../../markdown/registry'
 
-interface PostProps {
-  meta: PostMeta
-  content: ReactNode
-}
+const Loading = () => <p>Loading...</p>
 
-const notFound: PostMeta = {
+const notFound: PostMeta & { Content: ComponentType } = {
   pid: 'not-found',
   title: 'Post Not Found',
-  created: ''
-}
-
-const Post: NextPage<PostProps> = props => <PostContainer {...props} />
-
-Post.getInitialProps = async ({ query }) => {
-  const { pid } = query
-  const meta = posts.find(p => p.pid == pid) || notFound
-  let content: ReactNode
-  if (meta.pid != 'not-found') {
-    const res = await import(`../../markdown/${pid}.md`)
-    content = res.default
-  } else {
-    content = <></>
+  created: '',
+  Content() {
+    return <></>
   }
-  return { meta, content }
 }
+
+const Post: NextPage = () => {
+  const router = useRouter()
+  const { pid } = router.query
+  const meta = posts.find(p => p.pid == pid) || notFound
+  let Content: ComponentType
+  if (meta.pid != 'not-found') {
+    Content = dynamic(() => import(`../../markdown/${pid}.md`), {
+      loading: Loading
+    })
+  } else {
+    Content = notFound.Content
+  }
+
+  return <PostContainer meta={meta} Content={Content} />
+}
+
+// Post.getInitialProps = async ({ query }) => {
+//   const { pid } = query
+//   const meta = posts.find(p => p.pid == pid) || notFound
+//   let Content: FunctionComponent
+//   if (meta.pid != 'not-found') {
+//     const res = await
+//     Content = res.default
+//   } else {
+//     Content = () => <></>
+//   }
+//   return { meta, Content }
+// }
 
 export default Post
