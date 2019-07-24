@@ -2,6 +2,7 @@ const hljs = require('highlight.js')
 const mdKatex = require('@iktakahiro/markdown-it-katex')
 const md = require('markdown-it')({
   html: true,
+  xhtmlOut: true,
   linkify: true,
   highlight: (str, lang) => {
     if (lang && hljs.getLanguage(lang)) {
