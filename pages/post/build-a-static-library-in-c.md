@@ -53,7 +53,7 @@ $ gcc -c power.c -o power.o
 
 int main() {
   int k = power(2, 10);
-  printf("%d\n", k);
+  printf("%d\\n", k);
 
   return 0;
 }
