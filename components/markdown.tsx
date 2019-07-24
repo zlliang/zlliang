@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent, ComponentType } from 'react'
 import styled from '@emotion/styled'
 
 const MarkdownContainer = styled.div`
@@ -8,11 +8,15 @@ const MarkdownContainer = styled.div`
 `
 
 interface MarkdownProps {
-  content: ReactNode
+  Content: ComponentType
 }
 
-const Markdown: FunctionComponent<MarkdownProps> = ({ content }) => {
-  return <MarkdownContainer>{content}</MarkdownContainer>
+const Markdown: FunctionComponent<MarkdownProps> = ({ Content }) => {
+  return (
+    <MarkdownContainer>
+      <Content />
+    </MarkdownContainer>
+  )
 }
 
 export default Markdown

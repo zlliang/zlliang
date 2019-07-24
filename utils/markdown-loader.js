@@ -24,6 +24,6 @@ module.exports = function(markdown) {
   } from "../components/utils";
   `
   return `${imports}
-    const content = (<>${md.render(markdown)}</>);
+    const content = () => (<>${md.render(markdown)}</>);
     export default content;`
 }

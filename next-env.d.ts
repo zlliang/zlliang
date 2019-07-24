@@ -2,6 +2,6 @@
 /// <reference types="next/types/global" />
 
 declare module '*.md' {
-  const content: React.ReactNode
+  const content: React.ComponentType
   export default content
 }
