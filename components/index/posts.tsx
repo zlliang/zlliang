@@ -2,14 +2,13 @@ import { FunctionComponent } from 'react'
 import Link from 'next/link'
 import dayjs from 'dayjs'
 
-import { Section, SectionTitle } from './content'
 import { color } from '../../utils/variables'
 
 import posts from '../../markdown/registry'
 
 const Posts: FunctionComponent = () => (
-  <Section>
-    <SectionTitle>Posts</SectionTitle>
+  <>
+    <h3>Posts</h3>
     <ul id='posts'>
       {posts.map(p => (
         <li key={p.pid}>
@@ -34,7 +33,7 @@ const Posts: FunctionComponent = () => (
         color: ${color.gray3};
       }
     `}</style>
-  </Section>
+  </>
 )
 
 export default Posts
