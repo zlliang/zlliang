@@ -4,7 +4,7 @@ import { Global as GlobalStyle, css } from '@emotion/core'
 import styled from '@emotion/styled'
 import mediumZoom from 'medium-zoom'
 
-import Footer from '../components/footer'
+import Footer from './footer'
 import { color } from '../utils/variables'
 
 const cssLinks = [
@@ -35,12 +35,12 @@ const globalCSS = css`
 
   /* Typography */
   html * {
-    line-height: 1.3em;
+    line-height: 1.5em;
     font-family: 'Inter', sans-serif;
   }
   @supports (font-variation-settings: normal) {
     html * {
-      line-height: 1.3em;
+      line-height: 1.5em;
       font-family: 'Inter var', sans-serif;
     }
   }
@@ -48,7 +48,7 @@ const globalCSS = css`
   code,
   code * {
     font-size: 14px;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'IBM Plex Mono', 'Roboto Mono', 'Menlo', 'Consolas', monospace;
   }
   .katex,
   .katex * {
@@ -115,8 +115,8 @@ const globalCSS = css`
     padding-inline-start: 18px;
   }
   li {
-    margin-block-start: 0.4rem;
-    margin-block-end: 0.4rem;
+    margin-block-start: 0.2rem;
+    margin-block-end: 0.2rem;
   }
 
   code {
@@ -127,7 +127,6 @@ const globalCSS = css`
   }
 
   pre code {
-    line-height: 1.1em;
     color: black;
     padding: 0;
     border: none;
@@ -165,6 +164,20 @@ const globalCSS = css`
   }
   .katex-display {
     margin: 10px 0;
+  }
+
+  /* Customized components */
+  tag {
+    padding: 0.1em 0.3em;
+    font-size: 0.7em;
+    color: ${color.gray3};
+    border: 1px solid ${color.gray3};
+    border-radius: 3px;
+    margin-inline-start: 0.4em;
+  }
+  span.desc {
+    font-size: 0.9em;
+    color: ${color.gray3};
   }
 `
 

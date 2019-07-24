@@ -1,6 +1,6 @@
 import { FunctionComponent, ComponentType } from 'react'
 
-import Page from '../layouts/page'
+import Page from './page'
 import Title from '../components/title'
 import Markdown from '../components/markdown'
 
@@ -15,14 +15,14 @@ export interface PostMeta {
 
 export interface PostProps {
   meta: PostMeta
-  Content: ComponentType
+  content: string
 }
 
-const PostContainr: FunctionComponent<PostProps> = ({ meta, Content }) => {
+const PostContainr: FunctionComponent<PostProps> = ({ meta, content }) => {
   return (
     <Page>
       <Title {...meta} />
-      <Markdown Content={Content} />
+      <Markdown content={content} inChinese={meta.inChinese} />
     </Page>
   )
 }

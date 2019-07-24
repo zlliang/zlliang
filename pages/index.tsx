@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 import { Global as GlobalStyle, css } from '@emotion/core'
 
-import Page from '../layouts/framework'
+import Page from '../components/framework'
 import Header from '../components/index/header'
 
 import Contact from '../components/index/contact'
@@ -9,7 +9,7 @@ import Posts from '../components/index/posts'
 import Gallery from '../components/index/gallery'
 
 import Markdown from '../components/markdown'
-import { Content } from './helper/_index.md'
+import { content } from './helper/_index.md'
 
 const globalCSS = css`
   /* Background */
@@ -31,7 +31,7 @@ const Index: NextPage = () => {
       <Header />
       <Contact />
       <Posts />
-      <Markdown Content={Content} />
+      <Markdown content={content} />
       <Gallery />
     </Page>
   )

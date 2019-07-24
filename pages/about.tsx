@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 
 import PostContainer, { PostMeta } from '../components/post'
 
-import { Content } from './helper/_about.md'
+import { content } from './helper/_about.md'
 
 const meta: PostMeta = {
   pid: '_about',
@@ -11,6 +11,6 @@ const meta: PostMeta = {
   github: 'markdown/about.md'
 }
 
-const About: NextPage = () => <PostContainer meta={meta} Content={Content} />
+const About: NextPage = () => <PostContainer meta={meta} content={content} />
 
 export default About

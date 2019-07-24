@@ -42,6 +42,7 @@
     "eslint-plugin-react-hooks": "^1.6.1",
     "katex": "^0.10.2",
     "markdown-it": "^9.0.1",
+    "markdown-it-checkbox": "^1.1.0",
     "markdown-it-meta": "^0.0.1",
     "typescript": "^3.5.3"
   }

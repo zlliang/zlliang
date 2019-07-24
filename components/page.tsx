@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
 
 import PageFramework from './framework'
-import Header from '../components/header'
+import Header from './header'
 
 const Page: FunctionComponent = props => (
   <PageFramework>
