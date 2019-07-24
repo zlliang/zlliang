@@ -33,17 +33,4 @@ const Post: NextPage = () => {
   return <PostContainer meta={meta} Content={Content} />
 }
 
-// Post.getInitialProps = async ({ query }) => {
-//   const { pid } = query
-//   const meta = posts.find(p => p.pid == pid) || notFound
-//   let Content: FunctionComponent
-//   if (meta.pid != 'not-found') {
-//     const res = await
-//     Content = res.default
-//   } else {
-//     Content = () => <></>
-//   }
-//   return { meta, Content }
-// }
-
 export default Post
