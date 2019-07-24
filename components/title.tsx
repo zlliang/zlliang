@@ -28,7 +28,9 @@ const MetaContainer = styled.div`
   color: ${color.gray3};
 `
 
-const Updated = styled.span``
+const Meta = styled.span`
+  color: ${color.gray3};
+`
 
 const EditOnGithub = styled.a`
   cursor: pointer;
@@ -43,20 +45,20 @@ const Title: FunctionComponent<TitleProps> = props => (
     <TitleContainer {...props}>{props.title}</TitleContainer>
     <MetaContainer>
       {props.created && (
-        <Updated>
+        <Meta>
           {props.inChinese
             ? `创建于 ${dayjs(props.created).format('YYYY年MM月DD日')}`
             : `Created - ${dayjs(props.created).format('MMM DD, YYYY')}`}
-        </Updated>
+        </Meta>
       )}
       {props.updated && (
-        <Updated>
+        <Meta>
           {' '}
           ・{' '}
           {props.inChinese
             ? `更新于 ${dayjs(props.created).format('YYYY年MM月DD日')}`
             : `Updated - ${dayjs(props.created).format('MMM DD, YYYY')}`}
-        </Updated>
+        </Meta>
       )}
       {props.github && (
         <>
