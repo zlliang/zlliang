@@ -1,4 +1,5 @@
 const hljs = require('highlight.js')
+const mdMeta = require('markdown-it-meta')
 const mdKatex = require('@iktakahiro/markdown-it-katex')
 const md = require('markdown-it')({
   html: true,
@@ -14,16 +15,24 @@ const md = require('markdown-it')({
     }
     return `<pre class='hljs'><code>${md.utils.escapeHtml(str)}</code></pre>`
   }
-}).use(mdKatex)
+})
+  .use(mdMeta)
+  .use(mdKatex)
 
 module.exports = function(markdown) {
   this.cacheable()
+  const content = md.render(markdown)
+  const meta = md.meta
   const imports = `
+  import PostContainer from '../../components/post';
   import { 
     Tag, Desc
-  } from "../components/utils";
+  } from "../../components/utils";
   `
   return `${imports}
-    const content = () => (<>${md.render(markdown)}</>);
-    export default content;`
+    export const Content = () => (<>${content}</>);
+    export const meta = JSON.parse('${JSON.stringify(meta)}');
+    const Post = () => <PostContainer meta={meta} Content={Content} />;
+    export default Post
+  `
 }

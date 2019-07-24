@@ -4,7 +4,7 @@ import dayjs from 'dayjs'
 
 import { color } from '../../utils/variables'
 
-import posts from '../../markdown/registry'
+import posts from '../../utils/post-registry'
 
 const Posts: FunctionComponent = () => (
   <>
