@@ -48,7 +48,7 @@ const globalCSS = css`
   code,
   code * {
     font-size: 14px;
-    line-height: 1.3em !important;
+    line-height: 1.4em !important;
     font-family: 'IBM Plex Mono', 'Roboto Mono', 'Menlo', 'Consolas', monospace;
   }
   @media (max-width: 736px) {
