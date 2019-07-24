@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 import { Section, SectionTitle } from './content'
 import { color } from '../../utils/variables'
 
-import { posts } from '../../markdown/registry'
+import posts from '../../markdown/registry'
 
 const Posts: FunctionComponent = () => (
   <Section>
@@ -13,7 +13,7 @@ const Posts: FunctionComponent = () => (
     <ul id='posts'>
       {posts.map(p => (
         <li key={p.pid}>
-          <Link href={`/post/${p.pid}`}>
+          <Link href={'/post/[pid]'} as={`/post/${p.pid}`}>
             <a>{p.title}</a>
           </Link>{' '}
           {p.inChinese && <span className='inChinese'>(in Chinese)</span>}
