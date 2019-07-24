@@ -18,20 +18,17 @@
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "@iktakahiro/markdown-it-katex": "^3.1.0",
     "dayjs": "^1.8.15",
     "highlight.js": "^9.15.8",
     "isomorphic-unfetch": "^3.0.0",
-    "katex": "^0.10.2",
-    "markdown-it": "^9.0.1",
     "medium-zoom": "^1.0.4",
     "next": "^9.0.2",
     "polished": "^3.4.1",
-    "raw-loader": "^3.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@iktakahiro/markdown-it-katex": "^3.1.0",
     "@types/highlight.js": "^9.12.3",
     "@types/markdown-it": "^0.0.8",
     "@types/node": "^12.6.8",
@@ -43,6 +40,8 @@
     "eslint": "^6.0.1",
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-react-hooks": "^1.6.1",
+    "katex": "^0.10.2",
+    "markdown-it": "^9.0.1",
     "typescript": "^3.5.3"
   }
 }
