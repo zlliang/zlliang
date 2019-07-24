@@ -6,9 +6,10 @@ import Header from '../components/index/header'
 
 import Contact from '../components/index/contact'
 import Posts from '../components/index/posts'
-import UsefulLinks from '../components/index/useful-links'
-import Projects from '../components/index/projects'
 import Gallery from '../components/index/gallery'
+
+import Markdown from '../components/markdown'
+import content from '../markdown/index.md'
 
 const globalCSS = css`
   /* Background */
@@ -30,8 +31,7 @@ const Index: NextPage = () => {
       <Header />
       <Contact />
       <Posts />
-      <Projects />
-      <UsefulLinks />
+      <Markdown content={content} />
       <Gallery />
     </Page>
   )

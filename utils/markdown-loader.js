@@ -17,5 +17,12 @@ const md = require('markdown-it')({
 
 module.exports = function(markdown) {
   this.cacheable()
-  return 'const content = `' + md.render(markdown) + '`; export default content'
+  const imports = `
+  import { 
+    Tag, Desc
+  } from "../components/utils";
+  `
+  return `${imports}
+    const content = (<>${md.render(markdown)}</>);
+    export default content;`
 }

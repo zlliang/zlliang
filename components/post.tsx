@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 
 import Page from '../layouts/page'
 import Title from '../components/title'
@@ -15,7 +15,7 @@ export interface PostMeta {
 
 export interface PostProps {
   meta: PostMeta
-  content: string
+  content: ReactNode
 }
 
 const PostContainr: FunctionComponent<PostProps> = ({ meta, content }) => {

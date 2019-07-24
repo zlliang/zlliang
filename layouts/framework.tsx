@@ -80,7 +80,7 @@ const globalCSS = css`
   h4,
   h5,
   h6 {
-    margin-top: 16px;
+    margin-top: 32px;
     margin-bottom: 16px;
     font-weight: 600;
   }
@@ -112,7 +112,7 @@ const globalCSS = css`
   }
 
   ul {
-    padding-inline-start: 1.3em;
+    padding-inline-start: 16px;
   }
   li {
     margin-block-start: 0.4rem;
