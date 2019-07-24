@@ -6,7 +6,7 @@ interface MarkdownProps {
   content: string
 }
 
-const MarkdownContainer = styled.div<MarkdownProps>`
+const MarkdownContainer = styled.div<{ inChinese: boolean | undefined }>`
   img {
     max-width: 100%;
   }
@@ -14,14 +14,14 @@ const MarkdownContainer = styled.div<MarkdownProps>`
   ul,
   li,
   blockquote {
-    line-height: ${props => (props.inChinese ? '1.7em' : 'inherit')};
+    line-height: ${props => (props.inChinese ? '1.8em' : 'inherit')};
   }
 `
 
 const Markdown: FunctionComponent<MarkdownProps> = props => {
   return (
     <MarkdownContainer
-      {...props}
+      inChinese={props.inChinese}
       dangerouslySetInnerHTML={{ __html: props.content }}
     />
   )
