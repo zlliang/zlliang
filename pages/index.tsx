@@ -9,7 +9,7 @@ import Posts from '../components/index/posts'
 import Gallery from '../components/index/gallery'
 
 import Markdown from '../components/markdown'
-import Content from '../markdown/index.md'
+import { Content } from './helper/_index.md'
 
 const globalCSS = css`
   /* Background */

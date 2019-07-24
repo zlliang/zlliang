@@ -1,3 +1,9 @@
+---
+pid: redesign-my-website
+title: Redesign My Website
+created: 2019-07-24
+---
+
 ## History
 
 Snapshot in Feb 2018:

@@ -6,5 +6,6 @@ module.exports = {
     })
     config.resolveLoader.modules.push('utils')
     return config
-  }
+  },
+  pageExtensions: ['md', 'tsx', 'jsx', 'js']
 }
