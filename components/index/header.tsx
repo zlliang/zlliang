@@ -62,6 +62,7 @@ const TitleAndBioContainer = styled.div`
 `
 
 const TitleContainer = styled.div`
+  position: relative;
   user-select: none;
   cursor: default;
   ${mediaQuery.phone} {
@@ -82,12 +83,31 @@ const Title = styled.h1`
   font-weight: 800;
   font-style: italic;
   -webkit-text-stroke: 7px white;
-  paint-order: stroke fill;
   ${mediaQuery.phone} {
     font-size: 32px;
     text-align: center;
   }
   ${mediaQuery.desktop} {
+    font-size: 48px;
+  }
+`
+
+const TitleAux = styled.h1`
+  margin: 0;
+  line-height: 1em;
+  color: black;
+  font-weight: 800;
+  font-style: italic;
+  ${mediaQuery.phone} {
+    position: relative;
+    top: -1em;
+    margin-bottom: -1em;
+    font-size: 32px;
+    text-align: center;
+  }
+  ${mediaQuery.desktop} {
+    position: absolute;
+    top: 0;
     font-size: 48px;
   }
 `
@@ -135,6 +155,7 @@ const Header: FunctionComponent = () => (
       <TitleAndBioContainer>
         <TitleContainer>
           <Title>ZILONG LIANG</Title>
+          <TitleAux>ZILONG LIANG</TitleAux>
           <Subtitle>Applied Mathematics.</Subtitle>
         </TitleContainer>
         <Bio>
