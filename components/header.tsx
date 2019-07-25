@@ -23,13 +23,11 @@ const HeaderContainer = styled.header`
 const Title = styled.div`
   margin: 0;
   padding: 8px 10px;
-  color: black;
+  color: white;
   line-height: 1em;
   font-weight: 800;
   font-style: italic;
   font-size: 18px;
-  -webkit-text-stroke: 3px white;
-  paint-order: stroke fill;
   cursor: default;
   user-select: none;
 `
