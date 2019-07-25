@@ -129,6 +129,10 @@ const globalCSS = css`
     margin-block-end: 0.1rem;
   }
 
+  input[type='checkbox'] {
+    margin-right: 8px;
+  }
+
   code {
     border: 1px solid ${color.gray5};
     color: ${color.gray2};
