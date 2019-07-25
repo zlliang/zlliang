@@ -23,4 +23,5 @@ export const color = {
   purple: '#9B51E0'
 }
 
-export const imageHost = 'https://storage.zlliang.com/personal-website-images'
+export const imageHost =
+  'https://zlliang.oss-cn-shanghai.aliyuncs.com/personal-website-images'
