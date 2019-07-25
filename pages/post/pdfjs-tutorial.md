@@ -21,8 +21,7 @@ PDF.js 由 `pdf.js` 和 `pdf.worker.js` 两个子库组成。其中 `pdf.worker.
 
 最简便的方法是利用 CDN 加载。在 HTML 文件的 `<head>` 标签里加载即可：
 ```HTML
-<script       
-src="https://cdn.bootcss.com/pdf.js/2.0.489/pdf.min.js"></script>
+<script src="https://cdn.bootcss.com/pdf.js/2.0.489/pdf.min.js"></script>
 ```
 我这里使用了国内比较稳定的 [BootCDN](https://www.bootcdn.cn/)，如果在主要用户在国外，也可以使用 [cdnjs](https://cdnjs.com) 等服务。
 
