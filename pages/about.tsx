@@ -8,7 +8,7 @@ const meta: PostMeta = {
   pid: '_about',
   title: 'About Me',
   created: '2019-07-23',
-  github: 'markdown/about.md'
+  github: 'pages/helper/_about.md'
 }
 
 const About: NextPage = () => <PostContainer meta={meta} content={content} />
