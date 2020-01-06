@@ -5,5 +5,8 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "extends": ["eslint:recommended", "plugin:react/recommended"]
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "rules": {
+    "react/prop-types": "off"
+  }
 }
