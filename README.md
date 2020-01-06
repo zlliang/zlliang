@@ -1,5 +1,3 @@
 # Zilong Liang
 
-Personal website of Zilong Liang. Please visit: https://zlliang.com/.
-
-![screenshot](/static/images/screenshot.png)
+Personal website of Zilong Liang. _This branch is the next version._ Please visit: https://next.zlliang.com/.
