@@ -1,5 +1,3 @@
 # Zilong Liang
 
-Personal website of Zilong Liang. Please visit: https://zlliang.com/.
-
-![screenshot](/static/images/screenshot.png)
+This repository contains the source codes of my personal website. It is closed for now. I will open it when I'm willing to.
