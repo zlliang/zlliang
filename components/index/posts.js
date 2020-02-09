@@ -2,7 +2,7 @@ import Link from "next/link";
 import dayjs from "dayjs";
 
 import { color } from "../../utils/config";
-import posts from "../../pages/_registry";
+import posts from "../../utils/registry";
 
 export default function Posts() {
   return (
