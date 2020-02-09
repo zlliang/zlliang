@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faWeibo } from "@fortawesome/free-brands-svg-icons";
 
 import { Nav } from "../header";
 import Avatar from "./avatar";
@@ -183,11 +183,11 @@ export default function Header() {
             <ContactTag href="mailto:zlliang96@outlook.com">
               <FontAwesomeIcon icon={faEnvelope} /> Mail
             </ContactTag>
+            <ContactTag href="https://weibo.com/mblquincy">
+              <FontAwesomeIcon icon={faWeibo} /> 微博 Weibo
+            </ContactTag>
             <ContactTag href="https://github.com/zlliang">
               <FontAwesomeIcon icon={faGithub} /> GitHub
-            </ContactTag>
-            <ContactTag href="https://twitter.com/zlliang96">
-              <FontAwesomeIcon icon={faTwitter} /> Twitter
             </ContactTag>
           </ContactContainer>
         </TitleAndContactContainer>
