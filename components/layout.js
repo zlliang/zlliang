@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { Global as GlobalStyle, css } from "@emotion/core";
 import styled from "@emotion/styled";
+import mediumZoom from "medium-zoom";
 
 import Header from "./header";
 import Footer from "./footer";
@@ -9,20 +11,19 @@ import { siteTitle, maxWidth, mediaQuery, color } from "../utils/config";
 
 const cssLinks = [
   "https://unpkg.com/modern-normalize",
-  // "https://unpkg.com/highlight.js/styles/xcode.css",
-  // "https://unpkg.com/katex/dist/katex.min.css",
+  "https://unpkg.com/highlight.js/styles/xcode.css",
+  "https://unpkg.com/katex/dist/katex.min.css",
   "https://rsms.me/inter/inter.css",
   "https://fonts.googleapis.com/css?family=IBM+Plex+Mono"
 ];
 
-// TODO: Add favicons
 const faviconLinks = [
   {
-    href: "/static/favicons/favicon.jpg",
+    href: "/favicons/favicon.jpg",
     rel: "icon"
   },
   {
-    href: "/static/favicons/favicon-touch.jpg",
+    href: "/favicons/favicon-touch.jpg",
     rel: "apple-touch-icon",
     sizes: "180x180"
   }
@@ -61,7 +62,7 @@ const globalCSS = css`
   }
   .katex,
   .katex * {
-    font: normal 1em "KaTeX_Main", "Times New Roman", serif;
+    font: normal 1.03em "KaTeX_Main", "Times New Roman", serif;
   }
 
   /* Font size */
@@ -154,14 +155,9 @@ const globalCSS = css`
     overflow-x: auto;
   }
 
-  p.katex-block {
-    padding: 0 16px;
-    border: 1px solid ${color.gray5};
-    border-radius: 6px;
-    overflow-x: auto;
-  }
   .katex-display {
     margin: 10px 0;
+    overflow-x: auto;
   }
 
   /* Customized components */
@@ -186,6 +182,9 @@ const PageContainer = styled.div`
 `;
 
 export default function Page(props) {
+  useEffect(() => {
+    mediumZoom("img:not(.nozoom)");
+  });
   return (
     <>
       <Head>

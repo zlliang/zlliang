@@ -31,7 +31,8 @@ const Title = styled.div`
   user-select: none;
 `;
 
-const Nav = styled.nav`
+// Also used by './index/header.js'
+export const Nav = styled.nav`
   user-select: none;
 `;
 
@@ -47,10 +48,9 @@ const NavItem = styled.div`
   cursor: pointer;
   color: white;
   :hover {
-    /* background-color: ${color.gray2}; */
     border-bottom: 3px solid ${color.gray5};
     ${mediaQuery.desktop} {
-    padding-bottom: 4px;
+      padding-bottom: 4px;
     }
     ${mediaQuery.phone} {
       padding-bottom: 5px;
