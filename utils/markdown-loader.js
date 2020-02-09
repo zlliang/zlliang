@@ -1,8 +1,8 @@
-const hljs = require('highlight.js')
-const mdMeta = require('markdown-it-meta')
-const mdCheckbox = require('markdown-it-checkbox')
-const mdKatex = require('@iktakahiro/markdown-it-katex')
-const md = require('markdown-it')({
+const hljs = require("highlight.js");
+const katex = require("katex");
+const mdMetadata = require("markdown-it-meta");
+const mdKatex = require("markdown-it-texmath").use(katex);
+const md = require("markdown-it")({
   html: true,
   xhtmlOut: true,
   linkify: true,
@@ -11,26 +11,25 @@ const md = require('markdown-it')({
       try {
         return `<pre class='hljs'><code>${
           hljs.highlight(lang, str, true).value
-        }</code></pre>`
+        }</code></pre>`;
       } catch (_) {}
     }
-    return `<pre class='hljs'><code>${md.utils.escapeHtml(str)}</code></pre>`
+    return `<pre class='hljs'><code>${md.utils.escapeHtml(str)}</code></pre>`;
   }
 })
-  .use(mdMeta)
-  .use(mdCheckbox)
-  .use(mdKatex)
+  .use(mdMetadata)
+  .use(mdKatex);
 
 module.exports = function(markdown) {
-  this.cacheable()
-  const content = md.render(markdown)
-  let meta = md.meta
-  meta.github = meta.github || `pages/post/${meta.pid}.md`
+  this.cacheable();
+  const content = md.render(markdown);
+  let metadata = md.meta;
+  metadata.github = metadata.github || `pages/post/${metadata.pid}.md`;
   return `
-    import PostContainer from '../../components/post';
+    import PostContainer from '../components/post';
     export const content = \`${content}\`;
-    export const meta = JSON.parse('${JSON.stringify(meta)}');
-    const Post = () => <PostContainer meta={meta} content={content} />;
+    export const metadata = JSON.parse('${JSON.stringify(metadata)}');
+    const Post = () => <PostContainer metadata={metadata} content={content} />;
     export default Post
-  `
-}
+  `;
+};
