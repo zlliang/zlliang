@@ -1,3 +1,3 @@
-# Zilong Liang
+# Zilong Liang (Next)
 
-This repository contains the source codes of my personal website. It is closed for now. I will open it when I'm willing to.
+Here are the source codes of my personal website [zlliang.com](https://zlliang.com). Now, the next version is under development.
