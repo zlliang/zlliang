@@ -1,0 +1,26 @@
+{
+  "name": "zlliang.com",
+  "private": true,
+  "description": "Personal website of Zilong Liang",
+  "author": "Zilong Liang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zlliang/zlliang.com.git"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build"
+  },
+  "dependencies": {
+    "next": "^9.2.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "prettier": "^1.19.1"
+  }
+}
