@@ -1,6 +1,11 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
+
+import { Nav } from "../header";
 import Avatar from "./avatar";
 import { mediaQuery, color } from "../../utils/config";
 
@@ -14,11 +19,6 @@ const HeaderContainer = styled.header`
     margin-top: 32px;
     margin-bottom: 48px;
   }
-`;
-
-// TODO: Merge these with the global header component
-const Nav = styled.nav`
-  user-select: none;
 `;
 
 const NavItem = styled.div`
@@ -144,6 +144,7 @@ const ContactTag = styled.a`
   transition: background-color 100ms ease-in-out;
   color: black;
   padding: 4px 8px;
+  height: 14px;
   font-size: 14px;
   border: 1px solid black;
   border-radius: 4px;
@@ -179,10 +180,14 @@ export default function Header() {
             <Subtitle>你好呀～我是梁子龙</Subtitle>
           </TitleContainer>
           <ContactContainer>
-            <ContactTag href="mailto:zlliang96@outlook.com">Mail</ContactTag>
-            <ContactTag href="https://github.com/zlliang">GitHub</ContactTag>
+            <ContactTag href="mailto:zlliang96@outlook.com">
+              <FontAwesomeIcon icon={faEnvelope} /> Mail
+            </ContactTag>
+            <ContactTag href="https://github.com/zlliang">
+              <FontAwesomeIcon icon={faGithub} /> GitHub
+            </ContactTag>
             <ContactTag href="https://twitter.com/zlliang96">
-              Twitter
+              <FontAwesomeIcon icon={faTwitter} /> Twitter
             </ContactTag>
           </ContactContainer>
         </TitleAndContactContainer>

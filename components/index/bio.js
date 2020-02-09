@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 import { mediaQuery, imageHost } from "../../utils/config";
 
 const BioContainer = styled.div`
+  margin-top: 72px;
+  margin-bottom: 72px;
   font-size: 14px;
   ${mediaQuery.desktop} {
     display: flex;
@@ -35,7 +37,7 @@ const BioDescFudan = styled.div`
 
 const BioDescRCS = styled.div`
   position: relative;
-  top: 60px;
+  top: 40px;
   margin-top: -40px;
   margin-left: 32px;
   padding: 6px;
