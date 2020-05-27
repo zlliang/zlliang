@@ -66,10 +66,8 @@ export default function Bio() {
       <BioItem>
         <BioDescRCS>
           我是
-          <a href="https://baike.baidu.com/item/上海彩虹室内合唱团/19510057">
-            上海彩虹室内合唱团
-          </a>
-          的一名男高音成员
+          <a href="https://space.bilibili.com/21562856">上海彩虹室内合唱团</a>
+          的一名团员
           <br />I am member of{" "}
           <a href="https://www.youtube.com/channel/UCC3EcrXH6Wu1-iu8dqDwhgw">
             Rainbow Chamber Singers
