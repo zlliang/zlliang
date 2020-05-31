@@ -19,15 +19,15 @@
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.9",
-    "dayjs": "^1.8.27",
+    "dayjs": "^1.8.28",
     "highlight.js": "^10.0.3",
     "katex": "^0.11.1",
     "markdown-it": "^11.0.0",
     "markdown-it-meta": "^0.0.1",
     "markdown-it-texmath": "^0.6.0",
     "medium-zoom": "^1.0.5",
-    "next": "^9.4.2",
-    "polished": "^3.6.3",
+    "next": "^9.4.4",
+    "polished": "^3.6.4",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
@@ -35,7 +35,7 @@
   "devDependencies": {
     "eslint": "^7.1.0",
     "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^4.0.2",
+    "eslint-plugin-react-hooks": "^4.0.4",
     "prettier": "^2.0.5"
   }
 }
