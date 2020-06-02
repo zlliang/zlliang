@@ -3,6 +3,7 @@ import { Global as GlobalStyle, css } from "@emotion/core";
 import Page from "../components/layout";
 import Header from "../components/index/header";
 import Bio from "../components/index/bio";
+import Socials from "../components/index/socials";
 import Posts from "../components/index/posts";
 
 import Markdown from "../components/markdown";
@@ -28,6 +29,7 @@ export default function Index() {
       <GlobalStyle styles={globalCSS} />
       <Header />
       <Bio />
+      <Socials />
       <Posts />
       <Markdown content={content} />
     </Page>
