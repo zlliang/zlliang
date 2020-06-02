@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faWeibo } from "@fortawesome/free-brands-svg-icons";
+import { faWeibo } from "@fortawesome/free-brands-svg-icons";
 
 import { Nav } from "../header";
 import Avatar from "./avatar";
@@ -143,8 +143,7 @@ const ContactContainer = styled.div`
 const ContactTag = styled.a`
   transition: background-color 100ms ease-in-out;
   color: black;
-  padding: 4px 8px;
-  height: 14px;
+  padding: 6px 8px;
   font-size: 14px;
   border: 1px solid black;
   border-radius: 4px;
@@ -181,13 +180,10 @@ export default function Header() {
           </TitleContainer>
           <ContactContainer>
             <ContactTag href="mailto:zlliang96@outlook.com">
-              <FontAwesomeIcon icon={faEnvelope} /> Mail
+              <FontAwesomeIcon icon={faEnvelope} /> 邮件 Mail
             </ContactTag>
             <ContactTag href="https://weibo.com/mblquincy">
               <FontAwesomeIcon icon={faWeibo} /> 微博 Weibo
-            </ContactTag>
-            <ContactTag href="https://github.com/zlliang">
-              <FontAwesomeIcon icon={faGithub} /> GitHub
             </ContactTag>
           </ContactContainer>
         </TitleAndContactContainer>
