@@ -13,29 +13,29 @@
     "build": "next build"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.34",
+    "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-brands-svg-icons": "^5.14.0",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "dayjs": "^1.8.33",
-    "highlight.js": "^10.1.2",
+    "dayjs": "^1.9.1",
+    "highlight.js": "^10.2.1",
     "katex": "^0.12.0",
-    "markdown-it": "^11.0.0",
+    "markdown-it": "^11.0.1",
     "markdown-it-meta": "^0.0.1",
     "markdown-it-texmath": "^0.8.0",
     "medium-zoom": "^1.0.6",
-    "next": "^9.5.2",
-    "polished": "^3.6.5",
+    "next": "^9.5.5",
+    "polished": "^4.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },
   "devDependencies": {
-    "eslint": "^7.7.0",
-    "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.0.8",
-    "prettier": "^2.0.5"
+    "eslint": "^7.11.0",
+    "eslint-plugin-react": "^7.21.4",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "prettier": "^2.1.2"
   }
 }
