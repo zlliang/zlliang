@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import Image from "next/image";
+
 import { mediaQuery, imageHost } from "../../utils/config";
 
 const BioContainer = styled.div`
@@ -17,7 +19,7 @@ const BioItem = styled.div`
   }
 `;
 
-const BioImage = styled.img`
+const BioImage = styled(Image)`
   ${mediaQuery.desktop} {
     width: 340px;
   }
@@ -50,7 +52,7 @@ export default function Bio() {
   return (
     <BioContainer>
       <BioItem>
-        <BioImage src={`${imageHost}/bio-fudan.jpg`} alt="bio-fudan" />
+        <BioImage src={`${imageHost}/bio-fudan.jpg`} alt="bio-fudan" unsized />
         <BioDescFudan>
           我是<a href="https://www.fudan.edu.cn">复旦大学</a>
           <a href="http://math.fudan.edu.cn">数学科学学院</a>
@@ -74,7 +76,7 @@ export default function Bio() {
           </a>{" "}
           in Shanghai
         </BioDescRCS>
-        <BioImage src={`${imageHost}/bio-rcs.jpg`} alt="bio-rcs" />
+        <BioImage src={`${imageHost}/bio-rcs.jpg`} alt="bio-rcs" unsized />
       </BioItem>
     </BioContainer>
   );
