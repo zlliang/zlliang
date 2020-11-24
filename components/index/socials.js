@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faImages, faVideo } from "@fortawesome/free-solid-svg-icons";
+import { faVideo } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faWeibo } from "@fortawesome/free-brands-svg-icons";
 
 const SocialContainer = styled.div`
@@ -39,9 +39,6 @@ export default function Socials() {
         </SocialTag>
         <SocialTag href="https://space.bilibili.com/30470407">
           <FontAwesomeIcon icon={faVideo} /> 哔哩哔哩
-        </SocialTag>
-        <SocialTag href="https://unsplash.com/@zlliang">
-          <FontAwesomeIcon icon={faImages} /> Unsplash
         </SocialTag>
       </SocialContainer>
     </>
