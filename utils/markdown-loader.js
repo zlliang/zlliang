@@ -15,12 +15,12 @@ const md = require("markdown-it")({
       } catch (_) {}
     }
     return `<pre class='hljs'><code>${md.utils.escapeHtml(str)}</code></pre>`;
-  }
+  },
 })
   .use(mdMetadata)
   .use(mdKatex);
 
-module.exports = function(markdown) {
+module.exports = function (markdown) {
   this.cacheable();
   const content = md.render(markdown);
   let metadata = md.meta;

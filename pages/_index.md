@@ -1,6 +1,7 @@
 ### 开源项目 / Open Source Projects
 
 - [zlliang.com](https://github.com/zlliang/zlliang.com) - 这个网站的源代码 / This website <tag>JavaScript</tag><tag>React</tag><tag>Next.js</tag>
+- [fdu-classrooms](https://github.com/zlliang/fdu-classrooms) - 用来查询复旦大学校内空闲教室的微信小程序 <tag>JavaScript</tag><tag>微信小程序</tag>
 - [latex-templates](https://github.com/zlliang/latex-templates) - 我正在使用的 LaTeX 模版 / My LaTeX templates <tag>LaTeX</tag>
 - [beamer-fudan](https://github.com/zlliang/beamer-fudan) - 一个非官方的复旦 Beamer 模版 / An unofficial beamer theme for Fudan University <tag>LaTeX</tag>
 - 已归档的项目 / Archived 
