@@ -188,15 +188,15 @@ export default function Page(props) {
   return (
     <>
       <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <base target="_blank" />
+        <meta charSet='UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
+        <base target='_blank' />
         {faviconLinks.map((favicon) => (
           <link key={favicon.rel} {...favicon} />
         ))}
         {cssLinks.map((link) => (
-          <link key={link} rel="stylesheet" href={link} />
+          <link key={link} rel='stylesheet' href={link} />
         ))}
         <title>
           {props.title ? `${props.title} | ${siteTitle}` : siteTitle}

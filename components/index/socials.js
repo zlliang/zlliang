@@ -31,13 +31,13 @@ export default function Socials() {
     <>
       <h3>在其他平台找到我 / Find Me</h3>
       <SocialContainer>
-        <SocialTag href="https://weibo.com/mblquincy">
+        <SocialTag href='https://weibo.com/mblquincy'>
           <FontAwesomeIcon icon={faWeibo} /> 微博 Weibo
         </SocialTag>
-        <SocialTag href="https://github.com/zlliang">
+        <SocialTag href='https://github.com/zlliang'>
           <FontAwesomeIcon icon={faGithub} /> GitHub
         </SocialTag>
-        <SocialTag href="https://space.bilibili.com/30470407">
+        <SocialTag href='https://space.bilibili.com/30470407'>
           <FontAwesomeIcon icon={faVideo} /> 哔哩哔哩
         </SocialTag>
       </SocialContainer>

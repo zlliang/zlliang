@@ -68,10 +68,10 @@ export default function Header() {
     <HeaderContainer>
       <Title>ZILONG LIANG</Title>
       <Nav>
-        <Link href="/">
+        <Link href='/'>
           <NavItem>← Home</NavItem>
         </Link>
-        <Link href="/about">
+        <Link href='/about'>
           <NavItem>About me</NavItem>
         </Link>
       </Nav>
