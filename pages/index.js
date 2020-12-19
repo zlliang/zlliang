@@ -1,19 +1,19 @@
-import { Global as GlobalStyle, css } from "@emotion/core";
+import { Global as GlobalStyle, css } from '@emotion/react'
 
-import Page from "../components/layout";
-import Header from "../components/index/header";
-import Bio from "../components/index/bio";
-import Socials from "../components/index/socials";
-import Posts from "../components/index/posts";
+import Page from '../components/layout'
+import Header from '../components/index/header'
+import Bio from '../components/index/bio'
+import Socials from '../components/index/socials'
+import Posts from '../components/index/posts'
 
-import Markdown from "../components/markdown";
-import { content } from "./_index.md";
-import { mediaQuery, imageHost } from "../utils/config";
+import Markdown from '../components/markdown'
+import { content } from './_index.md'
+import { mediaQuery, imageHost } from '../utils/config'
 
 const globalCSS = css`
   /* Background */
   body {
-    background-image: url("${imageHost}/background.svg");
+    background-image: url('${imageHost}/background.svg');
     background-repeat: no-repeat;
   }
   ${mediaQuery.phone} {
@@ -21,7 +21,7 @@ const globalCSS = css`
       background-size: 120%;
     }
   }
-`;
+`
 
 export default function Index() {
   return (
@@ -33,5 +33,5 @@ export default function Index() {
       <Posts />
       <Markdown content={content} />
     </Page>
-  );
+  )
 }

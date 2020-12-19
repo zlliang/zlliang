@@ -1,14 +1,14 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVideo } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faWeibo } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faVideo } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faWeibo } from '@fortawesome/free-brands-svg-icons'
 
 const SocialContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-block-end: -8px;
-`;
+`
 
 const SocialTag = styled.a`
   transition: background-color 100ms ease-in-out;
@@ -24,7 +24,7 @@ const SocialTag = styled.a`
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.1);
   }
-`;
+`
 
 export default function Socials() {
   return (
@@ -42,5 +42,5 @@ export default function Socials() {
         </SocialTag>
       </SocialContainer>
     </>
-  );
+  )
 }

@@ -1,13 +1,13 @@
-import styled from "@emotion/styled";
-import Link from "next/link";
+import styled from '@emotion/styled'
+import Link from 'next/link'
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faWeibo } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faWeibo } from '@fortawesome/free-brands-svg-icons'
 
-import { Nav } from "../header";
-import Avatar from "./avatar";
-import { mediaQuery, color } from "../../utils/config";
+import { Nav } from '../header'
+import Avatar from './avatar'
+import { mediaQuery, color } from '../../utils/config'
 
 const HeaderContainer = styled.header`
   text-align: end;
@@ -19,7 +19,7 @@ const HeaderContainer = styled.header`
     margin-top: 32px;
     margin-bottom: 48px;
   }
-`;
+`
 
 const NavItem = styled.div`
   display: inline-block;
@@ -38,7 +38,7 @@ const NavItem = styled.div`
     background-color: black;
   }
   transition: all 100ms ease-in-out;
-`;
+`
 
 const HeroContainer = styled.header`
   margin-bottom: 64px;
@@ -50,7 +50,7 @@ const HeroContainer = styled.header`
     display: flex;
     margin-top: 114px;
   }
-`;
+`
 
 const TitleAndContactContainer = styled.div`
   ${mediaQuery.desktop} {
@@ -58,7 +58,7 @@ const TitleAndContactContainer = styled.div`
     flex-direction: column;
     justify-content: space-around;
   }
-`;
+`
 
 const TitleContainer = styled.div`
   position: relative;
@@ -73,7 +73,7 @@ const TitleContainer = styled.div`
     left: -48px;
     max-width: 21.5rem;
   }
-`;
+`
 
 const Title = styled.h1`
   margin: 0;
@@ -89,7 +89,7 @@ const Title = styled.h1`
   ${mediaQuery.desktop} {
     font-size: 48px;
   }
-`;
+`
 
 const TitleAux = styled.h1`
   margin: 0;
@@ -109,7 +109,7 @@ const TitleAux = styled.h1`
     top: 0;
     font-size: 48px;
   }
-`;
+`
 
 const Subtitle = styled.h2`
   margin: 0;
@@ -126,7 +126,7 @@ const Subtitle = styled.h2`
     text-align: end;
     font-size: 24px;
   }
-`;
+`
 
 const ContactContainer = styled.div`
   color: ${color.gray2};
@@ -138,7 +138,7 @@ const ContactContainer = styled.div`
     left: 4.8rem;
     width: 29.9rem;
   }
-`;
+`
 
 const ContactTag = styled.a`
   transition: background-color 100ms ease-in-out;
@@ -155,7 +155,7 @@ const ContactTag = styled.a`
   :not(:last-child) {
     margin-inline-end: 16px;
   }
-`;
+`
 
 export default function Header() {
   return (
@@ -189,5 +189,5 @@ export default function Header() {
         </TitleAndContactContainer>
       </HeroContainer>
     </>
-  );
+  )
 }

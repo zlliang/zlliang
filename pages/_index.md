@@ -4,11 +4,10 @@
 - [fdu-classrooms](https://github.com/zlliang/fdu-classrooms) - 用来查询复旦大学校内空闲教室的微信小程序 <tag>JavaScript</tag><tag>微信小程序</tag>
 - [latex-templates](https://github.com/zlliang/latex-templates) - 我正在使用的 LaTeX 模版 / My LaTeX templates <tag>LaTeX</tag>
 - [beamer-fudan](https://github.com/zlliang/beamer-fudan) - 一个非官方的复旦 Beamer 模版 / An unofficial beamer theme for Fudan University <tag>LaTeX</tag>
-- 已归档的项目 / Archived 
+- 已归档的项目 / Archived
   - [jacobi-svd](https://github.com/zlliang/jacobi-svd) - 计算 SVD 的 Jacobi 算法的实验 / Numerical experiments on Jacobi SVD algorithm <tag>MATLAB</tag>
   - [essaysense](https://github.com/zlliang/essaysense) - 利用深度学习进行自动作文评分的实验 / An experiment on Automated Essay Scoring<tag>Python</tag><tag>TensorFlow</tag>
   - [gomoku](https://github.com/zlliang/gomoku) - 一个 AI 五子棋对弈的实验 / Gomoku agent, as an exercise project in Artificial Intelligence <tag>Python</tag><tag>AI</tag>
-
 
 ### 常用链接 / Useful Links
 

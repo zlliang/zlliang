@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import styled from "@emotion/styled";
+import PropTypes from 'prop-types'
+import styled from '@emotion/styled'
 
 const MarkdownContainer = styled.div`
   img {
@@ -9,9 +9,9 @@ const MarkdownContainer = styled.div`
   ul,
   li,
   blockquote {
-    line-height: ${props => (props.inChinese ? "1.8em" : "inherit")};
+    line-height: ${(props) => (props.inChinese ? '1.8em' : 'inherit')};
   }
-`;
+`
 
 export default function Markdown(props) {
   return (
@@ -19,10 +19,10 @@ export default function Markdown(props) {
       inChinese={props.inChinese}
       dangerouslySetInnerHTML={{ __html: props.content }}
     />
-  );
+  )
 }
 
 Markdown.propTypes = {
   inChinese: PropTypes.bool,
   content: PropTypes.string
-};
+}
