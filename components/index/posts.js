@@ -1,8 +1,8 @@
-import Link from "next/link";
-import dayjs from "dayjs";
+import Link from 'next/link'
+import dayjs from 'dayjs'
 
-import { color } from "../../utils/config";
-import posts from "../../utils/registry";
+import { color } from '../../utils/config'
+import posts from '../../utils/registry'
 
 export default function Posts() {
   return (
@@ -16,10 +16,10 @@ export default function Posts() {
             <li key={p.pid}>
               <Link href={`/${p.pid}`}>
                 <a>{p.title}</a>
-              </Link>{" "}
+              </Link>{' '}
               {p.inChinese && <span className="inChinese">(in Chinese)</span>}
               <span className="date">
-                {dayjs(p.created).format("MMM DD, YYYY")}
+                {dayjs(p.created).format('MMM DD, YYYY')}
               </span>
             </li>
           ))
@@ -37,5 +37,5 @@ export default function Posts() {
         }
       `}</style>
     </>
-  );
+  )
 }

@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
-import Link from "next/link";
+import styled from '@emotion/styled'
+import Link from 'next/link'
 
-import { mediaQuery, color } from "../utils/config";
+import { mediaQuery, color } from '../utils/config'
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -17,7 +17,7 @@ const HeaderContainer = styled.header`
   border-radius: 4px;
   background-color: black;
   color: white;
-`;
+`
 
 const Title = styled.div`
   margin: 0;
@@ -29,12 +29,12 @@ const Title = styled.div`
   font-size: 18px;
   cursor: default;
   user-select: none;
-`;
+`
 
 // Also used by './index/header.js'
 export const Nav = styled.nav`
   user-select: none;
-`;
+`
 
 const NavItem = styled.div`
   display: inline-block;
@@ -61,7 +61,7 @@ const NavItem = styled.div`
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
   }
-`;
+`
 
 export default function Header() {
   return (
@@ -76,5 +76,5 @@ export default function Header() {
         </Link>
       </Nav>
     </HeaderContainer>
-  );
+  )
 }

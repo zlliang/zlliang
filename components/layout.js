@@ -1,33 +1,33 @@
-import { useEffect } from "react";
-import PropTypes from "prop-types";
-import Head from "next/head";
-import { Global as GlobalStyle, css } from "@emotion/core";
-import styled from "@emotion/styled";
-import mediumZoom from "medium-zoom";
+import { useEffect } from 'react'
+import PropTypes from 'prop-types'
+import Head from 'next/head'
+import { Global as GlobalStyle, css } from '@emotion/react'
+import styled from '@emotion/styled'
+import mediumZoom from 'medium-zoom'
 
-import Header from "./header";
-import Footer from "./footer";
-import { siteTitle, maxWidth, mediaQuery, color } from "../utils/config";
+import Header from './header'
+import Footer from './footer'
+import { siteTitle, maxWidth, mediaQuery, color } from '../utils/config'
 
 const cssLinks = [
-  "https://unpkg.com/modern-normalize",
-  "https://unpkg.com/highlight.js/styles/xcode.css",
-  "https://unpkg.com/katex/dist/katex.min.css",
-  "https://rsms.me/inter/inter.css",
-  "https://fonts.googleapis.com/css?family=IBM+Plex+Mono"
-];
+  'https://unpkg.com/modern-normalize',
+  'https://unpkg.com/highlight.js/styles/xcode.css',
+  'https://unpkg.com/katex/dist/katex.min.css',
+  'https://rsms.me/inter/inter.css',
+  'https://fonts.googleapis.com/css?family=IBM+Plex+Mono'
+]
 
 const faviconLinks = [
   {
-    href: "/favicons/favicon.jpg",
-    rel: "icon"
+    href: '/favicons/favicon.jpg',
+    rel: 'icon'
   },
   {
-    href: "/favicons/favicon-touch.jpg",
-    rel: "apple-touch-icon",
-    sizes: "180x180"
+    href: '/favicons/favicon-touch.jpg',
+    rel: 'apple-touch-icon',
+    sizes: '180x180'
   }
-];
+]
 
 const globalCSS = css`
   /* DEBUG */
@@ -39,13 +39,13 @@ const globalCSS = css`
   html * {
     line-height: 1.6em;
     color: ${color.gray1};
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
   }
   @supports (font-variation-settings: normal) {
     html * {
       line-height: 1.6em;
       color: ${color.gray1};
-      font-family: "Inter var", sans-serif;
+      font-family: 'Inter var', sans-serif;
     }
   }
   pre,
@@ -53,7 +53,7 @@ const globalCSS = css`
   code * {
     font-size: 14px;
     line-height: 1.4em;
-    font-family: "IBM Plex Mono", "Roboto Mono", "Menlo", "Consolas", monospace;
+    font-family: 'IBM Plex Mono', 'Roboto Mono', 'Menlo', 'Consolas', monospace;
   }
   ${mediaQuery.phone} {
     p code {
@@ -62,7 +62,7 @@ const globalCSS = css`
   }
   .katex,
   .katex * {
-    font: normal 1.03em "KaTeX_Main", "Times New Roman", serif;
+    font: normal 1.03em 'KaTeX_Main', 'Times New Roman', serif;
   }
 
   /* Font size */
@@ -130,7 +130,7 @@ const globalCSS = css`
     margin-block-end: 0.1rem;
   }
 
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     margin-right: 8px;
   }
 
@@ -173,18 +173,18 @@ const globalCSS = css`
     font-size: 0.9em;
     color: ${color.gray3};
   }
-`;
+`
 
 const PageContainer = styled.div`
   max-width: ${maxWidth}px;
   margin: 0 auto;
   padding: 0 16px;
-`;
+`
 
 export default function Page(props) {
   useEffect(() => {
-    mediumZoom("img:not(.nozoom)");
-  });
+    mediumZoom('img:not(.nozoom)')
+  })
   return (
     <>
       <Head>
@@ -192,10 +192,10 @@ export default function Page(props) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <base target="_blank" />
-        {faviconLinks.map(favicon => (
+        {faviconLinks.map((favicon) => (
           <link key={favicon.rel} {...favicon} />
         ))}
-        {cssLinks.map(link => (
+        {cssLinks.map((link) => (
           <link key={link} rel="stylesheet" href={link} />
         ))}
         <title>
@@ -209,15 +209,15 @@ export default function Page(props) {
         <Footer />
       </PageContainer>
     </>
-  );
+  )
 }
 
 Page.propTypes = {
   title: PropTypes.string,
   isIndex: PropTypes.bool,
   children: PropTypes.node.isRequired
-};
+}
 
 Page.defaultProps = {
   isIndex: false
-};
+}

@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types'
 
-import Page from "./layout";
-import Title from "./title";
-import Markdown from "./markdown";
+import Page from './layout'
+import Title from './title'
+import Markdown from './markdown'
 
 export default function Post(props) {
   return (
@@ -10,7 +10,7 @@ export default function Post(props) {
       <Title {...props.metadata} />
       <Markdown content={props.content} inChinese={props.metadata.inChinese} />
     </Page>
-  );
+  )
 }
 
 Post.propTypes = {
@@ -23,4 +23,4 @@ Post.propTypes = {
     github: PropTypes.string
   }),
   content: PropTypes.string
-};
+}

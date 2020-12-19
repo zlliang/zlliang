@@ -1,9 +1,9 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
-import { mediaQuery, imageHost } from "../../utils/config";
+import { mediaQuery, imageHost } from '../../utils/config'
 
-export const avatarSizeDesktop = "176px";
-export const avatarSizePhone = "160px";
+export const avatarSizeDesktop = '176px'
+export const avatarSizePhone = '160px'
 
 const Avatar = styled.div`
   user-select: none;
@@ -21,6 +21,6 @@ const Avatar = styled.div`
   background-size: 100%;
 
   border-radius: 50%;
-`;
+`
 
-export default Avatar;
+export default Avatar
