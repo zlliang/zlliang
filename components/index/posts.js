@@ -8,7 +8,7 @@ export default function Posts() {
   return (
     <>
       <h3>文章 / Posts</h3>
-      <ul id="posts">
+      <ul id='posts'>
         {posts ? (
           <li>暂无</li>
         ) : (
@@ -17,8 +17,8 @@ export default function Posts() {
               <Link href={`/${p.pid}`}>
                 <a>{p.title}</a>
               </Link>{' '}
-              {p.inChinese && <span className="inChinese">(in Chinese)</span>}
-              <span className="date">
+              {p.inChinese && <span className='inChinese'>(in Chinese)</span>}
+              <span className='date'>
                 {dayjs(p.created).format('MMM DD, YYYY')}
               </span>
             </li>

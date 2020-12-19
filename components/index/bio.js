@@ -51,31 +51,31 @@ export default function Bio() {
   return (
     <BioContainer>
       <BioItem>
-        <BioImage src={`${imageHost}/bio-fudan.jpg`} alt="bio-fudan" />
+        <BioImage src={`${imageHost}/bio-fudan.jpg`} alt='bio-fudan' />
         <BioDescFudan>
-          我是<a href="https://www.fudan.edu.cn">复旦大学</a>
-          <a href="http://math.fudan.edu.cn">数学科学学院</a>
+          我是<a href='https://www.fudan.edu.cn'>复旦大学</a>
+          <a href='http://math.fudan.edu.cn'>数学科学学院</a>
           计算数学系的研究生，主修矩阵计算
           <br />I am a graduate student in{' '}
-          <a href="http://math.fudan.edu.cn/En">
+          <a href='http://math.fudan.edu.cn/En'>
             School of Mathematical Sciences
           </a>
-          , <a href="https://www.fudan.edu.cn/en/">Fudan University</a>,{' '}
+          , <a href='https://www.fudan.edu.cn/en/'>Fudan University</a>,{' '}
           Shanghai, China
         </BioDescFudan>
       </BioItem>
       <BioItem>
         <BioDescRCS>
           我是
-          <a href="https://space.bilibili.com/21562856">上海彩虹室内合唱团</a>
+          <a href='https://space.bilibili.com/21562856'>上海彩虹室内合唱团</a>
           的一名团员
           <br />I am member of{' '}
-          <a href="https://www.youtube.com/channel/UCC3EcrXH6Wu1-iu8dqDwhgw">
+          <a href='https://www.youtube.com/channel/UCC3EcrXH6Wu1-iu8dqDwhgw'>
             Rainbow Chamber Singers
           </a>{' '}
           in Shanghai
         </BioDescRCS>
-        <BioImage src={`${imageHost}/bio-rcs.jpg`} alt="bio-rcs" />
+        <BioImage src={`${imageHost}/bio-rcs.jpg`} alt='bio-rcs' />
       </BioItem>
     </BioContainer>
   )

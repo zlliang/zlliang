@@ -162,10 +162,10 @@ export default function Header() {
     <>
       <HeaderContainer>
         <Nav>
-          <Link href="/">
+          <Link href='/'>
             <NavItem>Home</NavItem>
           </Link>
-          <Link href="/about">
+          <Link href='/about'>
             <NavItem>About me</NavItem>
           </Link>
         </Nav>
@@ -179,10 +179,10 @@ export default function Header() {
             <Subtitle>你好呀～我是梁子龙</Subtitle>
           </TitleContainer>
           <ContactContainer>
-            <ContactTag href="mailto:zlliang96@outlook.com">
+            <ContactTag href='mailto:zlliang96@outlook.com'>
               <FontAwesomeIcon icon={faEnvelope} /> 邮件 Mail
             </ContactTag>
-            <ContactTag href="https://weibo.com/mblquincy">
+            <ContactTag href='https://weibo.com/mblquincy'>
               <FontAwesomeIcon icon={faWeibo} /> 微博 Weibo
             </ContactTag>
           </ContactContainer>
