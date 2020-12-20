@@ -26,10 +26,10 @@ module.exports = function (markdown) {
   let metadata = md.meta
   metadata.github = metadata.github || `pages/${metadata.pid}.md`
   return `
-    import PostContainer from "../components/post";
-    export const content = \`${content}\`;
-    export const metadata = JSON.parse(\`${JSON.stringify(metadata)}\`);
-    const Post = () => <PostContainer {...{metadata, content}} />;
+    import PostContainer from '../components/post'
+    export const content = \`${content}\`
+    export const metadata = JSON.parse(\`${JSON.stringify(metadata)}\`)
+    const Post = () => <PostContainer {...{metadata, content}} />
     export default Post
   `
 }
