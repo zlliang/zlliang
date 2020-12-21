@@ -62,7 +62,7 @@ const globalCSS = css`
   }
   .katex,
   .katex * {
-    font: normal 1.03em 'KaTeX_Main', 'Times New Roman', serif;
+    font: normal 1.02em 'KaTeX_Main', 'Times New Roman', serif;
   }
 
   /* Font size */
@@ -156,7 +156,7 @@ const globalCSS = css`
   }
 
   .katex-display {
-    margin: 10px 0;
+    padding: 10px 0;
     overflow-x: auto;
   }
 
