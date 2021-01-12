@@ -11,7 +11,7 @@ const Container = styled.div`
 const TitleContainer = styled.h1`
   margin-top: 0;
   margin-bottom: 4px;
-  font-style: ${(p) => (p.inChinese ? 'normal' : 'italic')};
+  font-style: ${({ inChinese }) => (inChinese ? 'normal' : 'italic')};
   font-weight: 700;
 `
 
@@ -22,14 +22,6 @@ const MetadataContainer = styled.div`
 
 const Metadata = styled.span`
   color: ${color.gray3};
-`
-
-const EditOnGithub = styled.a`
-  cursor: pointer;
-  color: ${color.gray3};
-  :hover {
-    color: ${color.gray4};
-  }
 `
 
 export default function Title(props) {
@@ -53,16 +45,6 @@ export default function Title(props) {
               : `Updated - ${dayjs(props.updated).format('MMM DD, YYYY')}`}
           </Metadata>
         )}
-        {props.github && (
-          <>
-            {' '}
-            ・{' '}
-            <EditOnGithub
-              href={`https://github.com/zlliang/zlliang.com/tree/master/${props.github}`}>
-              {props.inChinese ? `在 GihHub 上编辑` : `Edit on GitHub`}
-            </EditOnGithub>
-          </>
-        )}
       </MetadataContainer>
     </Container>
   )
@@ -72,6 +54,5 @@ Title.propTypes = {
   title: PropTypes.string.isRequired,
   created: PropTypes.string.isRequired,
   updated: PropTypes.string,
-  github: PropTypes.string,
   inChinese: PropTypes.bool
 }

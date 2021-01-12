@@ -24,7 +24,6 @@ module.exports = function (markdown) {
   this.cacheable()
   const content = md.render(markdown)
   let metadata = md.meta
-  metadata.github = metadata.github || `pages/${metadata.pid}.md`
   return `
     import PostContainer from '../components/post'
     export const content = \`${content}\`

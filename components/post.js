@@ -15,7 +15,7 @@ export default function Post(props) {
 
 Post.propTypes = {
   metadata: PropTypes.shape({
-    pid: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     created: PropTypes.string.isRequired,
     updated: PropTypes.string,
