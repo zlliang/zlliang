@@ -13,8 +13,8 @@ export default function Posts() {
           <li>暂无</li>
         ) : (
           posts.map((p) => (
-            <li key={p.pid}>
-              <Link href={`/${p.pid}`}>
+            <li key={p.name}>
+              <Link href={`/${p.name}`}>
                 <a>{p.title}</a>
               </Link>{' '}
               {p.inChinese && <span className='inChinese'>(in Chinese)</span>}
