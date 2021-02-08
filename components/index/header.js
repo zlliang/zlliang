@@ -91,7 +91,7 @@ const Title = styled.h1`
   font-family: 'Raleway', 'Inter', sans-serif;
   font-weight: 800;
   font-style: italic;
-  -webkit-text-stroke: 8px white;
+  -webkit-text-stroke: 7px white;
   ${mediaQuery.phone} {
     font-size: 32px;
     text-align: center;
@@ -101,7 +101,7 @@ const Title = styled.h1`
   }
   @media (prefers-color-scheme: dark) {
     & {
-      -webkit-text-stroke: 8px ${color.gray1};
+      -webkit-text-stroke: 7px ${color.gray1};
     }
   }
 `
@@ -143,7 +143,7 @@ const Subtitle = styled.h2`
   }
   ${mediaQuery.desktop} {
     margin-top: 4px;
-    margin-right: 3px; /* Visual alignment */
+    margin-right: 21px; /* Visual alignment */
     text-align: end;
     font-size: 24px;
   }
