@@ -183,8 +183,8 @@ const globalCSS = css`
   }
   @media (prefers-color-scheme: dark) {
     code {
-      border-color: ${color.gray4};
-      color: ${color.gray4};
+      border-color: ${color.gray5};
+      color: ${color.gray5};
     }
     pre code {
       color: ${color.gray5};
@@ -231,9 +231,6 @@ const PageContainer = styled.div`
 `
 
 export default function Page(props) {
-  // useEffect(() => {
-  //   mediumZoom('img:not(.nozoom)')
-  // })
   return (
     <>
       <Head>
