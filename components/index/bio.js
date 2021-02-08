@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { mediaQuery, imageHost } from '../../utils/config'
+import { mediaQuery, imageHost, color } from '../../utils/config'
 
 const BioContainer = styled.div`
   margin-top: 72px;
@@ -34,6 +34,9 @@ const BioDescFudan = styled.div`
   margin-right: 32px;
   padding: 6px;
   background-color: white;
+  @media (prefers-color-scheme: dark) {
+    background-color: ${color.gray1};
+  }
 `
 
 const BioDescRCS = styled.div`
@@ -45,6 +48,9 @@ const BioDescRCS = styled.div`
   padding-bottom: 12px;
   text-align: right;
   background-color: white;
+  @media (prefers-color-scheme: dark) {
+    background-color: ${color.gray1};
+  }
 `
 
 export default function Bio() {

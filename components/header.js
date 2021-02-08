@@ -17,6 +17,12 @@ const HeaderContainer = styled.header`
   border-radius: 6px;
   background-color: ${color.gray1};
   color: white;
+  @media (prefers-color-scheme: dark) {
+    & {
+      background-color: ${color.gray5};
+      color: ${color.gray1};
+    }
+  }
 `
 
 const Title = styled.div`
@@ -29,6 +35,11 @@ const Title = styled.div`
   font-size: 18px;
   cursor: default;
   user-select: none;
+  @media (prefers-color-scheme: dark) {
+    & {
+      color: ${color.gray1};
+    }
+  }
 `
 
 // Also used by './index/header.js'
@@ -60,6 +71,14 @@ const NavItem = styled.div`
   :last-child {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
+  }
+  @media (prefers-color-scheme: dark) {
+    & {
+      color: ${color.gray1};
+      :hover {
+        border-color: ${color.gray2};
+      }
+    }
   }
 `
 

@@ -7,6 +7,11 @@ const FooterContainer = styled.footer`
   margin-bottom: 48px;
   font-size: 12px;
   color: ${color.gray3};
+  @media (prefers-color-scheme: dark) {
+    & {
+      color: ${color.gray4};
+    }
+  }
 `
 
 export default function Footer() {

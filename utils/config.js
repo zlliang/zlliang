@@ -24,7 +24,10 @@ export const color = {
   blue: darken(0.15, '#2F80ED'),
   lightBlue: '#2F80ED',
   cyan: lighten(0.25, '#56CCF2'),
-  purple: '#9B51E0'
+  purple: '#9B51E0',
+
+  darkModeBlue: '#A0C4F3',
+  darkModeLightBlue: lighten(0.1, '#A0C4F3')
 }
 
 export const imageHost = '/images'
