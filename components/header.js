@@ -30,6 +30,7 @@ const Title = styled.div`
   padding: 8px 10px;
   color: white;
   line-height: 1em;
+  font-family: 'Raleway', 'Inter', sans-serif;
   font-weight: 800;
   font-style: italic;
   font-size: 18px;

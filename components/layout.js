@@ -10,7 +10,7 @@ import { siteTitle, maxWidth, mediaQuery, color } from '../utils/config'
 
 const cssLinks = [
   'https://rsms.me/inter/inter.css',
-  'https://fonts.googleapis.com/css?family=IBM+Plex+Mono'
+  'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Raleway:ital,wght@0,700;1,800&display=swap'
 ]
 
 const faviconLinks = [
@@ -177,7 +177,7 @@ const globalCSS = css`
     position: relative;
     border: 1px solid ${color.gray5};
     border-radius: 8px;
-    padding: 16px 20px;
+    padding: 14px 20px;
     overflow-x: auto;
   }
   @media (prefers-color-scheme: dark) {
@@ -240,6 +240,7 @@ export default function Page(props) {
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
         <base target='_blank' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' />
         {faviconLinks.map((favicon) => (
           <link key={favicon.rel} {...favicon} />
         ))}
