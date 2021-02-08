@@ -79,7 +79,7 @@ const globalCSS = css`
   /* Selection */
   html *::selection {
     background-color: ${color.cyan};
-    color: black;
+    color: ${color.gray1};
   }
 
   /* Content style */
@@ -102,7 +102,7 @@ const globalCSS = css`
   }
   blockquote {
     font-style: italic;
-    color: ${color.gray2};
+    color: ${color.gray4};
     margin-left: 0;
     margin-right: 0;
     padding-left: 1.5em;
