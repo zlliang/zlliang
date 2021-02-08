@@ -1,12 +1,11 @@
-import { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 import { Global as GlobalStyle, css } from '@emotion/react'
 import styled from '@emotion/styled'
-import mediumZoom from 'medium-zoom'
 
 import Header from './header'
 import Footer from './footer'
+
 import { siteTitle, maxWidth, mediaQuery, color } from '../utils/config'
 
 const cssLinks = [
@@ -151,7 +150,7 @@ const globalCSS = css`
     position: relative;
     border: 1px solid ${color.gray5};
     padding: 10px 16px;
-    border-radius: 6px;
+    border-radius: 8px;
     overflow-x: auto;
   }
 
@@ -182,9 +181,9 @@ const PageContainer = styled.div`
 `
 
 export default function Page(props) {
-  useEffect(() => {
-    mediumZoom('img:not(.nozoom)')
-  })
+  // useEffect(() => {
+  //   mediumZoom('img:not(.nozoom)')
+  // })
   return (
     <>
       <Head>

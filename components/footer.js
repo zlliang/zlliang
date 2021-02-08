@@ -12,7 +12,7 @@ const FooterContainer = styled.footer`
 export default function Footer() {
   return (
     <FooterContainer>
-      2015–2020 © Zilong Liang <br />
+      2015–2021 © Zilong Liang <br />
       <a href='https://creativecommons.org/licenses/by/4.0/'>CC-BY-4.0</a>{' '}
       Licensed
     </FooterContainer>

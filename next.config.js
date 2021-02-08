@@ -7,5 +7,6 @@ module.exports = {
     config.resolveLoader.modules.push('utils')
     return config
   },
-  pageExtensions: ['md', 'js']
+  pageExtensions: ['md', 'js'],
+  reactStrictMode: true
 }

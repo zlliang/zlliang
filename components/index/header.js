@@ -7,6 +7,7 @@ import { faGithub, faWeibo } from '@fortawesome/free-brands-svg-icons'
 
 import { Nav } from '../header'
 import Avatar from './avatar'
+
 import { mediaQuery, color } from '../../utils/config'
 
 const HeaderContainer = styled.header`
@@ -32,7 +33,7 @@ const NavItem = styled.div`
   }
   cursor: pointer;
   color: black;
-  border-radius: 4px;
+  border-radius: 6px;
   :hover {
     color: white;
     background-color: black;
@@ -143,10 +144,10 @@ const ContactContainer = styled.div`
 const ContactTag = styled.a`
   transition: background-color 100ms ease-in-out;
   color: black;
-  padding: 6px 8px;
+  padding: 7px 13px;
   font-size: 14px;
-  border: 1px solid black;
-  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
   :hover {
     color: black;
     text-decoration: none;

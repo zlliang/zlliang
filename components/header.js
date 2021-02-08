@@ -14,7 +14,7 @@ const HeaderContainer = styled.header`
     margin-top: 32px;
     margin-bottom: 64px;
   }
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: black;
   color: white;
 `
