@@ -39,6 +39,15 @@ const NavItem = styled.div`
     background-color: ${color.gray1};
   }
   transition: all 100ms ease-in-out;
+  @media (prefers-color-scheme: dark) {
+    & {
+      color: ${color.gray5};
+      :hover {
+        color: ${color.gray1};
+        background-color: ${color.gray5};
+      }
+    }
+  }
 `
 
 const HeroContainer = styled.header`
@@ -79,16 +88,20 @@ const TitleContainer = styled.div`
 const Title = styled.h1`
   margin: 0;
   line-height: 1em;
-  color: ${color.gray1};
   font-weight: 800;
   font-style: italic;
-  -webkit-text-stroke: 7px white;
+  -webkit-text-stroke: 8px white;
   ${mediaQuery.phone} {
     font-size: 32px;
     text-align: center;
   }
   ${mediaQuery.desktop} {
     font-size: 48px;
+  }
+  @media (prefers-color-scheme: dark) {
+    & {
+      -webkit-text-stroke: 8px ${color.gray1};
+    }
   }
 `
 
@@ -110,6 +123,11 @@ const TitleAux = styled.h1`
     top: 0;
     font-size: 48px;
   }
+  @media (prefers-color-scheme: dark) {
+    & {
+      color: ${color.gray5};
+    }
+  }
 `
 
 const Subtitle = styled.h2`
@@ -126,6 +144,11 @@ const Subtitle = styled.h2`
     margin-right: 3px; /* Visual alignment */
     text-align: end;
     font-size: 24px;
+  }
+  @media (prefers-color-scheme: dark) {
+    & {
+      color: ${color.gray4};
+    }
   }
 `
 
@@ -155,6 +178,16 @@ const ContactTag = styled.a`
   }
   :not(:last-child) {
     margin-inline-end: 16px;
+  }
+  @media (prefers-color-scheme: dark) {
+    & {
+      color: ${color.gray5};
+      background-color: rgba(230, 240, 255, 0.08);
+      :hover {
+        color: ${color.gray5};
+        background-color: rgba(230, 240, 255, 0.12);
+      }
+    }
   }
 `
 

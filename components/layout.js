@@ -9,9 +9,6 @@ import Footer from './footer'
 import { siteTitle, maxWidth, mediaQuery, color } from '../utils/config'
 
 const cssLinks = [
-  'https://unpkg.com/modern-normalize',
-  'https://unpkg.com/highlight.js/styles/xcode.css',
-  'https://unpkg.com/katex/dist/katex.min.css',
   'https://rsms.me/inter/inter.css',
   'https://fonts.googleapis.com/css?family=IBM+Plex+Mono'
 ]
@@ -51,7 +48,7 @@ const globalCSS = css`
   code,
   code * {
     font-size: 14px;
-    line-height: 1.4em;
+    line-height: 1.5em;
     font-family: 'IBM Plex Mono', 'Roboto Mono', 'Menlo', 'Consolas', monospace;
   }
   ${mediaQuery.phone} {
@@ -59,9 +56,15 @@ const globalCSS = css`
       font-size: 13px;
     }
   }
-  .katex,
-  .katex * {
-    font: normal 1.02em 'KaTeX_Main', 'Times New Roman', serif;
+
+  /* Background color */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: ${color.gray1};
+    }
+    html * {
+      color: ${color.gray5};
+    }
   }
 
   /* Font size */
@@ -80,6 +83,12 @@ const globalCSS = css`
   html *::selection {
     background-color: ${color.cyan};
     color: ${color.gray1};
+  }
+  @media (prefers-color-scheme: dark) {
+    html *::selection {
+      background-color: ${color.gray2};
+      color: ${color.gray6};
+    }
   }
 
   /* Content style */
@@ -102,12 +111,14 @@ const globalCSS = css`
   }
   blockquote {
     font-style: italic;
-    color: ${color.gray4};
     margin-left: 0;
     margin-right: 0;
     padding-left: 1.5em;
     padding-right: 1.5em;
     border-left: 5px solid ${color.gray5};
+  }
+  blockquote * {
+    color: ${color.gray3};
   }
   strong {
     font-weight: 600;
@@ -119,6 +130,24 @@ const globalCSS = css`
   a:hover {
     text-decoration: underline;
     color: ${color.lightBlue};
+  }
+  @media (prefers-color-scheme: dark) {
+    hr {
+      background-color: ${color.gray3};
+    }
+    blockquote {
+      border-color: ${color.gray3};
+    }
+    blockquote * {
+      color: ${color.gray4};
+    }
+
+    a {
+      color: ${color.darkModeBlue};
+    }
+    a:hover {
+      color: ${color.darkModeLightBlue};
+    }
   }
 
   ul {
@@ -135,28 +164,39 @@ const globalCSS = css`
 
   code {
     border: 1px solid ${color.gray5};
-    color: ${color.gray2};
-    padding: 0 4px;
     border-radius: 3px;
+    padding: 0 4px;
+    color: ${color.gray2};
   }
-
   pre code {
-    color: ${color.gray1};
     padding: 0;
     border: none;
+    color: ${color.gray1};
   }
-  pre,
-  pre.hljs {
+  pre {
     position: relative;
     border: 1px solid ${color.gray5};
-    padding: 10px 16px;
     border-radius: 8px;
+    padding: 16px 20px;
     overflow-x: auto;
   }
-
-  .katex-display {
-    padding: 10px 0;
-    overflow-x: auto;
+  @media (prefers-color-scheme: dark) {
+    code {
+      border-color: ${color.gray4};
+      color: ${color.gray4};
+    }
+    pre code {
+      color: ${color.gray5};
+    }
+    pre {
+      border: 1px solid ${color.gray2};
+    }
+    pre .hljs {
+      background-color: ${color.gray1};
+    }
+    pre .hljs-comment {
+      color: ${color.gray3};
+    }
   }
 
   /* Customized components */
@@ -171,6 +211,15 @@ const globalCSS = css`
   span.desc {
     font-size: 0.9em;
     color: ${color.gray3};
+  }
+  @media (prefers-color-scheme: dark) {
+    tag {
+      border-color: ${color.gray4};
+      color: ${color.gray4};
+    }
+    span.desc {
+      color: ${color.gray4};
+    }
   }
 `
 

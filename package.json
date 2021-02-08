@@ -25,6 +25,7 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gray-matter": "^4.0.2",
+    "modern-normalize": "^1.0.0",
     "next": "^10.0.6",
     "polished": "^4.1.0",
     "prettier": "^2.2.1",

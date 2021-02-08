@@ -17,11 +17,13 @@ const TitleContainer = styled.h1`
 
 const MetadataContainer = styled.div`
   font-size: 0.8rem;
-  color: ${color.gray3};
 `
 
 const Metadata = styled.span`
   color: ${color.gray3};
+  @media (prefers-color-scheme: dark) {
+    color: ${color.gray4};
+  }
 `
 
 export default function Title(props) {
