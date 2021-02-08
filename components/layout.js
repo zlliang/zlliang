@@ -101,7 +101,8 @@ const globalCSS = css`
     margin-top: 32px;
     margin-bottom: 16px;
     line-height: 1.2em;
-    font-weight: 600;
+    font-family: 'Raleway', 'Inter', 'system-ui', -apple-system, sans-serif;
+    font-weight: 700;
   }
   hr {
     margin: 16px 0;

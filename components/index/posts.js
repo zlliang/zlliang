@@ -35,6 +35,14 @@ export default function Posts({ allPosts }) {
           font-size: 0.9em;
           color: ${color.gray3};
         }
+        @media (prefers-color-scheme: dark) {
+          .inChinese {
+            color: ${color.gray4};
+          }
+          .date {
+            color: ${color.gray4};
+          }
+        }
       `}</style>
     </>
   )
