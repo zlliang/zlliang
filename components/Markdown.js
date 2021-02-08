@@ -9,7 +9,8 @@ const MarkdownContainer = styled.div`
   ul,
   li,
   blockquote {
-    line-height: ${({ inChinese }) => (inChinese ? '1.8em' : 'inherit')};
+    text-align: ${({ inChinese }) => (inChinese ? 'justify' : 'inherit')};
+    line-height: ${({ inChinese }) => (inChinese ? '1.9em' : 'inherit')};
   }
 `
 

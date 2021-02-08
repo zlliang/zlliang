@@ -33,13 +33,12 @@ const globalCSS = css`
 
   /* Typography */
   html * {
-    line-height: 1.6em;
+    line-height: 1.7em;
     color: ${color.gray1};
     font-family: 'Inter', sans-serif;
   }
   @supports (font-variation-settings: normal) {
     html * {
-      line-height: 1.6em;
       color: ${color.gray1};
       font-family: 'Inter var', sans-serif;
     }
