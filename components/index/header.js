@@ -32,11 +32,11 @@ const NavItem = styled.div`
     padding: 8px 10px;
   }
   cursor: pointer;
-  color: black;
+  color: ${color.gray1};
   border-radius: 6px;
   :hover {
     color: white;
-    background-color: black;
+    background-color: ${color.gray1};
   }
   transition: all 100ms ease-in-out;
 `
@@ -79,7 +79,7 @@ const TitleContainer = styled.div`
 const Title = styled.h1`
   margin: 0;
   line-height: 1em;
-  color: black;
+  color: ${color.gray1};
   font-weight: 800;
   font-style: italic;
   -webkit-text-stroke: 7px white;
@@ -95,7 +95,7 @@ const Title = styled.h1`
 const TitleAux = styled.h1`
   margin: 0;
   line-height: 1em;
-  color: black;
+  color: ${color.gray1};
   font-weight: 800;
   font-style: italic;
   ${mediaQuery.phone} {
@@ -143,15 +143,15 @@ const ContactContainer = styled.div`
 
 const ContactTag = styled.a`
   transition: background-color 100ms ease-in-out;
-  color: black;
+  color: ${color.gray1};
   padding: 7px 13px;
   font-size: 14px;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 10, 40, 0.05);
   border-radius: 6px;
   :hover {
-    color: black;
+    color: ${color.gray1};
     text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 10, 40, 0.1);
   }
   :not(:last-child) {
     margin-inline-end: 16px;

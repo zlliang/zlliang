@@ -15,7 +15,7 @@ const HeaderContainer = styled.header`
     margin-bottom: 64px;
   }
   border-radius: 6px;
-  background-color: black;
+  background-color: ${color.gray1};
   color: white;
 `
 

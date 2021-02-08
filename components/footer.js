@@ -6,7 +6,7 @@ const FooterContainer = styled.footer`
   margin-top: 96px;
   margin-bottom: 48px;
   font-size: 12px;
-  color: ${color.gray2};
+  color: ${color.gray3};
 `
 
 export default function Footer() {

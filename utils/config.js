@@ -10,12 +10,12 @@ export const mediaQuery = {
 }
 
 export const color = {
-  gray1: '#333333',
-  gray2: '#4F4F4F',
-  gray3: '#828282',
-  gray4: '#BDBDBD',
-  gray5: '#E0E0E0',
-  gray6: '#F2F2F2',
+  gray1: '#1F2532',
+  gray2: '#4B5362',
+  gray3: '#727A88',
+  gray4: '#A6AAB5',
+  gray5: '#DCDFE5',
+  gray6: '#F3F4F7',
 
   red: '#EB5757',
   orange: '#F2994A',
