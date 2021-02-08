@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import dayjs from 'dayjs'
 
-import { color } from '../../utils/config'
+import { color } from '../../utils/constants'
 
 export default function Posts({ allPosts }) {
   return (

@@ -15,8 +15,8 @@ module.exports = function (markdown) {
     .replace(/`/g, '\\`') // Escape the special character "`"
     .replace(/{/g, '\\{') // Escape the special character "{"
   return `
-    import PostContainer from '${require.resolve(`${cwd}/components/post.js`)}'
-    export const content = \`${String.raw({ raw: parsedContent })}\`
+    import PostContainer from '${require.resolve(`${cwd}/components/Post.js`)}'
+    export const content = \`${parsedContent}\`
     export const metadata = JSON.parse(\`${JSON.stringify(data)}\`)
     const Post = () => <PostContainer {...{metadata, content}} />
     export default Post

@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faWeibo } from '@fortawesome/free-brands-svg-icons'
 
-import { Nav } from '../header'
-import Avatar from './avatar'
+import { Nav } from '../Header'
+import Avatar from './Avatar'
 
-import { mediaQuery, color } from '../../utils/config'
+import { mediaQuery, color } from '../../utils/constants'
 
 const HeaderContainer = styled.header`
   text-align: end;

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
-import { mediaQuery, color } from '../utils/config'
+import { mediaQuery, color } from '../utils/constants'
 
 const HeaderContainer = styled.header`
   display: flex;

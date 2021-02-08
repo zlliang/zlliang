@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { mediaQuery, imageHost, color } from '../../utils/config'
+import { mediaQuery, imageHost, color } from '../../utils/constants'
 
 const BioContainer = styled.div`
   margin-top: 72px;

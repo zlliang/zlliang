@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { color } from '../utils/config'
+import { color } from '../utils/constants'
 
 const FooterContainer = styled.footer`
   margin-top: 96px;

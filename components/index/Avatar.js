@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { mediaQuery, imageHost } from '../../utils/config'
+import { mediaQuery, imageHost } from '../../utils/constants'
 
 export const avatarSizeDesktop = '176px'
 export const avatarSizePhone = '160px'
