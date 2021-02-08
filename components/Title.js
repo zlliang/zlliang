@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
 
-import { color } from '../utils/config'
+import { color } from '../utils/constants'
 
 const Container = styled.div`
   margin-bottom: 32px;

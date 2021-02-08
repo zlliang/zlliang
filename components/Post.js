@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 
-import Page from './layout'
-import Title from './title'
-import Markdown from './markdown'
+import Page from './Layout'
+import Title from './Title'
+import Markdown from './Markdown'
 
 export default function Post({ metadata, content }) {
   return (

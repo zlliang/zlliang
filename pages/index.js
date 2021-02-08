@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 
-import Page from '../components/layout'
-import Header from '../components/index/header'
-import Posts from '../components/index/posts'
-import Markdown from '../components/markdown'
+import Page from '../components/Layout'
+import Header from '../components/index/Header'
+import Posts from '../components/index/Posts'
+import Markdown from '../components/Markdown'
 import { content } from './_index.md'
 
 import getPosts from '../utils/get-posts'
