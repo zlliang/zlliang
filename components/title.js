@@ -11,9 +11,7 @@ const Container = styled.div`
 const TitleContainer = styled.h1`
   margin-top: 0;
   margin-bottom: 10px;
-  /* font-style: ${({ inChinese }) => (inChinese ? 'normal' : 'italic')}; */
-  font-family: 'Raleway', 'Inter', sans-serif;
-  /* font-style: italic; */
+  font-family: 'Raleway', 'Inter', 'system-ui', -apple-system, sans-serif;
   font-weight: 700;
   line-height: 1.3em;
 `

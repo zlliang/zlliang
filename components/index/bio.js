@@ -5,7 +5,7 @@ import { mediaQuery, imageHost, color } from '../../utils/config'
 const BioContainer = styled.div`
   margin-top: 72px;
   margin-bottom: 72px;
-  font-size: 14px;
+  font-size: 12px;
   ${mediaQuery.desktop} {
     display: flex;
     justify-content: space-between;
@@ -19,6 +19,7 @@ const BioItem = styled.div`
 `
 
 const BioImage = styled.img`
+  border-radius: 24px;
   ${mediaQuery.desktop} {
     width: 340px;
   }
@@ -29,11 +30,15 @@ const BioImage = styled.img`
 
 const BioDescFudan = styled.div`
   position: relative;
-  top: -60px;
+  margin: 0 auto;
   margin-bottom: -60px;
-  margin-right: 32px;
-  padding: 6px;
+  top: -60px;
+  right: 20px;
+  width: 75%;
+  padding: 12px 16px;
   background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 5px 8px rgba(0, 10, 30, 0.08);
   @media (prefers-color-scheme: dark) {
     background-color: ${color.gray1};
   }
@@ -41,13 +46,19 @@ const BioDescFudan = styled.div`
 
 const BioDescRCS = styled.div`
   position: relative;
-  top: 40px;
-  margin-top: -40px;
-  margin-left: 32px;
-  padding: 6px;
+
+  margin: 0 auto;
+  margin-top: -30px;
+  /* margin-left: 32px; */
+  top: 30px;
+  left: 20px;
+  width: 75%;
+  padding: 12px 16px;
   padding-bottom: 12px;
   text-align: right;
   background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 10, 30, 0.2);
   @media (prefers-color-scheme: dark) {
     background-color: ${color.gray1};
   }
