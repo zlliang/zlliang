@@ -62,7 +62,7 @@
 .hljs-built_in,
 .hljs-builtin-name,
 .hljs-params {
-  color: #5c2699;
+  color: #b197ce;
 }
 
 .hljs-attr {
@@ -115,7 +115,6 @@
 .hljs {
   display: block;
   overflow-x: auto;
-  padding: 0.5em;
 }
 
 .hljs,

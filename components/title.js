@@ -10,9 +10,12 @@ const Container = styled.div`
 
 const TitleContainer = styled.h1`
   margin-top: 0;
-  margin-bottom: 4px;
-  font-style: ${({ inChinese }) => (inChinese ? 'normal' : 'italic')};
+  margin-bottom: 10px;
+  /* font-style: ${({ inChinese }) => (inChinese ? 'normal' : 'italic')}; */
+  font-family: 'Raleway', 'Inter', sans-serif;
+  /* font-style: italic; */
   font-weight: 700;
+  line-height: 1.3em;
 `
 
 const MetadataContainer = styled.div`

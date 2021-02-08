@@ -88,6 +88,7 @@ const TitleContainer = styled.div`
 const Title = styled.h1`
   margin: 0;
   line-height: 1em;
+  font-family: 'Raleway', 'Inter', sans-serif;
   font-weight: 800;
   font-style: italic;
   -webkit-text-stroke: 8px white;
@@ -109,6 +110,7 @@ const TitleAux = styled.h1`
   margin: 0;
   line-height: 1em;
   color: ${color.gray1};
+  font-family: 'Raleway', 'Inter', sans-serif;
   font-weight: 800;
   font-style: italic;
   ${mediaQuery.phone} {
