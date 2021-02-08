@@ -62,7 +62,7 @@
 .hljs-built_in,
 .hljs-builtin-name,
 .hljs-params {
-  color: #b197ce;
+  color: #642aa7;
 }
 
 .hljs-attr {
@@ -112,6 +112,14 @@
   References: https://github.com/arcticicestudio/nord
  */
 @media (prefers-color-scheme: dark) {
+  .hljs-class .hljs-title,
+  .hljs-type,
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-params {
+    color: #a789c9;
+  }
+
   .hljs {
     display: block;
     overflow-x: auto;
