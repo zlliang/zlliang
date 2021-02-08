@@ -1,28 +1,28 @@
+import PropTypes from 'prop-types'
 import Link from 'next/link'
 import dayjs from 'dayjs'
 
 import { color } from '../../utils/config'
-import posts from '../../utils/registry'
 
-export default function Posts() {
+export default function Posts({ allPosts }) {
   return (
     <>
       <h3>文章 / Posts</h3>
       <ul id='posts'>
-        {posts ? (
-          <li>暂无</li>
-        ) : (
-          posts.map((p) => (
+        {allPosts.length > 0 ? (
+          allPosts.map((p) => (
             <li key={p.name}>
-              <Link href={`/${p.name}`}>
+              <Link href={`/post/${p.name}`}>
                 <a>{p.title}</a>
               </Link>{' '}
-              {p.inChinese && <span className='inChinese'>(in Chinese)</span>}
+              {p.inChinese && <span className='inChinese'>(中文)</span>}
               <span className='date'>
                 {dayjs(p.created).format('MMM DD, YYYY')}
               </span>
             </li>
           ))
+        ) : (
+          <li>暂无</li>
         )}
       </ul>
       <style jsx>{`
@@ -38,4 +38,8 @@ export default function Posts() {
       `}</style>
     </>
   )
+}
+
+Posts.propTypes = {
+  allPosts: PropTypes.array.isRequired
 }

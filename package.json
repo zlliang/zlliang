@@ -2,6 +2,7 @@
   "name": "zlliang.com",
   "description": "Personal website of Zilong Liang",
   "author": "Zilong Liang",
+  "private": true,
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -11,7 +12,8 @@
     "dev": "next dev",
     "build": "next build"
   },
-  "dependencies": {
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
@@ -19,23 +21,18 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "dayjs": "^1.10.4",
-    "highlight.js": "^10.5.0",
-    "katex": "^0.12.0",
-    "markdown-it": "^12.0.4",
-    "markdown-it-meta": "^0.0.1",
-    "markdown-it-texmath": "^0.8.0",
-    "medium-zoom": "^1.0.6",
-    "next": "^10.0.6",
-    "polished": "^4.1.0",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.13",
     "eslint": "^7.19.0",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.2.1"
+    "gray-matter": "^4.0.2",
+    "next": "^10.0.6",
+    "polished": "^4.1.0",
+    "prettier": "^2.2.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "remark": "^13.0.0",
+    "remark-highlight.js": "^6.0.0",
+    "remark-html": "^13.0.1"
   }
 }

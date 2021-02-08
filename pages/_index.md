@@ -42,14 +42,14 @@
   - [D3.js](https://d3js.org) <span class='desc'>Data visualization</span>
   - [The Rust Programming Language](https://doc.rust-lang.org/book/)
 - 优质博文收藏 / Miscellaneous articles and blog posts
-  - [高效使用 Mac，从 Alfred 开始（博文合集）](https://sspai.com/topic/237) <span class='desc'>(in Chinese)</span>
-  - [别再用「六个点」当省略号了，这些标点都有更规范的输入方式](https://sspai.com/post/45516) <span class='desc'>(in Chinese)</span>
-  - [理解数字世界中的纸张：PDF](https://sspai.com/post/47092) <span class='desc'>(in Chinese)</span>
-  - [AppleScript 入门：探索 macOS 自动化](https://sspai.com/post/46912) <span class='desc'>(in Chinese)</span>
-  - [Vue 技术内幕](http://hcysun.me/vue-design/) <span class='desc'>(in Chinese)</span>
+  - [高效使用 Mac，从 Alfred 开始（博文合集）](https://sspai.com/topic/237) <span class='desc'>(中文)</span>
+  - [别再用「六个点」当省略号了，这些标点都有更规范的输入方式](https://sspai.com/post/45516) <span class='desc'>(中文)</span>
+  - [理解数字世界中的纸张：PDF](https://sspai.com/post/47092) <span class='desc'>(中文)</span>
+  - [AppleScript 入门：探索 macOS 自动化](https://sspai.com/post/46912) <span class='desc'>(中文)</span>
+  - [Vue 技术内幕](http://hcysun.me/vue-design/) <span class='desc'>(中文)</span>
   - [Design Tip: Never Use Black](https://ianstormtaylor.com/design-tip-never-use-black/)
-  - [高速上手 C++ 11/14/17](https://changkun.de/modern-cpp/) <span class='desc'>(in Chinese)</span>
-  - [系统设计入门](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md) <span class='desc'>(in Chinese)</span>
+  - [高速上手 C++ 11/14/17](https://changkun.de/modern-cpp/) <span class='desc'>(中文)</span>
+  - [系统设计入门](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md) <span class='desc'>(中文)</span>
   - [Your Body Text Is Too Small](https://blog.marvelapp.com/body-text-small/)
   - [Reordering nodes with the Reverse Cuthill-McKee algorithm](http://www.juliafem.org/examples/2017-08-29-reordering-nodes-with-the-RCM-algorithm)
   - [Tricks and Tips in Numerical Computing](https://nickhigham.wordpress.com/2018/08/21/tricks-and-tips-in-numerical-computing/)
@@ -58,8 +58,8 @@
   - [Gilles Castel](https://castel.dev)
   - [Clear, Functional C++ Documentation with Sphinx + Breathe + Doxygen + CMake](https://devblogs.microsoft.com/cppblog/clear-functional-c-documentation-with-sphinx-breathe-doxygen-cmake/)
   - [Modern CMake](https://cliutils.gitlab.io/modern-cmake/)
-  - [OpenBLAS 项目与矩阵乘法优化](https://www.leiphone.com/news/201704/Puevv3ZWxn0heoEv.html) <span class='desc'>(in Chinese)</span>
-  - [打造高效的工作环境 – SHELL 篇](https://coolshell.cn/articles/19219.html) <span class='desc'>(in Chinese)</span>
+  - [OpenBLAS 项目与矩阵乘法优化](https://www.leiphone.com/news/201704/Puevv3ZWxn0heoEv.html) <span class='desc'>(中文)</span>
+  - [打造高效的工作环境 – SHELL 篇](https://coolshell.cn/articles/19219.html) <span class='desc'>(中文)</span>
   - [Dynamic Wallpaper Club](https://dynamicwallpaper.club)
   - [An Even Easier Introduction to CUDA](https://devblogs.nvidia.com/even-easier-introduction-cuda/)
   - [It's Time To Do CMake Right](https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/)

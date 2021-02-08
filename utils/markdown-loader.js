@@ -1,33 +1,21 @@
-const hljs = require('highlight.js')
-const katex = require('katex')
-const mdMetadata = require('markdown-it-meta')
-const mdKatex = require('markdown-it-texmath').use(katex)
-const md = require('markdown-it')({
-  html: true,
-  xhtmlOut: true,
-  linkify: true,
-  highlight: (str, lang) => {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return `<pre class='hljs'><code>${
-          hljs.highlight(lang, str, true).value
-        }</code></pre>`
-      } catch (_) {}
-    }
-    return `<pre class='hljs'><code>${md.utils.escapeHtml(str)}</code></pre>`
-  }
-})
-  .use(mdMetadata)
-  .use(mdKatex)
+const remark = require('remark')
+const html = require('remark-html')
+const highlight = require('remark-highlight.js')
+const matter = require('gray-matter')
 
 module.exports = function (markdown) {
   this.cacheable()
-  const content = md.render(markdown)
-  let metadata = md.meta
+  const cwd = process.cwd()
+  const { data, content } = matter(markdown)
+  const parsedContent = remark()
+    .use(highlight)
+    .use(html)
+    .processSync(content)
+    .toString()
   return `
-    import PostContainer from '../components/post'
-    export const content = \`${content}\`
-    export const metadata = JSON.parse(\`${JSON.stringify(metadata)}\`)
+    import PostContainer from '${require.resolve(`${cwd}/components/post.js`)}'
+    export const content = \`${parsedContent}\`
+    export const metadata = JSON.parse(\`${JSON.stringify(data)}\`)
     const Post = () => <PostContainer {...{metadata, content}} />
     export default Post
   `

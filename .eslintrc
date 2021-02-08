@@ -4,6 +4,7 @@
     "sourceType": "module",
     "ecmaFeatures": { "jsx": true }
   },
+  "env": { "browser": true, "node": true },
   "plugins": ["react", "react-hooks"],
   "extends": [
     "eslint:recommended",
