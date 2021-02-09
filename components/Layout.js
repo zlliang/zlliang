@@ -163,36 +163,34 @@ const globalCSS = css`
   }
 
   code {
-    border: 1px solid ${color.gray5};
-    border-radius: 3px;
-    padding: 0 4px;
-    color: ${color.gray2};
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    background-color: ${color.lightGray};
+    color: ${color.gray1};
   }
   pre code {
     padding: 0;
-    border: none;
+    background: none;
     color: ${color.gray1};
   }
   pre {
     position: relative;
-    border: 1px solid ${color.gray5};
     border-radius: 8px;
     padding: 14px 20px;
+    background-color: ${color.lightGray};
     overflow-x: auto;
   }
   @media (prefers-color-scheme: dark) {
     code {
-      border-color: ${color.gray5};
+      background-color: ${color.darkModeLightGray};
       color: ${color.gray5};
     }
     pre code {
+      background: none;
       color: ${color.gray5};
     }
     pre {
-      border: 1px solid ${color.gray2};
-    }
-    pre .hljs {
-      background-color: ${color.gray1};
+      background-color: ${color.darkModeLightGray};
     }
     pre .hljs-comment {
       color: ${color.gray3};
@@ -201,12 +199,12 @@ const globalCSS = css`
 
   /* Customized components */
   tag {
-    padding: 0.1em 0.3em;
+    margin-inline-start: 0.4em;
+    padding: 0.2em 0.5em;
     font-size: 0.7em;
     color: ${color.gray3};
-    border: 1px solid ${color.gray3};
-    border-radius: 3px;
-    margin-inline-start: 0.4em;
+    border-radius: 4px;
+    background-color: ${color.lightGray};
   }
   span.desc {
     font-size: 0.9em;
@@ -214,8 +212,8 @@ const globalCSS = css`
   }
   @media (prefers-color-scheme: dark) {
     tag {
-      border-color: ${color.gray4};
       color: ${color.gray4};
+      background-color: ${color.darkModeLightGray};
     }
     span.desc {
       color: ${color.gray4};

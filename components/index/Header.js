@@ -171,12 +171,12 @@ const ContactTag = styled.a`
   color: ${color.gray1};
   padding: 7px 13px;
   font-size: 14px;
-  background-color: rgba(0, 10, 40, 0.05);
+  background-color: ${color.lightGray};
   border-radius: 6px;
   :hover {
     color: ${color.gray1};
     text-decoration: none;
-    background-color: rgba(0, 10, 40, 0.1);
+    background-color: ${color.lightGrayHover};
   }
   :not(:last-child) {
     margin-inline-end: 16px;
@@ -184,10 +184,10 @@ const ContactTag = styled.a`
   @media (prefers-color-scheme: dark) {
     & {
       color: ${color.gray5};
-      background-color: rgba(230, 240, 255, 0.08);
+      background-color: ${color.darkModeLightGray};
       :hover {
         color: ${color.gray5};
-        background-color: rgba(230, 240, 255, 0.12);
+        background-color: ${color.darkModeLightGrayHover};
       }
     }
   }

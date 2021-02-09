@@ -6,7 +6,7 @@ import Markdown from './Markdown'
 
 export default function Post({ metadata, content }) {
   return (
-    <Page>
+    <Page title={metadata.title}>
       <Title {...metadata} />
       <Markdown content={content} inChinese={metadata.inChinese} />
     </Page>
