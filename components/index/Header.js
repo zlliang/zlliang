@@ -161,8 +161,8 @@ const ContactContainer = styled.div`
   }
   ${mediaQuery.desktop} {
     position: relative;
-    left: 4.8rem;
-    width: 29.9rem;
+    left: 9rem;
+    width: 30rem;
   }
 `
 
