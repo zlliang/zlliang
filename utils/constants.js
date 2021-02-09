@@ -17,6 +17,9 @@ export const color = {
   gray5: '#DCDFE5',
   gray6: '#F3F4F7',
 
+  lightGray: 'rgba(0, 10, 60, 0.04)',
+  lightGrayHover: 'rgba(0, 10, 60, 0.08)',
+
   red: '#EB5757',
   orange: '#F2994A',
   yellow: '#F2C94C',
@@ -27,7 +30,10 @@ export const color = {
   purple: '#9B51E0',
 
   darkModeBlue: '#A0C4F3',
-  darkModeLightBlue: lighten(0.1, '#A0C4F3')
+  darkModeLightBlue: lighten(0.1, '#A0C4F3'),
+
+  darkModeLightGray: 'rgba(200, 230, 255, 0.06)',
+  darkModeLightGrayHover: 'rgba(200, 230, 255, 0.1)'
 }
 
 export const imageHost = '/images'
