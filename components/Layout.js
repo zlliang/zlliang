@@ -250,7 +250,10 @@ const globalCSS = css`
     padding: 10px 18px;
     border-radius: 8px;
     background-color: rgba(10, 160, 255, 0.15);
-    color: rgb(0, 80, 150);
+    &,
+    & * {
+      color: rgb(0, 80, 150);
+    }
   }
   p.hint.warn {
     ::before {
@@ -260,7 +263,10 @@ const globalCSS = css`
     padding: 10px 18px;
     border-radius: 8px;
     background-color: rgba(255, 255, 0, 0.24);
-    color: rgb(140, 100, 0);
+    &,
+    & * {
+      color: rgb(140, 100, 0);
+    }
   }
   p.hint.error {
     ::before {
@@ -270,20 +276,32 @@ const globalCSS = css`
     padding: 10px 18px;
     border-radius: 8px;
     background-color: rgba(255, 30, 50, 0.1);
-    color: rgb(180, 30, 50);
+    &,
+    & * {
+      color: rgb(180, 30, 50);
+    }
   }
   @media (prefers-color-scheme: dark) {
     p.hint.tip {
       background-color: rgba(10, 160, 255, 0.18);
-      color: rgb(0, 160, 250);
+      &,
+      & * {
+        color: rgb(0, 160, 250);
+      }
     }
     p.hint.warn {
       background-color: rgba(255, 255, 0, 0.15);
-      color: rgb(230, 180, 0);
+      &,
+      & * {
+        color: rgb(230, 180, 0);
+      }
     }
     p.hint.error {
       background-color: rgba(255, 30, 50, 0.2);
-      color: rgb(255, 120, 140);
+      &,
+      & * {
+        color: rgb(255, 120, 140);
+      }
     }
   }
 
