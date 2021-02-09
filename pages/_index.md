@@ -6,7 +6,7 @@
 - [beamer-fudan](https://github.com/zlliang/beamer-fudan) - 一个非官方的复旦 Beamer 模版 / An unofficial beamer theme for Fudan University <tag>LaTeX</tag>
 - 已归档的项目 / Archived
   - [jacobi-svd](https://github.com/zlliang/jacobi-svd) - 计算 SVD 的 Jacobi 算法的实验 / Numerical experiments on Jacobi SVD algorithm <tag>MATLAB</tag>
-  - [essaysense](https://github.com/zlliang/essaysense) - 利用深度学习进行自动作文评分的实验 / An experiment on Automated Essay Scoring<tag>Python</tag><tag>TensorFlow</tag>
+  - [essaysense](https://github.com/zlliang/essaysense) - 利用深度学习进行自动作文评分的实验 / An experiment on Automated Essay Scoring <tag>Python</tag><tag>TensorFlow</tag>
   - [gomoku](https://github.com/zlliang/gomoku) - 一个 AI 五子棋对弈的实验 / Gomoku agent, as an exercise project in Artificial Intelligence <tag>Python</tag><tag>AI</tag>
 
 ### 常用链接 / Useful Links

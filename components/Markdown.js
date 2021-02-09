@@ -1,9 +1,17 @@
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 
+import { mediaQuery } from '../utils/constants'
+
 const MarkdownContainer = styled.div`
   img {
+    border-radius: 8px;
     max-width: 100%;
+  }
+  ${mediaQuery.phone} {
+    img {
+      border-radius: 12px;
+    }
   }
   p,
   ul,
