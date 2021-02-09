@@ -152,6 +152,7 @@ const globalCSS = css`
     }
   }
 
+  ol,
   ul {
     padding-inline-start: 18px;
   }
