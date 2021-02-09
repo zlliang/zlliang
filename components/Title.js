@@ -35,7 +35,7 @@ export default function Title(props) {
         {props.created && (
           <Metadata>
             {props.inChinese
-              ? `创建于 ${dayjs(props.created).format('YYYY年MM月DD日')}`
+              ? `写于 ${dayjs(props.created).format('YYYY 年 M 月 D 日')}`
               : `Created - ${dayjs(props.created).format('MMM DD, YYYY')}`}
           </Metadata>
         )}
@@ -44,7 +44,7 @@ export default function Title(props) {
             {' '}
             ・{' '}
             {props.inChinese
-              ? `更新于 ${dayjs(props.updated).format('YYYY年MM月DD日')}`
+              ? `更新于 ${dayjs(props.updated).format('YYYY 年 M 月 D 日')}`
               : `Updated - ${dayjs(props.updated).format('MMM DD, YYYY')}`}
           </Metadata>
         )}

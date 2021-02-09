@@ -1,7 +1,9 @@
+import { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 import { Global as GlobalStyle, css } from '@emotion/react'
 import styled from '@emotion/styled'
+import mediumZoom from 'medium-zoom'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -36,10 +38,10 @@ const globalCSS = css`
     line-height: 1.7em;
     color: ${color.gray1};
     font-family: 'Inter', sans-serif;
+    font-feature-settings: 'calt', 'case';
   }
   @supports (font-variation-settings: normal) {
     html * {
-      color: ${color.gray1};
       font-family: 'Inter var', sans-serif;
     }
   }
@@ -162,6 +164,46 @@ const globalCSS = css`
     margin-right: 8px;
   }
 
+  table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    tbody {
+      tr {
+        border-radius: 8px;
+      }
+      tr:nth-of-type(odd) {
+        background-color: ${color.lightGray};
+        td:first-of-type {
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+        }
+        td:last-of-type {
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+        }
+      }
+    }
+    th {
+      font-weight: 600;
+    }
+    th,
+    td {
+      padding: 0.4em 0.8em;
+      vertical-align: top;
+      &,
+      & * {
+        line-height: 1.5em;
+      }
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    table > tbody {
+      tr:nth-of-type(odd) {
+        background-color: ${color.darkModeLightGray};
+      }
+    }
+  }
+
   code {
     padding: 0.1em 0.4em;
     border-radius: 4px;
@@ -170,6 +212,7 @@ const globalCSS = css`
   }
   pre code {
     padding: 0;
+    border-radius: 0;
     background: none;
     color: ${color.gray1};
   }
@@ -197,9 +240,57 @@ const globalCSS = css`
     }
   }
 
+  /* Components for remark-hint */
+  p.hint.tip {
+    ::before {
+      content: '👀';
+      margin-right: 0.5em;
+    }
+    padding: 10px 18px;
+    border-radius: 8px;
+    background-color: rgba(10, 160, 255, 0.15);
+    color: rgb(0, 80, 150);
+  }
+  p.hint.warn {
+    ::before {
+      content: '🤯';
+      margin-right: 0.5em;
+    }
+    padding: 10px 18px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 0, 0.24);
+    color: rgb(140, 100, 0);
+  }
+  p.hint.error {
+    ::before {
+      content: '⛔️';
+      margin-right: 0.5em;
+    }
+    padding: 10px 18px;
+    border-radius: 8px;
+    background-color: rgba(255, 30, 50, 0.1);
+    color: rgb(180, 30, 50);
+  }
+  @media (prefers-color-scheme: dark) {
+    p.hint.tip {
+      background-color: rgba(10, 160, 255, 0.18);
+      color: rgb(0, 160, 250);
+    }
+    p.hint.warn {
+      background-color: rgba(255, 255, 0, 0.15);
+      color: rgb(230, 180, 0);
+    }
+    p.hint.error {
+      background-color: rgba(255, 30, 50, 0.2);
+      color: rgb(255, 120, 140);
+    }
+  }
+
   /* Customized components */
   tag {
-    margin-inline-start: 0.4em;
+    & + tag {
+      margin-inline-start: 0.4em;
+    }
     padding: 0.2em 0.5em;
     font-size: 0.7em;
     color: ${color.gray3};
@@ -228,6 +319,9 @@ const PageContainer = styled.div`
 `
 
 export default function Page(props) {
+  useEffect(() => {
+    mediumZoom('img', { background: color.gray1 })
+  }, [])
   return (
     <>
       <Head>

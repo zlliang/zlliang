@@ -1,6 +1,8 @@
 const remark = require('remark')
-const html = require('remark-html')
+const gfm = require('remark-gfm')
 const highlight = require('remark-highlight.js')
+const hint = require('remark-hint')
+const html = require('remark-html')
 const matter = require('gray-matter')
 
 module.exports = function (markdown) {
@@ -8,7 +10,9 @@ module.exports = function (markdown) {
   const cwd = process.cwd()
   const { data, content } = matter(markdown)
   const parsedContent = remark()
+    .use(gfm)
     .use(highlight)
+    .use(hint)
     .use(html)
     .processSync(content)
     .toString()
