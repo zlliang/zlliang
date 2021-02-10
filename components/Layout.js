@@ -17,11 +17,11 @@ const cssLinks = [
 
 const faviconLinks = [
   {
-    href: '/favicons/favicon.jpg',
+    href: '/favicons/favicon.png',
     rel: 'icon'
   },
   {
-    href: '/favicons/favicon-touch.jpg',
+    href: '/favicons/favicon-touch.png',
     rel: 'apple-touch-icon',
     sizes: '180x180'
   }
