@@ -21,7 +21,7 @@ const faviconLinks = [
     rel: 'icon'
   },
   {
-    href: '/favicons/favicon-touch.png',
+    href: '/favicons/favicon-touch.jpg',
     rel: 'apple-touch-icon',
     sizes: '180x180'
   }
