@@ -12,7 +12,7 @@ import { siteTitle, maxWidth, mediaQuery, color } from '../utils/constants'
 
 const cssLinks = [
   'https://rsms.me/inter/inter.css',
-  'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Raleway:ital,wght@0,700;1,800&display=swap'
+  'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Raleway:ital,wght@0,700;1,800&display=swap'
 ]
 
 const faviconLinks = [
@@ -48,13 +48,13 @@ const globalCSS = css`
   pre,
   code,
   code * {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.5em;
-    font-family: 'IBM Plex Mono', 'Roboto Mono', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Roboto Mono', 'Menlo', 'Consolas', monospace;
   }
   ${mediaQuery.phone} {
-    p code {
-      font-size: 13px;
+    pre, code, code * {
+      font-size: 14px;
     }
   }
 
@@ -71,7 +71,7 @@ const globalCSS = css`
   /* Font size */
   ${mediaQuery.phone} {
     html {
-      font-size: 14px;
+      font-size: 15px;
     }
   }
   ${mediaQuery.desktop} {
@@ -99,11 +99,21 @@ const globalCSS = css`
   h4,
   h5,
   h6 {
-    margin-top: 32px;
-    margin-bottom: 16px;
-    line-height: 1.2em;
-    font-family: 'Raleway', 'Inter', 'system-ui', -apple-system, sans-serif;
-    font-weight: 700;
+    &,
+    & * {
+      margin-top: 48px;
+      margin-bottom: 16px;
+      line-height: 1.2em;
+      font-family: 'Raleway', 'Inter', 'system-ui', -apple-system, sans-serif;
+      font-weight: 700;
+    }
+    & * {
+      font-size: 1em;
+    }
+    & code {
+      font-family: 'JetBrains Mono', 'Roboto Mono', 'Menlo', 'Consolas',
+        monospace;
+    }
   }
   hr {
     margin: 16px 0;
@@ -125,11 +135,13 @@ const globalCSS = css`
   strong {
     font-weight: 600;
   }
-  a {
+  a,
+  a code {
     text-decoration: none;
     color: ${color.blue};
   }
-  a:hover {
+  a:hover,
+  a:hover code {
     text-decoration: underline;
     color: ${color.lightBlue};
   }
@@ -144,10 +156,12 @@ const globalCSS = css`
       color: ${color.gray4};
     }
 
-    a {
+    a,
+    a code {
       color: ${color.darkModeBlue};
     }
-    a:hover {
+    a:hover,
+    a:hover code {
       color: ${color.darkModeLightBlue};
     }
   }
@@ -244,20 +258,31 @@ const globalCSS = css`
   /* Components for remark-hint */
   p.hint.tip {
     ::before {
-      content: '👀';
-      margin-right: 0.5em;
+      content: '👀 Note';
+      margin-right: 1em;
+      font-weight: 600;
     }
     padding: 10px 18px;
     border-radius: 8px;
     background-color: rgba(10, 160, 255, 0.15);
     &,
     & * {
-      color: rgb(0, 80, 150);
+      color: rgb(0, 60, 120);
+    }
+    a,
+    a code {
+      text-decoration: underline;
+      color: ${color.blue};
+    }
+    a:hover,
+    a:hover code {
+      text-decoration: underline;
+      color: ${color.lightBlue};
     }
   }
   p.hint.warn {
     ::before {
-      content: '🤯';
+      content: '🤯 Note';
       margin-right: 0.5em;
     }
     padding: 10px 18px;
@@ -265,12 +290,22 @@ const globalCSS = css`
     background-color: rgba(255, 255, 0, 0.24);
     &,
     & * {
-      color: rgb(140, 100, 0);
+      color: rgb(100, 60, 0);
+    }
+    a,
+    a code {
+      text-decoration: underline;
+      color: ${color.blue};
+    }
+    a:hover,
+    a:hover code {
+      text-decoration: underline;
+      color: ${color.lightBlue};
     }
   }
   p.hint.error {
     ::before {
-      content: '⛔️';
+      content: '⛔️ Note';
       margin-right: 0.5em;
     }
     padding: 10px 18px;
@@ -278,7 +313,17 @@ const globalCSS = css`
     background-color: rgba(255, 30, 50, 0.1);
     &,
     & * {
-      color: rgb(180, 30, 50);
+      color: rgb(150, 10, 30);
+    }
+    a,
+    a code {
+      text-decoration: underline;
+      color: ${color.blue};
+    }
+    a:hover,
+    a:hover code {
+      text-decoration: underline;
+      color: ${color.lightBlue};
     }
   }
   @media (prefers-color-scheme: dark) {
@@ -286,21 +331,45 @@ const globalCSS = css`
       background-color: rgba(10, 160, 255, 0.18);
       &,
       & * {
-        color: rgb(0, 160, 250);
+        color: rgb(120, 200, 250);
+      }
+      a,
+      a code {
+        color: ${color.darkModeBlue};
+      }
+      a:hover,
+      a:hover code {
+        color: ${color.darkModeLightBlue};
       }
     }
     p.hint.warn {
       background-color: rgba(255, 255, 0, 0.15);
       &,
       & * {
-        color: rgb(230, 180, 0);
+        color: rgb(255, 200, 120);
+      }
+      a,
+      a code {
+        color: ${color.darkModeBlue};
+      }
+      a:hover,
+      a:hover code {
+        color: ${color.darkModeLightBlue};
       }
     }
     p.hint.error {
       background-color: rgba(255, 30, 50, 0.2);
       &,
       & * {
-        color: rgb(255, 120, 140);
+        color: rgb(255, 170, 190);
+      }
+      a,
+      a code {
+        color: ${color.darkModeBlue};
+      }
+      a:hover,
+      a:hover code {
+        color: ${color.darkModeLightBlue};
       }
     }
   }
