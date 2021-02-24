@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Head from 'next/head'
 import { Global as GlobalStyle, css } from '@emotion/react'
 import styled from '@emotion/styled'
+import { lighten } from 'polished'
 import mediumZoom from 'medium-zoom'
 
 import Header from './Header'
@@ -258,7 +259,7 @@ const globalCSS = css`
   /* Components for remark-hint */
   p.hint.tip {
     ::before {
-      content: '👀 Note';
+      content: 'Note 📝';
       margin-right: 1em;
       font-weight: 600;
     }
@@ -267,11 +268,11 @@ const globalCSS = css`
     background-color: rgba(10, 160, 255, 0.15);
     &,
     & * {
-      color: rgb(0, 60, 120);
+      color: rgb(0, 50, 110);
     }
     a,
     a code {
-      text-decoration: underline;
+      text-decoration: none;
       color: ${color.blue};
     }
     a:hover,
@@ -282,8 +283,9 @@ const globalCSS = css`
   }
   p.hint.warn {
     ::before {
-      content: '🤯 Note';
-      margin-right: 0.5em;
+      content: 'Note 🤯';
+      margin-right: 1em;
+      font-weight: 600;
     }
     padding: 10px 18px;
     border-radius: 8px;
@@ -294,7 +296,7 @@ const globalCSS = css`
     }
     a,
     a code {
-      text-decoration: underline;
+      text-decoration: none;
       color: ${color.blue};
     }
     a:hover,
@@ -305,8 +307,9 @@ const globalCSS = css`
   }
   p.hint.error {
     ::before {
-      content: '⛔️ Note';
-      margin-right: 0.5em;
+      content: 'Note ⛔️';
+      margin-right: 1em;
+      font-weight: 600;
     }
     padding: 10px 18px;
     border-radius: 8px;
@@ -317,7 +320,7 @@ const globalCSS = css`
     }
     a,
     a code {
-      text-decoration: underline;
+      text-decoration: none;
       color: ${color.blue};
     }
     a:hover,
@@ -331,15 +334,15 @@ const globalCSS = css`
       background-color: rgba(10, 160, 255, 0.18);
       &,
       & * {
-        color: rgb(120, 200, 250);
+        color: rgb(140, 210, 250);
       }
       a,
       a code {
-        color: ${color.darkModeBlue};
+        color: ${lighten('0.1', color.darkModeBlue)};
       }
       a:hover,
       a:hover code {
-        color: ${color.darkModeLightBlue};
+        color: ${lighten('0.1', color.darkModeLightBlue)};
       }
     }
     p.hint.warn {
