@@ -53,7 +53,9 @@ const globalCSS = css`
     font-family: 'JetBrains Mono', 'Roboto Mono', 'Menlo', 'Consolas', monospace;
   }
   ${mediaQuery.phone} {
-    pre, code, code * {
+    pre,
+    code,
+    code * {
       font-size: 14px;
     }
   }
@@ -102,15 +104,12 @@ const globalCSS = css`
     &,
     & * {
       margin-top: 48px;
-      margin-bottom: 16px;
       line-height: 1.2em;
       font-family: 'Raleway', 'Inter', 'system-ui', -apple-system, sans-serif;
       font-weight: 700;
     }
-    & * {
-      font-size: 1em;
-    }
     & code {
+      font-size: 0.95em;
       font-family: 'JetBrains Mono', 'Roboto Mono', 'Menlo', 'Consolas',
         monospace;
     }
@@ -226,7 +225,8 @@ const globalCSS = css`
     color: ${color.gray1};
   }
   pre code {
-    padding: 0;
+    display: block;
+    padding: 0 20px;
     border-radius: 0;
     background: none;
     color: ${color.gray1};
@@ -234,7 +234,7 @@ const globalCSS = css`
   pre {
     position: relative;
     border-radius: 8px;
-    padding: 14px 20px;
+    padding: 14px 0;
     background-color: ${color.lightGray};
     overflow-x: auto;
   }
