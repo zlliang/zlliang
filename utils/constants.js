@@ -2,7 +2,7 @@ import { lighten, darken } from 'polished'
 
 export const siteTitle = 'Zilong LIANG'
 
-export const maxWidth = 736
+export const maxWidth = 768
 
 export const mediaQuery = {
   phone: `@media (max-width: ${maxWidth}px)`,
