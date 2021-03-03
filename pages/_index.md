@@ -2,6 +2,7 @@
 
 - [zlliang.com](https://github.com/zlliang/zlliang.com) - 这个网站的源代码 / This website <tag>JavaScript</tag><tag>React</tag><tag>Next.js</tag>
 - [fdu-classrooms](https://github.com/zlliang/fdu-classrooms) - 用来查询复旦大学校内空闲教室的微信小程序 <tag>JavaScript</tag><tag>微信小程序</tag>
+- [tslox](https://github.com/zlliang/tslox) - An interpreter of the [Lox](https://github.com/munificent/craftinginterpreters) scripting language, implemented in TypeScript <tag>TypeScript</tag>
 - [latex-templates](https://github.com/zlliang/latex-templates) - 我正在使用的 LaTeX 模版 / My LaTeX templates <tag>LaTeX</tag>
 - 已归档的项目 / Archived
   - [jacobi-svd](https://github.com/zlliang/jacobi-svd) - 计算 SVD 的 Jacobi 算法的实验 / Numerical experiments on Jacobi SVD algorithm <tag>MATLAB</tag>
