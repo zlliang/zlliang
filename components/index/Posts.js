@@ -12,7 +12,7 @@ export default function Posts({ allPosts }) {
         {allPosts.length > 0 ? (
           allPosts.map((p) => (
             <li key={p.name}>
-              <Link href={`/post/${p.name}`}>
+              <Link href={`/posts/${p.name}`}>
                 <a>{p.title}</a>
               </Link>{' '}
               {p.inChinese && <span className='inChinese'>(中文)</span>}

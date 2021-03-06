@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 
 export default async function getPosts() {
   const cwd = process.cwd()
-  const postDirectory = path.join(cwd, 'pages', 'post')
+  const postDirectory = path.join(cwd, 'pages', 'posts')
   if (!fs.existsSync(postDirectory)) return []
 
   let posts = fs.readdirSync(postDirectory).map((fileName) => {
