@@ -12,8 +12,8 @@ import Footer from './Footer'
 import { siteTitle, maxWidth, mediaQuery, color } from '../utils/constants'
 
 const cssLinks = [
-  'https://rsms.me/inter/inter.css',
-  'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Raleway:ital,wght@0,700;1,800&display=swap'
+  '//rsms.me/inter/inter.css',
+  '//fonts.loli.net/css2?family=JetBrains+Mono:wght@400;700&family=Raleway:ital,wght@0,700;1,800&display=swap'
 ]
 
 const faviconLinks = [
