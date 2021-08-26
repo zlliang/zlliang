@@ -12,8 +12,8 @@ import Footer from './Footer'
 import { siteTitle, maxWidth, mediaQuery, color } from '../utils/constants'
 
 const cssLinks = [
-  '//rsms.me/inter/inter.css',
-  '//fonts.loli.net/css2?family=JetBrains+Mono:wght@400;700&family=Raleway:ital,wght@0,700;1,800&display=swap'
+  'https://rsms.me/inter/inter.css',
+  'https://fonts.loli.net/css2?family=JetBrains+Mono:wght@400;700&family=Raleway:ital,wght@0,700;1,800&display=swap'
 ]
 
 const faviconLinks = [
@@ -420,7 +420,7 @@ export default function Page(props) {
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
         <base target='_blank' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' />
+        <link rel='preconnect' href='https://fonts.loli.net' />
         {faviconLinks.map((favicon) => (
           <link key={favicon.rel} {...favicon} />
         ))}
