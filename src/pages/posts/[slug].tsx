@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import mediumZoom from "medium-zoom"
 
 import Layout from "@/components/Layout"
+import Header from "@/components/Header"
 import PostTitle from "@/components/PostTitle"
 import { getPosts, renderMarkdown } from "@/utils"
 
@@ -24,6 +25,7 @@ export default function Post(props: PostProps): JSX.Element {
 
   return (
     <Layout>
+      <Header />
       <PostTitle created={props.created} updated={props.updated}>
         {props.title}
       </PostTitle>

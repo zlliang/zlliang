@@ -69,7 +69,7 @@ const NavItem = styled.div`
     }
   }
   transition: all 100ms ease-in-out;
-  :last-child {
+  :last-of-type {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
   }

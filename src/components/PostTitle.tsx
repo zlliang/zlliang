@@ -21,7 +21,7 @@ const MetadataList = styled.div`
 `
 
 const Metadata = styled.span`
-  color: ${config.colors.postAux};
+  color: ${config.colors.postMetadata};
 `
 
 interface PostTitleProps {
@@ -35,7 +35,7 @@ export default function PostTitle(props: PostTitleProps): JSX.Element {
     <Container>
       <Title {...props}>{props.children}</Title>
       <MetadataList>
-        <Metadata>创建于 {format(props.created, "yyyy-MM-dd")}</Metadata>
+        <Metadata>写于 {format(props.created, "yyyy-MM-dd")}</Metadata>
         {props.updated && (
           <Metadata> ・ 更新于 {format(props.updated, "yyyy-MM-dd")}</Metadata>
         )}

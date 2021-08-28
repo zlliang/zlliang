@@ -8,7 +8,8 @@ export interface PostMetadata {
   title: string
   markdown: string
   created: number
-  updated?: number
+  updated: number | null
+  abstract: string | null
 }
 
 export function getPosts(): PostMetadata[] {
@@ -32,6 +33,7 @@ export function getPosts(): PostMetadata[] {
         markdown: content,
         created: data.created?.valueOf() ?? Date.now(),
         updated: data.updated?.valueOf() ?? null,
+        abstract: data.abstract ?? null,
       }
     })
     .sort((a, b) => a.created - b.created)
