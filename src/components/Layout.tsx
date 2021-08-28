@@ -2,6 +2,7 @@ import Head from "next/head"
 import styled from "@emotion/styled"
 import { Global, css } from "@emotion/react"
 
+import Footer from "@/components/Footer"
 import config from "@/configs"
 
 import type { ReactNode } from "react"
@@ -12,6 +13,7 @@ const externalCssLinks = [
   "https://unpkg.com/sanitize.css/reduce-motion.css",
   "https://unpkg.com/highlight.js/styles/github.css",
   "https://rsms.me/inter/inter.css",
+  "https://fonts.loli.net/css2?family=Raleway:ital,wght@0,700;1,800&display=swap",
 ]
 
 const globalStyles = css`
@@ -61,6 +63,11 @@ const globalStyles = css`
   h4,
   h5,
   h6 {
+    font-family: "Raleway", "Inter", system-ui, -apple-system,
+      "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", "Helvetica", "Arial",
+      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+
     & code {
       font-size: 0.95em;
     }
@@ -68,54 +75,32 @@ const globalStyles = css`
 
   a {
     text-decoration: none;
-    color: ${config.colors.link};
     border-color: transparent;
+    color: ${config.colors.link};
     transition: border-color 0.15s, color 0.15s;
 
     &:hover {
-      border-bottom: 2px solid ${config.colors.linkHoverAux};
+      border-bottom: 2px solid ${config.colors.linkHoverBorder};
       color: ${config.colors.linkHover};
-    }
-
-    &:visited {
-      color: ${config.colors.linkVisited};
-    }
-
-    &:visited:hover {
-      border-bottom: 2px solid ${config.colors.linkVisitedHoverAux};
-      color: ${config.colors.linkVisitedHover};
     }
   }
 
   pre code.hljs {
-    border-radius: 6px;
     background-color: ${config.colors.codeBlockBackground};
-  }
-  pre ::-webkit-scrollbar {
-    width: 16px;
-    height: 16px;
-  }
-  pre ::-webkit-scrollbar-thumb {
-    background-color: ${config.colors.codeScroll};
-    border: 4px solid ${config.colors.codeBlockBackground};
-    border-radius: 8px;
-  }
-  pre ::-webkit-scrollbar-thumb:hover {
-    background-color: #aaa;
   }
 
   p img {
     display: block;
     margin: 0 auto;
 
-    &:not(:last-child) {
+    &:not(:last-of-type) {
       margin-bottom: 1em;
     }
   }
 `
 
 const Container = styled.div`
-  max-width: 720px;
+  max-width: ${config.maxWidth};
   margin: 0 auto;
   padding: 0 16px;
 `
@@ -144,7 +129,10 @@ export default function Layout(props: LayoutProps): JSX.Element {
         </title>
       </Head>
       <Global styles={globalStyles} />
-      <Container>{props.children}</Container>
+      <Container>
+        {props.children}
+        <Footer />
+      </Container>
     </>
   )
 }
