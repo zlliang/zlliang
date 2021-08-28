@@ -85,7 +85,7 @@ const SubtitleText = styled.h2`
 
 const Biography = styled.div`
   align-self: flex-end;
-  margin-top: 16px;
+  margin-top: 32px;
 
   ${config.mq.phone} {
     text-align: left;
@@ -98,7 +98,7 @@ const Biography = styled.div`
 const BioText = styled.div`
   color: ${config.colors.siteSubtitle};
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.6;
   text-align: justify;
 `
 
