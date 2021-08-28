@@ -1,17 +1,34 @@
 import { useEffect } from "react"
+import styled from "@emotion/styled"
 import mediumZoom from "medium-zoom"
 
 import Layout from "@/components/Layout"
 import Header from "@/components/Header"
 import PostTitle from "@/components/PostTitle"
 import { getPosts, renderMarkdown } from "@/utils"
+import config from "@/configs"
 
 import type { ParsedUrlQuery } from "querystring"
 import type { GetStaticProps, GetStaticPaths } from "next"
 import type { PostMetadata } from "@/utils"
 
+const Abstract = styled.div`
+  margin-bottom: 32px;
+  color: ${config.colors.secondary};
+  font-size: 14px;
+
+  text-align: justify;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  hyphens: auto;
+
+  & p {
+    margin: 0;
+  }
+`
+
 interface PostProps extends PostMetadata {
-  transpiled: string
+  transpiledMarkdown: string
 }
 
 interface PostUrlParams extends ParsedUrlQuery {
@@ -24,27 +41,33 @@ export default function Post(props: PostProps): JSX.Element {
   }, [])
 
   return (
-    <Layout>
+    <Layout title={props.title}>
       <Header />
       <PostTitle created={props.created} updated={props.updated}>
-        {props.title}
+        <div dangerouslySetInnerHTML={{ __html: props.transpiledTitle }} />
       </PostTitle>
-      <div>
-        <div dangerouslySetInnerHTML={{ __html: props.transpiled }} />
-      </div>
+      {props.abstract && (
+        <Abstract
+          dangerouslySetInnerHTML={{ __html: props.transpiledAbstract }}
+        />
+      )}
+      <div dangerouslySetInnerHTML={{ __html: props.transpiledMarkdown }} />
     </Layout>
   )
 }
 
-export const getStaticProps: GetStaticProps<PostProps, PostUrlParams> = async (
+export const getStaticProps: GetStaticProps<PostProps, PostUrlParams> = (
   context
 ) => {
   const posts = getPosts()
   const targetPost = posts.find(({ slug }) => slug === context.params.slug)
-  const transpiled = await renderMarkdown(targetPost.markdown)
+  const transpiledMarkdown = renderMarkdown(targetPost.markdown)
 
   return {
-    props: { ...targetPost, transpiled },
+    props: {
+      ...targetPost,
+      transpiledMarkdown,
+    },
   }
 }
 

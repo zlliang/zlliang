@@ -13,7 +13,12 @@ const Title = styled.h1`
   margin-top: 0;
   margin-bottom: 8px;
   font-weight: 700;
-  line-height: 1.3em;
+  line-height: 1.6;
+
+  & p {
+    text-align: left;
+    margin: 0;
+  }
 `
 
 const MetadataList = styled.div`

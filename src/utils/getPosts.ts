@@ -2,6 +2,8 @@ import * as fs from "fs"
 import * as path from "path"
 import matter from "gray-matter"
 
+import { renderMarkdown } from "@/utils"
+
 export interface PostMetadata {
   fileName: string
   slug: string
@@ -10,6 +12,9 @@ export interface PostMetadata {
   created: number
   updated: number | null
   abstract: string | null
+  transpiledTitle: string
+  transpiledAbstract: string | null
+  hidden: boolean
 }
 
 export function getPosts(): PostMetadata[] {
@@ -26,6 +31,11 @@ export function getPosts(): PostMetadata[] {
       const source = fs.readFileSync(fullPath, "utf-8")
       const { data, content } = matter(source)
 
+      const transpiledTitle = renderMarkdown(data.title ?? "无标题")
+      const transpiledAbstract = data.abstract
+        ? renderMarkdown(data.abstract)
+        : null
+
       return {
         fileName,
         slug,
@@ -34,8 +44,12 @@ export function getPosts(): PostMetadata[] {
         created: data.created?.valueOf() ?? Date.now(),
         updated: data.updated?.valueOf() ?? null,
         abstract: data.abstract ?? null,
+        transpiledTitle,
+        transpiledAbstract,
+        hidden: data.hidden ?? false,
       }
     })
+    .filter((item) => !item.hidden)
     .sort((a, b) => a.created - b.created)
 
   return posts

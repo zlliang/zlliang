@@ -16,6 +16,18 @@ const externalCssLinks = [
   "https://fonts.loli.net/css2?family=Raleway:ital,wght@0,700;1,800&display=swap",
 ]
 
+const faviconLinks = [
+  {
+    href: "/images/favicon.png",
+    rel: "icon",
+  },
+  {
+    href: "/images/favicon-touch.jpg",
+    rel: "apple-touch-icon",
+    sizes: "180x180",
+  },
+]
+
 const globalStyles = css`
   /* Browser behaviors */
   html {
@@ -25,7 +37,7 @@ const globalStyles = css`
   /* Typography */
   html {
     font-size: 15px;
-    line-height: 2;
+    line-height: 1.9;
     font-feature-settings: "calt", "case";
     font-family: "Inter", system-ui, -apple-system, "BlinkMacSystemFont",
       "Segoe UI", "Roboto", "Ubuntu", "Helvetica", "Arial", sans-serif,
@@ -63,6 +75,7 @@ const globalStyles = css`
   h4,
   h5,
   h6 {
+    line-height: 1.6;
     font-family: "Raleway", "Inter", system-ui, -apple-system,
       "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", "Helvetica", "Arial",
       sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
@@ -71,6 +84,12 @@ const globalStyles = css`
     & code {
       font-size: 0.95em;
     }
+  }
+
+  hr {
+    height: 2px;
+    border: none;
+    background-color: ${config.colors.splitLine};
   }
 
   a {
@@ -89,12 +108,63 @@ const globalStyles = css`
     background-color: ${config.colors.codeBlockBackground};
   }
 
+  p,
+  p code,
+  blockquote {
+    text-align: justify;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    hyphens: auto;
+  }
+
   p img {
     display: block;
     margin: 0 auto;
 
     &:not(:last-of-type) {
       margin-bottom: 1em;
+    }
+  }
+
+  blockquote {
+    font-style: italic;
+    margin: 0;
+    padding-left: 16px;
+    border-left: 5px solid ${config.colors.splitLine};
+
+    &,
+    & * {
+      color: ${config.colors.secondary};
+    }
+
+    & pre code {
+      font-style: normal;
+    }
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 8px;
+  }
+
+  table {
+    margin: 0 auto;
+    tbody tr:nth-of-type(odd) {
+      background-color: ${config.colors.codeBlockBackground};
+    }
+    th {
+      font-weight: 600;
+    }
+    th,
+    td {
+      padding: 6px 12px;
+      &,
+      & * {
+        line-height: 1.6;
+      }
     }
   }
 `
@@ -122,9 +192,12 @@ export default function Layout(props: LayoutProps): JSX.Element {
         {externalCssLinks.map((link) => (
           <link key={link} href={link} rel="stylesheet" />
         ))}
+        {faviconLinks.map((favicon) => (
+          <link key={favicon.rel} {...favicon} />
+        ))}
         <title>
           {props.title
-            ? `${props.title} | ${config.siteTitle}`
+            ? `${props.title}｜${config.siteTitle}`
             : config.siteTitle}
         </title>
       </Head>

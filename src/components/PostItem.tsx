@@ -19,7 +19,11 @@ const Container = styled.div`
   }
 `
 
-const Title = styled.span`
+const Title = styled.div`
+  margin-bottom: 4px;
+`
+
+const TitleText = styled.span`
   padding-bottom: 4px;
   border-color: transparent;
   color: ${config.colors.link};
@@ -27,11 +31,20 @@ const Title = styled.span`
 
   font-size: 18px;
   font-weight: 700;
-  line-height: 1.6;
+  line-height: 1.4;
   font-family: "Raleway", "Inter", system-ui, -apple-system,
     "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", "Helvetica", "Arial",
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
+
+  & p {
+    display: inline;
+    margin: 0;
+  }
+
+  & code {
+    font-size: 0.95em;
+  }
 `
 
 const Metadata = styled.span`
@@ -42,6 +55,10 @@ const Metadata = styled.span`
 
 const Abstract = styled.div`
   line-height: 1.7;
+
+  & p {
+    margin: 0;
+  }
 `
 
 interface PostItemProps {
@@ -52,11 +69,18 @@ export default function PostItem(props: PostItemProps): JSX.Element {
   return (
     <Link href={`/posts/${props.post.slug}`} passHref>
       <Container>
-        <div>
-          <Title className="title">{props.post.title}</Title>
+        <Title>
+          <TitleText
+            className="title"
+            dangerouslySetInnerHTML={{ __html: props.post.transpiledTitle }}
+          />
           <Metadata>{format(props.post.created, "yyyy-MM-dd")}</Metadata>
-        </div>
-        {props.post.abstract && <Abstract>{props.post.abstract}</Abstract>}
+        </Title>
+        {props.post.abstract && (
+          <Abstract
+            dangerouslySetInnerHTML={{ __html: props.post.transpiledAbstract }}
+          />
+        )}
       </Container>
     </Link>
   )
