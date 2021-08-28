@@ -178,7 +178,7 @@ const ContactTag = styled.a`
     text-decoration: none;
     background-color: ${color.lightGrayHover};
   }
-  :not(:last-child) {
+  :not(:last-of-type) {
     margin-inline-end: 16px;
   }
   @media (prefers-color-scheme: dark) {
