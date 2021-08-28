@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import mediumZoom from "medium-zoom"
 
 import Layout from "@/components/Layout"
+import PostTitle from "@/components/PostTitle"
 import { getPosts, renderMarkdown } from "@/utils"
 
 import type { ParsedUrlQuery } from "querystring"
@@ -23,7 +24,9 @@ export default function Post(props: PostProps): JSX.Element {
 
   return (
     <Layout>
-      <div>{props.title}</div>
+      <PostTitle created={props.created} updated={props.updated}>
+        {props.title}
+      </PostTitle>
       <div>
         <div dangerouslySetInnerHTML={{ __html: props.transpiled }} />
       </div>

@@ -15,22 +15,9 @@ const externalCssLinks = [
 ]
 
 const globalStyles = css`
-  /* Cursor */
+  /* Browser behaviors */
   html {
     cursor: auto;
-  }
-
-  ::-webkit-scrollbar {
-    width: 16px;
-    height: 16px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-    border: 4px solid white;
-    border-radius: 8px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #aaa;
   }
 
   /* Typography */
@@ -55,10 +42,16 @@ const globalStyles = css`
   samp {
     font-size: 14px;
     line-height: 1.6;
+    word-break: normal;
     font-family: ui-monospace, "SFMono-Regular", "SF Mono", "Menlo", "Consolas",
       "Roboto Mono", "Ubuntu Monospace", "Liberation Mono", monospace,
       "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
       "Noto Color Emoji";
+  }
+
+  /* Base colors */
+  body {
+    color: ${config.colors.text};
   }
 
   /* Content styles */
@@ -70,6 +63,53 @@ const globalStyles = css`
   h6 {
     & code {
       font-size: 0.95em;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: ${config.colors.link};
+    border-color: transparent;
+    transition: border-color 0.15s, color 0.15s;
+
+    &:hover {
+      border-bottom: 2px solid ${config.colors.linkHoverAux};
+      color: ${config.colors.linkHover};
+    }
+
+    &:visited {
+      color: ${config.colors.linkVisited};
+    }
+
+    &:visited:hover {
+      border-bottom: 2px solid ${config.colors.linkVisitedHoverAux};
+      color: ${config.colors.linkVisitedHover};
+    }
+  }
+
+  pre code.hljs {
+    border-radius: 6px;
+    background-color: ${config.colors.codeBlockBackground};
+  }
+  pre ::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+  pre ::-webkit-scrollbar-thumb {
+    background-color: ${config.colors.codeScroll};
+    border: 4px solid ${config.colors.codeBlockBackground};
+    border-radius: 8px;
+  }
+  pre ::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+  }
+
+  p img {
+    display: block;
+    margin: 0 auto;
+
+    &:not(:last-child) {
+      margin-bottom: 1em;
     }
   }
 `
