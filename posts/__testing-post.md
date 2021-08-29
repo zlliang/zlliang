@@ -44,3 +44,16 @@ function Component() {
 ```
 
 其他大概没什么啦，如果以后我在写文章的时候有什么新的样式需求，我会补充在下面。希望我能在学习的过程之中，也努力写一点东西吧！这样大概会让我更精细地掌握一样东西的。
+
+## 2021-08-29 更新
+
+今天给 remark-highlight 高亮功能添加了 Haskell 语法。因为之前的几周有看 [Learn You a Haskell for Great Good](http://learnyouahaskell.com/)，或许以后会写一点相关的东西呢～
+
+```haskell
+quicksort :: (Ord a) => [a] -> [a]
+quicksort [] = []
+quicksort (x:xs) =
+    let smallerSorted = quicksort [a | a <- xs, a <= x]
+        biggerSorted = quicksort [a | a <- xs, a > x]
+    in  smallerSorted ++ [x] ++ biggerSorted
+```
