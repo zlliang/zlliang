@@ -1,4 +1,4 @@
-import { rgb, lighten, darken, transparentize } from "polished"
+import { rgb, transparentize } from "polished"
 
 const baseColors = {
   // Colors are mainly from https://nipponcolors.com
@@ -6,7 +6,7 @@ const baseColors = {
   gray1: rgb(124, 125, 140),
   gray2: rgb(179, 182, 186),
   gray3: rgb(225, 228, 231),
-  gray4: rgb(247, 249, 251),
+  gray4: rgb(246, 248, 250),
   blue: rgb(0, 92, 175),
 }
 
