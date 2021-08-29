@@ -3,7 +3,7 @@ title: 测试文章｜Testing Post
 created: 2021-08-27
 updated: 2021-08-28
 abstract: 是一篇用来测试网站排版的文章。没什么具体的内容，只有可爱的段落格式、标题、代码块以及美丽的图片们。我只在本地调试的时候光顾这一篇，所以希望别人不会看到。就连这个摘要，也是由几句罗圈话构成的。
-# hidden: true
+hidden: true
 ---
 
 现在是 8 月 27 日，我使用 [Next.js](https://nextjs.org) 和 [TypeScript](https://www.typescriptlang.org/) 再次重构这个网站。可能是由于我想练习技术写作的愿望仍然没有熄灭吧！就用这篇 `hidden === true` 的文章就用来测试网页样式和排版吧～ 😁
