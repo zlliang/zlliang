@@ -602,10 +602,10 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/react@^17.0.22":
-  version "17.0.22"
-  resolved "https://registry.nlark.com/@types/react/download/@types/react-17.0.22.tgz#c80d1d0e87fe953bae3ab273bef451dea1a6291b"
-  integrity sha1-yA0dDof+lTuuOrJzvvRR3qGmKRs=
+"@types/react@^17.0.24":
+  version "17.0.24"
+  resolved "https://registry.npmmirror.com/@types/react/download/@types/react-17.0.24.tgz#7e1b3f78d0fc53782543f9bce6d949959a5880bd"
+  integrity sha1-fhs/eND8U3glQ/m85tlJlZpYgL0=
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -4048,10 +4048,10 @@ remark-parse@^10.0.0:
     mdast-util-from-markdown "^1.0.0"
     unified "^10.0.0"
 
-remark-rehype@^9.0.0:
-  version "9.0.0"
-  resolved "https://registry.nlark.com/remark-rehype/download/remark-rehype-9.0.0.tgz#83532a48e048373411ca50c53d84fb1a35bc7bfe"
-  integrity sha1-g1MqSOBINzQRylDFPYT7GjW8e/4=
+remark-rehype@^9.1.0:
+  version "9.1.0"
+  resolved "https://registry.npmmirror.com/remark-rehype/download/remark-rehype-9.1.0.tgz#e4b5b6e19c125b3780343eb66c3e9b99b0f06a81"
+  integrity sha1-5LW24ZwSWzeAND62bD6bmbDwaoE=
   dependencies:
     "@types/hast" "^2.0.0"
     "@types/mdast" "^3.0.0"
