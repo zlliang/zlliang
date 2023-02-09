@@ -237,5 +237,5 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/macos,linux,windows,visualstudiocode,node
 
 
-# Astro
-.astro
+# Special for this repo
+.vitepress/cache
