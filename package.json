@@ -1,6 +1,8 @@
 {
   "name": "foreignfart.com",
+  "description": "My Personal website",
   "private": true,
+  "type": "module",
   "scripts": {
     "generate-posts": "tsx .vitepress/script/generate-posts.ts",
     "dev": "pnpm generate-posts && vitepress dev .",
