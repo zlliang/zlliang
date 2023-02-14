@@ -239,4 +239,5 @@ $RECYCLE.BIN/
 
 # Special for this repo
 .vitepress/cache
+.vitepress/theme/data
 .vercel
