@@ -28,7 +28,6 @@ const { frontmatter } = useData()
 .date {
   color: var(--vp-c-text-3);
   font-size: 14px;
-  text-align: right;
   margin-bottom: 1em;
 }
 </style>
