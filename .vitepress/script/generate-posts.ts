@@ -1,4 +1,4 @@
-import { writeFileSync } from "node:fs"
+import { existsSync, mkdirSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 
@@ -31,6 +31,8 @@ export interface Post {
 const root = resolve(fileURLToPath(import.meta.url), "../../..")
 const postDir = resolve(root, "./src")
 const dataDir = resolve(root, "./.vitepress/theme/data")
+
+if (!existsSync(dataDir)) mkdirSync(dataDir)
 
 const allPosts = glob
   .sync(`${postDir}/**/*.md`)
