@@ -2,11 +2,19 @@
   "name": "zlliang.com",
   "private": true,
   "scripts": {
-    "dev": "vitepress dev .",
-    "build": "vitepress build ."
+    "generate-posts": "tsx .vitepress/script/generate-posts.ts",
+    "dev": "pnpm generate-posts && vitepress dev .",
+    "build": "pnpm generate-posts && vitepress build ."
   },
   "devDependencies": {
-    "vitepress": "1.0.0-alpha.45",
+    "@types/glob": "^8.0.1",
+    "@types/node": "^18.13.0",
+    "date-fns": "^2.29.3",
+    "glob": "^8.1.0",
+    "gray-matter": "^4.0.3",
+    "tsx": "^3.12.3",
+    "typescript": "^4.9.5",
+    "vitepress": "1.0.0-alpha.46",
     "vue": "^3.2.47"
   },
   "pnpm": {
