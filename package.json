@@ -1,5 +1,5 @@
 {
-  "name": "zlliang.com",
+  "name": "foreignfart.com",
   "private": true,
   "scripts": {
     "generate-posts": "tsx .vitepress/script/generate-posts.ts",
