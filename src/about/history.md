@@ -1,6 +1,7 @@
 ---
 title: 历史档案
 hidden: true
+hideComment: true
 aside: false
 ---
 

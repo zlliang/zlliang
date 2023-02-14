@@ -11,6 +11,7 @@ export interface Post {
   hidden?: boolean
   featured?: boolean
   topicIndex?: boolean
+  hideComment?: boolean
 }
 
 const props = withDefaults(defineProps<{ info: Post; splitDate?: boolean }>(), {

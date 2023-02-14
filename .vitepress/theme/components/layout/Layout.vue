@@ -1,10 +1,15 @@
 <script setup lang="ts">
+import { defineAsyncComponent } from "vue"
 import { useData } from "vitepress"
 import DefaultTheme from "vitepress/theme"
 import { format } from "date-fns"
 
 const { Layout: DefaultLayout } = DefaultTheme
 DefaultLayout.name = "DefaultLayout"
+
+const Comment = defineAsyncComponent(
+  () => import("@/components/comment/Comment.vue")
+)
 
 const { frontmatter } = useData()
 </script>
@@ -20,6 +25,9 @@ const { frontmatter } = useData()
           / 更新于 {{ format(new Date(frontmatter.updated), "yyyy-MM-dd") }}
         </span>
       </div>
+    </template>
+    <template v-if="!frontmatter.hideComment" #doc-after>
+      <Comment />
     </template>
   </DefaultLayout>
 </template>

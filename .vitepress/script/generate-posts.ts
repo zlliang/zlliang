@@ -14,6 +14,7 @@ export interface FrontMatter {
   updated?: Date
   hidden?: boolean
   featured?: boolean
+  hideComment?: boolean
 }
 
 export interface Post {
@@ -26,6 +27,7 @@ export interface Post {
   hidden?: boolean
   featured?: boolean
   topicIndex?: boolean
+  hideComment?: boolean
 }
 
 const root = resolve(fileURLToPath(import.meta.url), "../../..")
