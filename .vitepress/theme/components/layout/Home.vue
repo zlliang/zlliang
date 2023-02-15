@@ -100,14 +100,14 @@ onMounted(() => {
 
 .secondary {
   position: relative;
-  order: 2;
   flex-grow: 1;
+  flex-shrink: 0;
   width: 100%;
 }
 
 @media (min-width: 1000px) {
   .secondary {
-    max-width: 320px;
+    max-width: 360px;
   }
 }
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue"
 
-import { default as PostItem } from "@/components/PostItem.vue"
+import PostItem from "@/components/PostItem.vue"
 
 import featuredPosts from "@/data/featuredPosts.json"
 

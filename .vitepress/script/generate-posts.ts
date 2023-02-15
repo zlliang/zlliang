@@ -69,6 +69,14 @@ writeFileSync(
   "utf-8"
 )
 
+const latestPosts = historyPosts.slice(0, 10)
+
+writeFileSync(
+  resolve(dataDir, "./latestPosts.json"),
+  JSON.stringify(latestPosts),
+  "utf-8"
+)
+
 const featuredPosts = allPosts.filter((item) => item.featured)
 
 writeFileSync(
