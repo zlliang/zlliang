@@ -9,9 +9,14 @@ layout: page
 <script setup>
 import Home from "@/components/layout/Home.vue"
 import FeaturedList from "@/components/FeaturedList.vue"
+import LatestList from "@/components/LatestList.vue"
 </script>
 
 <Home>
+
+## 新鲜热乎之作
+
+<LatestList />
 
 ## 洋屁君是谁
 
@@ -55,7 +60,7 @@ import FeaturedList from "@/components/FeaturedList.vue"
 
 ## 😎 得意之作
 
-<FeaturedList />
+🚧 施工中……
 
 ## 😬 有用的页面们
 
