@@ -36,7 +36,7 @@ const href = ref(
       <div class="date">
         <span v-if="info.created">创建于 {{ info.created }}</span>
         <span v-if="info.updated" class="updated">
-          更新于 {{ info.updated }}
+          / 更新于 {{ info.updated }}
         </span>
       </div>
     </div>
@@ -84,10 +84,6 @@ const href = ref(
   color: var(--vp-c-text-3);
 }
 
-.date .updated::before {
-  content: " / ";
-}
-
 @media (min-width: 768px) {
   .title-container.split-date {
     display: flex;
@@ -100,23 +96,14 @@ const href = ref(
     margin-top: 1px;
     flex-shrink: 0;
     position: relative;
-    font-size: 12px;
+    font-size: 14px;
     color: var(--vp-c-text-3);
-  }
-
-  .title-container.split-date .date .updated {
-    display: block;
-    position: absolute;
   }
 
   .title-container.split-date .date .updated::before {
     display: none;
   }
 }
-
-/* @container (min-width) {
-
-} */
 
 .summary {
   margin-top: 4px;
