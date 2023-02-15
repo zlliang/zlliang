@@ -68,21 +68,9 @@ onMounted(() => {
   display: none;
 }
 
-.bottom-left {
-  display: none;
-}
-
 @media (min-width: 768px) {
   .main {
     padding: 48px 32px 128px;
-  }
-
-  .bottom-left {
-    display: block;
-  }
-
-  .bottom-right {
-    display: none;
   }
 }
 
@@ -120,9 +108,21 @@ onMounted(() => {
   width: 100%;
 }
 
+.bottom-left {
+  display: none;
+}
+
 @media (min-width: 1000px) {
   .secondary {
     max-width: 360px;
+  }
+
+  .bottom-left {
+    display: block;
+  }
+
+  .bottom-right {
+    display: none;
   }
 }
 
