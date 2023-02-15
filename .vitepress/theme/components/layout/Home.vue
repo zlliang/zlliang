@@ -38,11 +38,11 @@ onMounted(() => {
       />
     </div>
     <div class="container main-content">
-      <div class="content">
-        <slot />
-      </div>
       <div class="secondary">
         <slot name="secondary" />
+      </div>
+      <div class="content">
+        <slot />
       </div>
     </div>
   </div>
@@ -96,12 +96,14 @@ onMounted(() => {
 
 .content {
   flex-grow: 1;
+  order: 1;
 }
 
 .secondary {
   position: relative;
   flex-grow: 1;
   flex-shrink: 0;
+  order: 2;
   width: 100%;
 }
 
