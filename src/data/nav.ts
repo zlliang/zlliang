@@ -33,27 +33,14 @@ export const nav: DefaultTheme.NavItem[] = [
 ]
 
 export const sidebar: DefaultTheme.Sidebar = {
-  "/tech/": [
-    { text: "首页 - 洋屁君的技术笔记 ", link: "/tech/" },
-    {
-      text: "文章",
-      collapsed: false,
-      items: [
-        {
-          text: "我的个人网站，2023 版",
-          link: "/tech/my-website-version-2023.md",
-        },
-      ],
-    },
-  ],
   "/about/plan/": [
     { text: "🤯 洋屁君在忙什么？", link: "/about/plan/" },
     {
       text: "已经忙完的",
       items: [
         {
-          text: "更新记录 2023-02-13",
-          link: "/about/plan/update-log-2023-02-13",
+          text: "洋屁君的初始化：搭建我的 2023 版个人网站",
+          link: "/about/plan/foreignfart-version-2023",
         },
       ],
     },
