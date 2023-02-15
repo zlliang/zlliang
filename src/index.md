@@ -60,19 +60,21 @@ import LatestList from "@/components/LatestList.vue"
 
 如果想要了解我更多，请前往：[🤔️ 洋屁君是谁啊？](/about/)
 
+<template #bottom>
+
 ## 更新计划
 
 🚧 施工中……
 
 更加详尽的更新计划，请前往：[🤯 洋屁君在忙些什么？](/about/plan/)
 
+</template>
+
 <template #secondary>
 
 ## 😎 得意之作
 
 🚧 施工中……
-
-<!-- ## 😬 有用的页面们 -->
 
 </template>
 
