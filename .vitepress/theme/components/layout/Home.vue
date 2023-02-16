@@ -38,11 +38,17 @@ onMounted(() => {
       />
     </div>
     <div class="container main-content">
-      <div class="content">
-        <slot />
-      </div>
       <div class="secondary">
         <slot name="secondary" />
+        <div v-if="$slots.bottom" class="bottom-left">
+          <slot name="bottom" />
+        </div>
+      </div>
+      <div class="content">
+        <slot />
+        <div v-if="$slots.bottom" class="bottom-right">
+          <slot name="bottom" />
+        </div>
       </div>
     </div>
   </div>
@@ -55,10 +61,6 @@ onMounted(() => {
 
 .main {
   padding: 32px 24px 96px;
-}
-
-.main .secondary {
-  margin-top: 32px;
 }
 
 .main :deep(h2 .header-anchor),
@@ -85,7 +87,6 @@ onMounted(() => {
 
   .main .secondary {
     margin-left: 64px;
-    margin-top: 0;
   }
 }
 
@@ -96,18 +97,32 @@ onMounted(() => {
 
 .content {
   flex-grow: 1;
+  order: 1;
 }
 
 .secondary {
   position: relative;
   flex-grow: 1;
   flex-shrink: 0;
+  order: 2;
   width: 100%;
+}
+
+.bottom-left {
+  display: none;
 }
 
 @media (min-width: 1000px) {
   .secondary {
     max-width: 360px;
+  }
+
+  .bottom-left {
+    display: block;
+  }
+
+  .bottom-right {
+    display: none;
   }
 }
 

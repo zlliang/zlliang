@@ -18,6 +18,16 @@ import LatestList from "@/components/LatestList.vue"
 
 <LatestList />
 
+如想阅览更多，请前往：
+
+<PostItem
+  :info="{
+    title: '📃 历史档案',
+    path: '/about/history',
+    summary: '一览无余地罗列了本站所有的文章内容，按照创建时间排序，并且可以按照标题搜索'
+  }"
+/>
+
 ## 洋屁君是谁
 
 我是本站的作者，代号**洋屁君**，以此形象在这里欢迎你的到来。
@@ -50,27 +60,21 @@ import LatestList from "@/components/LatestList.vue"
 
 如果想要了解我更多，请前往：[🤔️ 洋屁君是谁啊？](/about/)
 
+<template #bottom>
+
 ## 更新计划
 
 🚧 施工中……
 
 更加详尽的更新计划，请前往：[🤯 洋屁君在忙些什么？](/about/plan/)
 
+</template>
+
 <template #secondary>
 
 ## 😎 得意之作
 
 🚧 施工中……
-
-## 😬 有用的页面们
-
-<PostItem
-  :info="{
-    title: '📃 历史档案',
-    path: '/about/history',
-    summary: '一览无余地罗列了本站所有的文章内容，按照创建时间排序，并且可以按照标题搜索'
-  }"
-/>
 
 </template>
 
