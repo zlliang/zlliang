@@ -112,7 +112,7 @@ const href = ref(
 }
 
 .path {
-  margin-top: 8px;
+  margin-top: 4px;
   font-size: 12px;
   color: var(--vp-c-text-3);
 }
