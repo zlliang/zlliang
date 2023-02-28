@@ -3,7 +3,7 @@ import { resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 
 import matter from "gray-matter"
-import glob from "glob"
+import { globSync } from "glob"
 import { format } from "date-fns"
 
 export interface FrontMatter {
@@ -34,8 +34,7 @@ const dataDir = resolve(root, "./.vitepress/theme/data")
 
 if (!existsSync(dataDir)) mkdirSync(dataDir)
 
-const allPosts = glob
-  .sync(`${postDir}/**/*.md`)
+const allPosts = globSync(`${postDir}/**/*.md`)
   .map((item) => {
     const frontMatter = matter.read(item).data as FrontMatter
     const path = item.slice(postDir.length)
