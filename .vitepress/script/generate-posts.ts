@@ -54,7 +54,7 @@ const allPosts = globSync(`${postDir}/**/*.md`)
 
     return result
   })
-  .sort((a, b) => new Date(a.created).valueOf() - new Date(b.created).valueOf())
+  .sort((a, b) => new Date(b.created).valueOf() - new Date(a.created).valueOf())
 
 writeFileSync(
   resolve(dataDir, "./allPosts.json"),
