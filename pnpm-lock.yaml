@@ -8,7 +8,7 @@ specifiers:
   gray-matter: ^4.0.3
   tsx: ^3.12.3
   typescript: ^4.9.5
-  vitepress: 1.0.0-alpha.52
+  vitepress: 1.0.0-alpha.49
   vue: ^3.2.47
 
 devDependencies:
@@ -19,7 +19,7 @@ devDependencies:
   gray-matter: 4.0.3
   tsx: 3.12.3
   typescript: 4.9.5
-  vitepress: 1.0.0-alpha.52_@types+node@18.15.0
+  vitepress: 1.0.0-alpha.49_@types+node@18.15.0
   vue: 3.2.47
 
 packages:
@@ -1152,8 +1152,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/1.0.0-alpha.52_@types+node@18.15.0:
-    resolution: {integrity: sha512-DAaO5/yGXCVHXXwVJO/T1wS03curMgOhYnh1LVDTZAf0s1qr282id5j45IYEWthWcUZRD6ST9EAIZNsXHo4O7g==}
+  /vitepress/1.0.0-alpha.49_@types+node@18.15.0:
+    resolution: {integrity: sha512-3nUZJow4qL8NHRWYatqqVj45AJDxWst/TuOj+IbQRhxesEswa+Fpwayj9/FxzRzBl665fuiG5y+QeVhOeUm0OA==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.3.3
