@@ -16,7 +16,7 @@
     "gray-matter": "^4.0.3",
     "tsx": "^3.12.3",
     "typescript": "^4.9.5",
-    "vitepress": "1.0.0-alpha.52",
+    "vitepress": "1.0.0-alpha.49",
     "vue": "^3.2.47"
   },
   "pnpm": {
