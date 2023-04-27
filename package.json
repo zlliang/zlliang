@@ -9,6 +9,7 @@
     "build": "pnpm generate-posts && vitepress build ."
   },
   "devDependencies": {
+    "@supabase/supabase-js": "^2.21.0",
     "@types/glob": "^8.1.0",
     "@types/node": "^18.16.1",
     "date-fns": "^2.29.3",

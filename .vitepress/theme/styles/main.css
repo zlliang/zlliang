@@ -62,3 +62,14 @@ body {
   color: var(--vp-c-brand-dark);
   text-decoration: none;
 }
+
+/* Link */
+.link {
+  color: var(--vp-c-brand);
+  cursor: pointer;
+  transition: color 0.25s;
+}
+
+.link:hover {
+  color: var(--vp-c-brand-dark);
+}

@@ -71,7 +71,7 @@ const href = ref(
 .title {
   display: block;
   color: var(--vp-c-brand);
-  font-weight: 600;
+  font-weight: 500;
   transition: color 0.25s;
 }
 
