@@ -4,37 +4,140 @@ export const nav: DefaultTheme.NavItem[] = [
   {
     text: "🏡 生活",
     activeMatch: "/life/",
-    items: [{ text: "首页 - 洋屁君的生活瞬间", link: "/life/" }],
+    items: [
+      {
+        text: "首页 - 洋屁君的生活瞬间",
+        link: "/life/",
+      },
+    ],
   },
   {
     text: "📚 书房",
     activeMatch: "/reading/",
-    items: [{ text: "首页 - 洋屁君的书房", link: "/reading/" }],
+    items: [
+      {
+        text: "首页 - 洋屁君的书房",
+        link: "/reading/",
+      },
+    ],
   },
   {
     text: "🎮 游戏",
     activeMatch: "/game/",
-    items: [{ text: "首页 - 洋屁君的游戏小窝", link: "/game/" }],
+    items: [
+      {
+        text: "首页 - 洋屁君的游戏小窝",
+        link: "/game/",
+      },
+      { 
+        text: '专题',
+        items: [
+          {
+            text: '🌟 星之海 Sea of Stars',
+            link: '/game/topics/sea-of-stars/',
+          },
+        ],
+      },
+    ],
   },
   {
     text: "🛠️ 技术",
     activeMatch: "/tech/",
-    items: [{ text: "首页 - 洋屁君的技术笔记", link: "/tech/" }],
+    items: [
+      {
+        text: "首页 - 洋屁君的技术笔记",
+        link: "/tech/",
+      },
+      { 
+        text: '专题',
+        items: [
+          {
+            text: '🦀 Rust 学习笔记',
+            link: '/tech/topics/learning-rust/',
+          },
+        ],
+      },
+    ],
   },
   {
     text: "关于洋屁君",
     activeMatch: "/about/",
     items: [
-      { text: "🤔 洋屁君是谁", link: "/about/" },
-      { text: "🤯 在忙什么", link: "/about/plan/" },
-      { items: [{ text: "📃 历史档案", link: "/about/history" }] },
+      {
+        text: "🤔 洋屁君是谁",
+        link: "/about/",
+      },
+      {
+        text: "🤯 在忙什么",
+        link: "/about/plan/",
+      },
+      {
+        items: [
+          {
+            text: "📃 历史档案",
+            link: "/about/history",
+          },
+        ],
+      },
     ],
   },
 ]
 
 export const sidebar: DefaultTheme.Sidebar = {
+  "/life/": [
+    {
+      text: "🏡 生活瞬间",
+      link: '/life/',
+    },
+    {
+      text: "专题",
+      items: [],
+    },
+    {
+      text: "文章",
+      items: [
+        {
+          text: '2023-02 香港',
+          link: '/life/2023-02-hong-kong',
+        },
+      ],
+    },
+  ],
+  "/game/": [
+    {
+      text: "🎮 游戏小窝",
+      link: "/game/",
+    },
+    { 
+      text: '专题',
+      items: [
+        {
+          text: '🌟 星之海 Sea of Stars',
+          link: '/game/topics/sea-of-stars/',
+        },
+      ],
+    },
+  ],
+  "/tech/": [
+    {
+      text: "🛠️ 技术笔记",
+      link: "/tech/",
+    },
+    {
+      text: '专题',
+      items: [
+        {
+          text: '🦀 Rust 学习笔记',
+          link: '/tech/topics/learning-rust/',
+        },
+      ],
+    },
+  ],
   "/about/plan/": [
-    { text: "🤯 洋屁君在忙什么？", link: "/about/plan/" },
+    {
+      text: "🤯 洋屁君在忙什么？",
+      link: "/about/plan/",
+    },
     {
       text: "已经忙完的",
       items: [
