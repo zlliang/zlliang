@@ -8,9 +8,7 @@ const opacity = ref(0)
 const sloganImageRef = ref("")
 
 function setSloganImageRef() {
-  sloganImageRef.value = isDark.value
-    ? "/images/slogan-dark.svg"
-    : "/images/slogan-light.svg"
+  sloganImageRef.value = isDark.value ? "/images/slogan-dark.svg" : "/images/slogan-light.svg"
 }
 
 watch(isDark, setSloganImageRef)
