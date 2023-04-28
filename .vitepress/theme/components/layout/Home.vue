@@ -23,7 +23,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="vp-doc main">
+  <div class="vp-doc home main">
     <div class="container hero-text">
       <div>这里是洋屁君的老巢。</div>
       <div>既然拨冗光临，那就不要吝惜 ——</div>
@@ -168,5 +168,11 @@ onMounted(() => {
   .main-content {
     margin-bottom: 128px;
   }
+}
+</style>
+
+<style>
+.Layout:has(.home.main) .VPLocalNav {
+  display: none !important;
 }
 </style>
