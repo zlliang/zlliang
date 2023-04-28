@@ -89,8 +89,11 @@ async function submit() {
   padding: 4px 0;
   width: 180px;
   max-width: 100%;
-  line-height: 16px;
+  border: none;
+  border-radius: 0;
   border-bottom: 1px solid var(--vp-c-divider);
+  font-size: 14px;
+  line-height: 16px;
   transition: border-bottom-color 0.2s;
 }
 
