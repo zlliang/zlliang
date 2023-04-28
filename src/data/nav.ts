@@ -12,7 +12,7 @@ export const nav: DefaultTheme.NavItem[] = [
     ],
   },
   {
-    text: "📚 书房",
+    text: "📚 读书",
     activeMatch: "/reading/",
     items: [
       {
@@ -101,6 +101,12 @@ export const sidebar: DefaultTheme.Sidebar = {
           link: '/life/2023-02-hong-kong',
         },
       ],
+    },
+  ],
+  "/reading/": [
+    {
+      text: "📚 读书",
+      link: "/reading/",
     },
   ],
   "/game/": [

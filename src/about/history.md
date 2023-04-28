@@ -10,6 +10,6 @@ import HistoryList from "@/components/HistoryList.vue"
 
 <TitleWithEmoji emoji="📃" special>历史档案</TitleWithEmoji>
 
-> 一览无余的全历史档案，按照创建时间排序
+> 此网站的全部历史，一览无余。
 
 <HistoryList />
