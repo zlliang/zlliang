@@ -10,6 +10,7 @@ layout: page
 import Home from "@/components/layout/Home.vue"
 import FeaturedList from "@/components/FeaturedList.vue"
 import LatestList from "@/components/LatestList.vue"
+import Profile from "@/components/about/Profile.vue"
 </script>
 
 <Home>
@@ -30,7 +31,9 @@ import LatestList from "@/components/LatestList.vue"
 
 ## 洋屁君是谁
 
-我是本站的作者，代号**洋屁君**，以此形象在这里欢迎你的到来。
+<Profile />
+
+我是本站的作者，代号**洋屁君**，以此形象欢迎你的到来。
 
 ### 话说回来，“放洋屁”究竟是什么意思？
 
