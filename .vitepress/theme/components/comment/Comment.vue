@@ -88,7 +88,7 @@ function scroll(id: number) {
 
 <style scoped>
 .comment-system {
-  margin-top: 32px;
+  margin-top: 108px;
   font-size: 14px;
 }
 
@@ -118,6 +118,6 @@ function scroll(id: number) {
 .loading,
 .empty {
   margin-top: 16px;
-  color: var(--vp-c-text-2);
+  color: var(--vp-c-text-3);
 }
 </style>

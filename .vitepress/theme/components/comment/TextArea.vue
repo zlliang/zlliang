@@ -11,7 +11,7 @@ const props = withDefaults(
   }
 )
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'change'])
 
 const wrapper = ref<HTMLDivElement | null>(null)
 
@@ -20,12 +20,18 @@ function onInput (event: Event) {
   if (wrapper.value) wrapper.value.dataset.replicatedValue = value
 
   emit('update:modelValue', value)
+  emit('change', value)
 }
 </script>
 
 <template>
   <div ref="wrapper" class="textarea-wrapper">
-    <textarea :value="props.modelValue" @input="onInput" v-bind="$attrs" class="textarea" />
+    <textarea
+      :value="props.modelValue"
+      @input="onInput"
+      v-bind="$attrs"
+      class="textarea"
+    />
   </div>
 </template>
 

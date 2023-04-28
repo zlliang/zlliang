@@ -17,6 +17,7 @@ const route = useRoute()
 
 const name = ref("")
 const content = ref("")
+const error = ref("")
 
 function clear() {
   name.value = ""
@@ -24,7 +25,27 @@ function clear() {
   emit("clearReply")
 }
 
+function clearError() {
+  error.value = ""
+}
+
+function validate () {
+  if (!name.value) {
+    error.value = "请填写您的称呼～"
+    return false
+  }
+
+  if (!content.value) {
+    error.value = "请填写评论内容～"
+    return false
+  }
+
+  return true
+}
+
 async function submit() {
+  if (!validate()) return
+
   const { data, error } = await supabase
     .from('comments')
     .insert({
@@ -47,7 +68,6 @@ async function submit() {
         .eq('id', props.replyId)
     }
   }
-  
 
   clear()
   emit('submitted')
@@ -59,7 +79,12 @@ async function submit() {
     <div class="header">
       <div>
         <span>该怎么称呼您呢：</span>
-        <input v-model="name" placeholder="怎么称呼您呢？" class="name-input" />
+        <input
+          v-model="name"
+          placeholder="怎么称呼您呢？"
+          class="name-input"
+          @change="clearError"
+        />
       </div>
       <span v-if="props.replyId" class="right">
         <span>回复</span>
@@ -68,10 +93,15 @@ async function submit() {
       </span>
     </div>
     <div class="content-textarea">
-      <TextArea v-model="content" placeholder="那么，在这里写下您想说的话。" />
+      <TextArea
+        v-model="content"
+        placeholder="那么，在这里写下您想说的话。"
+        @change="clearError"
+      />
     </div>
     <div class="operations">
-      <span @click="submit" class="link">提交评论</span>
+      <span @click="submit" class="link submit">提交评论</span>
+      <span v-if="error" class="error">{{ error }}</span>
     </div>
   </div>
 </template>
@@ -106,7 +136,7 @@ async function submit() {
   display: flex;
   gap: 4px;
   margin-top: 4px;
-  color: var(--vp-c-text-2);
+  color: var(--vp-c-text-3);
   font-size: 12px;
 }
 
@@ -127,6 +157,14 @@ async function submit() {
 
 .operations {
   display: flex;
-  gap: 8px;
+  gap: 16px;
+}
+
+.submit {
+  font-weight: 500;
+}
+
+.error {
+  color: var(--vp-badge-warning-text);
 }
 </style>

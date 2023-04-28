@@ -28,7 +28,11 @@ function formatDate (date: string) {
         <div class="link" @click="emit('reply', props.value.id)">回复</div>
       </div>
     </div>
-    <div class="content">{{ props.value.content }}</div>
+    <div v-if="props.value.hidden" class="content hidden">
+      <span>😶‍🌫️ 这条评论内容被折叠了。</span>
+      <span v-if="props.value.hidden_reason">原因是：{{ props.value.hidden_reason }}</span>
+    </div>
+    <div v-else class="content">{{ props.value.content }}</div>
     <div v-if="props.value.referred_ids && props.value.referred_ids.length" class="referred">
       <span>有人回复了这条评论：</span>
       <span v-for="(id, index) in props.value.referred_ids" :key="id">
@@ -56,7 +60,7 @@ function formatDate (date: string) {
   display: flex;
   gap: 16px;
   margin-top: 4px;
-  color: var(--vp-c-text-2);
+  color: var(--vp-c-text-3);
   font-size: 12px;
 }
 
@@ -75,7 +79,7 @@ function formatDate (date: string) {
 .reply-info {
   display: flex;
   gap: 4px;
-  color: var(--vp-c-text-2);
+  color: var(--vp-c-text-3);
 }
 
 .user-name {
@@ -84,11 +88,16 @@ function formatDate (date: string) {
 
 .content {
   margin-top: 8px;
+  white-space: pre-line;
+}
+
+.hidden {
+  color: var(--vp-c-text-3);
 }
 
 .referred {
   margin-top: 8px;
   font-size: 12px;
-  color: var(--vp-c-text-2);
+  color: var(--vp-c-text-3);
 }
 </style>
