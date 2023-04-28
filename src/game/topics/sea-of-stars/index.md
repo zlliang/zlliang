@@ -6,6 +6,6 @@ topicIndex: true
 
 <TitleWithEmoji emoji="🌟">星之海 Sea of Stars</TitleWithEmoji>
 
-![Sea of Stars key art](../../images/seaofstars-keyart-with-logo.png)
+![Sea of Stars key art](../../images/seaofstars-keyart-with-logo.jpg)
 
 🚧 施工中……
