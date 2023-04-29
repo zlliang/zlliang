@@ -31,7 +31,7 @@ function clearError() {
 
 function validate () {
   if (!name.value) {
-    error.value = "请填写您的称呼～"
+    error.value = "请填写你的称呼～"
     return false
   }
 
@@ -78,10 +78,10 @@ async function submit() {
   <div>
     <div class="header">
       <div>
-        <span>该怎么称呼您呢：</span>
+        <span>该怎么称呼你呢：</span>
         <input
           v-model="name"
-          placeholder="怎么称呼您呢？"
+          placeholder="怎么称呼你呢？"
           class="name-input"
           @change="clearError"
         />
@@ -95,7 +95,7 @@ async function submit() {
     <div class="content-textarea">
       <TextArea
         v-model="content"
-        placeholder="那么，在这里写下您想说的话。"
+        placeholder="那么，在这里写下你想说的话。"
         @change="clearError"
       />
     </div>

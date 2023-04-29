@@ -54,7 +54,7 @@ function scroll(id: number) {
     <div class="toolbar-wrapper">
       <div class="toolbar">
         <div class="title">评论区</div>
-        <div class="description">感谢您的评论，ありがとうございます！🙇</div>
+        <div class="description">感谢你的评论，ありがとうございます！🙇</div>
       </div>
     </div>
     <div class="writing" id="comment-writing">
