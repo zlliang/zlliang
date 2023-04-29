@@ -1,5 +1,4 @@
-Global
-
+/* Global */
 body {
   line-height: 1.5;
 }
@@ -63,4 +62,17 @@ body {
 .vp-doc a:hover {
   color: var(--vp-c-brand-dark);
   text-decoration: none;
+}
+
+/* Utility classes */
+.vp-doc .tiny-text {
+  font-size: 14px;
+}
+
+.vp-doc p.tiny-text {
+  line-height: 24.5px; /* 1.75 */
+}
+
+.vp-doc .secondary-text {
+  color: var(--vp-c-text-2);
 }
