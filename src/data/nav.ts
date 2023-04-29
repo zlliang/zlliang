@@ -12,7 +12,7 @@ export const nav: DefaultTheme.NavItem[] = [
     ],
   },
   {
-    text: "📚 书房",
+    text: "📚 读书",
     activeMatch: "/reading/",
     items: [
       {
@@ -29,15 +29,15 @@ export const nav: DefaultTheme.NavItem[] = [
         text: "首页 - 洋屁君的游戏小窝",
         link: "/game/",
       },
-      { 
-        text: '专题',
-        items: [
-          {
-            text: '🌟 星之海 Sea of Stars',
-            link: '/game/topics/sea-of-stars/',
-          },
-        ],
-      },
+      // { 
+      //   text: '专题',
+      //   items: [
+      //     {
+      //       text: '🌟 星之海 Sea of Stars',
+      //       link: '/game/topics/sea-of-stars/',
+      //     },
+      //   ],
+      // },
     ],
   },
   {
@@ -48,15 +48,15 @@ export const nav: DefaultTheme.NavItem[] = [
         text: "首页 - 洋屁君的技术笔记",
         link: "/tech/",
       },
-      { 
-        text: '专题',
-        items: [
-          {
-            text: '🦀 Rust 学习笔记',
-            link: '/tech/topics/learning-rust/',
-          },
-        ],
-      },
+      // { 
+      //   text: '专题',
+      //   items: [
+      //     {
+      //       text: '🦀 Rust 学习笔记',
+      //       link: '/tech/topics/learning-rust/',
+      //     },
+      //   ],
+      // },
     ],
   },
   {
@@ -89,18 +89,28 @@ export const sidebar: DefaultTheme.Sidebar = {
       text: "🏡 生活瞬间",
       link: '/life/',
     },
+    // {
+    //   text: "专题",
+    //   items: [],
+    // },
+    // {
+    //   text: "文章",
+    //   items: [
+    //     {
+    //       text: '2023-02 香港',
+    //       link: '/life/2023-02-hong-kong',
+    //     },
+    //     {
+    //       text: '终于拼完了星之卡比拼图！',
+    //       link: '/life/kirby-jigsaw-puzzle',
+    //     }
+    //   ],
+    // },
+  ],
+  "/reading/": [
     {
-      text: "专题",
-      items: [],
-    },
-    {
-      text: "文章",
-      items: [
-        {
-          text: '2023-02 香港',
-          link: '/life/2023-02-hong-kong',
-        },
-      ],
+      text: "📚 读书",
+      link: "/reading/",
     },
   ],
   "/game/": [
@@ -108,30 +118,30 @@ export const sidebar: DefaultTheme.Sidebar = {
       text: "🎮 游戏小窝",
       link: "/game/",
     },
-    { 
-      text: '专题',
-      items: [
-        {
-          text: '🌟 星之海 Sea of Stars',
-          link: '/game/topics/sea-of-stars/',
-        },
-      ],
-    },
+    // { 
+    //   text: '专题',
+    //   items: [
+    //     {
+    //       text: '🌟 星之海 Sea of Stars',
+    //       link: '/game/topics/sea-of-stars/',
+    //     },
+    //   ],
+    // },
   ],
   "/tech/": [
     {
       text: "🛠️ 技术笔记",
       link: "/tech/",
     },
-    {
-      text: '专题',
-      items: [
-        {
-          text: '🦀 Rust 学习笔记',
-          link: '/tech/topics/learning-rust/',
-        },
-      ],
-    },
+    // {
+    //   text: '专题',
+    //   items: [
+    //     {
+    //       text: '🦀 Rust 学习笔记',
+    //       link: '/tech/topics/learning-rust/',
+    //     },
+    //   ],
+    // },
   ],
   "/about/plan/": [
     {

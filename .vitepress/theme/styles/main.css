@@ -1,5 +1,4 @@
 /* Global */
-
 body {
   line-height: 1.5;
 }
@@ -15,6 +14,7 @@ body {
 /* Code block colors */
 :root {
   --vp-code-block-bg: hsl(210, 29%, 97%);
+  --vp-code-block-bg-light: rgba(2, 3, 3, 0.05);
   --vp-code-line-number-color: #1b1f234d;
   --vp-code-block-divider-color: #e1e4e8;
   --vp-code-line-highlight-color: hsl(210, 29%, 94%);
@@ -32,6 +32,7 @@ body {
 
 :root.dark {
   --vp-code-block-bg: #24292e;
+  --vp-code-block-bg-light: rgba(230, 234, 239, 0.05);
   --vp-code-line-number-color: #444d56;
   --vp-code-block-divider-color: #2f363d;
   --vp-code-line-highlight-color: #2b3036;
@@ -61,6 +62,19 @@ body {
 .vp-doc a:hover {
   color: var(--vp-c-brand-dark);
   text-decoration: none;
+}
+
+/* Utility classes */
+.vp-doc .tiny-text {
+  font-size: 14px;
+}
+
+.vp-doc p.tiny-text {
+  line-height: 24.5px; /* 1.75 */
+}
+
+.vp-doc .secondary-text {
+  color: var(--vp-c-text-2);
 }
 
 /* Link */
