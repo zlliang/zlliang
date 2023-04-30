@@ -11,13 +11,13 @@
   "devDependencies": {
     "@supabase/supabase-js": "^2.21.0",
     "@types/glob": "^8.1.0",
-    "@types/node": "^18.16.1",
-    "date-fns": "^2.29.3",
+    "@types/node": "^18.16.3",
+    "date-fns": "^2.30.0",
     "glob": "^10.2.2",
     "gray-matter": "^4.0.3",
-    "tsx": "^3.12.6",
+    "tsx": "^3.12.7",
     "typescript": "^5.0.4",
-    "vitepress": "1.0.0-alpha.74",
+    "vitepress": "1.0.0-alpha.75",
     "vue": "^3.2.47"
   },
   "pnpm": {
