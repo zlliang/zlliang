@@ -11,39 +11,6 @@ body {
   background-color: var(--vp-c-blue-dimm-3);
 }
 
-/* Code block colors */
-:root {
-  --vp-code-block-bg: hsl(210, 29%, 97%);
-  --vp-code-block-bg-light: rgba(2, 3, 3, 0.05);
-  --vp-code-line-number-color: #1b1f234d;
-  --vp-code-block-divider-color: #e1e4e8;
-  --vp-code-line-highlight-color: hsl(210, 29%, 94%);
-  --vp-code-copy-code-active-text: var(--vp-c-text-2);
-  --vp-code-copy-code-hover-bg: rgba(2, 3, 3, 0.05);
-
-  --vp-code-tab-text-color: var(--vp-c-text-2);
-  --vp-code-tab-hover-text-color: var(--vp-c-text-1);
-  --vp-code-tab-active-text-color: var(--vp-c-text-1);
-}
-
-.vp-doc [class*="language-"] > span.lang {
-  color: var(--vp-c-text-3);
-}
-
-:root.dark {
-  --vp-code-block-bg: #24292e;
-  --vp-code-block-bg-light: rgba(230, 234, 239, 0.05);
-  --vp-code-line-number-color: #444d56;
-  --vp-code-block-divider-color: #2f363d;
-  --vp-code-line-highlight-color: #2b3036;
-  --vp-code-copy-code-active-text: var(--vp-c-text-dark-2);
-  --vp-code-copy-code-hover-bg: rgba(230, 234, 239, 0.05);
-}
-
-:root.dark .vp-doc [class*="language-"] > span.lang {
-  color: var(--vp-c-text-dark-3);
-}
-
 /* Code copy button */
 .vp-doc [class*="language-"] > button.copy.copied::before,
 .vp-doc [class*="language-"] > button.copy:hover.copied::before {
