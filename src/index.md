@@ -44,7 +44,7 @@ import Social from "@/components/about/Social.vue"
 
 空空如也……
 
-<p class="tiny-text secondary-text">也就是说，尚没有任何一篇文章，可以让我拍着胸脯、自信地推荐给大家（唉）。要好好努力才行呀！</p>
+<p class="small-text secondary-text">也就是说，尚没有任何一篇文章，可以让我拍着胸脯、自信地推荐给大家（唉）。要好好努力才行呀！</p>
 
 </template>
 
