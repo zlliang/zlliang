@@ -65,11 +65,11 @@ body {
 }
 
 /* Utility classes */
-.vp-doc .tiny-text {
+.vp-doc .small-text {
   font-size: 14px;
 }
 
-.vp-doc p.tiny-text {
+.vp-doc p.small-text {
   line-height: 24.5px; /* 1.75 */
 }
 
