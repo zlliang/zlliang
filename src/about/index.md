@@ -1,6 +1,5 @@
 ---
 title: 洋屁君是谁啊？
-created: 2023-04-30
 summary: 洋屁君到底是谁啊
 hidden: true
 aside: false
@@ -34,7 +33,7 @@ import Profile from "@/components/about/Profile.vue"
 
 我有点害怕坠入这样的境地，所以想要尽力一试。
 
-于是，我创造了这个网站。虽然不是第一次设立个人网站了（参见[这篇短文](/about/plan/foreignfart-version-2023.html)），但我想从这个版本开始，通过书写、记录，训练自己，让脑子保持活泛，也让我的种种爱好继续生根发芽。
+于是，我设立了这个网站。虽然不是第一次设立个人网站了（参见[这篇短文](/about/plan/foreignfart-version-2023.html)），但我想从这个版本开始，通过书写、记录，训练自己，让脑子保持活泛，也让我的种种爱好继续生根发芽。要说有更多的目标，那么就是希望有一天，自己的输出成果能够让你也有所启发吧。
 
 <p align="center" style="margin: 32px 0;">
   <img src="./images/hobbies.webp" alt="我的爱好" width="280"/>
