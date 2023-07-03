@@ -1,8 +1,8 @@
 <template>
   <div class="profile">
     <div class="image-container">
-      <img alt="shadow" src="/images/foreignfart-himself.png" width="120" class="shadow" />
-      <img alt="Foreignfart himself" src="/images/foreignfart-himself.png" width="120" />
+      <img alt="shadow" src="/images/foreignfart-himself.png" width="120" class="shadow">
+      <img alt="Foreignfart himself" src="/images/foreignfart-himself.png" width="120">
     </div>
     <div class="small-text">
       <div><strong>姓名：</strong>洋屁君</div>

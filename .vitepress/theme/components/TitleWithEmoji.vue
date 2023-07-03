@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { ref } from "vue"
+import { ref } from 'vue'
 
 const props = withDefaults(
   defineProps<{ emoji: string; special?: boolean }>(),
-  { special: false }
+  { special: false },
 )
 
-const transform = ref(props.special ? "translateY(-0.2em)" : "none")
+const transform = ref(props.special ? 'translateY(-0.2em)' : 'none')
 </script>
 
 <template>

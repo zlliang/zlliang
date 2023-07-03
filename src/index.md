@@ -7,11 +7,11 @@ layout: page
 ---
 
 <script setup>
-import Home from "@/components/layout/Home.vue"
-import FeaturedList from "@/components/FeaturedList.vue"
-import LatestList from "@/components/LatestList.vue"
-import Profile from "@/components/about/Profile.vue"
-import Social from "@/components/about/Social.vue"
+import Home from '@/components/layout/Home.vue'
+import FeaturedList from '@/components/FeaturedList.vue'
+import LatestList from '@/components/LatestList.vue'
+import Profile from '@/components/about/Profile.vue'
+import Social from '@/components/about/Social.vue'
 </script>
 
 <Home>

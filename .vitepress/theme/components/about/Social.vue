@@ -1,10 +1,10 @@
 <template>
   <p class="social">
     <a href="https://www.xiaohongshu.com/user/profile/635e1b13000000001901eabc" target="_blank" rel="noreferrer" class="social-link">
-      <img src="/images/social/xiaohongshu.png" alt="小红书" class="icon xiaohongshu" />
+      <img src="/images/social/xiaohongshu.png" alt="小红书" class="icon xiaohongshu">
     </a>
     <a href="https://space.bilibili.com/30470407" target="_blank" rel="noreferrer" class="social-link">
-      <img src="/images/social/bilibili.svg" alt="哔哩哔哩" class="icon bilibili" />
+      <img src="/images/social/bilibili.svg" alt="哔哩哔哩" class="icon bilibili">
     </a>
   </p>
 </template>
