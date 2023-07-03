@@ -3,7 +3,7 @@ import { ref } from "vue"
 
 import PostItem from "@/components/PostItem.vue"
 
-import featuredPosts from "@/data/featuredPosts.json"
+import { data as featuredPosts } from "@/data/allPosts.data"
 
 const list = ref(featuredPosts)
 </script>
@@ -12,8 +12,8 @@ const list = ref(featuredPosts)
   <div>
     <PostItem
       v-for="item in list"
-      :key="item.title"
-      :info="item"
+      :key="item.frontmatter.title"
+      :info="{ ...item, ...item.frontmatter }"
       :split-date="false"
     />
   </div>

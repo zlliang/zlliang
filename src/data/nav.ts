@@ -1,4 +1,4 @@
-import { type DefaultTheme } from "vitepress"
+import type { DefaultTheme } from "vitepress"
 
 export const nav: DefaultTheme.NavItem[] = [
   {
@@ -29,15 +29,6 @@ export const nav: DefaultTheme.NavItem[] = [
         text: "首页 - 洋屁君的游戏小窝",
         link: "/game/",
       },
-      // { 
-      //   text: '专题',
-      //   items: [
-      //     {
-      //       text: '🌟 星之海 Sea of Stars',
-      //       link: '/game/topics/sea-of-stars/',
-      //     },
-      //   ],
-      // },
     ],
   },
   {
@@ -48,15 +39,6 @@ export const nav: DefaultTheme.NavItem[] = [
         text: "首页 - 洋屁君的技术笔记",
         link: "/tech/",
       },
-      // { 
-      //   text: '专题',
-      //   items: [
-      //     {
-      //       text: '🦀 Rust 学习笔记',
-      //       link: '/tech/topics/learning-rust/',
-      //     },
-      //   ],
-      // },
     ],
   },
   {
@@ -89,23 +71,6 @@ export const sidebar: DefaultTheme.Sidebar = {
       text: "🏡 生活瞬间",
       link: '/life/',
     },
-    // {
-    //   text: "专题",
-    //   items: [],
-    // },
-    // {
-    //   text: "文章",
-    //   items: [
-    //     {
-    //       text: '2023-02 香港',
-    //       link: '/life/2023-02-hong-kong',
-    //     },
-    //     {
-    //       text: '终于拼完了星之卡比拼图！',
-    //       link: '/life/kirby-jigsaw-puzzle',
-    //     }
-    //   ],
-    // },
   ],
   "/reading/": [
     {
@@ -118,30 +83,12 @@ export const sidebar: DefaultTheme.Sidebar = {
       text: "🎮 游戏小窝",
       link: "/game/",
     },
-    // { 
-    //   text: '专题',
-    //   items: [
-    //     {
-    //       text: '🌟 星之海 Sea of Stars',
-    //       link: '/game/topics/sea-of-stars/',
-    //     },
-    //   ],
-    // },
   ],
   "/tech/": [
     {
       text: "🛠️ 技术笔记",
       link: "/tech/",
     },
-    // {
-    //   text: '专题',
-    //   items: [
-    //     {
-    //       text: '🦀 Rust 学习笔记',
-    //       link: '/tech/topics/learning-rust/',
-    //     },
-    //   ],
-    // },
   ],
   "/about/plan/": [
     {
@@ -152,7 +99,7 @@ export const sidebar: DefaultTheme.Sidebar = {
       text: "已经忙完的",
       items: [
         {
-          text: "洋屁君的初始化：搭建我的 2023 版个人网站",
+          text: "🔄 洋屁君的初始化：搭建我的 2023 版个人网站",
           link: "/about/plan/foreignfart-version-2023",
         },
       ],
