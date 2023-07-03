@@ -122,6 +122,13 @@ export default defineConfig({
         content: "/images/og-image.jpg",
       },
     ],
+    [
+      "script",
+      {
+        defer: "",
+        src: "/_vercel/insights/script.js",
+      },
+    ]
   ],
   markdown: {
     theme: {
