@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import { ref, computed } from "vue"
 
-import { default as PostItem, type Post } from "@/components/PostItem.vue"
+import PostItem from "@/components/PostItem.vue"
 
-import historyPosts from "@/data/historyPosts.json"
+import { data as historyPosts } from "@/data/historyPosts.data"
+
+import type { Post } from "@/types/post"
 
 const list = ref(historyPosts)
 const keyword = ref("")
 
 const searchResult = computed(() =>
-  list.value.filter((item: Post) => item.title.includes(keyword.value))
+  list.value.filter((item: Post) => item.frontmatter.title?.includes(keyword.value))
 )
 </script>
 
@@ -20,7 +22,11 @@ const searchResult = computed(() =>
       <input v-model="keyword" placeholder="按标题搜索档案" class="input" />
       <span class="total">共 {{ searchResult.length }} 则</span>
     </div>
-    <PostItem v-for="item in searchResult" :key="item.title" :info="item" />
+    <PostItem
+      v-for="item in searchResult"
+      :key="item.frontmatter.title"
+      :info="{ ...item, ...item.frontmatter }"
+    />
   </div>
 </template>
 

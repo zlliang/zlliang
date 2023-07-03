@@ -25,7 +25,7 @@ import Social from "@/components/about/Social.vue"
 <PostItem
   :info="{
     title: '📃 历史档案',
-    path: '/about/history',
+    url: '/about/history',
     summary: '一览无余地罗列了本站所有的文章内容，并且可以按照标题搜索哦～'
   }"
 />
@@ -47,7 +47,7 @@ import Social from "@/components/about/Social.vue"
 <PostItem
   :info="{
     title: '🤔️ 洋屁君是谁啊？',
-    path: '/about/',
+    url: '/about/',
     summary: '那么让我稍微详细地介绍一下自己，以及设立这个网站的初衷吧～'
   }"
 />
@@ -57,6 +57,8 @@ import Social from "@/components/about/Social.vue"
 ## 😎 得意之作
 
 空空如也……
+
+<!-- <FeaturedList /> -->
 
 <p class="small-text secondary-text">也就是说，尚没有任何一篇文章，可以让我拍着胸脯、自信地推荐给大家（唉）。要好好努力才行呀！</p>
 
@@ -72,10 +74,20 @@ import Social from "@/components/about/Social.vue"
 <PostItem
   :info="{
     title: '🤯 洋屁君在忙些什么？',
-    path: '/about/plan/',
+    url: '/about/plan/',
     summary: '最近的新想法，以及挖的新坑！'
   }"
 />
+
+## 🐱 我家的小猫咪
+
+我家的小猫咪叫**推拿**，是从 2023 年 6 月开始跟我做伴的矮脚弟弟。
+
+![推拿的美照](/images/tuina.webp)
+
+我在 Notion 设立了一个页面，记录推拿在我身边的生活日常，欢迎来看看：[无人岛的推拿君](https://zlliang.notion.site/9f98d55919714fafac52a3a83c146c5d)。
+
+页面里的内容，也会在这个小红书账号里同步更新：[@无人岛的推拿君](https://www.xiaohongshu.com/user/profile/63c5ee5c000000002702b4a2)。
 
 ## 📡 在社交平台找到我
 
