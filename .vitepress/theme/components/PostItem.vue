@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Post, FrontMatter } from "@/types/post"
+import type { FrontMatter, Post } from '@/types/post'
 
 withDefaults(defineProps<{ info: Post & FrontMatter; splitDate?: boolean }>(), {
   splitDate: true,
@@ -16,7 +16,7 @@ withDefaults(defineProps<{ info: Post & FrontMatter; splitDate?: boolean }>(), {
 
 <template>
   <a class="post-item" :href="info.url">
-    <div :class="['title-container', splitDate && 'split-date']">
+    <div class="title-container" :class="[splitDate && 'split-date']">
       <div class="title">
         <span>{{ info.title }}</span>
         <span v-if="info.topicIndex" class="topic-tag">专题页</span>
@@ -58,7 +58,7 @@ withDefaults(defineProps<{ info: Post & FrontMatter; splitDate?: boolean }>(), {
 .title {
   display: block;
   color: var(--vp-c-brand);
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.25s;
 }
 

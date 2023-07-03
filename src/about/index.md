@@ -6,7 +6,7 @@ hideComment: true
 ---
 
 <script setup>
-import Profile from "@/components/about/Profile.vue"
+import Profile from '@/components/about/Profile.vue'
 </script>
 
 <TitleWithEmoji emoji="🤔️" special>洋屁君是谁啊？</TitleWithEmoji>

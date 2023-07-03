@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue"
-import { useData } from "vitepress"
-import DefaultTheme from "vitepress/theme"
-import { format } from "date-fns"
+import { useData } from 'vitepress'
+import DefaultTheme from 'vitepress/theme'
+import { format } from 'date-fns'
 
 const { Layout: DefaultLayout } = DefaultTheme
 DefaultLayout.name = "DefaultLayout"
@@ -17,7 +17,7 @@ const { frontmatter } = useData()
 <template>
   <DefaultLayout>
     <template #doc-before>
-      <div class="date" v-if="!frontmatter.hideDate && frontmatter.created">
+      <div v-if="!frontmatter.hideDate && frontmatter.created" class="date">
         <span>
           创建于 {{ format(new Date(frontmatter.created), "yyyy-MM-dd") }}
         </span>

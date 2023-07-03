@@ -1,16 +1,20 @@
 {
   "name": "foreignfart.com",
-  "description": "My Personal website",
-  "private": true,
   "type": "module",
+  "private": true,
+  "description": "My Personal website",
   "scripts": {
     "dev": "vitepress dev .",
-    "build": "vitepress build ."
+    "build": "vitepress build .",
+    "lint": "eslint ."
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.39.6",
+    "@types/node": "^20.3.3",
     "@supabase/supabase-js": "^2.26.0",
     "@types/node": "^20.3.3",
     "date-fns": "^2.30.0",
+    "eslint": "^8.44.0",
     "tsx": "^3.12.7",
     "typescript": "^5.1.6",
     "vitepress": "1.0.0-beta.5",
