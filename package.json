@@ -4,21 +4,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate-posts": "tsx .vitepress/script/generate-posts.ts",
-    "dev": "pnpm generate-posts && vitepress dev .",
-    "build": "pnpm generate-posts && vitepress build ."
+    "dev": "vitepress dev .",
+    "build": "vitepress build ."
   },
   "devDependencies": {
     "@supabase/supabase-js": "^2.21.0",
-    "@types/glob": "^8.1.0",
-    "@types/node": "^18.16.3",
+    "@types/node": "^20.3.3",
     "date-fns": "^2.30.0",
-    "glob": "^10.2.2",
-    "gray-matter": "^4.0.3",
     "tsx": "^3.12.7",
-    "typescript": "^5.0.4",
-    "vitepress": "1.0.0-alpha.75",
-    "vue": "^3.2.47"
+    "typescript": "^5.1.6",
+    "vitepress": "1.0.0-beta.5",
+    "vue": "^3.3.4"
   },
   "pnpm": {
     "peerDependencyRules": {

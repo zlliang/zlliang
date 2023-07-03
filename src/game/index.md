@@ -1,5 +1,5 @@
 ---
-title: 游戏小窝
+title: 🎮 游戏小窝
 created: 2023-02-10
 hidden: true
 ---

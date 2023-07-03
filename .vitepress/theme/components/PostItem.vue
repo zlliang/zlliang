@@ -1,34 +1,21 @@
 <script setup lang="ts">
-import { ref } from "vue"
+import type { Post, FrontMatter } from "@/types/post"
 
-export interface Post {
-  title: string
-  path: string
-  displayPath?: string
-  summary?: string
-  created?: string
-  updated?: string
-  hidden?: boolean
-  featured?: boolean
-  topicIndex?: boolean
-  hideComment?: boolean
-}
-
-const props = withDefaults(defineProps<{ info: Post; splitDate?: boolean }>(), {
+withDefaults(defineProps<{ info: Post & FrontMatter; splitDate?: boolean }>(), {
   splitDate: true,
 })
 
-const href = ref(
-  props.info.path.endsWith("index.md")
-    ? props.info.path.slice(0, props.info.path.length - 8)
-    : props.info.path.endsWith(".md")
-    ? props.info.path.slice(0, props.info.path.length - 3) + ".html"
-    : props.info.path
-)
+// const href = ref(
+//   props.info.path.endsWith("index.md")
+//     ? props.info.path.slice(0, props.info.path.length - 8)
+//     : props.info.path.endsWith(".md")
+//     ? props.info.path.slice(0, props.info.path.length - 3) + ".html"
+//     : props.info.path
+// )
 </script>
 
 <template>
-  <a class="post-item" :href="href">
+  <a class="post-item" :href="info.url">
     <div :class="['title-container', splitDate && 'split-date']">
       <div class="title">
         <span>{{ info.title }}</span>
@@ -42,7 +29,7 @@ const href = ref(
       </div>
     </div>
     <div v-if="info.summary" class="summary">{{ info.summary }}</div>
-    <div v-if="info.displayPath" class="path">{{ info.displayPath }}</div>
+    <div v-if="info.path" class="path">{{ info.path }}</div>
   </a>
 </template>
 
