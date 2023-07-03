@@ -1,6 +1,6 @@
 <script setup lang="ts">
-/** Autogrowing textarea (See: https://css-tricks.com/the-cleanest-trick-for-autogrowing-textareas/) */ 
-import { ref } from "vue"
+/** Autogrowing textarea (See: https://css-tricks.com/the-cleanest-trick-for-autogrowing-textareas/) */
+import { ref } from 'vue'
 
 const props = withDefaults(
   defineProps<{
@@ -8,16 +8,17 @@ const props = withDefaults(
   }>(),
   {
     modelValue: '',
-  }
+  },
 )
 
 const emit = defineEmits(['update:modelValue', 'change'])
 
 const wrapper = ref<HTMLDivElement | null>(null)
 
-function onInput (event: Event) {
+function onInput(event: Event) {
   const value = (event.target as HTMLTextAreaElement)?.value || ''
-  if (wrapper.value) wrapper.value.dataset.replicatedValue = value
+  if (wrapper.value)
+    wrapper.value.dataset.replicatedValue = value
 
   emit('update:modelValue', value)
   emit('change', value)
@@ -28,9 +29,9 @@ function onInput (event: Event) {
   <div ref="wrapper" class="textarea-wrapper">
     <textarea
       :value="props.modelValue"
-      @input="onInput"
       v-bind="$attrs"
       class="textarea"
+      @input="onInput"
     />
   </div>
 </template>
@@ -69,7 +70,6 @@ function onInput (event: Event) {
   font: inherit;
   transition: border-color 0.2s;
 }
-
 
 .textarea-wrapper > textarea:hover,
 .textarea-wrapper > textarea:focus {

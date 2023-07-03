@@ -1,42 +1,42 @@
 <script setup lang="ts">
-import { ref } from "vue"
-import { useRoute } from "vitepress"
+import { ref } from 'vue'
+import { useRoute } from 'vitepress'
 
-import TextArea from "@/components/comment/TextArea.vue"
+import TextArea from '@/components/comment/TextArea.vue'
 
-import { supabase } from "@/supabase"
+import { supabase } from '@/supabase'
 
 const props = defineProps<{
-  replyId: number | null,
-  comments: any[],
+  replyId: number | null
+  comments: any[]
 }>()
 
-const emit = defineEmits(["submitted", "clearReply", "scroll"])
+const emit = defineEmits(['submitted', 'clearReply', 'scroll'])
 
 const route = useRoute()
 
-const name = ref("")
-const content = ref("")
-const error = ref("")
+const name = ref('')
+const content = ref('')
+const error = ref('')
 
 function clear() {
-  name.value = ""
-  content.value = ""
-  emit("clearReply")
+  name.value = ''
+  content.value = ''
+  emit('clearReply')
 }
 
 function clearError() {
-  error.value = ""
+  error.value = ''
 }
 
-function validate () {
+function validate() {
   if (!name.value) {
-    error.value = "请填写你的称呼～"
+    error.value = '请填写你的称呼～'
     return false
   }
 
   if (!content.value) {
-    error.value = "请填写评论内容～"
+    error.value = '请填写评论内容～'
     return false
   }
 
@@ -44,9 +44,10 @@ function validate () {
 }
 
 async function submit() {
-  if (!validate()) return
+  if (!validate())
+    return
 
-  const { data, error } = await supabase
+  const { data } = await supabase
     .from('comments')
     .insert({
       name: name.value,
@@ -57,12 +58,11 @@ async function submit() {
     .select()
 
   if (props.replyId) {
-    console.log(props.comments)
     const id = data?.[0]?.id
-    const comment = props.comments.find((item) => item.id === props.replyId)
+    const comment = props.comments.find(item => item.id === props.replyId)
 
     if (comment) {
-      const { error } = await supabase
+      await supabase
         .from('comments')
         .update({ referred_ids: [...new Set([...(comment.referred_ids || []), id])] })
         .eq('id', props.replyId)
@@ -84,12 +84,12 @@ async function submit() {
           placeholder="怎么称呼你呢？"
           class="name-input"
           @change="clearError"
-        />
+        >
       </div>
       <span v-if="props.replyId" class="right">
         <span>回复</span>
-        <span @click="emit('scroll', props.replyId)" class="link">#{{ props.replyId }}</span>
-        <span @click="emit('clearReply')" class="link clear-reply">不回复了</span>
+        <span class="link" @click="emit('scroll', props.replyId)">#{{ props.replyId }}</span>
+        <span class="link clear-reply" @click="emit('clearReply')">不回复了</span>
       </span>
     </div>
     <div class="content-textarea">
@@ -100,7 +100,7 @@ async function submit() {
       />
     </div>
     <div class="operations">
-      <span @click="submit" class="link submit">提交评论</span>
+      <span class="link submit" @click="submit">提交评论</span>
       <span v-if="error" class="error">{{ error }}</span>
     </div>
   </div>

@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { defineAsyncComponent } from "vue"
+import { defineAsyncComponent } from 'vue'
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { format } from 'date-fns'
 
 const { Layout: DefaultLayout } = DefaultTheme
-DefaultLayout.name = "DefaultLayout"
+DefaultLayout.name = 'DefaultLayout'
 
 const Comment = defineAsyncComponent(
-  () => import("@/components/comment/Comment.vue")
+  () => import('@/components/comment/Comment.vue'),
 )
 
 const { frontmatter } = useData()

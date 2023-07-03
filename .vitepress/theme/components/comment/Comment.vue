@@ -1,33 +1,36 @@
 <script setup lang="ts">
-import { ref, watch, nextTick } from "vue"
-import { useRoute } from "vitepress"
+import { nextTick, ref, watch } from 'vue'
+import { useRoute } from 'vitepress'
 
-import CommentWriting from "@/components/comment/CommentWriting.vue"
-import CommentItem from "@/components/comment/CommentItem.vue"
+import CommentWriting from '@/components/comment/CommentWriting.vue'
+import CommentItem from '@/components/comment/CommentItem.vue'
 
-import { supabase } from "@/supabase"
+import { supabase } from '@/supabase'
 
 const route = useRoute()
 
-watch(() => route.path, (path) => fetchComments(path, true), { immediate: true })
+watch(() => route.path, path => fetchComments(path, true), { immediate: true })
 
 const comments = ref<any>([])
 const loading = ref(false)
 
-async function fetchComments (path = route.path, clear = false) {
+async function fetchComments(path = route.path, clear = false) {
   await nextTick()
-  if (clear) comments.value = []
+  if (clear)
+    comments.value = []
 
   try {
-    if (clear) loading.value = true
+    if (clear)
+      loading.value = true
 
-    const { data } = await supabase.from("comments")
+    const { data } = await supabase.from('comments')
       .select()
       .eq('post_id', path)
       .order('id', { ascending: false })
-    
+
     comments.value = data
-  } finally {
+  }
+  finally {
     loading.value = false
   }
 }
@@ -38,14 +41,14 @@ async function reply(id: number | null) {
   replyId.value = id
 
   if (id) {
-    const el = document.getElementById("comment-writing")
-    el?.scrollIntoView({ behavior: "smooth", block: "center" })
+    const el = document.getElementById('comment-writing')
+    el?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }
 }
 
 function scroll(id: number) {
   const el = document.getElementById(`comment-${id}`)
-    el?.scrollIntoView({ behavior: "smooth", block: "center" })
+  el?.scrollIntoView({ behavior: 'smooth', block: 'center' })
 }
 </script>
 
@@ -53,16 +56,20 @@ function scroll(id: number) {
   <div class="comment-system">
     <div class="toolbar-wrapper">
       <div class="toolbar">
-        <div class="title">评论区</div>
-        <div class="description">感谢你的评论，ありがとうございます！🙇</div>
+        <div class="title">
+          评论区
+        </div>
+        <div class="description">
+          感谢你的评论，ありがとうございます！🙇
+        </div>
       </div>
     </div>
-    <div class="writing" id="comment-writing">
+    <div id="comment-writing" class="writing">
       <CommentWriting
-        :replyId="replyId"
+        :reply-id="replyId"
         :comments="comments"
         @submitted="fetchComments"
-        @clearReply="reply(null)"
+        @clear-reply="reply(null)"
         @scroll="scroll"
       />
     </div>

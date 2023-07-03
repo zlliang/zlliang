@@ -1,38 +1,48 @@
 <script setup lang="ts">
-import { format } from "date-fns"
-
-const emit = defineEmits(["reply", "scroll"])
+import { format } from 'date-fns'
 
 const props = defineProps<{
-  value: any,
+  value: any
 }>()
 
-function formatDate (date: string) {
-  return format(new Date(date), "yyyy-MM-dd HH:mm:ss")
+const emit = defineEmits(['reply', 'scroll'])
+
+function formatDate(date: string) {
+  return format(new Date(date), 'yyyy-MM-dd HH:mm:ss')
 }
 </script>
 
 <template>
-  <div class="comment-item" :id="`comment-${props.value.id}`">
+  <div :id="`comment-${props.value.id}`" class="comment-item">
     <div class="header">
       <div class="left">
-        <div class="user-name">{{ props.value.name || '不具名人士' }}</div>
+        <div class="user-name">
+          {{ props.value.name || '不具名人士' }}
+        </div>
         <div v-if="props.value.reply_id" class="reply-info">
           <span>回复</span>
           <span class="link" @click="emit('scroll', props.value.reply_id)">#{{ props.value.reply_id }}</span>
         </div>
       </div>
       <div class="right">
-        <div class="date">{{ formatDate(props.value.created_at) }}</div>
-        <div class="id">#{{ props.value.id }}</div>
-        <div class="link" @click="emit('reply', props.value.id)">回复</div>
+        <div class="date">
+          {{ formatDate(props.value.created_at) }}
+        </div>
+        <div class="id">
+          #{{ props.value.id }}
+        </div>
+        <div class="link" @click="emit('reply', props.value.id)">
+          回复
+        </div>
       </div>
     </div>
     <div v-if="props.value.hidden" class="content hidden">
       <span>😶‍🌫️ 这条评论内容被折叠了。</span>
       <span v-if="props.value.hidden_reason">原因是：{{ props.value.hidden_reason }}</span>
     </div>
-    <div v-else class="content">{{ props.value.content }}</div>
+    <div v-else class="content">
+      {{ props.value.content }}
+    </div>
     <div v-if="props.value.referred_ids && props.value.referred_ids.length" class="referred">
       <span>有人回复了这条评论：</span>
       <span v-for="(id, index) in props.value.referred_ids" :key="id">

@@ -9,6 +9,7 @@ export interface FrontMatter {
   hidden?: boolean
   featured?: boolean
   topicIndex?: boolean
+  hideComment?: boolean
 }
 
 export interface Post extends ContentData {

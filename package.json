@@ -10,7 +10,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.6",
-    "@types/node": "^20.3.3",
     "@supabase/supabase-js": "^2.26.0",
     "@types/node": "^20.3.3",
     "date-fns": "^2.30.0",
