@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { ref, watch, onMounted } from "vue"
-import { useData } from "vitepress"
+import { onMounted, ref, watch } from 'vue'
+import { useData } from 'vitepress'
 
 const { isDark } = useData()
 
 const opacity = ref(0)
-const sloganImageRef = ref("")
+const sloganImageRef = ref('')
 
 function setSloganImageRef() {
-  sloganImageRef.value = isDark.value ? "/images/slogan-dark.svg" : "/images/slogan-light.svg"
+  sloganImageRef.value = isDark.value ? '/images/slogan-dark.svg' : '/images/slogan-light.svg'
 }
 
 watch(isDark, setSloganImageRef)
@@ -33,7 +33,7 @@ onMounted(() => {
         :src="sloganImageRef"
         alt="Slogan：敬请放洋屁"
         class="slogan-image"
-      />
+      >
     </div>
     <div class="container main-content">
       <div class="secondary">

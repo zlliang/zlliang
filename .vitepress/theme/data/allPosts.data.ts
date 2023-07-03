@@ -1,13 +1,12 @@
-import { createContentLoader } from "vitepress"
-import { transformPost, sortPost } from "./utils"
+import { type ContentData, createContentLoader } from 'vitepress'
 
-import type { ContentData } from "vitepress"
+import { sortPost, transformPost } from './utils'
 
 declare const data: ContentData[]
 export { data }
 
-export default createContentLoader("src/**/*.md", {
-  transform: (rawData) => rawData
+export default createContentLoader('src/**/*.md', {
+  transform: rawData => rawData
     .map(transformPost)
     .sort(sortPost),
 })

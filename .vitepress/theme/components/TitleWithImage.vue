@@ -1,11 +1,15 @@
 <script setup lang="ts">
-withDefaults(defineProps<{ color?: string }>(), { color: "var(--vp-c-text-1)" })
+withDefaults(defineProps<{ color?: string }>(), { color: 'var(--vp-c-text-1)' })
 </script>
 
 <template>
   <div class="title-with-image">
-    <h1 class="title"><slot /></h1>
-    <div class="image"><slot name="image" /></div>
+    <h1 class="title">
+      <slot />
+    </h1>
+    <div class="image">
+      <slot name="image" />
+    </div>
   </div>
 </template>
 

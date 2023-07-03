@@ -1,4 +1,4 @@
-import type { ContentData } from "vitepress"
+import type { ContentData } from 'vitepress'
 
 export interface FrontMatter {
   title?: string

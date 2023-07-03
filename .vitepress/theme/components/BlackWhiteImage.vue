@@ -1,5 +1,5 @@
 <template>
-  <img class="black-white-image" v-bind="$attrs" />
+  <img class="black-white-image" v-bind="$attrs">
 </template>
 
 <style scoped>

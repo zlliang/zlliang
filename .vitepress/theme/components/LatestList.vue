@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref } from "vue"
+import { ref } from 'vue'
 
-import PostItem from "@/components/PostItem.vue"
+import PostItem from '@/components/PostItem.vue'
 
-import { data as latestPosts } from "@/data/latestPosts.data"
+import { data as latestPosts } from '@/data/latestPosts.data'
 
 const list = ref(latestPosts)
 </script>
