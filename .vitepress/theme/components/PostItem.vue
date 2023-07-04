@@ -1,17 +1,9 @@
 <script setup lang="ts">
-import type { FrontMatter, Post } from '@/types/post'
+import { type FrontMatter, type Post } from '@/types/post'
 
 withDefaults(defineProps<{ info: Post & FrontMatter; splitDate?: boolean }>(), {
   splitDate: true,
 })
-
-// const href = ref(
-//   props.info.path.endsWith("index.md")
-//     ? props.info.path.slice(0, props.info.path.length - 8)
-//     : props.info.path.endsWith(".md")
-//     ? props.info.path.slice(0, props.info.path.length - 3) + ".html"
-//     : props.info.path
-// )
 </script>
 
 <template>

@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 
 import PostItem from '@/components/PostItem.vue'
-
 import { data as featuredPosts } from '@/data/allPosts.data'
 
 const list = ref(featuredPosts)
