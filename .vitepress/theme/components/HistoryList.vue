@@ -2,10 +2,8 @@
 import { computed, ref } from 'vue'
 
 import PostItem from '@/components/PostItem.vue'
-
 import { data as historyPosts } from '@/data/historyPosts.data'
-
-import type { Post } from '@/types/post'
+import { type Post } from '@/types/post'
 
 const list = ref(historyPosts)
 const keyword = ref('')
