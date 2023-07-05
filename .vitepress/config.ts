@@ -2,6 +2,7 @@ import { URL, fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
 
 import { nav, sidebar } from '../src/data/nav'
+import augment from './utils/markdown-plugins'
 
 export default defineConfig({
   // Website
@@ -134,6 +135,7 @@ export default defineConfig({
       light: 'github-light',
       dark: 'github-dark',
     },
+    config: (md: any) => augment(md),
   },
 
   // Theme
