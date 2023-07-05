@@ -9,11 +9,15 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.39.6",
+    "@antfu/eslint-config": "^0.39.7",
+    "@observablehq/plot": "^0.6.9",
+    "@types/d3": "^7.4.0",
     "@supabase/supabase-js": "^2.26.0",
     "@types/node": "^20.3.3",
+    "d3": "^7.8.5",
     "date-fns": "^2.30.0",
     "eslint": "^8.44.0",
+    "markdown-it-container": "^3.0.0",
     "tsx": "^3.12.7",
     "typescript": "^5.1.6",
     "vitepress": "1.0.0-beta.5",

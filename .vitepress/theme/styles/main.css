@@ -11,6 +11,12 @@ body {
   background-color: var(--vp-c-blue-dimm-3);
 }
 
+.vp-doc figcaption {
+  font-size: 0.75em;
+  color: var(--vp-c-text-2);
+  line-height: 1.8;
+}
+
 /* Code copy button */
 .vp-doc [class*="language-"] > button.copy.copied::before,
 .vp-doc [class*="language-"] > button.copy:hover.copied::before {
