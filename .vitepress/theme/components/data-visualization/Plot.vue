@@ -5,11 +5,11 @@ import type * as Plot from '@observablehq/plot'
 
 const props = defineProps<{
   getOptions?: (_d3: typeof d3, _plot: typeof Plot) => Plot.PlotOptions
+  getMark?: (_d3: typeof d3, _plot: typeof Plot) => Plot.Markish
 }>()
 
 const container = ref<HTMLDivElement | null>(null)
 const plot = ref<ReturnType<typeof Plot.plot> | null>(null)
-const opacity = ref(0)
 
 watchEffect(async () => {
   if (props.getOptions) {
@@ -19,10 +19,10 @@ watchEffect(async () => {
     plot.value?.remove()
     plot.value = Plot.plot({
       width: 688,
+      marks: props.getMark ? [props.getMark(d3, Plot)] : [],
       ...props.getOptions(d3, Plot),
     })
     container.value?.append(plot.value)
-    opacity.value = 1
   }
 })
 
@@ -39,7 +39,9 @@ onBeforeUnmount(() => {
 .plot-container {
   width: 688px;
   max-width: 100%;
-  opacity: v-bind(opacity);
-  transition: opacity 0.15s;
+}
+
+.plot-container > :deep(svg) {
+  background: none;
 }
 </style>
