@@ -39,6 +39,15 @@ export const nav: DefaultTheme.NavItem[] = [
         text: '首页 - 洋屁君的技术笔记',
         link: '/tech/',
       },
+      {
+        text: '专题',
+        items: [
+          {
+            text: '📊 数据可视化',
+            link: '/tech/topics/data-visualization/',
+          },
+        ],
+      },
     ],
   },
   {
@@ -88,6 +97,15 @@ export const sidebar: DefaultTheme.Sidebar = {
     {
       text: '🛠️ 技术笔记',
       link: '/tech/',
+    },
+    {
+      text: '专题',
+      items: [
+        {
+          text: '📊 数据可视化',
+          link: '/tech/topics/data-visualization/',
+        },
+      ],
     },
   ],
   '/about/plan/': [
