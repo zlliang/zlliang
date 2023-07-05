@@ -7,6 +7,7 @@ export default function augment(md: any) {
   md.use(container, 'plot', {
     render: (tokens: any[], idx: number) => {
       if (tokens[idx].nesting === 1) {
+        const deps = tokens[idx].info.trim().slice('plot'.length).trim().split(/\s+/) // Reactive dependencies
         const token = tokens[idx + 1]
 
         if (token.type !== 'fence' || token.tag !== 'code')
@@ -28,7 +29,10 @@ export default function augment(md: any) {
           return `
             <div style="width: 688px; max-width: 100%; aspect-ratio: 688 / ${height};">
               <ClientOnly>
-                <Plot :get-options="(d3, Plot) => ${md.utils.escapeHtml(options)}" />
+                <Plot
+                  :get-options="(d3, Plot) => ${md.utils.escapeHtml(options)}"
+                  :deps="[${deps.join(',')}]"
+                />
               </ClientOnly>
             </div>
           `
@@ -49,6 +53,7 @@ export default function augment(md: any) {
                 <Plot
                   :get-mark="(d3, Plot) => ${md.utils.escapeHtml(mark)}"
                   :get-options="(d3, Plot) => ${md.utils.escapeHtml(options)}"
+                  :deps="[${deps.join(',')}]"
                 />
               </ClientOnly>
             </div>
