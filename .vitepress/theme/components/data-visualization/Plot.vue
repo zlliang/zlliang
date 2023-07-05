@@ -6,6 +6,7 @@ import type * as Plot from '@observablehq/plot'
 const props = defineProps<{
   getOptions?: (_d3: typeof d3, _plot: typeof Plot) => Plot.PlotOptions
   getMark?: (_d3: typeof d3, _plot: typeof Plot) => Plot.Markish
+  deps?: any[]
 }>()
 
 const container = ref<HTMLDivElement | null>(null)
