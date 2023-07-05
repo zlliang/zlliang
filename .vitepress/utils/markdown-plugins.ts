@@ -26,16 +26,34 @@ export default function augment(md: any) {
           const height = /height:\s*(?<number>\d+)/.exec(options)?.groups?.number ?? '400'
 
           return `
-            <div style="width: 688px; max-width: 100%; height: ${height}px; aspect-ratio: 688 / ${height};">
+            <div style="width: 688px; max-width: 100%; aspect-ratio: 688 / ${height};">
               <ClientOnly>
                 <Plot :get-options="(d3, Plot) => ${md.utils.escapeHtml(options)}" />
               </ClientOnly>
             </div>
           `
-        }
+        } else {
+          const re = /\.plot\((.*)\)/s
+          const match = re.exec(content)
 
-        // TODO
-        throw new Error('Expecting Plot.plot(...)')
+          if (!match)
+            throw new Error('Expecting `mark.plot()`')
+
+          const mark = content.replace(re, '')
+          const options = `(${match[1] || '{}'})`
+          const height = /height:\s*(?<number>\d+)/.exec(options)?.groups?.number ?? '400'
+
+          return `
+            <div style="width: 688px; max-width: 100%; aspect-ratio: 688 / ${height};">
+              <ClientOnly>
+                <Plot
+                  :get-mark="(d3, Plot) => ${md.utils.escapeHtml(mark)}"
+                  :get-options="(d3, Plot) => ${md.utils.escapeHtml(options)}"
+                />
+              </ClientOnly>
+            </div>
+          `
+        }
       } else {
         return ''
       }

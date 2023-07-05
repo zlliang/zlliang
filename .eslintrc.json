@@ -4,7 +4,7 @@
   "rules": {
     // See https://eslint.org/docs/latest/rules/brace-style
     "brace-style": ["error", "1tbs"],
-    // See https://typescript-eslint.io/rules/brace-style/
+    // See https://typescript-eslint.io/rules/brace-style
     "@typescript-eslint/brace-style": ["error", "1tbs"]
   }
 }
