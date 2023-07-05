@@ -9,7 +9,7 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.39.6",
+    "@antfu/eslint-config": "^0.39.7",
     "@observablehq/plot": "^0.6.9",
     "@types/d3": "^7.4.0",
     "@types/node": "^20.3.3",
