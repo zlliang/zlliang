@@ -1,6 +1,7 @@
 ---
 title: 📊 数据可视化
 created: 2023-07-05
+hidden: true
 ---
 
 <TitleWithEmoji emoji="📊" special>数据可视化</TitleWithEmoji>
