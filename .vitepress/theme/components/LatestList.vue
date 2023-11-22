@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 
 import PostItem from '@/components/PostItem.vue'
-import { data as latestPosts } from '@/data/latestPosts.data'
+import { data as latestPosts } from '@/data/latest-posts.data'
 
 const list = ref(latestPosts)
 </script>
@@ -12,7 +12,7 @@ const list = ref(latestPosts)
     <PostItem
       v-for="item in list"
       :key="item.frontmatter.title"
-      :info="{ ...item, ...item.frontmatter }"
+      :url="item.url"
     />
   </div>
 </template>

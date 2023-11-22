@@ -1,14 +1,20 @@
-/* Global */
-body {
-  line-height: 1.5;
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
-  background-color: var(--vp-c-blue-dimm-2);
+  background-color: var(--vp-c-orange-soft);
 }
 
-:root.dark ::selection {
-  background-color: var(--vp-c-blue-dimm-3);
+.dark ::selection {
+  background-color: var(--vp-c-orange-soft);
+}
+
+.vp-doc li + li,
+.vp-doc li > p,
+.vp-doc li > ol,
+.vp-doc li > ul {
+  margin: 0;
 }
 
 .vp-doc figcaption {
@@ -27,23 +33,13 @@ body {
   display: none;
 }
 
-.vp-doc h1 > span.special {
-  font-size: 1.5em;
-  font-family: "YouRan", var(--vp-font-family-base);
-}
-
-.vp-doc a:hover {
-  color: var(--vp-c-brand-dark);
-  text-decoration: none;
-}
-
 /* Utility classes */
 .vp-doc .small-text {
   font-size: 14px;
 }
 
 .vp-doc p.small-text {
-  line-height: 24.5px; /* 1.75 */
+  line-height: 1.75rem;
 }
 
 .vp-doc .secondary-text {

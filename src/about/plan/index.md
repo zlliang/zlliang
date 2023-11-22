@@ -1,9 +1,10 @@
 ---
-title: 🤯 洋屁君在忙什么？
+title: 🤯 我在忙什么
+summary: 最近的新想法，以及挖的新坑！
 hidden: true
 ---
 
-<TitleWithEmoji emoji="🥵" special>洋屁君在忙什么？</TitleWithEmoji>
+# 🥵 我在忙什么
 
 🚧 施工中……
 

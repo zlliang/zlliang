@@ -1,18 +1,20 @@
 ---
-title: 🤔️ 洋屁君是谁啊？
-hidden: true
+title: 🤔️ 我是谁
 aside: false
+created: 2023-05-02
+summary: 那么让我稍微详细地介绍一下自己，以及设立这个网站的初衷吧～
+hidden: true
 ---
 
 <script setup>
 import Profile from '@/components/about/Profile.vue'
 </script>
 
-<TitleWithEmoji emoji="🤔️" special>洋屁君是谁啊？</TitleWithEmoji>
+# 🤔️ 我是谁
 
 <Profile />
 
-你好，我是**洋屁君**，在此欢迎你的到来。
+你好，我是**梁子龙**，在此欢迎你的到来。
 
 我 2015 年来到上海读大学，自那之后到现在，一直在上海居住。2022 年春末夏初，终于从学校毕业。虽说读的是数学专业，但是学得实在很一般。不论是考试、做研究，还是写论文，都没什么可取之处。专业所需的思维能力，也自知从没拿到手过。真是对不起学校、对不起导师了。
 
@@ -32,7 +34,7 @@ import Profile from '@/components/about/Profile.vue'
 
 我有点害怕坠入这样的境地，所以想要尽力一试。
 
-于是，我设立了这个网站。虽然不是第一次设立个人网站了（参见[这篇短文](/about/plan/foreignfart-version-2023.html)），但我想从这个版本开始，通过书写、记录，训练自己，让脑子保持活泛，也让我的种种爱好继续生根发芽。要说有更多的目标，那么就是希望有一天，自己的输出成果能够让你也有所启发吧。
+于是，我设立了这个网站。虽然不是第一次设立个人网站了（参见[这篇短文](/about/plan/personal-website-version-2023.html)），但我想从这个版本开始，通过书写、记录，训练自己，让脑子保持活泛，也让我的种种爱好继续生根发芽。要说有更多的目标，那么就是希望有一天，自己的输出成果能够让你也有所启发吧。
 
 <p align="center" style="margin: 32px 0;">
   <img src="./images/hobbies.webp" alt="我的爱好" width="280"/>

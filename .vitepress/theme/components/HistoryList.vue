@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 
 import PostItem from '@/components/PostItem.vue'
-import { data as historyPosts } from '@/data/historyPosts.data'
+import { data as historyPosts } from '@/data/history-posts.data'
 import { type Post } from '@/types/post'
 
 const list = ref(historyPosts)
@@ -23,7 +23,7 @@ const searchResult = computed(() =>
     <PostItem
       v-for="item in searchResult"
       :key="item.frontmatter.title"
-      :info="{ ...item, ...item.frontmatter }"
+      :url="item.url"
     />
   </div>
 </template>
@@ -34,24 +34,28 @@ const searchResult = computed(() =>
   margin: 32px -24px;
   padding: 8px 24px;
   background-color: var(--vp-c-bg-alt);
-  transition: box-shadow 0.2s;
+  outline: 1px solid var(--vp-c-bg-alt);
+  transition-property: outline, box-shadow;
+  transition-timing-function: var(--transition-timing);
+  transition-duration: var(--transition-duration);
 }
 
 @media (min-width: 768px) {
   .search-input {
     margin: 32px -16px;
     padding: 8px 16px;
-    border-radius: 8px;
+    border-radius: var(--border-radius-large);
   }
 }
 
 .search-input:hover,
 .search-input:has(input:focus) {
-  box-shadow: 0 0 0 1px var(--vp-c-brand);
+  outline-color: var(--vp-c-orange-2);
 }
 
 .search-input:has(input:focus) {
-  outline: 1px solid var(--vp-c-brand);
+  outline-color: var(--vp-c-orange-2);
+  box-shadow: 0 0 0 3px var(--vp-c-orange-soft);
 }
 
 .prepend {

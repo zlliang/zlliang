@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "梁子龙 Zilong Liang",
+    "short_name": "梁子龙 Zilong Liang",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#cc6e19",
+    "background_color": "#cc6e19",
     "display": "standalone"
 }

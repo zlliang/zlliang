@@ -1,7 +1,5 @@
 ---
-title: 洋屁君
-titleTemplate: 洋屁君
-created: 2023-02-10
+titleTemplate: 梁子龙 Zilong Liang
 hidden: true
 layout: page
 ---
@@ -22,19 +20,13 @@ import Social from '@/components/about/Social.vue'
 
 如果想阅读我的更多文章，请前往：
 
-<PostItem
-  :info="{
-    title: '📃 历史档案',
-    url: '/about/history',
-    summary: '一览无余地罗列了本站所有的文章内容，并且可以按照标题搜索哦～'
-  }"
-/>
+<PostItem url="/about/history.html" hide-date />
 
-## 🤔️ 洋屁君是谁
+## 🤔️ 我是谁
 
 <Profile />
 
-你好，我是**洋屁君**，在此欢迎你的到来。
+你好，我是**梁子龙**，在此欢迎你的到来。
 
 我 2015 年来到上海读大学，自那之后到现在，一直在上海居住。目前，我在一家互联网公司做 Web 前端开发工作，作为职场人仍在努力精进当中；业余时间，也参加着一支合唱团，各种活动令人兴奋。总之，生活还算充实快乐。
 
@@ -44,13 +36,7 @@ import Social from '@/components/about/Social.vue'
 
 如果想要了解我更多，请前往：
 
-<PostItem
-  :info="{
-    title: '🤔️ 洋屁君是谁啊？',
-    url: '/about/',
-    summary: '那么让我稍微详细地介绍一下自己，以及设立这个网站的初衷吧～'
-  }"
-/>
+<PostItem url="/about/" />
 
 <template #secondary>
 
@@ -71,13 +57,7 @@ import Social from '@/components/about/Social.vue'
 
 更加详尽的更新计划，请前往：
 
-<PostItem
-  :info="{
-    title: '🤯 洋屁君在忙些什么？',
-    url: '/about/plan/',
-    summary: '最近的新想法，以及挖的新坑！'
-  }"
-/>
+<PostItem url="/about/plan/" hide-date />
 
 ## 🐱 我家的小猫咪
 

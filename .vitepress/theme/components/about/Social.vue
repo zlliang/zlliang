@@ -22,7 +22,7 @@
 }
 
 .social-link .icon {
-  transition: opacity 0.25s;
+  transition: opacity var(--transition-timing) var(--transition-duration);
 }
 
 .social-link:hover .icon {
