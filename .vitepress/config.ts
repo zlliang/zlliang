@@ -40,20 +40,6 @@ export default defineConfig({
         href: '/favicon/favicon-16x16.png',
       },
     ],
-    // [
-    //   "link",
-    //   {
-    //     rel: "manifest",
-    //     href: "/favicon/site.webmanifest",
-    //   },
-    // ],
-    // [
-    //   'meta',
-    //   {
-    //     name: 'msapplication-TileColor',
-    //     content: '#cc6e19',
-    //   },
-    // ],
     [
       'link',
       {
@@ -62,42 +48,6 @@ export default defineConfig({
         as: 'image',
       },
     ],
-    [
-      'meta',
-      {
-        property: 'og:url',
-        content: 'https://zlliang.me',
-      },
-    ],
-    [
-      'meta',
-      {
-        property: 'og:type',
-        content: 'website',
-      },
-    ],
-    [
-      'meta',
-      {
-        property: 'og:title',
-        content: '梁子龙 Zilong Liang',
-      },
-    ],
-    [
-      'meta',
-      {
-        property: 'og:description',
-        content: '梁子龙的个人网站', // TODO
-      },
-    ],
-    // TODO
-    // [
-    //   'meta',
-    //   {
-    //     property: 'og:image',
-    //     content: '/images/og-image.jpg',
-    //   },
-    // ],
     ...(env.NODE_ENV === 'production' ? [
       [
         'script',
@@ -113,6 +63,54 @@ export default defineConfig({
       light: 'github-light',
       dark: 'github-dark',
     },
+  },
+  transformPageData(pageData, context) {
+    console.log(pageData, context)
+    pageData.frontmatter.head ??= []
+    pageData.frontmatter.head.push(...[
+      [
+        'meta',
+        {
+          property: 'og:title',
+          content: typeof pageData.titleTemplate === 'string'
+            ? pageData.titleTemplate.replace(':title', pageData.title)
+            : (typeof context.siteConfig.site.titleTemplate === 'string'
+              ? context.siteConfig.site.titleTemplate.replace(':title', pageData.title)
+              : pageData.title),
+        },
+      ],
+      [
+        'meta',
+        {
+          property: 'og:description',
+          content: pageData.frontmatter.summary || '梁子龙 Zilong Liang',
+        },
+      ],
+      [
+        'meta',
+        {
+          property: 'og:url',
+          content: `https://zlliang.me/${pageData.relativePath}`
+            .replace(/index\.md$/, '')
+            .replace(/\.md$/, '.html'),
+        },
+      ],
+      [
+        'meta',
+        {
+          property: 'og:type',
+          content: 'website',
+        },
+      ],
+    ])
+    // TODO Dynamic OG image
+    // [
+    //   'meta',
+    //   {
+    //     property: 'og:image',
+    //     content: '/images/og-image.jpg',
+    //   },
+    // ])
   },
 
   // Theme
