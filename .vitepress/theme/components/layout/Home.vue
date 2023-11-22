@@ -1,7 +1,7 @@
 <template>
   <div class="vp-doc home main">
     <div class="hero">
-      <div class="quote">这是一个普通的网站，不要整得煞有介事的。</div>
+      <div class="quote">没啥内容的网站，整得倒是煞有介事。</div>
       <div class="from">—— 我</div>
     </div>
     <div class="container main-content">
