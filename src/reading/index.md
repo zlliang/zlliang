@@ -1,9 +1,9 @@
 ---
-title: 📚 书房
+title: 📚 读书笔记
 created: 2023-02-10
 hidden: true
 ---
 
-<TitleWithEmoji emoji="📚" special>书房</TitleWithEmoji>
+# 📚 读书笔记
 
 🚧 施工中……

@@ -1,19 +1,33 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { data as allPosts } from '@/data/all-posts.data'
 import { type FrontMatter, type Post } from '@/types/post'
 
-withDefaults(defineProps<{ info: Post & FrontMatter; splitDate?: boolean }>(), {
-  splitDate: true,
+const props = withDefaults(
+  defineProps<{
+    url: string
+    splitDate?: boolean
+    hideDate?: boolean
+  }>(), {
+    splitDate: true,
+    hideDate: false,
+  },
+)
+
+const info = computed<FrontMatter & Post | null>(() => {
+  const post = allPosts.find(item => item.url === props.url)
+  return post ? { ...post, ...post.frontmatter } : null
 })
 </script>
 
 <template>
-  <a class="post-item" :href="info.url">
+  <a v-if="info?.url" class="post-item" :href="info.url">
     <div class="title-container" :class="[splitDate && 'split-date']">
       <div class="title">
         <span>{{ info.title }}</span>
         <span v-if="info.topicIndex" class="topic-tag">专题页</span>
       </div>
-      <div class="date">
+      <div v-if="!hideDate" class="date">
         <span v-if="info.created">创建于 {{ info.created }}</span>
         <span v-if="info.updated" class="updated">
           / 更新于 {{ info.updated }}
@@ -30,16 +44,18 @@ withDefaults(defineProps<{ info: Post & FrontMatter; splitDate?: boolean }>(), {
   display: block;
   margin: 0 -24px;
   padding: 12px 24px;
+  line-height: 1.6;
   font-weight: 400;
+  text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.25s;
+  transition: background-color var(--transition-timing) var(--transition-duration);
 }
 
 @media (min-width: 768px) {
   .post-item {
     margin: 0 -16px;
     padding: 12px 16px;
-    border-radius: 8px;
+    border-radius: var(--border-radius-large);
   }
 }
 
@@ -51,7 +67,7 @@ withDefaults(defineProps<{ info: Post & FrontMatter; splitDate?: boolean }>(), {
   display: block;
   color: var(--vp-c-brand);
   font-weight: 600;
-  transition: color 0.25s;
+  transition: color var(--transition-timing) var(--transition-duration);
 }
 
 .post-item:hover .title {
@@ -93,7 +109,7 @@ withDefaults(defineProps<{ info: Post & FrontMatter; splitDate?: boolean }>(), {
 
 .path {
   margin-top: 4px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--vp-c-text-3);
 }
 

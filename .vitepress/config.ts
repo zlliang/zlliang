@@ -1,14 +1,14 @@
+import { env } from 'node:process'
 import { URL, fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
 
 import { nav, sidebar } from '../src/data/nav'
-import augment from './utils/markdown-plugins'
 
 export default defineConfig({
   // Website
-  title: '洋屁君',
-  titleTemplate: ':title - 洋屁君',
-  description: '这里是洋屁君的老巢。既然拨冗光临，那就不要吝惜 —— 敬请放洋屁！',
+  title: '梁子龙 Zilong Liang',
+  titleTemplate: ':title - 梁子龙 Zilong Liang',
+  description: '', // TODO
 
   // Build
   lang: 'zh-CN',
@@ -47,51 +47,26 @@ export default defineConfig({
     //     href: "/favicon/site.webmanifest",
     //   },
     // ],
-    [
-      'meta',
-      {
-        name: 'msapplication-TileColor',
-        content: '#da532c',
-      },
-    ],
     // [
-    //   "meta",
+    //   'meta',
     //   {
-    //     name: "theme-color",
-    //     content: "#ffffff",
-    //     media: "(prefers-color-scheme: light)",
-    //   },
-    // ],
-    // [
-    //   "meta",
-    //   {
-    //     name: "theme-color",
-    //     content: "#1e1e20",
-    //     media: "(prefers-color-scheme: dark)",
+    //     name: 'msapplication-TileColor',
+    //     content: '#cc6e19',
     //   },
     // ],
     [
       'link',
       {
         rel: 'preload',
-        href: '/images/logo.svg',
+        href: '/images/logo.webp',
         as: 'image',
-      },
-    ],
-    [
-      'link',
-      {
-        rel: 'preload',
-        href: '/fonts/MFYouRan_Noncommercial-Regular.otf',
-        as: 'font',
-        crossorigin: 'anonymous',
       },
     ],
     [
       'meta',
       {
         property: 'og:url',
-        content: 'https://foreignfart.com',
+        content: 'https://zlliang.me',
       },
     ],
     [
@@ -105,44 +80,48 @@ export default defineConfig({
       'meta',
       {
         property: 'og:title',
-        content: '洋屁君',
+        content: '梁子龙 Zilong Liang',
       },
     ],
     [
       'meta',
       {
         property: 'og:description',
-        content: '这里是洋屁君的老巢。既然拨冗光临，那就不要吝惜 —— 敬请放洋屁！',
+        content: '梁子龙的个人网站', // TODO
       },
     ],
-    [
-      'meta',
-      {
-        property: 'og:image',
-        content: '/images/og-image.jpg',
-      },
-    ],
-    [
-      'script',
-      {
-        defer: '',
-        src: '/_vercel/insights/script.js',
-      },
-    ],
+    // TODO
+    // [
+    //   'meta',
+    //   {
+    //     property: 'og:image',
+    //     content: '/images/og-image.jpg',
+    //   },
+    // ],
+    ...(env.NODE_ENV === 'production' ? [
+      [
+        'script',
+        {
+          defer: '',
+          src: '/_vercel/insights/script.js',
+        },
+      ]
+    ] : ([] as any)),
   ],
   markdown: {
     theme: {
       light: 'github-light',
       dark: 'github-dark',
     },
-    config: (md: any) => augment(md),
   },
 
   // Theme
   themeConfig: {
-    logo: '/images/logo.svg',
-    siteTitle: false,
+    // Basic
+    logo: '/images/logo.webp',
+    siteTitle: '梁子龙 Zilong Liang',
 
+    // Content related
     nav,
     sidebar,
 

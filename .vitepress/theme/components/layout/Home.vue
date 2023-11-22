@@ -1,39 +1,8 @@
-<script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
-import { useData } from 'vitepress'
-
-const { isDark } = useData()
-
-const opacity = ref(0)
-const sloganImageRef = ref('')
-
-function setSloganImageRef() {
-  sloganImageRef.value = isDark.value ? '/images/slogan-dark.svg' : '/images/slogan-light.svg'
-}
-
-watch(isDark, setSloganImageRef)
-
-onMounted(() => {
-  // Guarantee 'isDark' is determined
-  setTimeout(() => {
-    setSloganImageRef()
-    opacity.value = 1
-  })
-})
-</script>
-
 <template>
   <div class="vp-doc home main">
-    <div class="container hero-text">
-      <div>这里是洋屁君的老巢。</div>
-      <div>既然拨冗光临，那就不要吝惜 ——</div>
-    </div>
-    <div class="container hero-image-wrapper">
-      <img
-        :src="sloganImageRef"
-        alt="Slogan：敬请放洋屁"
-        class="slogan-image"
-      >
+    <div class="hero">
+      <div class="quote">这是一个普通的网站，不要整得煞有介事的。</div>
+      <div class="from">—— 我</div>
     </div>
     <div class="container main-content">
       <div class="secondary">
@@ -72,7 +41,7 @@ onMounted(() => {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 960px) {
   .main {
     padding: 32px 32px 0;
   }
@@ -93,6 +62,46 @@ onMounted(() => {
   width: 100%;
 }
 
+.hero {
+  position: relative;
+  margin: 0 auto;
+  padding: 72px 0;
+  width: fit-content;
+  max-width: calc(100% - 5.5rem);
+  line-height: 1.5;
+}
+
+.hero::before {
+  content: '“';
+  position: absolute;
+  top: 1.5rem;
+  left: -3rem;
+  color: var(--vp-c-text-3);
+  font-size: 4rem;
+}
+
+.hero::after {
+  content: '”';
+  position: absolute;
+  bottom: -1rem;
+  right: -3rem;
+  color: var(--vp-c-text-3);
+  font-size: 4rem;
+}
+
+.hero > .quote {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.hero > .from {
+  color: var(--vp-c-text-2);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: right;
+}
+
 .content {
   flex-grow: 1;
   order: 1;
@@ -110,7 +119,11 @@ onMounted(() => {
   display: none;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 960px) {
+  .main-content {
+    margin-bottom: 128px;
+  }
+
   .secondary {
     max-width: 360px;
   }
@@ -121,52 +134,6 @@ onMounted(() => {
 
   .bottom-right {
     display: none;
-  }
-}
-
-.container.hero-text {
-  margin-top: 16px;
-  margin-bottom: 40px;
-  color: var(--vp-c-text-2);
-  font-weight: 500;
-  text-align: center;
-  /* opacity: v-bind(opacity);
-  transition: opacity 0.5s; */
-}
-
-@media (min-width: 1000px) {
-  .container.hero-text {
-    margin-top: 24px;
-    font-size: 1.2em;
-  }
-}
-
-.hero-image-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 64px;
-}
-
-.slogan-image {
-  display: block;
-  width: 100%;
-  max-width: 720px;
-  aspect-ratio: 802 / 511; /* Conserve height */
-  opacity: v-bind(opacity);
-  /* transition: opacity 0.5s;
-  transition-delay: 0.2s; */
-  transform: scale(1.1);
-}
-
-.main-content {
-  opacity: v-bind(opacity);
-  /* transition: opacity 0.5s;
-  transition-delay: 0.4s; */
-}
-
-@media (min-width: 1000px) {
-  .main-content {
-    margin-bottom: 128px;
   }
 }
 </style>
