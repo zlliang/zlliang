@@ -1,13 +1,13 @@
 /**
  * Fork from the default theme
- * See https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ * See: https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
  */
 
 /**
  * Colors: Solid
  * -------------------------------------------------------------------------- */
 
- :root {
+:root {
   --vp-c-white: #ffffff;
   --vp-c-black: #000000;
 

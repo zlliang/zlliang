@@ -10,23 +10,34 @@ DefaultLayout.name = 'DefaultLayout'
 
 const { frontmatter } = useData()
 
-if (!import.meta.env.SSR) {
-  // Fix nav bar
-  // See https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/components/VPNavBar.vue#L32C14-L32C14
-  const { y } = useWindowScroll()
-  const route = useRoute()
+/** 
+ * Fix the navigation bar border behavior
+ * 
+ * In VitePress v1.0.0-rc.29, the navigation bar border is hidden only in the
+ * `home` layout, but it would better be hidden when the page is scrolled to the
+ * top in any layout.
+ * 
+ * See: https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/components/VPNavBar.vue#L32C14-L32C14
+ */
+function fixNavBar() {
+  if (!import.meta.env.SSR) {
+    const { y } = useWindowScroll()
+    const route = useRoute()
 
-  async function fixNavBar() {
-    await nextTick()
-    const nav = document.querySelector('.VPNavBar')
-    if (nav) {
-      nav.classList.toggle('top', y.value <= 0)
+    async function handler() {
+      await nextTick() // Guarantee DOM elements exist
+      const nav = document.querySelector('.VPNavBar')
+      if (nav) {
+        nav.classList.toggle('top', y.value <= 0)
+      }
     }
-  }
 
-  watch(y, fixNavBar, { immediate: true })
-  watch(() => route.path, fixNavBar)
+    watch(y, handler, { immediate: true })
+    watch(() => route.path, handler)
+  }
 }
+
+fixNavBar()
 </script>
 
 <template>

@@ -40,14 +40,18 @@
   line-height: 1.7;
 }
 
-/* Code copy button */
-.vp-doc [class*="language-"] > button.copy.copied::before,
-.vp-doc [class*="language-"] > button.copy:hover.copied::before {
-  content: "已复制";
+.vp-doc :not(pre, a, h1, h2, h3, h4, h5, h6) > code {
+  color: var(--vp-c-text-1);
 }
 
 .vp-doc h1 > .header-anchor {
   display: none;
+}
+
+/* Code copy button */
+.vp-doc [class*="language-"] > button.copy.copied::before,
+.vp-doc [class*="language-"] > button.copy:hover.copied::before {
+  content: "已复制";
 }
 
 /* Utility classes */

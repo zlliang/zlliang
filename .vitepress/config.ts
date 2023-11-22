@@ -13,6 +13,12 @@ export default defineConfig({
   // Build
   lang: 'zh-CN',
   srcDir: './src',
+  markdown: {
+    theme: {
+      light: 'github-light',
+      dark: 'github-dark',
+    },
+  },
   head: [
     [
       'link',
@@ -58,14 +64,7 @@ export default defineConfig({
       ]
     ] : ([] as any)),
   ],
-  markdown: {
-    theme: {
-      light: 'github-light',
-      dark: 'github-dark',
-    },
-  },
   transformPageData(pageData, context) {
-    console.log(pageData, context)
     pageData.frontmatter.head ??= []
     pageData.frontmatter.head.push(...[
       [
