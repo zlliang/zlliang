@@ -68,7 +68,7 @@
   padding: 72px 0;
   width: fit-content;
   max-width: calc(100% - 5.5rem);
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 .hero::before {

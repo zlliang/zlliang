@@ -65,7 +65,7 @@ const searchResult = computed(() =>
 .input {
   flex-grow: 1;
   font-family: var(--vp-font-family-base);
-  font-size: 16px;
+  font-size: 1em;
 }
 
 .input::-webkit-input-placeholder {
