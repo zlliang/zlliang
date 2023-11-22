@@ -8,7 +8,7 @@ export default defineConfig({
   // Website
   title: '梁子龙 Zilong Liang',
   titleTemplate: ':title - 梁子龙 Zilong Liang',
-  description: '', // TODO
+  description: '我的笔记本',
 
   // Build
   lang: 'zh-CN',
@@ -83,7 +83,7 @@ export default defineConfig({
         'meta',
         {
           property: 'og:description',
-          content: pageData.frontmatter.summary || '梁子龙 Zilong Liang',
+          content: pageData.frontmatter.summary || context.siteConfig.site.description,
         },
       ],
       [
