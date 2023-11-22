@@ -11,21 +11,23 @@ DefaultLayout.name = 'DefaultLayout'
 
 const { frontmatter } = useData()
 
-// Fix nav bar
-// See https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/components/VPNavBar.vue#L32C14-L32C14
-const { y } = useWindowScroll()
-const route = useRoute()
+if (!import.meta.env.SSR) {
+  // Fix nav bar
+  // See https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/components/VPNavBar.vue#L32C14-L32C14
+  const { y } = useWindowScroll()
+  const route = useRoute()
 
-async function fixNavBar() {
-  await nextTick()
-  const nav = document.querySelector('.VPNavBar')
-  if (nav) {
-    nav.classList.toggle('top', y.value <= 0)
+  async function fixNavBar() {
+    await nextTick()
+    const nav = document.querySelector('.VPNavBar')
+    if (nav) {
+      nav.classList.toggle('top', y.value <= 0)
+    }
   }
-}
 
-watch(y, fixNavBar, { immediate: true })
-watch(() => route.path, fixNavBar)
+  watch(y, fixNavBar, { immediate: true })
+  watch(() => route.path, fixNavBar)
+}
 </script>
 
 <template>
