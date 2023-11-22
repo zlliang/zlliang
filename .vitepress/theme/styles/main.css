@@ -10,6 +10,23 @@
   background-color: var(--vp-c-orange-soft);
 }
 
+.vp-doc,
+.vp-doc blockquote > p {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .vp-doc,
+  .vp-doc blockquote > p {
+    font-size: 16px;
+  }
+  
+  .vp-doc p,
+  .vp-doc blockquote > p {
+    line-height: 2;
+  }
+}
+
 .vp-doc li + li,
 .vp-doc li > p,
 .vp-doc li > ol,
@@ -20,7 +37,7 @@
 .vp-doc figcaption {
   font-size: 0.75em;
   color: var(--vp-c-text-2);
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 /* Code copy button */
@@ -35,11 +52,7 @@
 
 /* Utility classes */
 .vp-doc .small-text {
-  font-size: 14px;
-}
-
-.vp-doc p.small-text {
-  line-height: 1.75rem;
+  font-size: 0.875em;
 }
 
 .vp-doc .secondary-text {

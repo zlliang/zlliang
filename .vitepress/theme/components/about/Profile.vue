@@ -23,8 +23,4 @@ import MyFigure from '@/components/about/MyFigure.vue'
   gap: 24px;
   margin: 24px 0;
 }
-
-.small-text {
-  line-height: 1.75rem;
-}
 </style>

@@ -1,10 +1,9 @@
 <script setup lang="ts">
+import { watch, nextTick } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import { format } from 'date-fns'
-
 import { useWindowScroll } from '@vueuse/core'
-import { watch, nextTick } from 'vue'
+import { format } from 'date-fns'
 
 const { Layout: DefaultLayout } = DefaultTheme
 DefaultLayout.name = 'DefaultLayout'
@@ -35,10 +34,10 @@ if (!import.meta.env.SSR) {
     <template #doc-before>
       <div v-if="!frontmatter.hideDate && frontmatter.created" class="date">
         <span>
-          创建于 {{ format(new Date(frontmatter.created), "yyyy-MM-dd") }}
+          创建于 {{ format(new Date(frontmatter.created), 'yyyy-MM-dd') }}
         </span>
         <span v-if="frontmatter.updated">
-          / 更新于 {{ format(new Date(frontmatter.updated), "yyyy-MM-dd") }}
+          / 更新于 {{ format(new Date(frontmatter.updated), 'yyyy-MM-dd') }}
         </span>
       </div>
     </template>

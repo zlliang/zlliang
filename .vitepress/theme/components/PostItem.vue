@@ -44,7 +44,7 @@ const info = computed<FrontMatter & Post | null>(() => {
   display: block;
   margin: 0 -24px;
   padding: 12px 24px;
-  line-height: 1.6;
+  line-height: 1.7;
   font-weight: 400;
   text-decoration: none;
   cursor: pointer;
@@ -76,7 +76,7 @@ const info = computed<FrontMatter & Post | null>(() => {
 
 .date {
   margin-top: 4px;
-  font-size: 12px;
+  font-size: 0.875em;
   color: var(--vp-c-text-3);
 }
 
@@ -92,7 +92,7 @@ const info = computed<FrontMatter & Post | null>(() => {
     margin-top: 1px;
     flex-shrink: 0;
     position: relative;
-    font-size: 14px;
+    font-size: 0.875em;
     color: var(--vp-c-text-3);
   }
 
@@ -103,20 +103,20 @@ const info = computed<FrontMatter & Post | null>(() => {
 
 .summary {
   margin-top: 4px;
-  font-size: 14px;
+  font-size: 0.875em;
   color: var(--vp-c-text-2);
 }
 
 .path {
   margin-top: 4px;
-  font-size: 14px;
+  font-size: 0.875em;
   color: var(--vp-c-text-3);
 }
 
 .topic-tag {
   display: inline-block;
   color: var(--vp-badge-tip-text);
-  font-size: 12px;
+  font-size: 0.75em;
   margin-left: 4px;
   transform: scale(0.9) translateY(-8px);
 }
