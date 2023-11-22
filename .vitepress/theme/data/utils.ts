@@ -4,9 +4,7 @@ import { format } from 'date-fns'
 export function transformPost(item: ContentData): ContentData {
   return {
     ...item,
-    url: item.url
-      .replace('/src', '')
-      .replace('index.html', ''),
+    url: item.url.replace('index.html', ''),
     frontmatter: {
       ...item.frontmatter,
       created: format(item.frontmatter.created || new Date(), 'yyyy-MM-dd'),
