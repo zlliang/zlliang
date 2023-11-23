@@ -63,14 +63,5 @@ export const sidebar: DefaultTheme.Sidebar = {
       text: '🤯 我在忙什么？',
       link: '/about/plan/',
     },
-    {
-      text: '已经忙完的',
-      items: [
-        {
-          text: '🔄 初始化：搭建我的 2023 版个人网站',
-          link: '/about/plan/personal-website-version-2023',
-        },
-      ],
-    },
   ],
 }
