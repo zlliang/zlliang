@@ -102,14 +102,6 @@ export default defineConfig({
         },
       ],
     ])
-    // TODO Dynamic OG image
-    // [
-    //   'meta',
-    //   {
-    //     property: 'og:image',
-    //     content: '/images/og-image.jpg',
-    //   },
-    // ])
   },
 
   // Theme

@@ -62,65 +62,6 @@
 }
 
 /**
- * TODO Enter animation
- *
- * Fork from Anthony Fu's blog.
- * See: https://antfu.me/posts/sliding-enter-animation
- * -------------------------------------------------------------------------- */
-
-/* @keyframes slide-enter {
-  0% {
-    opacity: 0;
-    transform: translateY(0.5rem);
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@media (prefers-reduced-motion:no-preference) {
-  * {
-    --stagger: 0;
-    --delay: 0.12s;
-    --start: 0ms;
-    animation: slide-enter 1s both 1;
-    animation-delay: calc(var(--start) + var(--stagger) * var(--delay));
-  }
-}
-
-*:nth-child(1) { --stagger: 0; }
-*:nth-child(2) { --stagger: 1; }
-*:nth-child(3) { --stagger: 2; }
-*:nth-child(4) { --stagger: 3; }
-*:nth-child(5) { --stagger: 4; }
-*:nth-child(6) { --stagger: 5; }
-*:nth-child(7) { --stagger: 6; }
-*:nth-child(8) { --stagger: 7; }
-*:nth-child(9) { --stagger: 8; }
-*:nth-child(10) { --stagger: 9; }
-*:nth-child(11) { --stagger: 10; }
-*:nth-child(12) { --stagger: 11; }
-*:nth-child(13) { --stagger: 12; }
-*:nth-child(14) { --stagger: 13; }
-*:nth-child(15) { --stagger: 14; }
-*:nth-child(16) { --stagger: 15; }
-*:nth-child(17) { --stagger: 16; }
-*:nth-child(18) { --stagger: 17; }
-*:nth-child(19) { --stagger: 18; }
-*:nth-child(20) { --stagger: 19; }
-*:nth-child(21) { --stagger: 20; }
-*:nth-child(22) { --stagger: 21; }
-*:nth-child(23) { --stagger: 22; }
-*:nth-child(24) { --stagger: 23; }
-*:nth-child(25) { --stagger: 24; }
-*:nth-child(26) { --stagger: 25; }
-*:nth-child(27) { --stagger: 26; }
-*:nth-child(28) { --stagger: 27; }
-*:nth-child(29) { --stagger: 28; }
-*:nth-child(30) { --stagger: 29; } */
-
-/**
  * Utilities
  * -------------------------------------------------------------------------- */
  
