@@ -62,13 +62,13 @@
 }
 
 /**
- * Enter animation
+ * TODO Enter animation
  *
  * Fork from Anthony Fu's blog.
  * See: https://antfu.me/posts/sliding-enter-animation
  * -------------------------------------------------------------------------- */
 
- @keyframes slide-enter {
+/* @keyframes slide-enter {
   0% {
     opacity: 0;
     transform: translateY(0.5rem);
@@ -118,7 +118,7 @@
 *:nth-child(27) { --stagger: 26; }
 *:nth-child(28) { --stagger: 27; }
 *:nth-child(29) { --stagger: 28; }
-*:nth-child(30) { --stagger: 29; }
+*:nth-child(30) { --stagger: 29; } */
 
 /**
  * Utilities
