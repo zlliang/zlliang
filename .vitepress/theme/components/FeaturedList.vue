@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import PostItem from '@/components/PostItem.vue'
+import PostLink from '@/components/PostLink.vue'
 import { data as featuredPosts } from '@/data/featured-posts.data'
 
 const list = ref(featuredPosts)
@@ -9,7 +9,7 @@ const list = ref(featuredPosts)
 
 <template>
   <div>
-    <PostItem
+    <PostLink
       v-for="item in list"
       :key="item.frontmatter.title"
       :url="item.url"

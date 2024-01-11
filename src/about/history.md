@@ -9,8 +9,4 @@ hidden: true
 import HistoryList from "@/components/HistoryList.vue"
 </script>
 
-# 🤔️ 历史档案
-
-> 此网站的全部历史，一览无余。
-
 <HistoryList />

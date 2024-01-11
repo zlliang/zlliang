@@ -1,9 +1,9 @@
+<script setup lang="ts">
+</script>
+
 <template>
   <div class="vp-doc home main">
-    <div class="hero">
-      <div class="quote">没啥内容的网站，整得倒是煞有介事。</div>
-      <div class="from">—— 我</div>
-    </div>
+    <img alt="Cover meme" src="/images/cover-meme.jpg" class="cover-meme"/>
     <div class="container main-content">
       <div class="secondary">
         <slot name="secondary" />
@@ -57,49 +57,22 @@
   }
 }
 
+.cover-meme {
+  margin: 0 auto;
+  width: 180px;
+  height: 180px;
+}
+
+@media (min-width: 768px) {
+  .cover-meme {
+    width: 240px;
+    height: 240px;
+  }
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
-}
-
-.hero {
-  position: relative;
-  margin: 0 auto;
-  padding: 72px 0;
-  width: fit-content;
-  max-width: calc(100% - 5.5rem);
-  line-height: 1.7;
-}
-
-.hero::before {
-  content: '“';
-  position: absolute;
-  top: 1.5rem;
-  left: -3rem;
-  color: var(--vp-c-text-3);
-  font-size: 4rem;
-}
-
-.hero::after {
-  content: '”';
-  position: absolute;
-  bottom: -1rem;
-  right: -3rem;
-  color: var(--vp-c-text-3);
-  font-size: 4rem;
-}
-
-.hero > .quote {
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.hero > .from {
-  color: var(--vp-c-text-2);
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-align: right;
 }
 
 .content {

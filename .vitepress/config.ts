@@ -8,7 +8,7 @@ export default defineConfig({
   // Website
   title: '梁子龙 Zilong Liang',
   titleTemplate: ':title - 梁子龙 Zilong Liang',
-  description: '我的笔记本',
+  description: '',
 
   // Build
   lang: 'zh-CN',
@@ -20,6 +20,7 @@ export default defineConfig({
     },
   },
   head: [
+    // Favicons
     [
       'link',
       {
@@ -54,6 +55,7 @@ export default defineConfig({
         as: 'image',
       },
     ],
+    // Vercel Insights
     ...(env.NODE_ENV === 'production' ? [
       [
         'script',
