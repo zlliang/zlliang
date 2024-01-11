@@ -29,18 +29,18 @@
     font-size: 16px;
   }
   
-  .vp-doc p,
+  /* .vp-doc p,
   .vp-doc blockquote > p {
     line-height: 2;
-  }
+  } */
 }
 
-.vp-doc li + li,
+/* .vp-doc li + li,
 .vp-doc li > p,
 .vp-doc li > ol,
 .vp-doc li > ul {
   margin: 0;
-}
+} */
 
 .vp-doc figcaption {
   font-size: 0.75em;

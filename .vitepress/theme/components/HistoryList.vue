@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
-import PostItem from '@/components/PostItem.vue'
+import PostLink from '@/components/PostLink.vue'
 import { data as historyPosts } from '@/data/history-posts.data'
 import { type Post } from '@/types/post'
 
@@ -20,7 +20,7 @@ const searchResult = computed(() =>
       <input v-model="keyword" placeholder="按标题搜索档案" class="input">
       <span class="total">共 {{ searchResult.length }} 则</span>
     </div>
-    <PostItem
+    <PostLink
       v-for="item in searchResult"
       :key="item.frontmatter.title"
       :url="item.url"

@@ -23,7 +23,7 @@ const info = computed<FrontMatter & Post | null>(() => {
 </script>
 
 <template>
-  <a v-if="info?.url" class="post-item" :href="info.url">
+  <a v-if="info" class="post-item" :href="info.url">
     <div class="title-container" :class="[splitDate && 'split-date']">
       <div class="title">
         <span>{{ info.title }}</span>
@@ -67,18 +67,15 @@ const info = computed<FrontMatter & Post | null>(() => {
 
 .title {
   display: block;
-  color: var(--vp-c-brand);
+  color: var(--vp-c-brand-1);
   font-weight: 600;
   transition: color var(--transition-timing) var(--transition-duration);
-}
-
-.post-item:hover .title {
-  color: var(--vp-c-brand-dark);
 }
 
 .date {
   margin-top: 4px;
   font-size: 0.875em;
+  line-height: 1.75; /* Visually align with the title */
   color: var(--vp-c-text-3);
 }
 

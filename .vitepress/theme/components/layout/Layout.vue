@@ -13,9 +13,9 @@ const { frontmatter } = useData()
 /** 
  * Fix the navigation bar border behavior
  * 
- * In VitePress v1.0.0-rc.29, the navigation bar border is hidden only in the
+ * In VitePress v1.0.0-rc.36, the navigation bar border is hidden only in the
  * `home` layout, but it would better be hidden when the page is scrolled to the
- * top in any layout.
+ * top in any layout without a sidebar.
  * 
  * See: https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/components/VPNavBar.vue#L32C14-L32C14
  */
@@ -24,16 +24,16 @@ function fixNavBar() {
     const { y } = useWindowScroll()
     const route = useRoute()
 
-    async function handler() {
+    async function handle() {
       await nextTick() // Guarantee DOM elements exist
-      const nav = document.querySelector('.VPNavBar')
-      if (nav) {
-        nav.classList.toggle('top', y.value <= 0)
-      }
+      const nav = document.querySelector('.VPNavBar:not(.has-sidebar)')
+      if (!nav) return
+
+      nav.classList.toggle('top', y.value <= 0)
     }
 
-    watch(y, handler, { immediate: true })
-    watch(() => route.path, handler)
+    watch(y, handle, { immediate: true })
+    watch(() => route.path, handle)
   }
 }
 
@@ -50,6 +50,14 @@ fixNavBar()
         <span v-if="frontmatter.updated">
           / 更新于 {{ format(new Date(frontmatter.updated), 'yyyy-MM-dd') }}
         </span>
+      </div>
+      <div class="vp-doc">
+        <h1 v-if="frontmatter.title" tabindex="-1">
+          {{ frontmatter.title }}
+        </h1>
+        <blockquote v-if="frontmatter.summary">
+          <p>{{ frontmatter.summary }}</p>
+        </blockquote>
       </div>
     </template>
   </DefaultLayout>

@@ -14,17 +14,17 @@ import Social from '@/components/about/Social.vue'
 
 <Home>
 
-## 🍙 最近更新
+## 🍙 最新文章
 
 <LatestList />
 
 如果想阅读我的更多文章，请前往：
 
-<PostItem url="/about/history.html" hide-date />
+<PostLink url="/about/history.html" hide-date />
 
-## 🤔️ 我是谁
+<!-- ## 🤔️ 我是谁
 
-<Profile />
+<Profile /> -->
 
 <!-- 你好，我是**梁子龙**，在此欢迎你的到来。
 
@@ -36,17 +36,17 @@ import Social from '@/components/about/Social.vue'
 
 如果想要了解我更多，请前往： -->
 
-<!-- <PostItem url="/about/" /> -->
+<!-- <PostLink url="/about/" /> -->
 
 <template #secondary>
 
-## 😎 得意之作
+<!-- ## 😎 得意之作
 
 空空如也……
 
-<!-- <FeaturedList /> -->
+<FeaturedList />
 
-<!-- <p class="small-text secondary-text">也就是说，尚没有任何一篇文章，可以让我拍着胸脯、自信地推荐给大家（唉）。要好好努力才行呀！</p> -->
+<p class="small-text secondary-text">也就是说，尚没有任何一篇文章，可以让我拍着胸脯、自信地推荐给大家（唉）。要好好努力才行呀！</p> -->
 
 </template>
 
@@ -56,7 +56,7 @@ import Social from '@/components/about/Social.vue'
 
 <!-- 更加详尽的更新计划，请前往： -->
 
-<PostItem url="/about/plan/" hide-date />
+<PostLink url="/about/plan/" hide-date />
 
 <!-- ## 🐱 我家的小猫咪
 
@@ -68,9 +68,9 @@ import Social from '@/components/about/Social.vue'
 
 页面里的内容，也会在这个小红书账号里同步更新：[@无人岛的推拿君](https://www.xiaohongshu.com/user/profile/63c5ee5c000000002702b4a2)。 -->
 
-## 📡 在社交平台找到我
+<!-- ## 📡 在社交平台找到我
 
-<Social />
+<Social /> -->
 
 </template>
 
