@@ -15,6 +15,29 @@
 }
 
 /**
+ * Overrides
+ * -------------------------------------------------------------------------- */
+
+.VPNavBar.has-sidebar .divider-line {
+  background-color: var(--vp-c-gutter) !important;
+}
+
+@media (min-width: 960px) {
+  .VPNavBar.has-sidebar .divider-line {
+    background-color: transparent !important;
+  }
+
+  /* For homepage */
+  .VPNavBar:not(.has-sidebar):not(.top) .divider {
+    background-color: transparent !important;
+  }
+
+  .VPNavBar:not(.top) .divider-line {
+    background-color: var(--vp-c-gutter) !important;
+  }
+}
+
+/**
  * Article contents
  * -------------------------------------------------------------------------- */
 

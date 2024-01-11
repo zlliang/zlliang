@@ -26,7 +26,7 @@ function fixNavBar() {
 
     async function handle() {
       await nextTick() // Guarantee DOM elements exist
-      const nav = document.querySelector('.VPNavBar:not(.has-sidebar)')
+      const nav = document.querySelector('.VPNavBar')
       if (!nav) return
 
       nav.classList.toggle('top', y.value <= 0)
