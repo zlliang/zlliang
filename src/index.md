@@ -1,7 +1,7 @@
 ---
 titleTemplate: 梁子龙 Zilong Liang
 hidden: true
-layout: page
+layout: home
 ---
 
 <script setup>
