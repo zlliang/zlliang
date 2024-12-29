@@ -5,7 +5,7 @@ import { sortPost, transformPost } from './utils'
 declare const data: ContentData[]
 export { data }
 
-export default createContentLoader('src/**/*.md', {
+export default createContentLoader('**/*.md', {
   transform: rawData => rawData
     .map(transformPost)
     .sort(sortPost)

@@ -5,17 +5,16 @@
   "description": "My Personal website",
   "scripts": {
     "dev": "vitepress dev .",
-    "build": "vitepress build .",
-    "lint": "eslint ."
+    "build": "vitepress build ."
   },
   "devDependencies": {
-    "@types/node": "^20.11.5",
-    "@vueuse/core": "^10.7.2",
-    "date-fns": "3.3.0",
-    "typescript": "^5.3.3",
-    "vercel": "^33.1.0",
-    "vite": "^5.0.13",
-    "vitepress": "1.0.0-rc.39",
-    "vue": "^3.4.8"
+    "@types/node": "^22.10.2",
+    "@vueuse/core": "^12.2.0",
+    "date-fns": "4.1.0",
+    "typescript": "^5.7.2",
+    "vercel": "^39.2.2",
+    "vite": "^6.0.6",
+    "vitepress": "1.5.0",
+    "vue": "^3.5.13"
   }
 }

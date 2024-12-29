@@ -40,7 +40,7 @@ const searchResult = computed(() =>
   transition-duration: var(--transition-duration);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .search-input {
     margin: 32px -16px;
     padding: 8px 16px;
@@ -50,12 +50,12 @@ const searchResult = computed(() =>
 
 .search-input:hover,
 .search-input:has(input:focus) {
-  outline-color: var(--vp-c-orange-2);
+  outline-color: var(--vp-c-brand-2);
 }
 
 .search-input:has(input:focus) {
-  outline-color: var(--vp-c-orange-2);
-  box-shadow: 0 0 0 3px var(--vp-c-orange-soft);
+  outline-color: var(--vp-c-brand-2);
+  box-shadow: 0 0 0 3px var(--vp-c-brand-soft);
 }
 
 .prepend {
