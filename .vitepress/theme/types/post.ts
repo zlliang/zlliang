@@ -1,11 +1,11 @@
 import type { ContentData } from 'vitepress'
 
 export interface FrontMatter {
+  emoji?: string
   title?: string
   path?: string
   summary?: string
   created?: Date
-  updated?: Date
   hidden?: boolean
   featured?: boolean
   topicIndex?: boolean

@@ -1,4 +1,3 @@
-import { env } from 'node:process'
 import { URL, fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
 
@@ -6,9 +5,9 @@ import { nav, sidebar } from '../src/data/nav'
 
 export default defineConfig({
   // Website
-  title: '梁子龙 Zilong Liang',
-  titleTemplate: ':title - 梁子龙 Zilong Liang',
-  description: '',
+  title: '子龙的笔记本',
+  titleTemplate: ':title - 子龙的笔记本',
+  description: '子龙的笔记本',
 
   // Build
   lang: 'zh-CN',
@@ -20,7 +19,30 @@ export default defineConfig({
     },
   },
   head: [
-    // Favicons
+    [
+      'link',
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '96x96',
+        href: '/favicon/favicon-96x96.png',
+      },
+    ],
+    [
+      'link',
+      {
+        rel: 'icon',
+        type: 'image/svg+xml',
+        href: '/favicon/favicon.svg',
+      },
+    ],
+    [
+      'link',
+      {
+        rel: 'shortcut icon',
+        href: '/favicon/favicon.ico',
+      },
+    ],
     [
       'link',
       {
@@ -29,42 +51,6 @@ export default defineConfig({
         href: '/favicon/apple-touch-icon.png',
       },
     ],
-    [
-      'link',
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '32x32',
-        href: '/favicon/favicon-32x32.png',
-      },
-    ],
-    [
-      'link',
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '16x16',
-        href: '/favicon/favicon-16x16.png',
-      },
-    ],
-    [
-      'link',
-      {
-        rel: 'preload',
-        href: '/images/logo.webp',
-        as: 'image',
-      },
-    ],
-    // Vercel Insights
-    ...(env.NODE_ENV === 'production' ? [
-      [
-        'script',
-        {
-          defer: '',
-          src: '/_vercel/insights/script.js',
-        },
-      ]
-    ] : ([] as any)),
   ],
   transformPageData(pageData, context) {
     pageData.frontmatter.head ??= []
@@ -109,8 +95,8 @@ export default defineConfig({
   // Theme
   themeConfig: {
     // Basic
-    logo: '/images/logo.webp',
-    siteTitle: '梁子龙 Zilong Liang',
+    logo: '/favicon/favicon-96x96.png',
+    siteTitle: '子龙的笔记本',
 
     // Content related
     nav,

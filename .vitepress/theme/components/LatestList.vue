@@ -17,4 +17,5 @@ const list = ref(latestPosts)
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

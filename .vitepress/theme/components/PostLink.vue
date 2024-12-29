@@ -4,36 +4,29 @@ import { computed } from 'vue'
 import { data as allPosts } from '@/data/all-posts.data'
 import { type FrontMatter, type Post } from '@/types/post'
 
-const props = withDefaults(
-  defineProps<{
-    url: string
-    splitDate?: boolean
-    hideDate?: boolean
-  }>(),
-  {
-    splitDate: true,
-    hideDate: false,
-  },
-)
+const {
+  url,
+  hideDate = false,
+} = defineProps<{
+  url: string
+  hideDate?: boolean
+}>()
 
 const info = computed<FrontMatter & Post | null>(() => {
-  const post = allPosts.find(item => item.url === props.url)
+  const post = allPosts.find(item => item.url === url)
   return post ? { ...post, ...post.frontmatter } : null
 })
 </script>
 
 <template>
   <a v-if="info" class="post-item" :href="info.url">
-    <div class="title-container" :class="[splitDate && 'split-date']">
+    <div class="title-container">
       <div class="title">
-        <span>{{ info.title }}</span>
+        <span>{{ info.emoji ? `${info.emoji}&nbsp;` : '' }}{{ info.title }}</span>
         <span v-if="info.topicIndex" class="topic-tag">专题页</span>
       </div>
-      <div v-if="!hideDate" class="date">
-        <span v-if="info.created">创建于 {{ info.created }}</span>
-        <span v-if="info.updated" class="updated">
-          / 更新于 {{ info.updated }}
-        </span>
+      <div v-if="!hideDate && info.created" class="date">
+        {{ info.created }}
       </div>
     </div>
     <div v-if="info.summary" class="summary">{{ info.summary }}</div>
@@ -53,7 +46,7 @@ const info = computed<FrontMatter & Post | null>(() => {
   transition: background-color var(--transition-timing) var(--transition-duration);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .post-item {
     margin: 0 -16px;
     padding: 12px 16px;
@@ -65,39 +58,27 @@ const info = computed<FrontMatter & Post | null>(() => {
   background-color: var(--vp-c-bg-alt);
 }
 
-.title {
+.title-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0 16px;
+}
+
+.title-container .title {
   display: block;
   color: var(--vp-c-brand-1);
   font-weight: 600;
   transition: color var(--transition-timing) var(--transition-duration);
+  width: 36rem;
 }
 
-.date {
-  margin-top: 4px;
-  font-size: 0.875em;
-  line-height: 1.75; /* Visually align with the title */
+.title-container .date {
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  line-height: 2; /* Visually align with the title */
   color: var(--vp-c-text-3);
-}
-
-@media (min-width: 768px) {
-  .title-container.split-date {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 16px;
-  }
-
-  .title-container.split-date .date {
-    margin-top: 1px;
-    flex-shrink: 0;
-    position: relative;
-    font-size: 0.875em;
-    color: var(--vp-c-text-3);
-  }
-
-  .title-container.split-date .date .updated::before {
-    display: none;
-  }
 }
 
 .summary {
