@@ -12,7 +12,7 @@ import LatestList from '@/components/LatestList.vue'
 <div class="hero">
 
 <img
-  src="./public/images/welcome.gif"
+  src="./assets/images/welcome.gif"
   alt="欢迎你！"
   width="180px"
   height="180px"
