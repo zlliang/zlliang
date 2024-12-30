@@ -26,7 +26,7 @@ import LatestList from '@/components/LatestList.vue'
 
 <div class="left">
 
-## 🍙 最新文章
+## 🍙 近期笔记
 
 <LatestList />
 
@@ -34,7 +34,20 @@ import LatestList from '@/components/LatestList.vue'
 
 <div class="right">
 
-## 🚧 施工中……
+## 🐧 叽叽喳喳
+
+::: info 2024-12-31
+
+又是要给新的一年快乐插旗的日子啦！
+
+<img
+  src="./assets/images/cat-meme-b.jpg"
+  alt="猫 meme"
+  width="120px"
+  height="120px"
+/>
+
+:::
 
 </div>
 

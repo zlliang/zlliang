@@ -23,14 +23,12 @@ const info = computed<FrontMatter & Post | null>(() => {
     <div class="title-container">
       <div class="title">
         <span>{{ info.emoji ? `${info.emoji}&nbsp;` : '' }}{{ info.title }}</span>
-        <span v-if="info.topicIndex" class="topic-tag">专题页</span>
       </div>
       <div v-if="!hideDate && info.created" class="date">
         {{ info.created }}
       </div>
     </div>
     <div v-if="info.summary" class="summary">{{ info.summary }}</div>
-    <div v-if="info.path" class="path">{{ info.path }}</div>
   </a>
 </template>
 
@@ -85,19 +83,5 @@ const info = computed<FrontMatter & Post | null>(() => {
   margin-top: 4px;
   font-size: 0.875em;
   color: var(--vp-c-text-2);
-}
-
-.path {
-  margin-top: 4px;
-  font-size: 0.875em;
-  color: var(--vp-c-text-3);
-}
-
-.topic-tag {
-  display: inline-block;
-  color: var(--vp-badge-tip-text);
-  font-size: 0.75em;
-  margin-left: 4px;
-  transform: scale(0.9) translateY(-8px);
 }
 </style>

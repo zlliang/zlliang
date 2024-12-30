@@ -18,6 +18,11 @@
  * Article contents
  * -------------------------------------------------------------------------- */
 
+.vp-doc p img {
+  display: block;
+  margin: 0 auto;
+}
+
 .vp-doc :not(pre, a, h1, h2, h3, h4, h5, h6) > code {
   color: var(--vp-c-text-1);
 }
