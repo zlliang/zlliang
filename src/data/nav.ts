@@ -1,27 +1,42 @@
 import type { DefaultTheme } from 'vitepress'
 
 export const nav: DefaultTheme.NavItem[] = [
-   {
-    text: '🛠️ 技术',
-    activeMatch: '/tech/',
+  // {
+  //   text: '🛠️ 技术',
+  //   activeMatch: '/tech-notes/',
+  //   items: [
+  //     {
+  //       text: '首页 - Tech Notes',
+  //       link: '/tech-notes/',
+  //     },
+  //   ],
+  // },
+  {
+    text: '💭 成长',
+    activeMatch: '/evolving-me/',
     items: [
       {
-        text: '首页 - 技术笔记',
-        link: '/tech/',
+        text: '首页 - Evolving Me',
+        link: '/evolving-me/',
       },
     ],
   },
 ]
 
 export const sidebar: DefaultTheme.Sidebar = {
-  '/tech/': [
+  '/evolving-me/': [
     {
-      text: '🛠️ 技术笔记',
-      link: '/tech/',
+      text: '主页 - Evolving Me',
+      link: '/evolving-me/',
     },
     {
-      text: '文章列表',
-      items: [],
+      text: '笔记列表',
+      items: [
+        {
+          text: '迈入 2025',
+          link: '/evolving-me/into-2025',
+        },
+      ],
     },
   ],
 }

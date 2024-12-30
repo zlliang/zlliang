@@ -1,6 +1,6 @@
 ---
-emoji: 🛠️
-title: 技术笔记
+emoji: 💭
+title: Evolving Me
 hidden: true
 ---
 

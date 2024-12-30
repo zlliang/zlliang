@@ -8,7 +8,6 @@ export function transformPost(item: ContentData): ContentData {
     frontmatter: {
       ...item.frontmatter,
       created: format(item.frontmatter.created || new Date(), 'yyyy-MM-dd'),
-      topicIndex: /\/topics\/[a-zA-Z0-9\-]+\/index\.html/.test(item.url),
     },
   }
 }
