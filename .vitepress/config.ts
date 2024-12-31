@@ -95,7 +95,7 @@ export default defineConfig({
   // Theme
   themeConfig: {
     // Basic
-    logo: '/favicon/favicon-96x96.png',
+    logo: '/favicon-96x96.png',
     siteTitle: '子龙的笔记本',
 
     // Content related
