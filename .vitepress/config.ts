@@ -25,7 +25,7 @@ export default defineConfig({
         rel: 'icon',
         type: 'image/png',
         sizes: '96x96',
-        href: '/favicon/favicon-96x96.png',
+        href: '/favicon-96x96.png',
       },
     ],
     [
@@ -33,14 +33,14 @@ export default defineConfig({
       {
         rel: 'icon',
         type: 'image/svg+xml',
-        href: '/favicon/favicon.svg',
+        href: '/favicon.svg',
       },
     ],
     [
       'link',
       {
         rel: 'shortcut icon',
-        href: '/favicon/favicon.ico',
+        href: '/favicon.ico',
       },
     ],
     [
@@ -48,7 +48,7 @@ export default defineConfig({
       {
         rel: 'apple-touch-icon',
         sizes: '180x180',
-        href: '/favicon/apple-touch-icon.png',
+        href: '/apple-touch-icon.png',
       },
     ],
   ],
