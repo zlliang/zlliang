@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
+    "@vercel/analytics": "^1.4.1",
     "@vueuse/core": "^12.2.0",
     "date-fns": "4.1.0",
     "typescript": "^5.7.2",
