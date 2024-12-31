@@ -70,10 +70,11 @@ import LatestList from '@/components/LatestList.vue'
 
 .left {
   flex: 2;
+  max-width: 100%;
 }
 
 .right {
-  min-width: 360px;
   flex: 1;
+  min-width: 360px;
 }
 </style>
