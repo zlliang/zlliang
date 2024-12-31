@@ -63,22 +63,17 @@ import LatestList from '@/components/LatestList.vue'
 }
 
 .columns {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 36px;
 }
 
-@media (min-width: 768px) {
-  .columns {
-    display: flex;
-    gap: 0 36px;
-  }
+.left {
+  flex: 2;
+}
 
-  .left {
-    width: 320px;
-    flex-grow: 1;
-  }
-
-  .right {
-    width: 320px;
-  }
+.right {
+  min-width: 360px;
+  flex: 1;
 }
 </style>
