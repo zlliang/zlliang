@@ -75,6 +75,6 @@ import LatestList from '@/components/LatestList.vue'
 
 .right {
   flex: 1;
-  min-width: 360px;
+  min-width: 320px;
 }
 </style>
