@@ -56,26 +56,13 @@ const info = computed<FrontMatter & Post | null>(() => {
   background-color: var(--vp-c-bg-alt);
 }
 
-.title-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0 16px;
-}
-
 .title-container .title {
-  display: block;
   color: var(--vp-c-brand-1);
   font-weight: 600;
-  transition: color var(--transition-timing) var(--transition-duration);
-  width: 36rem;
 }
 
 .title-container .date {
-  flex-shrink: 0;
-  font-size: 0.875rem;
-  line-height: 2; /* Visually align with the title */
+  font-size: 0.75rem;
   color: var(--vp-c-text-3);
 }
 
