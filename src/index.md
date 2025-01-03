@@ -22,36 +22,9 @@ import LatestList from '@/components/LatestList.vue'
 
 </div>
 
-<div class="columns">
-
-<div class="left">
-
 ## 🍙 近期笔记
 
 <LatestList />
-
-</div>
-
-<div class="right">
-
-## 🐧 叽叽喳喳
-
-::: info 2024-12-31
-
-又是要给新的一年快乐插旗的日子啦！
-
-<img
-  src="./assets/images/cat-meme-b.jpg"
-  alt="猫 meme"
-  width="120px"
-  height="120px"
-/>
-
-:::
-
-</div>
-
-</div>
 
 <style scoped>
 .hero {
@@ -60,21 +33,5 @@ import LatestList from '@/components/LatestList.vue'
   align-items: center;
   justify-content: center;
   margin-top: 32px;
-}
-
-.columns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 36px;
-}
-
-.left {
-  flex: 2;
-  max-width: 100%;
-}
-
-.right {
-  flex: 1;
-  min-width: 320px;
 }
 </style>
