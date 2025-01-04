@@ -41,6 +41,10 @@ export const sidebar: DefaultTheme.Sidebar = {
           link: '/evolving-me/leaving-tencent',
         },
         {
+          text: '什么是 37signals',
+          link: '/evolving-me/what-is-37signals',
+        },
+        {
           text: '警惕“Work Life Balance”中的话语陷阱',
           link: '/evolving-me/the-trap-of-wlb',
         }
@@ -56,7 +60,7 @@ export const sidebar: DefaultTheme.Sidebar = {
       text: '笔记列表',
       items: [
         {
-          text: '如何将一个 JS object 复制为 plain object',
+          text: '如何将一个 JS Object 复制为 Plain Object',
           link: '/tech-notes/how-to-freeze-an-object-in-js'
         },
         {
@@ -64,8 +68,24 @@ export const sidebar: DefaultTheme.Sidebar = {
           link: '/tech-notes/quotes-in-shell-script',
         },
         {
-          text: '通配符（globbing）和正则表达式（regular expression）的异同',
+          text: 'Rust 社区两年以来的闹剧',
+          link: '/tech-notes/chaos-in-rust-community',
+        },
+        {
+          text: '通配符（Globbing）和正则表达式（Regular Expression）的异同',
           link: '/tech-notes/globbing-and-regex',
+        },
+        {
+          text: '一次无事生非的工具切换尝试',
+          link: '/tech-notes/giving-up-migrating-my-code-editor',
+        },
+        {
+          text: '从命令式（Imperative）到声明式（Declarative）',
+          link: '/tech-notes/from-imperative-to-declarative',
+        },
+        {
+          text: '编程中的性能损耗（Overhead）',
+          link: '/tech-notes/overhead-in-programming',
         },
         {
           text: '什么是 Advent of Code',
