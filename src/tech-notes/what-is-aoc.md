@@ -26,7 +26,7 @@ AoC 背后的组织者是美国纽约的程序员 Eric Wastl，平日也在公�
 ::: info 参考
 
 - [Advent of Code 官网](https://adventofcode.com/)
-- [AoC 的维基百科](https://en.wikipedia.org/wiki/Advent_of_Code)
+- [维基百科：Advent of Code](https://en.wikipedia.org/wiki/Advent_of_Code)
 - [麻省理工科技评论对 AoC 的报道](https://www.technologyreview.com/2021/12/17/1042483/puzzle-challenge-coding-christmas/)
 - [Hacker News 上 AoC 2023 热火朝天的讨论](https://news.ycombinator.com/item?id=38483271)
 
