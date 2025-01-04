@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { data as allPosts } from '@/data/all-posts.data'
+import { data as allPosts } from '@/data/posts.data'
 import { type FrontMatter, type Post } from '@/types/post'
 
 const {

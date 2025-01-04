@@ -8,6 +8,6 @@ export { data }
 export default createContentLoader('**/*.md', {
   transform: rawData => rawData
     .map(transformPost)
-    .sort(sortPost)
-    .filter(item => !item.frontmatter.hidden),
+    .filter(item => !item.frontmatter.hidden)
+    .sort(sortPost),
 })
