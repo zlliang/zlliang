@@ -1,6 +1,6 @@
 ---
 emoji: 🗒️
-title: 如何将一个 JS object 复制为 plain object
+title: 如何将一个 JS Object 复制为 Plain Object
 created: 2024-01-09
 summary: 也就是说，复制时去掉对象的实例方法，并将 getters 复制为固定的值。
 ---

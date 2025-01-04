@@ -1,6 +1,6 @@
 ---
 emoji: 🗒️
-title: 通配符（globbing）和正则表达式（regular expression）的异同
+title: 通配符（Globbing）和正则表达式（Regular Expression）的异同
 created: 2023-12-27
 summary: 之前一直没有仔细区分 shell 中使用的通配符和更高级的正则表达式之间的区别，以为前者是后者的子集。调查后发现，二者还是挺不一样的。
 ---
