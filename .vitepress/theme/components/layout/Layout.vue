@@ -30,7 +30,7 @@ const { frontmatter } = useData()
 <style scoped>
 .date {
   color: var(--vp-c-text-3);
-  font-size: 14px;
+  font-size: 0.875rem;
   margin-bottom: 1em;
 }
 </style>

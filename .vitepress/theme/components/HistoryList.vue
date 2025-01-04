@@ -2,10 +2,10 @@
 import { computed, ref } from 'vue'
 
 import PostLink from '@/components/PostLink.vue'
-import { data as historyPosts } from '@/data/history-posts.data'
+import { data as posts } from '@/data/posts.data'
 import { type Post } from '@/types/post'
 
-const list = ref(historyPosts)
+const list = ref(posts)
 const keyword = ref('')
 
 const searchResult = computed(() =>
