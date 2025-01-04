@@ -22,7 +22,7 @@ const list = ref(latestPosts)
   .latest-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    gap: 0 32px;
   }
 }
 </style>
