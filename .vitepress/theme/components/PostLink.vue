@@ -24,8 +24,12 @@ const info = computed<FrontMatter & Post | null>(() => {
       <div class="title">
         <span>{{ info.emoji ? `${info.emoji}&nbsp;` : '' }}{{ info.title }}</span>
       </div>
-      <div v-if="!hideDate && info.created" class="date">
-        {{ info.created }}
+      <div v-if="!hideDate && info.created" class="meta">
+        <span>{{ info.created }}</span>
+        <span v-if="info.updated">（持续更新中，最近更新时间：{{ info.updated }}）</span>
+      </div>
+      <div v-if="info.path" class="meta">
+        {{ info.path }}
       </div>
     </div>
     <div v-if="info.summary" class="summary">{{ info.summary }}</div>
@@ -61,7 +65,7 @@ const info = computed<FrontMatter & Post | null>(() => {
   font-weight: 600;
 }
 
-.title-container .date {
+.title-container .meta {
   font-size: 0.75rem;
   color: var(--vp-c-text-3);
 }
