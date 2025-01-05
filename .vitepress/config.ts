@@ -1,5 +1,6 @@
 import { URL, fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
+import tailwindcss from '@tailwindcss/vite'
 
 import { nav, sidebar } from '../src/data/nav'
 
@@ -112,6 +113,9 @@ export default defineConfig({
 
   // Vite
   vite: {
+    plugins: [
+      tailwindcss(),
+    ],
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./theme', import.meta.url)),

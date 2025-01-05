@@ -50,6 +50,15 @@ export const sidebar: DefaultTheme.Sidebar = {
         }
       ],
     },
+    {
+      text: '生活瞬间',
+      items: [
+        {
+          text: '我的买车故事',
+          link: '/evolving-me/sparkles/buying-a-car',
+        }
+      ],
+    }
   ],
   '/tech-notes/': [
     {
@@ -59,10 +68,6 @@ export const sidebar: DefaultTheme.Sidebar = {
     {
       text: '笔记列表',
       items: [
-        {
-          text: '如何将一个 JS Object 复制为 Plain Object',
-          link: '/tech-notes/how-to-freeze-an-object-in-js'
-        },
         {
           text: 'Shell 脚本中的单引号、引号和反引号',
           link: '/tech-notes/quotes-in-shell-script',
@@ -91,6 +96,15 @@ export const sidebar: DefaultTheme.Sidebar = {
           text: '什么是 Advent of Code',
           link: '/tech-notes/what-is-aoc',
         }
+      ],
+    },
+    {
+      text: 'Code Snippets',
+      items: [
+        {
+          text: 'JavaScript / TypeScript',
+          link: '/tech-notes/code-snippets/js',
+        },
       ],
     },
   ],

@@ -14,6 +14,7 @@ const { frontmatter } = useData()
     <template #doc-before>
       <div v-if="!frontmatter.hideDate && frontmatter.created" class="date">
         <span>{{ format(new Date(frontmatter.created), 'yyyy-MM-dd') }}</span>
+        <span v-if="frontmatter.updated">（持续更新中，最近更新时间：{{ format(new Date(frontmatter.updated), 'yyyy-MM-dd') }}）</span>
       </div>
       <div class="vp-doc">
         <h1 v-if="frontmatter.title" tabindex="-1">
