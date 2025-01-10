@@ -8,7 +8,6 @@ export function transformPost(item: ContentData): ContentData {
     frontmatter: {
       ...item.frontmatter,
       created: format(item.frontmatter.created || new Date(), 'yyyy-MM-dd'),
-      updated: item.frontmatter.updated ? format(item.frontmatter.updated, 'yyyy-MM-dd') : undefined,
     },
   }
 }

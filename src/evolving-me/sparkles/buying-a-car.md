@@ -6,11 +6,6 @@ path: Evolving Me / 生活瞬间
 summary: 四月，我买下了人生中第一辆汽车：Volvo XC40 Recharge
 ---
 
-<script setup>
-import TimeLine from '@/components/TimeLine.vue'
-import TimeLineItem from '@/components/TimeLineItem.vue'
-</script>
-
 “你咋不把这玩意搁后备箱啊！”去年冬天，我带家里的小猫去体检，打车回来的路上，司机看到了装在包里的猫，生气地说了这句话。现在想想，那应该就是我决定买辆车的瞬间。
 
 买车是我上学的时候从来不敢去想的事情，就连朋友开车接送我，我坐在那里都畏畏缩缩的。时间来到现在，我这个新手司机已经无事故驾驶 3000 公里。
