@@ -22,7 +22,23 @@ import PostList from '@/components/PostList.vue'
 
 </div>
 
-<PostList />
+<div class="columns">
+
+<div class="left">
+
+## 你好
+
+</div>
+
+<div class="right">
+
+## 🕗 近期笔记
+
+</div>
+
+</div>
+
+<!-- <PostList /> -->
 
 <style scoped>
 .hero {
@@ -31,5 +47,21 @@ import PostList from '@/components/PostList.vue'
   align-items: center;
   justify-content: center;
   margin-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .columns {
+    display: flex;
+    gap: 0 32px;
+  }
+
+  .left {
+    flex: 1;
+    min-width: 320px;
+  }
+
+  .right {
+    flex: 2;
+  }
 }
 </style>

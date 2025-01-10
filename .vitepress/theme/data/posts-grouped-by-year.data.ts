@@ -1,4 +1,4 @@
-import { type ContentData, createContentLoader } from 'vitepress'
+import { createContentLoader, type ContentData } from 'vitepress'
 import { groupBy } from 'lodash-es'
 import { getYear } from 'date-fns'
 

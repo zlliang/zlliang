@@ -5,7 +5,6 @@ export interface FrontMatter {
   title?: string
   summary?: string
   created?: Date
-  updated?: Date
   path?: string
   hidden?: boolean
 }

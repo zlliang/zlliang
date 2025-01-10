@@ -6,7 +6,6 @@ import { injectSpeedInsights } from '@vercel/speed-insights'
 import Layout from '@/components/layout/Layout.vue'
 
 import '@/styles/vars.css'
-import '@/styles/tailwind.css'
 import '@/styles/main.css'
 
 injectAnalytics()

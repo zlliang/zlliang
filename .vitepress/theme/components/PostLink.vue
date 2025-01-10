@@ -26,7 +26,6 @@ const info = computed<FrontMatter & Post | null>(() => {
       </div>
       <div v-if="!hideDate && info.created" class="meta">
         <span>{{ info.created }}</span>
-        <span v-if="info.updated">（持续更新中，最近更新时间：{{ info.updated }}）</span>
       </div>
       <div v-if="info.path" class="meta">
         {{ info.path }}
