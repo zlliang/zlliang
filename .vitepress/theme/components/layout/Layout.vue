@@ -16,12 +16,9 @@ const { frontmatter } = useData()
         <span>{{ format(new Date(frontmatter.created), 'yyyy-MM-dd') }}</span>
       </div>
       <div class="vp-doc">
-        <h1 v-if="frontmatter.title" tabindex="-1">
+        <h1 v-if="frontmatter.title" tabindex="-1" class="post-title">
           {{ frontmatter.emoji ? `${frontmatter.emoji}&nbsp;` : '' }}{{ frontmatter.title }}
         </h1>
-        <blockquote v-if="frontmatter.summary">
-          <p>{{ frontmatter.summary }}</p>
-        </blockquote>
       </div>
     </template>
   </DefaultLayout>
@@ -33,5 +30,9 @@ const { frontmatter } = useData()
   font-size: 0.875rem;
   font-weight: 400;
   margin-bottom: 1em;
+}
+
+.post-title {
+  margin-bottom: 48px;
 }
 </style>
