@@ -6,7 +6,7 @@ layout: home
 ---
 
 <script setup>
-import PostList from '@/components/PostList.vue'
+import RecentPosts from '@/components/RecentPosts.vue'
 </script>
 
 <div class="hero">
@@ -26,19 +26,19 @@ import PostList from '@/components/PostList.vue'
 
 <div class="left">
 
-## 你好
+## 🚧 施工中……
 
 </div>
 
 <div class="right">
 
-## 🕗 近期笔记
+## 🆕 近期笔记
+
+<RecentPosts />
 
 </div>
 
 </div>
-
-<!-- <PostList /> -->
 
 <style scoped>
 .hero {

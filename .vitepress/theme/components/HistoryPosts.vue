@@ -1,30 +1,45 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { groupBy } from 'lodash-es'
+import { getYear } from 'date-fns'
 
 import PostLink from '@/components/PostLink.vue'
 import { data as posts } from '@/data/posts.data'
+import { sortPost } from '@/data/utils'
 import { type Post } from '@/types/post'
 
 const list = ref(posts)
-const keyword = ref('')
 
-const searchResult = computed(() =>
+const keyword = ref('')
+const filtered = computed(() =>
   list.value.filter((item: Post) => item.frontmatter.title?.includes(keyword.value)),
 )
+
+const grouped = computed(() => {
+  const kv = groupBy(filtered.value, post => getYear(new Date(post.frontmatter.created)))
+  return Object.entries(kv)
+  .map(([year, posts]) => ({ year, posts: posts.sort(sortPost) }))
+  .sort((a, b) => Number(b.year) - Number(a.year))
+})
 </script>
 
 <template>
   <div>
     <div class="search-input">
       <span class="prepend">🔍</span>
-      <input v-model="keyword" placeholder="按标题搜索档案" class="input">
-      <span class="total">共 {{ searchResult.length }} 则</span>
+      <input v-model="keyword" placeholder="按标题搜索" class="input">
+      <span class="total">共 {{ filtered.length }} 则</span>
     </div>
-    <PostLink
-      v-for="item in searchResult"
-      :key="item.frontmatter.title"
-      :url="item.url"
-    />
+    <div v-for="group in grouped" :key="group.year">
+    <h2>🗓️ {{ group.year }}</h2>
+    <div class="post-list">
+      <PostLink
+        v-for="item in group.posts"
+        :key="item.url"
+        :post="item"
+      />
+    </div>
+  </div>
   </div>
 </template>
 
@@ -35,15 +50,15 @@ const searchResult = computed(() =>
   padding: 8px 24px;
   background-color: var(--vp-c-bg-alt);
   outline: 1px solid var(--vp-c-bg-alt);
-  transition-property: outline, box-shadow;
-  transition-timing-function: var(--transition-timing);
-  transition-duration: var(--transition-duration);
+  transition:
+    outline var(--transition-timing) var(--transition-duration),
+    box-shadow var(--transition-timing) var(--transition-duration);
 }
 
 @media (min-width: 640px) {
   .search-input {
-    margin: 32px -16px;
-    padding: 8px 16px;
+    margin: 32px -12px;
+    padding: 6px 12px;
     border-radius: var(--border-radius-large);
   }
 }

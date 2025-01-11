@@ -9,5 +9,6 @@ export default createContentLoader('**/*.md', {
   transform: rawData => rawData
     .map(transformPost)
     .filter(item => !item.frontmatter.hidden)
-    .sort(sortPost),
+    .sort(sortPost)
+    .slice(0, 10),
 })
