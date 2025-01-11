@@ -12,6 +12,7 @@ export default defineConfig({
   // Build
   lang: 'zh-CN',
   srcDir: './src',
+  cleanUrls: true,
   markdown: {
     theme: {
       light: 'github-light',
@@ -79,7 +80,7 @@ export default defineConfig({
           property: 'og:url',
           content: `https://zlliang.me/${pageData.relativePath}`
             .replace(/index\.md$/, '')
-            .replace(/\.md$/, '.html'),
+            .replace(/\.md$/, ''),
         },
       ],
       [
