@@ -8,7 +8,7 @@
 .link-button {
   display: block;
   margin: 0 -24px;
-  padding: 8px 24px;
+  padding: 12px 24px;
   text-decoration: none;
   cursor: pointer;
   transition:
@@ -18,8 +18,8 @@
 
 @media (min-width: 640px) {
   .link-button {
-    margin: 0 -12px;
-    padding: 8px 12px;
+    margin: 0 -16px;
+    padding: 12px 16px;
     border-radius: var(--border-radius-large);
   }
 }

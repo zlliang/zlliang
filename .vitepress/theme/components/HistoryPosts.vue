@@ -57,8 +57,8 @@ const grouped = computed(() => {
 
 @media (min-width: 640px) {
   .search-input {
-    margin: 32px -12px;
-    padding: 6px 12px;
+    margin: 32px -16px;
+    padding: 8px 16px;
     border-radius: var(--border-radius-large);
   }
 }
