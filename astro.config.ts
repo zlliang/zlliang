@@ -3,7 +3,7 @@ import unocss from 'unocss/astro'
 
 export default defineConfig({
   integrations: [
-    unocss({ configFile: 'uno.config.ts', injectReset: true }),
+    unocss({ injectReset: true }),
   ],
   markdown: {
     shikiConfig: {
