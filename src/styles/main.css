@@ -1,0 +1,97 @@
+/* Root */
+
+:root {
+  @apply text-sm sm:text-base text-slate-900 antialiased;
+}
+
+::selection {
+  @apply bg-sky-100;
+}
+
+/* Title */
+
+h2, h3, h4, h5, h6 {
+  @apply my-6 font-bold;
+}
+
+h2 {
+  @apply mt-12 text-xl;
+}
+
+/* Content */
+
+p {
+  @apply my-6 leading-8;
+}
+
+blockquote {
+  @apply pl-6 border-l-2 border-slate-200 text-slate-500;
+}
+
+a {
+  @apply text-sky-600 hover:text-sky-500 transition-color;
+}
+
+ul, ol {
+  @apply pl-8 leading-8 marker:text-slate-500;
+}
+
+ul {
+  @apply list-disc;
+}
+
+ul > li > ul, ol > li > ul {
+  @apply list-circle;
+}
+
+ol {
+  @apply list-decimal;
+}
+
+ul > li > ol, ol > li > ol {
+  @apply list-alpha;
+}
+
+hr {
+  @apply my-12 border-slate-200;
+}
+
+/* Code */
+
+code {
+  @apply px-[0.3em] border border-slate-200 text-sm;
+}
+
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
+  @apply text-[0.9em];
+}
+
+pre {
+  @apply px-4 py-3 border border-slate-200 text-sm;
+}
+
+pre code {
+  @apply p-0 border-none;
+}
+
+/* Table */
+
+table {
+  @apply border-collapse;
+}
+
+tr {
+  @apply border border-slate-200;
+}
+
+tr:nth-child(2n) {
+  @apply bg-slate-50;
+}
+
+th, td {
+  @apply px-2 border border-slate-200;
+}
+
+th {
+  @apply bg-slate-100 text-left;
+}
