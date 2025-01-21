@@ -15,7 +15,11 @@ h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  @apply mt-12 text-xl;
+  @apply mt-12 text-2xl;
+}
+
+h3 {
+  @apply mt-12 text-lg;
 }
 
 /* Content */
