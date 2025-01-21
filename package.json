@@ -1,23 +1,23 @@
 {
-  "name": "zlliang.me",
-  "type": "module",
+  "name": "astro-demo",
   "private": true,
-  "description": "My Personal website",
   "scripts": {
-    "dev": "vitepress dev .",
-    "build": "vitepress build ."
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "devDependencies": {
+  "dependencies": {
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^22.10.5",
+    "@types/node": "^22.10.7",
+    "@unocss/reset": "^65.4.2",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
-    "date-fns": "4.1.0",
+    "astro": "^5.1.7",
+    "date-fns": "^4.1.0",
     "lodash-es": "^4.17.21",
     "typescript": "^5.7.3",
-    "vercel": "^39.2.6",
-    "vite": "^6.0.7",
-    "vitepress": "1.5.0",
-    "vue": "^3.5.13"
+    "unocss": "^65.4.2",
+    "vercel": "^39.3.0"
   }
 }

@@ -1,9 +1,0 @@
-{
-  "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "baseUrl": "./",
-    "paths": { "@/*": ["theme/*"] }
-  },
-  "include": ["config.ts", "theme/**/*.ts", "theme/**/*.vue"],
-  "exclude": []
-}

@@ -1,5 +1,10 @@
-# Created by https://www.toptal.com/developers/gitignore/api/macos,linux,windows,visualstudiocode,node
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,linux,windows,visualstudiocode,node
+# Created by https://www.toptal.com/developers/gitignore/api/macos,linux,windows,visualstudiocode,node,astro
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,linux,windows,visualstudiocode,node,astro
+
+### Astro ###
+# Gitignore template for Astro projects
+# Ignore content collection generated files
+.astro
 
 ### Linux ###
 *~
@@ -23,8 +28,7 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
-
+Icon
 
 # Thumbnails
 ._*
@@ -234,9 +238,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,linux,windows,visualstudiocode,node
-
-
-# Special for this repo
-.vitepress/cache
-.vercel
+# End of https://www.toptal.com/developers/gitignore/api/macos,linux,windows,visualstudiocode,node,astro

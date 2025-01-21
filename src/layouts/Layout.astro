@@ -1,0 +1,56 @@
+---
+import { ClientRouter } from 'astro:transitions'
+
+import Analytics from '@vercel/analytics/astro'
+import SpeedInsights from '@vercel/speed-insights/astro'
+
+import '@/styles/main.css'
+
+interface Props {
+  title?: string
+}
+
+const siteTitle = '子龙的笔记本'
+const title = Astro.props.title ? `${Astro.props.title} - ${siteTitle}` : siteTitle
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN" transition:name="none">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!-- ClientRouter -->
+  <ClientRouter />
+
+  <!-- Vercel -->
+  <Analytics />
+  <SpeedInsights />
+
+  <!-- Title -->
+  <title>{title}</title>
+  <meta property="og:title" content={title} />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+  <div class="m-auto px-6 max-w-3xl">
+    <header class="flex justify-between items-center my-6">
+      <a href="/" class="flex items-center gap-2 text-slate-900 hover:text-slate-900 font-600 cursor-pointer">
+        <img src="/logo.png" alt="logo" class="w-6 h-6" />
+        <span>{siteTitle}</span>
+      </a>
+      <a href="/">首页</a>
+    </header>
+    <main class="my-8">
+      <slot />
+    </main>
+    <footer class="mt-16 mb-32" />
+  </div>
+</body>
+</html>
