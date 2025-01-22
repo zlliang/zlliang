@@ -36,6 +36,10 @@ a {
   @apply text-sky-600 hover:text-sky-500 transition-color;
 }
 
+b, strong {
+  @apply font-600;
+}
+
 blockquote {
   @apply pl-6 border-l-2 border-slate-200 text-slate-500;
 }
