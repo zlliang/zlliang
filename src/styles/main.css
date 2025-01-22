@@ -99,3 +99,13 @@ th, td {
 th {
   @apply bg-slate-100 text-left;
 }
+
+/* Overrides */
+
+.paragraph-block {
+  @apply space-y-5;
+}
+
+.paragraph-block p {
+  @apply my-0;
+}
