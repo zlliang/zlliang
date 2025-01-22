@@ -8,56 +8,52 @@
   @apply bg-sky-100;
 }
 
+body {
+  @apply leading-normal;
+}
+
 /* Title */
 
 h2, h3, h4, h5, h6 {
-  @apply my-6 font-bold;
+  @apply my-6 font-bold leading-normal;
 }
 
 h2 {
-  @apply mt-12 text-2xl;
+  @apply mt-10 text-2xl;
 }
 
 h3 {
-  @apply mt-12 text-lg;
+  @apply mt-10 text-lg;
 }
 
 /* Content */
 
 p {
-  @apply my-6 leading-8;
-}
-
-blockquote {
-  @apply pl-6 border-l-2 border-slate-200 text-slate-500;
+  @apply my-5 leading-7;
 }
 
 a {
   @apply text-sky-600 hover:text-sky-500 transition-color;
 }
 
+blockquote {
+  @apply pl-6 border-l-2 border-slate-200 text-slate-500;
+}
+
 ul, ol {
-  @apply pl-8 leading-8 marker:text-slate-500;
+  @apply pl-7 leading-7 marker:text-slate-500;
 }
 
 ul {
   @apply list-disc;
 }
 
-ul > li > ul, ol > li > ul {
-  @apply list-circle;
-}
-
 ol {
   @apply list-decimal;
 }
 
-ul > li > ol, ol > li > ol {
-  @apply list-alpha;
-}
-
 hr {
-  @apply my-10 border-slate-200;
+  @apply my-8 border-slate-200;
 }
 
 /* Code */
@@ -71,7 +67,7 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 }
 
 pre {
-  @apply px-4 py-3 border border-slate-200 text-sm;
+  @apply px-4 py-2 border border-slate-200 text-sm;
 }
 
 pre code {
@@ -81,7 +77,7 @@ pre code {
 /* Table */
 
 table {
-  @apply border-collapse;
+  @apply border-collapse mx-auto;
 }
 
 tr {
@@ -93,7 +89,7 @@ tr:nth-child(2n) {
 }
 
 th, td {
-  @apply px-2 border border-slate-200;
+  @apply px-3 py-1 border border-slate-200;
 }
 
 th {
