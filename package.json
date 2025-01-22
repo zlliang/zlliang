@@ -8,6 +8,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@iconify-json/lucide": "^1.2.24",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@types/lodash-es": "^4.17.12",

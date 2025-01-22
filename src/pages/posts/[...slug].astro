@@ -25,7 +25,7 @@ const { Content } = await render(post)
     <h1 class="text-3xl font-bold leading-normal">{post.data.title}</h1>
     <div class="mt-1 text-slate-500">
       <span>{format(post.data.created, 'yyyy 年 M 月 d 日')}</span>
-      {post.data.draft === true && <span>（草稿）</span>}
+      {post.data.draft === true && <span class="i-lucide-file-pen ml-1 text-slate-500"></span>}
     </div>
   </div>
   <Content />
