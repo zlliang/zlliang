@@ -1,14 +1,14 @@
 ---
-import { getCollection } from 'astro:content'
 import { groupBy } from 'lodash-es'
 import { getYear, format } from 'date-fns'
+import { getPosts } from '@/utils/posts'
 
 import Layout from '@/layouts/Layout.astro'
 import ImageSlide from '@/components/ImageSlide.astro'
 
 import welcome from '@/assets/images/welcome.gif'
 
-const posts = await getCollection('posts')
+const posts = await getPosts()
 const grouped = Object.entries(groupBy(posts, (post) => getYear(post.data.created)))
 	.map(([year, posts]) => ({ year, posts: posts.toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf()) }))
 	.toSorted((a, b) => Number(b.year) - Number(a.year))
@@ -35,7 +35,10 @@ const grouped = Object.entries(groupBy(posts, (post) => getYear(post.data.create
 			<div>
 				{posts.map((post) => (
 					<div class="my-2 flex justify-between gap-4">
-						<a href={`/posts/${post.id}`}>{post.data.title}</a>
+						<span>
+							<a href={`/posts/${post.id}`}>{post.data.title}</a>
+							{post.data.draft === true && <span class="text-slate-500">（草稿）</span>}
+						</span>
 						<span class="shrink-0 w-fit text-slate-500">{format(post.data.created, 'M 月 d 日')}</span>
 					</div>
 				))}
