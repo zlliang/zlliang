@@ -60,6 +60,10 @@ hr {
   @apply my-8 border-slate-200;
 }
 
+img {
+  @apply mx-auto;
+}
+
 /* Code */
 
 code {
@@ -97,7 +101,7 @@ th, td {
 }
 
 th {
-  @apply bg-slate-100 text-left;
+  @apply bg-slate-100;
 }
 
 /* Overrides */
