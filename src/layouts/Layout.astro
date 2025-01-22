@@ -43,6 +43,7 @@ const title = Astro.props.title ? `${Astro.props.title} - ${siteTitle}` : siteTi
 </head>
 <body>
   <div class="m-auto px-6 max-w-3xl">
+    <!-- Header -->
     <header class="flex justify-between items-center my-6">
       <a href="/" class="flex items-center gap-2 text-slate-900 hover:text-slate-900 cursor-pointer">
         <img src="/logo.png" alt="logo" class="w-6 h-6" />
@@ -50,10 +51,21 @@ const title = Astro.props.title ? `${Astro.props.title} - ${siteTitle}` : siteTi
       </a>
       <a href="/">首页</a>
     </header>
+
+    <!-- Main -->
     <main class="my-8">
       <slot />
     </main>
-    <footer class="mt-16 mb-32" />
+
+    <!-- Footer -->
+    <footer class="mt-32 mb-32 pt-2 border-t border-slate-200 text-sm text-center text-slate-400">
+      <span class="i-lucide-copyright scale-90 translate-y-[0.5px]" />
+      <span>2025</span>
+      <span class="i-lucide-dot" />
+      <span>梁子龙</span>
+      <span class="i-lucide-dot" />
+      <span>使用 <a href="https://astro.build" class="text-slate-400">Astro</a> 构建</span>
+    </footer>
   </div>
 </body>
 </html>
