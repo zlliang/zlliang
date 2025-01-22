@@ -45,6 +45,8 @@ import Splide from '@splidejs/splide'
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
 
 function init() {
+  if (!document.querySelector('.splide')) return
+  
   new Splide('.splide', {
     gap: '14px',
     type: 'loop',
