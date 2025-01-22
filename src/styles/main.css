@@ -57,7 +57,7 @@ ul > li > ol, ol > li > ol {
 }
 
 hr {
-  @apply my-12 border-slate-200;
+  @apply my-10 border-slate-200;
 }
 
 /* Code */
