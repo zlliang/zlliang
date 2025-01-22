@@ -5,6 +5,7 @@ import { getPosts } from '@/utils/posts'
 
 import Layout from '@/layouts/Layout.astro'
 import ImageSlide from '@/components/ImageSlide.astro'
+import DraftTag from '@/components/DraftTag.astro'
 import { Content as Bio } from '@/blocks/bio.md'
 
 import welcome from '@/assets/images/welcome.gif'
@@ -38,7 +39,7 @@ const grouped = Object.entries(groupBy(posts, (post) => getYear(post.data.create
 					<div class="my-1 flex justify-between gap-4">
 						<span>
 							<a href={`/posts/${post.id}`}>{post.data.title}</a>
-							{post.data.draft === true && <span class="i-lucide-file-pen ml-1 text-slate-500"></span>}
+							{post.data.draft === true && <DraftTag />}
 						</span>
 						<span class="shrink-0 w-fit text-slate-500">{format(post.data.created, 'M 月 d 日')}</span>
 					</div>
