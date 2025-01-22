@@ -22,7 +22,7 @@ const grouped = Object.entries(groupBy(posts, (post) => getYear(post.data.create
 
 	<!-- Profile -->
 	<div class="mb-16 py-4 space-y-4 bg-slate-50 border border-slate-200">
-		<div class="leading-8 px-4">
+		<div class="leading-7 px-4">
 			欢迎你！我是<strong>子龙</strong>，毕业于<a href="https://www.fudan.edu.cn/">复旦大学</a>数学专业，目前在<a href="https://bytedance.com">字节跳动</a>做 <a href="https://roadmap.sh/frontend">Web 前端开发</a>工作；同时，我也是<a href="https://baike.baidu.com/item/%E4%B8%8A%E6%B5%B7%E5%BD%A9%E8%99%B9%E5%AE%A4%E5%86%85%E5%90%88%E5%94%B1%E5%9B%A2">上海彩虹室内合唱团</a>男高声部的成员。这里是我的笔记本，我会写一些<strong>成长故事</strong>、<strong>生活感悟</strong>和<strong>技术收获</strong>，希望你喜欢！🎉
 		</div>
 		<ImageSlide />
@@ -34,7 +34,7 @@ const grouped = Object.entries(groupBy(posts, (post) => getYear(post.data.create
 			<div class="pb-1 mb-2 border-b border-slate-200 text-slate-500 text-sm">{year}</div>
 			<div>
 				{posts.map((post) => (
-					<div class="my-2 flex justify-between gap-4">
+					<div class="my-1 flex justify-between gap-4">
 						<span>
 							<a href={`/posts/${post.id}`}>{post.data.title}</a>
 							{post.data.draft === true && <span class="text-slate-500">（草稿）</span>}
