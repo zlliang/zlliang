@@ -1,12 +1,13 @@
 ---
 import { type GetStaticPaths, type InferGetStaticPropsType } from 'astro'
-import { getCollection, render } from 'astro:content'
+import { render } from 'astro:content'
 import { format } from 'date-fns'
+import { getPosts } from '@/utils/posts'
 
 import Layout from '@/layouts/Layout.astro'
 
 export const getStaticPaths = (async () => {
-  const posts = await getCollection('posts')
+  const posts = await getPosts()
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
@@ -22,7 +23,10 @@ const { Content } = await render(post)
 <Layout title={post.data.title}>
   <div class="mt-24 mb-12">
     <h1 class="text-3xl font-bold">{post.data.title}</h1>
-    <div class="mt-1 text-slate-500">{format(post.data.created, 'yyyy 年 M 月 d 日')}</div>
+    <div class="mt-1 text-slate-500">
+      <span>{format(post.data.created, 'yyyy 年 M 月 d 日')}</span>
+      {post.data.draft === true && <span>（草稿）</span>}
+    </div>
   </div>
   <Content />
 </Layout>
