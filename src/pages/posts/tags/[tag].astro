@@ -1,0 +1,36 @@
+---
+import { type GetStaticPaths, type InferGetStaticPropsType } from 'astro'
+import { getPosts, getTags } from '@/utils/posts'
+
+import Layout from '@/layouts/Layout.astro'
+import PostList from '@/components/PostList.astro'
+
+export const getStaticPaths = (async () => {
+  const posts = await getPosts()
+  const tags = getTags(posts)
+  
+  return tags.map((tag) => ({
+    params: { tag },
+    props: { tag, posts: posts.filter((post) => post.data.tags?.includes(tag)) },
+  }))
+}) satisfies GetStaticPaths
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>
+
+const { tag, posts } = Astro.props
+
+const title = `关于「${tag}」的文章`
+---
+
+<Layout title={title}>
+  <!-- Title -->
+  <div class="mt-24 mb-12">
+    <h1 class="text-3xl font-bold">{title}</h1>
+    <div class="mt-2 text-slate-500">
+      共 {posts.length} 篇
+    </div>
+  </div>
+
+  <!-- Posts -->
+  <PostList posts={posts} showTags={false} />
+</Layout>

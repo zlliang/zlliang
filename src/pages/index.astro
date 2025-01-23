@@ -1,17 +1,17 @@
 ---
-import { format } from 'date-fns'
-import { getGroupedPosts } from '@/utils/posts'
+import { getPosts } from '@/utils/posts'
 
 import Layout from '@/layouts/Layout.astro'
 import ImageSlide from '@/components/ImageSlide.astro'
-import DraftTag from '@/components/DraftTag.astro'
-import NewTag from '@/components/NewTag.astro'
+
+import PostTag from '@/components/PostTag.astro'
 import LinkTag from '@/components/LinkTag.astro'
 import { Content as Bio } from '@/fragments/bio.md'
 
 import welcome from '@/assets/images/welcome.gif'
+import PostList from '@/components/PostList.astro'
 
-const groups = await getGroupedPosts()
+const posts = await getPosts()
 ---
 
 <Layout>
@@ -30,25 +30,7 @@ const groups = await getGroupedPosts()
 		</div>
 		
 		<!-- Posts -->
-		<div>
-			{groups.map(({ year, posts }) => (
-				<div class="my-8">
-					<div class="pb-1 mb-2 border-b border-slate-200 text-slate-500 text-sm">{year}</div>
-					<div>
-						{posts.map((post) => (
-							<div class="my-1 flex justify-between gap-4">
-								<span>
-									<a href={`/posts/${post.id}`}>{post.data.title}</a>
-									{post.data.new === true && <NewTag />}
-									{post.data.draft === true && <DraftTag />}
-								</span>
-								<span class="shrink-0 w-fit text-slate-500">{format(post.data.created, 'M 月 d 日')}</span>
-							</div>
-						))}
-					</div>
-				</div>
-			))}
-		</div>
+		<PostList posts={posts} />
 
 		<!-- SNS -->
 		<div>
