@@ -1,7 +1,6 @@
 ---
-import { groupBy } from 'lodash-es'
-import { getYear, format } from 'date-fns'
-import { getPosts } from '@/utils/posts'
+import { format } from 'date-fns'
+import { getGroupedPosts } from '@/utils/posts'
 
 import Layout from '@/layouts/Layout.astro'
 import ImageSlide from '@/components/ImageSlide.astro'
@@ -12,10 +11,7 @@ import { Content as Bio } from '@/fragments/bio.md'
 
 import welcome from '@/assets/images/welcome.gif'
 
-const posts = await getPosts()
-const grouped = Object.entries(groupBy(posts, (post) => getYear(post.data.created)))
-	.map(([year, posts]) => ({ year, posts: posts.toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf()) }))
-	.toSorted((a, b) => Number(b.year) - Number(a.year))
+const groups = await getGroupedPosts()
 ---
 
 <Layout>
@@ -35,7 +31,7 @@ const grouped = Object.entries(groupBy(posts, (post) => getYear(post.data.create
 		
 		<!-- Posts -->
 		<div>
-			{grouped.map(({ year, posts }) => (
+			{groups.map(({ year, posts }) => (
 				<div class="my-8">
 					<div class="pb-1 mb-2 border-b border-slate-200 text-slate-500 text-sm">{year}</div>
 					<div>
