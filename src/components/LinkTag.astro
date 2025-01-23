@@ -1,4 +1,6 @@
 ---
+import ExternalLink from '@/components/ExternalLink.astro'
+
 interface Props {
   href: string
   icon: string
@@ -7,7 +9,7 @@ interface Props {
 const { href, icon } = Astro.props
 ---
 
-<a href={href} class="inline-block px-1 py-0.5 border border-slate-200 hover:border-sky-300 text-sm text-slate-500 hover:text-sky-500 transition-colors">
+<ExternalLink href={href} class="inline-block px-1 py-0.5 border border-slate-200 hover:border-sky-300 text-sm text-slate-500 hover:text-sky-500 transition-colors">
   <span class={icon} />
   <span><slot /></span>
-</a>
+</>
