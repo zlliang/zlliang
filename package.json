@@ -20,6 +20,7 @@
     "astro": "^5.1.8",
     "date-fns": "^4.1.0",
     "lodash-es": "^4.17.21",
+    "rehype-external-links": "^3.0.0",
     "typescript": "^5.7.3",
     "unocss": "^65.4.2",
     "vercel": "^39.3.0"
