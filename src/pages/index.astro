@@ -7,7 +7,8 @@ import Layout from '@/layouts/Layout.astro'
 import ImageSlide from '@/components/ImageSlide.astro'
 import DraftTag from '@/components/DraftTag.astro'
 import NewTag from '@/components/NewTag.astro'
-import { Content as Bio } from '@/blocks/bio.md'
+import LinkTag from '@/components/LinkTag.astro'
+import { Content as Bio } from '@/fragments/bio.md'
 
 import welcome from '@/assets/images/welcome.gif'
 
@@ -18,35 +19,49 @@ const grouped = Object.entries(groupBy(posts, (post) => getYear(post.data.create
 ---
 
 <Layout>
-	<!-- Welcome -->
-	<div class="flex flex-col items-center gap-4 my-16">
-		<img src={welcome.src} alt="Welcome" width="140" />
-	</div>
-
-	<!-- Profile -->
-	<div class="card mb-16">
-		<Bio />
-		<div class="mx--4">
-			<ImageSlide />
+	<div class="space-y-16">
+		<!-- Welcome -->
+		<div class="flex flex-col items-center gap-4">
+			<img src={welcome.src} alt="Welcome" width="140" />
 		</div>
-	</div>
-	
-	<!-- Posts -->
-	{grouped.map(({ year, posts }) => (
-		<div class="my-8">
-			<div class="pb-1 mb-2 border-b border-slate-200 text-slate-500 text-sm">{year}</div>
-			<div>
-				{posts.map((post) => (
-					<div class="my-1 flex justify-between gap-4">
-						<span>
-							<a href={`/posts/${post.id}`}>{post.data.title}</a>
-							{post.data.new === true && <NewTag />}
-							{post.data.draft === true && <DraftTag />}
-						</span>
-						<span class="shrink-0 w-fit text-slate-500">{format(post.data.created, 'M 月 d 日')}</span>
-					</div>
-				))}
+
+		<!-- Profile -->
+		<div class="card">
+			<Bio />
+			<div class="mx--4">
+				<ImageSlide />
 			</div>
 		</div>
-	))}
+		
+		<!-- Posts -->
+		<div>
+			{grouped.map(({ year, posts }) => (
+				<div class="my-8">
+					<div class="pb-1 mb-2 border-b border-slate-200 text-slate-500 text-sm">{year}</div>
+					<div>
+						{posts.map((post) => (
+							<div class="my-1 flex justify-between gap-4">
+								<span>
+									<a href={`/posts/${post.id}`}>{post.data.title}</a>
+									{post.data.new === true && <NewTag />}
+									{post.data.draft === true && <DraftTag />}
+								</span>
+								<span class="shrink-0 w-fit text-slate-500">{format(post.data.created, 'M 月 d 日')}</span>
+							</div>
+						))}
+					</div>
+				</div>
+			))}
+		</div>
+
+		<!-- SNS -->
+		<div>
+			<div class="pb-1 mb-2 border-b border-slate-200 text-slate-500 text-sm">我的社交媒体</div>
+			<div class="inline-flex flex-wrap gap-2">
+				<LinkTag href="https://github.com/zlliang" icon="i-simple-icons-github">GitHub</LinkTag>
+				<LinkTag href="https://space.bilibili.com/30470407" icon="i-simple-icons-bilibili">哔哩哔哩</LinkTag>
+				<LinkTag href="https://www.xiaohongshu.com/user/profile/635e1b13000000001901eabc" icon="i-simple-icons-xiaohongshu">小红书</LinkTag>
+			</div>
+		</div>
+	</div>
 </Layout>
