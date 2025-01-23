@@ -9,19 +9,27 @@ import DraftTag from '@/components/DraftTag.astro'
 
 export const getStaticPaths = (async () => {
   const posts = await getPosts()
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }))
+  const length = posts.length
+  
+  return posts.map((post, index) => {
+    const next = index > 0 ? posts[index - 1] : null
+    const previous = index < length - 1 ? posts[index + 1] : null
+
+    return {
+      params: { slug: post.id },
+      props: { post, next, previous },
+    }
+  })
 }) satisfies GetStaticPaths
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
-const { post } = Astro.props
+const { post, next, previous } = Astro.props
 const { Content } = await render(post)
 ---
 
 <Layout title={post.data.title}>
+  <!-- Title -->
   <div class="mt-24 mb-12">
     <h1 class="text-3xl font-bold leading-normal">{post.data.title}</h1>
     <div class="mt-1 text-slate-500">
@@ -29,5 +37,37 @@ const { Content } = await render(post)
       {post.data.draft === true && <DraftTag />}
     </div>
   </div>
+  
+  <!-- Content -->
   <Content />
+
+  <!-- Links to next and previous posts -->
+  {(next || previous) && (
+    <div class="mt-16 grid grid-cols-2">
+      {next && (
+        <div class={`col-start-1 pr-4 text-slate-500 ${previous ? '' : 'border-r border-slate-200'}`}>
+          <div class="text-sm">
+            <span>下一则</span>
+            <span class="i-lucide-dot" />
+            <span>{format(next.data.created, 'yyyy 年 M 月 d 日')}</span>
+          </div>
+          <a href={`/posts/${next.id}`} class="block mt-1">
+            {next.data.title}
+          </a>
+        </div>
+      )}
+      {previous && (
+        <div class="col-start-2 pl-4 border-l border-slate-200 text-slate-500 text-right">
+          <div class="text-sm">
+            <span>{format(previous.data.created, 'yyyy 年 M 月 d 日')}</span>
+            <span class="i-lucide-dot" />
+            <span>上一则</span>
+          </div>
+          <a href={`/posts/${previous.id}`} class="block mt-1">
+            {previous.data.title}
+          </a>
+        </div>
+      )}
+    </div>
+  )}
 </Layout>
