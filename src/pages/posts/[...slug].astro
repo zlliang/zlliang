@@ -5,6 +5,7 @@ import { format } from 'date-fns'
 import { getPosts } from '@/utils/posts'
 
 import Layout from '@/layouts/Layout.astro'
+import Title from '@/components/Title.astro'
 import LinkTag from '@/components/LinkTag.astro'
 import DraftTag from '@/components/DraftTag.astro'
 
@@ -31,9 +32,9 @@ const { Content } = await render(post)
 
 <Layout title={post.data.title}>
   <!-- Title -->
-  <div class="mt-16 mb-12">
-    <h1 class="text-3xl font-bold">{post.data.title}</h1>
-    <div class="mt-2 text-slate-500">
+  <Title>
+    <Fragment>{post.data.title}</Fragment>
+    <Fragment slot="sub-title">
       <span>{format(post.data.created, 'yyyy 年 M 月 d 日')}</span>
       <span class="inline-flex gap-2 ml-2">
         {post.data.tags?.map((tag) => (
@@ -41,8 +42,8 @@ const { Content } = await render(post)
         ))}
         {post.data.draft === true && <DraftTag />}
       </span>
-    </div>
-  </div>
+    </Fragment>
+  </Title>
   
   <!-- Content -->
   <Content />
