@@ -51,7 +51,7 @@ const { Content } = await render(post)
   {(next || previous) && (
     <div class="mt-16 grid grid-cols-2">
       {next && (
-        <div class={`col-start-1 pr-4 text-slate-500 ${previous ? '' : 'border-r border-slate-200'}`}>
+        <div class:list={['col-start-1 pr-4 text-slate-500', !previous && 'border-r border-slate-200']}>
           <div class="text-sm">
             <span>下一篇</span>
             <span class="i-lucide-dot" />
