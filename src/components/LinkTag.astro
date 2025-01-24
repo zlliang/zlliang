@@ -1,5 +1,5 @@
 ---
-import ExternalLink from '@/components/ExternalLink.astro'
+import Link from '@/components/Link.astro'
 
 interface Props {
   href: string
@@ -9,15 +9,12 @@ interface Props {
 }
 
 const { href, icon, size = 'xs', inline = false } = Astro.props
-
-const isExternal = href.startsWith('http') || href.startsWith('//')
-const Link = isExternal ? ExternalLink : 'a'
 ---
 
 <Link
   href={href}
-  class:list={['inline-block px-1 py-0.5 space-x-1 border border-slate-200 hover:border-sky-300 text-slate-500 hover:text-sky-500 transition-colors', `text-${size}`, inline && 'translate-y-[-1px]']}
+  icon={icon}
+  class:list={['inline-block px-1 py-0.5 border border-slate-200 hover:border-sky-300 text-slate-500 hover:text-sky-500 transition-colors', `text-${size}`, inline && 'translate-y-[-1px]']}
 >
-  {icon && <span class={icon} />}
-  <span><slot /></span>
+  <slot />
 </Link>

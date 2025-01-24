@@ -1,14 +1,18 @@
 ---
 import { siteTitle } from '@/utils/site'
+
+import Link from '@/components/Link.astro'
 ---
 
 <header class="flex justify-between items-center h-16">
   <div class="flex items-center gap-2">
-    <a href="/" class="flex items-center gap-2 text-slate-900 hover:text-slate-900">
+    <Link href="/" class="flex items-center gap-2 text-slate-900 hover:text-slate-900">
       <img src="/logo.png" alt="logo" class="w-6 h-6" />
       <strong>{siteTitle}</strong>
-    </a>
+    </Link>
     <slot name="suffix" />
   </div>
-  <a href="/">首页</a>
+  <div class="flex items-center gap-4">
+    <Link href="/">首页</Link>
+  </div>
 </header>
