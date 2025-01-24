@@ -41,7 +41,7 @@ const { Content } = await render(post)
         {post.data.tags?.map((tag) => (
           <LinkTag href={`/posts/tags/${tag}`} inline>{tag}</LinkTag>
         ))}
-        {post.data.draft === true && <DraftTag />}
+        {post.data.draft && <DraftTag />}
       </span>
     </Fragment>
   </Title>

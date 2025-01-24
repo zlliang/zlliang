@@ -40,8 +40,8 @@ const tags = getTags(posts)
 					<div class="my-1 flex justify-between gap-4">
 						<span>
 							<Link href={`/posts/${post.id}`}>{post.data.title}</Link>
-							{post.data.new === true && <NewTag class="ml-1" />}
-							{post.data.draft === true && <DraftTag class="ml-1" />}
+							{post.data.new && <NewTag class="ml-1" />}
+							{post.data.draft && <DraftTag class="ml-1" />}
 						</span>
 						<span class="shrink-0 w-fit text-slate-500">
 							{showTags && post.data.tags && post.data.tags.length > 0 && (
