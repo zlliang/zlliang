@@ -3,6 +3,7 @@ import { type GetStaticPaths, type InferGetStaticPropsType } from 'astro'
 import { getPosts, getTags } from '@/utils/posts'
 
 import Layout from '@/layouts/Layout.astro'
+import Title from '@/components/Title.astro'
 import PostList from '@/components/PostList.astro'
 
 export const getStaticPaths = (async () => {
@@ -24,12 +25,10 @@ const title = `关于「${tag}」的文章`
 
 <Layout title={title}>
   <!-- Title -->
-  <div class="mt-24 mb-12">
-    <h1 class="text-3xl font-bold">{title}</h1>
-    <div class="mt-2 text-slate-500">
-      共 {posts.length} 篇
-    </div>
-  </div>
+  <Title>
+    <Fragment>{title}</Fragment>
+    <Fragment slot="sub-title">共 {posts.length} 篇</Fragment>
+  </Title>
 
   <!-- Posts -->
   <PostList posts={posts} showTags={false} />

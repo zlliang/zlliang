@@ -1,0 +1,8 @@
+<div class="mt-16 mb-12">
+  <h1 class="text-3xl font-bold"><slot /></h1>
+  {Astro.slots.has('sub-title') && (
+    <div class="mt-2 text-slate-500">
+      <slot name="sub-title" />
+    </div>
+  )}
+</div>
