@@ -2,17 +2,20 @@
 import { ClientRouter } from 'astro:transitions'
 import Analytics from '@vercel/analytics/astro'
 import SpeedInsights from '@vercel/speed-insights/astro'
+import { siteTitle, getTitle } from '@/utils/site'
 
-import ExternalLink from '@/components/ExternalLink.astro'
+import Header from '@/layouts/Header.astro'
+import Footer from '@/layouts/Footer.astro'
 
 import '@/styles/main.css'
 
 interface Props {
   title?: string
+  fullscreen?: boolean
 }
 
-const siteTitle = '子龙的笔记本'
-const title = Astro.props.title ? `${Astro.props.title} - ${siteTitle}` : siteTitle
+const title = getTitle(Astro.props.title)
+const { fullscreen = false } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -43,29 +46,16 @@ const title = Astro.props.title ? `${Astro.props.title} - ${siteTitle}` : siteTi
   <title>{title}</title>
 </head>
 <body>
-  <div class="m-auto px-6 max-w-3xl">
-    <!-- Header -->
-    <header class="flex justify-between items-center my-6">
-      <a href="/" class="flex items-center gap-2 text-slate-900 hover:text-slate-900">
-        <img src="/logo.png" alt="logo" class="w-6 h-6" />
-        <strong>{siteTitle}</strong>
-      </a>
-      <a href="/">首页</a>
-    </header>
-
-    <!-- Main -->
-    <main class="my-8">
+  <div class:list={['flex flex-col m-auto px-6 min-h-100dvh', !fullscreen && 'max-w-3xl']}>
+    <Header>
+      <slot name="header-suffix" slot="suffix" />
+    </Header>
+    <main class="flex-1 relative">
       <slot />
     </main>
-
-    <!-- Footer -->
-    <footer class="mt-24 mb-16 pt-2 border-t border-slate-200 text-sm text-center text-slate-400">
-      <span>2025</span>
-      <span class="i-lucide-copyright scale-90 translate-y-[0.5px]" />
-      <span>梁子龙</span>
-      <span class="i-lucide-dot" />
-      <span>使用 <ExternalLink href="https://astro.build" class="text-slate-400">Astro</ExternalLink> 构建</span>
-    </footer>
+    <slot name="footer">
+      <Footer />
+    </slot>
   </div>
 </body>
 </html>
