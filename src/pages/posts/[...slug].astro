@@ -8,6 +8,7 @@ import Layout from '@/layouts/Layout.astro'
 import Title from '@/components/Title.astro'
 import LinkTag from '@/components/LinkTag.astro'
 import DraftTag from '@/components/DraftTag.astro'
+import Link from '@/components/Link.astro'
 
 export const getStaticPaths = (async () => {
   const posts = await getPosts()
@@ -58,9 +59,9 @@ const { Content } = await render(post)
             <span class="i-lucide-dot" />
             <span>{format(next.data.created, 'yyyy 年 M 月 d 日')}</span>
           </div>
-          <a href={`/posts/${next.id}`} class="block mt-1">
+          <Link href={`/posts/${next.id}`} class="block mt-1">
             {next.data.title}
-          </a>
+          </Link>
         </div>
       )}
       {previous && (
@@ -70,9 +71,9 @@ const { Content } = await render(post)
             <span class="i-lucide-dot" />
             <span>上一篇</span>
           </div>
-          <a href={`/posts/${previous.id}`} class="block mt-1">
+          <Link href={`/posts/${previous.id}`} class="block mt-1">
             {previous.data.title}
-          </a>
+          </Link>
         </div>
       )}
     </div>
