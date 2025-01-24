@@ -1,4 +1,12 @@
-<span class="inline-block ml-1 px-1 py-0.5 border border-amber-300 bg-amber-50 text-xs text-amber-500 translate-y-[-1px]">
+---
+interface Props {
+  class?: string
+}
+
+const { class: classNames } = Astro.props
+---
+
+<span class:list={['inline-block px-1 py-0.5 border border-amber-300 bg-amber-50 text-xs text-amber-500 translate-y-[-1px]', classNames]}>
   <span class="i-lucide-sparkles" />
   <span>新作</span>
 </span>
