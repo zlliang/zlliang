@@ -15,7 +15,7 @@ body {
 /* Title */
 
 h2, h3, h4, h5, h6 {
-  @apply my-6 font-bold;
+  @apply my-6 font-600;
 }
 
 h2 {
