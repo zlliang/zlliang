@@ -35,15 +35,13 @@ const { Content } = await render(post)
   <!-- Title -->
   <Title>
     <Fragment>{post.data.title}</Fragment>
-    <Fragment slot="sub-title">
+    <span slot="sub-title" class="flex flex-wrap gap-2">
       <span>{format(post.data.created, 'yyyy 年 M 月 d 日')}</span>
-      <span class="inline-flex gap-2 ml-2">
-        {post.data.tags?.map((tag) => (
-          <LinkTag href={`/posts/tags/${tag}`} inline>{tag}</LinkTag>
-        ))}
-        {post.data.draft && <DraftTag />}
-      </span>
-    </Fragment>
+      {post.data.tags?.map((tag) => (
+        <LinkTag href={`/posts/tags/${tag}`} inline>{tag}</LinkTag>
+      ))}
+      {post.data.draft && <DraftTag />}
+    </span>
   </Title>
   
   <!-- Content -->
