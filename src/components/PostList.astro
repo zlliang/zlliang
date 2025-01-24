@@ -5,7 +5,7 @@ import { groupByYear, getTags } from '@/utils/posts'
 
 import NewTag from '@/components/NewTag.astro'
 import DraftTag from '@/components/DraftTag.astro'
-import PostTag from '@/components/PostTag.astro'
+import LinkTag from '@/components/LinkTag.astro'
 
 interface Props {
   posts: CollectionEntry<'posts'>[]
@@ -24,7 +24,7 @@ const tags = getTags(posts)
 			<div class="pb-1 mb-2 border-b border-slate-200 text-slate-500 text-sm">全部标签</div>
 			<div class="inline-flex flex-wrap gap-2">
 				{tags.map((tag) => (
-					<PostTag href={`/posts/tags/${tag}`}>{tag}</PostTag>
+					<LinkTag href={`/posts/tags/${tag}`} inline>{tag}</LinkTag>
 				))}
 			</div>
 		</div> 
@@ -46,7 +46,7 @@ const tags = getTags(posts)
 							{showTags && post.data.tags && post.data.tags.length > 0 && (
 								<span class="inline-flex gap-2 mr-2">
 									{post.data.tags.map((tag) => (
-										<PostTag href={`/posts/tags/${tag}`}>{tag}</PostTag>
+										<LinkTag href={`/posts/tags/${tag}`} inline>{tag}</LinkTag>
 									))}
 								</span>
 							)}

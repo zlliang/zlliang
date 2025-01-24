@@ -1,0 +1,14 @@
+---
+import { siteTitle } from '@/utils/site'
+---
+
+<header class="flex justify-between items-center h-16">
+  <div class="flex items-center gap-2">
+    <a href="/" class="flex items-center gap-2 text-slate-900 hover:text-slate-900">
+      <img src="/logo.png" alt="logo" class="w-6 h-6" />
+      <strong>{siteTitle}</strong>
+    </a>
+    <slot name="suffix" />
+  </div>
+  <a href="/">首页</a>
+</header>

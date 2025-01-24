@@ -3,13 +3,21 @@ import ExternalLink from '@/components/ExternalLink.astro'
 
 interface Props {
   href: string
-  icon: string
+  icon?: string
+  size?: 'xs' | 'sm'
+  inline?: boolean
 }
 
-const { href, icon } = Astro.props
+const { href, icon, size = 'xs', inline = false } = Astro.props
+
+const isExternal = href.startsWith('http') || href.startsWith('//')
+const Link = isExternal ? ExternalLink : 'a'
 ---
 
-<ExternalLink href={href} class="inline-block px-1 py-0.5 border border-slate-200 hover:border-sky-300 text-sm text-slate-500 hover:text-sky-500 transition-colors">
-  <span class={icon} />
+<Link
+  href={href}
+  class:list={['inline-block px-1 py-0.5 space-x-1 border border-slate-200 hover:border-sky-300 text-slate-500 hover:text-sky-500 transition-colors', `text-${size}`, inline && 'translate-y-[-1px]']}
+>
+  {icon && <span class={icon} />}
   <span><slot /></span>
-</ExternalLink>
+</Link>
