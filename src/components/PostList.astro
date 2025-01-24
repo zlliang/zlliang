@@ -23,7 +23,7 @@ const tags = getTags(posts)
 	{showTags && tags.length > 0 && (
 		<div class="my-8">
 			<div class="pb-1 mb-2 border-b border-slate-200 text-slate-500 text-sm">全部标签</div>
-			<div class="inline-flex flex-wrap gap-2">
+			<div class="flex flex-wrap gap-2">
 				{tags.map((tag) => (
 					<LinkTag href={`/posts/tags/${tag}`}>{tag}</LinkTag>
 				))}
