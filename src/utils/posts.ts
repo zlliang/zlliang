@@ -4,7 +4,7 @@ import { getYear } from 'date-fns'
 
 /** All posts sorted by created dates */
 export async function getPosts() {
-  const collection = await getCollection('posts', ({ data }) => import.meta.env.PROD ? data.draft !== true : true)
+  const collection = await getCollection('posts', ({ data }) => import.meta.env.PROD ? !data.draft : true)
   const posts = collection.toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf())
 
   return posts
