@@ -52,8 +52,25 @@ ul {
   @apply list-disc;
 }
 
+ul ul, ol ul {
+  @apply list-circle;
+}
+
+ul ul ul, ol ul ul, ul ol ul, ol ol ul {
+  @apply list-square;
+}
+
+
 ol {
   @apply list-decimal;
+}
+
+ol ol, ul ol {
+  @apply list-roman;
+}
+
+ol ol ol, ul ol ol, ol ul ol, ul ul ol {
+  @apply list-alpha;
 }
 
 hr {
