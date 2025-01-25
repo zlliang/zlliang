@@ -75,7 +75,7 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 }
 
 pre {
-  @apply my-5 px-4 py-2 border border-slate-200 text-sm;
+  @apply my-5 px-4 py-3 border border-slate-200 text-sm;
 }
 
 pre code {
