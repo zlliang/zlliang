@@ -1,12 +1,11 @@
 ---
 interface Props {
-  href: string
-  icon?: string
+  href?: string
   class?: string
 }
 
-const { href, icon, class: classNames } = Astro.props
-const external = href.startsWith('http') || href.startsWith('//')
+const { href, class: classNames } = Astro.props
+const external = href?.startsWith('http') || href?.startsWith('//')
 ---
 
 <a
@@ -14,6 +13,5 @@ const external = href.startsWith('http') || href.startsWith('//')
   class:list={classNames}
   {...(external ? { target: '_blank', rel: 'nofollow noopener noreferrer'} : {})}
 >
-  {icon && <span class={icon} />}
   <slot />
 </a>

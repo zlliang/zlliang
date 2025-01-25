@@ -1,0 +1,32 @@
+---
+import Link from '@/components/Link.astro'
+
+interface Props {
+  href?: string
+  icon?: string
+  color?: 'slate' | 'amber' | 'rose'
+  class?: string
+}
+
+const { href, icon, color = 'slate', class: classNames } = Astro.props
+
+const Component = href ? Link : 'span'
+const colorClassNames: Record<NonNullable<Props['color']>, string> = {
+  slate: 'border-slate-200 text-slate-500',
+  amber: 'bg-amber-50 border-amber-200 text-amber-500',
+  rose: 'bg-rose-50 border-rose-200 text-rose-500',
+}
+---
+
+<Component
+  href={href}
+  class:list={[
+    'inline-block px-1 py-0.3 border text-sm transition-colors',
+    href && 'hover:bg-sky-50 hover:border-sky-200 hover:text-sky-500',
+    colorClassNames[color],
+    classNames,
+  ]}
+>
+  {icon && <span class:list={[icon, 'mr-1']} />}
+  <slot />
+</Component>
