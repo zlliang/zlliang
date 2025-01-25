@@ -7,7 +7,7 @@ const entries = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images
 const images =  Object.values(entries).map((entry) => entry.default)
 ---
 
-<div class="select-none pointer-events-none">
+<div class="select-none pointer-events-none mx--4">
   <div class="splide">
     <div class="splide__track">
       <ul class="splide__list">
@@ -29,7 +29,7 @@ function init() {
   if (!document.querySelector('.splide')) return
   
   new Splide('.splide', {
-    gap: '14px',
+    gap: '0.75rem',
     type: 'loop',
     autoWidth: true,
     arrows: false,
