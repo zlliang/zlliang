@@ -4,7 +4,7 @@ import { getPosts } from '@/utils/posts'
 import Layout from '@/layouts/Layout.astro'
 import ImageSlide from '@/components/ImageSlide.astro'
 
-import LinkTag from '@/components/LinkTag.astro'
+import Tag from '@/components/Tag.astro'
 import { Content as Bio } from '@/fragments/bio.md'
 
 import welcome from '@/assets/images/welcome.gif'
@@ -31,10 +31,10 @@ const posts = await getPosts()
 		<div>
 			<div class="pb-1 mb-2 border-b border-slate-200 text-slate-500 text-sm">我的社交媒体</div>
 			<div class="inline-flex flex-wrap gap-2">
-				<LinkTag href="https://github.com/zlliang" icon="i-simple-icons-github">GitHub</LinkTag>
-				<LinkTag href="https://space.bilibili.com/30470407" icon="i-simple-icons-bilibili">哔哩哔哩</LinkTag>
-				<LinkTag href="https://www.xiaohongshu.com/user/profile/635e1b13000000001901eabc" icon="i-simple-icons-xiaohongshu">小红书</LinkTag>
-				<LinkTag href="https://www.douban.com/people/zlliang96/" icon="i-simple-icons-douban">豆瓣</LinkTag>
+				<Tag href="https://github.com/zlliang" icon="i-simple-icons-github">GitHub</Tag>
+				<Tag href="https://space.bilibili.com/30470407" icon="i-simple-icons-bilibili">哔哩哔哩</Tag>
+				<Tag href="https://www.xiaohongshu.com/user/profile/635e1b13000000001901eabc" icon="i-simple-icons-xiaohongshu">小红书</Tag>
+				<Tag href="https://www.douban.com/people/zlliang96/" icon="i-simple-icons-douban">豆瓣</Tag>
 			</div>
 		</div>
 	</div>
