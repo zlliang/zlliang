@@ -2,7 +2,7 @@
 import { ClientRouter } from 'astro:transitions'
 import Analytics from '@vercel/analytics/astro'
 import SpeedInsights from '@vercel/speed-insights/astro'
-import { siteTitle, getTitle } from '@/utils/site'
+import { siteURL, siteTitle, getTitle } from '@/utils/site'
 
 import Header from '@/layouts/Header.astro'
 import Footer from '@/layouts/Footer.astro'
@@ -30,20 +30,21 @@ const { fullscreen = false } = Astro.props
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
+  <!-- Open Graph -->
+  <meta property="og:site_name" content={siteTitle} />
+  <meta property="og:url" content={siteURL + Astro.url.pathname} />
+  <meta property="og:title" content={title} />
+  <meta property="og:type" content="website" />
+
+  <!-- Title -->
+  <title>{title}</title>
+
   <!-- Router -->
   <ClientRouter />
 
   <!-- Vercel -->
   <Analytics />
   <SpeedInsights />
-
-  <!-- Open Graph -->
-  <meta property="og:site_name" content={siteTitle} />
-  <meta property="og:title" content={title} />
-  <meta property="og:type" content="website" />
-
-  <!-- Title -->
-  <title>{title}</title>
 </head>
 <body>
   <div class:list={['flex flex-col m-auto px-6 min-h-100dvh', !fullscreen && 'max-w-3xl']}>
