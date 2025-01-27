@@ -1,7 +1,7 @@
 ---
 import { type ImageMetadata } from 'astro'
 
-import '@splidejs/splide/css'
+import '@splidejs/splide/css/core'
 
 const entries = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/profile-slide/*.jpg', { eager: true })
 const images =  Object.values(entries).map((entry) => entry.default)
@@ -25,23 +25,17 @@ const images =  Object.values(entries).map((entry) => entry.default)
 import Splide from '@splidejs/splide'
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
 
-function init() {
-  if (!document.querySelector('.splide')) return
-  
-  new Splide('.splide', {
-    gap: '0.75rem',
-    type: 'loop',
-    autoWidth: true,
-    arrows: false,
-    pagination: false,
-    drag: false,
-    autoScroll: {
-      speed: 0.5,
-      pauseOnFocus: false,
-      pauseOnHover: false,
-    },
-  }).mount({ AutoScroll })
-}
-
-document.addEventListener('astro:page-load', init)
+new Splide('.splide', {
+  gap: '0.75rem',
+  type: 'loop',
+  autoWidth: true,
+  arrows: false,
+  pagination: false,
+  drag: false,
+  autoScroll: {
+    speed: 0.5,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+  },
+}).mount({ AutoScroll })
 </script>
