@@ -41,7 +41,7 @@ b, strong {
 }
 
 blockquote {
-  @apply pl-6 border-l-2 border-slate-200 text-slate-500;
+  @apply pl-[calc(1.75rem-2px)] border-l-2 border-slate-200 text-slate-500;
 }
 
 ul, ol {
