@@ -81,6 +81,10 @@ img {
   @apply mx-auto;
 }
 
+p > img {
+  @apply w-auto sm:max-h-lg;
+}
+
 /* Code */
 
 code {
