@@ -125,6 +125,12 @@ th {
   @apply bg-slate-100;
 }
 
+/* Image caption */
+
+span.caption {
+  @apply flex justify-center mt-1 text-sm text-slate-500;
+}
+
 /* Card (better not to write multiple paragraphs in a card) */
 
 .card {

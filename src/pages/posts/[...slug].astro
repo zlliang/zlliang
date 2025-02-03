@@ -1,5 +1,4 @@
 ---
-import { type GetStaticPaths, type InferGetStaticPropsType } from 'astro'
 import { render } from 'astro:content'
 import { format } from 'date-fns'
 import { getPosts } from '@/utils/posts'
@@ -9,6 +8,8 @@ import Title from '@/components/Title.astro'
 import Tag from '@/components/Tag.astro'
 import DraftTag from '@/components/DraftTag.astro'
 import Link from '@/components/Link.astro'
+
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
 
 export const getStaticPaths = (async () => {
   const posts = await getPosts()

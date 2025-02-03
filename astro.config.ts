@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config'
 import unocss from 'unocss/astro'
 import rehypeExternalLinks from 'rehype-external-links'
+import { rehypeImageCaption } from './src/utils/rehype'
 
 export default defineConfig({
   integrations: [
@@ -12,6 +13,7 @@ export default defineConfig({
     },
     rehypePlugins: [
       [rehypeExternalLinks, { target: '_blank', rel: ['nofollow', 'noopener', 'noreferrer'] }],
+      [rehypeImageCaption, {}],
     ],
   },
   devToolbar: {
