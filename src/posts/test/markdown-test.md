@@ -42,7 +42,7 @@ greeter.greeting()
 
 下面是张图片：
 
-![随机图片](https://picsum.photos/600/300)
+![随机图片](https://picsum.photos/600/300 "这里是图片的辅助说明，也可以没有。是自己写了一个 rehype 插件。")
 
 下面是一段引用：
 

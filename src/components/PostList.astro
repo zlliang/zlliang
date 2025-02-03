@@ -1,5 +1,4 @@
 ---
-import { type CollectionEntry } from 'astro:content'
 import { format } from 'date-fns'
 import { groupByYear, getTags } from '@/utils/posts'
 
@@ -7,6 +6,8 @@ import NewTag from '@/components/NewTag.astro'
 import DraftTag from '@/components/DraftTag.astro'
 import Link from '@/components/Link.astro'
 import Tag from '@/components/Tag.astro'
+
+import type { CollectionEntry } from 'astro:content'
 
 interface Props {
   posts: CollectionEntry<'posts'>[]
