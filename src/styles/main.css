@@ -74,7 +74,17 @@ ol ol ol, ul ol ol, ol ul ol, ul ul ol {
 }
 
 hr {
-  @apply my-8 border-slate-200;
+  @apply relative my-8 h-auto border-slate-200 overflow-visible;
+}
+
+hr:before {
+  content: "";
+  @apply absolute top--3 left-0 right-0 mx-auto w-12 block h-6 bg-white;
+}
+
+hr:after {
+  content: "";
+  @apply i-lucide-waves absolute top--2.6 left-0 right-0 mx-auto block h-5 w-5 text-slate-300;
 }
 
 img {
@@ -82,7 +92,7 @@ img {
 }
 
 p > img {
-  @apply w-auto sm:max-h-lg;
+  @apply w-auto sm:max-h-xl;
 }
 
 /* Code */
