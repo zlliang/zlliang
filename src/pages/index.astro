@@ -10,7 +10,6 @@ import { Content as Bio } from '@/fragments/bio.md'
 
 import welcome from '@/assets/images/welcome.gif'
 
-
 const posts = await getPosts()
 ---
 
@@ -24,6 +23,25 @@ const posts = await getPosts()
 			<Bio />
 			<ImageSlide />
 		</div>
+
+		<!-- Special columns -->
+		<Section>
+			<span slot="title">栏目</span>
+			<div class="my-1 space-x-2">
+				<a href="/posts">
+					<span class="i-lucide-file-pen-line" />
+					<span>全部文章</span>
+				</a>
+				<span class="text-slate-500">共 {posts.length} 篇</span>
+			</div>
+			<div class="my-1 space-x-2">
+				<a href="/meals">
+					<span class="i-lucide-beer" />
+					<span>一日三餐</span>
+				</a>
+				<span class="text-slate-500">认真吃饭的每一天</span>
+			</div>
+		</Section>
 		
 		<!-- Posts -->
 		<PostList posts={posts} />
