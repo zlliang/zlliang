@@ -9,23 +9,23 @@
   "dependencies": {
     "@astrojs/vercel": "^8.0.5",
     "@iconify-json/lucide": "^1.2.25",
-    "@iconify-json/simple-icons": "^1.2.22",
+    "@iconify-json/simple-icons": "^1.2.23",
     "@notionhq/client": "^2.2.15",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@types/hast": "^3.0.4",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^22.13.0",
+    "@types/node": "^22.13.1",
     "@unocss/reset": "^65.4.3",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
-    "astro": "^5.2.3",
+    "astro": "^5.2.4",
     "date-fns": "^4.1.0",
     "lodash-es": "^4.17.21",
     "rehype-external-links": "^3.0.0",
     "typescript": "^5.7.3",
     "unist-util-visit": "^5.0.0",
     "unocss": "^65.4.3",
-    "vercel": "^40.1.0"
+    "vercel": "^41.0.0"
   }
 }
