@@ -1,7 +1,7 @@
 ---
 import { render } from 'astro:content'
 import { format } from 'date-fns'
-import { getPosts } from '@/utils/posts'
+import { getPosts, countWords } from '@/utils/posts'
 
 import Layout from '@/layouts/Layout.astro'
 import PageTitle from '@/components/PageTitle.astro'
@@ -30,6 +30,13 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
 const { post, next, previous } = Astro.props
 const { Content } = await render(post)
+const wordCount = countWords(post.body)
+
+/** Format word count to comma separated number, rounded to the nearest hundred */
+function formatWordCount(count: number): string {
+  const rounded = Math.round(count / 100) * 100
+  return rounded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+}
 ---
 
 <Layout title={post.data.title}>
@@ -37,7 +44,9 @@ const { Content } = await render(post)
   <PageTitle>
     <Fragment>{post.data.title}</Fragment>
     <span slot="sub-title" class="flex flex-wrap gap-2">
-      <span>{format(post.data.created, 'yyyy 年 M 月 d 日')}</span>
+      <div>
+        <span>{format(post.data.created, 'yyyy 年 M 月 d 日')}</span><span class="i-lucide-dot" /><span>约 {formatWordCount(wordCount)} 字</span>
+      </div>
       {post.data.tags?.map((tag) => (
         <Tag href={`/posts/tags/${tag}`}>{tag}</Tag>
       ))}
