@@ -3,18 +3,19 @@ import { getPosts } from '@/utils/posts'
 
 import Layout from '@/layouts/Layout.astro'
 import ImageSlide from '@/components/ImageSlide.astro'
-
+import PostList from '@/components/PostList.astro'
+import Section from '@/components/Section.astro'
 import Tag from '@/components/Tag.astro'
 import { Content as Bio } from '@/fragments/bio.md'
 
 import welcome from '@/assets/images/welcome.gif'
-import PostList from '@/components/PostList.astro'
+
 
 const posts = await getPosts()
 ---
 
 <Layout>
-	<div class="space-y-16">
+	<di class="space-y-16">
 		<!-- Welcome -->
 		<img src={welcome.src} alt="Welcome" width="140" class="mt-8" />
 
@@ -28,14 +29,14 @@ const posts = await getPosts()
 		<PostList posts={posts} />
 
 		<!-- SNS -->
-		<div>
-			<div class="pb-1 mb-2 border-b border-slate-200 text-slate-500 text-sm">我的社交媒体</div>
+		<Section>
+			<span slot="title">我的社交媒体</span>
 			<div class="inline-flex flex-wrap gap-2">
 				<Tag href="https://github.com/zlliang" icon="i-simple-icons-github">GitHub</Tag>
 				<Tag href="https://space.bilibili.com/30470407" icon="i-simple-icons-bilibili">哔哩哔哩</Tag>
 				<Tag href="https://www.xiaohongshu.com/user/profile/635e1b13000000001901eabc" icon="i-simple-icons-xiaohongshu">小红书</Tag>
 				<Tag href="https://www.douban.com/people/zlliang96/" icon="i-simple-icons-douban">豆瓣</Tag>
 			</div>
-		</div>
+		</Section>
 	</div>
 </Layout>

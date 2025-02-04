@@ -2,7 +2,7 @@
 import { getPosts, getTags } from '@/utils/posts'
 
 import Layout from '@/layouts/Layout.astro'
-import Title from '@/components/Title.astro'
+import PageTitle from '@/components/PageTitle.astro'
 import PostList from '@/components/PostList.astro'
 
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
@@ -26,10 +26,10 @@ const title = `关于「${tag}」的文章`
 
 <Layout title={title}>
   <!-- Title -->
-  <Title>
+  <PageTitle>
     <Fragment>{title}</Fragment>
     <Fragment slot="sub-title">共 {posts.length} 篇</Fragment>
-  </Title>
+  </PageTitle>
 
   <!-- Posts -->
   <PostList posts={posts} showTags={false} />

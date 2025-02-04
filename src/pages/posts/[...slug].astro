@@ -4,7 +4,7 @@ import { format } from 'date-fns'
 import { getPosts } from '@/utils/posts'
 
 import Layout from '@/layouts/Layout.astro'
-import Title from '@/components/Title.astro'
+import PageTitle from '@/components/PageTitle.astro'
 import Tag from '@/components/Tag.astro'
 import DraftTag from '@/components/DraftTag.astro'
 import Link from '@/components/Link.astro'
@@ -34,7 +34,7 @@ const { Content } = await render(post)
 
 <Layout title={post.data.title}>
   <!-- Title -->
-  <Title>
+  <PageTitle>
     <Fragment>{post.data.title}</Fragment>
     <span slot="sub-title" class="flex flex-wrap gap-2">
       <span>{format(post.data.created, 'yyyy 年 M 月 d 日')}</span>
@@ -43,7 +43,7 @@ const { Content } = await render(post)
       ))}
       {post.data.draft && <DraftTag />}
     </span>
-  </Title>
+  </PageTitle>
   
   <!-- Content -->
   <Content />
