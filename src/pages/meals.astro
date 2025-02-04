@@ -21,11 +21,11 @@ const groups = await getMeals()
   {groups.map(({ date, meals }) => (
     <Section>
 			<span slot="title" set:html={formatDate(date)} />
-      <div class="space-y-2">
+      <div class="space-y-2 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-2">
         {meals.map((item) => (
-          <div class="flex gap-2">
-            <img src={item.image} alt={item.name} loading="lazy" class="w-[10rem] sm:w-[15rem] min-h-[7.5rem] sm:min-h-[11.25rem]" />
-            <div class="flex-1">
+          <div class="flex sm:flex-col gap-2 sm:gap-1.5">
+            <img src={item.image} alt={item.name} loading="lazy" class="w-[10rem] sm:w-auto" />
+            <div class="flex-1 sm:flex-auto">
               <div class="text-sm text-slate-500">{item.type}{item.source && <Fragment><span class="i-lucide-dot" />{item.source}</Fragment>}{item.price && <Fragment><span class="i-lucide-dot" />{`¥${item.price.toFixed(2)}`}</Fragment>}</div>
               <div class="mt-0.5"><strong>{item.name}</strong></div>
               {item.description && <div class="mt-2 text-sm">{item.description}</div>}
