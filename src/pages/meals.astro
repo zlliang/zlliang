@@ -24,7 +24,7 @@ const groups = await getMeals()
       <div class="space-y-2">
         {meals.map((item) => (
           <div class="flex gap-2">
-            <img src={item.image} alt={item.name} loading="lazy" class="w-[10rem] sm:w-[15rem]" />
+            <img src={item.image} alt={item.name} loading="lazy" class="w-[10rem] sm:w-[15rem] min-h-[7.5rem] sm:min-h-[11.25rem]" />
             <div class="flex-1">
               <div class="text-sm text-slate-500">{item.type}{item.source && <Fragment><span class="i-lucide-dot" />{item.source}</Fragment>}{item.price && <Fragment><span class="i-lucide-dot" />{`¥${item.price.toFixed(2)}`}</Fragment>}</div>
               <div><strong>{item.name}</strong></div>
