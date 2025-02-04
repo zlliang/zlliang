@@ -7,8 +7,10 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/vercel": "^8.0.5",
     "@iconify-json/lucide": "^1.2.25",
     "@iconify-json/simple-icons": "^1.2.22",
+    "@notionhq/client": "^2.2.15",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@types/hast": "^3.0.4",
