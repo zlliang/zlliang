@@ -60,5 +60,5 @@ export async function getMeals() {
 
 /** Format the date as "2025 年 2 月 4 日 周二" */
 export function formatDate(date: Date) {
-  return `${format(date, 'yyyy 年 M 月 d 日')} ${weekDay[getISODay(date)]}`
+  return `${format(date, 'yyyy 年 M 月 d 日')}<span class="i-lucide-dot"></span>${weekDay[getISODay(date)]}`
 }
