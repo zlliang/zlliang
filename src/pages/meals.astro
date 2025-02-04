@@ -20,7 +20,7 @@ const groups = await getMeals()
   <!-- Meals -->
   {groups.map(({ date, meals }) => (
     <Section>
-			<span slot="title">{formatDate(date)}</span>
+			<span slot="title" set:html={formatDate(date)} />
       <div class="space-y-2">
         {meals.map((item) => (
           <div class="flex gap-2">
