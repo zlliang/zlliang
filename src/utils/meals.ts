@@ -46,9 +46,9 @@ export async function getMeals() {
     date: new Date(properties['日期'].date.start as string),
     type: properties['类型'].select.name as MealType,
     source: properties['来源'].select?.name as MealSource | undefined,
-    image: properties['照片'].files[0].file.url as string,
+    image: properties['照片'].files[0]?.file.url as string | undefined,
     price: properties['价格'].number as number | undefined,
-    description: properties['备注'].rich_text[0]?.text?.content as string | undefined,
+    description: properties['备注'].rich_text[0]?.text.content as string | undefined,
   }))
 
   const groups = Object.entries(groupBy(list, (item) => item.date.valueOf()))
