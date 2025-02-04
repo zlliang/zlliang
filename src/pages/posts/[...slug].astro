@@ -54,9 +54,7 @@ const { Content } = await render(post)
       {next && (
         <div class:list={['col-start-1 pr-4 text-slate-500', !previous && 'border-r border-slate-200']}>
           <div class="text-sm">
-            <span>下一篇</span>
-            <span class="i-lucide-dot" />
-            <span>{format(next.data.created, 'yyyy 年 M 月 d 日')}</span>
+            <span>下一篇</span><span class="i-lucide-dot" /><span>{format(next.data.created, 'yyyy 年 M 月 d 日')}</span>
           </div>
           <Link href={`/posts/${next.id}`} class="block mt-1">
             {next.data.title}
@@ -66,9 +64,7 @@ const { Content } = await render(post)
       {previous && (
         <div class="col-start-2 pl-4 border-l border-slate-200 text-slate-500 text-right">
           <div class="text-sm">
-            <span>{format(previous.data.created, 'yyyy 年 M 月 d 日')}</span>
-            <span class="i-lucide-dot" />
-            <span>上一篇</span>
+            <span>{format(previous.data.created, 'yyyy 年 M 月 d 日')}</span><span class="i-lucide-dot" /><span>上一篇</span>
           </div>
           <Link href={`/posts/${previous.id}`} class="block mt-1">
             {previous.data.title}
