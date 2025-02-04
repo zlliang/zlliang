@@ -2,6 +2,7 @@
 import { format } from 'date-fns'
 import { groupByYear, getTags } from '@/utils/posts'
 
+import Section from '@/components/Section.astro'
 import NewTag from '@/components/NewTag.astro'
 import DraftTag from '@/components/DraftTag.astro'
 import Link from '@/components/Link.astro'
@@ -22,20 +23,20 @@ const tags = getTags(posts)
 <div>
 	<!-- Tags -->
 	{showTags && tags.length > 0 && (
-		<div class="my-8">
-			<div class="pb-1 mb-2 border-b border-slate-200 text-slate-500 text-sm">全部标签</div>
+		<Section>
+			<span slot="title">全部标签</span>
 			<div class="flex flex-wrap gap-2">
 				{tags.map((tag) => (
 					<Tag href={`/posts/tags/${tag}`}>{tag}</Tag>
 				))}
 			</div>
-		</div> 
+		</Section> 
 	)}
 
 	<!-- Posts -->
 	{groups.map(({ year, posts }) => (
-		<div class="my-8">
-			<div class="pb-1 mb-2 border-b border-slate-200 text-slate-500 text-sm">{year}</div>
+		<Section>
+			<span slot="title">{year}</span>
 			<div>
 				{posts.map((post) => (
 					<div class="my-1 flex justify-between gap-4">
@@ -57,6 +58,6 @@ const tags = getTags(posts)
 					</div>
 				))}
 			</div>
-		</div>
+		</Section>
 	))}
 </div>

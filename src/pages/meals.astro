@@ -2,7 +2,8 @@
 import { getMeals, formatDate } from '@/utils/meals'
 
 import Layout from '@/layouts/Layout.astro'
-import Title from '@/components/Title.astro'
+import PageTitle from '@/components/PageTitle.astro'
+import Section from '@/components/Section.astro'
 
 export const prerender = false
 
@@ -11,15 +12,15 @@ const groups = await getMeals()
 
 <Layout title="一日三餐">
   <!-- Title -->
-  <Title>
+  <PageTitle>
     <span>一日三餐</span>
     <span slot="sub-title">认真吃饭的每一天</span>
-  </Title>
+  </PageTitle>
 
   <!-- Meals -->
   {groups.map(({ date, meals }) => (
-    <div class="my-8">
-			<div class="pb-1 mb-2 border-b border-slate-200 text-slate-500 text-sm">{formatDate(date)}</div>
+    <Section>
+			<span slot="title">{formatDate(date)}</span>
       <div class="space-y-2">
         {meals.map((item) => (
           <div class="flex gap-2">
@@ -32,7 +33,7 @@ const groups = await getMeals()
           </div>
         ))}
       </div>
-		</div>
+		</Section>
   ))}
 </Layout>
 
