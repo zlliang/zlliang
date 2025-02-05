@@ -1,5 +1,5 @@
 ---
-import { format } from 'date-fns'
+import { format } from '@/utils/date'
 import { groupByYear, getTags } from '@/utils/posts'
 
 import Section from '@/components/Section.astro'
@@ -53,7 +53,7 @@ const tags = getTags(posts)
 									))}
 								</span>
 							)}
-							<span>{format(post.data.created, 'M 月 d 日')}</span>
+							<span>{format(post.data.created, 'MM-dd')}</span>
 						</span>
 					</div>
 				))}

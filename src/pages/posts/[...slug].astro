@@ -1,6 +1,6 @@
 ---
 import { render } from 'astro:content'
-import { format } from 'date-fns'
+import { format } from '@/utils/date'
 import { getPosts, countWords } from '@/utils/posts'
 
 import Layout from '@/layouts/Layout.astro'
@@ -45,7 +45,7 @@ function formatWordCount(count: number): string {
     <Fragment>{post.data.title}</Fragment>
     <span slot="sub-title" class="flex flex-wrap gap-2">
       <div>
-        <span>{format(post.data.created, 'yyyy 年 M 月 d 日')}</span><span class="i-lucide-dot" /><span>约 {formatWordCount(wordCount)} 字</span>
+        <span>{format(post.data.created, 'PP')}</span><span class="i-lucide-dot" /><span>约 {formatWordCount(wordCount)} 字</span>
       </div>
       {post.data.tags?.map((tag) => (
         <Tag href={`/posts/tags/${tag}`}>{tag}</Tag>
@@ -63,7 +63,7 @@ function formatWordCount(count: number): string {
       {next && (
         <div class:list={['col-start-1 pr-4 text-slate-500', !previous && 'border-r border-slate-200']}>
           <div class="text-sm">
-            <span>下一篇</span><span class="i-lucide-dot" /><span>{format(next.data.created, 'yyyy 年 M 月 d 日')}</span>
+            <span>下一篇</span><span class="i-lucide-dot" /><span>{format(next.data.created, 'PP')}</span>
           </div>
           <Link href={`/posts/${next.id}`} class="block mt-1">
             {next.data.title}
@@ -73,7 +73,7 @@ function formatWordCount(count: number): string {
       {previous && (
         <div class="col-start-2 pl-4 border-l border-slate-200 text-slate-500 text-right">
           <div class="text-sm">
-            <span>{format(previous.data.created, 'yyyy 年 M 月 d 日')}</span><span class="i-lucide-dot" /><span>上一篇</span>
+            <span>{format(previous.data.created, 'PP')}</span><span class="i-lucide-dot" /><span>上一篇</span>
           </div>
           <Link href={`/posts/${previous.id}`} class="block mt-1">
             {previous.data.title}
