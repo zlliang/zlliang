@@ -2,25 +2,6 @@ import { Client } from '@notionhq/client'
 import { groupBy } from 'lodash-es'
 import { format, getISODay } from 'date-fns'
 
-const mealTypes = {
-  '早餐': 0,
-  '午餐': 1,
-  '晚餐': 2,
-  '零食': 3,
-} as const
-
-type MealType = keyof typeof mealTypes
-
-const mealSource = {
-  '自炊': 0,
-  '食堂': 1,
-  '餐馆': 2,
-  '外卖': 3,
-  '方便食品': 4,
-} as const
-
-type MealSource = keyof typeof mealSource
-
 const weekDay: Record<number, string> = {
   1: '周一',
   2: '周二',
@@ -38,27 +19,23 @@ export async function getMeals() {
   })
   
   const { results = [] } = await notion.databases.query({
-    database_id: import.meta.env.PUBLIC_NOTION_MEALS_DATABASE_ID
+    database_id: import.meta.env.PUBLIC_NOTION_MEALS_DATABASE_ID,
+    sorts: [{ property: '类型', direction: 'ascending' }]
   })
 
   const list = results.map(({ properties }: any) => ({
-    name: properties['餐食'].title[0].text.content as string,
-    date: new Date(properties['日期'].date.start as string),
-    type: properties['类型'].select.name as MealType,
-    source: properties['来源'].select?.name as MealSource | undefined,
+    name: properties['餐食'].title[0]?.text.content as string | undefined,
+    date: (properties['日期'].date?.start as string | undefined) ? new Date(properties['日期'].date.start) : undefined,
+    type: properties['类型'].select?.name as string | undefined,
+    source: properties['来源'].select?.name as string | undefined,
     image: properties['照片'].files[0]?.file.url as string | undefined,
     price: properties['价格'].number as number | undefined,
     description: properties['备注'].rich_text[0]?.text.content as string | undefined,
   }))
 
-  const groups = Object.entries(groupBy(list, (item) => item.date.valueOf()))
-    .map(([dateStr, meals]) => ({ date: new Date(Number(dateStr)), meals: meals.toSorted((a, b) => mealTypes[a.type] - mealTypes[b.type]) }))
+  const groups = Object.entries(groupBy(list, (item) => item.date?.valueOf() || 0))
+    .map(([dateStr, meals]) => ({ date: new Date(Number(dateStr)), meals }))
     .toSorted((a, b) => b.date.valueOf() - a.date.valueOf())
 
   return groups
-}
-
-/** Format the date as "2025 年 2 月 4 日 周二" */
-export function formatDate(date: Date) {
-  return `${format(date, 'yyyy 年 M 月 d 日')}<span class="i-lucide-dot"></span>${weekDay[getISODay(date)]}`
 }

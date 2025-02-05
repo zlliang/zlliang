@@ -1,5 +1,6 @@
 ---
-import { getMeals, formatDate } from '@/utils/meals'
+import { getMeals } from '@/utils/meals'
+import { format } from '@/utils/date'
 
 import Layout from '@/layouts/Layout.astro'
 import PageTitle from '@/components/PageTitle.astro'
@@ -20,7 +21,7 @@ const groups = await getMeals()
   <!-- Meals -->
   {groups.map(({ date, meals }) => (
     <Section>
-			<span slot="title" set:html={formatDate(date)} />
+			<span slot="title">{format(date, 'PP E')}</span>
       <div class="space-y-2 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-2">
         {meals.map((item) => (
           <div class="flex sm:flex-col gap-2 sm:gap-1.5">
