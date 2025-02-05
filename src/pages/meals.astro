@@ -9,6 +9,13 @@ import Section from '@/components/Section.astro'
 export const prerender = false
 
 const groups = await getMeals()
+
+/** Use [ImageKit](https://imagekit.io/) to process images */
+function getOptimizedImageUrl(rawImageUrl?: string) {
+  if (!rawImageUrl) return ''
+  
+  return `https://ik.imagekit.io/zlliang/tr:w-1024/${encodeURIComponent(rawImageUrl)}`
+}
 ---
 
 <Layout title="一日三餐">
@@ -25,7 +32,7 @@ const groups = await getMeals()
       <div class="space-y-2 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-2">
         {meals.map((item) => (
           <div class="flex sm:flex-col gap-2 sm:gap-1.5">
-            <img src={item.image} alt={item.name} loading="lazy" class="self-start w-[10rem] sm:w-auto" />
+            <img src={getOptimizedImageUrl(item.image)} alt={item.name} loading="lazy" class="self-start w-[10rem] sm:w-auto" />
             <div class="flex-1 sm:flex-auto">
               <div class="text-sm text-slate-500">{item.type}{item.source && <Fragment><span class="i-lucide-dot" />{item.source}</Fragment>}{item.price && <Fragment><span class="i-lucide-dot" />{`¥${item.price.toFixed(2)}`}</Fragment>}</div>
               <div class="sm:mt-0.5"><strong>{item.name}</strong></div>

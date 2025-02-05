@@ -5,7 +5,9 @@ import rehypeExternalLinks from 'rehype-external-links'
 import { rehypeImageCaption } from './src/utils/rehype'
 
 export default defineConfig({
-  adapter: vercel(),
+  adapter: vercel({
+    isr: { expiration: 60 * 60 /* 1 hour */ },
+  }),
   integrations: [
     unocss({ injectReset: true }),
   ],
