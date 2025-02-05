@@ -6,7 +6,10 @@ import { rehypeImageCaption } from './src/utils/rehype'
 
 export default defineConfig({
   adapter: vercel({
-    isr: { bypassToken: process.env.ISR_BYPASS_TOKEN }, // On-demand ISR
+    isr: {
+      bypassToken: process.env.ISR_BYPASS_TOKEN,
+      exclude: ['/api/isr-prerender'],
+    },
   }),
   integrations: [
     unocss({ injectReset: true }),
