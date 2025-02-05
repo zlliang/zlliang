@@ -12,6 +12,7 @@ export default defineConfig({
       domains: [],
     },
     isr: {
+      expiration: 60 * 60, // 1 hour
       bypassToken: process.env.ISR_BYPASS_TOKEN,
       exclude: ['/api/isr-prerender'],
     },

@@ -9,13 +9,6 @@ import Section from '@/components/Section.astro'
 export const prerender = false
 
 const groups = await getMeals()
-
-/** Use [ImageKit](https://imagekit.io/) to process images */
-function getOptimizedImageUrl(rawImageUrl?: string) {
-  if (!rawImageUrl) return ''
-  
-  return `https://ik.imagekit.io/zlliang/tr:w-1024/${encodeURIComponent(rawImageUrl)}`
-}
 ---
 
 <Layout title="一日三餐">

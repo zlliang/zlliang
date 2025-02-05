@@ -1,6 +1,5 @@
 import { Client } from '@notionhq/client'
 import { groupBy } from 'lodash-es'
-import { getOptimizedImageUrl } from '@/utils/image'
 
 /** Get the database of my everyday meals from Notion, grouped by dates */
 export async function getMeals() {
@@ -28,4 +27,11 @@ export async function getMeals() {
     .toSorted((a, b) => b.date.valueOf() - a.date.valueOf())
 
   return groups
+}
+
+/** Use [ImageKit](https://imagekit.io/) to optimize external images */
+function getOptimizedImageUrl(rawImageUrl?: string) {
+  if (!rawImageUrl) return
+  
+  return `https://ik.imagekit.io/zlliang/tr:w-1280,h-1280,c-at_max/${encodeURIComponent(rawImageUrl)}`
 }
