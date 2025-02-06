@@ -29,7 +29,7 @@ h3 {
 /* Content */
 
 p {
-  @apply my-5 leading-7;
+  @apply my-6 leading-[1.8];
 }
 
 a {
@@ -45,7 +45,7 @@ blockquote {
 }
 
 ul, ol {
-  @apply pl-7 leading-7 marker:text-slate-500;
+  @apply pl-7 leading-[1.8] marker:text-slate-500;
 }
 
 ul {
@@ -106,7 +106,7 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 }
 
 pre {
-  @apply my-5 px-4 py-3 border border-slate-200 text-sm;
+  @apply my-6 px-4 py-3 border border-slate-200 text-sm;
 }
 
 pre code {
@@ -141,16 +141,24 @@ span.caption {
   @apply flex justify-center mt-1 text-sm text-slate-500;
 }
 
-/* Custom paragraph */
+/* Columns */
 
-.cp {
-  @apply overflow-hidden my--5; /* Delegate margins to inner paragraphs (use `overflow: hidden` to create BFC) */
+.cols {
+  @apply sm:(grid gap-4 my--6); /* `my--6` is to delegate margins to inner paragraphs*/
+}
+
+.cols-1-2 {
+  grid-template-columns: 1fr 2fr;
+}
+
+.cols-2-1 {
+  grid-template-columns: 2fr 1fr;
 }
 
 /* Card (better not to write multiple paragraphs in a card) */
 
 .card {
-  @apply my-5 px-4 py-3 bg-slate-50 border border-slate-200 text-slate-600;
+  @apply my-6 px-4 py-3 bg-slate-50 border border-slate-200 text-slate-600;
 }
 
 .card.caution {
