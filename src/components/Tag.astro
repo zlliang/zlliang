@@ -22,7 +22,7 @@ const colorClassName: Record<NonNullable<Props['color']>, string> = {
   href={href}
   class:list={[
     'inline-block px-1 py-0.3 border text-sm transition-colors',
-    href && 'hover:bg-sky-50 hover:border-sky-200 hover:text-sky-500',
+    href && 'hover:(bg-sky-50 border-sky-200 text-sky-500)',
     colorClassName[color],
     className,
   ]}
