@@ -10,7 +10,7 @@ export default defineConfig({
         'height': '1.2em',
         'vertical-align': 'text-bottom',
         'transform': 'scale(0.95)',
-      }
+      },
     }),
   ],
   transformers: [
