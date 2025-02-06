@@ -141,6 +141,12 @@ span.caption {
   @apply flex justify-center mt-1 text-sm text-slate-500;
 }
 
+/* Custom paragraph */
+
+.cp {
+  @apply overflow-hidden my--5; /* Delegate margins to inner paragraphs (use `overflow: hidden` to create BFC) */
+}
+
 /* Card (better not to write multiple paragraphs in a card) */
 
 .card {
