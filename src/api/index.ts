@@ -1,5 +1,6 @@
 import { Hono } from 'hono'
 import { v4 as uuid } from 'uuid'
+import { isEqual } from 'lodash-es'
 import { siteURL, apiBasePath } from '@/utils/site'
 import { createNotionClient } from '@/utils/notion'
 import { createGithubClient } from '@/utils/github'
@@ -56,7 +57,7 @@ app.post('/notion-upload-images', async (c) => {
     database_id: databaseId,
   })
 
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < data.length; i++) {
     console.log(`Handling ${i}/${data.length}`)
 
     const page: any = data[i]
@@ -91,11 +92,13 @@ app.post('/notion-upload-images', async (c) => {
       properties[key] = { ...value, files }
     }
 
-    console.log('  -- Rewriting')
-    await notion.pages.update({
-      page_id: page.id,
-      properties
-    })
+    if (!isEqual(currentProperties, properties)) {
+      console.log('  -- Rewriting')
+      await notion.pages.update({
+        page_id: page.id,
+        properties
+      })
+    }
   }
 
   return c.text('200 OK', 200)
