@@ -58,7 +58,7 @@ app.post('/notion-upload-images', async (c) => {
   })
 
   for (let i = 0; i < data.length; i++) {
-    console.log(`Handling ${i}/${data.length}`)
+    console.log(`Handling ${i + 1}/${data.length}`)
 
     const page: any = data[i]
     const currentProperties: Record<string, any> = (page as any).properties
