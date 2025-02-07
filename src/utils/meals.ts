@@ -1,11 +1,9 @@
-import { Client } from '@notionhq/client'
 import { groupBy } from 'lodash-es'
+import { createNotionClient } from '@/utils/notion'
 
 /** Get the database of my everyday meals from Notion, grouped by dates */
 export async function getMeals() {
-  const notion = new Client({
-    auth: import.meta.env.NOTION_KEY
-  })
+  const notion = createNotionClient()
   
   const { results = [] } = await notion.databases.query({
     database_id: import.meta.env.NOTION_MEALS_DATABASE_ID,
