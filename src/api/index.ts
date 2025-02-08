@@ -53,14 +53,9 @@ app.post('/notion-upload-images', async (c) => {
     return `http://cdn.jsdelivr.net/gh/zlliang/image-hosting/${path}`
   }
 
-  const { results: data = [] } = await notion.databases.query({
-    database_id: databaseId,
-  })
+  async function handlePage(page: any, index: number, length: number) {
+    console.log(`Handling ${index+1}/${length}`)
 
-  for (let i = 0; i < data.length; i++) {
-    console.log(`Handling ${i + 1}/${data.length}`)
-
-    const page: any = data[i]
     const currentProperties: Record<string, any> = (page as any).properties
     const properties: Record<string, any> = {}
     for (const [key, value] of Object.entries(currentProperties)) {
@@ -70,24 +65,22 @@ app.post('/notion-upload-images', async (c) => {
       }
 
       const currentFiles: any[] = value.files || []
-      const files: any[] = []
-      for (const item of currentFiles) {
+      const files = await Promise.all(currentFiles.map(async (item) => {
         const name = (item.name as string).toLowerCase()
         if ((!name.endsWith('jpeg') && !name.endsWith('jpg')) || item.type !== 'file' || !item.file.url) {
-          files.push(item)
-          continue
+          return item
         }
 
         const currentUrl = item.file.url
         console.log('  -- Uploading')
         const url = await uploadImage(currentUrl)
 
-        files.push({
+        return {
           name,
           type: 'external',
           external: { url },
-        })
-      }
+        }
+      }))
 
       properties[key] = { ...value, files }
     }
@@ -100,6 +93,12 @@ app.post('/notion-upload-images', async (c) => {
       })
     }
   }
+
+  const { results: data = [] } = await notion.databases.query({
+    database_id: databaseId,
+  })
+
+  await Promise.all(data.map((page: any, index) => handlePage(page, index, data.length)))
 
   return c.text('200 OK', 200)
 })
