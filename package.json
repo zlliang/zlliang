@@ -7,8 +7,8 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/vercel": "^8.0.5",
-    "@iconify-json/lucide": "^1.2.25",
+    "@astrojs/vercel": "^8.0.6",
+    "@iconify-json/lucide": "^1.2.26",
     "@iconify-json/simple-icons": "^1.2.23",
     "@notionhq/client": "^2.2.15",
     "@splidejs/splide": "^4.1.4",
@@ -19,9 +19,9 @@
     "@unocss/reset": "^65.4.3",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
-    "astro": "^5.2.4",
+    "astro": "^5.2.5",
     "date-fns": "^4.1.0",
-    "hono": "^4.6.17",
+    "hono": "^4.7.0",
     "lodash-es": "^4.17.21",
     "octokit": "^4.1.1",
     "rehype-external-links": "^3.0.0",
@@ -29,6 +29,6 @@
     "unist-util-visit": "^5.0.0",
     "unocss": "^65.4.3",
     "uuid": "^11.0.5",
-    "vercel": "^41.0.0"
+    "vercel": "^41.0.2"
   }
 }
