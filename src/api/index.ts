@@ -54,7 +54,8 @@ app.post('/notion-upload-images', async (c) => {
   }
 
   async function handlePage(page: any, index: number, length: number) {
-    console.log(`Handling ${index+1}/${length}`)
+    const process = `${index+1}/${length}`
+    console.log(`Handling ${process}`)
 
     const currentProperties: Record<string, any> = (page as any).properties
     const properties: Record<string, any> = {}
@@ -72,7 +73,7 @@ app.post('/notion-upload-images', async (c) => {
         }
 
         const currentUrl = item.file.url
-        console.log('  -- Uploading')
+        console.log(`Uploading ${process}`)
         const url = await uploadImage(currentUrl)
 
         return {
@@ -86,7 +87,7 @@ app.post('/notion-upload-images', async (c) => {
     }
 
     if (!isEqual(currentProperties, properties)) {
-      console.log('  -- Rewriting')
+      console.log(`Rewriting ${process}`)
       await notion.pages.update({
         page_id: page.id,
         properties
