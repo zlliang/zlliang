@@ -34,11 +34,11 @@ const groups = await getMeals(queryDate)
   <!-- Title -->
   <PageTitle>
     <span>一日三餐</span>
-    <span slot="sub-title">认真吃饭的每一天</span>
+    <span slot="subtitle">认真吃饭的每一天</span>
   </PageTitle>
 
   <!-- Months -->
-  <Section title="月份" class="mb-12">
+  <Section title="年月" class="mb-12">
     {years.map(({ year, months }) => (
       <div class="flex items-center font-mono text-sm">
         {isSameYear(new Date(year, 0, 1), queryDate) ? <strong>{year}</strong> : <span class="text-slate-300">{year}</span>}

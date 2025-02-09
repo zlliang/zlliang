@@ -43,7 +43,7 @@ function formatWordCount(count: number): string {
   <!-- Title -->
   <PageTitle>
     <Fragment>{post.data.title}</Fragment>
-    <span slot="sub-title" class="flex flex-wrap gap-2">
+    <span slot="subtitle" class="flex flex-wrap gap-2">
       <div>
         <span>{format(post.data.created, 'PP')}</span><span class="i-lucide-dot" /><span>约 {formatWordCount(wordCount)} 字</span>
       </div>
