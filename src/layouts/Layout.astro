@@ -10,11 +10,11 @@ import '@/styles/main.css'
 
 interface Props {
   title?: string
-  fullscreen?: boolean
+  wide?: boolean
 }
 
 const title = getTitle(Astro.props.title)
-const { fullscreen = false } = Astro.props
+const { wide = false } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ const { fullscreen = false } = Astro.props
   <SpeedInsights />
 </head>
 <body>
-  <div class:list={['flex flex-col m-auto px-6 min-h-100dvh', !fullscreen && 'max-w-3xl']}>
+  <div class:list={['flex flex-col m-auto px-6 min-h-100dvh', wide ? 'max-w-6xl' : 'max-w-3xl']}>
     <Header>
       <slot name="header-suffix" slot="suffix" />
     </Header>

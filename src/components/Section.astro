@@ -4,10 +4,10 @@ interface Props {
   class?: string
 }
 
-const { title, class: classNames } = Astro.props
+const { title, class: className } = Astro.props
 ---
 
 <div class="my-8">
   <div class="pb-1 mb-2 border-b border-slate-200 text-slate-500 text-sm"><slot name="title">{title}</slot></div>
-  <div class:list={classNames}><slot /></div>
+  <div class:list={className}><slot /></div>
 </div>
