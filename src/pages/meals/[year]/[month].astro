@@ -1,0 +1,77 @@
+---
+import { groupBy } from 'lodash-es'
+import { isBefore, eachMonthOfInterval, getYear, isSameYear, isSameMonth, isAfter } from 'date-fns'
+import { getMeals } from '@/utils/meals'
+import { format, Date } from '@/utils/date'
+
+import Layout from '@/layouts/Layout.astro'
+import PageTitle from '@/components/PageTitle.astro'
+import Section from '@/components/Section.astro'
+
+export const prerender = false
+
+const { year, month } = Astro.params
+if (year?.length !== 4 || month?.length !== 2) {
+  return Astro.redirect('/404')
+}
+
+const currentDate = new Date()
+const startDate = new Date(2025, 0, 1)
+const queryDate = new Date(Number(year), Number(month)-1)
+if (isBefore(queryDate, startDate) || isAfter(queryDate, currentDate)) {
+  return Astro.redirect('/404')
+}
+
+const months = eachMonthOfInterval({ start: startDate, end: currentDate })
+const years = Object.entries(groupBy(months, (month) => getYear(month)))
+  .map(([year, months]) => ({ year: Number(year), months: months.toSorted((a, b) => Number(isBefore(a, b))) }))
+  .toSorted((a, b) => b.year - a.year)
+
+const groups = await getMeals(queryDate)
+---
+
+<Layout title="一日三餐">
+  <!-- Title -->
+  <PageTitle>
+    <span>一日三餐</span>
+    <span slot="sub-title">认真吃饭的每一天</span>
+  </PageTitle>
+
+  <!-- Months -->
+  <Section title="月份">
+    {years.map(({ year, months }) => (
+      <div class="flex items-center font-mono text-sm">
+        {isSameYear(new Date(year, 0, 1), queryDate) ? <strong>{year}</strong> : <span class="text-slate-300">{year}</span>}
+        <span class="i-lucide-dot text-slate-500" />
+        <div class="flex items-center gap-2">
+          {months.map((month, index) => (
+            <Fragment>
+              {isSameMonth(month, queryDate) ? <strong>{format(month, 'MM')}</strong> : <a href={`/meals/${year}/${format(month, 'MM')}`} class="text-slate-300">{format(month, 'MM')}</a>}
+            </Fragment>
+          ))}
+        </F>
+      </div>
+    ))}
+  </Section>
+
+  <!-- Meals -->
+  {groups.map(({ date, meals }) => (
+    <Section title={format(date, 'PP E')} class="space-y-2 sm:(space-y-0 grid grid-cols-3 gap-2)">
+      {meals.map((item) => (
+        <div class="flex gap-2 sm:(flex-col gap-1.5)">
+          <img src={item.image} alt={item.name} loading="lazy" class="self-start w-[10rem] sm:w-auto" />
+          <div class="flex-1 sm:flex-auto">
+            <div class="text-sm text-slate-500">{item.type}{item.source && <Fragment><span class="i-lucide-dot" />{item.source}</Fragment>}{item.price && <Fragment><span class="i-lucide-dot" />{`¥${item.price.toFixed(2)}`}</Fragment>}</div>
+            <div class="sm:mt-0.5"><strong>{item.name}</strong></div>
+            {item.description && <div class="mt-2 text-sm">{item.description}</div>}
+          </div>
+        </div>
+      ))}
+		</Section>
+  ))}
+</Layout>
+
+<script is:inline type="module">
+import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm'
+mediumZoom('main img', { background: '#fffd' })
+</script>

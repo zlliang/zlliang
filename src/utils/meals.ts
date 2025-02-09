@@ -1,13 +1,21 @@
 import { groupBy } from 'lodash-es'
+import { startOfMonth, endOfMonth, format } from 'date-fns'
 import { createNotionClient } from '@/utils/notion'
+import { Date } from '@/utils/date'
 
-/** Get the database of my everyday meals from Notion, grouped by dates */
-export async function getMeals() {
+/** Get the database of my everyday meals of *the given month* from Notion, grouped by dates */
+export async function getMeals(date: Date) {
   const notion = createNotionClient()
   
   const { results = [] } = await notion.databases.query({
     database_id: import.meta.env.NOTION_MEALS_DATABASE_ID,
-    sorts: [{ property: '类型', direction: 'ascending' }]
+    sorts: [{ property: '类型', direction: 'ascending' }],
+    filter: {
+      and: [
+        { property: '日期', date: { on_or_after: format(startOfMonth(date), 'yyyy-MM-dd') } },
+        { property: '日期', date: { on_or_before: format(endOfMonth(date), 'yyyy-MM-dd') } },
+      ],
+    },
   })
 
   const list = results.map(({ properties }: any) => ({
