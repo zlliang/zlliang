@@ -13,7 +13,7 @@ export default defineConfig({
     },
     isr: {
       bypassToken: process.env.ISR_BYPASS_TOKEN,
-      exclude: ['/api/[...path]'],
+      exclude: ['/api/[...path]', '/meals'],
     },
   }),
   integrations: [
