@@ -44,7 +44,7 @@ const groups = await getMeals(queryDate)
         {isSameYear(new Date(year, 0, 1), queryDate) ? <strong>{year}</strong> : <span class="text-slate-300">{year}</span>}
         <span class="i-lucide-dot text-slate-500" />
         <div class="flex items-center gap-2">
-          {months.map((month, index) => (
+          {months.map((month) => (
             <Fragment>
               {isSameMonth(month, queryDate) ? <strong>{format(month, 'MM')}</strong> : <a href={`/meals/${year}/${format(month, 'MM')}`} class="text-slate-300">{format(month, 'MM')}</a>}
             </Fragment>
