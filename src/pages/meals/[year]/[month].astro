@@ -22,7 +22,7 @@ if (isBefore(queryDate, startDate) || isAfter(queryDate, currentDate)) {
   return Astro.redirect('/404')
 }
 
-const months = eachMonthOfInterval({ start: startDate, end: currentDate })
+const months = eachMonthOfInterval({ start: new Date(2022, 0, 1), end: currentDate })
 const years = Object.entries(groupBy(months, (month) => getYear(month)))
   .map(([year, months]) => ({ year: Number(year), months: months.toSorted((a, b) => Number(isBefore(a, b))) }))
   .toSorted((a, b) => b.year - a.year)
@@ -40,7 +40,7 @@ const groups = await getMeals(queryDate)
   <!-- Months -->
   <Section title="年月" class="mb-12">
     {years.map(({ year, months }) => (
-      <div class="flex items-center font-mono text-sm">
+      <div class="flex items-center text-sm font-mono">
         {isSameYear(new Date(year, 0, 1), queryDate) ? <strong>{year}</strong> : <span class="text-slate-300">{year}</span>}
         <span class="i-lucide-dot text-slate-500" />
         <div class="flex items-center gap-2">
