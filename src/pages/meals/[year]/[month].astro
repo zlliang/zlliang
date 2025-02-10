@@ -22,7 +22,7 @@ if (isBefore(queryDate, startDate) || isAfter(queryDate, currentDate)) {
   return Astro.redirect('/404')
 }
 
-const months = eachMonthOfInterval({ start: new Date(2022, 0, 1), end: currentDate })
+const months = eachMonthOfInterval({ start: startDate, end: currentDate })
 const years = Object.entries(groupBy(months, (month) => getYear(month)))
   .map(([year, months]) => ({ year: Number(year), months: months.toSorted((a, b) => Number(isBefore(a, b))) }))
   .toSorted((a, b) => b.year - a.year)
