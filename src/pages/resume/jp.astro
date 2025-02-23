@@ -1,0 +1,159 @@
+---
+import { Image } from 'astro:assets'
+
+import Layout from '@/layouts/Layout.astro'
+import Tag from '@/components/Tag.astro'
+import Link from '@/components/Link.astro'
+
+import portrait from '@/assets/images/resume/portrait.jpg'
+---
+
+<Layout title="履歴書" class="print:max-w-none">
+  <span slot="header-suffix"><Tag icon="i-lucide-file-text" color="stone">履歴書</Tag></span>
+  <!-- Toolbar -->
+  <div class="mb-8 px-4 py-3 bg-slate-50 border border-slate-200 text-slate-600 print-hidden">
+    <div class="flex justify-between items-center text-sm">
+      <div class="flex items-center">
+        <div><Link href="/resume/cn">中文</Link></div>
+        <div class="i-lucide-dot text-slate-500" />
+        <div><Link href="/resume/en">English</Link></div>
+        <div class="i-lucide-dot text-slate-500" />
+        <div>日本語</div>
+      </div>
+      <div class="flex items-center gap-4">
+        <Link href="/assets/resume/履歴書 - 梁子龍 (LIANG ZILONG) - 日本語.pdf" external><span class="i-lucide-download" /> PDF</Link>
+        <Link href="https://www.linkedin.com/in/%E5%AD%90%E9%BE%8D-%E6%A2%81-383784200/"><span class="i-simple-icons-linkedin" /> LinkedIn</Link>
+      </div>
+    </div>
+  </div>
+  <!-- Resume -->
+  <div class="mt-8 font-noto-serif-jp text-xs leading-normal subpixel-antialiased">
+    <!-- Heading -->
+    <div class="flex justify-between">
+      <div class="flex-1">
+        <div class="font-bold text-2xl">梁子龍（LIANG ZILONG）</div>
+        <div class="mt-2 sm:(flex gap-4) print:(flex gap-4)">
+          <div>メール：<Link href="mailto:zlliang96@outlook.com" class="nocolor">zlliang96@outlook.com</Link></div>
+          <div>GitHub：<Link href="https://github.com/zlliang" class="nocolor">@zlliang</Link></div>
+        </div>
+      </div>
+      <Image src={portrait} alt="Portrait" class="w-20" />
+    </div>
+    <!-- Education -->
+    <div class="section">
+      <div class="section-title">学歴</div>
+      <div class="section-item">
+        <div class="item-title">
+          <div><strong>復旦大学 — 修士</strong></div>
+          <div class="item-time">2019/09 – 2022/06</div>
+        </div>
+        <div class="item-detail">
+          <div>数学科学学院 / 計算数学専攻</div>
+        </div>
+      </div>
+      <div class="section-item">
+        <div class="item-title">
+          <div><strong>復旦大学 — 学士</strong></div>
+          <div class="item-time">2015/09 – 2019/06</div>
+        </div>
+        <div class="item-detail">
+          <div>数学科学学院 / 情報と計算科学専攻</div>
+        </div>
+      </div>
+    </div>
+    <!-- Former jobs -->
+    <div class="section">
+      <div class="section-title">職歴</div>
+      <div class="section-item">
+        <div class="item-title">
+          <div><strong>ByteDance — シニアフロントエンド開発者、Douyin Eコマース</strong></div>
+          <div class="item-time">2024/09 – 現在</div>
+        </div>
+        <div class="item-detail">
+          <div><strong>キーワード：</strong>React、TypeScript、ローコードプラットフォーム、製品設計、アーキテクチャ設計、製品運営、Node.jsサーバーサイド開発</div>
+          <div><strong>ランク：</strong>2-1</div>
+          <div>Douyin Eコマースフロントエンド技術部門に所属し、Eコマース向けの汎用ローコードプラットフォームの構築に参加</div>
+          <div>ローコードプラットフォームのページ公開とランタイムモジュールを担当し、ローコードランタイムアーキテクチャ、マテリアルエコシステム、ページ生産チェーンなどに精通</div>
+          <div>内部スタートアップフェーズから製品イテレーションをフォローし、製品要件設計、技術ソリューション設計、要件開発、機能運営など、製品イテレーションプロセス全体を主導する経験あり</div>
+          <div>開発作業はフロントエンドページとNode.jsサーバーサイド開発をカバーし、サーバーサイド開発、デバッグ、デプロイ、ログ監視プロセスに精通</div>
+          <div><strong>重点プロジェクト1：</strong>ローコードページ公開プロセスを設計、実装、推進し、ローコードスキーマの公開とアクセスが社内フロントエンドR&Dインフラを再利用できるようにし、マルチ環境、社内外ネットワーク、グレーリリース、その他のカスタム公開前後チェックをサポートし、10以上のEコマースビジネスがページR&D効率を向上させるのを支援</div>
+          <div><strong>重点プロジェクト2：</strong>ローコードページコードレンダリングモードを設計、実装、推進し、ビジネスがページランタイムパフォーマンスを40%以上向上させるのを支援し、パフォーマンス分析ツールを提供し、ページパフォーマンスのワンストップ分析と最適化ソリューションを提供</div>
+        </div>
+      </div>
+      <div class="section-item">
+        <div class="item-title">
+          <div><strong>Tencent — フロントエンド開発者、R&D効率プラットフォーム</strong></div>
+          <div class="item-time">2022/07 – 2024/09</div>
+        </div>
+        <div class="item-detail">
+          <div><strong>キーワード：</strong>Vue、TypeScript、R&D効率、DevOps、Kubernetes、クラウドネイティブ</div>
+          <div><strong>ランク：</strong>2年以内にT5からT7に昇進</div>
+          <div>技術工程事業グループ（TEG）に所属し、社内10,000以上の開発プロジェクトのDevOpsニーズをサポートする社内R&D効率プラットフォームの構築に参加</div>
+          <div>CI/CDプロダクトのWebフロントエンド開発を主に担当し、CIパイプライン、アーティファクト管理、マルチリージョンデプロイオーケストレーションなどの現代CI/CD機能をカバー</div>
+          <div>KubernetesクラウドネイティブデプロイメントなどのDevOps業界の最新動向に精通し、WebマイクロフロントエンドアプリケーションのR&Dとコラボレーションプロセスに精通</div>
+          <div><strong>重点プロジェクト1：</strong>R&D効率プラットフォームのクラウドネイティブデプロイメント能力の新要件をサポートし、マルチリージョンデプロイオーケストレーション、自動デプロイパイプラインなどを提供し、Tencent Meeting、QQチャンネルなどの社内重点ビジネスのオンボーディングを支援し、R&D効率を実現；継続的デプロイメントインタラクションを最適化し、自動ビルドとデプロイメント効率を継続的に向上させ、アーティファクトビルド時間を80%削減し、各環境のデプロイメント手動操作時間を90%削減</div>
+          <div><strong>重点プロジェクト2：</strong>R&D効率プラットフォームのCI/CDフロントエンドモジュールのアーキテクチャと品質を最適化し、パフォーマンス最適化と自動テストを行い、プラットフォームの使用をより便利で安定させる；ビルドキャッシュの導入、サードパーティ依存関係の個別パッケージング、モジュールフェデレーションなどのメカニズムにより、モジュール自体の依存関係ビルド速度を約70%向上；モジュールコード分割、依存関係最適化などを通じて、クライアントサイドレンダリングLCPなどの指標を約50%最適化</div>
+        </div>
+      </div>
+      <div class="section-item">
+        <div class="item-title">
+          <div><strong>Bilibili — フロントエンド開発者、商業化技術（インターン）</strong></div>
+          <div class="item-time">2020/11 – 2021/08</div>
+        </div>
+        <div class="item-detail">
+          <div><strong>キーワード：</strong>Vue、商業化、広告配信システム、DevOps</div>
+          <div>多数のBサイド商業化インフラストラクチャの開発に参加し、CRM、広告配信システム、コンテンツブーストシステムなど、商業化関連のビジネスプロセスに精通</div>
+          <div>各種商業化製品のCサイド活動ページの再利用可能なコンポーネントの開発に参加し、大規模なブランドマーケティングプロジェクトの効率向上と技術サポートを提供</div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">パーソナルプロジェクト</div>
+      <div class="item-detail">
+        <div>個人ブログ：<Link href="https://zlliang.me" class="nocolor">https://zlliang.me</Link>、私の技術実験場でもあり、以前はHexo、Next.js、VitePressなどを使用し、現在のバージョンはAstroで構築</div>
+        <div>WeChatミニプログラム開発：<Link href="https://github.com/zlliang/fdu-classrooms" class="nocolor">https://github.com/zlliang/fdu-classrooms</Link>、学生時代の趣味プロジェクトで、現在はオフライン、貴重なミニプログラム開発経験を提供</div>
+        <div>言語インタプリタ開発：<Link href="https://github.com/zlliang/tslox" class="nocolor">https://github.com/zlliang/tslox</Link> と <Link href="https://github.com/zlliang/clox" class="nocolor">https://github.com/zlliang/clox</Link></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">スキル</div>
+      <div class="item-detail">
+        <div>プログラミング言語とツール：JavaScript/TypeScript、Python、Shellに精通、SQL、Go、Rustなどを理解</div>
+        <div>フロントエンド技術スタック：Node.js、ES6、React、Next.js、CSS-in-JS、Vue、Vite、Vitest、Cypress/Playwright、Webpack、ESLintなど</div>
+        <div>DevOps概念と実装：テスト駆動開発、CI/CD、Docker、Kubernetesなど</div>
+        <div>語学力：英語 TOEFL 104、日本語 JLPT N2</div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+.section {
+  @apply relative mt-5 pt-4 border-t border-slate-500;
+}
+
+.section-title {
+  @apply absolute top--3.5 left-5 px-2 bg-white text-base font-bold;
+}
+
+.section-item:not(:last-child) {
+  @apply mb-1;
+}
+
+.item-title {
+  @apply sm:(flex justify-between gap-4) print:(flex justify-between gap-4) text-sm;
+}
+
+.item-time {
+  @apply sm:shrink-0 print:shrink-0 text-xs sm:text-sm print:text-sm;
+}
+
+.item-detail > div {
+  @apply pl-3;
+}
+
+.item-detail > div::before {
+  content: '‣';
+  @apply absolute left--0.4 font-bold;
+}
+</style>

@@ -4,9 +4,9 @@ import { siteTitle } from '@/utils/site'
 import Link from '@/components/Link.astro'
 ---
 
-<header class="flex justify-between items-center h-16">
+<header class="flex justify-between items-center h-16 print-hidden">
   <div class="flex items-center gap-2">
-    <Link href="/" class="flex items-center gap-2 text-slate-900 hover:text-slate-900">
+    <Link href="/" class="nocolor flex items-center gap-2">
       <img src="/logo.png" alt="logo" class="w-6 h-6" />
       <strong>{siteTitle}</strong>
     </Link>
