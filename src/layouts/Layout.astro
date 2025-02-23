@@ -11,10 +11,11 @@ import '@/styles/main.css'
 interface Props {
   title?: string
   wide?: boolean
+  class?: string
 }
 
 const title = getTitle(Astro.props.title)
-const { wide = false } = Astro.props
+const { wide = false, class: className } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -22,6 +23,7 @@ const { wide = false } = Astro.props
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
@@ -43,7 +45,7 @@ const { wide = false } = Astro.props
   <SpeedInsights />
 </head>
 <body>
-  <div class:list={['flex flex-col m-auto px-6 min-h-100dvh', wide ? 'max-w-6xl' : 'max-w-3xl']}>
+  <div class:list={['flex flex-col m-auto px-6 min-h-100dvh', wide ? 'max-w-6xl' : 'max-w-3xl', className]}>
     <Header>
       <slot name="header-suffix" slot="suffix" />
     </Header>

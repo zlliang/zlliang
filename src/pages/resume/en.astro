@@ -1,0 +1,159 @@
+---
+import { Image } from 'astro:assets'
+
+import Layout from '@/layouts/Layout.astro'
+import Tag from '@/components/Tag.astro'
+import Link from '@/components/Link.astro'
+
+import portrait from '@/assets/images/resume/portrait.jpg'
+---
+
+<Layout title="Resume" class="print:max-w-none">
+  <span slot="header-suffix"><Tag icon="i-lucide-file-text" color="stone">Resume</Tag></span>
+  <!-- Toolbar -->
+  <div class="mb-8 px-4 py-3 bg-slate-50 border border-slate-200 text-slate-600 print-hidden">
+    <div class="flex justify-between items-center text-sm">
+      <div class="flex items-center">
+        <div><Link href="/resume/cn">中文</Link></div>
+        <div class="i-lucide-dot text-slate-500" />
+        <div>English</div>
+        <div class="i-lucide-dot text-slate-500" />
+        <div><Link href="/resume/jp">日本語</Link></div>
+      </div>
+      <div class="flex items-center gap-4">
+        <Link href="/assets/resume/Resume - LIANG ZILONG - English.pdf" external><span class="i-lucide-download" /> PDF</Link>
+        <Link href="https://www.linkedin.com/in/%E5%AD%90%E9%BE%8D-%E6%A2%81-383784200/"><span class="i-simple-icons-linkedin" /> LinkedIn</Link>
+      </div>
+    </div>
+  </div>
+  <!-- Resume -->
+  <div class="mt-8 font-source-serif text-xs leading-normal subpixel-antialiased">
+    <!-- Heading -->
+    <div class="flex justify-between">
+      <div class="flex-1">
+        <div class="font-bold text-2xl">LIANG ZILONG</div>
+        <div class="mt-2 sm:(flex gap-4) print:(flex gap-4)">
+          <div>Email: <Link href="mailto:zlliang96@outlook.com" class="nocolor">zlliang96@outlook.com</Link></div>
+          <div>GitHub: <Link href="https://github.com/zlliang" class="nocolor">@zlliang</Link></div>
+        </div>
+      </div>
+      <Image src={portrait} alt="Portrait" class="w-20" />
+    </div>
+    <!-- Education -->
+    <div class="section">
+      <div class="section-title">Education</div>
+      <div class="section-item">
+        <div class="item-title">
+          <div><strong>Fudan University — Master's Degree</strong></div>
+          <div class="item-time">09/2019 – 06/2022</div>
+        </div>
+        <div class="item-detail">
+          <div>School of Mathematical Sciences / Computational Mathematics</div>
+        </div>
+      </div>
+      <div class="section-item">
+        <div class="item-title">
+          <div><strong>Fudan University — Bachelor's Degree</strong></div>
+          <div class="item-time">09/2015 – 06/2019</div>
+        </div>
+        <div class="item-detail">
+          <div>School of Mathematical Sciences / Information and Computational Science</div>
+        </div>
+      </div>
+    </div>
+    <!-- Former jobs -->
+    <div class="section">
+      <div class="section-title">Work Experience</div>
+      <div class="section-item">
+        <div class="item-title">
+          <div><strong>ByteDance — Senior Web Frontend Developer, Douyin E-commerce</strong> (Shanghai Gewu Zhiyuan Network Technology Co., Ltd.)</div>
+          <div class="item-time">09/2024 – Present</div>
+        </div>
+        <div class="item-detail">
+          <div><strong>Keywords:</strong> React, TypeScript, Low-code Platform, Product Design, Architecture Design, Product Operations, Node.js Server-side Development</div>
+          <div><strong>Rank:</strong> 2-1</div>
+          <div>Worked in the Douyin E-commerce Frontend Technology Department, participated in building a universal low-code platform for e-commerce</div>
+          <div>Responsible for the page publishing and runtime modules of the low-code platform, familiar with low-code runtime architecture, material ecosystem, page production chain, etc.</div>
+          <div>Followed product iterations from the internal startup phase, with experience in leading product requirement design, technical solution design, requirement development, and functional operations throughout the product iteration process</div>
+          <div>Development work covers frontend pages and Node.js server-side development, familiar with server-side development, debugging, deployment, and log monitoring processes</div>
+          <div><strong>Key project 1:</strong> Designed, implemented, and promoted the low-code page publishing process, enabling low-code schema publishing and access to reuse the company's frontend R&D infrastructure, supporting multi-environment, internal and external network, gray release, and other custom pre- and post-publishing checks, helping 10+ e-commerce businesses achieve page R&D efficiency improvements</div>
+          <div><strong>Key project 2:</strong> Designed, implemented, and promoted the low-code page code rendering mode, helping businesses improve page runtime performance by over 40%, while providing performance analysis tools, offering a one-stop analysis and optimization solution for page performance</div>
+        </div>
+      </div>
+      <div class="section-item">
+        <div class="item-title">
+          <div><strong>Tencent — Web Frontend Developer, R&D Efficiency Product</strong> (Tencent Technology (Shanghai) Co., Ltd.)</div>
+          <div class="item-time">07/2022 – 09/2024</div>
+        </div>
+        <div class="item-detail">
+          <div><strong>Keywords:</strong> Vue, TypeScript, R&D Efficiency, DevOps, Kubernetes, Cloud Native</div>
+          <div><strong>Rank:</strong> Promoted from T5 to T7 within two years</div>
+          <div>Worked in the Tencent Technical Engineering Group (TEG), participated in building a company-level R&D efficiency platform, supporting DevOps needs for 10,000+ development projects within the company</div>
+          <div>Primarily responsible for the web frontend development of CI/CD products, including CI pipelines, artifact management, multi-region deployment orchestration, and other modern CI/CD features</div>
+          <div>Familiar with the trending techs in DevOps such as Kubernetes cloud-native deployment, and familiar with the R&D and collaboration processes of web micro-frontend applications</div>
+          <div><strong>Key project 1:</strong> Supported new requirements for cloud-native deployment capabilities of the R&D efficiency platform, providing multi-region deployment orchestration, automated deployment pipelines, etc., helping key businesses like Tencent Meeting and QQ Channels to onboard, achieving R&D efficiency improvements; optimized continuous deployment interactions, continuously improving automated build and deployment efficiency, reducing artifact build time by 80%, and manual operation time for deployments across environments by 90%</div>
+          <div><strong>Key project 2:</strong> Optimized the architecture and quality of the CI/CD frontend modules of the R&D efficiency platform, implemented performance optimization and automated testing, making the platform more convenient and stable; by introducing build caching, separate packaging of third-party dependencies, module federation, etc., the module's own dependency build speed increased by about 70%; through module code splitting, dependency optimization, etc., client-side rendering LCP and other metrics improved by about 50%</div>
+        </div>
+      </div>
+      <div class="section-item">
+        <div class="item-title">
+          <div><strong>Bilibili — Web Frontend Developer, Commercialization Technology (Intern)</strong> (Shanghai Bilibili Technology Co., Ltd.)</div>
+          <div class="item-time">11/2020 – 08/2021</div>
+        </div>
+        <div class="item-detail">
+          <div><strong>Keywords:</strong> Vue, Commercialization, Ad Delivery System, DevOps</div>
+          <div>Participated in the development of a large number of B2B commercialization infrastructures, such as CRM, ad delivery systems, content boosting systems, etc., familiar with commercialization-related business processes</div>
+          <div>Participated in the development of reusable components for B2C activity pages of various commercialization products, improving efficiency and providing technical support for large-scale brand marketing projects</div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">Personal Technical Projects</div>
+      <div class="item-detail">
+        <div>Personal blog: <Link href="https://zlliang.me" class="nocolor">https://zlliang.me</Link>, also my technical experimental field, previously used Hexo, Next.js, VitePress, etc., current version built with Astro</div>
+        <div>WeChat Miniprogram development: <Link href="https://github.com/zlliang/fdu-classrooms" class="nocolor">https://github.com/zlliang/fdu-classrooms</Link>, an interest project during my studies, currently offline, provided valuable mini-program development experience</div>
+        <div>Language interpreter development: <Link href="https://github.com/zlliang/tslox" class="nocolor">https://github.com/zlliang/tslox</Link> and <Link href="https://github.com/zlliang/clox" class="nocolor">https://github.com/zlliang/clox</Link></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">Skills</div>
+      <div class="item-detail">
+        <div>Programming languages and tools: Proficient in JavaScript/TypeScript, Python, Shell, familiar with SQL, Go, Rust, etc.</div>
+        <div>Frontend technology stack: Node.js, ES6, React, Next.js, CSS-in-JS, Vue, Vite, Vitest, Cypress/Playwright, Webpack, ESLint, etc.</div>
+        <div>DevOps concepts and implementation skills: Test-driven Development, CI/CD, Docker, Kubernetes, etc.</div>
+        <div>Language skills: English TOEFL 104, Japanese JLPT N2</div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+.section {
+  @apply relative mt-5 pt-4 border-t border-slate-500;
+}
+
+.section-title {
+  @apply absolute top--3.5 left-5 px-2 bg-white text-base font-bold;
+}
+
+.section-item:not(:last-child) {
+  @apply mb-1;
+}
+
+.item-title {
+  @apply sm:(flex justify-between gap-4) print:(flex justify-between gap-4) text-sm;
+}
+
+.item-time {
+  @apply sm:shrink-0 print:shrink-0 text-xs sm:text-sm print:text-sm;
+}
+
+.item-detail > div {
+  @apply pl-3;
+}
+
+.item-detail > div::before {
+  content: '‣';
+  @apply absolute left--0.4 font-bold;
+}
+</style>

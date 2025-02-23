@@ -36,6 +36,10 @@ a {
   @apply text-sky-600 hover:text-sky-500 transition-color;
 }
 
+a.nocolor {
+  @apply text-slate-900 hover:text-slate-900;
+}
+
 b, strong {
   @apply font-600;
 }
@@ -182,3 +186,55 @@ span.caption {
 .card pre {
   @apply my-3;
 }
+
+/* Enter animation */
+@keyframes slide-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.slide-enter > * {
+  --stagger: 0;
+  --delay: 150ms;
+  --start: 0ms;
+  animation: slide-enter 1s both 1;
+  animation-delay: calc(var(--start) + var(--stagger) * var(--delay));
+}
+
+.slide-enter > *:nth-child(1) { --stagger: 1; }
+.slide-enter > *:nth-child(2) { --stagger: 2; }
+.slide-enter > *:nth-child(3) { --stagger: 3; }
+.slide-enter > *:nth-child(4) { --stagger: 4; }
+.slide-enter > *:nth-child(5) { --stagger: 5; }
+.slide-enter > *:nth-child(6) { --stagger: 6; }
+.slide-enter > *:nth-child(7) { --stagger: 7; }
+.slide-enter > *:nth-child(8) { --stagger: 8; }
+.slide-enter > *:nth-child(9) { --stagger: 9; }
+.slide-enter > *:nth-child(10) { --stagger: 10; }
+.slide-enter > *:nth-child(11) { --stagger: 11; }
+.slide-enter > *:nth-child(12) { --stagger: 12; }
+.slide-enter > *:nth-child(13) { --stagger: 13; }
+.slide-enter > *:nth-child(14) { --stagger: 14; }
+.slide-enter > *:nth-child(15) { --stagger: 15; }
+.slide-enter > *:nth-child(16) { --stagger: 16; }
+.slide-enter > *:nth-child(17) { --stagger: 17; }
+.slide-enter > *:nth-child(18) { --stagger: 18; }
+.slide-enter > *:nth-child(19) { --stagger: 19; }
+.slide-enter > *:nth-child(20) { --stagger: 20; }
+.slide-enter > *:nth-child(21) { --stagger: 21; }
+.slide-enter > *:nth-child(22) { --stagger: 22; }
+.slide-enter > *:nth-child(23) { --stagger: 23; }
+.slide-enter > *:nth-child(24) { --stagger: 24; }
+.slide-enter > *:nth-child(25) { --stagger: 25; }
+.slide-enter > *:nth-child(26) { --stagger: 26; }
+.slide-enter > *:nth-child(27) { --stagger: 27; }
+.slide-enter > *:nth-child(28) { --stagger: 28; }
+.slide-enter > *:nth-child(29) { --stagger: 29; }
+.slide-enter > *:nth-child(30) { --stagger: 30; }
