@@ -15,11 +15,11 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       '@iconify-json/lucide':
+        specifier: ^1.2.28
+        version: 1.2.28
+      '@iconify-json/simple-icons':
         specifier: ^1.2.27
         version: 1.2.27
-      '@iconify-json/simple-icons':
-        specifier: ^1.2.26
-        version: 1.2.26
       '@notionhq/client':
         specifier: ^2.2.16
         version: 2.2.16
@@ -460,11 +460,11 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@iconify-json/lucide@1.2.27':
-    resolution: {integrity: sha512-Q1Msf39/6TuY3DL9vKkrAbGaK7/28E0/9oWnwcgfSQ9zJvOV1bY9OzK14vIBIqtaGyYI5st/wwNiJNi+16WEkQ==}
+  '@iconify-json/lucide@1.2.28':
+    resolution: {integrity: sha512-SPeAoh1YKhALpNSto/FBspf3GZ0eAr3ka/OI7cJJ5HljLzycIITv0s4Rd2+sRVzFtD1I991mJJmYohQeOSZ+Og==}
 
-  '@iconify-json/simple-icons@1.2.26':
-    resolution: {integrity: sha512-NvqRuE+5h/tp4boPlnvfs0alD0CvnRE7oeG9Li5NGmZRx2/rhwlNjW/vEVTyhZcR9zqvRPAVh2GXR+PTEpzV+A==}
+  '@iconify-json/simple-icons@1.2.27':
+    resolution: {integrity: sha512-FtZwp/H7ih5rY9FPfDR+k6toOo/cuwpHWY8faNhxLs5O5uW6Q8TeqdNWfjVfgFtrs5tUUzWysjqNGL234v8EMA==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -3429,11 +3429,11 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@iconify-json/lucide@1.2.27':
+  '@iconify-json/lucide@1.2.28':
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/simple-icons@1.2.26':
+  '@iconify-json/simple-icons@1.2.27':
     dependencies:
       '@iconify/types': 2.0.0
 
