@@ -15,8 +15,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       '@iconify-json/lucide':
-        specifier: ^1.2.32
-        version: 1.2.32
+        specifier: ^1.2.33
+        version: 1.2.33
       '@iconify-json/simple-icons':
         specifier: ^1.2.29
         version: 1.2.29
@@ -460,8 +460,8 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@iconify-json/lucide@1.2.32':
-    resolution: {integrity: sha512-M5efeHQJhlT8FkAXjW+xGu5/lHUt5VBSjd/u9XxmQy6RGXLRCRi0PcUBosAuKALRT15j+U8dN4eWiDhDZjTbSw==}
+  '@iconify-json/lucide@1.2.33':
+    resolution: {integrity: sha512-2Ty+rI0tRHJEbM6J48G40ONvCPrcFC3o4PpAqOXZ3X+Uz2vMzrGj6tl2XHToZ64nc6lg+fC3WhkJebyyQxLVcw==}
 
   '@iconify-json/simple-icons@1.2.29':
     resolution: {integrity: sha512-KYrxmxtRz6iOAulRiUsIBMUuXek+H+Evwf8UvYPIkbQ+KDoOqTegHx3q/w3GDDVC0qJYB+D3hXPMZcpm78qIuA==}
@@ -3387,7 +3387,7 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@iconify-json/lucide@1.2.32':
+  '@iconify-json/lucide@1.2.33':
     dependencies:
       '@iconify/types': 2.0.0
 
