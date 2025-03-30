@@ -1,6 +1,8 @@
-import { getCollection, type CollectionEntry } from 'astro:content'
+import { getCollection, getEntry, render } from 'astro:content'
 import { groupBy, uniq } from 'lodash-es'
 import { getYear } from 'date-fns'
+
+import type { CollectionEntry } from 'astro:content'
 
 /** All posts sorted by created dates */
 export async function getPosts() {
@@ -66,4 +68,12 @@ export function countWords(markdown?: string): number {
   const matches = text.match(/[\u4e00-\u9fa5]|[a-zA-Z0-9]+/g)
   // 如果有匹配结果，返回匹配结果的数量，即字数；如果没有匹配结果，返回 0
   return matches ? matches.length : 0
+}
+
+/** Render a fragment */
+export async function renderFragment(slug: string) {
+  const entry = await getEntry('fragments', slug)!
+  const { Content } = await render(entry)
+
+  return Content
 }
