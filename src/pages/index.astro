@@ -1,15 +1,15 @@
 ---
-import { getPosts } from '@/utils/posts'
+import { getPosts, renderFragment } from '@/content'
 
 import Layout from '@/layouts/Layout.astro'
 import ImageSlide from '@/components/ImageSlide.astro'
 import PostList from '@/components/PostList.astro'
 import Section from '@/components/Section.astro'
 import Tag from '@/components/Tag.astro'
-import { Content as Bio } from '@/fragments/bio.md'
 
 import welcome from '@/assets/images/welcome.gif'
 
+const Bio = await renderFragment('bio')
 const posts = await getPosts()
 ---
 
