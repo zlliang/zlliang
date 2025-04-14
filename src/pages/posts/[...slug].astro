@@ -1,7 +1,7 @@
 ---
 import { render } from 'astro:content'
 import { format } from '@/utils/date'
-import { getPosts, countWords } from '@/content'
+import { getPosts } from '@/content'
 
 import Layout from '@/layouts/Layout.astro'
 import PageTitle from '@/components/PageTitle.astro'
@@ -30,7 +30,6 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
 const { post, next, previous } = Astro.props
 const { Content } = await render(post)
-const wordCount = countWords(post.body)
 
 /** Format word count to comma separated number, rounded to the nearest hundred */
 function formatWordCount(count: number): string {
@@ -45,7 +44,7 @@ function formatWordCount(count: number): string {
     <Fragment>{post.data.title}</Fragment>
     <span slot="subtitle" class="flex flex-wrap gap-2">
       <div>
-        <span>{format(post.data.created, 'PP')}</span><span class="i-lucide-dot" /><span>约 {formatWordCount(wordCount)} 字</span>
+        <span>{format(post.data.created, 'PP')}</span>
       </div>
       {post.data.tags?.map((tag) => (
         <Tag href={`/posts/tags/${tag}`}>{tag}</Tag>
