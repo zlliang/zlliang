@@ -30,12 +30,6 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
 const { post, next, previous } = Astro.props
 const { Content } = await render(post)
-
-/** Format word count to comma separated number, rounded to the nearest hundred */
-function formatWordCount(count: number): string {
-  const rounded = Math.round(count / 100) * 100
-  return rounded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-}
 ---
 
 <Layout title={post.data.title}>
