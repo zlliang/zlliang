@@ -1,5 +1,6 @@
 {
   "name": "zlliang.me",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
