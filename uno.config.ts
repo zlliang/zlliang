@@ -22,9 +22,9 @@ export default defineConfig({
     presetWebFonts({
       provider: 'bunny',
       fonts: {
-        'noto-serif-cn': ['Noto Serif SC:400,700', 'serif'],
-        'noto-serif-jp': ['Noto Serif JP:400,700', 'serif'],
-        'source-serif': ['Source Serif 4:400,700', 'serif'],
+        'noto-serif-cn': ['Noto Serif SC:400,700'],
+        'noto-serif-jp': ['Noto Serif JP:400,700'],
+        'source-serif': ['Source Serif 4:400,700'],
       }
     }),
   ],
