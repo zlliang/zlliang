@@ -3,10 +3,17 @@ import Link from '@/components/Link.astro'
 ---
 
 <footer class="mt-24 mb-8 text-sm text-center text-slate-400 print-hidden">
-  <Link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="text-slate-400">CC BY-NC-SA 4.0</Link>
-  <span>2025–PRESENT</span>
-  <span class="i-lucide-copyright scale-90 translate-y-[0.5px]" />
-  <span>梁子龙</span>
-  <span class="i-lucide-dot" />
-  <span>使用 <Link href="https://astro.build" class="text-slate-400">Astro</Link> 构建</span>
+  <div>
+    <Link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="text-slate-400">CC BY-NC-SA 4.0</Link>
+    <span>2025–PRESENT</span>
+    <span class="i-lucide-copyright scale-90 translate-y-[0.5px]" />
+    <span>梁子龙</span>
+    <span class="hidden sm:inline">
+      <span class="i-lucide-dot" />
+      <span>使用 <Link href="https://astro.build" class="text-slate-400">Astro</Link> 构建</span>
+    </span>
+  </div>
+  <div class="mt-1 sm:hidden">
+    <span>使用 <Link href="https://astro.build" class="text-slate-400">Astro</Link> 构建</span>
+  </div>
 </footer>
