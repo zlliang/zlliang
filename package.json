@@ -25,7 +25,7 @@
     "@unocss/reset": "66.3.3",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "astro": "^5.12.0",
+    "astro": "^5.12.8",
     "date-fns": "^4.1.0",
     "dotenv": "^17.2.0",
     "hono": "^4.8.5",
