@@ -17,7 +17,7 @@ export default defineConfig({
     },
   }),
   integrations: [
-    unocss({ injectReset: true }),
+    unocss(),
   ],
   markdown: {
     shikiConfig: {
