@@ -1,6 +1,6 @@
 import {
   defineConfig,
-  presetWind3,
+  presetWind4,
   presetIcons,
   presetWebFonts,
   transformerDirectives,
@@ -9,7 +9,9 @@ import {
 
 export default defineConfig({
   presets: [
-    presetWind3(),
+    presetWind4({
+      preflights: { reset: true }
+    }),
     presetIcons({
       extraProperties: {
         'display': 'inline-block',
