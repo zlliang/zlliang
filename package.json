@@ -9,11 +9,10 @@
   },
   "packageManager": "pnpm@10.15.0",
   "devDependencies": {
-    "@astrojs/vercel": "^8.2.6",
+    "@astrojs/vercel": "^8.2.7",
     "@date-fns/tz": "^1.4.1",
-    "@iconify-json/lucide": "^1.2.63",
-    "@iconify-json/simple-icons": "^1.2.48",
-    "@notionhq/client": "^4.0.2",
+    "@iconify-json/lucide": "^1.2.66",
+    "@iconify-json/simple-icons": "^1.2.50",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@types/hast": "^3.0.4",
@@ -21,18 +20,14 @@
     "@types/node": "^24.3.0",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "astro": "^5.13.2",
+    "astro": "^5.13.5",
     "date-fns": "^4.1.0",
-    "dotenv": "^17.2.1",
-    "hono": "^4.9.2",
     "lodash-es": "^4.17.21",
-    "octokit": "^5.0.3",
     "rehype-external-links": "^3.0.0",
     "typescript": "^5.9.2",
     "unist-util-visit": "^5.0.0",
-    "unocss": "66.4.2",
-    "uuid": "^11.1.0",
-    "vercel": "^46.0.2"
+    "unocss": "66.5.0",
+    "vercel": "^46.1.1"
   },
   "pnpm": {
     "neverBuiltDependencies": []

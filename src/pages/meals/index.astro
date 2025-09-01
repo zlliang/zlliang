@@ -1,9 +1,0 @@
----
-import { Date, format } from '@/utils/date'
-
-export const prerender = false
-
-const now = new Date()
-
-return Astro.redirect(`/meals/${format(now, 'yyyy/MM')}`)
----
