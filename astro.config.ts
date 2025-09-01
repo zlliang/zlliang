@@ -11,10 +11,6 @@ export default defineConfig({
       sizes: [768, 1280],
       domains: [],
     },
-    isr: {
-      bypassToken: process.env.ISR_BYPASS_TOKEN,
-      exclude: ['/api/[...path]', '/meals'],
-    },
   }),
   integrations: [
     unocss(),
