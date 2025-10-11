@@ -1,12 +1,12 @@
 ---
-import Layout from '@/layouts/Layout.astro'
+import Layout from '@/components/Layout.astro'
 import Link from '@/components/Link.astro'
 ---
 
 <Layout title="404 找不到页面">
-  <div class="flex flex-col items-center justify-center my-48 text-slate-400">
+  <div class="text-slate-400 my-48 flex flex-col items-center justify-center">
     <div class="i-lucide-frown text-5xl" />
-    <div class="mt-2 text-2xl font-600">404 找不到页面</div>
+    <div class="text-2xl font-600 mt-2">404 找不到页面</div>
     <Link href="/" class="mt-6"><span class="i-lucide-arrow-left" /> 回到首页</Link>
   </div>
 </Layout>

@@ -12,10 +12,10 @@ const { href, icon, color = 'slate', class: className } = Astro.props
 
 const Component = href ? Link : 'span'
 const colorClassName: Record<NonNullable<Props['color']>, string> = {
-  slate: 'border-slate-200 text-slate-500',
-  amber: 'bg-amber-50 border-amber-200 text-amber-500',
-  rose: 'bg-rose-50 border-rose-200 text-rose-500',
-  stone: 'bg-stone-50 border-stone-200 text-stone-500',
+  slate: 'text-slate-500 border-slate-200',
+  amber: 'text-amber-500 border-amber-200 bg-amber-50',
+  rose: 'text-rose-500 border-rose-200 bg-rose-50',
+  stone: 'text-stone-500 border-stone-200 bg-stone-50',
 }
 ---
 

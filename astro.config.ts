@@ -1,7 +1,7 @@
-import { defineConfig } from 'astro/config'
 import vercel from '@astrojs/vercel'
-import unocss from 'unocss/astro'
+import { defineConfig } from 'astro/config'
 import rehypeExternalLinks from 'rehype-external-links'
+import unocss from 'unocss/astro'
 import { rehypeImageCaption } from './src/utils/rehype'
 
 export default defineConfig({

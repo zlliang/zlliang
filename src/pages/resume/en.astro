@@ -1,18 +1,18 @@
 ---
 import { Image } from 'astro:assets'
 
-import Layout from '@/layouts/Layout.astro'
-import Tag from '@/components/Tag.astro'
-import Link from '@/components/Link.astro'
-
 import portrait from '@/assets/images/resume/portrait.jpg'
+
+import Layout from '@/components/Layout.astro'
+import Link from '@/components/Link.astro'
+import Tag from '@/components/Tag.astro'
 ---
 
 <Layout title="Resume" class="print:max-w-none">
   <span slot="header-suffix"><Tag icon="i-lucide-file-text" color="stone">Resume</Tag></span>
   <!-- Toolbar -->
-  <div class="mb-8 px-4 py-3 bg-slate-50 border border-slate-200 text-slate-600 print-hidden">
-    <div class="flex justify-between items-center text-sm">
+  <div class="text-slate-600 mb-8 px-4 py-3 border border-slate-200 bg-slate-50 print-hidden">
+    <div class="text-sm flex items-center justify-between">
       <div class="flex items-center">
         <div><Link href="/resume/cn">中文</Link></div>
         <div class="i-lucide-dot text-slate-500" />
@@ -20,19 +20,19 @@ import portrait from '@/assets/images/resume/portrait.jpg'
         <div class="i-lucide-dot text-slate-500" />
         <div><Link href="/resume/jp">日本語</Link></div>
       </div>
-      <div class="flex items-center gap-4">
+      <div class="flex gap-4 items-center">
         <Link href="/assets/resume/Resume - LIANG ZILONG - English.pdf" external><span class="i-lucide-download" /> PDF</Link>
         <Link href="https://www.linkedin.com/in/%E5%AD%90%E9%BE%8D-%E6%A2%81-383784200/"><span class="i-simple-icons-linkedin" /> LinkedIn</Link>
       </div>
     </div>
   </div>
   <!-- Resume -->
-  <div class="mt-8 font-source-serif text-xs leading-normal subpixel-antialiased">
+  <div class="text-xs leading-normal font-source-serif mt-8 subpixel-antialiased">
     <!-- Heading -->
     <div class="flex justify-between">
       <div class="flex-1">
-        <div class="font-bold text-2xl">LIANG ZILONG</div>
-        <div class="mt-2 sm:(flex gap-4) print:(flex gap-4)">
+        <div class="text-2xl font-bold">LIANG ZILONG</div>
+        <div class="mt-2 print:(flex gap-4) sm:(flex gap-4)">
           <div>Email: <Link href="mailto:zlliang96@outlook.com" class="nocolor">zlliang96@outlook.com</Link></div>
           <div>GitHub: <Link href="https://github.com/zlliang" class="nocolor">@zlliang</Link></div>
         </div>

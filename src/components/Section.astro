@@ -8,6 +8,6 @@ const { title, class: className } = Astro.props
 ---
 
 <div class="my-8">
-  <div class="pb-1 mb-2 border-b border-slate-200 text-slate-500 text-sm"><slot name="title">{title}</slot></div>
+  <div class="text-sm text-slate-500 mb-2 pb-1 border-b border-slate-200"><slot name="title">{title}</slot></div>
   <div class:list={className}><slot /></div>
 </div>

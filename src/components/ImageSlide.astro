@@ -4,10 +4,10 @@ import type { ImageMetadata } from 'astro'
 import '@splidejs/splide/css/core'
 
 const entries = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/profile-slide/*.jpg', { eager: true })
-const images =  Object.values(entries).map((entry) => entry.default)
+const images = Object.values(entries).map(entry => entry.default)
 ---
 
-<div class="select-none pointer-events-none mx--4">
+<div class="mx--4 pointer-events-none select-none">
   <div class="splide">
     <div class="splide__track">
       <ul class="splide__list">
