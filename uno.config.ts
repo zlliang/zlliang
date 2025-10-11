@@ -1,8 +1,8 @@
 import {
   defineConfig,
-  presetWind4,
   presetIcons,
   presetWebFonts,
+  presetWind4,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
@@ -10,7 +10,7 @@ import {
 export default defineConfig({
   presets: [
     presetWind4({
-      preflights: { reset: true }
+      preflights: { reset: true },
     }),
     presetIcons({
       extraProperties: {
@@ -27,7 +27,7 @@ export default defineConfig({
         'noto-serif-cn': ['Noto Serif SC:400,700'],
         'noto-serif-jp': ['Noto Serif JP:400,700'],
         'source-serif': ['Source Serif 4:400,700'],
-      }
+      },
     }),
   ],
   transformers: [

@@ -1,6 +1,6 @@
-import { visit } from 'unist-util-visit'
-
 import type { Root } from 'hast'
+
+import { visit } from 'unist-util-visit'
 
 /** Retrieve the `title` property of the `img` element and append a caption element after it. */
 export function rehypeImageCaption() {
@@ -11,7 +11,7 @@ export function rehypeImageCaption() {
           type: 'element',
           tagName: 'span',
           properties: { class: 'caption' },
-          children: [{ type: 'text', value: node.properties.title as string }]
+          children: [{ type: 'text', value: node.properties.title as string }],
         })
       }
     })

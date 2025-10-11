@@ -1,19 +1,19 @@
 ---
-import { getPosts, getTags } from '@/content'
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
 
-import Layout from '@/layouts/Layout.astro'
+import Layout from '@/components/Layout.astro'
 import PageTitle from '@/components/PageTitle.astro'
 import PostList from '@/components/PostList.astro'
 
-import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
+import { getPosts, getTags } from '@/content'
 
 export const getStaticPaths = (async () => {
   const posts = await getPosts()
   const tags = getTags(posts)
-  
-  return tags.map((tag) => ({
+
+  return tags.map(tag => ({
     params: { tag },
-    props: { tag, posts: posts.filter((post) => post.data.tags?.includes(tag)) },
+    props: { tag, posts: posts.filter(post => post.data.tags?.includes(tag)) },
   }))
 }) satisfies GetStaticPaths
 
