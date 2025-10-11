@@ -7,27 +7,27 @@
     "build": "astro build",
     "preview": "astro preview"
   },
-  "packageManager": "pnpm@10.15.0",
+  "packageManager": "pnpm@10.18.2",
   "devDependencies": {
-    "@astrojs/vercel": "^8.2.7",
+    "@astrojs/vercel": "^8.2.9",
     "@date-fns/tz": "^1.4.1",
-    "@iconify-json/lucide": "^1.2.66",
-    "@iconify-json/simple-icons": "^1.2.50",
+    "@iconify-json/lucide": "^1.2.69",
+    "@iconify-json/simple-icons": "^1.2.54",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@types/hast": "^3.0.4",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^24.3.0",
+    "@types/node": "^24.7.1",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "astro": "^5.13.5",
+    "astro": "^5.14.4",
     "date-fns": "^4.1.0",
     "lodash-es": "^4.17.21",
     "rehype-external-links": "^3.0.0",
-    "typescript": "^5.9.2",
+    "typescript": "^5.9.3",
     "unist-util-visit": "^5.0.0",
-    "unocss": "66.5.0",
-    "vercel": "^46.1.1"
+    "unocss": "66.5.3",
+    "vercel": "^48.2.9"
   },
   "pnpm": {
     "neverBuiltDependencies": []
