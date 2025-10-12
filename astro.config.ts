@@ -2,6 +2,7 @@ import vercel from '@astrojs/vercel'
 import { defineConfig } from 'astro/config'
 import rehypeExternalLinks from 'rehype-external-links'
 import unocss from 'unocss/astro'
+
 import { rehypeImageCaption } from './src/utils/rehype'
 
 export default defineConfig({
