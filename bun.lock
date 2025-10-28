@@ -26,7 +26,7 @@
         "rehype-external-links": "^3.0.0",
         "typescript": "^5.9.3",
         "unist-util-visit": "^5.0.0",
-        "unocss": "66.5.4",
+        "unocss": "^66.5.4",
         "vercel": "^48.6.0",
       },
     },
