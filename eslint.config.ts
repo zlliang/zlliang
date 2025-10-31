@@ -1,6 +1,6 @@
-import antfu from '@antfu/eslint-config'
+import withNuxt from './.nuxt/eslint.config.mjs'
+import stylistic from '@stylistic/eslint-plugin'
 
-export default antfu({
-  astro: true,
-  unocss: true,
-})
+export default withNuxt(
+  stylistic.configs.recommended,
+)

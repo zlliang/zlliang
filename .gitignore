@@ -1,10 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/macos,linux,windows,visualstudiocode,node,astro,vercel
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,linux,windows,visualstudiocode,node,astro,vercel
-
-### Astro ###
-# Gitignore template for Astro projects
-# Ignore content collection generated files
-.astro
+# Created by https://www.toptal.com/developers/gitignore/api/macos,linux,windows,visualstudiocode,node,nuxtjs,vercel
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,linux,windows,visualstudiocode,node,nuxtjs,vercel
 
 ### Linux ###
 *~
@@ -28,7 +23,8 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -193,6 +189,17 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
+### NuxtJS ###
+# Generated dirs
+.nuxt-*
+.output
+.gen
+
+# Node dependencies
+node_modules
+
+# System files
+
 ### Vercel ###
 .vercel
 
@@ -241,4 +248,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,linux,windows,visualstudiocode,node,astro,vercel
+# End of https://www.toptal.com/developers/gitignore/api/macos,linux,windows,visualstudiocode,node,nuxtjs,vercel
+
+.data
