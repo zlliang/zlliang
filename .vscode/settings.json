@@ -1,4 +1,10 @@
 {
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
   "eslint.rules.customizations": [
     { "rule": "style/*", "severity": "off", "fixable": true },
     { "rule": "format/*", "severity": "off", "fixable": true },
@@ -12,8 +18,26 @@
     { "rule": "*semi", "severity": "off", "fixable": true }
   ],
   "eslint.validate": [
-    "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "html", "markdown",
-    "json", "jsonc", "yaml", "toml", "xml", "gql", "graphql", "astro", "svelte", "css", "less", 
-    "scss", "pcss", "postcss"
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "toml",
+    "xml",
+    "gql",
+    "graphql",
+    "astro",
+    "svelte",
+    "css",
+    "less",
+    "scss",
+    "pcss",
+    "postcss"
   ]
 }
