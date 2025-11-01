@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^6.1.0",
+    "@antfu/eslint-config": "^6.2.0",
     "@astrojs/vercel": "^9.0.0",
     "@date-fns/tz": "^1.4.1",
     "@iconify-json/lucide": "^1.2.71",
@@ -22,9 +22,9 @@
     "@unocss/eslint-plugin": "^66.5.4",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "astro": "^5.15.2",
+    "astro": "^5.15.3",
     "date-fns": "^4.1.0",
-    "eslint": "^9.38.0",
+    "eslint": "^9.39.0",
     "eslint-plugin-astro": "^1.4.0",
     "jiti": "^2.6.1",
     "lodash-es": "^4.17.21",
@@ -32,6 +32,6 @@
     "typescript": "^5.9.3",
     "unist-util-visit": "^5.0.0",
     "unocss": "^66.5.4",
-    "vercel": "^48.6.7"
+    "vercel": "^48.8.0"
   }
 }
