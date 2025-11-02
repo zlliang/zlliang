@@ -66,7 +66,7 @@ blockquote {
 }
 
 ul, ol {
-  @apply pl-7 leading-[1.7] marker:text-neutral-500 dark:marker:text-neutral-400;
+  @apply mb-4 pl-7 leading-[1.7] marker:text-neutral-500 dark:marker:text-neutral-400;
 }
 
 ul {
@@ -74,24 +74,23 @@ ul {
 }
 
 ul ul, ol ul {
-  @apply list-circle;
+  @apply mb-0 list-circle;
 }
 
 ul ul ul, ol ul ul, ul ol ul, ol ol ul {
-  @apply list-square;
+  @apply mb-0 list-square;
 }
-
 
 ol {
   @apply list-decimal;
 }
 
 ol ol, ul ol {
-  @apply list-roman;
+  @apply mb-0 list-roman;
 }
 
 ol ol ol, ul ol ol, ol ul ol, ul ul ol {
-  @apply list-alpha;
+  @apply mb-0 list-alpha;
 }
 
 hr {
