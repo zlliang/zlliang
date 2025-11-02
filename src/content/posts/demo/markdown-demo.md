@@ -8,9 +8,21 @@ draft: true
 
 ## 二级标题
 
-二级标题如上。现在我需要写一段内容，如果我这一段不写多一点，就没办法折行，所以我还是要多写一点，再多写一点，这样就能折行了。折行能看出行距的不同，如果行距过密或过疏，就会影响阅读。因为这个网站是面向中文的，所以行距调整地稍微大了一点，使用了 [UnoCSS](https://unocss.dev/) 的 `leading-[1.8]` 这个工具类。
+二级标题如上。现在我需要写一段内容，如果我这一段不写多一点，就没办法折行，所以我还是要多写一点，再多写一点，这样就能折行了。折行能看出行距的不同，如果行距过密或过疏，就会影响阅读。我目前使用了 [UnoCSS](https://unocss.dev/) 的 `leading-[1.7]` 这个工具类。
 
 这是另一段内容，两段放在一起，可以看出段落间距是否合适。这一段也需要稍微写长一点，最好能够折行，可以更好地看出真实文章的情况。
+
+下面是几段英文，用来观察英文的行距、段落间距是否合适。我引用的是 Bob Nystrom 著名的文章 [What Color is Your Function?](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/)
+
+> I don’t know about you, but nothing gets me going in the morning quite like a good old fashioned programming language rant. It stirs the blood to see someone skewer one of those [“blub”](http://www.paulgraham.com/avg.html) languages the plebians use, muddling through their day with it between furtive visits to StackOverflow.
+>
+> (Meanwhile, you and I, only use the most enlightened of languages. Chisel-sharp tools designed for the manicured hands of expert craftspersons such as ourselves.)
+>
+> Of course, as the author of said screed, I run a risk. The language I mock could be one you like! Without realizing it, I could have let the rabble into my blog, pitchforks and torches at the ready, and my fool-hardy pamphlet could draw their ire!
+>
+> To protect myself from the heat of those flames, and to avoid offending your possibly delicate sensibilities, instead, I’ll rant about a language I just made up. A strawman whose sole purpose is to be set aflame.
+>
+> I know, this seems pointless right? Trust me, by the end, we’ll see whose face (or faces!) have been painted on his straw noggin.
 
 ### 三级标题
 

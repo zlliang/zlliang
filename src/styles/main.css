@@ -42,7 +42,7 @@ h3 {
 /* Content */
 
 p {
-  @apply my-6 leading-[1.8];
+  @apply my-6 leading-[1.7];
 }
 
 a {
@@ -62,7 +62,7 @@ blockquote {
 }
 
 ul, ol {
-  @apply pl-7 leading-[1.8] marker:text-slate-500;
+  @apply pl-7 leading-[1.7] marker:text-slate-500;
 }
 
 ul {
