@@ -2,7 +2,6 @@
 import Analytics from "@vercel/analytics/astro"
 import SpeedInsights from "@vercel/speed-insights/astro"
 
-import DarkMode from "@/components/DarkMode.astro"
 import Footer from "@/components/Footer.astro"
 import Header from "@/components/Header.astro"
 
@@ -46,9 +45,6 @@ const title = getTitle(Astro.props.title)
   <!-- Vercel -->
   <Analytics />
   <SpeedInsights />
-
-  <!-- Dark mode -->
-  <DarkMode />
 </head>
 <body>
   <div class="flex flex-col min-h-100dvh max-w-3xl m-auto px-6">
