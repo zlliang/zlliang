@@ -84,7 +84,7 @@ greeter.greeting()
 
 </div>
 
-<div class="card caution">
+<div class="card amber">
 
 这是一个警告卡片，它会更加引起注意！
 
