@@ -25,34 +25,28 @@ body {
   }
 }
 
-/* Layout */
-
-main > * > *:first-child {
-  @apply mt-0;
-}
-
-main > * > *:last-child {
-  @apply mb-0;
-}
-
 /* Title */
 
 h2, h3, h4, h5, h6 {
-  @apply my-6 font-600;
+  @apply my-4 font-600;
 }
 
 h2 {
-  @apply mt-10 text-2xl;
+  @apply mt-8 text-2xl;
 }
 
 h3 {
-  @apply mt-10 text-lg;
+  @apply mt-8 text-lg;
 }
 
 /* Content */
 
+main > *:last-child {
+  @apply mb-0;
+}
+
 p {
-  @apply my-6 leading-[1.7];
+  @apply mb-4 leading-[1.7];
 }
 
 a {
@@ -101,7 +95,7 @@ ol ol ol, ul ol ol, ol ul ol, ul ul ol {
 }
 
 hr {
-  @apply relative my-8 h-auto border-slate-200 overflow-visible;
+  @apply relative mb-4 h-auto border-slate-200 overflow-visible;
 }
 
 hr:before {
@@ -133,7 +127,7 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 }
 
 pre {
-  @apply my-6 px-4 py-3 border border-slate-200 text-sm;
+  @apply mb-4 px-4 py-3 border border-slate-200 text-sm;
 }
 
 pre code {
@@ -168,44 +162,17 @@ span.caption {
   @apply flex justify-center mt-1 text-sm text-slate-500;
 }
 
-/* Columns */
-
-.cols {
-  @apply sm:(grid gap-4 my--6); /* `my--6` is to delegate margins to inner paragraphs*/
-}
-
-.cols-1-2 {
-  grid-template-columns: 1fr 2fr;
-}
-
-.cols-2-1 {
-  grid-template-columns: 2fr 1fr;
-}
-
 /* Card */
 
 .card {
-  @apply my-6 px-4 py-3 bg-slate-50 border border-slate-200 text-slate-600;
+  @apply mb-4 px-4 py-3 bg-slate-50 border border-slate-200 text-slate-600;
 }
 
 .card.caution {
   @apply bg-amber-50 border-amber-200 text-amber-600;
 }
 
-.card > *:first-child,
-.card > *:first-child > *:first-child {
-  @apply mt-0;
-}
-
 .card > *:last-child,
 .card > *:last-child > *:last-child {
   @apply mb-0;
-}
-
-.card p {
-  @apply my-3;
-}
-
-.card pre {
-  @apply my-3;
 }
