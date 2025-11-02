@@ -4,7 +4,6 @@ export default defineConfig({
   presets: [
     presetWind4({
       preflights: { reset: true },
-      dark: 'media',
     }),
     presetIcons({
       extraProperties: {
