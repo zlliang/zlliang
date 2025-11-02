@@ -1,6 +1,6 @@
-import { TZDate } from '@date-fns/tz'
-import { format as defaultFormat } from 'date-fns'
-import { zhCN } from 'date-fns/locale'
+import { TZDate } from "@date-fns/tz"
+import { format as defaultFormat } from "date-fns"
+import { zhCN } from "date-fns/locale"
 
 export const Date = TZDate
 

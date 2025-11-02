@@ -1,4 +1,4 @@
-# 👨🏻‍💻 梁子龙 Zilong Liang
+# 👨🏻‍💻 Zilong Liang 梁子龙
 
 Please visit my personal website (in Chinese):
 

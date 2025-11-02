@@ -1,15 +1,16 @@
 ---
-import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
-import { render } from 'astro:content'
+import { render } from "astro:content"
 
-import DraftTag from '@/components/DraftTag.astro'
-import Layout from '@/components/Layout.astro'
-import Link from '@/components/Link.astro'
-import PageTitle from '@/components/PageTitle.astro'
-import Tag from '@/components/Tag.astro'
+import DraftTag from "@/components/DraftTag.astro"
+import Layout from "@/components/Layout.astro"
+import Link from "@/components/Link.astro"
+import PageTitle from "@/components/PageTitle.astro"
+import Tag from "@/components/Tag.astro"
 
-import { getPosts } from '@/content'
-import { format } from '@/utils/date'
+import { getPosts } from "@/content"
+import { format } from "@/utils/date"
+
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro"
 
 export const getStaticPaths = (async () => {
   const posts = await getPosts()
@@ -38,7 +39,7 @@ const { Content } = await render(post)
     <Fragment>{post.data.title}</Fragment>
     <span slot="subtitle" class="flex flex-wrap gap-2">
       <div>
-        <span>{format(post.data.created, 'PP')}</span>
+        <span>{format(post.data.created, "PP")}</span>
       </div>
       {post.data.tags?.map(tag => (
         <Tag href={`/posts/tags/${tag}`}>{tag}</Tag>
@@ -52,23 +53,23 @@ const { Content } = await render(post)
 
   <!-- Links to next and previous posts -->
   {(next || previous) && (
-    <div class="mt-16 grid grid-cols-2">
+    <div class="grid grid-cols-2 mt-16">
       {next && (
-        <div class:list={['col-start-1 pr-4 text-slate-500', !previous && 'border-r border-slate-200']}>
+        <div class:list={["col-start-1 pr-4 text-slate-500", !previous && "border-r border-slate-200"]}>
           <div class="text-sm">
-            <span>下一篇</span><span class="i-lucide-dot" /><span>{format(next.data.created, 'PP')}</span>
+            <span>下一篇</span><span class="i-lucide-dot" /><span>{format(next.data.created, "PP")}</span>
           </div>
-          <Link href={`/posts/${next.id}`} class="mt-1 block">
+          <Link href={`/posts/${next.id}`} class="block mt-1">
             {next.data.title}
           </Link>
         </div>
       )}
       {previous && (
-        <div class="text-slate-500 pl-4 text-right border-l border-slate-200 col-start-2">
+        <div class="col-start-2 pl-4 border-l border-slate-200 text-right text-slate-500">
           <div class="text-sm">
-            <span>{format(previous.data.created, 'PP')}</span><span class="i-lucide-dot" /><span>上一篇</span>
+            <span>{format(previous.data.created, "PP")}</span><span class="i-lucide-dot" /><span>上一篇</span>
           </div>
-          <Link href={`/posts/${previous.id}`} class="mt-1 block">
+          <Link href={`/posts/${previous.id}`} class="block mt-1">
             {previous.data.title}
           </Link>
         </div>
@@ -78,7 +79,7 @@ const { Content } = await render(post)
 </Layout>
 
 <script is:inline type="module">
-import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm'
+import mediumZoom from "https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm"
 
-mediumZoom('main img', { background: '#fffd' })
+mediumZoom("main img", { background: "#fffd" })
 </script>

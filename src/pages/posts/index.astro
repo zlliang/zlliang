@@ -1,13 +1,13 @@
 ---
-import Layout from '@/components/Layout.astro'
-import PageTitle from '@/components/PageTitle.astro'
-import PostList from '@/components/PostList.astro'
+import Layout from "@/components/Layout.astro"
+import PageTitle from "@/components/PageTitle.astro"
+import PostList from "@/components/PostList.astro"
 
-import { getPosts } from '@/content'
+import { getPosts } from "@/content"
 
 const posts = await getPosts()
 
-const title = '全部文章'
+const title = "全部文章"
 ---
 
 <Layout title={title}>

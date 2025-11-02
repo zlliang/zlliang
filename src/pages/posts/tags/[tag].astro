@@ -1,11 +1,11 @@
 ---
-import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
+import Layout from "@/components/Layout.astro"
+import PageTitle from "@/components/PageTitle.astro"
+import PostList from "@/components/PostList.astro"
 
-import Layout from '@/components/Layout.astro'
-import PageTitle from '@/components/PageTitle.astro'
-import PostList from '@/components/PostList.astro'
+import { getPosts, getTags } from "@/content"
 
-import { getPosts, getTags } from '@/content'
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro"
 
 export const getStaticPaths = (async () => {
   const posts = await getPosts()
