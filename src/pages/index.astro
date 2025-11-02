@@ -1,15 +1,14 @@
 ---
-import welcome from '@/assets/images/welcome.gif'
+import welcome from "@/assets/images/welcome.gif"
 
-import ImageSlide from '@/components/ImageSlide.astro'
-import Layout from '@/components/Layout.astro'
-import PostList from '@/components/PostList.astro'
-import Section from '@/components/Section.astro'
-import Tag from '@/components/Tag.astro'
+import Layout from "@/components/Layout.astro"
+import PostList from "@/components/PostList.astro"
+import Section from "@/components/Section.astro"
+import Tag from "@/components/Tag.astro"
 
-import { getPosts, renderFragment } from '@/content'
+import { getPosts, renderFragment } from "@/content"
 
-const Bio = await renderFragment('bio')
+const Bio = await renderFragment("bio")
 const posts = await getPosts()
 ---
 
@@ -21,7 +20,6 @@ const posts = await getPosts()
     <!-- Profile -->
     <div class="card">
       <Bio />
-      <ImageSlide />
     </div>
 
     <!-- Special columns -->

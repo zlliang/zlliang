@@ -4,7 +4,7 @@ import {
   presetWind4,
   transformerDirectives,
   transformerVariantGroup,
-} from 'unocss'
+} from "unocss"
 
 export default defineConfig({
   presets: [
@@ -13,11 +13,11 @@ export default defineConfig({
     }),
     presetIcons({
       extraProperties: {
-        'display': 'inline-block',
-        'width': '1.2em',
-        'height': '1.2em',
-        'vertical-align': 'text-bottom',
-        'transform': 'scale(0.95)',
+        "display": "inline-block",
+        "width": "1.2em",
+        "height": "1.2em",
+        "vertical-align": "text-bottom",
+        "transform": "scale(0.95)",
       },
     }),
   ],
@@ -27,7 +27,7 @@ export default defineConfig({
   ],
   content: {
     filesystem: [
-      './src/**/*.md',
+      "./src/**/*.md",
     ],
   },
 })

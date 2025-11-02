@@ -1,15 +1,7 @@
----
-interface Props {
-  centered?: boolean
-  class?: string
-}
-
-const { centered = false, class: className } = Astro.props
----
-<div class:list={['mt-16 mb-12', className]}>
-  <h1 class:list={['text-3xl font-600', centered && 'text-center']}><slot /></h1>
-  {Astro.slots.has('subtitle') && (
-    <div class:list={['mt-2 text-slate-500', centered && 'text-center']}>
+<div class="mt-16 mb-12">
+  <h1 class="text-3xl font-600"><slot /></h1>
+  {Astro.slots.has("subtitle") && (
+    <div class="mt-2 text-slate-500">
       <slot name="subtitle" />
     </div>
   )}

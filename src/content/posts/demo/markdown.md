@@ -41,7 +41,7 @@ class Greeter {
   }
 }
 
-const greeter = new Greeter('Nils')
+const greeter = new Greeter("Nils")
 greeter.greeting()
 ```
 

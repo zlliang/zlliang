@@ -6,11 +6,11 @@ interface Props {
 }
 
 const { href, class: className } = Astro.props
-const external = Astro.props.external ?? (href?.startsWith('http') || href?.startsWith('//'))
+const external = Astro.props.external ?? (href?.startsWith("http") || href?.startsWith("//"))
 ---
 
 <a
   href={href}
   class:list={className}
-  {...(external ? { target: '_blank', rel: 'nofollow noopener noreferrer' } : {})}
+  {...(external ? { target: "_blank", rel: "nofollow noopener noreferrer" } : {})}
 ><slot /></a>

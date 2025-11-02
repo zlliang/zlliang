@@ -1,9 +1,9 @@
-import vercel from '@astrojs/vercel'
-import { defineConfig } from 'astro/config'
-import rehypeExternalLinks from 'rehype-external-links'
-import unocss from 'unocss/astro'
+import vercel from "@astrojs/vercel"
+import { defineConfig } from "astro/config"
+import rehypeExternalLinks from "rehype-external-links"
+import unocss from "unocss/astro"
 
-import { rehypeImageCaption } from './src/utils/rehype'
+import { rehypeImageCaption } from "./src/utils/rehype"
 
 export default defineConfig({
   adapter: vercel({
@@ -18,10 +18,10 @@ export default defineConfig({
   ],
   markdown: {
     shikiConfig: {
-      theme: 'github-light-default',
+      theme: "github-light-default",
     },
     rehypePlugins: [
-      [rehypeExternalLinks, { target: '_blank', rel: ['nofollow', 'noopener', 'noreferrer'] }],
+      [rehypeExternalLinks, { target: "_blank", rel: ["nofollow", "noopener", "noreferrer"] }],
       [rehypeImageCaption, {}],
     ],
   },
