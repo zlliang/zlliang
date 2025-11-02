@@ -1,7 +1,6 @@
 import {
   defineConfig,
   presetIcons,
-  presetWebFonts,
   presetWind4,
   transformerDirectives,
   transformerVariantGroup,
@@ -19,14 +18,6 @@ export default defineConfig({
         'height': '1.2em',
         'vertical-align': 'text-bottom',
         'transform': 'scale(0.95)',
-      },
-    }),
-    presetWebFonts({
-      provider: 'bunny',
-      fonts: {
-        'noto-serif-cn': ['Noto Serif SC:400,700'],
-        'noto-serif-jp': ['Noto Serif JP:400,700'],
-        'source-serif': ['Source Serif 4:400,700'],
       },
     }),
   ],
