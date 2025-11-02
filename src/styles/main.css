@@ -1,7 +1,7 @@
 /* Root */
 
 :root {
-  @apply text-sm sm:text-base text-slate-900 antialiased;
+  @apply text-sm sm:text-base text-slate-900;
 }
 
 ::selection {
