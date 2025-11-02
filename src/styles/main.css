@@ -25,6 +25,16 @@ body {
   }
 }
 
+/* Layout */
+
+main > * > *:first-child {
+  @apply mt-0;
+}
+
+main > * > *:last-child {
+  @apply mb-0;
+}
+
 /* Title */
 
 h2, h3, h4, h5, h6 {
@@ -172,7 +182,7 @@ span.caption {
   grid-template-columns: 2fr 1fr;
 }
 
-/* Card (better not to write multiple paragraphs in a card) */
+/* Card */
 
 .card {
   @apply my-6 px-4 py-3 bg-slate-50 border border-slate-200 text-slate-600;
