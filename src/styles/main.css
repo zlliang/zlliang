@@ -1,7 +1,7 @@
 /* Root */
 
 :root {
-  @apply bg-white dark:bg-neutral-900 text-sm sm:text-base text-neutral-900 dark:text-neutral-200;
+  @apply text-sm sm:text-base;
 }
 
 ::selection {
@@ -9,7 +9,7 @@
 }
 
 body {
-  @apply leading-normal;
+  @apply bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200 leading-normal;
 }
 
 /* Font */
