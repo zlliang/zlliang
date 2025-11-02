@@ -5,7 +5,7 @@
 }
 
 ::selection {
-  @apply bg-sky-100;
+  @apply bg-sky-100 dark:bg-blue-900;
 }
 
 body {
