@@ -1,15 +1,10 @@
-import {
-  defineConfig,
-  presetIcons,
-  presetWind4,
-  transformerDirectives,
-  transformerVariantGroup,
-} from "unocss"
+import { defineConfig, presetIcons, presetWind4, transformerDirectives } from "unocss"
 
 export default defineConfig({
   presets: [
     presetWind4({
       preflights: { reset: true },
+      dark: 'media',
     }),
     presetIcons({
       extraProperties: {
@@ -23,7 +18,6 @@ export default defineConfig({
   ],
   transformers: [
     transformerDirectives(),
-    transformerVariantGroup(),
   ],
   content: {
     filesystem: [

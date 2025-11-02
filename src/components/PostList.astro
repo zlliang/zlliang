@@ -38,7 +38,7 @@ const tags = getTags(posts)
             <Link href={`/posts/${post.id}`}>{post.data.title}</Link>
             {post.data.draft && <DraftTag class="ml-1" />}
           </span>
-          <span class="shrink-0 w-fit text-slate-500">
+          <span class="shrink-0 w-fit text-neutral-500 dark:text-neutral-400">
             {showTags && post.data.tags && post.data.tags.length > 0 && (
               <span class="inline-flex gap-2 mr-1">
                 {post.data.tags.map(tag => (

@@ -4,18 +4,17 @@ import Link from "@/components/Link.astro"
 interface Props {
   href?: string
   icon?: string
-  color?: "slate" | "amber" | "rose" | "stone"
+  color?: "neutral" | "amber" | "rose"
   class?: string
 }
 
-const { href, icon, color = "slate", class: className } = Astro.props
+const { href, icon, color = "neutral", class: className } = Astro.props
 
 const Component = href ? Link : "span"
 const colorClassName: Record<NonNullable<Props["color"]>, string> = {
-  slate: "border-slate-200 text-slate-500",
-  amber: "border-amber-200 bg-amber-50 text-amber-500",
-  rose: "border-rose-200 bg-rose-50 text-rose-500",
-  stone: "border-stone-200 bg-stone-50 text-stone-500",
+  neutral: "border-neutral-200 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400",
+  amber: "border-amber-200 dark:border-amber-700 bg-amber-50 dark:bg-amber-900 text-amber-500 dark:text-amber-400",
+  rose: "border-rose-200 dark:border-rose-700 bg-rose-50 dark:bg-rose-900 text-rose-500 dark:text-rose-400",
 }
 ---
 
@@ -23,7 +22,7 @@ const colorClassName: Record<NonNullable<Props["color"]>, string> = {
   href={href}
   class:list={[
     "inline-block px-1 py-0.3 border text-sm transition-colors",
-    href && "hover:(border-sky-200 bg-sky-50 text-sky-500)",
+    href && "hover:border-sky-200 dark:hover:border-blue-600 hover:bg-sky-50 dark:hover:bg-blue-900 hover:text-sky-500 dark:hover:text-blue-400",
     colorClassName[color],
     className,
   ]}
