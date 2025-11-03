@@ -22,7 +22,7 @@ const tags = getTags(posts)
 <div class="space-y-12">
   <!-- Tags -->
   {showTags && tags.length > 0 && (
-    <Section title="全部标签" class="flex flex-wrap gap-2">
+    <Section title="Tags" class="flex flex-wrap gap-2">
       {tags.map(tag => (
         <Tag href={`/posts/tags/${tag}`}>{tag}</Tag>
       ))}
@@ -46,7 +46,7 @@ const tags = getTags(posts)
                 ))}
               </span>
             )}
-            <span>{format(post.data.created, "MM-dd")}</span>
+            <span>{format(post.data.created, "MMM d")}</span>
           </span>
         </div>
       ))}

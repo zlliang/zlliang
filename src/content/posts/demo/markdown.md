@@ -1,33 +1,21 @@
 ---
-title: Markdown 演示
+title: Markdown Demo
 created: 0
 tags: [Demo]
 draft: true
 ---
 
-这是一篇 [Markdown](https://markdown.cn/) 内容演示。
+This is a [Markdown](https://markdown.cn/) content demo.
 
-## 二级标题
+## Second Level Heading
 
-二级标题如上。现在我需要写一段内容，如果我这一段不写多一点，就没办法折行，所以我还是要多写一点，再多写一点，这样就能折行了。折行能看出行距的不同，如果行距过密或过疏，就会影响阅读。我目前使用了 [UnoCSS](https://unocss.dev/) 的 `leading-[1.7]` 这个工具类。
+Here's a second level heading. Now I need to write a paragraph. If I don't write enough, it won't wrap, so I need to write a bit more, and a bit more, so that it will wrap. Line wrapping shows the difference in line height. If the line height is too tight or too loose, it will affect readability. I'm currently using the `leading-[1.7]` utility class from [UnoCSS](https://unocss.dev/).
 
-这是另一段内容，两段放在一起，可以看出段落间距是否合适。这一段也需要稍微写长一点，最好能够折行，可以更好地看出真实文章的情况。
+This is another paragraph. Putting two paragraphs together shows whether the paragraph spacing is appropriate. This paragraph also needs to be a bit longer, ideally wrapping, to better see how real articles look.
 
-下面是几段英文，用来观察英文的行距、段落间距是否合适。我引用的是 Bob Nystrom 著名的文章 [What Color is Your Function?](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/)
+### Third Level Heading
 
-> I don’t know about you, but nothing gets me going in the morning quite like a good old fashioned programming language rant. It stirs the blood to see someone skewer one of those [“blub”](http://www.paulgraham.com/avg.html) languages the plebians use, muddling through their day with it between furtive visits to StackOverflow.
->
-> (Meanwhile, you and I, only use the most enlightened of languages. Chisel-sharp tools designed for the manicured hands of expert craftspersons such as ourselves.)
->
-> Of course, as the author of said screed, I run a risk. The language I mock could be one you like! Without realizing it, I could have let the rabble into my blog, pitchforks and torches at the ready, and my fool-hardy pamphlet could draw their ire!
->
-> To protect myself from the heat of those flames, and to avoid offending your possibly delicate sensibilities, instead, I’ll rant about a language I just made up. A strawman whose sole purpose is to be set aflame.
->
-> I know, this seems pointless right? Trust me, by the end, we’ll see whose face (or faces!) have been painted on his straw noggin.
-
-### 三级标题
-
-这一部分我打算测试一些常用的工具。比如，下面是一段 TypeScript 代码：
+In this section I plan to test some common tools. For example, here's a TypeScript code snippet:
 
 ```ts
 class Greeter {
@@ -46,53 +34,63 @@ const greeter = new Greeter("Nils")
 greeter.greeting()
 ```
 
-下面是个表格：
+Here's a table:
 
-|标题 1|标题 2|标题 3|
+|Header 1|Header 2|Header 3|
 |-|-|-|
-|内容 1-1|内容 1-2|内容 1-3|
-|内容 2-1|内容 2-2|内容 2-3|
+|Content 1-1|Content 1-2|Content 1-3|
+|Content 2-1|Content 2-2|Content 2-3|
 
-下面是张随机图片：
+Here's a random image:
 
-![随机图片](https://picsum.photos/600/300 "这里是图片的辅助说明，也可以没有。是自己写了一个 rehype 插件。")
+![Random image](https://picsum.photos/600/300 "This is the image alt text, which can also be omitted. I wrote a custom rehype plugin for this.")
 
-下面是一段引用：
+Here's a blockquote:
 
-> 现在我需要写一段内容，如果我这一段不写多一点，就没办法折行，所以我还是要多写一点，再多写一点，这样就能折行了。折行能看出行距的不同，如果行距过密或过疏，就会影响阅读。因为这个网站是面向中文的，所以行距调整地稍微大了一点，使用了 UnoCSS 的 `leading-[1.8]` 这个工具类。
+> Now I need to write a paragraph. If I don't write enough, it won't wrap, so I need to write a bit more, and a bit more, so that it will wrap. Line wrapping shows the difference in line height. If the line height is too tight or too loose, it will affect readability. Since this site is targeted at Chinese content, the line height is adjusted a bit larger, using the `leading-[1.8]` utility class from UnoCSS.
 >
-> 这其实是我上面写过的一段话。所以我是不是该用一下~~删除线~~？
+> This is actually a paragraph I wrote above. So should I use ~~strikethrough~~?
 
-下面是一个分隔线：
+Here's a horizontal rule:
 
 ---
 
-下面是列表：
+Here's a list:
 
-1. 这是第一条
-2. 这是第二条
-    - 下一层级的第一条
-    - 第二条
-3. 这是第三条
+1. This is the first item
+2. This is the second item
+    - First item of next level
+    - Second item
+3. This is the third item
 
-这个段落是为了测试列表和段落的间距是否正常。
+This paragraph is to test whether the spacing between lists and paragraphs is normal.
 
-## 自定义容器
+## Custom Containers
 
-下面是一些自定义容器，它们只能用在这个站点：
+Below are some custom containers that can only be used on this site:
 
 <div class="card">
 
-这是一个卡片。
+This is a card.
 
 </div>
 
 <div class="card amber">
 
-这是一个警告卡片，它会更加引起注意！
+This is a warning card, it will attract more attention!
 
 </div>
 
-## 好了
+## Testing Chinese Display
 
-基本上，写文章需要的格式就是这么多。别想那些花里胡哨的了，开始写吧！
+现在让我们来测试一下中文显示效果。这个网站的主要目的是展示 Markdown 格式化内容，包括中英文混排的情况。通过这篇演示文章，我可以观察不同字体、行距和段落间距在实际使用中的效果。
+
+中文排版与英文排版有很大的不同。中文字符通常更加密集，需要更大的行距来保证可读性。同时，中文标点符号的处理也需要特别注意。比如：这个冒号后面是否有合适的间距？引号“是否”显示正常？
+
+另外，中英文混排时也需要注意间距问题。例如：当我们在中文句子中使用 English words 的时候,是否需要在中英文之间添加空格？不同的排版规范有不同的要求。有些人认为应该添加空格，使得 typography 更加美观；而有些人则认为不需要，保持原本的紧凑感即可。
+
+通过这些测试段落,我可以验证网站的字体选择、CSS 样式配置是否能够很好地支持中文内容的展示。这对于一个面向中文读者的技术博客来说是非常重要的。
+
+## Conclusion
+
+Basically, these are all the formats you need to write articles. Don't think about those fancy things, just start writing!
