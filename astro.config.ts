@@ -6,6 +6,7 @@ import unocss from "unocss/astro"
 import { rehypeImageCaption } from "./src/utils/rehype"
 
 export default defineConfig({
+  site: "https://zlliang.me",
   adapter: vercel({
     imageService: true,
     imagesConfig: {
