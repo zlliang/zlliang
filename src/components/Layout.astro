@@ -1,4 +1,6 @@
 ---
+import "@/styles/main.css"
+
 import Analytics from "@vercel/analytics/astro"
 import SpeedInsights from "@vercel/speed-insights/astro"
 
@@ -6,8 +8,6 @@ import Footer from "@/components/Footer.astro"
 import Header from "@/components/Header.astro"
 
 import { getTitle, siteTitle, siteURL } from "@/utils/site"
-
-import "@/styles/main.css"
 
 interface Props {
   title?: string
