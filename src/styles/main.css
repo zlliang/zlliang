@@ -54,7 +54,11 @@ a {
 }
 
 a.nocolor {
-  @apply text-neutral-900 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-neutral-200;
+  @apply text-inherit dark:text-inherit hover:text-inherit dark:hover:text-inherit;
+}
+
+a.secondary {
+  @apply text-inherit dark:text-inherit hover:text-sky-500 dark:hover:text-blue-400;
 }
 
 b, strong {
