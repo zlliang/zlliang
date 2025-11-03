@@ -18,13 +18,13 @@ const posts = await getPosts()
     </div>
 
     <!-- Special columns -->
-    <Section title="栏目">
+    <Section title="Columns">
       <div class="my-1 space-x-2">
         <a href="/posts">
           <span class="i-lucide-file-pen-line" />
-          <span>全部文章</span>
+          <span>All posts</span>
         </a>
-        <span class="text-neutral-500 dark:text-neutral-400">共 {posts.length} 篇</span>
+        <span class="text-neutral-500 dark:text-neutral-400">{posts.length} in total</span>
       </div>
     </Section>
 
@@ -32,11 +32,12 @@ const posts = await getPosts()
     <PostList posts={posts} />
 
     <!-- SNS -->
-    <Section title="我的社交媒体" class="inline-flex flex-wrap gap-2">
+    <Section title="Find me at" class="inline-flex flex-wrap gap-2">
       <Tag href="https://github.com/zlliang" icon="i-simple-icons-github">GitHub</Tag>
-      <Tag href="https://space.bilibili.com/30470407" icon="i-simple-icons-bilibili">哔哩哔哩</Tag>
+      <Tag href="https://x.com/zlliang96" icon="i-simple-icons-x">X (formerly Twitter)</Tag>
+      <!-- <Tag href="https://space.bilibili.com/30470407" icon="i-simple-icons-bilibili">哔哩哔哩</Tag>
       <Tag href="https://www.xiaohongshu.com/user/profile/635e1b13000000001901eabc" icon="i-simple-icons-xiaohongshu">小红书</Tag>
-      <Tag href="https://www.douban.com/people/zlliang96/" icon="i-simple-icons-douban">豆瓣</Tag>
+      <Tag href="https://www.douban.com/people/zlliang96/" icon="i-simple-icons-douban">豆瓣</Tag> -->
     </Section>
   </div>
 </Layout>

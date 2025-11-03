@@ -7,14 +7,14 @@ import { getPosts } from "@/content"
 
 const posts = await getPosts()
 
-const title = "全部文章"
+const title = "All Posts"
 ---
 
 <Layout title={title}>
   <!-- Title -->
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <Fragment slot="subtitle">共 {posts.length} 篇</Fragment>
+    <Fragment slot="subtitle">{posts.length} in total</Fragment>
   </PageTitle>
 
   <!-- Posts -->

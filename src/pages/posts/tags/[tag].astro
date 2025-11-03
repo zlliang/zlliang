@@ -21,14 +21,14 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
 const { tag, posts } = Astro.props
 
-const title = `关于「${tag}」的文章`
+const title = `Posts about "${tag}"`
 ---
 
 <Layout title={title}>
   <!-- Title -->
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <Fragment slot="subtitle">共 {posts.length} 篇</Fragment>
+    <Fragment slot="subtitle">{posts.length} in total</Fragment>
   </PageTitle>
 
   <!-- Posts -->
