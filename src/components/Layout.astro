@@ -43,10 +43,6 @@ const title = getTitle(Astro.props.title)
   <!-- Title -->
   <title>{title}</title>
 
-  <!-- Vercel -->
-  <Analytics />
-  <SpeedInsights />
-
   <!-- Router -->
   <ClientRouter />
 </head>
@@ -58,5 +54,9 @@ const title = getTitle(Astro.props.title)
     </main>
     <Footer />
   </div>
+  
+  <!-- Vercel -->
+  <Analytics />
+  <SpeedInsights />
 </body>
 </html>
