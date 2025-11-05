@@ -1,6 +1,6 @@
-import type { Root } from "hast"
-
 import { visit } from "unist-util-visit"
+
+import type { Root } from "hast"
 
 /** Retrieve the `title` property of the `img` element and append a caption element after it. */
 export function rehypeImageCaption() {

@@ -1,0 +1,23 @@
+---
+import Layout from "@/components/Layout.astro"
+import PageTitle from "@/components/PageTitle.astro"
+import EntryList from "@/components/EntryList.astro"
+
+import { getEntries } from "@/content"
+
+const entries = await getEntries()
+const notes = entries.filter(entry => entry.data.type === "note")
+
+const title = "Notes"
+---
+
+<Layout title={title}>
+  <!-- Title -->
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <Fragment slot="subtitle">{notes.length} in total</Fragment>
+  </PageTitle>
+
+  <!-- Entries -->
+  <EntryList entries={notes} />
+</Layout>

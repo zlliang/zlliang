@@ -1,0 +1,91 @@
+---
+import { render } from "astro:content"
+
+import DraftTag from "@/components/DraftTag.astro"
+import Layout from "@/components/Layout.astro"
+import Link from "@/components/Link.astro"
+import PageTitle from "@/components/PageTitle.astro"
+import Tag from "@/components/Tag.astro"
+
+import { getEntries } from "@/content"
+import { format } from "@/utils/date"
+
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro"
+
+export const getStaticPaths = (async () => {
+  const entries = await getEntries()
+  const length = entries.length
+
+  return entries.map((entry, index) => {
+    const next = index > 0 ? entries[index - 1] : null
+    const previous = index < length - 1 ? entries[index + 1] : null
+
+    return {
+      params: { slug: entry.id },
+      props: { entry, next, previous },
+    }
+  })
+}) satisfies GetStaticPaths
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>
+
+const { entry, next, previous } = Astro.props
+const { Content } = await render(entry)
+---
+
+<Layout title={entry.data.title}>
+  <!-- Title -->
+  <PageTitle>
+    {entry.data.type === "note" ? (
+      <Fragment>Note{entry.data.title && `: ${entry.data.title}`}</Fragment>
+    ) : (
+      <Fragment>{entry.data.title}</Fragment>
+    )}
+    <span slot="subtitle" class="flex flex-wrap gap-2">
+      <div>
+        <span>#{entry.data.no}</span><span class="i-lucide-dot" /><span>{format(entry.data.created, "PP")}</span>
+      </div>
+      {entry.data.tags?.map(tag => (
+        <Tag href={`/blog/tags/${tag.slug}`}>{tag.display}</Tag>
+      ))}
+      {entry.data.draft && <DraftTag />}
+    </span>
+  </PageTitle>
+
+  <!-- Content -->
+  <Content />
+
+  <!-- Links to next and previous posts -->
+  {(next || previous) && (
+    <div class="grid grid-cols-2 mt-16">
+      {next && (
+        <div class:list={["col-start-1 pr-4 text-neutral-500", !previous && "border-r border-neutral-200"]}>
+          <div class="text-sm">
+            <span>Next</span><span class="i-lucide-dot" /><span>{format(next.data.created, "PP")}</span><span class="i-lucide-dot" /><span>#{next.data.no}</span>
+          </div>
+          <Link href={`/blog/${next.id}`} class="block mt-1">
+            {next.data.type === "note" ? (
+              <Fragment>Note{next.data.title && `: ${next.data.title}`}</Fragment>
+            ) : (
+              <Fragment>{next.data.title}</Fragment>
+            )}
+          </Link>
+        </div>
+      )}
+      {previous && (
+        <div class="col-start-2 pl-4 border-l border-neutral-200 text-right text-neutral-500">
+          <div class="text-sm">
+            <span>#{previous.data.no}</span><span class="i-lucide-dot" /><span>{format(previous.data.created, "PP")}</span><span class="i-lucide-dot" /><span>Previous</span>
+          </div>
+          <Link href={`/blog/${previous.id}`} class="mt-1">
+            {previous.data.type === "note" ? (
+              <Fragment>Note{previous.data.title && `: ${previous.data.title}`}</Fragment>
+            ) : (
+              <Fragment>{previous.data.title}</Fragment>
+            )}
+          </Link>
+        </div>
+      )}
+    </div>
+  )}
+</Layout>

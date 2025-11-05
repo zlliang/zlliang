@@ -1,0 +1,39 @@
+---
+import { render } from "astro:content"
+
+import Link from "@/components/Link.astro"
+import Tag from "@/components/Tag.astro"
+import DraftTag from "@/components/DraftTag.astro"
+
+import { format } from "@/utils/date"
+
+import type { CollectionEntry } from "astro:content"
+
+interface Props {
+  entry: CollectionEntry<"entries">
+  showTags?: boolean
+}
+
+const { entry, showTags = true } = Astro.props
+const { Content } = await render(entry)
+---
+
+<div class="flex justify-between gap-4 mb-4">
+  <span>
+    <Link href={`/blog/${entry.id}`} class="font-700">Note{entry.data.title && `: ${entry.data.title}`}</Link>
+    <span class="ml-1 text-neutral-500 dark:text-neutral-400">#{entry.data.no}</span>
+    {entry.data.draft && <DraftTag class="ml-1" />}
+  </span>
+  <span class="shrink-0 w-fit text-neutral-500 dark:text-neutral-400">
+    {showTags && entry.data.tags && entry.data.tags.length > 0 && (
+      <span class="inline-flex gap-2 mr-1">
+        {entry.data.tags.slice(0, 2).map(tag => (
+          <Tag href={`/blog/tags/${tag.slug}`}>{tag.display}</Tag>
+        ))}
+        {entry.data.tags.length > 2 && <Tag>+{entry.data.tags.length - 2}</Tag>}
+      </span>
+    )}
+    <span>{format(entry.data.created, "PP")}</span>
+  </span>
+</div>
+<Content />

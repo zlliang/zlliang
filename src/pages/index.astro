@@ -1,43 +1,45 @@
 ---
 import Layout from "@/components/Layout.astro"
-import PostList from "@/components/PostList.astro"
+import EntryList from "@/components/EntryList.astro"
 import Section from "@/components/Section.astro"
-import Tag from "@/components/Tag.astro"
 
-import { getPosts, renderFragment } from "@/content"
+import { getEntries, getTags, renderFragment } from "@/content"
 
 const Bio = await renderFragment("bio")
-const posts = await getPosts()
+const entries = await getEntries()
+
+const posts = entries.filter(entry => entry.data.type === "post")
+const notes = entries.filter(entry => entry.data.type === "note")
+const tags = getTags(entries)
 ---
 
 <Layout>
-  <div class="space-y-12">
-    <!-- Bio -->
-    <div>
-      <Bio />
-    </div>
-
-    <!-- Special columns -->
-    <Section title="Categories">
-      <div class="my-1 space-x-2">
-        <a href="/posts">
-          <span class="i-lucide-file-pen-line" />
-          <span>Posts</span>
-        </a>
-        <span class="text-neutral-500 dark:text-neutral-400">{posts.length} in total</span>
-      </div>
-    </Section>
-
-    <!-- Posts -->
-    <PostList posts={posts} />
-
-    <!-- SNS -->
-    <Section title="Find me at" class="inline-flex flex-wrap gap-2">
-      <Tag href="https://github.com/zlliang" icon="i-simple-icons-github">GitHub</Tag>
-      <Tag href="https://x.com/zlliang96" icon="i-simple-icons-x">X (formerly Twitter)</Tag>
-      <!-- <Tag href="https://space.bilibili.com/30470407" icon="i-simple-icons-bilibili">哔哩哔哩</Tag>
-      <Tag href="https://www.xiaohongshu.com/user/profile/635e1b13000000001901eabc" icon="i-simple-icons-xiaohongshu">小红书</Tag>
-      <Tag href="https://www.douban.com/people/zlliang96/" icon="i-simple-icons-douban">豆瓣</Tag> -->
-    </Section>
+  <div class="mb-12">
+    <Bio />
   </div>
+
+  <div class="mb-2 space-x-2">
+    <a href="/blog/posts">
+      <span class="i-lucide-file-pen" />
+      <span>Posts</span>
+    </a>
+    <span class="text-neutral-500 dark:text-neutral-400">{posts.length} in total</span>
+  </div>
+  <div class="mb-2 space-x-2">
+    <a href="/blog/notes">
+      <span class="i-lucide-notebook-pen" />
+      <span>Notes</span>
+    </a>
+    <span class="text-neutral-500 dark:text-neutral-400">{notes.length} in total</span>
+  </div>
+  <div class="mb-2 space-x-2">
+    <a href="/blog/tags">
+      <span class="i-lucide-tag" />
+      <span>Tags</span>
+    </a>
+    <span class="text-neutral-500 dark:text-neutral-400">{tags.length} in total</span>
+  </div>
+  <div class="my-6 border-b-2 border-neutral-200 dark:border-neutral-700" />
+
+  <EntryList entries={entries} />
 </Layout>

@@ -1,0 +1,27 @@
+---
+import Layout from "@/components/Layout.astro"
+import PageTitle from "@/components/PageTitle.astro"
+import Tag from "@/components/Tag.astro"
+
+import { getEntries, getTags } from "@/content"
+
+const entries = await getEntries()
+const tags = getTags(entries)
+
+const title = "Tags"
+---
+
+<Layout title={title}>
+  <!-- Title -->
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <Fragment slot="subtitle">{tags.length} in total</Fragment>
+  </PageTitle>
+
+  <!-- Tags -->
+  <div class="flex flex-wrap gap-2">
+    {tags?.map(tag => (
+      <Tag href={`/blog/tags/${tag.slug}`}>{tag.display}</Tag>
+    ))}
+  </div>
+</Layout>
