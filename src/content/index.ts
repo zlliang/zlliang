@@ -1,28 +1,19 @@
-import type { CollectionEntry } from "astro:content"
 import { getCollection, getEntry, render } from "astro:content"
-import { getYear } from "date-fns"
-import { groupBy, uniq } from "lodash-es"
+import { uniqBy } from "lodash-es"
 
-/** All posts sorted by created dates */
-export async function getPosts() {
-  const collection = await getCollection("posts", ({ data }) => import.meta.env.PROD ? !data.draft : true)
-  const posts = collection.toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf())
+import type { CollectionEntry } from "astro:content"
 
-  return posts
+/** Get all entries */
+export async function getEntries() {
+  const collection = await getCollection("entries", ({ data }) => import.meta.env.PROD ? !data.draft : true)
+  const entries = collection.toSorted((a, b) => b.data.no - a.data.no)
+
+  return entries
 }
 
-/** Group posts by years */
-export function groupByYear(posts: CollectionEntry<"posts">[]) {
-  const groups = Object.entries(groupBy(posts, post => getYear(post.data.created)))
-    .map(([year, posts]) => ({ year, posts }))
-    .toSorted((a, b) => Number(b.year) - Number(a.year))
-
-  return groups
-}
-
-/** Get tags from posts */
-export function getTags(posts: CollectionEntry<"posts">[]) {
-  const tags = uniq(posts.flatMap(post => post.data.tags).filter(Boolean)) as string[]
+/** Get tags from entries */
+export function getTags(entries: CollectionEntry<"entries">[]) {
+  const tags = uniqBy(entries.flatMap(entry => entry.data.tags).filter(Boolean), 'slug') as Exclude<CollectionEntry<"entries">["data"]["tags"], undefined>
 
   return tags
 }

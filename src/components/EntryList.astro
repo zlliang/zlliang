@@ -1,0 +1,19 @@
+---
+import PostItem from "@/components/PostItem.astro"
+import NoteItem from "@/components/NoteItem.astro"
+
+import type { CollectionEntry } from "astro:content"
+
+interface Props {
+  entries: CollectionEntry<"entries">[]
+}
+
+const { entries } = Astro.props
+---
+
+{entries.map(entry => (
+  <div>
+    {entry.data.type === "post" ? <PostItem entry={entry} /> : <NoteItem entry={entry} />}
+  </div>
+  <div class="my-6 border-b-2 border-neutral-200 dark:border-neutral-700 last:hidden" />
+))}

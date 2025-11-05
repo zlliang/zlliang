@@ -1,0 +1,18 @@
+---
+import { getEntries } from "@/content"
+
+import type { GetStaticPaths } from "astro"
+
+export const getStaticPaths = (async () => {
+  const entries = await getEntries()
+
+  return entries.map(entry => ({
+    params: { no: entry.data.no.toString() },
+    props: { entry },
+  }))
+}) satisfies GetStaticPaths
+
+const { entry } = Astro.props
+
+return Astro.redirect(`/blog/${entry.id}`, 301)
+---

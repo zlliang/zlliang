@@ -28,7 +28,7 @@ body {
 /* Title */
 
 h2, h3, h4, h5, h6 {
-  @apply my-4 font-600;
+  @apply my-4 font-700;
 }
 
 h2 {
@@ -62,7 +62,7 @@ a.secondary {
 }
 
 b, strong {
-  @apply font-600;
+  @apply font-700;
 }
 
 blockquote {

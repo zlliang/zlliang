@@ -17,6 +17,7 @@
         "date-fns": "^4.1.0",
         "lodash-es": "^4.17.21",
         "rehype-external-links": "^3.0.0",
+        "slugify": "^1.6.6",
         "typescript": "^5.9.3",
         "unist-util-visit": "^5.0.0",
         "unocss": "^66.5.4",
@@ -1162,6 +1163,8 @@
     "sirv": ["sirv@3.0.2", "", { "dependencies": { "@polka/url": "1.0.0-next.29", "mrmime": "2.0.1", "totalist": "3.0.1" } }, "sha512-2wcC/oGxHis/BoHkkPwldgiPSYcpZK3JU28WoMVv55yHJgcZ8rlXvuG9iZggz+sU1d4bRgIGASwyWqjxu3FM0g=="],
 
     "sisteransi": ["sisteransi@1.0.5", "", {}, "sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg=="],
+
+    "slugify": ["slugify@1.6.6", "", {}, "sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw=="],
 
     "smol-toml": ["smol-toml@1.4.2", "", {}, "sha512-rInDH6lCNiEyn3+hH8KVGFdbjc099j47+OSgbMrfDYX1CmXLfdKd7qi6IfcWj2wFxvSVkuI46M+wPGYfEOEj6g=="],
 
