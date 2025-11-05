@@ -33,7 +33,9 @@ const { entry, showTags = true } = Astro.props
     <span>{format(entry.data.created, "PP")}</span>
   </span>
 </div>
+
 {entry.data.description && <div class="mb-4">{entry.data.description}</div>}
+
 <div>
   <Link href={`/blog/${entry.id}`}>Read more <span class="i-lucide-arrow-right" /></Link>
 </div>

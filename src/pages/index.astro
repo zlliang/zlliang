@@ -1,7 +1,7 @@
 ---
 import Layout from "@/components/Layout.astro"
 import EntryList from "@/components/EntryList.astro"
-import Section from "@/components/Section.astro"
+import Divider from "@/components/Divider.astro"
 
 import { getEntries, getTags, renderFragment } from "@/content"
 
@@ -40,7 +40,7 @@ const tags = getTags(entries)
     <span class="text-neutral-500 dark:text-neutral-400">{tags.length} in total</span>
   </div>
 
-  <div class="my-6 border-b-2 border-neutral-200 dark:border-neutral-700" />
+  {entries.length > 0 && <Divider />}
 
   <EntryList entries={entries} />
 </Layout>

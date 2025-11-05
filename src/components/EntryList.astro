@@ -1,6 +1,7 @@
 ---
 import PostItem from "@/components/PostItem.astro"
 import NoteItem from "@/components/NoteItem.astro"
+import Divider from "@/components/Divider.astro"
 
 import type { CollectionEntry } from "astro:content"
 
@@ -13,12 +14,12 @@ const { entries, showTags = true } = Astro.props
 ---
 
 {entries.map(entry => (
-  <div>
+  <Fragment>
     {entry.data.type === "post" ? (
       <PostItem entry={entry} showTags={showTags} />
       ) : (
       <NoteItem entry={entry} showTags={showTags} />
     )}
-  </div>
-  <div class="my-6 border-b-2 border-neutral-200 dark:border-neutral-700 last:hidden" />
+  </Fragment>
+  <Divider class="last:hidden" />
 ))}

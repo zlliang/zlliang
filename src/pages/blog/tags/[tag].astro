@@ -17,8 +17,6 @@ export const getStaticPaths = (async () => {
   }))
 }) satisfies GetStaticPaths
 
-type Props = InferGetStaticPropsType<typeof getStaticPaths>
-
 const { tag, entries } = Astro.props
 
 const title = `About "${tag.display}"`
