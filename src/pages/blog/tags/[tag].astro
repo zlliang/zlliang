@@ -13,7 +13,7 @@ export const getStaticPaths = (async () => {
 
   return tags.map(tag => ({
     params: { tag: tag.slug },
-    props: { tag, entries: entries.filter(entry => entry.data.tags?.includes(tag.display)) },
+    props: { tag, entries: entries.filter(entry => entry.data.tags?.some(t => t.slug === tag.slug)) },
   }))
 }) satisfies GetStaticPaths
 

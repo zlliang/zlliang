@@ -6,14 +6,19 @@ import type { CollectionEntry } from "astro:content"
 
 interface Props {
   entries: CollectionEntry<"entries">[]
+  showTags?: boolean
 }
 
-const { entries } = Astro.props
+const { entries, showTags = true } = Astro.props
 ---
 
 {entries.map(entry => (
   <div>
-    {entry.data.type === "post" ? <PostItem entry={entry} /> : <NoteItem entry={entry} />}
+    {entry.data.type === "post" ? (
+      <PostItem entry={entry} showTags={showTags} />
+      ) : (
+      <NoteItem entry={entry} showTags={showTags} />
+    )}
   </div>
   <div class="my-6 border-b-2 border-neutral-200 dark:border-neutral-700 last:hidden" />
 ))}
