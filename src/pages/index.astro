@@ -39,7 +39,8 @@ const tags = getTags(entries)
     </a>
     <span class="text-neutral-500 dark:text-neutral-400">{tags.length} in total</span>
   </div>
-  <div class="my-6 border-b-2 border-neutral-200 dark:border-neutral-700" />
+
+  {entries.length && <div class="my-6 border-b-2 border-neutral-200 dark:border-neutral-700" />}
 
   <EntryList entries={entries} />
 </Layout>
