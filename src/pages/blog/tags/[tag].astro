@@ -22,7 +22,7 @@ const { tag, entries } = Astro.props
 const title = `About "${tag.display}"`
 ---
 
-<Layout title={title}>
+<Layout title={title} description={title}>
   <!-- Title -->
   <PageTitle>
     <Fragment>{title}</Fragment>
@@ -30,5 +30,5 @@ const title = `About "${tag.display}"`
   </PageTitle>
 
   <!-- Entries -->
-  <EntryList entries={entries} showTags={false} />
+  <EntryList entries={entries} />
 </Layout>

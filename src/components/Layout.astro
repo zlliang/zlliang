@@ -5,15 +5,18 @@ import VercelSpeedInsights from "@vercel/speed-insights/astro"
 import Footer from "@/components/Footer.astro"
 import Header from "@/components/Header.astro"
 
-import { getTitle, siteTitle, siteURL } from "@/utils/site"
+import { getTitle, siteTitle } from "@/utils/site"
 
 import "@/styles/main.css"
 
 interface Props {
   title?: string
+  description?: string
 }
 
 const title = getTitle(Astro.props.title)
+const description = Astro.props.description
+const url = new URL(Astro.url.pathname, Astro.site)
 ---
 
 <!DOCTYPE html>
@@ -21,7 +24,6 @@ const title = getTitle(Astro.props.title)
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="format-detection" content="telephone=no" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
@@ -33,10 +35,13 @@ const title = getTitle(Astro.props.title)
   <link rel="preconnect" href="https://rsms.me/" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
-  <!-- Open Graph -->
+  <!-- SEO and Open Graph -->
+  <link rel="canonical" href={url} />
+  {Boolean(description) && <meta name="description" content={description} />}
   <meta property="og:site_name" content={siteTitle} />
-  <meta property="og:url" content={siteURL + Astro.url.pathname} />
+  <meta property="og:url" content={url} />
   <meta property="og:title" content={title} />
+  {Boolean(description) && <meta property="og:description" content={description} />}
   <meta property="og:type" content="website" />
 
   <!-- Title -->
