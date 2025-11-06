@@ -18,28 +18,20 @@ const tags = getTags(entries)
     <Bio />
   </div>
 
-  <div class="mb-2 space-x-2">
-    <a href="/blog/posts">
-      <span class="i-lucide-file-pen" />
-      <span>Posts</span>
-    </a>
-    <span class="text-neutral-500 dark:text-neutral-400">{posts.length} in total</span>
+  <div class="space-y-2">
+    <div class="space-x-2">
+      <a href="/blog/posts"><span class="i-lucide-file-pen" /><span>Posts</span></a>
+      <span class="text-neutral-500 dark:text-neutral-400">{posts.length} in total</span>
+    </div>
+    <div class="space-x-2">
+      <a href="/blog/notes"><span class="i-lucide-notebook-pen" /><span>Notes</span></a>
+      <span class="text-neutral-500 dark:text-neutral-400">{notes.length} in total</span>
+    </div>
+    <div class="space-x-2">
+      <a href="/blog/tags"><span class="i-lucide-tag" /><span>Tags</span></a>
+      <span class="text-neutral-500 dark:text-neutral-400">{tags.length} in total</span>
+    </div>
   </div>
-  <div class="mb-2 space-x-2">
-    <a href="/blog/notes">
-      <span class="i-lucide-notebook-pen" />
-      <span>Notes</span>
-    </a>
-    <span class="text-neutral-500 dark:text-neutral-400">{notes.length} in total</span>
-  </div>
-  <div class="mb-2 space-x-2">
-    <a href="/blog/tags">
-      <span class="i-lucide-tag" />
-      <span>Tags</span>
-    </a>
-    <span class="text-neutral-500 dark:text-neutral-400">{tags.length} in total</span>
-  </div>
-
   {entries.length > 0 && <Divider />}
 
   <EntryList entries={entries} />

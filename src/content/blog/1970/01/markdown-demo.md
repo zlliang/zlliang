@@ -1,7 +1,7 @@
 ---
 no: -2
 type: post
-title: Markdown Demo
+title: Demonstrate Markdown Capabilities of This Website
 description: A demonstration of Markdown formatting for this website, testing various elements like headings, code blocks, tables, images, blockquotes, lists, and custom containers. Also tests typography settings for English and Chinese content, including line height and paragraph spacing.
 created: 0
 tags: [Demo]

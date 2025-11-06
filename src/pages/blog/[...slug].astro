@@ -36,20 +36,16 @@ const { Content } = await render(entry)
 <Layout title={entry.data.title}>
   <!-- Title -->
   <PageTitle>
-    {entry.data.type === "note" ? (
-      <Fragment>Note{entry.data.title && `: ${entry.data.title}`}</Fragment>
-    ) : (
-      <Fragment>{entry.data.title}</Fragment>
-    )}
-    <span slot="subtitle" class="flex flex-wrap gap-2">
+    <Fragment>{entry.data.title}</Fragment>
+    <div slot="subtitle" class="flex flex-wrap gap-2">
       <div>
         <span>#{entry.data.no}</span><span class="i-lucide-dot" /><span>{format(entry.data.created, "PP")}</span>
       </div>
+      {entry.data.draft && <DraftTag />}
       {entry.data.tags?.map(tag => (
         <Tag href={`/blog/tags/${tag.slug}`}>{tag.display}</Tag>
       ))}
-      {entry.data.draft && <DraftTag />}
-    </span>
+    </div>
   </PageTitle>
 
   <!-- Content -->
@@ -61,29 +57,17 @@ const { Content } = await render(entry)
       {next && (
         <div class:list={["col-start-1 pr-4 text-neutral-500 dark:text-neutral-400", !previous && "border-r border-neutral-200 dark:border-neutral-700"]}>
           <div class="text-sm">
-            <span>Next</span><span class="i-lucide-dot" /><span>{format(next.data.created, "PP")}</span><span class="i-lucide-dot" /><span>#{next.data.no}</span>
+            <span>{format(next.data.created, "PP")}</span><span class="i-lucide-dot" /><span>#{next.data.no}</span>
           </div>
-          <Link href={`/blog/${next.id}`} class="block mt-1">
-            {next.data.type === "note" ? (
-              <Fragment>Note{next.data.title && `: ${next.data.title}`}</Fragment>
-            ) : (
-              <Fragment>{next.data.title}</Fragment>
-            )}
-          </Link>
+          <Link href={`/blog/${next.id}`} class="block mt-1">{next.data.title}</Link>
         </div>
       )}
       {previous && (
         <div class="col-start-2 pl-4 border-l border-neutral-200 dark:border-neutral-700 text-right text-neutral-500 dark:text-neutral-400">
           <div class="text-sm">
-            <span>#{previous.data.no}</span><span class="i-lucide-dot" /><span>{format(previous.data.created, "PP")}</span><span class="i-lucide-dot" /><span>Previous</span>
+            <span>#{previous.data.no}</span><span class="i-lucide-dot" /><span>{format(previous.data.created, "PP")}</span>
           </div>
-          <Link href={`/blog/${previous.id}`} class="mt-1">
-            {previous.data.type === "note" ? (
-              <Fragment>Note{previous.data.title && `: ${previous.data.title}`}</Fragment>
-            ) : (
-              <Fragment>{previous.data.title}</Fragment>
-            )}
-          </Link>
+          <Link href={`/blog/${previous.id}`} class="mt-1">{previous.data.title}</Link>
         </div>
       )}
     </div>
