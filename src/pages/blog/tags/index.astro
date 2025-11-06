@@ -9,6 +9,10 @@ const entries = await getEntries()
 const tags = getTags(entries)
 
 const title = "Tags"
+
+function getTagCount(slug: string) {
+  return entries.filter(entry => entry.data.tags?.some(t => t.slug === slug)).length
+}
 ---
 
 <Layout title={title}>
@@ -21,7 +25,7 @@ const title = "Tags"
   <!-- Tags -->
   <div class="flex flex-wrap gap-2">
     {tags?.map(tag => (
-      <Tag href={`/blog/tags/${tag.slug}`}>{tag.display}</Tag>
+      <Tag href={`/blog/tags/${tag.slug}`}>{tag.display} ({getTagCount(tag.slug)})</Tag>
     ))}
   </div>
 </Layout>
