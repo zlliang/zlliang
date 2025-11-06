@@ -11,6 +11,7 @@ import { getEntries } from "@/content"
 import { format } from "@/utils/date"
 
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro"
+import type { CollectionEntry } from "astro:content"
 
 export const getStaticPaths = (async () => {
   const entries = await getEntries()
@@ -29,11 +30,20 @@ export const getStaticPaths = (async () => {
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
+function getDescription(entry: CollectionEntry<"entries">) {
+  if (entry.data.description) return entry.data.description
+
+  return `${entry.data.type === "note" ? "Note" : "Post"} #${entry.data.no} on ${format(entry.data.created, "PP")}`
+}
+
 const { entry, next, previous } = Astro.props
 const { Content } = await render(entry)
+
+const title = `${entry.data.title} - #${entry.data.no}`
+const description = getDescription(entry)
 ---
 
-<Layout title={entry.data.title}>
+<Layout title={title} description={description}>
   <!-- Title -->
   <PageTitle>
     <Fragment>{entry.data.title}</Fragment>
