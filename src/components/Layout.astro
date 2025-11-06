@@ -35,7 +35,7 @@ const url = new URL(Astro.url.pathname, Astro.site)
   <link rel="preconnect" href="https://rsms.me/" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
-  <!-- SEO and Open Graph -->
+  <!-- SEO, OpenGraph and Twitter -->
   <link rel="canonical" href={url} />
   {Boolean(description) && <meta name="description" content={description} />}
   <meta property="og:site_name" content={siteTitle} />
@@ -43,6 +43,11 @@ const url = new URL(Astro.url.pathname, Astro.site)
   <meta property="og:title" content={title} />
   {Boolean(description) && <meta property="og:description" content={description} />}
   <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  {Boolean(description) && <meta name="twitter:description" content={description} />}
+  <meta name="twitter:url" content={url} />
+  <meta name="twitter:creator" content="@zlliang96" />
 
   <!-- Title -->
   <title>{title}</title>
