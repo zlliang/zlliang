@@ -1,7 +1,7 @@
 import vercel from "@astrojs/vercel"
 import { defineConfig } from "astro/config"
+import tailwindcss from "@tailwindcss/vite"
 import rehypeExternalLinks from "rehype-external-links"
-import unocss from "unocss/astro"
 
 import { rehypeImageCaption } from "./src/utils/rehype"
 
@@ -14,9 +14,9 @@ export default defineConfig({
       domains: [],
     },
   }),
-  integrations: [
-    unocss(),
-  ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
   markdown: {
     shikiConfig: {
       themes: { light: "github-light-default", dark: "github-dark-default" },

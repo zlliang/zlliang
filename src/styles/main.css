@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@plugin "@iconify/tailwind4";
+
 /* Root */
 
 :root {
@@ -25,10 +28,16 @@ body {
   }
 }
 
+/* Icons */
+
+[class*="icon-"] {
+  @apply inline-block size-[1.2em] align-text-bottom scale-95;
+}
+
 /* Title */
 
 h2, h3, h4, h5, h6 {
-  @apply my-4 font-700;
+  @apply my-4 font-bold;
 }
 
 h2 {
@@ -50,7 +59,7 @@ p {
 }
 
 a {
-  @apply text-sky-600 dark:text-blue-300 hover:text-sky-500 dark:hover:text-blue-400 transition-color;
+  @apply text-sky-600 dark:text-blue-300 hover:text-sky-500 dark:hover:text-blue-400 transition-colors;
 }
 
 a.nocolor {
@@ -62,7 +71,7 @@ a.secondary {
 }
 
 b, strong {
-  @apply font-700;
+  @apply font-bold;
 }
 
 blockquote {
@@ -78,11 +87,11 @@ ul {
 }
 
 ul ul, ol ul {
-  @apply mb-0 list-circle;
+  @apply mb-0 list-[circle];
 }
 
 ul ul ul, ol ul ul, ul ol ul, ol ol ul {
-  @apply mb-0 list-square;
+  @apply mb-0 list-[square];
 }
 
 ol {
@@ -90,11 +99,11 @@ ol {
 }
 
 ol ol, ul ol {
-  @apply mb-0 list-roman;
+  @apply mb-0 list-[lower-roman];
 }
 
 ol ol ol, ul ol ol, ol ul ol, ul ul ol {
-  @apply mb-0 list-alpha;
+  @apply mb-0 list-[lower-alpha];
 }
 
 hr {
@@ -103,12 +112,12 @@ hr {
 
 hr:before {
   content: "";
-  @apply absolute top--3 left-0 right-0 mx-auto w-12 block h-6 bg-white dark:bg-neutral-900;
+  @apply absolute -top-3 left-0 right-0 mx-auto w-12 block h-6 bg-white dark:bg-neutral-900;
 }
 
 hr:after {
   content: "";
-  @apply i-lucide-waves absolute top--2.6 left-0 right-0 mx-auto block h-5 w-5 text-neutral-300 dark:text-neutral-600;
+  @apply icon-[lucide--waves] absolute -top-[0.65rem] left-0 right-0 mx-auto block h-5 w-5 text-neutral-300 dark:text-neutral-600;
 }
 
 img {
@@ -116,7 +125,7 @@ img {
 }
 
 p > img {
-  @apply w-auto sm:max-h-xl;
+  @apply w-auto max-h-108;
 }
 
 /* Code */

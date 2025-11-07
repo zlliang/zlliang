@@ -2,6 +2,7 @@
 import { render } from "astro:content"
 
 import Link from "@/components/Link.astro"
+import TagList from "@/components/TagList.astro"
 import Tag from "@/components/Tag.astro"
 import DraftTag from "@/components/DraftTag.astro"
 
@@ -19,9 +20,9 @@ const { Content } = await render(entry)
 
 <div class="space-y-4">
   <div class="flex justify-between gap-4">
-    <Link href={`/blog/${entry.id}`} class="font-700">{entry.data.title}</Link>
+    <Link href={`/blog/${entry.id}`} class="font-bold">{entry.data.title}</Link>
     <span class="shrink-0 w-fit text-neutral-500 dark:text-neutral-400">
-      <span>#{entry.data.no}</span><span class="i-lucide-dot" /><span>{format(entry.data.created, "PP")}</span>
+      <span>#{entry.data.no}</span><span class="icon-[lucide--dot]" /><span>{format(entry.data.created, "PP")}</span>
     </span>
   </div>
 
@@ -29,7 +30,7 @@ const { Content } = await render(entry)
     <Content />
   </div>
   
-  <div class="flex flex-wrap gap-2">
+  <TagList>
     {entry.data.tags && entry.data.tags.length > 0 && (
       <Fragment>
         {entry.data.draft && <DraftTag />}
@@ -41,5 +42,5 @@ const { Content } = await render(entry)
         {entry.data.tags.length > 3 && <Tag>+{entry.data.tags.length - 3}</Tag>}
       </Fragment>
     )}
-  </div>
+  </TagList>
 </div>
