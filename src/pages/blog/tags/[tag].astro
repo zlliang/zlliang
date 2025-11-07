@@ -5,7 +5,7 @@ import EntryList from "@/components/EntryList.astro"
 
 import { getEntries, getTags } from "@/content"
 
-import type { GetStaticPaths, InferGetStaticPropsType } from "astro"
+import type { GetStaticPaths } from "astro"
 
 export const getStaticPaths = (async () => {
   const entries = await getEntries()
