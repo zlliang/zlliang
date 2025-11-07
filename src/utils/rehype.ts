@@ -5,7 +5,7 @@ import type { Root } from "hast"
 /** Retrieve the `title` property of the `img` element and append a caption element after it. */
 export function rehypeImageCaption() {
   return (tree: Root) => {
-    visit(tree, "element", (node, index, parent) => {
+    visit(tree, "element", (node, _, parent) => {
       if (parent && node.tagName === "img" && node.properties.title) {
         parent.children.push({
           type: "element",

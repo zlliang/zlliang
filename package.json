@@ -11,14 +11,13 @@
   "dependencies": {
     "@astrojs/vercel": "^9.0.0",
     "@date-fns/tz": "^1.4.1",
-    "@iconify-json/lucide": "^1.2.71",
-    "@iconify-json/simple-icons": "^1.2.56",
+    "@iconify-json/lucide": "^1.2.72",
+    "@iconify-json/simple-icons": "^1.2.57",
     "@types/hast": "^3.0.4",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^24.9.2",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "astro": "^5.15.3",
+    "astro": "^5.15.4",
     "date-fns": "^4.1.0",
     "lodash-es": "^4.17.21",
     "rehype-external-links": "^3.0.0",
@@ -26,6 +25,6 @@
     "typescript": "^5.9.3",
     "unist-util-visit": "^5.0.0",
     "unocss": "^66.5.4",
-    "vercel": "^48.8.0"
+    "vercel": "^48.8.2"
   }
 }
