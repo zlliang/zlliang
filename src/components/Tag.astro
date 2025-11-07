@@ -23,7 +23,7 @@ const colorClassName: Record<NonNullable<Props["color"]>, string> = {
 <Component
   href={href}
   class={cn(
-    "inline-block px-1 py-0.3 border text-sm transition-colors",
+    "inline-block px-1 py-px border text-sm transition-colors",
     href && "hover:border-sky-200 dark:hover:border-blue-600 hover:bg-sky-50 dark:hover:bg-blue-900 hover:text-sky-500! dark:hover:text-blue-400!",
     colorClassName[color],
     className,
