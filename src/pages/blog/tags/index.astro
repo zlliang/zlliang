@@ -1,6 +1,7 @@
 ---
 import Layout from "@/components/Layout.astro"
 import PageTitle from "@/components/PageTitle.astro"
+import TagList from "@/components/TagList.astro"
 import Tag from "@/components/Tag.astro"
 
 import { getEntries, getTags } from "@/content"
@@ -23,9 +24,7 @@ function getTagCount(slug: string) {
   </PageTitle>
 
   <!-- Tags -->
-  <div class="flex flex-wrap gap-2">
-    {tags?.map(tag => (
-      <Tag href={`/blog/tags/${tag.slug}`}>{tag.display} ({getTagCount(tag.slug)})</Tag>
-    ))}
-  </div>
+  <TagList>
+    {tags?.map(tag => <Tag href={`/blog/tags/${tag.slug}`}>{tag.display} ({getTagCount(tag.slug)})</Tag>)}
+  </TagList>
 </Layout>

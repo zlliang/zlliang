@@ -5,9 +5,11 @@ import DraftTag from "@/components/DraftTag.astro"
 import Layout from "@/components/Layout.astro"
 import Link from "@/components/Link.astro"
 import PageTitle from "@/components/PageTitle.astro"
+import TagList from "@/components/TagList.astro"
 import Tag from "@/components/Tag.astro"
 
 import { getEntries } from "@/content"
+import { cn } from "@/utils/style"
 import { format } from "@/utils/date"
 
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro"
@@ -47,15 +49,13 @@ const description = getDescription(entry)
   <!-- Title -->
   <PageTitle>
     <Fragment>{entry.data.title}</Fragment>
-    <div slot="subtitle" class="flex flex-wrap gap-2">
+    <TagList slot="subtitle">
       <div>
-        <span>#{entry.data.no}</span><span class="i-lucide-dot" /><span>{format(entry.data.created, "PP")}</span>
+        <span>#{entry.data.no}</span><span class="icon-[lucide--dot]" /><span>{format(entry.data.created, "PP")}</span>
       </div>
       {entry.data.draft && <DraftTag />}
-      {entry.data.tags?.map(tag => (
-        <Tag href={`/blog/tags/${tag.slug}`}>{tag.display}</Tag>
-      ))}
-    </div>
+      {entry.data.tags?.map(tag => <Tag href={`/blog/tags/${tag.slug}`}>{tag.display}</Tag>)}
+    </TagList>
   </PageTitle>
 
   <!-- Content -->
@@ -65,9 +65,9 @@ const description = getDescription(entry)
   {(next || previous) && (
     <div class="grid grid-cols-2 mt-16">
       {next && (
-        <div class:list={["col-start-1 pr-4 text-neutral-500 dark:text-neutral-400", !previous && "border-r border-neutral-200 dark:border-neutral-700"]}>
+        <div class={cn(["col-start-1 pr-4 text-neutral-500 dark:text-neutral-400", !previous && "border-r border-neutral-200 dark:border-neutral-700"])} >
           <div class="text-sm">
-            <span>{format(next.data.created, "PP")}</span><span class="i-lucide-dot" /><span>#{next.data.no}</span>
+          <span>{format(next.data.created, "PP")}</span><span class="icon-[lucide--dot]" /><span>#{next.data.no}</span>
           </div>
           <Link href={`/blog/${next.id}`} class="block mt-1">{next.data.title}</Link>
         </div>
@@ -75,7 +75,7 @@ const description = getDescription(entry)
       {previous && (
         <div class="col-start-2 pl-4 border-l border-neutral-200 dark:border-neutral-700 text-right text-neutral-500 dark:text-neutral-400">
           <div class="text-sm">
-            <span>#{previous.data.no}</span><span class="i-lucide-dot" /><span>{format(previous.data.created, "PP")}</span>
+          <span>#{previous.data.no}</span><span class="icon-[lucide--dot]" /><span>{format(previous.data.created, "PP")}</span>
           </div>
           <Link href={`/blog/${previous.id}`} class="mt-1">{previous.data.title}</Link>
         </div>

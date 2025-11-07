@@ -1,3 +1,15 @@
 {
-  "css.lint.unknownAtRules": "ignore"
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.includeLanguages": {
+    "astro": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["class:list\\s*=\\s*{([^}]*)}"],
+    ["class(?::list)?\\s*=\\s*['\"]([^'\"]*)['\"]"]
+  ]
 }
