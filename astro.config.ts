@@ -1,5 +1,5 @@
-import vercel from "@astrojs/vercel"
 import { defineConfig } from "astro/config"
+import vercel from "@astrojs/vercel"
 import tailwindcss from "@tailwindcss/vite"
 import rehypeExternalLinks from "rehype-external-links"
 
