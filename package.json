@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "lint": "eslint"
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/vercel": "^9.0.0",
