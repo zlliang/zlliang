@@ -12,7 +12,7 @@ This is a [Markdown](https://markdown.cn/) content demo.
 
 ## Second Level Heading
 
-Here's a second level heading. Now I need to write a paragraph. If I don't write enough, it won't wrap, so I need to write a bit more, and a bit more, so that it will wrap. Line wrapping shows the difference in line height. If the line height is too tight or too loose, it will affect readability. I'm currently using the `leading-[1.7]` utility class from [UnoCSS](https://unocss.dev/).
+Here's a second level heading. Now I need to write a paragraph. If I don't write enough, it won't wrap, so I need to write a bit more, and a bit more, so that it will wrap. Line wrapping shows the difference in line height. If the line height is too tight or too loose, it will affect readability. I'm currently using the `leading-[1.7]` utility class from [Tailwind CSS](https://tailwindcss.com/).
 
 This is another paragraph. Putting two paragraphs together shows whether the paragraph spacing is appropriate. This paragraph also needs to be a bit longer, ideally wrapping, to better see how real articles look.
 
@@ -50,7 +50,7 @@ Here's a random image:
 
 Here's a blockquote:
 
-> Now I need to write a paragraph. If I don't write enough, it won't wrap, so I need to write a bit more, and a bit more, so that it will wrap. Line wrapping shows the difference in line height. If the line height is too tight or too loose, it will affect readability. Since this site is targeted at Chinese content, the line height is adjusted a bit larger, using the `leading-[1.8]` utility class from UnoCSS.
+> Now I need to write a paragraph. If I don't write enough, it won't wrap, so I need to write a bit more, and a bit more, so that it will wrap. Line wrapping shows the difference in line height. If the line height is too tight or too loose, it will affect readability.
 >
 > This is actually a paragraph I wrote above. So should I use ~~strikethrough~~?
 
