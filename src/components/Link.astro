@@ -12,5 +12,5 @@ const external = Astro.props.external ?? (href?.startsWith("http") || href?.star
 <a
   href={href}
   class={className}
-  {...(external ? { target: "_blank", rel: "nofollow noopener noreferrer" } : {})}
+  {...(external ? { target: "_blank", rel: "noopener" } : {})}
 ><slot /></a>
