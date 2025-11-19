@@ -126,7 +126,7 @@ hr:before {
 
 hr:after {
   content: "";
-  @apply icon-[lucide--waves] absolute -top-[0.65rem] left-0 right-0 mx-auto block h-5 w-5 text-neutral-300 dark:text-neutral-600;
+  @apply icon-[lucide--waves] absolute -top-[0.65rem] left-0 right-0 mx-auto block h-5 w-5 text-neutral-200 dark:text-neutral-800;
 }
 
 img {
