@@ -8,11 +8,11 @@
 }
 
 ::selection {
-  @apply bg-sky-100 dark:bg-blue-900;
+  @apply bg-blue-100 dark:bg-blue-900;
 }
 
 body {
-  @apply bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200 leading-normal;
+  @apply bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 leading-normal;
 }
 
 /* Font */
@@ -68,7 +68,7 @@ p {
 }
 
 a {
-  @apply text-sky-600 dark:text-blue-300 hover:text-sky-500 dark:hover:text-blue-400 transition-colors;
+  @apply text-blue-600 dark:text-blue-400 hover:text-blue-500 transition-colors;
 }
 
 a.nocolor {
@@ -76,7 +76,7 @@ a.nocolor {
 }
 
 a.secondary {
-  @apply text-inherit dark:text-inherit hover:text-sky-500 dark:hover:text-blue-400;
+  @apply text-inherit dark:text-inherit hover:text-blue-500;
 }
 
 b, strong {
@@ -84,11 +84,11 @@ b, strong {
 }
 
 blockquote {
-  @apply pl-[calc(1.75rem-2px)] border-l-2 border-neutral-200 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400;
+  @apply pl-[calc(1.75rem-2px)] border-l-2 border-neutral-200 dark:border-neutral-800 text-neutral-500;
 }
 
 ul, ol {
-  @apply mb-4 pl-7 leading-[1.7] marker:text-neutral-500 dark:marker:text-neutral-400;
+  @apply mb-4 pl-7 leading-[1.7] marker:text-neutral-500;
 }
 
 ul {
@@ -116,12 +116,12 @@ ol ol ol, ul ol ol, ol ul ol, ul ul ol {
 }
 
 hr {
-  @apply relative mb-4 h-auto border-neutral-200 dark:border-neutral-700 overflow-visible;
+  @apply relative mb-4 h-auto border-neutral-200 dark:border-neutral-800 overflow-visible;
 }
 
 hr:before {
   content: "";
-  @apply absolute -top-3 left-0 right-0 mx-auto w-12 block h-6 bg-white dark:bg-neutral-900;
+  @apply absolute -top-3 left-0 right-0 mx-auto w-12 block h-6 bg-white dark:bg-neutral-950;
 }
 
 hr:after {
@@ -151,7 +151,7 @@ p > img {
 }
 
 code {
-  @apply px-[0.3em] border border-neutral-200 dark:border-neutral-700 text-sm;
+  @apply px-[0.3em] border border-neutral-200 dark:border-neutral-800 text-sm;
 }
 
 h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
@@ -159,7 +159,7 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 }
 
 pre {
-  @apply mb-4 px-4 py-3 border border-neutral-200 dark:border-neutral-700 text-sm;
+  @apply mb-4 px-4 py-3 border border-neutral-200 dark:border-neutral-800 text-sm;
 }
 
 pre code {
@@ -173,35 +173,35 @@ table {
 }
 
 tr {
-  @apply border border-neutral-200 dark:border-neutral-700;
+  @apply border border-neutral-200 dark:border-neutral-800;
 }
 
 tr:nth-child(2n) {
-  @apply bg-neutral-50 dark:bg-neutral-800;
+  @apply bg-neutral-50 dark:bg-neutral-900;
 }
 
 th, td {
-  @apply px-3 py-1 border border-neutral-200 dark:border-neutral-600;
+  @apply px-3 py-1 border border-neutral-200 dark:border-neutral-700;
 }
 
 th {
-  @apply bg-neutral-100 dark:bg-neutral-700;
+  @apply bg-neutral-100 dark:bg-neutral-800;
 }
 
 /* Image caption */
 
 span.caption {
-  @apply flex justify-center mt-1 text-sm text-neutral-500 dark:text-neutral-400;
+  @apply flex justify-center mt-1 text-sm text-neutral-500;
 }
 
 /* Card */
 
 .card {
-  @apply mb-4 px-4 py-3 bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300;
+  @apply mb-4 px-4 py-3 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400;
 }
 
 .card.amber {
-  @apply border-amber-200 dark:border-amber-700 bg-amber-50 dark:bg-amber-900 text-amber-600 dark:text-amber-300;
+  @apply border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400;
 }
 
 .card > *:last-child,

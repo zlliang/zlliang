@@ -21,15 +21,15 @@ const tags = getTags(entries)
   <div class="space-y-2">
     <div class="space-x-2">
       <a href="/blog/posts"><span class="icon-[lucide--file-pen] mr-1" /><span>Posts</span></a>
-      <span class="text-neutral-500 dark:text-neutral-400">{posts.length} in total</span>
+      <span class="text-neutral-500">{posts.length} in total</span>
     </div>
     <div class="space-x-2">
       <a href="/blog/notes"><span class="icon-[lucide--notebook-pen] mr-1" /><span>Notes</span></a>
-      <span class="text-neutral-500 dark:text-neutral-400">{notes.length} in total</span>
+      <span class="text-neutral-500">{notes.length} in total</span>
     </div>
     <div class="space-x-2">
       <a href="/blog/tags"><span class="icon-[lucide--tag] mr-1" /><span>Tags</span></a>
-      <span class="text-neutral-500 dark:text-neutral-400">{tags.length} in total</span>
+      <span class="text-neutral-500">{tags.length} in total</span>
     </div>
   </div>
   {entries.length > 0 && <Divider />}
