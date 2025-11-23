@@ -29,4 +29,7 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+  experimental: {
+    svgo: true,
+  },
 })
