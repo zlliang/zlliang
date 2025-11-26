@@ -8,7 +8,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/vercel": "^9.0.1",
+    "@astrojs/vercel": "^9.0.2",
     "@date-fns/tz": "^1.4.1",
     "@fontsource-variable/outfit": "^5.2.8",
     "@iconify-json/lucide": "^1.2.75",
@@ -19,7 +19,7 @@
     "@types/lodash-es": "^4.17.12",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "astro": "^5.16.0",
+    "astro": "^5.16.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "lodash-es": "^4.17.21",
@@ -29,6 +29,6 @@
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
     "unist-util-visit": "^5.0.0",
-    "vercel": "^48.10.11"
+    "vercel": "^48.11.0"
   }
 }
