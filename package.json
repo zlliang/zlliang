@@ -11,7 +11,7 @@
     "@astrojs/vercel": "^9.0.2",
     "@date-fns/tz": "^1.4.1",
     "@fontsource-variable/outfit": "^5.2.8",
-    "@iconify-json/lucide": "^1.2.75",
+    "@iconify-json/lucide": "^1.2.76",
     "@iconify-json/simple-icons": "^1.2.60",
     "@iconify/tailwind4": "^1.1.1",
     "@tailwindcss/vite": "^4.1.17",
@@ -29,6 +29,6 @@
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
     "unist-util-visit": "^5.0.0",
-    "vercel": "^48.11.0"
+    "vercel": "^48.11.1"
   }
 }
