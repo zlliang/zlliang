@@ -33,6 +33,13 @@ body {
   font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
 }
 
+@layer utilities {
+  .font-display {
+    font-size-adjust: ex-height 0.52;
+  }
+}
+
+
 /* Icons */
 
 [class*="icon-"] {
@@ -84,7 +91,7 @@ b, strong {
 }
 
 blockquote {
-  @apply pl-[calc(1.75rem-2px)] border-l-2 border-neutral-200 dark:border-neutral-800 text-neutral-500;
+  @apply pl-6.5 border-l-2 border-neutral-200 dark:border-neutral-800 text-neutral-500;
 }
 
 ul, ol {
