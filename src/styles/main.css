@@ -35,7 +35,7 @@ body {
 
 @layer utilities {
   .font-display {
-    font-size-adjust: ex-height 0.52;
+    font-size-adjust: ex-height 0.5;
   }
 }
 
