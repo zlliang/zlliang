@@ -51,7 +51,7 @@ async function main() {
     "draft: true",
     "---",
     "",
-    "",
+    "TODO",
   ]
 
   await fs.writeFile(filePath, frontmatterLines.join("\n"), "utf8")
