@@ -18,23 +18,15 @@ This is another paragraph. Putting two paragraphs together shows whether the par
 
 ### Third Level Heading
 
-In this section I plan to test some common tools. For example, here's a TypeScript code snippet:
+In this section I plan to test some common tools. For example, here's a C code snippet:
 
-```ts
-class Greeter {
-  name: string
+```c
+#include <stdio.h>
 
-  constructor(name: string) {
-    this.name = name
-  }
-
-  greeting() {
-    console.log(`Hello, ${this.name}!`)
-  }
+int main() {
+  printf("Hello, world!\n");
+  return 0;
 }
-
-const greeter = new Greeter("Nils")
-greeter.greeting()
 ```
 
 Here's a table:
