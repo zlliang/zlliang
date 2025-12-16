@@ -1,7 +1,9 @@
 import { defineConfig } from "astro/config"
 import vercel from "@astrojs/vercel"
 import tailwindcss from "@tailwindcss/vite"
+import { rehypeHeadingIds } from "@astrojs/markdown-remark"
 import rehypeExternalLinks from "rehype-external-links"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
 
 import { rehypeImageCaption } from "./src/utils/rehype"
 
@@ -22,6 +24,8 @@ export default defineConfig({
       themes: { light: "github-light-default", dark: "github-dark-default" },
     },
     rehypePlugins: [
+      [rehypeHeadingIds, {}],
+      [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
       [rehypeExternalLinks, { target: "_blank", rel: ["noopener"] }],
       [rehypeImageCaption, {}],
     ],
