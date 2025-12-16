@@ -14,7 +14,6 @@ const entries = defineCollection({
     title: z.string().min(1).optional(),
     description: z.string().min(1).optional(),
     created: z.coerce.date(),
-    series: z.string().min(1).optional(),
     tags: z.array(z.string().min(1)).optional()
       .transform(tags => tags?.map(tag => ({ display: tag, slug: slugify(tag, { lower: true }) }))),
     draft: z.boolean().default(false),

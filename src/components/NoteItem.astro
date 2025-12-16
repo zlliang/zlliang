@@ -1,12 +1,11 @@
 ---
 import { render } from "astro:content"
+import { format } from "date-fns"
 
 import Link from "@/components/Link.astro"
 import TagList from "@/components/TagList.astro"
 import Tag from "@/components/Tag.astro"
 import DraftTag from "@/components/DraftTag.astro"
-
-import { format } from "@/utils/date"
 
 import type { CollectionEntry } from "astro:content"
 
@@ -31,10 +30,10 @@ const { Content } = await render(entry)
   </div>
   
   <TagList>
+    <Fragment>
+      {entry.data.draft && <DraftTag />}
+    </Fragment>
     {entry.data.tags && entry.data.tags.length > 0 && (
-      <Fragment>
-        {entry.data.draft && <DraftTag />}
-      </Fragment>
       <Fragment>
         {entry.data.tags.slice(0, 3).map(tag => <Tag href={`/blog/tags/${tag.slug}`}>{tag.display}</Tag>)}
       </Fragment>
