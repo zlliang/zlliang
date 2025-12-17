@@ -1,6 +1,7 @@
 ---
 import Layout from "@/components/Layout.astro"
 import PostItem from "@/components/PostItem.astro"
+import TableOfContents from "@/components/TableOfContents.astro"
 
 import { getPosts } from "@/content"
 
@@ -21,5 +22,9 @@ const { post } = Astro.props
 ---
 
 <Layout title={post.data.title}>
+  <!-- Content -->
   <PostItem post={post} />
+
+  <!-- Table of contents -->
+  <TableOfContents post={post} slot="aside-prefix" />
 </Layout>

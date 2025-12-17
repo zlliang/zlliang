@@ -14,10 +14,7 @@ const title = "Notes"
   <!-- Title -->
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <Fragment slot="subtitle">
-      <span>{notes.length}</span>
-      <span>{notes.length >= 2 ? "notes" : "note"} in total</span>
-    </Fragment>
+    <span slot="subtitle">{notes.length} in total</span>
   </PageTitle>
 
   <!-- Notes -->

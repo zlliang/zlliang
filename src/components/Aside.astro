@@ -1,0 +1,57 @@
+---
+import { format } from "date-fns"
+
+import Section from "@/components/Section.astro"
+import Link from "@/components/Link.astro"
+
+import { getNotes, getPosts, getTags } from "@/content"
+
+import { cn } from "@/utils/style"
+
+const notes = await getNotes()
+const posts = await getPosts()
+const tags = getTags(notes)
+
+const recentPosts = posts.slice(0, 10)
+---
+
+<div class="space-y-6">
+  <!-- Prefix -->
+  <slot name="prefix" />
+
+  <!-- Recent posts -->
+  {recentPosts.length > 0 && (
+    <Section title="Recent posts">
+      {recentPosts.map((post, index) => (
+        <div class={cn(index !== recentPosts.length - 1 && "mb-1 pb-2 border-b border-neutral-200 dark:border-neutral-800")}>
+          <div class="mb-1">
+            <Link href={`/posts/${post.id}`}>{post.data.title}</Link>
+          </div>
+          <div class="text-sm text-neutral-500">
+            <Fragment>{format(post.data.created, "PP")}</Fragment>
+            {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
+          </div>
+        </div>
+      ))}
+    </Section>
+  )}
+
+  <!-- Archive -->
+  <Section title="Archive">
+    <div class="flex justify-between items-center mb-1">
+      <Link href="/posts"><span class="icon-[lucide--book-open-text]" /> Posts</Link>
+      <span class="text-sm text-neutral-500">{posts.length} in total</span>
+    </div>
+    <div class="flex justify-between items-center mb-1">
+      <Link href="/notes"><span class="icon-[lucide--notebook-pen]" /> Notes</Link>
+      <span class="text-sm text-neutral-500">{notes.length} in total</span>
+    </div>
+    <div class="flex justify-between items-center">
+      <Link href="/tags"><span class="icon-[lucide--tag]" /> Tags</Link>
+      <span class="text-sm text-neutral-500">{tags.length} in total</span>
+    </div>
+  </Section>
+
+  <!-- Suffix -->
+  <slot name="suffix" />
+</div>
