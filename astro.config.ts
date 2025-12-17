@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config"
 import vercel from "@astrojs/vercel"
 import tailwindcss from "@tailwindcss/vite"
-import { rehypeHeadingIds } from "@astrojs/markdown-remark"
+import { rehypeHeadingIds } from "@astrojs/markdown-remark" // Ghost
 import rehypeExternalLinks from "rehype-external-links"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 
