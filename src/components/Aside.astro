@@ -29,8 +29,8 @@ const recentPosts = posts.slice(0, 10)
   {recentPosts.length > 0 && (
     <Section title="Recent posts">
       {recentPosts.map((post, index) => (
-        <div class={cn(index !== recentPosts.length - 1 && "mb-1 pb-2 border-b border-neutral-200 dark:border-neutral-800")}>
-          <div class="mb-1">
+        <div class={cn(index !== recentPosts.length - 1 && "mb-1 pb-1.5 border-b border-neutral-200 dark:border-neutral-800")}>
+          <div class="mb-0.5">
             <Link href={`/posts/${post.id}`}>{post.data.title}</Link>
           </div>
           <div class="text-sm text-neutral-500">
