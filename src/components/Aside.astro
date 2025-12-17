@@ -8,6 +8,12 @@ import { getNotes, getPosts, getTags } from "@/content"
 
 import { cn } from "@/utils/style"
 
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+
 const notes = await getNotes()
 const posts = await getPosts()
 const tags = getTags(notes)
@@ -15,7 +21,7 @@ const tags = getTags(notes)
 const recentPosts = posts.slice(0, 10)
 ---
 
-<div class="space-y-6">
+<aside class={cn("space-y-6", className)}>
   <!-- Prefix -->
   <slot name="prefix" />
 
@@ -54,4 +60,4 @@ const recentPosts = posts.slice(0, 10)
 
   <!-- Suffix -->
   <slot name="suffix" />
-</div>
+</aside>
