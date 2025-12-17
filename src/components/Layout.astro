@@ -64,17 +64,15 @@ const url = new URL(Astro.url.pathname, Astro.site)
 <body>
   <div class="flex flex-col min-h-dvh max-w-3xl lg:max-w-6xl m-auto px-6">
     <Header />
-    <main class="flex-1 flex gap-8">
-      <div class="flex-1">
+    <div class="flex-1 flex gap-12">
+      <main class="flex-1">
         <slot />
-      </div>
-      <div class="hidden lg:block shrink-0 w-80">
-        <Aside>
-          <Fragment slot="prefix"><slot name="aside-prefix" /></Fragment>
-          <Fragment slot="suffix"><slot name="aside-suffix" /></Fragment>
-        </Aside>
-      </div>
-    </main>
+      </main>
+      <Aside class="hidden lg:block shrink-0 w-80">
+        <Fragment slot="prefix"><slot name="aside-prefix" /></Fragment>
+        <Fragment slot="suffix"><slot name="aside-suffix" /></Fragment>
+      </Aside>
+    </div>
     <Footer />
   </div>
 
