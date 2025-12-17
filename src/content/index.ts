@@ -13,7 +13,7 @@ export async function getNotes() {
 
 /** Get tags from notes, sorted alphabetically */
 export function getTags(notes: CollectionEntry<"notes">[]) {
-  const tags = uniqBy(notes.flatMap(note => note.data.tags).filter(Boolean) as Exclude<CollectionEntry<"notes">["data"]["tags"], undefined>, 'slug')
+  const tags = uniqBy(notes.flatMap(note => note.data.tags).filter(Boolean) as Exclude<CollectionEntry<"notes">["data"]["tags"], undefined>, "slug")
     .toSorted((a, b) => a.slug.localeCompare(b.slug))
   
   return tags

@@ -14,10 +14,7 @@ const title = "Posts"
   <!-- Title -->
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <Fragment slot="subtitle">
-      <span>{posts.length}</span>
-      <span>{posts.length >= 2 ? "posts" : "post"} in total</span>
-    </Fragment>
+    <span slot="subtitle">{posts.length} in total</span>
   </PageTitle>
 
   <!-- Posts -->

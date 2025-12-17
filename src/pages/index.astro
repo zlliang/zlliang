@@ -1,6 +1,7 @@
 ---
 import Layout from "@/components/Layout.astro"
 import NoteList from "@/components/NoteList.astro"
+import Aside from "@/components/Aside.astro"
 
 import { getNotes, renderFragment } from "@/content"
 
@@ -10,9 +11,14 @@ const notes = await getNotes()
 ---
 
 <Layout description="Personal website of Zilong Liang">
+  <!-- Bio -->
   <div class="mb-12">
     <Bio />
   </div>
 
+  <!-- Notes -->
   <NoteList notes={notes} />
+
+  <!-- Aside -->
+  <Aside slot="aside" />
 </Layout>

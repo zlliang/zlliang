@@ -19,15 +19,12 @@ function getTagCount(slug: string) {
   <!-- Title -->
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <Fragment slot="subtitle">
-      <span>{tags.length}</span>
-      <span>{tags.length >= 2 ? "tags" : "tag"} in total</span>
-    </Fragment>
+    <span slot="subtitle">{tags.length} in total</span>
   </PageTitle>
 
   <!-- Tags -->
   {tags?.map(tag => (
-    <div>
+    <div class="mb-1">
       <Link href={`/tags/${tag.slug}`}>{tag.display} ({getTagCount(tag.slug)})</Link>
     </div>
   ))}
