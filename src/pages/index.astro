@@ -1,16 +1,12 @@
 ---
 import Layout from "@/components/Layout.astro"
-import EntryList from "@/components/EntryList.astro"
-import Divider from "@/components/Divider.astro"
+import NoteList from "@/components/NoteList.astro"
 
-import { getEntries, getTags, renderFragment } from "@/content"
+import { getNotes, renderFragment } from "@/content"
 
 const Bio = await renderFragment("bio")
-const entries = await getEntries()
 
-const posts = entries.filter(entry => entry.data.type === "post")
-const notes = entries.filter(entry => entry.data.type === "note")
-const tags = getTags(entries)
+const notes = await getNotes()
 ---
 
 <Layout description="Personal website of Zilong Liang">
@@ -18,21 +14,5 @@ const tags = getTags(entries)
     <Bio />
   </div>
 
-  <div class="space-y-2">
-    <div class="space-x-2">
-      <a href="/blog/posts"><span class="icon-[lucide--file-pen] mr-1" /><span>Posts</span></a>
-      <span class="text-neutral-500">{posts.length} in total</span>
-    </div>
-    <div class="space-x-2">
-      <a href="/blog/notes"><span class="icon-[lucide--notebook-pen] mr-1" /><span>Notes</span></a>
-      <span class="text-neutral-500">{notes.length} in total</span>
-    </div>
-    <div class="space-x-2">
-      <a href="/blog/tags"><span class="icon-[lucide--tag] mr-1" /><span>Tags</span></a>
-      <span class="text-neutral-500">{tags.length} in total</span>
-    </div>
-  </div>
-  {entries.length > 0 && <Divider />}
-
-  <EntryList entries={entries} />
+  <NoteList notes={notes} />
 </Layout>

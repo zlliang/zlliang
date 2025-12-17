@@ -1,45 +1,34 @@
 ---
+import { render } from "astro:content"
 import { format } from "date-fns"
 
-import Link from "@/components/Link.astro"
-import TagList from "@/components/TagList.astro"
-import Tag from "@/components/Tag.astro"
-import DraftTag from "@/components/DraftTag.astro"
+import PageTitle from "@/components/PageTitle.astro"
 
 import type { CollectionEntry } from "astro:content"
 
 interface Props {
-  entry: CollectionEntry<"entries">
+  post: CollectionEntry<"posts">  
 }
 
-const { entry } = Astro.props
+const { post } = Astro.props
+const { Content } = await render(post)
 ---
 
-<div class="space-y-4">
-  <div class="flex justify-between gap-4">
-    <Link href={`/blog/${entry.id}`} class="font-display font-bold">{entry.data.title}</Link>
-    <span class="shrink-0 w-fit text-neutral-500">
-      <span>#{entry.data.no}</span><span class="icon-[lucide--dot]" /><span>{format(entry.data.created, "PP")}</span>
-    </span>
-  </div>
-
-  {entry.data.description && <div>{entry.data.description}</div>}
-
-  <TagList>
-    <Fragment>
-      {entry.data.draft && <DraftTag />}
+<div>
+  <!-- Title -->
+  <PageTitle>
+    <Fragment>{post.data.title}</Fragment>
+    <Fragment slot="subtitle">
+      <Fragment>{format(post.data.created, "PP")}</Fragment>
+      {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
     </Fragment>
-    {entry.data.tags && entry.data.tags.length > 0 && (
-      <Fragment>
-        {entry.data.tags.slice(0, 3).map(tag => <Tag href={`/blog/tags/${tag.slug}`}>{tag.display}</Tag>)}
-      </Fragment>
-      <Fragment>
-        {entry.data.tags.length > 3 && <Tag>+{entry.data.tags.length - 3}</Tag>}
-      </Fragment>
-    )}
-  </TagList>
+  </PageTitle>
 
-  <div>
-    <Link href={`/blog/${entry.id}`}>Read more <span class="icon-[lucide--arrow-right]" /></Link>
+  <!-- Content -->
+  <div class="mb-4">
+    <Content />
   </div>
+
+  <!-- Date and link -->
+  <div class="text-sm text-neutral-500"></div>
 </div>

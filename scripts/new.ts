@@ -5,7 +5,7 @@ import slugify from "slugify"
 
 type EntryType = "note" | "post"
 
-const BLOG_ROOT = path.join(process.cwd(), "src", "content", "blog")
+const CONTENT_ROOT = path.join(process.cwd(), "src", "content")
 
 async function main() {
   const args = process.argv.slice(2)
@@ -15,19 +15,22 @@ async function main() {
     console.error("Usage: bun run new <note|post> [title]")
     process.exit(1)
   }
-  
-  const type = typeArg as EntryType
 
+  const type = typeArg as EntryType
+  
   const rawTitle = titleParts.join(" ").trim()
   const hasTitle = rawTitle.length > 0
   const title = hasTitle ? rawTitle : "Untitled"
 
   const now = new Date()
+  const date = format(now, "yyyy-MM-dd")
   const year = format(now, "yyyy")
   const month = format(now, "MM")
+  const day = format(now, "dd")
 
   const slug = slugify(title, { lower: true })
-  const dirPath = path.join(BLOG_ROOT, year, month)
+  const collectionPath = path.join(CONTENT_ROOT, type === "note" ? "notes" : "posts")
+  const dirPath = path.join(collectionPath, year, month, day)
   const filePath = path.join(dirPath, `${slug}.md`)
 
   await fs.mkdir(dirPath, { recursive: true })
@@ -37,26 +40,36 @@ async function main() {
     process.exit(1)
   }
 
-  const nextNo = await getNextNo(BLOG_ROOT)
-  const dateStr = format(now, "yyyy-MM-dd")
+  let frontmatterLines: string[] = []
 
-  const frontmatterLines: string[] = [
-    "---",
-    `no: ${nextNo}`,
-    `type: ${type}`,
-    `title: ${title}`,
-    ...(type === "post" ? ["description: TODO"] : []),
-    `created: ${dateStr}`,
-    "tags: []",
-    "draft: true",
-    "---",
-    "",
-    "TODO",
-  ]
+  if (type === "note") {
+    const nextNo = await getNextNo(collectionPath)
+    frontmatterLines = [
+      `---`,
+      `no: ${nextNo}`,
+      ...(hasTitle ? [`title: ${title}`] : []),
+      `created: ${date}`,
+      "tags: []",
+      "draft: true",
+      "---",
+      "",
+      "TODO",
+    ]
+    console.log(`Created note #${nextNo}: ${filePath}`)
+  } else {
+    frontmatterLines = [
+      "---",
+      `title: ${title}`,
+      `created: ${date}`,
+      "draft: true",
+      "---",
+      "",
+      "TODO",
+    ]
+    console.log(`Created post: ${filePath}`)
+  }
 
   await fs.writeFile(filePath, frontmatterLines.join("\n"), "utf8")
-
-  console.log(`Created ${type} #${nextNo}: ${filePath}`)
 }
 
 async function fileExists(p: string): Promise<boolean> {
@@ -68,15 +81,16 @@ async function fileExists(p: string): Promise<boolean> {
   }
 }
 
-async function getNextNo(blogRoot: string): Promise<number> {
+async function getNextNo(notesRoot: string): Promise<number> {
   let maxNo = 0
   const glob = new Bun.Glob("**/*.md")
 
-  for await (const relPath of glob.scan(blogRoot)) {
-    const fullPath = path.join(blogRoot, relPath)
+  for await (const relPath of glob.scan(notesRoot)) {
+    const fullPath = path.join(notesRoot, relPath)
+
     let text: string
     try {
-      text = await fs.readFile(fullPath, "utf8")
+      text = await fs.readFile(fullPath, "utf-8")
     } catch {
       continue
     }
