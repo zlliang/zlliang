@@ -1,45 +1,43 @@
 ---
-import { render } from "astro:content"
+import { getEntry, render } from "astro:content"
 import { format } from "date-fns"
 
 import Link from "@/components/Link.astro"
-import TagList from "@/components/TagList.astro"
-import Tag from "@/components/Tag.astro"
-import DraftTag from "@/components/DraftTag.astro"
 
 import type { CollectionEntry } from "astro:content"
 
 interface Props {
-  entry: CollectionEntry<"entries">
+  note: CollectionEntry<"notes">
+  showLink?: boolean
 }
 
-const { entry } = Astro.props
-const { Content } = await render(entry)
+const { note, showLink = true } = Astro.props
+const { Content } = await render(note)
+const post = note.data.post ? await getEntry(note.data.post) : null
 ---
 
-<div class="space-y-4">
-  <div class="flex justify-between gap-4">
-    <Link href={`/blog/${entry.id}`} class="font-display font-bold">{entry.data.title}</Link>
-    <span class="shrink-0 w-fit text-neutral-500">
-      <span>#{entry.data.no}</span><span class="icon-[lucide--dot]" /><span>{format(entry.data.created, "PP")}</span>
-    </span>
-  </div>
+<div>
+  <!-- Link to the post -->
+  {post && <p><Link href={`/posts/${post.id}`} class="font-bold">{post.data.title}</Link></p>}
 
-  <div>
+  <!-- Content -->
+  <div class="mb-4">
     <Content />
   </div>
-  
-  <TagList>
-    <Fragment>
-      {entry.data.draft && <DraftTag />}
-    </Fragment>
-    {entry.data.tags && entry.data.tags.length > 0 && (
-      <Fragment>
-        {entry.data.tags.slice(0, 3).map(tag => <Tag href={`/blog/tags/${tag.slug}`}>{tag.display}</Tag>)}
-      </Fragment>
-      <Fragment>
-        {entry.data.tags.length > 3 && <Tag>+{entry.data.tags.length - 3}</Tag>}
-      </Fragment>
-    )}
-  </TagList>
+
+  <!-- Tags -->
+  <div class="mb-1 text-xs text-neutral-500">
+    {note.data.tags?.map((tag, index) => <Fragment><Link href={`/tags/${tag.slug}`}>{tag.display}</Link>{index !== note.data.tags!.length - 1 && <span>, </span>}</Fragment>)}
+  </div>
+
+  <!-- Link and date -->
+  <div class="flex justify-between items-center gap-2">
+    <div class="flex items-center text-sm text-neutral-500">
+      {showLink ? <Link href={`/notes/${note.id}`} class="text-sm">#{note.data.no}</Link> : <span>#{note.data.no}</span>}
+      <span class="icon-[lucide--dot]" />
+      <span>{format(note.data.created, "PP")}</span>
+      {note.data.draft && <span class="ml-2 text-amber-600 dark:text-amber-400">Draft</span>}
+    </div>
+    {post && <Link href={`/posts/${post.id}`}>Read the full post <span class="icon-[lucide--arrow-right]" /></Link>}
+  </div>
 </div>

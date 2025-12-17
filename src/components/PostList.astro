@@ -1,0 +1,24 @@
+---
+import { format } from "date-fns"
+
+import Link from "@/components/Link.astro"
+
+import { cn } from "@/utils/style"
+
+import type { CollectionEntry } from "astro:content"
+
+interface Props {
+  posts: CollectionEntry<"posts">[]
+}
+
+const { posts } = Astro.props
+---
+
+<div>
+  {posts.map((post, index) => (
+    <div class={cn("flex justify-between items-start gap-2", index !== posts.length - 1 && "mb-1 pb-1 border-b border-neutral-200 dark:border-neutral-800")}>
+      <Link href={`/posts/${post.id}`}>{post.data.title}</Link>
+      <span class="text-neutral-500">{format(post.data.created, "PP")}</span>
+    </div>
+  ))}
+</div>

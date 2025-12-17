@@ -1,0 +1,25 @@
+---
+import Layout from "@/components/Layout.astro"
+import PageTitle from "@/components/PageTitle.astro"
+import PostList from "@/components/PostList.astro"
+
+import { getPosts } from "@/content"
+
+const posts = await getPosts()
+
+const title = "Posts"
+---
+
+<Layout title={title}>
+  <!-- Title -->
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <Fragment slot="subtitle">
+      <span>{posts.length}</span>
+      <span>{posts.length >= 2 ? "posts" : "post"} in total</span>
+    </Fragment>
+  </PageTitle>
+
+  <!-- Posts -->
+  <PostList posts={posts} />
+</Layout>

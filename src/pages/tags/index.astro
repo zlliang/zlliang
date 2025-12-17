@@ -1,0 +1,34 @@
+---
+import Layout from "@/components/Layout.astro"
+import PageTitle from "@/components/PageTitle.astro"
+import Link from "@/components/Link.astro"
+
+import { getNotes, getTags } from "@/content"
+
+const notes = await getNotes()
+const tags = getTags(notes)
+
+const title = "Tags"
+
+function getTagCount(slug: string) {
+  return notes.filter(note => note.data.tags?.some(t => t.slug === slug)).length
+}
+---
+
+<Layout title={title} description={title}>
+  <!-- Title -->
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <Fragment slot="subtitle">
+      <span>{tags.length}</span>
+      <span>{tags.length >= 2 ? "tags" : "tag"} in total</span>
+    </Fragment>
+  </PageTitle>
+
+  <!-- Tags -->
+  {tags?.map(tag => (
+    <div>
+      <Link href={`/tags/${tag.slug}`}>{tag.display} ({getTagCount(tag.slug)})</Link>
+    </div>
+  ))}
+</Layout>

@@ -1,23 +1,30 @@
-import { defineCollection, z } from "astro:content"
+import { defineCollection, reference, z } from "astro:content"
 import { glob } from "astro/loaders"
 import slugify from "slugify"
 
-function formatTitle(type: "note" | "post", title?: string) {
-  return type === "note" ? `Note${title ? `: ${title}` : ""}` : title
-}
-
-const entries = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
+const notes = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/notes" }),
   schema: z.object({
     no: z.number(),
-    type: z.enum(["note", "post"]),
     title: z.string().min(1).optional(),
-    description: z.string().min(1).optional(),
+    post: reference("posts").optional(),
     created: z.coerce.date(),
     tags: z.array(z.string().min(1)).optional()
-      .transform(tags => tags?.map(tag => ({ display: tag, slug: slugify(tag, { lower: true }) }))),
+      .transform(tags => tags
+        ?.map(tag => ({ display: tag, slug: slugify(tag, { lower: true }) }))
+        .toSorted((a, b) => a.slug.localeCompare(b.slug))
+      ),
     draft: z.boolean().default(false),
-  }).transform(data => ({ ...data, title: formatTitle(data.type, data.title) })),
+  }),
+})
+
+const posts = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/posts" }),
+  schema: z.object({
+    title: z.string().min(1),
+    created: z.coerce.date(),
+    draft: z.boolean().default(false),
+  })
 })
 
 const fragments = defineCollection({
@@ -25,6 +32,7 @@ const fragments = defineCollection({
 })
 
 export const collections = {
-  entries,
+  notes,
+  posts,
   fragments,
 }

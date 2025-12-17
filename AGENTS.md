@@ -28,7 +28,8 @@ bun run new <note|post> [title]  # Create a new blog entry
 src/
 ├── components/    # Astro components (.astro)
 ├── content/       # Content collections
-│   ├── blog/      # Blog entries (year/month/[slug].md)
+│   ├── notes/     # Short-form notes (year/month/[slug].md)
+│   ├── posts/     # Long-form posts (year/month/[slug].md)
 │   └── fragments/ # Reusable content fragments
 ├── pages/         # File-based routing
 ├── styles/        # Global CSS (main.css)
@@ -37,15 +38,22 @@ src/
 
 ### Content Schema
 
-Blog entries use frontmatter with these fields:
+Notes use frontmatter with these fields:
 
 ```yaml
-no: 1               # Unique entry number (auto-incremented)
-type: note | post   # Entry type
-title: "..."        # Optional for notes
-description: "..."  # Required for posts
-created: YYYY-MM-DD
-tags: []            # Optional
+no: 1               # Required, unique note number (auto-incremented)
+title: ...          # Optional
+post: ...           # Optional, refer to a post
+created: YYYY-MM-DD # Required
+tags: []            # Optional, sorted alphabetically
+draft: true         # Remove this field to publish
+```
+
+Posts use frontmatter with these fields:
+
+```yaml
+title: ...          # Required
+created: YYYY-MM-DD # Required
 draft: true         # Remove this field to publish
 ```
 
