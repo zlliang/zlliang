@@ -1,8 +1,9 @@
 ---
 no: -1
-post: 2025/12/17/markdown-demo
+title: Demonstrate Markdown capabilities of this website
+post: 2025/12/17/demonstrate-markdown-capabilities-of-this-website
 created: 2025-12-17
-tags: [Demo, Post]
+tags: [Demo]
 draft: true
 ---
 
