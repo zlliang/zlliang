@@ -106,7 +106,7 @@ ol ol ol, ul ol ol, ol ul ol, ul ul ol {
 }
 
 hr {
-  @apply relative mb-4 h-auto border-neutral-200 dark:border-neutral-800 overflow-visible;
+  @apply relative my-6 h-auto border-neutral-200 dark:border-neutral-800 overflow-visible;
 }
 
 hr:before {
