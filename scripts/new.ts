@@ -60,7 +60,7 @@ async function main() {
   } else {
     frontmatterLines = [
       "---",
-      `title: ${title}`,
+      `title: ${JSON.stringify(title)}`,
       `created: ${date}`,
       "draft: true",
       "---",

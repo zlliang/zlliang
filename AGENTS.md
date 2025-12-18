@@ -127,7 +127,7 @@ Avoid:
 - **Filler phrases:** "It is important to note that" → just state it directly
 - **Vague language:** "pretty good" / "kind of" / "somewhat" → be precise or omit
 
-For detailed style guide, see @src/content/README.md.
+For detailed style guide, see @src/content/STYLE.md.
 
 ### Code & Technical Terminology
 
