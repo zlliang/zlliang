@@ -12,6 +12,17 @@ A formatting reference for blog posts and notes.
   - ❌ "How It Works"
 - **Keep headings short:** Aim for 3–8 words; avoid punctuation at the end
 
+## Tags
+
+Tags are taxonomic nouns used to categorize content.
+
+- **Singular vs. plural:**
+  - Use singular for uncountable concepts: "blogging", "design", "music"
+  - Use plural for countable classes: "coding agents", "tools", "frameworks"
+- **Casing:** Use sentence case; only capitalize acronyms, names, and proper nouns
+  - ✅ "coding agents", "blogging", "JavaScript", "Simon Willison", "API design"
+  - ❌ "Coding Agents", "simon willison", "api design"
+
 ## Links
 
 - **Link text:** Use sentence case; never capitalize for emphasis

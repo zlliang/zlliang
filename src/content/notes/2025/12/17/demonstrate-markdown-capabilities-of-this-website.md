@@ -3,7 +3,7 @@ no: -1
 title: "Demonstrate Markdown Capabilities of This Website"
 post: 2025/12/17/demonstrate-markdown-capabilities-of-this-website
 created: 2025-12-17
-tags: [Demo]
+tags: [demo]
 draft: true
 ---
 
