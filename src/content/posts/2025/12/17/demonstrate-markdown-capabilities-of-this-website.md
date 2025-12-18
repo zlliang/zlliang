@@ -1,5 +1,5 @@
 ---
-title: Demonstrate Markdown capabilities of this website
+title: "Demonstrate Markdown Capabilities of This Website"
 created: 2025-12-17
 tags: [Demo]
 draft: true
@@ -7,13 +7,13 @@ draft: true
 
 This is a [Markdown](https://markdownguide.org/) content demo.
 
-## Second Level Heading
+## Second level heading
 
 Here's a second level heading. Now I need to write a paragraph. If I don't write enough, it won't wrap, so I need to write a bit more, and a bit more, so that it will wrap. Line wrapping shows the difference in line height. If the line height is too tight or too loose, it will affect readability. I'm currently using the `leading-[1.7]` utility class from [Tailwind CSS](https://tailwindcss.com/).
 
 This is another paragraph. Putting two paragraphs together shows whether the paragraph spacing is appropriate. This paragraph also needs to be a bit longer, ideally wrapping, to better see how real articles look.
 
-### Third Level Heading
+### Third level heading
 
 In this section I plan to test some common tools. For example, here's a C code snippet:
 
@@ -57,7 +57,7 @@ Here's a list:
 
 This paragraph is to test whether the spacing between lists and paragraphs is normal.
 
-## Custom Containers
+## Custom containers
 
 Below are some custom containers that can only be used on this site:
 
@@ -73,7 +73,7 @@ This is a warning card, it will attract more attention!
 
 </div>
 
-## Testing Chinese Display
+## Testing Chinese display
 
 现在让我们来测试一下中文显示效果。这个网站的主要目的是展示 Markdown 格式化内容，包括中英文混排的情况。通过这篇演示文章，我可以观察不同字体、行距和段落间距在实际使用中的效果。
 

@@ -30,6 +30,7 @@
     "slugify": "^1.6.6",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
+    "title": "^4.0.1",
     "typescript": "^5.9.3",
     "unist-util-visit": "^5.0.0",
     "vercel": "^50.1.2"
