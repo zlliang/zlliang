@@ -13,4 +13,4 @@ tags: [coding agents, typefaces]
 
 As the introduction suggests, the typeface reminds me of man pages, telephone books, and vintage technical documentation. [The foundry's website](https://usgraphics.com/) also reflects that aesthetic.
 
-Berkeley Mono is a commercial typeface. Curiously, however, these coding agent labs seem to be using it **without buying a license**, since the foundry is tagging these labs on X frequently, as the links above show.
+Berkeley Mono is a commercial typeface. Curiously, however, some of those coding agent labs seem to be using it **without buying a license**, since the foundry is tagging them on X frequently, as the links above show.
