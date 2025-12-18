@@ -21,11 +21,13 @@ import "@/styles/main.css"
 interface Props {
   title?: string
   description?: string
+  aside?: boolean
 }
 
 const title = getTitle(Astro.props.title)
 const description = Astro.props.description
 const url = new URL(Astro.url.pathname, Astro.site)
+const { aside = true } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -68,10 +70,12 @@ const url = new URL(Astro.url.pathname, Astro.site)
       <main class="flex-1">
         <slot />
       </main>
-      <Aside class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80">
-        <Fragment slot="prefix"><slot name="aside-prefix" /></Fragment>
-        <Fragment slot="suffix"><slot name="aside-suffix" /></Fragment>
-      </Aside>
+      {aside && (
+        <Aside class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80">
+          <Fragment slot="prefix"><slot name="aside-prefix" /></Fragment>
+          <Fragment slot="suffix"><slot name="aside-suffix" /></Fragment>
+        </Aside>
+      )}
     </div>
     <Footer />
   </div>
