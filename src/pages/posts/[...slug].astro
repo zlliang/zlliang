@@ -26,5 +26,9 @@ const { post } = Astro.props
   <PostItem post={post} />
 
   <!-- Table of contents -->
-  <TableOfContents post={post} slot="aside-prefix" />
+  <TableOfContents
+    slot="aside-prefix"
+    post={post}
+    class="hidden lg:block"
+  />
 </Layout>

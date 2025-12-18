@@ -10,9 +10,10 @@ import type { CollectionEntry } from "astro:content"
 
 interface Props {
   post: CollectionEntry<"posts">
+  class?: string
 }
 
-const { post } = Astro.props
+const { post, class: className } = Astro.props
 
 const { headings } = await render(post)
 
@@ -20,7 +21,7 @@ const filteredHeadings = headings.filter((h) => h.depth <= 3)
 ---
 
 {filteredHeadings.length > 0 && (
-  <Section title="On this page">
+  <Section title="On this page" class={cn(className)}>
     <ul class="pl-0! list-none! text-sm">
       {filteredHeadings.map((heading) => (
         <li class={cn(heading.depth === 3 && "pl-4")}>

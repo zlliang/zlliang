@@ -3,6 +3,7 @@ import { format } from "date-fns"
 
 import Section from "@/components/Section.astro"
 import Link from "@/components/Link.astro"
+import PostList from "@/components/PostList.astro"
 
 import { getNotes, getPosts, getTags } from "@/content"
 
@@ -19,6 +20,8 @@ const posts = await getPosts()
 const tags = getTags(notes)
 
 const recentPosts = posts.slice(0, 10)
+
+const isPosts = Astro.url.pathname === "/posts"
 ---
 
 <aside class={cn("space-y-6", className)}>
@@ -26,8 +29,8 @@ const recentPosts = posts.slice(0, 10)
   <slot name="prefix" />
 
   <!-- Recent posts -->
-  {recentPosts.length > 0 && (
-    <Section title="Recent posts">
+  {!isPosts && recentPosts.length > 0 && (
+    <Section title="Recent posts" class="hidden lg:block">
       {recentPosts.map((post, index) => (
         <div class={cn(index !== recentPosts.length - 1 && "mb-1 pb-1.5 border-b border-neutral-200 dark:border-neutral-800")}>
           <div class="mb-0.5">
@@ -39,6 +42,9 @@ const recentPosts = posts.slice(0, 10)
           </div>
         </div>
       ))}
+    </Section>
+    <Section title="Recent posts" class="lg:hidden">
+      <PostList posts={recentPosts} />
     </Section>
   )}
 
