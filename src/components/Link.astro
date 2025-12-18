@@ -1,4 +1,6 @@
 ---
+import { cn } from "@/utils/style"
+
 interface Props {
   href?: string
   class?: string
@@ -11,6 +13,6 @@ const external = Astro.props.external ?? (href?.startsWith("http") || href?.star
 
 <a
   href={href}
-  class={className}
+  class={cn(className)}
   {...(external ? { target: "_blank", rel: "noopener" } : {})}
 ><slot /></a>
