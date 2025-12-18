@@ -19,7 +19,7 @@ This document defines how AI assistants (e.g., ChatGPT, Codex, Amp) help me deve
 bun run dev       # Start dev server
 bun run build     # Build for production
 bun run preview   # Preview production build
-bun run new <note|post> [title]  # Create a new blog entry
+bun run new <note|post> [title]  # Create a new note or post
 ```
 
 ### Project Structure
@@ -43,7 +43,7 @@ Notes use frontmatter with these fields:
 ```yaml
 no: 1               # Required, unique note number (auto-incremented)
 title: ...          # Optional
-post: ...           # Optional, refer to a post
+post: ...           # Optional, refers to a post
 created: YYYY-MM-DD # Required
 tags: []            # Optional, sorted alphabetically
 draft: true         # Remove this field to publish
@@ -94,7 +94,7 @@ Watch for these patterns in my writing:
 
 I write **technical essays** and gradually expand into **personal growth and life reflections**.
 
-Writers I admire: Bob Nystrom, Simon Willison, Josh Comeau, Mitchell Hashimoto, Paul Graham.
+Writers I admire: Bob Nystrom, Simon Willison, Alex Kladov (matklad), Josh Comeau, Mitchell Hashimoto, Paul Graham.
 
 ### Core Principles
 
@@ -110,8 +110,7 @@ Writers I admire: Bob Nystrom, Simon Willison, Josh Comeau, Mitchell Hashimoto, 
 **General register:** Semi-formal → precise, human, and conversational in rhythm.  
 **Voice:** Curious, patient, pragmatic. Never pretentious.
 
-#### Do:
-
+Do:
 - Start paragraphs with a clear statement or question
 - Keep sentences short-to-medium length (12–25 words)
 - Use examples, metaphors, or analogies to clarify, not to decorate
@@ -122,12 +121,13 @@ Writers I admire: Bob Nystrom, Simon Willison, Josh Comeau, Mitchell Hashimoto, 
   - Keep language sincere, not sentimental
   - Balance emotion with analysis
 
-#### Avoid:
-
+Avoid:
 - **Marketing tone:** "This amazing feature will revolutionize..." → "This feature simplifies..."
 - **Overly formal:** "One must consider..." → "Consider..." or "We should consider..."
 - **Filler phrases:** "It is important to note that" → just state it directly
 - **Vague language:** "pretty good" / "kind of" / "somewhat" → be precise or omit
+
+For detailed style guide, see @src/content/README.md.
 
 ### Code & Technical Terminology
 

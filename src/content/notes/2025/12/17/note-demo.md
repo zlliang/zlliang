@@ -1,6 +1,6 @@
 ---
 no: -3
-title: Note demo
+title: "Note Demo"
 created: 2025-12-17
 tags: [Demo]
 draft: true

@@ -2,6 +2,7 @@ import fs from "node:fs/promises"
 import path from "node:path"
 import { format } from "date-fns"
 import slugify from "slugify"
+import capitalize from "title"
 
 type EntryType = "note" | "post"
 
@@ -20,15 +21,15 @@ async function main() {
   
   const rawTitle = titleParts.join(" ").trim()
   const hasTitle = rawTitle.length > 0
-  const title = hasTitle ? rawTitle : "Untitled"
+  const title = hasTitle ? capitalize(rawTitle) : "Untitled"
+  const slug = slugify(title, { lower: true })
 
   const now = new Date()
   const date = format(now, "yyyy-MM-dd")
   const year = format(now, "yyyy")
   const month = format(now, "MM")
   const day = format(now, "dd")
-
-  const slug = slugify(title, { lower: true })
+  
   const collectionPath = path.join(CONTENT_ROOT, type === "note" ? "notes" : "posts")
   const dirPath = path.join(collectionPath, year, month, day)
   const filePath = path.join(dirPath, `${slug}.md`)
@@ -47,7 +48,7 @@ async function main() {
     frontmatterLines = [
       `---`,
       `no: ${nextNo}`,
-      ...(hasTitle ? [`title: ${title}`] : []),
+      ...(hasTitle ? [`title: ${JSON.stringify(title)}`] : []),
       `created: ${date}`,
       "tags: []",
       "draft: true",
