@@ -2,7 +2,7 @@
 no: -3
 title: "Note Demo"
 created: 2025-12-17
-tags: [Demo]
+tags: [demo]
 draft: true
 ---
 
