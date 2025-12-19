@@ -66,8 +66,8 @@ const { aside = true } = Astro.props
 <body>
   <div class="flex flex-col min-h-dvh max-w-3xl lg:max-w-6xl m-auto px-6">
     <Header />
-    <div class="flex-1 lg:flex gap-12">
-      <main class="flex-1">
+    <div class="flex-1 lg:flex gap-12 w-full">
+      <main class="flex-1 min-w-0">
         <slot />
       </main>
       {aside && (

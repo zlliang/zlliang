@@ -30,7 +30,7 @@ SOFTWARE.
 
 ## Content License (CC BY-NC-SA 4.0)
 
-All written content, including but not limited to blog posts, articles, and other prose in the `src/content/` directory, is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+All written content, including but not limited to blog notes, posts, and other prose in the `src/content/` directory, is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 
 This means you are free to:
 - **Share** — copy and redistribute the material in any medium or format
@@ -41,4 +41,4 @@ Under the following terms:
 - **NonCommercial** — You may not use the material for commercial purposes.
 - **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
 
-To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/
+To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/.
