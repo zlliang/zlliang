@@ -5,7 +5,7 @@ import { rehypeHeadingIds } from "@astrojs/markdown-remark" // Ghost
 import rehypeExternalLinks from "rehype-external-links"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 
-import { rehypeImageCaption } from "./src/utils/rehype"
+import { rehypeFootnotePrefix, rehypeImageCaption } from "./src/utils/rehype"
 
 export default defineConfig({
   site: "https://zlliang.me",
@@ -32,6 +32,7 @@ export default defineConfig({
       [rehypeHeadingIds, {}],
       [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
       [rehypeExternalLinks, { target: "_blank", rel: ["noopener"] }],
+      [rehypeFootnotePrefix, {}],
       [rehypeImageCaption, {}],
     ],
   },
