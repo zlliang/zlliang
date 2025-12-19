@@ -23,6 +23,11 @@ export default defineConfig({
     shikiConfig: {
       themes: { light: "github-light-default", dark: "github-dark-default" },
     },
+    remarkRehype: {
+      footnoteLabel: " ",
+      footnoteLabelTagName: "div",
+      footnoteBackContent: "↵",
+    },
     rehypePlugins: [
       [rehypeHeadingIds, {}],
       [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
