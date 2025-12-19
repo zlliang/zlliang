@@ -4,7 +4,7 @@ This document defines how AI assistants (e.g., ChatGPT, Codex, Amp) help me deve
 
 ## Part 1: Development
 
-### Tech Stack
+### Tech stack
 
 - **Framework:** [Astro](https://docs.astro.build/llms.txt)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
@@ -22,7 +22,7 @@ bun run preview   # Preview production build
 bun run new <note|post> [title]  # Create a new note or post
 ```
 
-### Project Structure
+### Project structure
 
 ```
 src/
@@ -36,7 +36,7 @@ src/
 └── utils/         # Helper functions
 ```
 
-### Content Schema
+### Content schema
 
 Notes use frontmatter with these fields:
 
@@ -65,7 +65,7 @@ draft: true         # Remove this field to publish
 - **Styling:** Tailwind utilities; global styles in `src/styles/main.css`
 - **Code themes:** `github-light-default` / `github-dark-default` ([Shiki](https://shiki.style/))
 
-### Development Guidelines
+### Development guidelines
 
 - Check existing components before creating new ones
 - Follow Astro patterns for data fetching (`getCollection`, `getEntry`)
@@ -79,7 +79,7 @@ draft: true         # Remove this field to publish
 
 My native language is Chinese, and I have never lived in an English-speaking country. I'm now writing an English blog with a clear goal: not just to publish polished posts, but to **internalize native-style writing intuition** and **build my own distinctive English writing style** — to write with precision, logic, and quiet confidence.
 
-### Quick Reference: Common Issues to Watch
+### Quick reference: Common issues to watch
 
 Watch for these patterns in my writing:
 
@@ -90,13 +90,13 @@ Watch for these patterns in my writing:
 - **Noun-heavy phrases:** "make a decision" → "decide" / "give consideration" → "consider"
 - **Redundancy:** "in order to" → "to" / "the reason is because" → "because"
 
-### Writing Focus
+### Writing focus
 
 I write **technical essays** and gradually expand into **personal growth and life reflections**.
 
 Writers I admire: Bob Nystrom, Simon Willison, Alex Kladov (matklad), Josh Comeau, Mitchell Hashimoto, Paul Graham.
 
-### Core Principles
+### Core principles
 
 1. **Clarity before complexity.** Use simple, direct language to explain complex ideas.
 2. **Precision and correctness.** Technical accuracy outweighs literary flourish.
@@ -105,7 +105,7 @@ Writers I admire: Bob Nystrom, Simon Willison, Alex Kladov (matklad), Josh Comea
 5. **Readable structure.** Each post should guide the reader step by step; avoid info dumps.
 6. **Learning through iteration.** Each revision must teach me something about rhythm, syntax, or clarity.
 
-### Tone & Style Directives
+### Tone & style directives
 
 **General register:** Semi-formal → precise, human, and conversational in rhythm.  
 **Voice:** Curious, patient, pragmatic. Never pretentious.
@@ -129,7 +129,7 @@ Avoid:
 
 For detailed style guide, see @src/content/STYLE.md.
 
-### Code & Technical Terminology
+### Code & technical terminology
 
 - **Always use backticks** for code elements: `function`, `const`, `npm install`
 - **Proper names stay unchanged:** React, TypeScript, PostgreSQL (not "Postgres" unless informal)
@@ -140,7 +140,7 @@ For detailed style guide, see @src/content/STYLE.md.
   - Variables: `userName`, `isActive`
 - **Explain unfamiliar terms** on first use, then use freely
 
-### How to Help
+### How to help
 
 #### When reviewing my writing:
 
@@ -171,7 +171,7 @@ Point out recurring issues so I can learn:
 - ✅ Grammatically natural
 - ✅ Readable aloud
 
-### Daily Workflow
+### Daily workflow
 
 1. **Draft freely** in Markdown — don't self-edit too early
 2. **Self-review** against Quick Reference list above
@@ -181,7 +181,7 @@ Point out recurring issues so I can learn:
 
 **Don't aim for perfection.** Ship when it's clear, accurate, and helpful.
 
-### Long-Term Goals
+### Long-term goals
 
 - Build the ability to **think and write in English** about technical systems fluently
 - Develop a distinct, trustworthy technical voice
