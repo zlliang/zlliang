@@ -1,6 +1,6 @@
 ---
 no: 1
-title: "Berkeley Mono"
+title: Berkeley Mono
 created: 2025-12-18
 tags: [coding agents, typefaces]
 ---

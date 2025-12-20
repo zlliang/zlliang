@@ -1,6 +1,6 @@
 ---
 no: 2
-title: "Agent Skills"
+title: Agent Skills
 created: 2025-12-19
 tags: [Agent Skills, Anthropic, coding agents]
 ---
