@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "new": "bun scripts/new.ts"
+    "new": "bun scripts/new.ts",
+    "ship": "bun scripts/ship.ts"
   },
   "dependencies": {
     "@astrojs/vercel": "^9.0.2",
@@ -33,6 +34,7 @@
     "title": "^4.0.1",
     "typescript": "^5.9.3",
     "unist-util-visit": "^5.0.0",
-    "vercel": "^50.1.2"
+    "vercel": "^50.1.2",
+    "yaml": "^2.8.2"
   }
 }

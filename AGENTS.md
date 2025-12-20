@@ -181,6 +181,8 @@ Point out recurring issues so I can learn:
 
 **Don't aim for perfection.** Ship when it's clear, accurate, and helpful.
 
+For my notes and posts drafting workflow, see @src/content/WORKFLOW.md.
+
 ### Long-term goals
 
 - Build the ability to **think and write in English** about technical systems fluently

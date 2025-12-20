@@ -3,8 +3,18 @@ import path from "node:path"
 import { format } from "date-fns"
 import slugify from "slugify"
 import capitalize from "title"
+import { stringify as stringifyYaml } from "yaml"
 
 type EntryType = "note" | "post"
+
+interface Frontmatter {
+  no?: number
+  title?: string
+  created?: string
+  tags?: string[]
+  draft?: boolean
+  [key: string]: unknown
+}
 
 const CONTENT_ROOT = path.join(process.cwd(), "src", "content")
 
@@ -31,7 +41,9 @@ async function main() {
   const day = format(now, "dd")
   
   const collectionPath = path.join(CONTENT_ROOT, type === "note" ? "notes" : "posts")
-  const dirPath = path.join(collectionPath, year, month, day)
+  const dirPath = type === "note"
+    ? path.join(collectionPath, year, month, day)
+    : path.join(collectionPath, "drafts")
   const filePath = path.join(dirPath, `${slug}.md`)
 
   await fs.mkdir(dirPath, { recursive: true })
@@ -41,36 +53,33 @@ async function main() {
     process.exit(1)
   }
 
-  let frontmatterLines: string[] = []
+  let frontmatter: Frontmatter
 
   if (type === "note") {
     const nextNo = await getNextNo(collectionPath)
-    frontmatterLines = [
-      `---`,
-      `no: ${nextNo}`,
-      ...(hasTitle ? [`title: ${JSON.stringify(title)}`] : []),
-      `created: ${date}`,
-      "tags: []",
-      "draft: true",
-      "---",
-      "",
-      "TODO",
-    ]
+    frontmatter = {
+      no: nextNo,
+      ...(hasTitle && { title }),
+      created: date,
+      tags: [],
+      draft: true,
+    }
     console.log(`Created note #${nextNo}: ${filePath}`)
   } else {
-    frontmatterLines = [
-      "---",
-      `title: ${JSON.stringify(title)}`,
-      `created: ${date}`,
-      "draft: true",
-      "---",
-      "",
-      "TODO",
-    ]
+    frontmatter = {
+      title,
+      created: date,
+      draft: true,
+    }
     console.log(`Created post: ${filePath}`)
   }
 
-  await fs.writeFile(filePath, frontmatterLines.join("\n"), "utf8")
+  const content = serializeFrontmatter(frontmatter) + "TODO"
+  await fs.writeFile(filePath, content, "utf8")
+}
+
+function serializeFrontmatter(fm: Frontmatter): string {
+  return `---\n${stringifyYaml(fm)}---\n\n`
 }
 
 async function fileExists(p: string): Promise<boolean> {
