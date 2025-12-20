@@ -1,6 +1,6 @@
 ---
 no: 3
-title: "AI Transparency Statement"
+title: AI Transparency Statement
 created: 2025-12-20
 tags: [slop]
 ---

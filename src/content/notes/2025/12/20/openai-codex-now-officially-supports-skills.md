@@ -1,6 +1,6 @@
 ---
 no: 4
-title: "OpenAI Codex Now Officially Supports Skills"
+title: OpenAI Codex Now Officially Supports Skills
 created: 2025-12-20
 tags: [Agent Skills, OpenAI, OpenAI Codex]
 ---
