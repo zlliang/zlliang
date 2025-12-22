@@ -12,6 +12,19 @@ A formatting reference for blog posts and notes.
   - ❌ "How It Works"
 - **Keep headings short:** Aim for 3–8 words; avoid punctuation at the end
 
+## Note types
+
+Notes follow different conventions based on their type:
+
+| Type | Title format | Content format | Required tag |
+|------|--------------|----------------|--------------|
+| Regular | No convention | No convention | — |
+| Link | `Link: [description]` | Start with `[Link](url) ([via](url)). ...` (The via link is optional) | links |
+| TIL | `TIL: [description]` | Start with `**TIL:** ...` | TIL (Today I Learned) |
+| New post | `New post: [post title]` | Introduce the corresponding post | posts |
+
+More conventions may be added in the future.
+
 ## Tags
 
 Tags are taxonomic nouns used to categorize content.
