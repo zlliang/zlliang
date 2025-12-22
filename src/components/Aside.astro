@@ -37,7 +37,7 @@ const isPosts = Astro.url.pathname === "/posts"
             <Link href={`/posts/${post.id}`}>{post.data.title}</Link>
           </div>
           <div class="text-sm text-neutral-500">
-            <Fragment>{format(post.data.created, "PP")}</Fragment>
+            <span>{format(post.data.created, "PP")}</span>
             {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
           </div>
         </div>

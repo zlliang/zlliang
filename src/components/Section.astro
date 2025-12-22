@@ -11,7 +11,7 @@ const { title = "Untitled", class: className } = Astro.props
 
 <div class={cn(className)}>
   <div class="-mx-2 mb-6 px-2 py-1 bg-neutral-100 dark:bg-neutral-800 text-sm text-neutral-500">
-    {title}
+    {Astro.slots.has("title") ? <slot name="title" /> : title}
   </div>
   <slot />
 </div>

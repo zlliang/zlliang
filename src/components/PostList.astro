@@ -19,7 +19,7 @@ const { posts } = Astro.props
     <div class={cn("flex justify-between items-start gap-4", index !== posts.length - 1 && "mb-1 pb-1 border-b border-neutral-200 dark:border-neutral-800")}>
       <Link href={`/posts/${post.id}`}>{post.data.title}</Link>
       <span class="shrink-0 text-neutral-500">
-        <Fragment>{format(post.data.created, "PP")}</Fragment>
+        <span>{format(post.data.created, "PP")}</span>
         {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
       </span>
     </div>
