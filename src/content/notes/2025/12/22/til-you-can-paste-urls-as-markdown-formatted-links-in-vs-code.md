@@ -2,7 +2,7 @@
 no: 5
 title: "TIL: You can paste URLs as Markdown formatted links in VS Code"
 created: 2025-12-22
-tags: [Markdown, TIL (Today I Learned), VS Code]
+tags: [code editing, Markdown, TIL (Today I Learned), VS Code]
 ---
 
 **TIL:** When editing Markdown files in [VS Code](https://code.visualstudio.com/), you can paste URLs as formatted links via the `markdown.editor.pasteUrlAsFormattedLink.enabled` setting.
