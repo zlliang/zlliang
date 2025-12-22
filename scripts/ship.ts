@@ -99,7 +99,7 @@ async function shipDraft(filename: string) {
   await fs.writeFile(postPath, postContent, "utf-8")
   console.log(`Shipped post: ${postPath}`)
 
-  const notePath = await createNote(title)
+  const notePath = await createNote(`New post: ${title}`)
   await addPostReference(notePath, postRef)
 
   await fs.unlink(draftPath)
