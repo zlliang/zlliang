@@ -4,10 +4,10 @@ import { format } from "date-fns"
 
 import Layout from "@/components/Layout.astro"
 import NoteItem from "@/components/NoteItem.astro"
+import Section from "@/components/Section.astro"
 import Link from "@/components/Link.astro"
 
 import { getNotes } from "@/content"
-import { cn } from "@/utils/style"
 
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro"
 
@@ -40,23 +40,31 @@ const title = [note.data.title || post?.data.title, `Note #${note.data.no}`].fil
 
   <!-- Links to next and previous notes -->
   {(next || previous) && (
-    <div class="grid grid-cols-2 mt-16">
+    <Fragment slot="aside-prefix">
       {next && (
-        <div class={cn("col-start-1 pr-4 text-neutral-500", !previous && "border-r border-neutral-200 dark:border-neutral-800")} >
-          <div class="text-sm">
-            <span>{format(next.data.created, "PP")}</span><span class="icon-[lucide--dot]" /><span>#{next.data.no}</span>
+        <Section>
+          <span slot="title">Next note <span class="icon-[lucide--arrow-up]" /></span>
+          <div class="mb-0.5">
+            <Link href={`/notes/${next.id}`}>{next.data.title}</Link>
           </div>
-          <Link href={`/notes/${next.id}`} class="block mt-1">Next{next.data.title ? `: ${next.data.title}` : ""}</Link>
-        </div>
+          <div class="text-sm text-neutral-500">
+            <span>{format(next.data.created, "PP")}</span>
+            {next.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
+          </div>
+        </Section>
       )}
       {previous && (
-        <div class="col-start-2 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-right text-neutral-500">
-          <div class="text-sm">
-            <span>#{previous.data.no}</span><span class="icon-[lucide--dot]" /><span>{format(previous.data.created, "PP")}</span>
+        <Section>
+          <span slot="title">Previous note <span class="icon-[lucide--arrow-down]" /></span>
+          <div class="mb-0.5">
+            <Link href={`/notes/${previous.id}`}>{previous.data.title}</Link>
           </div>
-          <Link href={`/notes/${previous.id}`} class="mt-1">Previous{previous.data.title ? `: ${previous.data.title}` : ""}</Link>
-        </div>
+          <div class="text-sm text-neutral-500">
+            <span>{format(previous.data.created, "PP")}</span>
+            {previous.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
+          </div>
+        </Section>
       )}
-    </div>
+    </Fragment>
   )}
 </Layout>
