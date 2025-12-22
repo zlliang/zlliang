@@ -16,7 +16,7 @@ interface Frontmatter {
   [key: string]: unknown
 }
 
-const CONTENT_ROOT = path.join(process.cwd(), "src", "content")
+const CONTENT_ROOT = path.join(process.cwd(), "content")
 
 async function main() {
   const args = process.argv.slice(2)
