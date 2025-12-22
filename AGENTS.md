@@ -28,8 +28,8 @@ bun run new <note|post> [title]  # Create a new note or post
 src/
 ├── components/    # Astro components (.astro)
 ├── content/       # Content collections
-│   ├── notes/     # Short-form notes (year/month/[slug].md)
-│   ├── posts/     # Long-form posts (year/month/[slug].md)
+│   ├── notes/     # Short-form notes ([year]/[month]/[day]/[slug].md)
+│   ├── posts/     # Long-form posts ([year]/[month]/[day]/[slug].md)
 │   └── fragments/ # Reusable content fragments
 ├── pages/         # File-based routing
 ├── styles/        # Global CSS (main.css)
@@ -61,9 +61,10 @@ draft: true         # Remove this field to publish
 
 - **Path alias:** Use `@/*` for `src/*` imports
 - **Components:** PascalCase `.astro` files
-- **Content:** Organized by `year/month/[slug].md`
+- **Content:** Organized by `[year]/[month]/[day]/[slug].md`
 - **Styling:** Tailwind utilities; global styles in `src/styles/main.css`
 - **Code themes:** `github-light-default` / `github-dark-default` ([Shiki](https://shiki.style/))
+- **Git commits**: Follow [Conventional Commits](https://www.conventionalcommits.org/)
 
 ### Development guidelines
 
