@@ -1,8 +1,8 @@
 ---
 no: -2
-title: My Approach to Running a Link Blog
+title: "Link: My approach to running a link blog"
 created: 2025-12-17
-tags: [blogging, demo, Simon Willison]
+tags: [blogging, demo, links, Simon Willison]
 draft: true
 ---
 
