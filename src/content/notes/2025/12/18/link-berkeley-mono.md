@@ -1,11 +1,11 @@
 ---
 no: 1
-title: Berkeley Mono
+title: "Link: Berkeley Mono"
 created: 2025-12-18
 tags: [coding agents, typefaces]
 ---
 
-[Berkeley Mono](https://t.co/dUqr2XX9Wm) ([via](https://x.com/usgraphics/status/2001308188919161017)). Looks like major coding agents like [Claude Code](https://claude.com/product/claude-code), [Cursor](https://cursor.com), and [Amp](https://ampcode.com) (which I mainly use these days) are all using this monospaced typeface on their social media[^1] and web pages[^2]. The typeface looks great and indeed has a retro-computing charm. The type foundry, [US Graphics Company](https://usgraphics.com/), also introduces it as "_a love letter to the golden era of computing_":
+[Berkeley Mono](https://t.co/dUqr2XX9Wm) ([via](https://x.com/usgraphics/status/2001308188919161017)). Looks like major coding agents like [Claude Code](https://claude.com/product/claude-code), [Cursor](https://cursor.com), and [Amp](https://ampcode.com) (which I mainly use these days) are all using this monospaced typeface on their social media[^1] and web pages[^2]. The typeface looks great and indeed has a retro-computing charm. The type foundry, [US Graphics Company](https://usgraphics.com/), also introduces it as "a love letter to the golden era of computing":
 
 > Berkeley Mono coalesces the objectivity of machine-readable typefaces of the 70's while simultaneously retaining the humanist sans-serif qualities. Inspired by the legendary typefaces of the past, Berkeley Mono offers exceptional straightforwardness and clarity in its form. Its purpose is to make the user productive and get out of the way.
 

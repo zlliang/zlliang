@@ -31,7 +31,7 @@ async function main() {
   
   const rawTitle = titleParts.join(" ").trim()
   const hasTitle = rawTitle.length > 0
-  const title = hasTitle ? capitalize(rawTitle) : "Untitled"
+  const title = hasTitle ? rawTitle : "Untitled"
   const slug = slugify(title, { lower: true })
 
   const now = new Date()
@@ -67,7 +67,7 @@ async function main() {
     console.log(`Created note #${nextNo}: ${filePath}`)
   } else {
     frontmatter = {
-      title,
+      title: capitalize(title),
       created: date,
       draft: true,
     }
