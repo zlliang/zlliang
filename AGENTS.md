@@ -128,7 +128,7 @@ Avoid:
 - **Filler phrases:** "It is important to note that" → just state it directly
 - **Vague language:** "pretty good" / "kind of" / "somewhat" → be precise or omit
 
-For detailed style guide, see @src/content/STYLE.md.
+For detailed style guide, see @content/STYLE.md.
 
 ### Code & technical terminology
 
@@ -182,7 +182,7 @@ Point out recurring issues so I can learn:
 
 **Don't aim for perfection.** Ship when it's clear, accurate, and helpful.
 
-For my notes and posts drafting workflow, see @src/content/WORKFLOW.md.
+For my notes and posts drafting workflow, see @content/WORKFLOW.md.
 
 ### Long-term goals
 

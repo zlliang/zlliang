@@ -3,7 +3,7 @@ import { glob } from "astro/loaders"
 import slugify from "slugify"
 
 const notes = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/notes" }),
+  loader: glob({ pattern: "**/*.md", base: "./content/notes" }),
   schema: z.object({
     no: z.number(),
     title: z.string().min(1).optional(),
@@ -19,7 +19,7 @@ const notes = defineCollection({
 })
 
 const posts = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/posts" }),
+  loader: glob({ pattern: "**/*.md", base: "./content/posts" }),
   schema: z.object({
     title: z.string().min(1),
     created: z.coerce.date(),
@@ -28,7 +28,7 @@ const posts = defineCollection({
 })
 
 const fragments = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/fragments" }),
+  loader: glob({ pattern: "**/*.md", base: "./content/fragments" }),
 })
 
 export const collections = {

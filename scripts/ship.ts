@@ -12,7 +12,7 @@ interface Frontmatter {
   [key: string]: unknown
 }
 
-const CONTENT_ROOT = path.join(process.cwd(), "src", "content")
+const CONTENT_ROOT = path.join(process.cwd(), "content")
 const DRAFTS_DIR = path.join(CONTENT_ROOT, "posts", "drafts")
 const POSTS_DIR = path.join(CONTENT_ROOT, "posts")
 
