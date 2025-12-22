@@ -18,5 +18,5 @@ const title = "Notes"
   </PageTitle>
 
   <!-- Notes -->
-  <NoteList notes={notes} />
+  {notes.length > 0 ? <NoteList notes={notes} />: <p class="text-neutral-500">No notes.</p>}
 </Layout>

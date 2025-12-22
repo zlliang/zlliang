@@ -18,5 +18,5 @@ const title = "Posts"
   </PageTitle>
 
   <!-- Posts -->
-  <PostList posts={posts} />
+  {posts.length > 0 ? <PostList posts={posts} />: <p class="text-neutral-500">No posts.</p>}
 </Layout>
