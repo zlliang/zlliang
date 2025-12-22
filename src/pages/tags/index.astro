@@ -23,9 +23,9 @@ function getTagCount(slug: string) {
   </PageTitle>
 
   <!-- Tags -->
-  {tags?.map(tag => (
+  {tags?.length > 0 ? tags.map(tag => (
     <div class="mb-1">
       <Link href={`/tags/${tag.slug}`}>{tag.display} ({getTagCount(tag.slug)})</Link>
     </div>
-  ))}
+  )) : <p class="text-neutral-500">No tags.</p>}
 </Layout>
