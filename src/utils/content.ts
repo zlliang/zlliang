@@ -8,7 +8,7 @@ export const notes = await getNotes()
 
 /** Get all notes */
 async function getNotes() {
-  const collection = await getCollection("notes", ({ data }) => import.meta.env.PROD ? !data.draft : true)
+  const collection = await getCollection("notes", ({ data }) => !import.meta.env.PROD || !data.draft)
   const notes = collection.toSorted((a, b) => b.data.no - a.data.no)
 
   return notes
@@ -39,7 +39,7 @@ export const posts = await getPosts()
 
 /** Get all posts */  
 async function getPosts() {
-  const collection = await getCollection("posts", ({ data }) => import.meta.env.PROD ? !data.draft : true)
+  const collection = await getCollection("posts", ({ data }) => !import.meta.env.PROD || !data.draft)
   const posts = collection.toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf())
 
   return posts
