@@ -48,6 +48,7 @@ const { aside = true } = Astro.props
   <link rel="preload" as="font" type="font/woff2" href={robotoMonoWoff2} crossorigin="anonymous" />
 
   <!-- SEO, OpenGraph and Twitter -->
+  <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="canonical" href={url} />
   {Boolean(description) && <meta name="description" content={description} />}
   <meta property="og:site_name" content={siteTitle} />
