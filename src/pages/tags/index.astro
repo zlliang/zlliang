@@ -3,10 +3,7 @@ import Layout from "@/components/Layout.astro"
 import PageTitle from "@/components/PageTitle.astro"
 import Link from "@/components/Link.astro"
 
-import { getNotes, getTags } from "@/utils/content"
-
-const notes = await getNotes()
-const tags = getTags(notes)
+import { notes, tags } from "@/utils/content"
 
 const title = "Tags"
 

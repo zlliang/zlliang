@@ -3,13 +3,19 @@ import { uniqBy, groupBy } from "lodash-es"
 
 import type { CollectionEntry } from "astro:content"
 
+/** All notes */
+export const notes = await getNotes()
+
 /** Get all notes */
-export async function getNotes() {
+async function getNotes() {
   const collection = await getCollection("notes", ({ data }) => import.meta.env.PROD ? !data.draft : true)
   const notes = collection.toSorted((a, b) => b.data.no - a.data.no)
 
   return notes
 }
+
+/** All tags */
+export const tags = getTags(notes)
 
 /** Get tags from notes, sorted alphabetically */
 export function getTags(notes: CollectionEntry<"notes">[]) {
@@ -28,8 +34,11 @@ export async function groupNotesByDate(notes: CollectionEntry<"notes">[]) {
   return grouped
 }
 
+/** All posts */
+export const posts = await getPosts()
+
 /** Get all posts */  
-export async function getPosts() {
+async function getPosts() {
   const collection = await getCollection("posts", ({ data }) => import.meta.env.PROD ? !data.draft : true)
   const posts = collection.toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf())
 

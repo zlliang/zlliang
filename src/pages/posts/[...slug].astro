@@ -3,13 +3,11 @@ import Layout from "@/components/Layout.astro"
 import PostItem from "@/components/PostItem.astro"
 import TableOfContents from "@/components/TableOfContents.astro"
 
-import { getPosts } from "@/utils/content"
+import { posts } from "@/utils/content"
 
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro"
 
 export const getStaticPaths = (async () => {
-  const posts = await getPosts()
-
   return posts.map(post => ({
     params: { slug: post.id },
     props: { post },

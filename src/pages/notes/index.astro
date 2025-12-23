@@ -3,9 +3,7 @@ import Layout from "@/components/Layout.astro"
 import PageTitle from "@/components/PageTitle.astro"
 import NoteList from "@/components/NoteList.astro"
 
-import { getNotes } from "@/utils/content"
-
-const notes = await getNotes()
+import { notes } from "@/utils/content"
 
 const title = "Notes"
 ---

@@ -3,14 +3,11 @@ import Layout from "@/components/Layout.astro"
 import PageTitle from "@/components/PageTitle.astro"
 import NoteList from "@/components/NoteList.astro"
 
-import { getNotes, getTags } from "@/utils/content"
+import { notes, tags } from "@/utils/content"
 
 import type { GetStaticPaths } from "astro"
 
 export const getStaticPaths = (async () => {
-  const notes = await getNotes()
-  const tags = getTags(notes)
-
   return tags.map(tag => ({
     params: { tag: tag.slug },
     props: { tag, notes: notes.filter(note => note.data.tags?.some(t => t.slug === tag.slug)) },
