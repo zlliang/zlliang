@@ -10,6 +10,7 @@
     "ship": "bun scripts/ship.ts"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.6.0",
     "@astrojs/vercel": "^9.0.2",
     "@fontsource-variable/public-sans": "^5.2.7",
     "@fontsource-variable/roboto-mono": "^5.2.8",
