@@ -12,7 +12,7 @@ In the last ten years, I've tried a lot of tech stacks for my blog, starting wit
 
 Here are two previous attempts (I'm not a good keeper. I asked my coding agent to dig into the Git commit history of this website and finally found some screenshots[^1]):
 
-<div class="sm:grid sm:grid-cols-2 sm:gap-4">
+<div class="sm:grid sm:grid-cols-2 sm:gap-6">
 
 ![Screenshot in August 2018](./images/blog-screenshot-2018-08.png "2018 version, attempting to running in mix of Chinese and English content, written in VuePress")
 
