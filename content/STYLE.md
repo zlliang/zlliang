@@ -19,7 +19,7 @@ Notes follow different conventions based on their type:
 | Type | Title format | Content format | Required tag |
 |------|--------------|----------------|--------------|
 | Regular | No convention | No convention | — |
-| Link | `Link: [description]` | Start with `[Link](url) ([via](url)). ...` (The via link is optional) | links |
+| Link | `Link: [description]` (or `Links: [description]` for multiple links) | Start with `[Link](url) ([via](url)). ...` (The via link is optional) | links |
 | TIL | `TIL: [description]` | Start with `**TIL:** ...` | TIL (Today I Learned) |
 | New post | `New post: [post title]` | Introduce the corresponding post | posts |
 
