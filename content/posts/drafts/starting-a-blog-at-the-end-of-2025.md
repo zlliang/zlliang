@@ -10,6 +10,16 @@ I used to keep a Chinese diary in Notion.
 
 In the last ten years, I've tried a lot of tech stacks for my blog, starting with the ancient [Hexo](https://hexo.io/), then [VuePress](https://vuepress.vuejs.org/), [Next.js](https://nextjs.org), and [VitePress](https://vitepress.dev/). It's more of like a playground for my web frontend development learning, instead of a place for writing. This journey even helped me find my first job as a frontend developer in [Tencent](https://www.tencent.com/). After all, I did't really start writing real content until now.
 
+Here are two previous attempts (I'm not a good keeper. I asked my coding agent to dig into the Git commit history of this website and finally found some screenshots[^1]):
+
+<div class="sm:grid sm:grid-cols-2 sm:gap-4">
+
+![Screenshot in August 2018](./images/blog-screenshot-2018-08.png "2018 version, attempting to running in mix of Chinese and English content, written in VuePress")
+
+![Screenshot in July 2019](./images/blog-screenshot-2019-07.png "2019 version, more of a portfolio-like way, written in Next.js")
+
+</div>
+
 ## Following the writers I admire
 
 ### Josh Comeau
@@ -98,10 +108,11 @@ My current coding agent is [Amp](https://ampcode.com). Here is my typical prompt
 
 And here's my instruction file for my personal website repository: [AGENTS.md](https://github.com/zlliang/zlliang/blob/03cc46c43eeea0da3afc4e11dff2f14d7d749799/AGENTS.md).
 
-
 ## Looking forward to this journey
 
 The following plans are spinning in my mind:
 - Pagination and search functionality for notes
 - Pinned posts as living documentations
 - Chinese contents, living in a separate subsite
+
+[^1]: [The Amp thread](https://ampcode.com/threads/T-019b49fd-619b-77ce-af60-0ce81ffb0d7f)
