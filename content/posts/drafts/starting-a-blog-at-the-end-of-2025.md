@@ -84,6 +84,13 @@ Some of his excellent write-ups:
 
 ## What to write, and how
 
+Write daily notes freely and casually, and long-form posts for deeper thinking. Use writing as a thinking tool, and draw insights from the collective history of writing.
+
+- Trends and developments in AI, web frontend, Python, and systems programming (Zig, Rust, C)
+- Reading notes from classic books and influential articles
+- Progress updates and devlogs for my projects
+- Reflections on technical topics, and occasionally non-technical ones
+
 ### Three phases imagined
 
 **Phase 1:** Imitate the writers I admire—observing and learning how they write, the language they use, and how they discuss the topics they care about.
