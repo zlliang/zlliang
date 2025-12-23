@@ -12,18 +12,18 @@ A formatting reference for blog posts and notes.
   - ❌ "How It Works"
 - **Keep headings short:** Aim for 3–8 words; avoid punctuation at the end
 
-## Note types
+## Note categories
 
-Notes follow different conventions based on their type:
+Notes are categorized by a `category` field in frontmatter. Available values: `regular`, `link`, `til`, `post`.
 
-| Type | Title format | Content format | Required tag |
-|------|--------------|----------------|--------------|
-| Regular | No convention | No convention | — |
-| Link | `Link: [description]` (or `Links: [description]` for multiple links) | Start with `[Link](url) ([via](url)). ...` (The via link is optional) | links |
-| TIL | `TIL: [description]` | Start with `**TIL:** ...` | TIL (Today I Learned) |
-| New post | `New post: [post title]` | Introduce the corresponding post | posts |
+| Category | Description | Content format |
+|----------|-------------|----------------|
+| `regular` | General notes, observations, thoughts | No convention |
+| `link` | Link notes with commentary | Start with `[Link](url) ([via](url)). ...` (the source is optional) |
+| `til` | Today I Learned entries | Start with `**TIL:** ...` |
+| `post` | Notes introducing a blog post | Introduce the corresponding post; set `post:` reference |
 
-More conventions may be added in the future.
+More categories may be added in the future.
 
 ## Tags
 

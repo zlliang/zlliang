@@ -5,7 +5,7 @@ import Section from "@/components/Section.astro"
 import Link from "@/components/Link.astro"
 import PostList from "@/components/PostList.astro"
 
-import { notes, tags, posts } from "@/utils/content"
+import { notes, categories, tags, posts } from "@/utils/content"
 
 import { cn } from "@/utils/style"
 
@@ -47,16 +47,20 @@ const isPosts = Astro.url.pathname === "/posts"
   <!-- Archive -->
   <Section title="Archive">
     <div class="flex justify-between items-center mb-1">
-      <Link href="/posts"><span class="icon-[lucide--book-open-text]" /> Posts</Link>
-      <span class="text-sm text-neutral-500">{posts.length} in total</span>
-    </div>
-    <div class="flex justify-between items-center mb-1">
       <Link href="/notes"><span class="icon-[lucide--notebook-pen]" /> Notes</Link>
       <span class="text-sm text-neutral-500">{notes.length} in total</span>
     </div>
-    <div class="flex justify-between items-center">
-      <Link href="/tags"><span class="icon-[lucide--tag]" /> Tags</Link>
+    <div class="flex justify-between items-center mb-1">
+      <span><span class="mr-2 font-mono text-neutral-500">├</span><Link href="/notes/categories"><span class="icon-[lucide--folder-open]" /> Categories</Link></span>
+      <span class="text-sm text-neutral-500">{categories.length} in total</span>
+    </div>
+    <div class="flex justify-between items-center mb-1">
+      <span><span class="mr-2 font-mono text-neutral-500">└</span><Link href="/notes/tags"><span class="icon-[lucide--tag]" /> Tags</Link></span>
       <span class="text-sm text-neutral-500">{tags.length} in total</span>
+    </div>
+    <div class="flex justify-between items-center">
+      <Link href="/posts"><span class="icon-[lucide--book-open-text]" /> Posts</Link>
+      <span class="text-sm text-neutral-500">{posts.length} in total</span>
     </div>
   </Section>
 

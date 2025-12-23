@@ -5,7 +5,7 @@ import Link from "@/components/Link.astro"
 
 import { notes, tags } from "@/utils/content"
 
-const title = "Tags"
+const title = "Note tags"
 
 function getTagCount(slug: string) {
   return notes.filter(note => note.data.tags?.some(t => t.slug === slug)).length
@@ -22,7 +22,7 @@ function getTagCount(slug: string) {
   <!-- Tags -->
   {tags?.length > 0 ? tags.map(tag => (
     <div class="mb-1">
-      <Link href={`/tags/${tag.slug}`}>{tag.display} ({getTagCount(tag.slug)})</Link>
+      <Link href={`/notes/tags/${tag.slug}`}>{tag.display} ({getTagCount(tag.slug)})</Link>
     </div>
   )) : <p class="text-neutral-500">No tags found.</p>}
 </Layout>

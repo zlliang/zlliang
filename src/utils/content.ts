@@ -14,6 +14,20 @@ async function getNotes() {
   return notes
 }
 
+/** Note categories */
+export const categories = ["regular", "link", "til", "post"] as const
+export type NoteCategory = typeof categories[number]
+
+/** Get the display name of a note category */
+export function getCategoryDisplay(category: NoteCategory) {
+  return ({
+    regular: "Regular",
+    link: "Link",
+    til: "TIL (Today I Learned)",
+    post: "Post",
+  })[category]
+}
+
 /** All tags */
 export const tags = getTags(notes)
 

@@ -5,10 +5,11 @@
 Notes are short-form entries, typically written and published within a day.
 
 ```bash
-bun run new note [title]
+bun run new note [--category <category>] [title]
 ```
 
 - Creates `notes/[year]/[month]/[day]/[slug].md` with `draft: true`
+- Supported categories: `regular` (default), `link`, `til`, `post`
 - Write, review, then remove `draft: true` to publish
 
 ## Posts
@@ -31,4 +32,4 @@ bun run ship
 
 - Moves the draft to `posts/[year]/[month]/[day]/[slug].md`
 - Removes `draft: true` from the post
-- Creates an associated note with a `post:` reference
+- Creates an associated note with `category: post` and a `post:` reference
