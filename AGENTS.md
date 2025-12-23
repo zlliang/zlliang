@@ -116,7 +116,7 @@ Do:
 - Keep sentences short-to-medium length (12–25 words)
 - Use examples, metaphors, or analogies to clarify, not to decorate
 - For technical writing:
-  - Use "you" sparingly; prefer "we" or neutral descriptions
+  - Use “I” for personal ownership, “you” for guidance, and “we” only when the shared scope is clear
   - Introduce code naturally with explanation before and after
 - For reflective writing:
   - Keep language sincere, not sentimental
