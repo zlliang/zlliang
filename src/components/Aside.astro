@@ -5,7 +5,7 @@ import Section from "@/components/Section.astro"
 import Link from "@/components/Link.astro"
 import PostList from "@/components/PostList.astro"
 
-import { getNotes, getPosts, getTags } from "@/utils/content"
+import { notes, tags, posts } from "@/utils/content"
 
 import { cn } from "@/utils/style"
 
@@ -14,10 +14,6 @@ interface Props {
 }
 
 const { class: className } = Astro.props
-
-const notes = await getNotes()
-const posts = await getPosts()
-const tags = getTags(notes)
 
 const recentPosts = posts.slice(0, 10)
 
