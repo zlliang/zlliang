@@ -1,0 +1,32 @@
+---
+import Layout from "@/components/Layout.astro"
+import PageTitle from "@/components/PageTitle.astro"
+import NoteList from "@/components/NoteList.astro"
+
+import { notes, tags } from "@/utils/content"
+
+import type { GetStaticPaths } from "astro"
+
+export const getStaticPaths = (async () => tags.map(tag => ({
+  params: { tag: tag.slug },
+  props: { tag, filterdNotes: notes.filter(note => note.data.tags?.some(t => t.slug === tag.slug)) },
+}))) satisfies GetStaticPaths
+
+const { tag, filterdNotes } = Astro.props
+
+const title = `Notes about "${tag.display}"`
+---
+
+<Layout title={title}>
+  <!-- Title -->
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <Fragment slot="subtitle">
+      <span>{filterdNotes.length}</span>
+      <span>{filterdNotes.length >= 2 ? "notes" : "note"} in total</span>
+    </Fragment>
+  </PageTitle>
+
+  <!-- Notes -->
+  <NoteList notes={filterdNotes} />
+</Layout>

@@ -1,9 +1,10 @@
 ---
 no: -1
-title: "New post: Demonstrate Markdown Capabilities of This Website"
-post: 2025/12/17/demonstrate-markdown-capabilities-of-this-website
+title: Demonstrate Markdown Capabilities of This Website
 created: 2025-12-17
-tags: [demo, posts]
+category: post
+post: 2025/12/17/demonstrate-markdown-capabilities-of-this-website
+tags: [demo]
 draft: true
 ---
 

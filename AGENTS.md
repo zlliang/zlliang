@@ -19,7 +19,8 @@ This document defines how AI assistants (e.g., ChatGPT, Codex, Amp) help me deve
 bun run dev       # Start dev server
 bun run build     # Build for production
 bun run preview   # Preview production build
-bun run new <note|post> [title]  # Create a new note or post
+bun run new note [--category <category>] [title]  # Create a new note with optional category
+bun run new post [title]  # Create a new post
 ```
 
 ### Project structure
@@ -43,8 +44,9 @@ Notes use frontmatter with these fields:
 ```yaml
 no: 1               # Required, unique note number (auto-incremented)
 title: ...          # Optional
-post: ...           # Optional, refers to a post
 created: YYYY-MM-DD # Required
+category: regular   # One of: regular, link, til, post
+post: ...           # Optional, refers to a post
 tags: []            # Optional, sorted alphabetically
 draft: true         # Remove this field to publish
 ```

@@ -99,7 +99,7 @@ async function shipDraft(filename: string) {
   await fs.writeFile(postPath, postContent, "utf-8")
   console.log(`Shipped post: ${postPath}`)
 
-  const notePath = await createNote(`New post: ${title}`)
+  const notePath = await createNote(title, "post")
   await addPostReference(notePath, postRef)
 
   await fs.unlink(draftPath)
@@ -121,8 +121,8 @@ function serializeFrontmatter(fm: Frontmatter): string {
   return `---\n${stringifyYaml(fm)}---\n\n`
 }
 
-async function createNote(title: string): Promise<string> {
-  const proc = Bun.spawn(["bun", "run", "new", "note", title], {
+async function createNote(title: string, category: string): Promise<string> {
+  const proc = Bun.spawn(["bun", "run", "new", "note", "--category", category, title], {
     cwd: process.cwd(),
     stdout: "pipe",
     stderr: "inherit",

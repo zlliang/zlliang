@@ -7,10 +7,13 @@ import { stringify as stringifyYaml } from "yaml"
 
 type EntryType = "note" | "post"
 
+type NoteCategory = "regular" | "link" | "til" | "post"
+
 interface Frontmatter {
   no?: number
   title?: string
   created?: string
+  category?: NoteCategory
   tags?: string[]
   draft?: boolean
   [key: string]: unknown
@@ -20,14 +23,32 @@ const CONTENT_ROOT = path.join(process.cwd(), "content")
 
 async function main() {
   const args = process.argv.slice(2)
-  const [typeArg, ...titleParts] = args
+  const [typeArg, ...rest] = args
 
   if (typeArg !== "note" && typeArg !== "post") {
-    console.error("Usage: bun run new <note|post> [title]")
+    console.error("Usage: bun run new <note|post> [--category <category>] [title]")
     process.exit(1)
   }
 
   const type = typeArg as EntryType
+
+  let category: NoteCategory = "regular"
+  const titleParts: string[] = []
+
+  for (let i = 0; i < rest.length; i++) {
+    if (rest[i] === "--category" && rest[i + 1]) {
+      const c = rest[i + 1]
+      if (c === "regular" || c === "link" || c === "til" || c === "post") {
+        category = c
+        i++
+      } else {
+        console.error(`Invalid category: ${c}. Must be one of: regular, link, til, post`)
+        process.exit(1)
+      }
+    } else {
+      titleParts.push(rest[i])
+    }
+  }
   
   const rawTitle = titleParts.join(" ").trim()
   const hasTitle = rawTitle.length > 0
@@ -61,6 +82,7 @@ async function main() {
       no: nextNo,
       ...(hasTitle && { title }),
       created: date,
+      category,
       tags: [],
       draft: true,
     }
