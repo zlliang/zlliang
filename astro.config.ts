@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config"
 import vercel from "@astrojs/vercel"
+import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
 import { rehypeHeadingIds } from "@astrojs/markdown-remark" // Ghost
 import rehypeExternalLinks from "rehype-external-links"
@@ -16,6 +17,7 @@ export default defineConfig({
       domains: [],
     },
   }),
+  integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },
