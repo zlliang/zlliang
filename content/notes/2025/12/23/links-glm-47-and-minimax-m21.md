@@ -5,7 +5,7 @@ created: 2025-12-23
 tags: [GLM, links, LLMs, MiniMax]
 ---
 
-[GLM 4.7](https://z.ai/blog/glm-4.7) and [MiniMax M2.1](https://www.minimax.io/news/minimax-m21). Chinese AI labs first caught the world's attention with the [DeepSeek](https://www.deepseek.com/) models in late 2024. Then in the second half of 2025, we saw a wave of Chinese open-source models like [GLM 4.6](https://z.ai/blog/glm-4.6), [MiniMax M2](https://www.minimax.io/news/minimax-m2), and [Kimi K2](https://moonshotai.github.io/Kimi-K2/)[^1]. People like these models for their low price, open weights, and solid performance — just slightly below state-of-the-art proprietary models.
+[GLM 4.7](https://z.ai/blog/glm-4.7) and [MiniMax M2.1](https://www.minimax.io/news/minimax-m21). Chinese AI labs first caught the world's attention with the [DeepSeek](https://www.deepseek.com/) models in late 2024. Then in the second half of 2025, we saw a wave of Chinese open-source models like [GLM 4.6](https://z.ai/blog/glm-4.6), [MiniMax M2](https://www.minimax.io/news/minimax-m2), and [Kimi K2](https://moonshotai.github.io/Kimi-K2/). People like these models for their low price, open weights, and solid performance — just slightly below state-of-the-art proprietary models[^1].
 
 Today, the updated GLM 4.7 and MiniMax M2.1 dropped on the same day. As public holidays approach in the US, Chinese AI labs keep pushing forward, making good use of the time 😉
 
