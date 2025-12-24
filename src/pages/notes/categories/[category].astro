@@ -14,7 +14,7 @@ export const getStaticPaths = (async () => categories.map(category => ({
 
 const { category, filterdNotes } = Astro.props
 
-const title = `${getCategoryDisplay(category)} notes`
+const title = `${getCategoryDisplay(category)} Notes`
 ---
 
 <Layout title={title}>

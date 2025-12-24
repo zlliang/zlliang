@@ -5,7 +5,7 @@ import Link from "@/components/Link.astro"
 
 import { notes, categories, getCategoryDisplay } from "@/utils/content"
 
-const title = "Note categories"
+const title = "Note Categories"
 
 function getCategoryCount(slug: string) {
   return notes.filter(note => note.data.category === slug).length
