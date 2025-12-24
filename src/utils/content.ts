@@ -1,6 +1,8 @@
 import { getCollection, getEntry, render } from "astro:content"
 import { uniqBy, groupBy } from "lodash-es"
 
+import { categories } from "@/content.config"
+
 import type { CollectionEntry } from "astro:content"
 
 /** All notes */
@@ -15,7 +17,7 @@ async function getNotes() {
 }
 
 /** Note categories */
-export const categories = ["regular", "link", "til", "post"] as const
+export { categories }
 export type NoteCategory = typeof categories[number]
 
 /** Get the display name of a note category */
