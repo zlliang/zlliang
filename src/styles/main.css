@@ -220,7 +220,7 @@ span.caption {
 /* Image grid */
 
 .image-grid {
-  @apply mb-4 sm:grid sm:grid-cols-2 sm:gap-6;
+  @apply mb-4 sm:grid sm:grid-cols-2 sm:gap-4;
 }
 
 .image-grid p {
