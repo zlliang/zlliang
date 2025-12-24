@@ -35,7 +35,7 @@ Here's a table:
 
 Here's a random image:
 
-![Random image](https://picsum.photos/600/300 "This is the image alt text, which can also be omitted. I wrote a custom rehype plugin for this.")
+![Random image](https://picsum.photos/600/300 "This is the image caption, which can also be omitted; I wrote a custom rehype plugin for this")
 
 Here's a blockquote:
 
@@ -70,6 +70,20 @@ This is a card.
 <div class="card amber">
 
 This is a warning card, it will attract more attention!
+
+</div>
+
+The following is an image grid:
+
+<div class="image-grid">
+
+![Random image 1](https://picsum.photos/400/300?random=1 "Random image 1")
+
+![Random image 2](https://picsum.photos/400/300?random=2 "Random image 2")
+
+![Random image 3](https://picsum.photos/400/300?random=3 "Random image 3")
+
+![Random image 4](https://picsum.photos/400/300?random=4 "Random image 4")
 
 </div>
 

@@ -12,7 +12,7 @@ Output formatting styles vary from model to model. For technical topics, I've fo
 
 Here are examples I tried on [OpenRouter](https://openrouter.ai/), prompting "Explain the Python programming language."
 
-<div class="sm:grid sm:grid-cols-2 sm:gap-6">
+<div class="image-grid">
 
 ![Python explanation by GPT-5.2](./images/python-explanation-by-gpt-5.2.png "GPT-5.2, starting with an introductory paragraph and followed by sections")
 

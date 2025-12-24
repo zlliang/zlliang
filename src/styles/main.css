@@ -216,3 +216,13 @@ span.caption {
 .card > *:last-child > *:last-child {
   @apply mb-0;
 }
+
+/* Image grid */
+
+.image-grid {
+  @apply mb-4 sm:grid sm:grid-cols-2 sm:gap-6;
+}
+
+.image-grid p {
+  @apply mb-0;
+}
