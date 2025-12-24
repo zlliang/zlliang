@@ -7,7 +7,8 @@ A formatting reference for blog posts and notes.
 - **Post titles:** Use title case (capitalize major words)
   - ✅ "Building a Parser from Scratch"
   - ❌ "Building a parser from scratch"
-- **Note titles and section headings (`h2`, `h3`, etc.):** Use sentence case (capitalize first word only)
+- **Note titles:** Use sentence case generally; for `link` and `post` notes, match the associated link or post title's casing
+- **Section headings (`h2`, `h3`, etc.):** Use sentence case (capitalize first word only)
   - ✅ "How it works"
   - ❌ "How It Works"
 - **Keep headings short:** Aim for 3–8 words; avoid punctuation at the end
