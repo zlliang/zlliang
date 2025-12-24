@@ -14,7 +14,7 @@ export const getStaticPaths = (async () => tags.map(tag => ({
 
 const { tag, filterdNotes } = Astro.props
 
-const title = `Notes about "${tag.display}"`
+const title = `Notes on "${tag.display}"`
 ---
 
 <Layout title={title}>

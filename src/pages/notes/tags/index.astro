@@ -5,7 +5,7 @@ import Link from "@/components/Link.astro"
 
 import { notes, tags } from "@/utils/content"
 
-const title = "Note tags"
+const title = "Note Tags"
 
 function getTagCount(slug: string) {
   return notes.filter(note => note.data.tags?.some(t => t.slug === slug)).length
