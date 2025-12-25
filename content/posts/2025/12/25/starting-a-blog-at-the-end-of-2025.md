@@ -1,6 +1,6 @@
 ---
 title: Starting a Blog at the End of 2025
-created: 2025-12-20
+created: 2025-12-25
 ---
 
 Happy holidays! At the end of 2025, I'm starting a blog. I've already written several entries and feel confident I can keep it going. Here are my thoughts on the journey I'm about to start.
