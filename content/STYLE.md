@@ -80,6 +80,11 @@ Tags are taxonomic nouns used to categorize content.
 - Always use numerals for: code, measurements, percentages, versions
 - Use numerals when comparing: "3 bugs vs. 12 bugs"
 
+## Image captions
+
+- Use **phrases without periods** for descriptive captions
+- Use **complete sentences with periods** only when explanation is needed
+
 ## Misc
 
 - Write dates as `YYYY-MM-DD` in frontmatter; "Dec 18, 2025" in prose
