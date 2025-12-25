@@ -35,7 +35,7 @@ Here's a table:
 
 Here's a random image:
 
-![Random image](https://picsum.photos/600/300 "This is the image caption, which can also be omitted; I wrote a custom rehype plugin for this")
+![Random image](https://picsum.photos/600/300 "Optional image caption here (I wrote a custom rehype plugin for this)")
 
 Here's a blockquote:
 
