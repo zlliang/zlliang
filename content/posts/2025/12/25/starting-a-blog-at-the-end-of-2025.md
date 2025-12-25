@@ -170,5 +170,5 @@ As a wrap-up, you can find the full instruction file for this website here: [AGE
 Time to write, write, and write. Can I accumulate thousands of notes in a decade? Can I leave behind some articles that others find valuable too? Let's see.
 
 [^1]: [The Amp thread](https://ampcode.com/threads/T-019b49fd-619b-77ce-af60-0ce81ffb0d7f)
-[^2]: Paul Graham's Essay: [Writes and Write-Nots](https://paulgraham.com/writes.html)
+[^2]: Paul Graham's essay: [Writes and Write-Nots](https://paulgraham.com/writes.html)
 [^3]: I've written about this before: [AI Transparent Statement - Note #3](/notes/2025/12/20/ai-transparency-statement)
