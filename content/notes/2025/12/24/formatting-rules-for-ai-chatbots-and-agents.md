@@ -26,14 +26,14 @@ Here are examples I tried on [OpenRouter](https://openrouter.ai/), prompting "Ex
 
 Even worse, from my experience, outputs from different versions of the same model series (e.g. GPT-5 and GPT-5.2) can vary greatly in terms of formatting.
 
-To address this issue, and to unify output styles of different tools I'm using ([ChatGPT](https://chatgpt.com/) as my daily driver, [Gemini](https://gemini.google.com/) for work (my company subscribes to it), and [Amp](https://ampcode.com) as my coding agent), I drafted a minimal formatting guide as follows:
+To address this issue, and to unify output styles of different tools I'm using ([ChatGPT](https://chatgpt.com/) as my daily driver, [Gemini](https://gemini.google.com/) for work, and [Amp](https://ampcode.com) as my coding agent), I drafted a minimal formatting guide as follows:
 
 > Shared formatting rules:
 > 
 > - Use consistent formatting within the same response
 > - Insert spaces between English words and CJK characters
 > - Always specify the language for syntax highlighting when using fenced code blocks
-> - Do not use horizontal dividers (`<hr />` or `---`) unless they add clear structural value
+> - Do not use horizontal dividers (`<hr />` or `---`) unless they add clear structural value, especially directly before headings
 > - For list items, do not use a period at the end unless the item is a complete sentence
 > 
 > For chat responses:
@@ -47,6 +47,6 @@ To address this issue, and to unify output styles of different tools I'm using (
 > - Use "Title Case" for top-level headings (e.g. `h1`), typically only once in a document, and "Sentence case" for section headings (capitalize the first word only)
 > - Use heading levels sequentially (`h2`, then `h3`, etc), never skip levels
 
-I apply these rules to the custom instructions setting in ChatGPT and to [AGENTS.md](https://github.com/zlliang/dotfiles/blob/cbf7742e5d1997b104a839cbfcd65c7cea8bb405/.config/amp/AGENTS.md#writing-style) for my coding agent.
+I apply these rules to the custom instructions setting in ChatGPT and to [AGENTS.md](https://github.com/zlliang/dotfiles/blob/d30ffde13b1b8d9b4368c734c770c063b5fc6e55/.config/amp/AGENTS.md#writing-style) for my coding agent.
 
 ![Custom instructions setting in ChatGPT](./images/chatgpt-custom-instructions.png "Custom instructions setting in ChatGPT")
