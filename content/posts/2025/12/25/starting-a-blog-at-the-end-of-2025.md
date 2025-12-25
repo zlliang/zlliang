@@ -160,8 +160,8 @@ I won't post [slops](https://simonwillison.net/2024/May/8/slop/). All the conten
 
 Here are example threads between me and Amp, working on my write-ups:
 
-- [_Review write-up grammar style and content_](https://ampcode.com/threads/T-019b4fcf-53d6-71fc-8a8b-594cecc5a789) (for [_Formatting rules for AI chatbots and agents_](notes/2025/12/24/formatting-rules-for-ai-chatbots-and-agents))
 - [_Review write-up grammar style and content_](https://ampcode.com/threads/T-019b54a4-b126-753b-82f1-12faebcddfd2) (for this very post)
+- [_Review write-up grammar style and content_](https://ampcode.com/threads/T-019b4fcf-53d6-71fc-8a8b-594cecc5a789) (for [_Formatting rules for AI chatbots and agents_](notes/2025/12/24/formatting-rules-for-ai-chatbots-and-agents))
 
 As a wrap-up, you can find the full instruction file for this website here: [AGENTS.md](https://github.com/zlliang/zlliang/blob/dbcc5647e2c39a9af2647ba42beb073b76533692/AGENTS.md).
 
