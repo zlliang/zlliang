@@ -28,5 +28,5 @@ const title = `${getCategoryDisplay(category)} Notes`
   </PageTitle>
 
   <!-- Notes -->
-  <NoteList notes={filterdNotes} />
+  {filterdNotes.length > 0 ? <NoteList notes={filterdNotes} />: <p class="text-neutral-500">No notes found.</p>}
 </Layout>

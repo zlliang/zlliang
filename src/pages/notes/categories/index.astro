@@ -20,9 +20,9 @@ function getCategoryCount(slug: string) {
   </PageTitle>
 
   <!-- Categories -->
-  {categories.map(category => (
+  {categories?.length > 0 ? categories.map(category => (
     <div class="mb-1">
       <Link href={`/notes/categories/${category}`}>{getCategoryDisplay(category)} ({getCategoryCount(category)})</Link>
     </div>
-  ))}
+  )) : <p class="text-neutral-500">No categories found.</p>}
 </Layout>
