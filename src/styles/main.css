@@ -198,6 +198,10 @@ span.caption {
   @apply mb-4 w-16 border-b border-neutral-200 dark:border-neutral-800;
 }
 
+.post-content #footnote-label {
+  @apply mt-16;
+}
+
 [data-footnote-ref] {
   @apply tabular-nums;
 }
