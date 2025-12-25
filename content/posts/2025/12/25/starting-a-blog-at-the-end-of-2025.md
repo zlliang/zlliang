@@ -132,6 +132,8 @@ I edit [Markdown](https://www.markdownguide.org/) files in [VS Code](https://cod
 
 You can find the source code, along with the Markdown files for all write-ups, in this GitHub repository: [zlliang/zlliang](https://github.com/zlliang/zlliang)
 
+![Screenshot of the current version](./images/blog-screenshot-2025-12.png "What it looks like now")
+
 ### My take on AI assistance
 
 This is a new era of AI. I'm neither a conceited programmer protesting against AI nor an AI-hype chaser, and am trying to find a pragmatic and restrained way to use AI tools to help me create a **better** website and deliver **better** write-ups.
