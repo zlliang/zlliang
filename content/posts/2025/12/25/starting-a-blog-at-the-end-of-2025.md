@@ -23,7 +23,7 @@ Here are two previous attempts (I'm not good at keeping records. I asked my codi
 
 </div>
 
-I value these previous attempts. No failure, no success. Now it's another attempt, a serious one (although I say that every time). I'm excited to see what I can do with this blog, on https://zlliang.me.
+I value these previous attempts. There is no success without failure. Now it's another attempt, a serious one (although I say that every time). I'm excited to see what I can do with this blog, on https://zlliang.me.
 
 ## Writers who inspired me
 
