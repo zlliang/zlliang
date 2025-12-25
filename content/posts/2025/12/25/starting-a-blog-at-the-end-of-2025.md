@@ -95,7 +95,7 @@ All of these writers have influenced me a lot and quietly motivated me to run my
 
 ## Why, what, and how I write
 
-I've read multiple motivating articles persuading you to write. The significant takeaway for me is that **writing is a tool for thinking**. A famous quote by [Leslie Lamport](https://www.lamport.org/), which Paul Graham later quoted, is[^2]:
+I've read multiple motivating articles persuading you to write. The significant takeaway for me is that **writing is a tool for thinking**. A famous quote by [Leslie Lamport](https://www.lamport.org/), which [Paul Graham](https://paulgraham.com/) later quoted, is[^2]:
 
 > If you're thinking without writing, you only _think_ you're thinking.
 
