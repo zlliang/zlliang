@@ -33,7 +33,7 @@ Here are a few of the writers I admire:
 
 ### Josh Comeau
 
-At the beginning of my professional career as a frontend web developer, learning modern concepts and frameworks like [React](https://react.dev/) and [CSS Flexbox](https://developer.mozilla.org/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts) took me a huge amount of time. On this journey, [Josh Comeau](https://www.joshwcomeau.com/) is a must-read. He always explains concepts from the very beginning and usually in an interactive way. He makes his blog posts interactive playgrounds, letting you understand by doing. Reading his articles was the first time I realized there are educational materials like this, instead of dull books that just throw a bunch of new concepts and definitions at you.
+At the beginning of my professional career as a frontend web developer, learning modern concepts and frameworks like [React](https://react.dev/) and [CSS flexbox](https://developer.mozilla.org/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts) took me a huge amount of time. On this journey, [Josh Comeau](https://www.joshwcomeau.com/) is a must-read. He always explains concepts from the very beginning and usually in an interactive way. He makes his blog posts interactive playgrounds, letting you understand by doing. Reading his articles was the first time I realized there are educational materials like this, instead of dull books that just throw a bunch of new concepts and definitions at you.
 
 Some of his excellent write-ups about web frontend:
 
