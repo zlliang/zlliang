@@ -4,7 +4,7 @@ title: Starting a Blog at the End of 2025
 created: 2025-12-25
 category: post
 post: 2025/12/25/starting-a-blog-at-the-end-of-2025
-tags: [Alex Kladov (matklad), blogging, Bob Nystrom, Josh Comeau, LLMs, personal, Simon Willison, writing]
+tags: [Alex Kladov (matklad), Astro, blogging, Bob Nystrom, Josh Comeau, LLMs, personal, Simon Willison, writing]
 ---
 
 Happy holidays! At the end of 2025, I'm starting a blog. I've already written several entries and feel confident I can keep it going.
