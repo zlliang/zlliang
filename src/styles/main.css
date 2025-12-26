@@ -159,7 +159,11 @@ pre code {
 /* Tables */
 
 table {
-  @apply mb-4 mx-auto border-collapse;
+  @apply mb-4 mx-auto w-full border-collapse;
+}
+
+th {
+  @apply text-left;
 }
 
 tr {
