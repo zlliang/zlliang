@@ -1,11 +1,15 @@
 ---
 import Layout from "@/components/Layout.astro"
 import NoteList from "@/components/NoteList.astro"
+import Link from "@/components/Link.astro"
 import Aside from "@/components/Aside.astro"
 
 import { notes, renderFragment } from "@/utils/content"
+import { NOTES_PER_PAGE } from "@/utils/site"
 
 const Bio = await renderFragment("bio")
+
+const filteredNotes = notes.slice(0, NOTES_PER_PAGE)
 ---
 
 <Layout description="Personal website of Zilong Liang">
@@ -15,7 +19,12 @@ const Bio = await renderFragment("bio")
   </div>
 
   <!-- Notes -->
-  <NoteList notes={notes} />
+  <NoteList notes={filteredNotes} />
+  {notes.length > NOTES_PER_PAGE && (
+    <div class="flex justify-end mt-6 pt-6 border-t-2 border-neutral-200 dark:border-neutral-800">
+      <Link href="/notes/2">More notes ({notes.length} in total) <span class="icon-[lucide--arrow-right] translate-y-px" /></Link>
+    </div>
+  )}
 
   <!-- Aside -->
   <Aside slot="aside" />

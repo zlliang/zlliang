@@ -1,0 +1,33 @@
+---
+import Layout from "@/components/Layout.astro"
+import PageTitle from "@/components/PageTitle.astro"
+import NoteList from "@/components/NoteList.astro"
+
+import { notes, tags } from "@/utils/content"
+import { NOTES_PER_PAGE } from "@/utils/site"
+
+import type { GetStaticPaths } from "astro"
+
+export const getStaticPaths = (({ paginate }) => tags.flatMap((tag) => {
+  const filteredNotes = notes.filter((note) => note.data.tags?.some((t) => t.slug === tag.slug))
+  return paginate(filteredNotes, { params: { tag: tag.slug }, props: { tag }, pageSize: NOTES_PER_PAGE })
+})) satisfies GetStaticPaths
+
+const { tag, page } = Astro.props
+
+const title = `Notes on "${tag.display}"`
+---
+
+<Layout title={title}>
+  <!-- Title -->
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <Fragment slot="subtitle">
+      <span>{page.total}</span>
+      <span>{page.total >= 2 ? "notes" : "note"} in total</span>
+    </Fragment>
+  </PageTitle>
+
+  <!-- Notes -->
+  {page.data.length > 0 ? <NoteList notes={page.data} page={page} /> : <p class="text-neutral-500">No notes found.</p>}
+</Layout>

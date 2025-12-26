@@ -8,7 +8,7 @@ import { notes, tags } from "@/utils/content"
 const title = "Note Tags"
 
 function getTagCount(slug: string) {
-  return notes.filter(note => note.data.tags?.some(t => t.slug === slug)).length
+  return notes.filter((note) => note.data.tags?.some((t) => t.slug === slug)).length
 }
 ---
 
@@ -20,7 +20,7 @@ function getTagCount(slug: string) {
   </PageTitle>
 
   <!-- Tags -->
-  {tags?.length > 0 ? tags.map(tag => (
+  {tags?.length > 0 ? tags.map((tag) => (
     <div class="mb-1">
       <Link href={`/notes/tags/${tag.slug}`}>{tag.display} ({getTagCount(tag.slug)})</Link>
     </div>

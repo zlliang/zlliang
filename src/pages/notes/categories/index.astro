@@ -8,7 +8,7 @@ import { notes, categories, getCategoryDisplay } from "@/utils/content"
 const title = "Note Categories"
 
 function getCategoryCount(slug: string) {
-  return notes.filter(note => note.data.category === slug).length
+  return notes.filter((note) => note.data.category === slug).length
 }
 ---
 
@@ -20,7 +20,7 @@ function getCategoryCount(slug: string) {
   </PageTitle>
 
   <!-- Categories -->
-  {categories?.length > 0 ? categories.map(category => (
+  {categories?.length > 0 ? categories.map((category) => (
     <div class="mb-1">
       <Link href={`/notes/categories/${category}`}>{getCategoryDisplay(category)} ({getCategoryCount(category)})</Link>
     </div>

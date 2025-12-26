@@ -5,16 +5,12 @@ import TableOfContents from "@/components/TableOfContents.astro"
 
 import { posts } from "@/utils/content"
 
-import type { GetStaticPaths, InferGetStaticPropsType } from "astro"
+import type { GetStaticPaths } from "astro"
 
-export const getStaticPaths = (async () => {
-  return posts.map(post => ({
-    params: { slug: post.id },
-    props: { post },
-  }))
-}) satisfies GetStaticPaths
-
-type Props = InferGetStaticPropsType<typeof getStaticPaths>
+export const getStaticPaths = (() => posts.map((post) => ({
+  params: { slug: post.id },
+  props: { post },
+}))) satisfies GetStaticPaths
 
 const { post } = Astro.props
 ---

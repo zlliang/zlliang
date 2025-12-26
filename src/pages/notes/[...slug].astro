@@ -9,23 +9,17 @@ import Link from "@/components/Link.astro"
 import { notes } from "@/utils/content"
 import { cn } from "@/utils/style"
 
-import type { GetStaticPaths, InferGetStaticPropsType } from "astro"
+import type { GetStaticPaths } from "astro"
 
-export const getStaticPaths = (async () => {
-  const length = notes.length
+export const getStaticPaths = (() => notes.map((note, index) => {
+  const next = index > 0 ? notes[index - 1] : null
+  const previous = index < notes.length - 1 ? notes[index + 1] : null
 
-  return notes.map((note, index) => {
-    const next = index > 0 ? notes[index - 1] : null
-    const previous = index < length - 1 ? notes[index + 1] : null
-
-    return {
-      params: { slug: note.id },
-      props: { note, next, previous },
-    }
-  })
-}) satisfies GetStaticPaths
-
-type Props = InferGetStaticPropsType<typeof getStaticPaths>
+  return {
+    params: { slug: note.id },
+    props: { note, next, previous },
+  }
+})) satisfies GetStaticPaths
 
 const { note, next, previous } = Astro.props
 const post = note.data.post ? await getEntry(note.data.post) : null

@@ -13,8 +13,8 @@ const notes = defineCollection({
     category: z.enum(categories).default("regular"),
     post: reference("posts").optional(),
     tags: z.array(z.string().min(1)).optional()
-      .transform(tags => tags
-        ?.map(tag => ({ display: tag, slug: slugify(tag, { lower: true }) }))
+      .transform((tags) => tags
+        ?.map((tag) => ({ display: tag, slug: slugify(tag, { lower: true }) }))
         .toSorted((a, b) => a.slug.localeCompare(b.slug))
       ),
     draft: z.boolean().default(false),

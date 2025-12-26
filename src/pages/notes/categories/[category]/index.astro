@@ -1,0 +1,7 @@
+---
+export const prerender = false
+
+const { category } = Astro.params
+
+return Astro.redirect(`/notes/categories/${category}/1`)
+---
