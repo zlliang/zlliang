@@ -35,7 +35,7 @@ export const tags = getTags(notes)
 
 /** Get tags from notes, sorted alphabetically */
 export function getTags(notes: CollectionEntry<"notes">[]) {
-  const tags = uniqBy(notes.flatMap(note => note.data.tags).filter(Boolean) as Exclude<CollectionEntry<"notes">["data"]["tags"], undefined>, "slug")
+  const tags = uniqBy(notes.flatMap((note) => note.data.tags).filter(Boolean) as Exclude<CollectionEntry<"notes">["data"]["tags"], undefined>, "slug")
     .toSorted((a, b) => a.slug.localeCompare(b.slug))
   
   return tags
@@ -43,7 +43,7 @@ export function getTags(notes: CollectionEntry<"notes">[]) {
 
 /** Group notes by created date */
 export async function groupNotesByDate(notes: CollectionEntry<"notes">[]) {
-  const grouped = Object.entries(groupBy(notes, note => note.data.created))
+  const grouped = Object.entries(groupBy(notes, (note) => note.data.created))
     .map(([date, notes]) => ({ date: new Date(date), notes }))
     .toSorted((a, b) => b.date.valueOf() - a.date.valueOf())
 

@@ -1,0 +1,7 @@
+---
+export const prerender = false
+
+const { tag } = Astro.params
+
+return Astro.redirect(`/notes/tags/${tag}/1`)
+---

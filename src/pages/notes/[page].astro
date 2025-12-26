@@ -1,0 +1,28 @@
+---
+import Layout from "@/components/Layout.astro"
+import PageTitle from "@/components/PageTitle.astro"
+import NoteList from "@/components/NoteList.astro"
+
+import { notes } from "@/utils/content"
+import { NOTES_PER_PAGE } from "@/utils/site"
+
+import type { GetStaticPaths } from "astro"
+
+export const getStaticPaths = (({ paginate }) => paginate(notes, { pageSize: NOTES_PER_PAGE })) satisfies GetStaticPaths
+
+const { page } = Astro.props
+
+const title = "Notes"
+---
+
+<Layout title={title}>
+  <!-- Title -->
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <span slot="subtitle">{notes.length} in total</span>
+  </PageTitle>
+
+  <!-- Notes -->
+  {page.data.length > 0 ? <NoteList notes={page.data} page={page} /> : <p class="text-neutral-500">No notes found.</p>}
+</Layout>
+  

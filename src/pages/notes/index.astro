@@ -1,20 +1,5 @@
 ---
-import Layout from "@/components/Layout.astro"
-import PageTitle from "@/components/PageTitle.astro"
-import NoteList from "@/components/NoteList.astro"
+export const prerender = false
 
-import { notes } from "@/utils/content"
-
-const title = "Notes"
+return Astro.redirect("/notes/1")
 ---
-
-<Layout title={title}>
-  <!-- Title -->
-  <PageTitle>
-    <Fragment>{title}</Fragment>
-    <span slot="subtitle">{notes.length} in total</span>
-  </PageTitle>
-
-  <!-- Notes -->
-  {notes.length > 0 ? <NoteList notes={notes} />: <p class="text-neutral-500">No notes found.</p>}
-</Layout>
