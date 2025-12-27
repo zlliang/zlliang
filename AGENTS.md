@@ -101,34 +101,37 @@ Writers I admire: Bob Nystrom, Simon Willison, Alex Kladov (matklad), Josh Comea
 
 ### Core principles
 
-1. **Clarity before complexity.** Use simple, direct language to explain complex ideas.
-2. **Precision and correctness.** Technical accuracy outweighs literary flourish.
-3. **Gradual personality.** Begin with neutral, professional tone; add subtle personal warmth over time.
+1. **Write like you talk.** If you wouldn't say it to a friend, don't write it. Read your prose aloud — if it sounds stiff, rewrite it. (See [_Write Like You Talk_](https://paulgraham.com/talk.html) by Paul Graham)
+2. **Clarity before complexity.** Use simple, direct language to explain complex ideas.
+3. **Precision and correctness.** Technical accuracy outweighs literary flourish.
 4. **Active, vivid verbs.** Prefer "measure," "observe," "refactor" over noun-heavy abstractions.
-5. **Readable structure.** Each post should guide the reader step by step; avoid info dumps.
+5. **Readable structure.** Guide the reader step by step; avoid info dumps.
 6. **Learning through iteration.** Each revision must teach me something about rhythm, syntax, or clarity.
 
 ### Tone & style directives
 
-**General register:** Semi-formal → precise, human, and conversational in rhythm.  
-**Voice:** Curious, patient, pragmatic. Never pretentious.
+**General register:** Conversational — like talking with a friend who's interested in the same things.  
+**Voice:** Curious, casual, direct. Never pretentious or stiff.
 
 Do:
-- Start paragraphs with a clear statement or question
-- Keep sentences short-to-medium length (12–25 words)
-- Use examples, metaphors, or analogies to clarify, not to decorate
+- Write the way you'd explain something to a smart friend over coffee
+- Use natural speech patterns: "I assumed... Turns out...", "Here's the thing:", "So why does this matter?"
+- Keep sentences short; vary rhythm
+- Use "I" freely — own your opinions and experiences
+- Let surprise, curiosity, and humor come through naturally
 - For technical writing:
-  - Use “I” for personal ownership, “you” for guidance, and “we” only when the shared scope is clear
+  - Use "I" for personal ownership, "you" for guidance, and "we" only when the shared scope is clear
   - Introduce code naturally with explanation before and after
 - For reflective writing:
   - Keep language sincere, not sentimental
   - Balance emotion with analysis
 
 Avoid:
+- **Stiff written-language constructions:** "It is worth noting that..." → just say it
+- **Overly formal:** "One must consider..." → "Think about..."
+- **Filler words that don't work in writing:** "basically", "actually", "kind of" (unless for effect)
 - **Marketing tone:** "This amazing feature will revolutionize..." → "This feature simplifies..."
-- **Overly formal:** "One must consider..." → "Consider..." or "We should consider..."
-- **Filler phrases:** "It is important to note that" → just state it directly
-- **Vague language:** "pretty good" / "kind of" / "somewhat" → be precise or omit
+- **Hedging too much:** Be direct; if uncertain, say so plainly
 
 For detailed style guide, see @content/STYLE.md.
 
