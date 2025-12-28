@@ -3,6 +3,8 @@ title: Starting a Blog at the End of 2025
 created: 2025-12-25
 ---
 
+**Update Dec 28, 2025:** Added a new note category: "quote" notes.
+
 Happy holidays! At the end of 2025, I'm starting a blog. I've already written several entries and feel confident I can keep it going. Here are my thoughts on the journey I'm about to start.
 
 ## A thousand attempts
@@ -116,6 +118,7 @@ Currently, there are two types of content on this blog:
 - **Notes:** Short-form entries, typically written and published within a day. They are the main focus of this blog, flowing through the timeline. As of now, [four categories](/notes/categories) of notes are here:
     - _Regular notes_ capture my scattered thoughts on relevant topics
     - _Link notes_ bookmark things I found on the internet and share my comments on them, inspired by Simon Willison's _blogmarks_
+    - _Quote notes_ share quotes from books, articles, and other sources
     - _TIL (Today I Learned) notes_ share things I learned today
     - _Post notes_ introduce any new post I've just published
 - **Posts:** Long-form entries that take days to draft and polish, like the one you're reading now. They are deep dives into topics I care about.
