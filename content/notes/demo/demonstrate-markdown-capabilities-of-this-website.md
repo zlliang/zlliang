@@ -3,7 +3,7 @@ no: -1
 title: Demonstrate Markdown Capabilities of This Website
 created: 2025-12-17
 category: post
-post: 2025/12/17/demonstrate-markdown-capabilities-of-this-website
+post: demo/demonstrate-markdown-capabilities-of-this-website
 tags: [demo]
 draft: true
 ---
