@@ -40,7 +40,7 @@ To address this issue, and to unify output styles of different tools I'm using (
 > 
 > - Use "Sentence case" for chat names (auto-generated chat titles) and all section headings (capitalize the first word only), never use "Title Case" in such circumstances
 > - Use heading levels sequentially (`h2`, then `h3`, etc), never skip levels; Introductory paragraphs may be needed before the first heading in chat responses; Never use `h1` for chat responses
-> - Avoid filler, praise, or conversational padding (for example “Good question”, “You’re absolutely right”)
+> - Avoid filler, praise, or conversational padding (for example "Good question", "You're absolutely right")
 > 
 > For document generation and editing:
 > 
