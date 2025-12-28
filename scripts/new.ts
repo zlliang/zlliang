@@ -7,7 +7,7 @@ import { stringify as stringifyYaml } from "yaml"
 
 type EntryType = "note" | "post"
 
-type NoteCategory = "regular" | "link" | "til" | "post"
+type NoteCategory = "regular" | "link" | "quote" | "til" | "post"
 
 interface Frontmatter {
   no?: number
@@ -38,11 +38,11 @@ async function main() {
   for (let i = 0; i < rest.length; i++) {
     if (rest[i] === "--category" && rest[i + 1]) {
       const c = rest[i + 1]
-      if (c === "regular" || c === "link" || c === "til" || c === "post") {
+      if (c === "regular" || c === "link" || c === "quote" || c === "til" || c === "post") {
         category = c
         i++
       } else {
-        console.error(`Invalid category: ${c}. Must be one of: regular, link, til, post`)
+        console.error(`Invalid category: ${c}. Must be one of: regular, link, quote, til, post`)
         process.exit(1)
       }
     } else {
