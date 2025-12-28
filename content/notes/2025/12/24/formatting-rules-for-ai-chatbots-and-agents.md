@@ -47,6 +47,6 @@ To address this issue, and to unify output styles of different tools I'm using (
 > - Use "Title Case" for top-level headings (e.g. `h1`), typically only once in a document, and "Sentence case" for section headings (capitalize the first word only)
 > - Use heading levels sequentially (`h2`, then `h3`, etc), never skip levels
 
-I apply these rules to the custom instructions setting in ChatGPT and to [AGENTS.md](https://github.com/zlliang/dotfiles/blob/d30ffde13b1b8d9b4368c734c770c063b5fc6e55/.config/amp/AGENTS.md#writing-style) for my coding agent.
+I apply these rules to the custom instructions setting in ChatGPT and to [AGENTS.md](https://github.com/zlliang/dotfiles/blob/46b1c3a37e1fa60b5031208e4837f6d983b7ed99/.config/amp/AGENTS.md#writing-style) for my coding agent.
 
 ![Custom instructions setting in ChatGPT](./images/chatgpt-custom-instructions.png "Custom instructions setting in ChatGPT")
