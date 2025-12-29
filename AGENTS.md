@@ -66,9 +66,7 @@ draft: true         # Remove this field to publish
 - **Content:** Organized by `[year]/[month]/[day]/[slug].md`
 - **Styling:** Tailwind utilities; global styles in `src/styles/main.css`
 - **Code themes:** `github-light-default` / `github-dark-default` ([Shiki](https://shiki.style/))
-- **Git commits**: Follow [Conventional Commits](https://www.conventionalcommits.org/); for notes and posts, use `docs:` type with the title in the message:
-  - `docs: add a new note "Just added quote notes"`
-  - `docs: fix a typo in post "Starting a Blog at the End of 2025"`
+- **Git commits**: Follow [Conventional Commits](https://www.conventionalcommits.org/); for notes and posts, use `docs:` type with the title in the message
 
 ### Development guidelines
 
