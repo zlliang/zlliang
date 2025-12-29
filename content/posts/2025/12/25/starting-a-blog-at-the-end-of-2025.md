@@ -170,7 +170,7 @@ Here are example threads between me and Amp, working on my posts:
 - [_Review write-up grammar, style, and content_](https://ampcode.com/threads/T-019b54a4-b126-753b-82f1-12faebcddfd2) (for this very post)
 - [_Review write-up grammar, style, and content_](https://ampcode.com/threads/T-019b4fcf-53d6-71fc-8a8b-594cecc5a789) (for [_Formatting rules for AI chatbots and agents_](/notes/2025/12/24/formatting-rules-for-ai-chatbots-and-agents))
 
-As a wrap-up, you can find the full instruction file for this website here: [AGENTS.md](https://github.com/zlliang/zlliang/blob/83a6f42caf027fd1201b3a2a66b1f617e125ff9c/AGENTS.md).
+As a wrap-up, you can find the full instruction file for this website here: [AGENTS.md](https://github.com/zlliang/zlliang/blob/7f53718b60c8e5cc4532f70f9368d844d9cf6feb/AGENTS.md).
 
 ## Looking forward to this journey
 
