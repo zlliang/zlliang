@@ -3,8 +3,8 @@ import Layout from "@/components/Layout.astro"
 import PageTitle from "@/components/PageTitle.astro"
 import NoteList from "@/components/NoteList.astro"
 
-import { notes } from "@/utils/content"
-import { NOTES_PER_PAGE } from "@/utils/site"
+import { notes, NOTES_PER_PAGE } from "@/utils/content"
+import { createI18n } from "@/utils/i18n"
 
 import type { GetStaticPaths } from "astro"
 
@@ -12,17 +12,19 @@ export const getStaticPaths = (({ paginate }) => paginate(notes, { pageSize: NOT
 
 const { page } = Astro.props
 
-const title = "Notes"
+const t = createI18n("en")
+
+const title = t("notes")
 ---
 
-<Layout title={title}>
+<Layout title={title} lang="en">
   <!-- Title -->
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <span slot="subtitle">{notes.length} in total</span>
+    <span slot="subtitle">{t("notes.total", notes.length)}</span>
   </PageTitle>
 
   <!-- Notes -->
-  {page.data.length > 0 ? <NoteList notes={page.data} page={page} /> : <p class="text-neutral-500">No notes found.</p>}
+  {page.data.length > 0 ? <NoteList notes={page.data} page={page} lang="en" /> : <p class="text-neutral-500">{t("notes.notFound")}</p>}
 </Layout>
   

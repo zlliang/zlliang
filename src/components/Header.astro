@@ -3,16 +3,26 @@ import { Image } from "astro:assets"
 
 import Link from "@/components/Link.astro"
 
-import { siteTitle } from "@/utils/site"
+import { createI18n } from "@/utils/i18n"
+
+import type { Lang } from "@/utils/i18n"
 
 import logo from "@/assets/images/logo.png"
+
+interface Props {
+  lang?: Lang
+}
+
+const { lang = "en" } = Astro.props
+
+const t = createI18n(lang)
 ---
 
 <header class="flex justify-between items-center h-16 mb-12">
   <div class="flex items-center gap-2">
     <Link href="/" class="nocolor flex items-center gap-2 font-display">
       <Image src={logo} alt="logo" class="size-6" loading="eager" />
-      <strong>{siteTitle}</strong>
+      <strong>{t("ui.siteTitle")}</strong>
     </Link>
   </div>
   <div class="flex items-center gap-4">

@@ -1,17 +1,22 @@
 ---
 import { render } from "astro:content"
-import { format } from "date-fns"
 
 import PageTitle from "@/components/PageTitle.astro"
 
+import { createI18n } from "@/utils/i18n"
+
 import type { CollectionEntry } from "astro:content"
+import type { Lang } from "@/utils/i18n"
 
 interface Props {
-  post: CollectionEntry<"posts">  
+  post: CollectionEntry<"posts">
+  lang?: Lang
 }
 
-const { post } = Astro.props
+const { post, lang = "en" } = Astro.props
 const { Content } = await render(post)
+
+const t = createI18n(lang)
 ---
 
 <div class="post-content">
@@ -19,8 +24,8 @@ const { Content } = await render(post)
   <PageTitle>
     <Fragment>{post.data.title}</Fragment>
     <Fragment slot="subtitle">
-      <span>{format(post.data.created, "PP")}</span>
-      {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
+      <span>{t("ui.date", post.data.created)}</span>
+      {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">{t("ui.draft")}</span>}
     </Fragment>
   </PageTitle>
 

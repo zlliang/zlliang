@@ -8,6 +8,9 @@ import type { CollectionEntry } from "astro:content"
 /** All notes */
 export const notes = await getNotes()
 
+/** Notes per page */
+export const NOTES_PER_PAGE = 20
+
 /** Get all notes */
 async function getNotes() {
   const collection = await getCollection("notes", ({ data }) => !import.meta.env.PROD || !data.draft)
@@ -19,17 +22,6 @@ async function getNotes() {
 /** Note categories */
 export { categories }
 export type NoteCategory = typeof categories[number]
-
-/** Get the display name of a note category */
-export function getCategoryDisplay(category: NoteCategory) {
-  return ({
-    regular: "Regular",
-    link: "Link",
-    quote: "Quote",
-    til: "TIL (Today I Learned)",
-    post: "Post",
-  })[category]
-}
 
 /** All tags */
 export const tags = getTags(notes)

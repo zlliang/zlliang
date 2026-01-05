@@ -1,12 +1,20 @@
 ---
+import { createI18n } from "@/utils/i18n"
 import { cn } from "@/utils/style"
+
+import type { Lang } from "@/utils/i18n"
 
 interface Props {
   title?: string
+  lang?: Lang
   class?: string
 }
 
-const { title = "Untitled", class: className } = Astro.props
+const { title: rawTitle, lang = "en", class: className } = Astro.props
+
+const t = createI18n(lang)
+
+const title = rawTitle ?? t("ui.untitled")
 ---
 
 <div class={cn(className)}>

@@ -4,28 +4,29 @@ import NoteList from "@/components/NoteList.astro"
 import Link from "@/components/Link.astro"
 import Aside from "@/components/Aside.astro"
 
-import { notes, renderFragment } from "@/utils/content"
-import { NOTES_PER_PAGE } from "@/utils/site"
+import { notes, NOTES_PER_PAGE, renderFragment } from "@/utils/content"
+import { createI18n } from "@/utils/i18n"
+
+const t = createI18n("en")
 
 const Bio = await renderFragment("bio")
-
 const filteredNotes = notes.slice(0, NOTES_PER_PAGE)
 ---
 
-<Layout description="Personal website of Zilong Liang">
+<Layout description={t("ui.siteDescription")} lang="en">
   <!-- Bio -->
   <div class="mb-16">
     <Bio />
   </div>
 
   <!-- Notes -->
-  <NoteList notes={filteredNotes} />
+  <NoteList notes={filteredNotes} lang="en" />
   {notes.length > NOTES_PER_PAGE && (
     <div class="flex justify-end mt-6 pt-6 border-t-2 border-neutral-200 dark:border-neutral-800 text-sm">
-      <Link href="/notes/2">More notes ({notes.length} in total) <span class="icon-[lucide--arrow-right] translate-y-px" /></Link>
+      <Link href="/notes/2">{t("notes.more", notes.length)} <span class="icon-[lucide--arrow-right] translate-y-px" /></Link>
     </div>
   )}
 
   <!-- Aside -->
-  <Aside slot="aside" />
+  <Aside slot="aside" lang="en" />
 </Layout>

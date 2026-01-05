@@ -1,5 +1,17 @@
 ---
 import Link from "@/components/Link.astro"
+
+import { createI18n } from "@/utils/i18n"
+
+import type { Lang } from "@/utils/i18n"
+
+interface Props {
+  lang?: Lang
+}
+
+const { lang = "en" } = Astro.props
+
+const t = createI18n(lang)
 ---
 
 <footer class="mt-16 mb-8 text-xs text-neutral-400 dark:text-neutral-600">
@@ -11,13 +23,13 @@ import Link from "@/components/Link.astro"
     <Link href="https://creativecommons.org/licenses/by/4.0/" class="secondary">CC BY 4.0</Link>
     <span>2025–PRESENT</span>
     <span class="icon-[lucide--copyright] scale-90" />
-    <span>Zilong Liang</span>
+    <span>{t("ui.name")}</span>
     <span class="hidden sm:inline">
       <span class="icon-[lucide--dot]" />
-      <span>Built with <Link href="https://astro.build" class="secondary">Astro</Link></span>
+      <span>{t("ui.footer.builtWith.prefix")} <Link href="https://astro.build" class="secondary">Astro</Link> {t("ui.footer.builtWith.suffix")}</span>
     </span>
   </div>
   <div class="mt-1 sm:hidden">
-    <span>Built with <Link href="https://astro.build" class="secondary">Astro</Link></span>
+    <span>{t("ui.footer.builtWith.prefix")} <Link href="https://astro.build" class="secondary">Astro</Link> {t("ui.footer.builtWith.suffix")}</span>
   </div>
 </footer>

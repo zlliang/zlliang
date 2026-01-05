@@ -6,7 +6,10 @@ import Header from "@/components/Header.astro"
 import Footer from "@/components/Footer.astro"
 import Aside from "@/components/Aside.astro"
 
-import { getTitle, siteTitle } from "@/utils/site"
+import { createI18n } from "@/utils/i18n"
+import { cn } from "@/utils/style"
+
+import type { Lang } from "@/utils/i18n"
 
 import "@fontsource-variable/public-sans"
 import "@fontsource-variable/public-sans/wght-italic.css"
@@ -22,16 +25,17 @@ interface Props {
   title?: string
   description?: string
   aside?: boolean
+  lang?: Lang
 }
 
-const title = getTitle(Astro.props.title)
-const description = Astro.props.description
+const { title, description, aside = true, lang = "en" } = Astro.props
 const url = new URL(Astro.url.pathname, Astro.site)
-const { aside = true } = Astro.props
+
+const t = createI18n(lang)
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={t("code")}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -51,34 +55,34 @@ const { aside = true } = Astro.props
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="canonical" href={url} />
   {Boolean(description) && <meta name="description" content={description} />}
-  <meta property="og:site_name" content={siteTitle} />
+  <meta property="og:site_name" content={t("ui.siteTitle")} />
   <meta property="og:url" content={url} />
-  <meta property="og:title" content={title} />
+  <meta property="og:title" content={t("ui.pageTitle", title)} />
   {Boolean(description) && <meta property="og:description" content={description} />}
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content={title} />
+  <meta name="twitter:title" content={t("ui.pageTitle", title)} />
   {Boolean(description) && <meta name="twitter:description" content={description} />}
   <meta name="twitter:creator" content="@zlliang96" />
 
   <!-- Title -->
-  <title>{title}</title>
+  <title>{t("ui.pageTitle", title)}</title>
 </head>
 <body>
-  <div class="flex flex-col min-h-dvh max-w-3xl lg:max-w-6xl m-auto px-6">
-    <Header />
-    <div class="flex-1 lg:flex gap-12 w-full">
-      <main class="flex-1 min-w-0">
+  <div class={cn("flex flex-col min-h-dvh max-w-3xl lg:max-w-6xl m-auto px-6", lang === "zh" && "zh")}>
+    <Header lang={lang} />
+    <div class={cn("flex-1 lg:flex gap-12 w-full")}>
+      <main class={cn("flex-1 min-w-0")}>
         <slot />
       </main>
       {aside && (
-        <Aside class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80">
+        <Aside lang={lang} class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80">
           <Fragment slot="prefix"><slot name="aside-prefix" /></Fragment>
           <Fragment slot="suffix"><slot name="aside-suffix" /></Fragment>
         </Aside>
       )}
     </div>
-    <Footer />
+    <Footer lang={lang} />
   </div>
 
   <!-- Vercel -->

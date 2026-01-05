@@ -2,26 +2,29 @@
 import { render } from "astro:content"
 
 import Section from "@/components/Section.astro"
-import Link from "@/components/Link.astro"
+import Link from "@/components/Link.astro"  
 
+import { createI18n } from "@/utils/i18n"
 import { cn } from "@/utils/style"
 
 import type { CollectionEntry } from "astro:content"
+import type { Lang } from "@/utils/i18n"
 
 interface Props {
   post: CollectionEntry<"posts">
+  lang?: Lang
   class?: string
 }
 
-const { post, class: className } = Astro.props
-
+const { post, lang = "en", class: className } = Astro.props
 const { headings } = await render(post)
-
 const filteredHeadings = headings.filter((h) => h.depth <= 3)
+
+const t = createI18n(lang)
 ---
 
 {filteredHeadings.length > 0 && (
-  <Section title="On this page" class={cn(className)}>
+  <Section title={t("posts.tableOfContents")} lang={lang} class={cn(className)}>
     <ul class="pl-0! list-none! text-sm">
       {filteredHeadings.map((heading) => (
         <li class={cn(heading.depth === 3 && "pl-4")}>

@@ -1,11 +1,18 @@
 ---
 import Link from "@/components/Link.astro"
 
+import { createI18n } from "@/utils/i18n"
+
 import type { Page } from "astro"
+import type { Lang } from "@/utils/i18n"
 
-type Props = Page
+type Props = Page & {
+  lang?: Lang
+}
 
-const { currentPage, lastPage, url } = Astro.props
+const { currentPage, lastPage, url, lang = "en" } = Astro.props
+
+const t = createI18n(lang)
 ---
 
 <div class="flex justify-end items-center text-sm gap-2">
@@ -15,7 +22,7 @@ const { currentPage, lastPage, url } = Astro.props
       {url.prev && <Link href={url.prev}><span class="icon-[lucide--chevron-left]" /></Link>}
     </div>
   )}
-  <div>Page {currentPage} / {lastPage}</div>
+  <div>{t("ui.pagination", { currentPage, lastPage })}</div>
   {Boolean(url.next || url.last) && (
     <div>
       {url.next && <Link href={url.next}><span class="icon-[lucide--chevron-right]" /></Link>}

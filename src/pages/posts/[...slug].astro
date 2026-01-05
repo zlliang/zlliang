@@ -15,9 +15,9 @@ export const getStaticPaths = (() => posts.map((post) => ({
 const { post } = Astro.props
 ---
 
-<Layout title={post.data.title}>
+<Layout title={post.data.title} lang="en">
   <!-- Content -->
-  <PostContent post={post} />
+  <PostContent post={post} lang="en" />
 
   <!-- Table of contents -->
   <TableOfContents

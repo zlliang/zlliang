@@ -3,8 +3,8 @@ import Layout from "@/components/Layout.astro"
 import PageTitle from "@/components/PageTitle.astro"
 import NoteList from "@/components/NoteList.astro"
 
-import { notes, categories, getCategoryDisplay } from "@/utils/content"
-import { NOTES_PER_PAGE } from "@/utils/site"
+import { notes, NOTES_PER_PAGE, categories } from "@/utils/content"
+import { createI18n } from "@/utils/i18n"
 
 import type { GetStaticPaths } from "astro"
 
@@ -16,19 +16,18 @@ export const getStaticPaths = (({ paginate }) => categories.flatMap((category) =
 const { category } = Astro.params
 const { page } = Astro.props
 
-const title = `${getCategoryDisplay(category)} Notes`
+const t = createI18n("en")
+
+const title = t("notes.categories.pageTitle", t(`notes.categories.${category}`))
 ---
 
-<Layout title={title}>
+<Layout title={title} lang="en">
   <!-- Title -->
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <Fragment slot="subtitle">
-      <span>{page.total}</span>
-      <span>{page.total >= 2 ? "notes" : "note"} in total</span>
-    </Fragment>
+    <Fragment slot="subtitle">{t("notes.total", page.total)}</Fragment>
   </PageTitle>
 
   <!-- Notes -->
-  {page.data.length > 0 ? <NoteList notes={page.data} page={page} /> : <p class="text-neutral-500">No notes found.</p>}
+  {page.data.length > 0 ? <NoteList notes={page.data} page={page} lang="en" /> : <p class="text-neutral-500">{t("notes.notFound")}</p>}
 </Layout>

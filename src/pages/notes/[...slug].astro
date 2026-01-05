@@ -1,12 +1,12 @@
 ---
 import { getEntry } from "astro:content"
-import { format } from "date-fns"
 
 import Layout from "@/components/Layout.astro"
 import NoteItem from "@/components/NoteItem.astro"
 import Link from "@/components/Link.astro"
 
 import { notes } from "@/utils/content"
+import { createI18n } from "@/utils/i18n"
 import { cn } from "@/utils/style"
 
 import type { GetStaticPaths } from "astro"
@@ -24,31 +24,33 @@ export const getStaticPaths = (() => notes.map((note, index) => {
 const { note, next, previous } = Astro.props
 const post = note.data.post ? await getEntry(note.data.post) : null
 
-const title = [note.data.title || post?.data.title, `Note #${note.data.no}`].filter(Boolean).join(" - ")
+const t = createI18n("en")
+
+const title = t("notes.pageTitle", note.data.no, note.data.title || post?.data.title)
 ---
 
-<Layout title={title}>
+<Layout title={title} lang="en">
   <!-- Content -->
-  <NoteItem note={note} showLink={false} />
+  <NoteItem note={note} showLink={false} lang="en" />
 
   <!-- Links to next and previous notes -->
   {(next || previous) && (
     <div class="grid grid-cols-2 mt-16">
       {next && (
         <div class={cn("col-start-1 pr-4 text-neutral-500", !previous && "border-r border-neutral-200 dark:border-neutral-800")} >
-          <div class="text-sm mb-0.5">Next</div>
-          <Link href={`/notes/${next.id}`} class="block mb-0.5">{next.data.title || "Untitled note"}</Link>
+          <div class="text-sm mb-0.5">{t("notes.next")}</div>
+          <Link href={`/notes/${next.id}`} class="block mb-0.5">{next.data.title || t("notes.untitled")}</Link>
           <div class="text-sm">
-            <span>{format(next.data.created, "PP")}</span><span class="icon-[lucide--dot]" /><span>#{next.data.no}</span>
+            <span>{t("ui.date", next.data.created)}</span><span class="icon-[lucide--dot]" /><span>#{next.data.no}</span>
           </div>
         </div>
       )}
       {previous && (
         <div class="col-start-2 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-right text-neutral-500">
-          <div class="text-sm mb-0.5">Previous</div>
-          <Link href={`/notes/${previous.id}`} class="block mb-0.5">{previous.data.title || "Untitled note"}</Link>
+          <div class="text-sm mb-0.5">{t("notes.prev")}</div>
+          <Link href={`/notes/${previous.id}`} class="block mb-0.5">{previous.data.title || t("notes.untitled")}</Link>
           <div class="text-sm">
-            <span>#{previous.data.no}</span><span class="icon-[lucide--dot]" /><span>{format(previous.data.created, "PP")}</span>
+            <span>#{previous.data.no}</span><span class="icon-[lucide--dot]" /><span>{t("ui.date", previous.data.created)}</span>
           </div>
         </div>
       )}

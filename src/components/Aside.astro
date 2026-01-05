@@ -1,23 +1,25 @@
 ---
-import { format } from "date-fns"
-
 import Section from "@/components/Section.astro"
 import Link from "@/components/Link.astro"
 import PostList from "@/components/PostList.astro"
 
 import { notes, categories, tags, posts } from "@/utils/content"
+import { createI18n } from "@/utils/i18n"
 
 import { cn } from "@/utils/style"
 
+import type { Lang } from "@/utils/i18n"
+
 interface Props {
+  lang?: Lang
   class?: string
 }
 
-const { class: className } = Astro.props
-
+const { lang = "en", class: className } = Astro.props
+const isPosts = Astro.url.pathname === "/posts"
 const recentPosts = posts.slice(0, 10)
 
-const isPosts = Astro.url.pathname === "/posts"
+const t = createI18n(lang)
 ---
 
 <aside class={cn("space-y-6", className)}>
@@ -26,41 +28,41 @@ const isPosts = Astro.url.pathname === "/posts"
 
   <!-- Recent posts -->
   {!isPosts && recentPosts.length > 0 && (
-    <Section title="Recent posts" class="hidden lg:block">
+    <Section title={t("ui.aside.recentPosts")} lang={lang} class="hidden lg:block">
       {recentPosts.map((post, index) => (
         <div class={cn(index !== recentPosts.length - 1 && "mb-1 pb-1.5 border-b border-neutral-200 dark:border-neutral-800")}>
           <div class="mb-0.5">
             <Link href={`/posts/${post.id}`}>{post.data.title}</Link>
           </div>
           <div class="text-sm text-neutral-500">
-            <span>{format(post.data.created, "PP")}</span>
-            {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
+            <span>{t("ui.date", post.data.created)}</span>
+            {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">{t("ui.draft")}</span>}
           </div>
         </div>
       ))}
     </Section>
-    <Section title="Recent posts" class="lg:hidden">
-      <PostList posts={recentPosts} />
+    <Section title={t("ui.aside.recentPosts")} lang={lang} class="lg:hidden">
+      <PostList posts={recentPosts} lang={lang} />
     </Section>
   )}
 
   <!-- Archive -->
-  <Section title="Archive">
+  <Section title={t("ui.aside.archive")} lang={lang}>
     <div class="flex justify-between items-center mb-1">
-      <Link href="/notes"><span class="icon-[lucide--notebook-pen]" /> Notes</Link>
-      <span class="text-sm text-neutral-500">{notes.length} in total</span>
+      <Link href="/notes"><span class="icon-[lucide--notebook-pen]" /> {t("notes")}</Link>
+      <span class="text-sm text-neutral-500">{notes.length}</span>
     </div>
     <div class="flex justify-between items-center mb-1">
-      <span><span class="mr-2 font-mono text-neutral-500">├</span><Link href="/notes/categories"><span class="icon-[lucide--folder-open]" /> Categories</Link></span>
-      <span class="text-sm text-neutral-500">{categories.length} in total</span>
+      <span><span class="mr-2 font-mono text-neutral-500">├</span><Link href="/notes/categories"><span class="icon-[lucide--folder-open]" /> {t("notes.categories")}</Link></span>
+      <span class="text-sm text-neutral-500">{categories.length}</span>
     </div>
     <div class="flex justify-between items-center mb-1">
-      <span><span class="mr-2 font-mono text-neutral-500">└</span><Link href="/notes/tags"><span class="icon-[lucide--tag]" /> Tags</Link></span>
-      <span class="text-sm text-neutral-500">{tags.length} in total</span>
+      <span><span class="mr-2 font-mono text-neutral-500">└</span><Link href="/notes/tags"><span class="icon-[lucide--tag]" /> {t("notes.tags")}</Link></span>
+      <span class="text-sm text-neutral-500">{tags.length}</span>
     </div>
     <div class="flex justify-between items-center">
-      <Link href="/posts"><span class="icon-[lucide--book-open-text]" /> Posts</Link>
-      <span class="text-sm text-neutral-500">{posts.length} in total</span>
+      <Link href="/posts"><span class="icon-[lucide--book-open-text]" /> {t("posts")}</Link>
+      <span class="text-sm text-neutral-500">{posts.length}</span>
     </div>
   </Section>
 

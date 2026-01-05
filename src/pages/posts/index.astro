@@ -4,17 +4,20 @@ import PageTitle from "@/components/PageTitle.astro"
 import PostList from "@/components/PostList.astro"
 
 import { posts } from "@/utils/content"
+import { createI18n } from "@/utils/i18n"
 
-const title = "Posts"
+const t = createI18n("en")
+
+const title = t("posts")
 ---
 
-<Layout title={title}>
+<Layout title={title} lang="en">
   <!-- Title -->
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <span slot="subtitle">{posts.length} in total</span>
+    <span slot="subtitle">{t("posts.total", posts.length)}</span>
   </PageTitle>
 
   <!-- Posts -->
-  {posts.length > 0 ? <PostList posts={posts} /> : <p class="text-neutral-500">No posts found.</p>}
+  {posts.length > 0 ? <PostList posts={posts} lang="en" /> : <p class="text-neutral-500">{t("posts.notFound")}</p>}
 </Layout>

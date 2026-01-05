@@ -3,26 +3,29 @@ import Layout from "@/components/Layout.astro"
 import PageTitle from "@/components/PageTitle.astro"
 import Link from "@/components/Link.astro"
 
-import { notes, categories, getCategoryDisplay } from "@/utils/content"
+import { notes, categories } from "@/utils/content"
+import { createI18n } from "@/utils/i18n"
 
-const title = "Note Categories"
+const t = createI18n("en")
+
+const title = t("notes.categories.indexTitle")
 
 function getCategoryCount(slug: string) {
   return notes.filter((note) => note.data.category === slug).length
 }
 ---
 
-<Layout title={title} description={title}>
+<Layout title={title} lang="en">
   <!-- Title -->
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <span slot="subtitle">{categories.length} in total</span>
+    <span slot="subtitle">{t("ui.total", categories.length)}</span>
   </PageTitle>
 
   <!-- Categories -->
   {categories?.length > 0 ? categories.map((category) => (
     <div class="mb-1">
-      <Link href={`/notes/categories/${category}`}>{getCategoryDisplay(category)} ({getCategoryCount(category)})</Link>
+      <Link href={`/notes/categories/${category}`}>{t(`notes.categories.${category}`)} ({getCategoryCount(category)})</Link>
     </div>
-  )) : <p class="text-neutral-500">No categories found.</p>}
+  )) : <p class="text-neutral-500">{t("notes.categories.notFound")}</p>}
 </Layout>

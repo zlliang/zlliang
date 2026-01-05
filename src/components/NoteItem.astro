@@ -1,21 +1,24 @@
 ---
 import { getEntry, render } from "astro:content"
-import { format } from "date-fns"
 
 import Link from "@/components/Link.astro"
 
-import { getCategoryDisplay } from "@/utils/content"
+import { createI18n } from "@/utils/i18n"
 
 import type { CollectionEntry } from "astro:content"
+import type { Lang } from "@/utils/i18n"
 
 interface Props {
   note: CollectionEntry<"notes">
   showLink?: boolean
+  lang?: Lang
 }
 
-const { note, showLink = true } = Astro.props
+const { note, showLink = true, lang = "en" } = Astro.props
 const { Content } = await render(note)
 const post = note.data.post ? await getEntry(note.data.post) : null
+
+const t = createI18n(lang)
 ---
 
 <div>
@@ -29,7 +32,7 @@ const post = note.data.post ? await getEntry(note.data.post) : null
 
   <!-- Category and tags -->
   <div class="mb-1 text-xs text-neutral-500">
-    <Link href={`/notes/categories/${note.data.category}`} class="font-bold">{getCategoryDisplay(note.data.category)}</Link>{note.data.tags && note.data.tags.length > 0 && <span class="text-neutral-500">, </span>}
+    <Link href={`/notes/categories/${note.data.category}`} class="font-bold">{t(`notes.categories.${note.data.category}`)}</Link>{note.data.tags && note.data.tags.length > 0 && <span class="text-neutral-500">, </span>}
     {note.data.tags?.map((tag, index) => <Fragment><Link href={`/notes/tags/${tag.slug}`}>{tag.display}</Link>{index !== note.data.tags!.length - 1 && <span>, </span>}</Fragment>)}
   </div>
 
@@ -38,9 +41,9 @@ const post = note.data.post ? await getEntry(note.data.post) : null
     <div class="flex items-center text-sm text-neutral-500">
       {showLink ? <Link href={`/notes/${note.id}`}>#{note.data.no}</Link> : <span>#{note.data.no}</span>}
       <span class="icon-[lucide--dot]" />
-      <span>{format(note.data.created, "PP")}</span>
-      {note.data.draft && <span class="ml-2 text-amber-600 dark:text-amber-400">Draft</span>}
+      <span>{t("ui.date", note.data.created)}</span>
+      {note.data.draft && <draf class="ml-2 text-amber-600 dark:text-amber-400">{t("ui.draft")}</span>}
     </div>
-    {post && <Link href={`/posts/${post.id}`} class="text-sm">Read the full post <span class="icon-[lucide--arrow-right] translate-y-px" /></Link>}
+    {post && <Link href={`/posts/${post.id}`} class="text-sm">{t("notes.readFullPost")} <span class="icon-[lucide--arrow-right] translate-y-px" /></Link>}
   </div>
 </div>

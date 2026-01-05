@@ -4,19 +4,22 @@ import PageTitle from "@/components/PageTitle.astro"
 import Link from "@/components/Link.astro"
 
 import { notes, tags } from "@/utils/content"
+import { createI18n } from "@/utils/i18n"
 
-const title = "Note Tags"
+const t = createI18n("en")
+
+const title = t("notes.tags.indexTitle")
 
 function getTagCount(slug: string) {
   return notes.filter((note) => note.data.tags?.some((t) => t.slug === slug)).length
 }
 ---
 
-<Layout title={title} description={title}>
+<Layout title={title} lang="en">
   <!-- Title -->
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <span slot="subtitle">{tags.length} in total</span>
+    <span slot="subtitle">{t("ui.total", tags.length)}</span>
   </PageTitle>
 
   <!-- Tags -->
@@ -24,5 +27,5 @@ function getTagCount(slug: string) {
     <div class="mb-1">
       <Link href={`/notes/tags/${tag.slug}`}>{tag.display} ({getTagCount(tag.slug)})</Link>
     </div>
-  )) : <p class="text-neutral-500">No tags found.</p>}
+  )) : <p class="text-neutral-500">{t("notes.tags.notFound")}</p>}
 </Layout>

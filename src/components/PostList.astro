@@ -1,17 +1,20 @@
 ---
-import { format } from "date-fns"
-
 import Link from "@/components/Link.astro"
 
+import { createI18n } from "@/utils/i18n"
 import { cn } from "@/utils/style"
 
 import type { CollectionEntry } from "astro:content"
+import type { Lang } from "@/utils/i18n"
 
 interface Props {
   posts: CollectionEntry<"posts">[]
+  lang?: Lang
 }
 
-const { posts } = Astro.props
+const { posts, lang = "en" } = Astro.props
+
+const t = createI18n(lang)
 ---
 
 <div>
@@ -19,8 +22,8 @@ const { posts } = Astro.props
     <div class={cn("flex justify-between items-start gap-4", index !== posts.length - 1 && "mb-1 pb-1 border-b border-neutral-200 dark:border-neutral-800")}>
       <Link href={`/posts/${post.id}`}>{post.data.title}</Link>
       <span class="shrink-0 text-sm text-neutral-500 translate-y-0.5">
-        <span>{format(post.data.created, "PP")}</span>
-        {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
+        <span>{t("ui.date", post.data.created)}</span>
+        {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">{t("ui.draft")}</span>}
       </span>
     </div>
   ))}
