@@ -27,7 +27,7 @@ const posts = defineCollection({
     title: z.string().min(1),
     created: z.coerce.date(),
     draft: z.boolean().default(false),
-  })
+  }),
 })
 
 const fragments = defineCollection({
