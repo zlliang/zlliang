@@ -14,9 +14,7 @@ interface Props {
 }
 
 const { post, class: className } = Astro.props
-
 const { headings } = await render(post)
-
 const filteredHeadings = headings.filter((h) => h.depth <= 3)
 ---
 
