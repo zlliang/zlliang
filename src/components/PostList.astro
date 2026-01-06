@@ -14,11 +14,11 @@ interface Props {
 const { posts } = Astro.props
 ---
 
-<div>
+<div class="@container">
   {posts.map((post, index) => (
-    <div class={cn("flex justify-between items-start gap-4", index !== posts.length - 1 && "mb-1 pb-1 border-b border-neutral-200 dark:border-neutral-800")}>
-      <Link href={`/posts/${post.id}`}>{post.data.title}</Link>
-      <span class="shrink-0 text-sm text-neutral-500 translate-y-0.5">
+    <div class={cn("@xl:flex justify-between items-start gap-4", index !== posts.length - 1 && "mb-1.5 pb-1.5 border-b border-neutral-200 dark:border-neutral-800")}>
+      <Link href={`/posts/${post.id}`} class="block">{post.data.title}</Link>
+      <span class="shrink-0 text-sm text-neutral-500 @xl:translate-y-0.5">
         <span>{format(post.data.created, "PP")}</span>
         {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
       </span>
