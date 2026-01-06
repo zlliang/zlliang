@@ -23,7 +23,6 @@ export function rehypeFootnotePrefix() {
   }
 }
 
-
 /** Retrieve the `title` property of the `img` element and append a caption element after it. */
 export function rehypeImageCaption() {
   return (tree: Root) => {
