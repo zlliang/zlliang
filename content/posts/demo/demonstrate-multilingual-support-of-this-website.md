@@ -28,8 +28,6 @@ created: 2000-01-01
 lang: zh # 可选，默认为 en
 ```
 
-其中 `lang` 指定了文章的语言。译文会通过 `original` 字段自动关联到原始文章。
-
 译文的 frontmatter 则需要指定 `original` 字段，指向原始文章：
 
 ```yaml

@@ -30,10 +30,8 @@ An original article's frontmatter looks like this:
 ```yaml
 title: 演示本站的多语言功能
 created: 2000-01-01
-lang: zh
+lang: zh # Optional, defaults to en
 ```
-
-The `lang` field specifies the article's language. Translations are automatically linked via their `original` field.
 
 A translation's frontmatter needs an `original` field pointing to the source article:
 
@@ -45,8 +43,8 @@ original: demo/demonstrate-multilingual-support-of-this-website
 
 ### Routing design
 
-- Original articles: `/posts/{slug}`
-- Translations: `/posts/{lang}/{slug}`
+- Original articles: `/posts/[...slug]`
+- Translations: `/posts/[lang]/[...slug]`
 
 For example, the Chinese original of this post is at `/posts/demo/demonstrate-multilingual-support-of-this-website`, while its English translation is at `/posts/en/demo/demonstrate-multilingual-support-of-this-website`.
 

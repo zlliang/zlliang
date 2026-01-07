@@ -53,9 +53,7 @@ const url = new URL(Astro.url.pathname, Astro.site)
   <!-- SEO, OpenGraph and Twitter -->
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="canonical" href={url} />
-  {hreflang.map(({ lang, href }) => (
-    <link rel="alternate" hreflang={lang} href={href} />
-  ))}
+  {hreflang.map(({ lang, href }) => <link rel="alternate" hreflang={lang} href={href} />)}
   {Boolean(description) && <meta name="description" content={description} />}
   <meta property="og:site_name" content={siteTitle} />
   <meta property="og:url" content={url} />
