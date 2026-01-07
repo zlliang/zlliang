@@ -1,0 +1,22 @@
+---
+import Link from "@/components/Link.astro"
+import LanguageLabel from "@/components/LanguageLabel.astro"
+
+import { cn } from "@/utils/style"
+
+import type { CollectionEntry } from "astro:content"
+
+interface Props {
+  translations: CollectionEntry<"translatedPosts">[]
+  class?: string
+}
+
+const { translations, class: className } = Astro.props
+---
+
+{translations.map((post) => (
+  <div class={cn(className)}>
+    <LanguageLabel lang={post.data.lang} showIcon />
+    <Link href={`/posts/${post.id}`} lang={post.data.lang} class="ml-1">{post.data.title}</Link>
+  </div>
+))}

@@ -2,8 +2,11 @@
 import { format } from "date-fns"
 
 import Link from "@/components/Link.astro"
+import LanguageLabel from "@/components/LanguageLabel.astro"
+import PostTranslationLinks from "@/components/PostTranslationLinks.astro"
 
 import { cn } from "@/utils/style"
+import { getTranslations } from "@/utils/content"
 
 import type { CollectionEntry } from "astro:content"
 
@@ -15,13 +18,21 @@ const { posts } = Astro.props
 ---
 
 <div class="@container">
-  {posts.map((post, index) => (
-    <div class={cn("@xl:flex justify-between items-start gap-4", index !== posts.length - 1 && "mb-1.5 pb-1.5 border-b border-neutral-200 dark:border-neutral-800")}>
-      <Link href={`/posts/${post.id}`} class="block">{post.data.title}</Link>
-      <span class="shrink-0 text-sm text-neutral-500 @xl:translate-y-0.5">
-        <span>{format(post.data.created, "PP")}</span>
-        {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
-      </span>
-    </div>
-  ))}
+  {posts.map((post, index) => {
+    return (
+      <div class={cn("@xl:flex justify-between items-start gap-4", index !== posts.length - 1 && "mb-1.5 pb-1.5 border-b border-neutral-200 dark:border-neutral-800")}>
+        <div>
+          <div>
+            {post.data.lang !== "en" && <LanguageLabel lang={post.data.lang} />}
+            <Link href={`/posts/${post.id}`} lang={post.data.lang}>{post.data.title}</Link>
+          </div>
+          {getTranslations(post).length > 0 && <PostTranslationLinks translations={getTranslations(post)} class="opacity-70" />}
+        </div>
+        <div class="shrink-0 text-sm text-neutral-500 @xl:translate-y-0.5">
+          <span>{format(post.data.created, "PP")}</span>
+          {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
+        </div>
+      </div>
+    )
+  })}
 </div>

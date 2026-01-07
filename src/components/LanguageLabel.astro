@@ -1,0 +1,17 @@
+---
+import { getLanguageDisplay } from "@/utils/content"
+
+import type { Lang } from "@/utils/content"
+
+interface Props {
+  lang: Lang
+  showIcon?: boolean
+}
+
+const { lang, showIcon = false } = Astro.props
+---
+
+<div class="inline-block px-1 py-px bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-xs text-neutral-500 -translate-y-px">
+  {showIcon && <span class="icon-[lucide--languages]" />}
+  {getLanguageDisplay(lang)}
+</div>

@@ -1,23 +1,26 @@
 ---
+import { getEntry } from "astro:content"
+
 import Layout from "@/components/Layout.astro"
 import PostContent from "@/components/PostContent.astro"
 import TableOfContents from "@/components/TableOfContents.astro"
 
-import { posts } from "@/utils/content"
+import { translatedPosts } from "@/utils/content"
 
 import type { GetStaticPaths } from "astro"
 
-export const getStaticPaths = (() => posts.map((post) => ({
-  params: { slug: post.id },
+export const getStaticPaths = (() => translatedPosts.map((post) => ({
+  params: { lang: post.data.lang, slug: post.id.slice(post.data.lang.length + 1) },
   props: { post },
 }))) satisfies GetStaticPaths
 
 const { post } = Astro.props
+const original = await getEntry(post.data.original)
 ---
 
 <Layout title={post.data.title}>
   <!-- Content -->
-  <PostContent post={post} created={post.data.created} draft={post.data.draft} />
+  <PostContent post={post} created={original.data.created} draft={original.data.draft} />
 
   <!-- Table of contents -->
   <TableOfContents

@@ -3,26 +3,40 @@ import { render } from "astro:content"
 import { format } from "date-fns"
 
 import PageTitle from "@/components/PageTitle.astro"
+import PostTranslationLinks from "@/components/PostTranslationLinks.astro"
+
+import { cn } from "@/utils/style"
+import { getTranslations } from "@/utils/content"
 
 import type { CollectionEntry } from "astro:content"
 
 interface Props {
-  post: CollectionEntry<"posts">  
+  post: CollectionEntry<"posts" | "translatedPosts">
+  created: Date
+  draft: boolean
 }
 
-const { post } = Astro.props
+const { post, created, draft } = Astro.props
 const { Content } = await render(post)
+const translations = post.collection === "posts" ? getTranslations(post) : []
 ---
 
-<div class="post-content">
+<div lang={post.data.lang} class={cn("post-content", post.data.lang)}>
   <!-- Title -->
   <PageTitle>
     <Fragment>{post.data.title}</Fragment>
     <Fragment slot="subtitle">
-      <span>{format(post.data.created, "PP")}</span>
-      {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
+      <span>{format(created, "PP")}</span>
+      {draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
     </Fragment>
   </PageTitle>
+
+  <!-- Translations -->
+  {translations.length > 0 && (
+    <div class="card leading-[1.7]">
+      <PostTranslationLinks translations={translations} />
+    </div>
+  )}
 
   <!-- Content -->
   <div class="mb-4">

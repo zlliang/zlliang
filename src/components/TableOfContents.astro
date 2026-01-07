@@ -9,7 +9,7 @@ import { cn } from "@/utils/style"
 import type { CollectionEntry } from "astro:content"
 
 interface Props {
-  post: CollectionEntry<"posts">
+  post: CollectionEntry<"posts" | "translatedPosts">
   class?: string
 }
 
@@ -20,7 +20,7 @@ const filteredHeadings = headings.filter((h) => h.depth <= 3)
 
 {filteredHeadings.length > 0 && (
   <Section title="On this page" class={cn(className)}>
-    <ul class="pl-0! list-none! text-sm">
+    <ul lang={post.data.lang} class="pl-0! list-none! text-sm">
       {filteredHeadings.map((heading) => (
         <li class={cn(heading.depth === 3 && "pl-4")}>
           <Link href={`#${heading.slug}`} class="secondary">{heading.text}</Link>

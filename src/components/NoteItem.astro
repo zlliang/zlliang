@@ -3,8 +3,10 @@ import { getEntry, render } from "astro:content"
 import { format } from "date-fns"
 
 import Link from "@/components/Link.astro"
+import LanguageLabel from "@/components/LanguageLabel.astro"
+import PostTranslationLinks from "@/components/PostTranslationLinks.astro"
 
-import { getCategoryDisplay } from "@/utils/content"
+import { getLanguageEnglishDisplay, getTranslations, getCategoryDisplay } from "@/utils/content"
 
 import type { CollectionEntry } from "astro:content"
 
@@ -16,16 +18,28 @@ interface Props {
 const { note, showLink = true } = Astro.props
 const { Content } = await render(note)
 const post = note.data.post ? await getEntry(note.data.post) : null
+const translations = post ? getTranslations(post) : []
 ---
 
 <div>
   <!-- Link to the post -->
-  {post && <p><Link href={`/posts/${post.id}`} class="font-bold">{post.data.title}</Link></p>}
+  {post && (
+    <p>
+      {post.data.lang !== "en" && <LanguageLabel lang={post.data.lang} />}
+      <Link href={`/posts/${post.id}`} lang={post.data.lang} class="font-bold">{post.data.title}</Link>
+    </p>
+  )}
 
   <!-- Content -->
   <div class="mb-4">
     <Content />
   </div>
+
+  <!-- Post translations -->
+  {post && translations.length > 0 && (
+    <p>The post was written in {getLanguageEnglishDisplay(post.data.lang)}, and translations are available below.</p>
+    <p><PostTranslationLinks translations={translations} /></p>
+  )}
 
   <!-- Category and tags -->
   <div class="mb-1 text-xs text-neutral-500">
@@ -41,6 +55,12 @@ const post = note.data.post ? await getEntry(note.data.post) : null
       <span>{format(note.data.created, "PP")}</span>
       {note.data.draft && <span class="ml-2 text-amber-600 dark:text-amber-400">Draft</span>}
     </div>
-    {post && <Link href={`/posts/${post.id}`} class="text-sm">Read the full post <span class="icon-[lucide--arrow-right] translate-y-px" /></Link>}
+    {post && (
+      <Link href={`/posts/${post.id}`} class="text-sm">
+        <span>Read the full post</span>
+        {post.data.lang !== "en" && `(in ${getLanguageEnglishDisplay(post.data.lang)})`}
+        <span class="icon-[lucide--arrow-right] translate-y-px" />
+      </Link>
+    )}
   </div>
 </div>

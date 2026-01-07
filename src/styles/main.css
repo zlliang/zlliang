@@ -57,6 +57,10 @@ p {
   @apply mb-4 leading-[1.7];
 }
 
+.zh p {
+  @apply leading-[1.8];
+}
+
 a {
   @apply text-blue-600 dark:text-blue-400 hover:text-blue-500;
 }
@@ -79,6 +83,10 @@ blockquote {
 
 ul, ol {
   @apply mb-4 pl-7 leading-[1.7] marker:text-neutral-500;
+}
+
+.zh ul, .zh ol {
+  @apply leading-[1.8];
 }
 
 ul {
@@ -218,6 +226,11 @@ span.caption {
 
 .card.amber {
   @apply border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400;
+}
+
+.card.translation-notice > p:first-child::before {
+  content: "";
+  @apply icon-[lucide--languages] translate-y-0.5 mr-2;
 }
 
 .card > *:last-child,
