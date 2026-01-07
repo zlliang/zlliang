@@ -112,7 +112,7 @@ export interface HreflangLink {
 }
 
 /** Build hreflang links for a post (original or translated) */
-export function buildHreflang(post: CollectionEntry<"posts">, siteUrl: URL) {
+export function buildHreflang(post: CollectionEntry<"posts">, siteUrl?: URL) {
   const translations = getTranslations(post)
   const links: HreflangLink[] = [
     { lang: post.data.lang, href: new URL(`/posts/${post.id}`, siteUrl).href },

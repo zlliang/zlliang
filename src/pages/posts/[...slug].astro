@@ -13,7 +13,7 @@ export const getStaticPaths = (() => posts.map((post) => ({
 }))) satisfies GetStaticPaths
 
 const { post } = Astro.props
-const hreflang = buildHreflang(post, Astro.site!)
+const hreflang = buildHreflang(post, Astro.site)
 ---
 
 <Layout title={post.data.title} hreflang={hreflang}>
