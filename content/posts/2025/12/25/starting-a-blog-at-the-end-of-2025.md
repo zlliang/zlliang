@@ -107,7 +107,7 @@ I've read multiple motivating articles persuading you to write. The significant 
 
 After several years of working as a professional software developer, I've become more and more convinced that writing is essential, and I've realized that I actually lack this essential skill. I want to be a better thinker and a better communicator, at work, in tech communities, and in my personal life. If I put this in a more ambitious way, I want to leave behind something I can confidently call _my work_, some day.
 
-So here I am, starting this blog as my public thinking space. I've already written several short-form notes, beginning with [the first note](/notes/2025/12/18/berkeley-mono) about my observations of a monospaced typeface called Berkeley Mono. I'm looking forward to seeing hundreds of notes and posts dropped here in a year or two, forming a small library of my own — an archive of my thoughts and ideas.
+So here I am, starting this blog as my public thinking space. I've already written several short-form notes, beginning with the [first note](/notes/2025/12/18/berkeley-mono) about my observations of a monospaced typeface called Berkeley Mono. I'm looking forward to seeing hundreds of notes and posts dropped here in a year or two, forming a small library of my own — an archive of my thoughts and ideas.
 
 The topics I'll cover may vary. Generally I'll start with technical learnings and observations, and gradually expand into personal growth and life reflections. The following themes are currently in my mind:
 
