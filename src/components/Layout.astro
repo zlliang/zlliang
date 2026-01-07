@@ -8,6 +8,8 @@ import Aside from "@/components/Aside.astro"
 
 import { getTitle, siteTitle } from "@/utils/site"
 
+import type { HreflangLink } from "@/utils/content"
+
 import "@fontsource-variable/public-sans"
 import "@fontsource-variable/public-sans/wght-italic.css"
 import publicSansWoff2 from "@fontsource-variable/public-sans/files/public-sans-latin-wght-normal.woff2?url"
@@ -23,9 +25,10 @@ interface Props {
   description?: string
   aside?: boolean
   showRecentPosts?: boolean
+  hreflang?: HreflangLink[]
 }
 
-const { title: rawTitle, description, aside = true, showRecentPosts = true } = Astro.props
+const { title: rawTitle, description, aside = true, showRecentPosts = true, hreflang = [] } = Astro.props
 const title = getTitle(rawTitle)
 const url = new URL(Astro.url.pathname, Astro.site)
 ---
@@ -50,6 +53,9 @@ const url = new URL(Astro.url.pathname, Astro.site)
   <!-- SEO, OpenGraph and Twitter -->
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="canonical" href={url} />
+  {hreflang.map(({ lang, href }) => (
+    <link rel="alternate" hreflang={lang} href={href} />
+  ))}
   {Boolean(description) && <meta name="description" content={description} />}
   <meta property="og:site_name" content={siteTitle} />
   <meta property="og:url" content={url} />

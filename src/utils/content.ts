@@ -105,6 +105,23 @@ export function getTranslations(post: CollectionEntry<"posts">) {
   return translatedPosts.filter((t) => t.data.original.id === post.id)
 }
 
+/** Hreflang link */
+export interface HreflangLink {
+  lang: string
+  href: string
+}
+
+/** Build hreflang links for a post (original or translated) */
+export function buildHreflang(post: CollectionEntry<"posts">, siteUrl: URL) {
+  const translations = getTranslations(post)
+  const links: HreflangLink[] = [
+    { lang: post.data.lang, href: new URL(`/posts/${post.id}`, siteUrl).href },
+    ...translations.map((t) => ({ lang: t.data.lang, href: new URL(`/posts/${t.id}`, siteUrl).href })),
+  ]
+
+  return links
+}
+
 /** Render a fragment */
 export async function renderFragment(slug: string) {
   const entry = await getEntry("fragments", slug)!

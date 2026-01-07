@@ -3,7 +3,7 @@ import Layout from "@/components/Layout.astro"
 import PostContent from "@/components/PostContent.astro"
 import TableOfContents from "@/components/TableOfContents.astro"
 
-import { posts } from "@/utils/content"
+import { posts, buildHreflang } from "@/utils/content"
 
 import type { GetStaticPaths } from "astro"
 
@@ -13,9 +13,10 @@ export const getStaticPaths = (() => posts.map((post) => ({
 }))) satisfies GetStaticPaths
 
 const { post } = Astro.props
+const hreflang = buildHreflang(post, Astro.site!)
 ---
 
-<Layout title={post.data.title}>
+<Layout title={post.data.title} hreflang={hreflang}>
   <!-- Content -->
   <PostContent post={post} created={post.data.created} draft={post.data.draft} />
 
