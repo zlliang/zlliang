@@ -3,7 +3,6 @@ import { glob } from "astro/loaders"
 import slugify from "slugify"
 
 export const categories = ["regular", "link", "quote", "til", "post"] as const
-export const languages = ["en", "zh"] as const
 
 const notes = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./content/notes" }),
@@ -21,6 +20,8 @@ const notes = defineCollection({
     draft: z.boolean().default(false),
   }),
 })
+
+export const languages = ["en", "zh"] as const
 
 const posts = defineCollection({
   loader: glob({ pattern: ["**/*.md", "!translations/**"], base: "./content/posts" }),

@@ -5,28 +5,6 @@ import { categories, languages } from "@/content.config"
 
 import type { CollectionEntry } from "astro:content"
 
-/** Languages */
-export { languages }
-
-/** Language type */
-export type Lang = typeof languages[number]
-
-/** Get the display name of a language */
-export function getLanguageDisplay(lang: Lang) {
-  return ({
-    en: "English",
-    zh: "中文",
-  })[lang]
-}
-
-/** Get the display name of a language, in English */
-export function getLanguageEnglishDisplay(lang: Lang) {
-  return ({
-    en: "English",
-    zh: "Chinese",
-  })[lang]
-}
-
 /** All notes */
 export const notes = await getNotes()
 
@@ -72,6 +50,28 @@ export async function groupNotesByDate(notes: CollectionEntry<"notes">[]) {
     .toSorted((a, b) => b.date.valueOf() - a.date.valueOf())
 
   return grouped
+}
+
+/** Languages */
+export { languages }
+
+/** Language type */
+export type Lang = typeof languages[number]
+
+/** Get the display name of a language */
+export function getLanguageDisplay(lang: Lang) {
+  return ({
+    en: "English",
+    zh: "中文",
+  })[lang]
+}
+
+/** Get the display name of a language, in English */
+export function getLanguageEnglishDisplay(lang: Lang) {
+  return ({
+    en: "English",
+    zh: "Chinese",
+  })[lang]
 }
 
 /** All posts */
