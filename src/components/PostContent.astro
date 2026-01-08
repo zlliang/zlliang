@@ -1,12 +1,14 @@
 ---
-import { render } from "astro:content"
+import { getEntry, render } from "astro:content"
 import { format } from "date-fns"
 
 import PageTitle from "@/components/PageTitle.astro"
-import PostTranslationLinks from "@/components/PostTranslationLinks.astro"
+import PostTranslationLinks from "@/components/translations/PostTranslationLinks.astro"
+import TranslationNoticeInPostsEn from "@/components/translations/TranslationNoticeInPostsEn.astro"
+import TranslationNoticeInPostsZh from "@/components/translations/TranslationNoticeInPostsZh.astro"
 
 import { cn } from "@/utils/style"
-import { getTranslations } from "@/utils/content"
+import { getTranslations, type Lang } from "@/utils/content"
 
 import type { CollectionEntry } from "astro:content"
 
@@ -19,6 +21,12 @@ interface Props {
 const { post, created, draft } = Astro.props
 const { Content } = await render(post)
 const translations = post.collection === "posts" ? getTranslations(post) : []
+const original = post.collection === "translatedPosts" ? await getEntry(post.data.original) : null
+
+const TranslationNotice = ({
+  "en": TranslationNoticeInPostsEn,
+  "zh": TranslationNoticeInPostsZh,
+} as const)[post.data.lang]
 ---
 
 <div lang={post.data.lang} class={cn("post-content", post.data.lang)}>
@@ -33,9 +41,14 @@ const translations = post.collection === "posts" ? getTranslations(post) : []
 
   <!-- Translations -->
   {translations.length > 0 && (
-    <div class="card leading-[1.7]">
+    <blockquote class="mb-12 leading-[1.7]">
       <PostTranslationLinks translations={translations} />
-    </div>
+    </blockquote>
+  )}
+  {original && (
+    <blockquote class="mb-12">
+      <TranslationNotice original={original} />
+    </blockquote>
   )}
 
   <!-- Content -->

@@ -3,8 +3,8 @@ import { getEntry, render } from "astro:content"
 import { format } from "date-fns"
 
 import Link from "@/components/Link.astro"
-import LanguageLabel from "@/components/LanguageLabel.astro"
-import PostTranslationLinks from "@/components/PostTranslationLinks.astro"
+import LanguageLabel from "@/components/translations/LanguageLabel.astro"
+import TranslationNoticeInNotesEn from "@/components/translations/TranslationNoticeInNotesEn.astro"
 
 import { getLanguageEnglishDisplay, getTranslations, getCategoryDisplay } from "@/utils/content"
 
@@ -36,10 +36,7 @@ const translations = post ? getTranslations(post) : []
   </div>
 
   <!-- Post translations -->
-  {post && translations.length > 0 && (
-    <p>The post was written in {getLanguageEnglishDisplay(post.data.lang)}, and translations are available below.</p>
-    <p><PostTranslationLinks translations={translations} /></p>
-  )}
+  {post && translations.length > 0 && <TranslationNoticeInNotesEn lang={post.data.lang} translations={translations} />}
 
   <!-- Category and tags -->
   <div class="mb-1 text-xs text-neutral-500">

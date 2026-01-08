@@ -4,12 +4,6 @@ lang: en
 original: demo/demonstrate-multilingual-support-of-this-website
 ---
 
-<div class="card translation-notice">
-
-Translated from the [original Chinese post](/posts/demo/demonstrate-multilingual-support-of-this-website) with AI assistance and manual editing.
-
-</div>
-
 This post demonstrates the multilingual support on this website.
 
 ## Why multilingual

@@ -1,0 +1,20 @@
+---
+import PostTranslationLinks from "@/components/translations/PostTranslationLinks.astro"
+
+import { getLanguageEnglishDisplay } from "@/utils/content"
+
+import type { CollectionEntry } from "astro:content"
+import type { Lang } from "@/utils/content"
+
+interface Props {
+  lang: Lang
+  translations: CollectionEntry<"translatedPosts">[]
+}
+
+const { lang, translations } = Astro.props
+---
+
+<p>The post was written in {getLanguageEnglishDisplay(lang)}, and translations are available below.</p>
+<div class="mb-4 leading-[1.7]">
+  <PostTranslationLinks translations={translations} />
+</div>

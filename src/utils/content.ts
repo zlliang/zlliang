@@ -74,6 +74,14 @@ export function getLanguageEnglishDisplay(lang: Lang) {
   })[lang]
 }
 
+/** Get the display name of a language, in Chinese */
+export function getLanguageChineseDisplay(lang: Lang) {
+  return ({
+    en: "英语",
+    zh: "中文",
+  })[lang]
+}
+
 /** All posts */
 export const posts = await getPosts()
 

@@ -1,0 +1,19 @@
+---
+import Link from "@/components/Link.astro"
+
+import { getLanguageChineseDisplay } from "@/utils/content"
+
+import type { CollectionEntry } from "astro:content"
+
+interface Props {
+  original: CollectionEntry<"posts">
+}
+
+const { original } = Astro.props
+---
+
+
+<p>
+  <span class="icon-[lucide--languages] mr-1" />
+  <span>本文由</span><Link href={`/posts/${original.id}`}>{getLanguageChineseDisplay(original.data.lang)}原文</Link><span>翻译而来，使用了 AI 辅助翻译并经过人工编辑。</span>
+</p>
