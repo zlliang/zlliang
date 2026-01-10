@@ -2,13 +2,13 @@
   "name": "zlliang-sites",
   "version": "0.0.0",
   "private": true,
-  "workspaces": ["sites/*"],
+  "workspaces": ["websites/*"],
   "scripts": {
-    "dev:tech": "cd sites/tech && bun run dev",
-    "dev:www": "cd sites/www && bun run dev",
-    "dev:days": "cd sites/days && bun run dev",
-    "build:tech": "cd sites/tech && bun run build",
-    "build:www": "cd sites/www && bun run build",
-    "build:days": "cd sites/days && bun run build"
+    "dev:tech": "cd websites/tech && bun run dev",
+    "dev:www": "cd websites/www && bun run dev",
+    "dev:days": "cd websites/days && bun run dev",
+    "build:tech": "cd websites/tech && bun run build",
+    "build:www": "cd websites/www && bun run build",
+    "build:days": "cd websites/days && bun run build"
   }
 }

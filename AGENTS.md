@@ -4,10 +4,10 @@ This document defines how AI assistants (e.g., ChatGPT, Codex, Amp) help me deve
 
 ## Monorepo structure
 
-This repository contains three Astro sites:
+This repository contains three Astro websites:
 
 ```
-sites/
+websites/
 ├── www/    # zlliang.me – Personal index
 ├── tech/   # tech.zlliang.me – Tech notes and posts (English)
 └── days/   # days.zlliang.me – Life reflections (Chinese)
@@ -36,7 +36,6 @@ bun run dev:days         # Start days dev server
 bun run build:www        # Build www for production
 bun run build:tech       # Build tech for production
 bun run build:days       # Build days for production
-bun run build            # Build all sites
 ```
 
 ## Conventions
