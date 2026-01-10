@@ -14,6 +14,7 @@ import publicSansWoff2 from "@fontsource-variable/public-sans/files/public-sans-
 
 import "@fontsource-variable/roboto-mono"
 import "@fontsource-variable/roboto-mono/wght-italic.css"
+import robotoMonoWoff2 from "@fontsource-variable/roboto-mono/files/roboto-mono-latin-wght-normal.woff2?url"
 
 import "@/styles/main.css"
 
@@ -44,6 +45,7 @@ const url = new URL(Astro.url.pathname, Astro.site)
 
   <!-- Fonts -->
   <link rel="preload" as="font" type="font/woff2" href={publicSansWoff2} crossorigin="anonymous" />
+  <link rel="preload" as="font" type="font/woff2" href={robotoMonoWoff2} crossorigin="anonymous" />
 
   <!-- SEO, OpenGraph and Twitter -->
   <link rel="sitemap" href="/sitemap-index.xml" />

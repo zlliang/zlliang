@@ -1,5 +1,7 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n"
+
 export const prerender = false
 
-return Astro.redirect(`/${Astro.preferredLocale ?? "en"}/`)
+return Astro.redirect(getRelativeLocaleUrl(Astro.preferredLocale ?? "en"))
 ---
