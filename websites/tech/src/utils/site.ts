@@ -1,4 +1,4 @@
-export const siteTitle = "Zilong Liang"
+export const siteTitle = "Zilong's Tech Blog"
 
 export function getTitle(title?: string) {
   return title ? `${title} - ${siteTitle}` : siteTitle

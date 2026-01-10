@@ -1,10 +1,10 @@
 # License
 
-This repository is dual-licensed under different terms depending on the type of content:
+This monorepo is dual-licensed under different terms depending on the type of content:
 
 ## Code License (MIT)
 
-The source code of this website, including but not limited to HTML, CSS, TypeScript, Astro components, and configuration files, is licensed under the MIT License.
+The source code of these websites, including but not limited to HTML, CSS, TypeScript, Astro components, and configuration files, is licensed under the MIT License.
 
 Copyright (c) 2025–PRESENT Zilong Liang
 
@@ -28,7 +28,7 @@ SOFTWARE.
 
 ## Content License (CC BY 4.0)
 
-All written content, including but not limited to blog notes, posts, and other prose in the `content` directory, is licensed under the Creative Commons Attribution 4.0 International License.
+All written content, including but not limited to blog notes, posts, and other prose in the `websites/*/content` directories, is licensed under the Creative Commons Attribution 4.0 International License.
 
 This means you are free to:
 
