@@ -2,4 +2,4 @@ Hi! I'm **Zilong**, a [frontend developer](https://roadmap.sh/frontend) at [Book
 
 Beyond code, I cherish life's simple pleasures: good food, cooking, reading, writing, and traveling. I also sing tenor with the [Shanghai Rainbow Chamber Singers](https://en.wikipedia.org/wiki/Shanghai_Rainbow_Chamber_Singers).
 
-My writing is published on the following blogs:
+My writing is organized into two spaces:
