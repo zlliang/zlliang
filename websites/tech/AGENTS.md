@@ -3,7 +3,7 @@
 ## Site structure
 
 ```
-sites/tech/
+websites/tech/
 ├── src/
 │   ├── components/    # Astro components (.astro)
 │   ├── pages/         # File-based routing
