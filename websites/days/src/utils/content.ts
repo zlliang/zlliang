@@ -1,6 +1,8 @@
 import { getCollection } from "astro:content"
 import { uniqBy, groupBy } from "lodash-es"
 
+import { categories } from "@/content.config"
+
 import type { CollectionEntry } from "astro:content"
 
 /** All notes */
@@ -12,6 +14,19 @@ async function getNotes() {
   const notes = collection.toSorted((a, b) => b.data.no - a.data.no)
 
   return notes
+}
+
+/** Note categories */
+export { categories }
+export type NoteCategory = typeof categories[number]
+
+/** Get the display name of a note category */
+export function getCategoryDisplay(category: NoteCategory) {
+  return ({
+    regular: "日常",
+    quote: "摘录",
+    post: "文章",
+  })[category]
 }
 
 /** All tags */

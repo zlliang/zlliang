@@ -3,12 +3,15 @@ import { glob } from "astro/loaders"
 
 import { getTagSlug } from "@/utils/tags"
 
+export const categories = ["regular", "quote", "post"] as const
+
 const notes = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./content/notes" }),
   schema: z.object({
     no: z.number(),
     title: z.string().min(1).optional(),
     created: z.coerce.date(),
+    category: z.enum(categories).default("regular"),
     post: reference("posts").optional(),
     tags: z.array(z.string().min(1)).optional()
       .transform((tags) => tags

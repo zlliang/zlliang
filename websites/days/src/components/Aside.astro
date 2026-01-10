@@ -5,7 +5,7 @@ import Section from "@/components/Section.astro"
 import Link from "@/components/Link.astro"
 import PostList from "@/components/PostList.astro"
 
-import { notes, tags, posts } from "@/utils/content"
+import { notes, categories, tags, posts } from "@/utils/content"
 
 import { cn } from "@/utils/style"
 
@@ -36,6 +36,10 @@ const recentPosts = posts.slice(0, 10)
     <div class="flex justify-between items-center mb-1">
       <Link href="/notes"><span class="icon-[lucide--notebook-pen]" /> 手记</Link>
       <span class="text-sm text-neutral-500">{notes.length} 则</span>
+    </div>
+    <div class="flex justify-between items-center mb-1">
+      <span><span class="mr-2 font-mono text-neutral-500">├</span><Link href="/notes/categories"><span class="icon-[lucide--folder-open]" /> 分类</Link></span>
+      <span class="text-sm text-neutral-500">{categories.length} 个</span>
     </div>
     <div class="flex justify-between items-center mb-1">
       <span><span class="mr-2 font-mono text-neutral-500">└</span><Link href="/notes/tags"><span class="icon-[lucide--tag]" /> 标签</Link></span>
