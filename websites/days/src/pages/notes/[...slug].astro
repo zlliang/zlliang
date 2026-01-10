@@ -24,7 +24,7 @@ export const getStaticPaths = (() => notes.map((note, index) => {
 const { note, next, previous } = Astro.props
 const post = note.data.post ? await getEntry(note.data.post) : null
 
-const title = [note.data.title || post?.data.title, `Note #${note.data.no}`].filter(Boolean).join(" - ")
+const title = [note.data.title || post?.data.title, `手记 #${note.data.no}`].filter(Boolean).join(" - ")
 ---
 
 <Layout title={title}>
@@ -36,19 +36,19 @@ const title = [note.data.title || post?.data.title, `Note #${note.data.no}`].fil
     <div class="grid grid-cols-2 mt-16">
       {next && (
         <div class={cn("col-start-1 pr-4 text-neutral-500", !previous && "border-r border-neutral-200 dark:border-neutral-800")} >
-          <div class="text-sm mb-0.5">Next</div>
+          <div class="text-sm mb-0.5">下一则</div>
           <Link href={`/notes/${next.id}`} class="block mb-0.5">{next.data.title || "Untitled note"}</Link>
           <div class="text-sm">
-            <span>{format(next.data.created, "PP")}</span><span class="icon-[lucide--dot]" /><span class="font-mono">#TECH{next.data.no}</span>
+            <span>{format(next.data.created, "yyyy 年 M 月 d 日")}</span><span class="icon-[lucide--dot]" /><span class="font-mono">#DAYS{next.data.no}</span>
           </div>
         </div>
       )}
       {previous && (
         <div class="col-start-2 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-right text-neutral-500">
-          <div class="text-sm mb-0.5">Previous</div>
+          <div class="text-sm mb-0.5">上一则</div>
           <Link href={`/notes/${previous.id}`} class="block mb-0.5">{previous.data.title || "Untitled note"}</Link>
           <div class="text-sm">
-            <span class="font-mono">#TECH{previous.data.no}</span><span class="icon-[lucide--dot]" /><span>{format(previous.data.created, "PP")}</span>
+            <span class="font-mono">#DAYS{previous.data.no}</span><span class="icon-[lucide--dot]" /><span>{format(previous.data.created, "yyyy 年 M 月 d 日")}</span>
           </div>
         </div>
       )}

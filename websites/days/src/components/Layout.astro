@@ -2,22 +2,35 @@
 import VercelWebAnalytics from "@vercel/analytics/astro"
 import VercelSpeedInsights from "@vercel/speed-insights/astro"
 
-import "@fontsource-variable/noto-sans-sc"
+import Header from "@/components/Header.astro"
+import Footer from "@/components/Footer.astro"
+import Aside from "@/components/Aside.astro"
+
+import { getTitle, siteTitle } from "@/utils/site"
+
+import "@fontsource-variable/public-sans"
+import "@fontsource-variable/public-sans/wght-italic.css"
+import publicSansWoff2 from "@fontsource-variable/public-sans/files/public-sans-latin-wght-normal.woff2?url"
+
+import "@fontsource-variable/roboto-mono"
+import "@fontsource-variable/roboto-mono/wght-italic.css"
+
 import "@/styles/main.css"
 
 interface Props {
   title?: string
   description?: string
+  aside?: boolean
+  showRecentPosts?: boolean
 }
 
-const siteTitle = "日有所思"
-const { title: rawTitle, description } = Astro.props
-const title = rawTitle ? `${rawTitle} - ${siteTitle}` : siteTitle
+const { title: rawTitle, description, aside = true, showRecentPosts = true } = Astro.props
+const title = getTitle(rawTitle)
 const url = new URL(Astro.url.pathname, Astro.site)
 ---
 
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +42,10 @@ const url = new URL(Astro.url.pathname, Astro.site)
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-  <!-- SEO -->
+  <!-- Fonts -->
+  <link rel="preload" as="font" type="font/woff2" href={publicSansWoff2} crossorigin="anonymous" />
+
+  <!-- SEO, OpenGraph and Twitter -->
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="canonical" href={url} />
   {Boolean(description) && <meta name="description" content={description} />}
@@ -43,23 +59,27 @@ const url = new URL(Astro.url.pathname, Astro.site)
   {Boolean(description) && <meta name="twitter:description" content={description} />}
   <meta name="twitter:creator" content="@zlliang96" />
 
+  <!-- Title -->
   <title>{title}</title>
 </head>
 <body>
-  <div class="min-h-dvh max-w-2xl mx-auto px-6 py-12">
-    <header class="mb-12">
-      <a href="/" class="nocolor text-xl font-bold">{siteTitle}</a>
-    </header>
-    <main>
-      <slot />
-    </main>
-    <footer class="mt-16 pt-6 border-t border-neutral-200 dark:border-neutral-800 text-neutral-500 text-sm">
-      <p class="mb-0">
-        © 2025 <a href="https://zlliang.me" class="nocolor hover:text-blue-500">Zilong Liang</a>
-      </p>
-    </footer>
+  <div class="flex flex-col min-h-dvh max-w-3xl lg:max-w-6xl m-auto px-6">
+    <Header />
+    <div class="flex-1 lg:flex gap-12 w-full">
+      <main class="flex-1 min-w-0">
+        <slot />
+      </main>
+      {aside && (
+        <Aside showRecentPosts={showRecentPosts} class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80">
+          <Fragment slot="prefix"><slot name="aside-prefix" /></Fragment>
+          <Fragment slot="suffix"><slot name="aside-suffix" /></Fragment>
+        </Aside>
+      )}
+    </div>
+    <Footer />
   </div>
 
+  <!-- Vercel -->
   <VercelWebAnalytics />
   <VercelSpeedInsights />
 </body>

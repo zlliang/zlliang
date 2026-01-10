@@ -1,54 +1,248 @@
 @import "tailwindcss";
 @plugin "@iconify/tailwind4";
 
+/* Root */
+
 :root {
   @apply text-sm sm:text-base;
 }
 
 ::selection {
-  @apply bg-blue-100 dark:bg-blue-900;
+  @apply bg-indigo-100 dark:bg-indigo-900;
 }
 
 body {
-  @apply bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 leading-normal;
+  @apply bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 leading-[1.6];
 }
+
+[lang="en"] body {
+  @apply leading-normal;
+}
+
+/* Fonts */
 
 @theme {
-  --font-sans: "Noto Sans SC Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Public Sans Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: "Public Sans Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: "Roboto Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+/* Icons */
+
+[class*="icon-"] {
+  @apply inline-block size-[1.2em] align-text-bottom scale-95;
+}
+
+/* Titles */
+
 h1, h2, h3, h4, h5, h6 {
-  @apply font-bold;
+  @apply font-display font-bold;
+}
+
+h2, h3, h4, h5, h6 {
+  @apply my-4;
+}
+
+h2 {
+  @apply mt-8 text-2xl;
+}
+
+h3 {
+  @apply mt-8 text-lg;
+}
+
+/* Contents */
+
+main > *:last-child {
+  @apply mb-0;
 }
 
 p {
   @apply mb-4 leading-[1.8];
 }
 
+[lang="en"] p {
+  @apply leading-[1.7];
+}
+
 a {
-  @apply text-blue-600 dark:text-blue-400 hover:text-blue-500;
+  @apply text-indigo-600 dark:text-indigo-400 hover:text-indigo-500;
 }
 
 a.nocolor {
   @apply text-inherit dark:text-inherit hover:text-inherit dark:hover:text-inherit;
 }
 
-[class*="icon-"] {
-  @apply inline-block size-[1.2em] align-text-bottom scale-95;
+a.secondary {
+  @apply text-inherit dark:text-inherit hover:text-indigo-500;
+}
+
+b, strong {
+  @apply font-bold;
 }
 
 blockquote {
-  @apply pl-6 border-l-2 border-neutral-200 dark:border-neutral-800 text-neutral-500;
+  @apply pl-6.5 border-l-2 border-neutral-200 dark:border-neutral-800 text-neutral-500;
 }
 
 ul, ol {
-  @apply mb-4 pl-7 leading-[1.8];
+  @apply mb-4 pl-7 leading-[1.8] marker:text-neutral-500;
+}
+
+[lang="en"] ul, [lang="en"] ol {
+  @apply leading-[1.7];
 }
 
 ul {
   @apply list-disc;
 }
 
+ul ul, ol ul {
+  @apply mb-0 list-[circle];
+}
+
+ul ul ul, ol ul ul, ul ol ul, ol ol ul {
+  @apply mb-0 list-[square];
+}
+
 ol {
   @apply list-decimal;
+}
+
+ol ol, ul ol {
+  @apply mb-0 list-[lower-roman];
+}
+
+ol ol ol, ul ol ol, ol ul ol, ul ul ol {
+  @apply mb-0 list-[lower-alpha];
+}
+
+hr {
+  @apply relative my-6 h-auto border-neutral-200 dark:border-neutral-800 overflow-visible;
+}
+
+hr:before {
+  content: "";
+  @apply absolute -top-3 left-0 right-0 mx-auto w-12 block h-6 bg-white dark:bg-neutral-950;
+}
+
+hr:after {
+  content: "";
+  @apply icon-[lucide--waves] absolute -top-[0.65rem] left-0 right-0 mx-auto block h-5 w-5 text-neutral-200 dark:text-neutral-800;
+}
+
+img {
+  @apply mx-auto;
+}
+
+p > img {
+  @apply w-auto max-h-108;
+}
+
+/* Codes */
+
+@media (prefers-color-scheme: dark) {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--color-neutral-950) !important; /* In place of --shiki-dark-bg */
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
+}
+
+code {
+  @apply px-[0.3em] border border-neutral-200 dark:border-neutral-800 text-sm;
+}
+
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
+  @apply text-[0.9em];
+}
+
+pre {
+  @apply mb-4 px-4 py-3 border border-neutral-200 dark:border-neutral-800 text-sm;
+}
+
+pre code {
+  @apply p-0 border-none;
+}
+
+/* Tables */
+
+table {
+  @apply mb-4 mx-auto w-full border-collapse;
+}
+
+th {
+  @apply text-left;
+}
+
+tr {
+  @apply border border-neutral-200 dark:border-neutral-800;
+}
+
+tr:nth-child(2n) {
+  @apply bg-neutral-50 dark:bg-neutral-900;
+}
+
+th, td {
+  @apply px-3 py-1 border border-neutral-200 dark:border-neutral-700;
+}
+
+th {
+  @apply bg-neutral-100 dark:bg-neutral-800;
+}
+
+/* Image captions */
+
+span.caption {
+  @apply flex justify-center mt-1 text-sm text-neutral-500;
+}
+
+/* Footnotes */
+
+.footnotes {
+  @apply text-sm;
+}
+
+.footnotes p {
+  @apply mb-0;
+}
+
+#footnote-label {
+  @apply mb-4 w-16 border-b border-neutral-200 dark:border-neutral-800;
+}
+
+.post-content #footnote-label {
+  @apply mt-16;
+}
+
+[data-footnote-ref] {
+  @apply tabular-nums;
+}
+
+/* Card */
+
+.card {
+  @apply mb-4 px-4 py-3 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400;
+}
+
+.card.amber {
+  @apply border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400;
+}
+
+.card > *:last-child,
+.card > *:last-child > *:last-child {
+  @apply mb-0;
+}
+
+/* Image grid */
+
+.image-grid {
+  @apply sm:mb-4 sm:grid sm:grid-cols-2 sm:gap-4;
+}
+
+.image-grid p {
+  @apply sm:mb-0;
 }

@@ -1,0 +1,26 @@
+---
+import Link from "@/components/Link.astro"
+
+import type { Page } from "astro"
+
+type Props = Page
+
+const { currentPage, lastPage, url } = Astro.props
+---
+
+<div class="flex justify-end items-center text-sm gap-2">
+  {Boolean(url.first || url.prev) && (
+    <div>
+      {url.first && <Link href={url.first}><span class="icon-[lucide--chevrons-left]" /></Link>}
+      {url.prev && <Link href={url.prev}><span class="icon-[lucide--chevron-left]" /></Link>}
+    </div>
+  )}
+  <div>页面 {currentPage} / {lastPage}</div>
+  {Boolean(url.next || url.last) && (
+    <div>
+      {url.next && <Link href={url.next}><span class="icon-[lucide--chevron-right]" /></Link>}
+      {url.last && <Link href={url.last}><span class="icon-[lucide--chevrons-right]" /></Link>}
+    </div>
+  )}
+</div>
+</div>

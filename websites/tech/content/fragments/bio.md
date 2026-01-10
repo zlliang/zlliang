@@ -1,5 +1,0 @@
-I'm **Zilong**, a [frontend developer](https://roadmap.sh/frontend) at [Booking.com](https://booking.com/). I'm passionate about programming — with a focus on web development, though my curiosity spans the broader software landscape. Before Booking.com, I worked at [Tencent](https://www.tencent.com/en-us) and [ByteDance](https://bytedance.com).
-
-Beyond code, I cherish life's simple pleasures: good food, cooking, reading, writing, and traveling. I also sing tenor with the [Shanghai Rainbow Chamber Singers](https://en.wikipedia.org/wiki/Shanghai_Rainbow_Chamber_Singers). I hold a Master's degree in Mathematics from [Fudan University](https://www.fudan.edu.cn/en).
-
-This is my notebook — a space for thoughts on **technical learnings**, **personal growth**, and **life reflections**. Welcome!
