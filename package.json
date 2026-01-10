@@ -4,11 +4,11 @@
   "private": true,
   "workspaces": ["websites/*"],
   "scripts": {
-    "dev:tech": "cd websites/tech && bun run dev",
-    "dev:www": "cd websites/www && bun run dev",
-    "dev:days": "cd websites/days && bun run dev",
-    "build:tech": "cd websites/tech && bun run build",
-    "build:www": "cd websites/www && bun run build",
-    "build:days": "cd websites/days && bun run build"
+    "dev:tech": "bun run --cwd websites/tech dev",
+    "dev:www": "bun run --cwd websites/www dev",
+    "dev:days": "bun run --cwd websites/days dev",
+    "build:tech": "bun run --cwd websites/tech build",
+    "build:www": "bun run --cwd websites/www build",
+    "build:days": "bun run --cwd websites/days build"
   }
 }
