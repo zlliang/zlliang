@@ -9,7 +9,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import { rehypeFootnotePrefix, rehypeImageCaption } from "./src/utils/rehype"
 
 export default defineConfig({
-  site: "https://zlliang.me",
+  site: "https://tech.zlliang.me",
   adapter: vercel({
     imageService: true,
     imagesConfig: {
