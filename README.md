@@ -4,4 +4,12 @@ I'm **Zilong**, a [frontend developer](https://roadmap.sh/frontend) at [Booking.
 
 Beyond code, I cherish life's simple pleasures: good food, cooking, reading, writing, and traveling. I also sing tenor with the [Shanghai Rainbow Chamber Singers](https://en.wikipedia.org/wiki/Shanghai_Rainbow_Chamber_Singers). I hold a Master's degree in Mathematics from [Fudan University](https://www.fudan.edu.cn/).
 
-I share my thoughts on **technical learnings**, **personal growth**, and **life reflections** on [my personal website](https://zlliang.me). Stop by and say hi! 👋
+## Sites
+
+This monorepo contains my personal websites:
+
+| Site | URL | Description |
+|------|-----|-------------|
+| **www** | [zlliang.me](https://zlliang.me) | Personal index |
+| **tech** | [tech.zlliang.me](https://tech.zlliang.me) | Tech notes and posts (English) |
+| **days** | [days.zlliang.me](https://days.zlliang.me) | Life reflections (Chinese) |

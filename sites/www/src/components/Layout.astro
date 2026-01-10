@@ -1,0 +1,54 @@
+---
+import VercelWebAnalytics from "@vercel/analytics/astro"
+import VercelSpeedInsights from "@vercel/speed-insights/astro"
+
+import "@fontsource-variable/public-sans"
+import "@/styles/main.css"
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const { title = "Zilong Liang", description } = Astro.props
+const url = new URL(Astro.url.pathname, Astro.site)
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!-- SEO -->
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="canonical" href={url} />
+  {Boolean(description) && <meta name="description" content={description} />}
+  <meta property="og:site_name" content="Zilong Liang" />
+  <meta property="og:url" content={url} />
+  <meta property="og:title" content={title} />
+  {Boolean(description) && <meta property="og:description" content={description} />}
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  {Boolean(description) && <meta name="twitter:description" content={description} />}
+  <meta name="twitter:creator" content="@zlliang96" />
+
+  <title>{title}</title>
+</head>
+<body>
+  <div class="min-h-dvh max-w-2xl mx-auto px-6 py-16">
+    <slot />
+  </div>
+
+  <VercelWebAnalytics />
+  <VercelSpeedInsights />
+</body>
+</html>

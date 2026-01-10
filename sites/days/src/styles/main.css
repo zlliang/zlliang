@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@plugin "@iconify/tailwind4";
+
+:root {
+  @apply text-sm sm:text-base;
+}
+
+::selection {
+  @apply bg-blue-100 dark:bg-blue-900;
+}
+
+body {
+  @apply bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 leading-normal;
+}
+
+@theme {
+  --font-sans: "Noto Sans SC Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold;
+}
+
+p {
+  @apply mb-4 leading-[1.8];
+}
+
+a {
+  @apply text-blue-600 dark:text-blue-400 hover:text-blue-500;
+}
+
+a.nocolor {
+  @apply text-inherit dark:text-inherit hover:text-inherit dark:hover:text-inherit;
+}
+
+[class*="icon-"] {
+  @apply inline-block size-[1.2em] align-text-bottom scale-95;
+}
+
+blockquote {
+  @apply pl-6 border-l-2 border-neutral-200 dark:border-neutral-800 text-neutral-500;
+}
+
+ul, ol {
+  @apply mb-4 pl-7 leading-[1.8];
+}
+
+ul {
+  @apply list-disc;
+}
+
+ol {
+  @apply list-decimal;
+}
