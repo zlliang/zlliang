@@ -30,12 +30,7 @@ const posts = defineCollection({
   }),
 })
 
-const fragments = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./content/fragments" }),
-})
-
 export const collections = {
   notes,
   posts,
-  fragments,
 }

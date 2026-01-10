@@ -1,4 +1,4 @@
-import { getCollection, getEntry, render } from "astro:content"
+import { getCollection } from "astro:content"
 import { uniqBy, groupBy } from "lodash-es"
 
 import { categories } from "@/content.config"
@@ -60,12 +60,4 @@ async function getPosts() {
   const posts = collection.toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf())
 
   return posts
-}
-
-/** Render a fragment */
-export async function renderFragment(slug: string) {
-  const entry = await getEntry("fragments", slug)!
-  const { Content } = await render(entry)
-
-  return Content
 }
