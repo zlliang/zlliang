@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets"
+
+import Link from "@/components/Link.astro"
+
+import { locales, t } from "@/utils/i18n"
+
+import type { Locale } from "@/utils/i18n"
+
+import logo from "@/assets/images/logo.png"
+
+interface Props {
+  lang?: Locale
+}
+
+const { lang = "en" } = Astro.props
+---
+
+<header class="flex justify-between items-center h-16 mb-12">
+  <div class="flex items-center gap-2">
+    <Link href={`/${lang}/`} class="nocolor flex items-center gap-2 font-display">
+      <Image src={logo} alt="logo" class="size-6" loading="eager" />
+      <strong>{t(lang, "site.title")}</strong>
+    </Link>
+  </div>
+  <div class="flex items-center gap-4">
+    {locales.map((l) => lang === l ? null : <Link href={`/${l}/`}><span class="icon-[lucide--languages]" /> {t(l, "desc")}</Link>)}
+  </div>
+</header>

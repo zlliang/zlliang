@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets"
+
+import Layout from "@/components/Layout.astro"
+import Link from "@/components/Link.astro"
+
+import { renderFragment } from "@/utils/content"
+
+import logoTech from "@/assets/images/logo-tech.png"
+import logoDays from "@/assets/images/logo-days.png"
+
+const Bio = await renderFragment("bio-en")
+---
+
+<Layout lang="en">
+  <Bio />
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <Link href="https://tech.zlliang.me" external={false} class="flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950 secondary">
+      <Image src={logoTech} alt="Logo of tech.zlliang.me" class="size-8" loading="eager" />
+      <div class="flex-1">
+        <div class="font-bold">Zilong's Tech Blog</div>
+        <div class="text-sm opacity-60">tech.zlliang.me</div>
+        <div class="mt-2 text-sm">An English blog for my tech notes and posts</div>
+      </div>
+    </Link>
+    <Link href="https://days.zlliang.me" external={false} class="flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950 secondary">
+      <Image src={logoDays} alt="Logo of days.zlliang.me" class="size-8" loading="eager" />
+      <div class="flex-1">
+        <div class="font-bold">Zilong's Days</div>
+        <div class="text-sm opacity-60">days.zlliang.me</div>
+        <div class="mt-2 text-sm">A Chinese journal for my daily life and reflections</div>
+      </div>
+    </Link>
+  </div>
+</Layout>

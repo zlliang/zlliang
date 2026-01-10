@@ -1,0 +1,29 @@
+---
+import Link from "@/components/Link.astro"
+
+import { t } from "@/utils/i18n"
+
+import type { Locale } from "@/utils/i18n"
+
+interface Props {
+  lang?: Locale
+}
+
+const { lang = "en" } = Astro.props
+---
+
+<footer class="mt-16 mb-8 text-xs text-neutral-400 dark:text-neutral-600">
+  <div class="mt-2">
+    <Link href="https://creativecommons.org/licenses/by/4.0/" class="secondary">CC BY 4.0</Link>
+    <span>2025–PRESENT</span>
+    <span class="icon-[lucide--copyright] scale-90" />
+    <Link href={`/${lang}/`} class="secondary">{t(lang, "site.title")}</Link>
+    <span class="hidden sm:inline">
+      <span class="icon-[lucide--dot]" />
+      <span>{t(lang, "ui.footer.builtWithPrefix")} <Link href="https://astro.build" class="secondary">Astro</Link> {t(lang, "ui.footer.builtWithSuffix")}</span>
+    </span>
+  </div>
+  <div class="mt-1 sm:hidden">
+    <span>{t(lang, "ui.footer.builtWithPrefix")} <Link href="https://astro.build" class="secondary">Astro</Link> {t(lang, "ui.footer.builtWithSuffix")}</span>
+  </div>
+</footer>

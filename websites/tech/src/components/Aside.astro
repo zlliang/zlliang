@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets"
+
 import Section from "@/components/Section.astro"
 import Link from "@/components/Link.astro"
 import PostList from "@/components/PostList.astro"
@@ -6,6 +8,8 @@ import PostList from "@/components/PostList.astro"
 import { notes, categories, tags, posts } from "@/utils/content"
 
 import { cn } from "@/utils/style"
+
+import logoDays from "@/assets/images/logo-days.png"
 
 interface Props {
   showRecentPosts?: boolean
@@ -45,6 +49,17 @@ const recentPosts = posts.slice(0, 10)
       <Link href="/posts"><span class="icon-[lucide--book-open-text]" /> Posts</Link>
       <span class="text-sm text-neutral-500">{posts.length} in total</span>
     </div>
+  </Section>
+
+  <Section title="My other websites">
+    <Link href="https://days.zlliang.me" external={false} class="flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950 secondary">
+      <Image src={logoDays} alt="Logo of days.zlliang.me" class="size-8" loading="eager" />
+      <div class="flex-1">
+        <div class="font-bold">Zilong's Days</div>
+        <div class="text-sm opacity-60">days.zlliang.me</div>
+        <div class="mt-2 text-sm">A Chinese journal for my daily life and reflections</div>
+      </div>
+    </Link>
   </Section>
 
   <!-- Suffix -->
