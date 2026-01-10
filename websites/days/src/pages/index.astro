@@ -1,13 +1,20 @@
 ---
 import Layout from "@/components/Layout.astro"
+import NoteList from "@/components/NoteList.astro"
+import Link from "@/components/Link.astro"
+
+import { notes } from "@/utils/content"
+import { NOTES_PER_PAGE } from "@/utils/site"
+
+const filteredNotes = notes.slice(0, NOTES_PER_PAGE)
 ---
 
-<Layout description="关于自我成长与生活感悟的中文博客。">
-  <h1 class="text-2xl font-bold mb-6">欢迎</h1>
-  <p>
-    这里是我的中文博客，记录自我成长与生活感悟。
-  </p>
-  <p>
-    技术相关的内容请访问 <a href="https://tech.zlliang.me">tech.zlliang.me</a>。
-  </p>
+<Layout>
+  <!-- Notes -->
+  <NoteList notes={filteredNotes} />
+  {notes.length > NOTES_PER_PAGE && (
+    <div class="flex justify-end mt-6 pt-6 border-t-2 border-neutral-200 dark:border-neutral-800 text-sm">
+      <Link href="/notes/2">更多手记 (共 {notes.length} 则) <span class="icon-[lucide--arrow-right] translate-y-px" /></Link>
+    </div>
+  )}
 </Layout>

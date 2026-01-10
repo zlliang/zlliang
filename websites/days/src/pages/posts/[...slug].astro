@@ -1,0 +1,28 @@
+---
+import Layout from "@/components/Layout.astro"
+import PostContent from "@/components/PostContent.astro"
+import TableOfContents from "@/components/TableOfContents.astro"
+
+import { posts } from "@/utils/content"
+
+import type { GetStaticPaths } from "astro"
+
+export const getStaticPaths = (() => posts.map((post) => ({
+  params: { slug: post.id },
+  props: { post },
+}))) satisfies GetStaticPaths
+
+const { post } = Astro.props
+---
+
+<Layout title={post.data.title}>
+  <!-- Content -->
+  <PostContent post={post} />
+
+  <!-- Table of contents -->
+  <TableOfContents
+    slot="aside-prefix"
+    post={post}
+    class="hidden lg:block"
+  />
+</Layout>

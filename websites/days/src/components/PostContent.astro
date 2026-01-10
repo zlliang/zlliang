@@ -19,8 +19,8 @@ const { Content } = await render(post)
   <PageTitle>
     <Fragment>{post.data.title}</Fragment>
     <Fragment slot="subtitle">
-      <span>{format(post.data.created, "PP")}</span>
-      {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
+      <span>{format(post.data.created, "yyyy 年 M 月 d 日")}</span>
+      {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">草稿</span>}
     </Fragment>
   </PageTitle>
 

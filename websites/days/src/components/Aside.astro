@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets"
+
+import Section from "@/components/Section.astro"
+import Link from "@/components/Link.astro"
+import PostList from "@/components/PostList.astro"
+
+import { notes, tags, posts } from "@/utils/content"
+
+import { cn } from "@/utils/style"
+
+import logoTech from "@/assets/images/logo-tech.png"
+
+interface Props {
+  showRecentPosts?: boolean
+  class?: string
+}
+
+const { showRecentPosts = true, class: className } = Astro.props
+const recentPosts = posts.slice(0, 10)
+---
+
+<aside class={cn("space-y-6", className)}>
+  <!-- Prefix -->
+  <slot name="prefix" />
+
+  <!-- Recent posts -->
+  {showRecentPosts && recentPosts.length > 0 && (
+    <Section title="近期文章">
+      <PostList posts={recentPosts} />
+    </Section>
+  )}
+
+  <!-- Archive -->
+  <Section title="全部内容">
+    <div class="flex justify-between items-center mb-1">
+      <Link href="/notes"><span class="icon-[lucide--notebook-pen]" /> 手记</Link>
+      <span class="text-sm text-neutral-500">{notes.length} 则</span>
+    </div>
+    <div class="flex justify-between items-center mb-1">
+      <span><span class="mr-2 font-mono text-neutral-500">└</span><Link href="/notes/tags"><span class="icon-[lucide--tag]" /> 标签</Link></span>
+      <span class="text-sm text-neutral-500">{tags.length} 个</span>
+    </div>
+    <div class="flex justify-between items-center">
+      <Link href="/posts"><span class="icon-[lucide--book-open-text]" /> 文章</Link>
+      <span class="text-sm text-neutral-500">{posts.length} 篇</span>
+    </div>
+  </Section>
+
+  <!-- My other websites -->
+  <Section title="我的其他网站">
+    <Link href="https://tech.zlliang.me" external={false} class="secondary flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950 hover:text-blue-500!">
+      <Image src={logoTech} alt="tech.zlliang.me 的图标" class="size-8" loading="eager" />
+      <div class="flex-1">
+        <div class="font-bold">子龙的技术博客</div>
+        <div class="text-sm opacity-60">tech.zlliang.me</div>
+        <div class="mt-2 text-sm">英语博客，记录我的技术笔记和文章</div>
+      </div>
+    </Link>
+  </Section>
+
+  <!-- Suffix -->
+  <slot name="suffix" />
+</aside>

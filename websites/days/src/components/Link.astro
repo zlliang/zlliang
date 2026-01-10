@@ -1,0 +1,18 @@
+---
+import { cn } from "@/utils/style"
+
+interface Props {
+  href?: string
+  external?: boolean
+  class?: string
+}
+
+const { href, class: className } = Astro.props
+const external = Astro.props.external ?? (href?.startsWith("http") || href?.startsWith("//"))
+---
+
+<a
+  href={href}
+  class={cn(className)}
+  {...(external ? { target: "_blank", rel: "noopener" } : {})}
+><slot /></a>

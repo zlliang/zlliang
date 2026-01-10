@@ -1,0 +1,31 @@
+---
+import { render } from "astro:content"
+
+import Section from "@/components/Section.astro"
+import Link from "@/components/Link.astro"
+
+import { cn } from "@/utils/style"
+
+import type { CollectionEntry } from "astro:content"
+
+interface Props {
+  post: CollectionEntry<"posts">
+  class?: string
+}
+
+const { post, class: className } = Astro.props
+const { headings } = await render(post)
+const filteredHeadings = headings.filter((h) => h.depth <= 3)
+---
+
+{filteredHeadings.length > 0 && (
+  <Section title="目录" class={cn(className)}>
+    <ul class="pl-0! list-none! text-sm">
+      {filteredHeadings.map((heading) => (
+        <li class={cn(heading.depth === 3 && "pl-4")}>
+          <Link href={`#${heading.slug}`} class="secondary">{heading.text}</Link>
+        </li>
+      ))}
+    </ul>
+  </Section>
+)}

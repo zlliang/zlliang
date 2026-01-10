@@ -1,0 +1,38 @@
+---
+import { format } from "date-fns"
+
+import Section from "@/components/Section.astro"
+import NoteItem from "@/components/NoteItem.astro"
+import Pagination from "@/components/Pagination.astro"
+
+import { groupNotesByDate } from "@/utils/content"
+import { cn } from "@/utils/style"
+
+import type { Page } from "astro"
+import type { CollectionEntry } from "astro:content"
+
+interface Props {
+  notes: CollectionEntry<"notes">[]
+  page?: Page
+}
+
+const { notes, page } = Astro.props
+const grouped = await groupNotesByDate(notes)
+---
+
+<div class="space-y-6">
+  {grouped.map(({ date, notes }) => (
+    <Section title={format(date, "yyyy 年 M 月 d 日")}>
+      {notes.map((note, index) => (
+        <div class={cn(index !== notes.length - 1 && "mb-6 pb-6 border-b-2 border-neutral-200 dark:border-neutral-800")}>
+          <NoteItem note={note} />
+        </div>
+      ))}
+    </Section>
+  ))}
+  {Boolean(page) && (
+    <div class="pt-6 border-t-2 border-neutral-200 dark:border-neutral-800">
+      <Pagination {...page!} />
+    </div>
+  )}
+</div>

@@ -1,0 +1,30 @@
+---
+import Layout from "@/components/Layout.astro"
+import PageTitle from "@/components/PageTitle.astro"
+import NoteList from "@/components/NoteList.astro"
+
+import { notes, tags } from "@/utils/content"
+import { NOTES_PER_PAGE } from "@/utils/site"
+
+import type { GetStaticPaths } from "astro"
+
+export const getStaticPaths = (({ paginate }) => tags.flatMap((tag) => {
+  const filteredNotes = notes.filter((note) => note.data.tags?.some((t) => t.slug === tag.slug))
+  return paginate(filteredNotes, { params: { tag: tag.slug }, props: { tag }, pageSize: NOTES_PER_PAGE })
+})) satisfies GetStaticPaths
+
+const { tag, page } = Astro.props
+
+const title = `关于"${tag.display}"的手记`
+---
+
+<Layout title={title}>
+  <!-- Title -->
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <Fragment slot="subtitle">共 {page.total} 则手记</Fragment>
+  </PageTitle>
+
+  <!-- Notes -->
+  {page.data.length > 0 ? <NoteList notes={page.data} page={page} /> : <p class="text-neutral-500">没有找到手记。</p>}
+</Layout>
