@@ -12,4 +12,4 @@ Here are personal websites:
 |---------|-----|-------------|
 | **www** | [zlliang.me](https://zlliang.me) | Personal index |
 | **tech** | [tech.zlliang.me](https://tech.zlliang.me) | Tech notes and posts (English) |
-| **days** | [days.zlliang.me](https://days.zlliang.me) | Life reflections (Chinese) |
+| **days** | [days.zlliang.me](https://days.zlliang.me) | Daily life and reflections (Chinese) |
