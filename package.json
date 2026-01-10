@@ -1,5 +1,5 @@
 {
-  "name": "zlliang-sites",
+  "name": "zlliang-websites",
   "version": "0.0.0",
   "private": true,
   "workspaces": ["websites/*"],
