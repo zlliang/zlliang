@@ -14,7 +14,7 @@ export default defineConfig({
     },
   }),
   i18n: {
-    locales: ["en", "zh"],
+    locales: ["en", { "path": "zh", "codes": ["zh", "zh-Hans", "zh-CN"] }],
     defaultLocale: "en",
     routing: {
       prefixDefaultLocale: true,
