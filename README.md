@@ -6,7 +6,7 @@ Beyond code, I cherish life's simple pleasures: good food, cooking, reading, wri
 
 ## Websites
 
-This monorepo contains my personal websites:
+Here are personal websites:
 
 | Website | URL | Description |
 |---------|-----|-------------|
