@@ -3,26 +3,29 @@ import Layout from "@/components/Layout.astro"
 import PageTitle from "@/components/PageTitle.astro"
 import NoteList from "@/components/NoteList.astro"
 
-import { notes } from "@/utils/content"
+import { notes, categories, getCategoryDisplay } from "@/utils/content"
 import { NOTES_PER_PAGE } from "@/utils/site"
 
 import type { GetStaticPaths } from "astro"
 
-export const getStaticPaths = (({ paginate }) => paginate(notes, { pageSize: NOTES_PER_PAGE })) satisfies GetStaticPaths
+export const getStaticPaths = (({ paginate }) => categories.flatMap((category) => {
+  const filteredNotes = notes.filter((note) => note.data.category === category)
+  return paginate(filteredNotes, { params: { category }, pageSize: NOTES_PER_PAGE })
+})) satisfies GetStaticPaths
 
+const { category } = Astro.params
 const { page } = Astro.props
 
-const title = "手记"
+const title = `${getCategoryDisplay(category)}手记`
 ---
 
 <Layout title={title}>
   <!-- Title -->
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <span slot="subtitle">共 {notes.length} 则</span>
+    <Fragment slot="subtitle">共 {page.total} 则手记</Fragment>
   </PageTitle>
 
   <!-- Notes -->
   {page.data.length > 0 ? <NoteList notes={page.data} page={page} /> : <p class="text-neutral-500">暂无手记。</p>}
 </Layout>
-  

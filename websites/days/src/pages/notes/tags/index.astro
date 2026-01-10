@@ -24,5 +24,5 @@ function getTagCount(slug: string) {
     <div class="mb-1">
       <Link href={`/notes/tags/${tag.slug}`}>{tag.display} ({getTagCount(tag.slug)})</Link>
     </div>
-  )) : <p class="text-neutral-500">没有找到标签。</p>}
+  )) : <p class="text-neutral-500">暂无标签。</p>}
 </Layout>

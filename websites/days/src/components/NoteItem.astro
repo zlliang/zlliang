@@ -4,6 +4,8 @@ import { format } from "date-fns"
 
 import Link from "@/components/Link.astro"
 
+import { getCategoryDisplay } from "@/utils/content"
+
 import type { CollectionEntry } from "astro:content"
 
 interface Props {
@@ -25,9 +27,10 @@ const post = note.data.post ? await getEntry(note.data.post) : null
     <Content />
   </div>
 
-  <!-- Tags -->
+  <!-- Category and tags -->
   <div class="mb-1 text-xs text-neutral-500">
-    {note.data.tags?.map((tag, index) => <Fragment><Link href={`/notes/tags/${tag.slug}`}>{tag.display}</Link>{index !== note.data.tags!.length - 1 && <span>、</span>}</Fragment>)}
+    <Link href={`/notes/categories/${note.data.category}`} class="font-bold">{getCategoryDisplay(note.data.category)}</Link>{note.data.tags && note.data.tags.length > 0 && <span class="text-neutral-500">; </span>}
+    {note.data.tags?.map((tag, index) => <Fragment><Link href={`/notes/tags/${tag.slug}`}>{tag.display}</Link>{index !== note.data.tags!.length - 1 && <span>, </span>}</Fragment>)}
   </div>
 
   <!-- Link and date -->
