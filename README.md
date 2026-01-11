@@ -11,5 +11,5 @@ Here are personal websites:
 | Website | URL | Description |
 |---------|-----|-------------|
 | **www** | [zlliang.me](https://zlliang.me) | Personal index |
-| **tech** | [tech.zlliang.me](https://tech.zlliang.me) | Tech notes and posts (English) |
+| **tech** | [tech.zlliang.me](https://tech.zlliang.me) | Tech learning and research (English) |
 | **days** | [days.zlliang.me](https://days.zlliang.me) | Daily life and reflections (Chinese) |
