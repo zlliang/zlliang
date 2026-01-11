@@ -11,9 +11,10 @@ import logo from "@/assets/images/logo.png"
 
 interface Props {
   lang?: Locale
+  showMenu?: boolean
 }
 
-const { lang = "en" } = Astro.props
+const { lang = "en", showMenu = true } = Astro.props
 ---
 
 <header class="flex justify-between items-center h-16 mb-12">
@@ -23,7 +24,9 @@ const { lang = "en" } = Astro.props
       <strong>{t(lang, "site.title")}</strong>
     </Link>
   </div>
-  <div class="flex items-center gap-4">
-    {locales.map((l) => lang === l ? null : <Link href={`/${l}/`}><span class="icon-[lucide--languages]" /> {t(l, "desc")}</Link>)}
-  </div>
+  {showMenu && (
+    <div class="flex items-center gap-4">
+      {locales.map((l) => lang === l ? null : <Link href={`/${l}/`}><span class="icon-[lucide--languages]" /> {t(l, "desc")}</Link>)}
+    </div>
+  )}
 </header>
