@@ -6,7 +6,7 @@ Beyond code, I cherish life's simple pleasures: good food, cooking, reading, wri
 
 ## Websites
 
-Here are personal websites:
+Here are my personal websites:
 
 | Website | URL | Description |
 |---------|-----|-------------|
