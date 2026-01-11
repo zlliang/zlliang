@@ -2,52 +2,76 @@
 
 This document defines how AI assistants (e.g., ChatGPT, Codex, Amp) help me develop and write for my personal websites.
 
-## Monorepo structure
+## Websites in this repository
 
-This repository contains three Astro websites:
+This repository contains my personal websites:
 
 ```
 websites/
-├── www/    # zlliang.me – Personal index
+├── www/    # zlliang.me – Personal index (English and Chinese)
 ├── tech/   # tech.zlliang.me – Tech learning and research (English)
 └── days/   # days.zlliang.me – Daily life and reflections (Chinese)
 ```
 
-## Tech stack
+The websites are built with [Astro](https://astro.build/) and are deployed on [Vercel](https://vercel.com/).
 
-- **Framework:** [Astro](https://docs.astro.build/llms.txt)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Icons:** [Iconify](https://iconify.design/)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Runtime:** [Bun](https://bun.com/)
-- **Deployment:** [Vercel](https://vercel.com/)
+## Structure of the `www` website
 
-## Commands
-
-From the repository root:
-
-```bash
-bun install              # Install all dependencies
-
-bun run dev:www          # Start www dev server
-bun run dev:tech         # Start tech dev server
-bun run dev:days         # Start days dev server
-
-bun run build:www        # Build www for production
-bun run build:tech       # Build tech for production
-bun run build:days       # Build days for production
+```
+websites/www/
+├── src/
+│   ├── assets/        # Static assets (images, etc.)
+│   ├── components/    # Astro components (.astro)
+│   ├── pages/         # File-based routing
+│   ├── styles/        # Global CSS
+│   └── utils/         # Helper functions
+└── content/
+    └── fragments/     # Reusable content fragments with i18n (bio-en.md, bio-zh.md)
 ```
 
-## Conventions
+## Structure of the `tech` and `days` websites
 
-- **Path alias:** Use `@/*` for `src/*` imports within each site
-- **Components:** PascalCase `.astro` files
-- **Content:** Organized by `[year]/[month]/[day]/[slug].md`
-- **Styling:** Tailwind utilities; global styles in `src/styles/main.css`
-- **Code themes:** `github-light-default` / `github-dark-default` ([Shiki](https://shiki.style/))
-- **Git commits**: Follow [Conventional Commits](https://www.conventionalcommits.org/); for notes and posts, use `docs:` type with the title in the message
+Currently the `tech` and `days` websites share a similar structure:
 
-## Development guidelines
+```
+websites/[tech|days]/
+├── src/
+│   ├── components/    # Astro components (.astro)
+│   ├── pages/         # File-based routing
+│   ├── styles/        # Global CSS (main.css)
+│   └── utils/         # Helper functions
+├── content/
+│   ├── notes/         # Short-form notes ([year]/[month]/[day]/[slug].md)
+│   ├── posts/         # Long-form posts ([year]/[month]/[day]/[slug].md)
+└── scripts/           # CLI scripts
+```
 
-- Check existing components before creating new ones
-- Follow Astro patterns for data fetching (`getCollection`, `getEntry`)
+## Content schema
+
+Notes use frontmatter with these fields:
+
+```yaml
+no: 1               # Required, unique note number (auto-incremented)
+title: ...          # Optional
+created: YYYY-MM-DD # Required
+category: regular   # Required
+post: ...           # Optional, refers to a post
+tags: []            # Optional, sorted alphabetically
+draft: true         # Remove this field to publish
+```
+
+Posts use frontmatter with these fields:
+
+```yaml
+title: ...          # Required
+created: YYYY-MM-DD # Required
+draft: true         # Remove this field to publish
+```
+
+## Skills
+
+This repository provides several skills for specialized tasks. Load the appropriate skill when working on related tasks:
+
+- **developing:** For building features, fixing bugs, or running dev/build commands for any of the websites
+- **content-authoring:** For creating, drafting, editing, or publishing notes and posts on `tech` or `days`
+- **english-writing:** For reviewing and improving English prose, fixing grammar, or refining writing style
