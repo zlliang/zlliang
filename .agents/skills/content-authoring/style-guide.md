@@ -1,6 +1,17 @@
 # Content Style Guide
 
-A formatting reference for blog posts and notes.
+A formatting reference for blog notes and posts.
+
+## Glossary
+
+Here are clarifications for the shared terms:
+
+| Term | Definition | English | Chinese | Chinese quantifier |
+|------|------------|---------|---------|--------------------|
+| note | Short-form notes | note | 手记 | 则 |
+| post | Long-form posts | post | 文章 | 篇 |
+| category | Note category | category | 分类 | 个 |
+| tag | Note topic | tag | 标签 | 个 |
 
 ## Titles and headings
 
@@ -15,7 +26,10 @@ A formatting reference for blog posts and notes.
 
 ## Note categories
 
-Notes are categorized by a `category` field in frontmatter. Available values: `regular`, `link`, `quote`, `til`, `post`.
+Notes are categorized by a `category` field in frontmatter.
+
+- Available values for the `tech` website: `regular`, `link`, `quote`, `til`, `post`
+- Available values for the `days` website: `regular`, `quote`, `post`
 
 | Category | Description | Content format |
 |----------|-------------|----------------|
@@ -88,6 +102,7 @@ Tags are taxonomic nouns used to categorize content.
 
 ## Misc
 
-- Write dates as `YYYY-MM-DD` in frontmatter; "Dec 18, 2025" in prose
+- Write dates as `YYYY-MM-DD` in frontmatter; "Dec 18, 2025" in English prose and "2025 年 12 月 18 日" in Chinese prose
+- Insert spaces between English words and CJK characters
 - Avoid abbreviations on first use; introduce with full term
 - Keep paragraphs short (3–5 sentences max)
