@@ -8,9 +8,9 @@ This repository contains my personal websites:
 
 ```
 websites/
-├── www/    # zlliang.me – Personal index (English and Chinese)
-├── tech/   # tech.zlliang.me – Tech learning and research (English)
-└── days/   # days.zlliang.me – Daily life and reflections (Chinese)
+├── www/  # zlliang.me – Personal index (English and Chinese)
+├── tech/ # tech.zlliang.me – Tech learning and research (English)
+└── days/ # days.zlliang.me – Daily life and reflections (Chinese)
 ```
 
 The websites are built with [Astro](https://astro.build/) and are deployed on [Vercel](https://vercel.com/).
@@ -20,13 +20,13 @@ The websites are built with [Astro](https://astro.build/) and are deployed on [V
 ```
 websites/www/
 ├── src/
-│   ├── assets/        # Static assets (images, etc.)
-│   ├── components/    # Astro components (.astro)
-│   ├── pages/         # File-based routing
-│   ├── styles/        # Global CSS
-│   └── utils/         # Helper functions
+│   ├── assets/     # Static assets (images, etc.)
+│   ├── components/ # Astro components (.astro)
+│   ├── pages/      # File-based routing
+│   ├── styles/     # Global CSS
+│   └── utils/      # Helper functions
 └── content/
-    └── fragments/     # Reusable content fragments with i18n (bio-en.md, bio-zh.md)
+    └── fragments/  # Reusable content fragments with i18n (bio-en.md, bio-zh.md)
 ```
 
 ## Structure of the `tech` and `days` websites
@@ -36,14 +36,14 @@ Currently the `tech` and `days` websites share a similar structure:
 ```
 websites/[tech|days]/
 ├── src/
-│   ├── components/    # Astro components (.astro)
-│   ├── pages/         # File-based routing
-│   ├── styles/        # Global CSS (main.css)
-│   └── utils/         # Helper functions
+│   ├── components/   # Astro components (.astro)
+│   ├── pages/        # File-based routing
+│   ├── styles/       # Global CSS (main.css)
+│   └── utils/        # Helper functions
 ├── content/
-│   ├── notes/         # Short-form notes ([year]/[month]/[day]/[slug].md)
-│   ├── posts/         # Long-form posts ([year]/[month]/[day]/[slug].md)
-└── scripts/           # CLI scripts
+│   ├── notes/        # Short-form notes ([year]/[month]/[day]/[slug].md)
+│   ├── posts/        # Long-form posts ([year]/[month]/[day]/[slug].md)
+└── scripts/          # CLI scripts
 ```
 
 ## Content schema
