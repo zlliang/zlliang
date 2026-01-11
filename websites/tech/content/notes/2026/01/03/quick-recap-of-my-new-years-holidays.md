@@ -3,7 +3,7 @@ no: 16
 title: Quick recap of my New Year's break
 created: 2026-01-03
 category: regular
-tags: [David Perell, life, Paul Graham, writing, travel]
+tags: [David Perell, Paul Graham, writing]
 ---
 
 Happy New Year! Here's a quick recap of my New Year's break:
