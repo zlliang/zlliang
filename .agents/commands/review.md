@@ -1,7 +1,7 @@
-Review this draft in terms of:
+Review this draft for:
 
-1. Grammar and writing style
-2. Awkward or unnatural expressions
-3. The topic and overall content
+1. Grammar and writing style issues
+2. Awkward or unnatural phrasing
+3. Topic clarity and overall content structure
 
-Reply in the draft’s language.
+Load the `content-authoring` skill. Also load `english-writing` if the draft is in English. Respond in the draft's language.

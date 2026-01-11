@@ -60,7 +60,7 @@ Avoid:
 - **Marketing tone:** "This amazing feature will revolutionize..." → "This feature simplifies..."
 - **Hedging too much:** Be direct; if uncertain, say so plainly
 
-For detailed style guide, consult the `content-authoring` skill.
+For detailed style guide, use the `content-authoring` skill.
 
 ## Code & technical terminology
 
