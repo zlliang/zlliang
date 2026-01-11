@@ -9,7 +9,7 @@ This repository contains three Astro websites:
 ```
 websites/
 ├── www/    # zlliang.me – Personal index
-├── tech/   # tech.zlliang.me – Tech notes and posts (English)
+├── tech/   # tech.zlliang.me – Tech learning and research (English)
 └── days/   # days.zlliang.me – Daily life and reflections (Chinese)
 ```
 
