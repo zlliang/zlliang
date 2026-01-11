@@ -1,5 +1,5 @@
 ---
-title: Starting a Tech Blog at the End of 2025
+title: Starting a Blog at the End of 2025
 created: 2025-12-25
 ---
 
@@ -9,11 +9,11 @@ created: 2025-12-25
 
 </div>
 
-Happy holidays! At the end of 2025, I'm starting a tech blog. I've already written several entries and feel confident I can keep it going. Here are my thoughts on the journey I'm about to start.
+Happy holidays! At the end of 2025, I'm starting a blog. I've already written several entries and feel confident I can keep it going. Here are my thoughts on the journey I'm about to start.
 
 ## A thousand attempts
 
-Actually, this is not the first time I've tried to start a tech blog. I used to have a writing habit in high school and in college, keeping a diary in Chinese. Since 2020, I've been writing less and less, though. Those diaries are now archived in [Notion](https://www.notion.com/).
+Actually, this is not the first time I've tried to start a blog. I used to have a writing habit in high school and in college, keeping a diary in Chinese. Since 2020, I've been writing less and less, though. Those diaries are now archived in [Notion](https://www.notion.com/).
 
 I registered several domains, built my website several times, trying to start blogging. During the last ten years, I've tried a lot of tech stacks, starting with the ancient [Hexo](https://hexo.io/), then [VuePress](https://vuepress.vuejs.org/), [Next.js](https://nextjs.org), and [VitePress](https://vitepress.dev/). I learned a lot of web technologies on this journey, and it even helped me find my first job as a frontend developer at [Tencent](https://www.tencent.com/).
 
