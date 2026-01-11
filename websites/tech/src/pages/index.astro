@@ -11,7 +11,7 @@ const filteredNotes = notes.slice(0, NOTES_PER_PAGE)
 
 <Layout>
   <!-- Notes -->
-  <NoteList notes={filteredNotes} />
+  {notes.length > 0 ? <NoteList notes={filteredNotes} /> : <p class="text-neutral-500">No notes found.</p>}
   {notes.length > NOTES_PER_PAGE && (
     <div class="flex justify-end mt-6 pt-6 border-t-2 border-neutral-200 dark:border-neutral-800 text-sm">
       <Link href="/notes/2">More notes ({notes.length} in total) <span class="icon-[lucide--arrow-right] translate-y-px" /></Link>
