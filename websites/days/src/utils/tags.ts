@@ -1,8 +1,11 @@
-/** Get the slug of a tag */
-export function getTagSlug(tag: string) {
+/** Get the display name of a tag */
+export function getTagDisplay(tag: string) {
   return registry[tag] ?? tag
 }
 
 const registry: Record<string, string> = {
-  "示例": "demo",
+  "demo": "示例",
+  "watching": "观影",
+  "japanese-drama": "日剧",
+  "coffee": "咖啡",
 }

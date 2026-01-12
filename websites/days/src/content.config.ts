@@ -1,7 +1,7 @@
 import { defineCollection, reference, z } from "astro:content"
 import { glob } from "astro/loaders"
 
-import { getTagSlug } from "@/utils/tags"
+import { getTagDisplay } from "@/utils/tags"
 
 export const categories = ["regular", "quote", "post"] as const
 
@@ -15,7 +15,7 @@ const notes = defineCollection({
     post: reference("posts").optional(),
     tags: z.array(z.string().min(1)).optional()
       .transform((tags) => tags
-        ?.map((tag) => ({ display: tag, slug: getTagSlug(tag) }))
+        ?.map((tag) => ({ display: getTagDisplay(tag), slug: tag }))
         .toSorted((a, b) => a.slug.localeCompare(b.slug))
       ),
     draft: z.boolean().default(false),
