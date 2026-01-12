@@ -14,7 +14,8 @@
     "build:www": "bun run --cwd websites/www build",
     "build:tech": "bun run --cwd websites/tech build",
     "build:days": "bun run --cwd websites/days build",
-    "dev": "bun --filter '*' dev",
-    "build": "bun --filter '*' build"
+    "dev": "bun run --filter '*' dev",
+    "build": "bun run --filter '*' build",
+    "up": "bun update --filter '*'"
   }
 }
