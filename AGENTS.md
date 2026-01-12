@@ -8,7 +8,7 @@ This repository contains my personal websites:
 
 ```
 websites/
-├── www/  # zlliang.me – Personal index (English and Chinese)
+├── www/  # zlliang.me – Personal landing page (English and Chinese)
 ├── tech/ # tech.zlliang.me – Tech learning and research (English)
 └── days/ # days.zlliang.me – Daily life and reflections (Chinese)
 ```
