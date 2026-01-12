@@ -20,7 +20,7 @@ This repository contains three Astro websites:
 
 ```
 websites/
-├── www/    # zlliang.me – Personal index (English and Chinese, with [Astro's i18n support](https://docs.astro.build/guides/internationalization/))
+├── www/    # zlliang.me – Personal landing page (English and Chinese, with [Astro's i18n support](https://docs.astro.build/guides/internationalization/))
 ├── tech/   # tech.zlliang.me – Tech learning and research (English)
 └── days/   # days.zlliang.me – Daily life and reflections (Chinese)
 ```
