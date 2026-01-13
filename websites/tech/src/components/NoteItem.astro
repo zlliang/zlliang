@@ -36,7 +36,7 @@ const post = note.data.post ? await getEntry(note.data.post) : null
   <!-- Link and date -->
   <div class="flex justify-between items-center gap-2">
     <div class="flex items-center text-sm text-neutral-500">
-      {showLink ? <Link href={`/notes/${note.id}`} class="font-mono">#TECH{note.data.no}</Link> : <span class="font-mono">#TECH{note.data.no}</span>}
+      {showLink ? <Link href={`/notes/${note.id}`} class="font-mono">#tech{note.data.no}</Link> : <span class="font-mono">#tech{note.data.no}</span>}
       <span class="icon-[lucide--dot]" />
       <span>{format(note.data.created, "PP")}</span>
       {note.data.draft && <span class="ml-2 text-amber-600 dark:text-amber-400">Draft</span>}

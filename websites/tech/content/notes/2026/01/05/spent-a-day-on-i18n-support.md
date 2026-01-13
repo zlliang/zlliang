@@ -6,7 +6,7 @@ category: regular
 tags: [blogging]
 ---
 
-Today I spent a day trying to add i18n support to the website. I brainstormed ideas and documented them in [a GitHub issue](https://github.com/zlliang/zlliang/issues/71). I also tried to design and implement a translation key system and a new routing system, and wrote a lot of code.
+Today I spent a day trying to add i18n support to the website. I brainstormed ideas and documented them in a [GitHub issue](https://github.com/zlliang/zlliang/issues/71). I also tried to design and implement a translation key system and a new routing system, and wrote a lot of code.
 
 In the end, I realized it makes both the site and my writing workflow more complicated than I'd like. Direct i18n support doesn't feel like the right move right now — it adds friction and mental overhead, and I want to be able to just start writing when an idea comes up.
 

@@ -36,7 +36,7 @@ const post = note.data.post ? await getEntry(note.data.post) : null
   <!-- Link and date -->
   <div class="flex justify-between items-center gap-2">
     <div class="flex items-center text-sm text-neutral-500">
-      {showLink ? <Link href={`/notes/${note.id}`} class="font-mono">#DAYS{note.data.no}</Link> : <span class="font-mono">#DAYS{note.data.no}</span>}
+      {showLink ? <Link href={`/notes/${note.id}`} class="font-mono">#days{note.data.no}</Link> : <span class="font-mono">#days{note.data.no}</span>}
       <span class="icon-[lucide--dot]" />
       <span>{format(note.data.created, "yyyy 年 M 月 d 日")}</span>
       {note.data.draft && <span class="ml-2 text-amber-600 dark:text-amber-400">草稿</span>}
