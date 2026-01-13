@@ -4,8 +4,10 @@ export function getTagDisplay(tag: string) {
 }
 
 const registry: Record<string, string> = {
-  "demo": "示例",
-  "watching": "观影",
-  "japanese-drama": "日剧",
   "coffee": "咖啡",
+  "demo": "示例",
+  "gaming": "游戏",
+  "japanese-drama": "日剧",
+  "watching": "观影",
+  "writing": "写作",
 }
