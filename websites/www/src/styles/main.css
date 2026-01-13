@@ -117,6 +117,10 @@ ol ol ol, ul ol ol, ol ul ol, ul ul ol {
   @apply mb-0 list-[lower-alpha];
 }
 
+ul.contains-task-list {
+  @apply pl-3 list-none;
+}
+
 hr {
   @apply relative my-6 h-auto border-neutral-200 dark:border-neutral-800 overflow-visible;
 }
