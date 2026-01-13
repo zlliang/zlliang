@@ -22,7 +22,7 @@ function getCategoryCount(slug: string) {
   <!-- Categories -->
   {categories?.length > 0 ? categories.map((category) => (
     <div class="mb-1">
-      <Link href={`/notes/categories/${category}`}>{getCategoryDisplay(category)}（{getCategoryCount(category)}）</Link>
+      <Link href={`/notes/categories/${category}`}>{getCategoryDisplay(category)} ({getCategoryCount(category)})</Link>
     </div>
   )) : <p class="text-neutral-500">暂无分类。</p>}
 </Layout>
