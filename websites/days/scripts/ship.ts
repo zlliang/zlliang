@@ -75,7 +75,7 @@ async function shipDraft(filename: string) {
   const content = await fs.readFile(draftPath, "utf-8")
   const { frontmatter, body } = parseFrontmatter(content)
 
-  const title = frontmatter.title || "Untitled"
+  const title = frontmatter.title || "无标题"
 
   const now = new Date()
   const date = format(now, "yyyy-MM-dd")

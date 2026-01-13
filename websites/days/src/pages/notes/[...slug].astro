@@ -37,7 +37,7 @@ const title = [note.data.title || post?.data.title, `手记 #${note.data.no}`].f
       {next && (
         <div class={cn("col-start-1 pr-4 text-neutral-500", !previous && "border-r border-neutral-200 dark:border-neutral-800")} >
           <div class="text-sm mb-0.5">下一则</div>
-          <Link href={`/notes/${next.id}`} class="block mb-0.5">{next.data.title || "Untitled note"}</Link>
+          <Link href={`/notes/${next.id}`} class="block mb-0.5">{next.data.title || "无题手记"}</Link>
           <div class="text-sm">
             <span>{format(next.data.created, "yyyy 年 M 月 d 日")}</span><span class="icon-[lucide--dot]" /><span class="font-mono">#days{next.data.no}</span>
           </div>
@@ -46,7 +46,7 @@ const title = [note.data.title || post?.data.title, `手记 #${note.data.no}`].f
       {previous && (
         <div class="col-start-2 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-right text-neutral-500">
           <div class="text-sm mb-0.5">上一则</div>
-          <Link href={`/notes/${previous.id}`} class="block mb-0.5">{previous.data.title || "Untitled note"}</Link>
+          <Link href={`/notes/${previous.id}`} class="block mb-0.5">{previous.data.title || "无题手记"}</Link>
           <div class="text-sm">
             <span class="font-mono">#days{previous.data.no}</span><span class="icon-[lucide--dot]" /><span>{format(previous.data.created, "yyyy 年 M 月 d 日")}</span>
           </div>
