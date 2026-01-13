@@ -5,7 +5,9 @@ created: 2025-12-25
 
 <div class="card">
 
-**Update Dec 28, 2025:** Added descriptions for the "quote" category of notes.
+**Update Jan 11, 2026:** I splitted this into separate websites for tech and personal writing. The tech blog now lives at https://tech.zlliang.me. I revised this post accordingly, and wrote about the change: [_Splitting My Websites for Tech and Personal Writing_](/posts/drafts/splitting-my-websites-for-tech-and-personal-writing).
+
+**Update Dec 28, 2025:** I added descriptions for the "quote" category of notes.
 
 </div>
 
@@ -109,7 +111,7 @@ After several years of working as a professional software developer, I've become
 
 So here I am, starting this blog as my public thinking space. I've already written several short-form notes, beginning with the [first note](/notes/2025/12/18/berkeley-mono) about my observations of a monospaced typeface called Berkeley Mono. I'm looking forward to seeing hundreds of notes and posts dropped here in a year or two, forming a small library of my own — an archive of my thoughts and ideas.
 
-The topics I'll cover may vary. Generally I'll start with technical learnings and observations, and gradually expand into personal growth and life reflections. The following themes are currently in my mind:
+The topics I'll cover may vary, starting with my technical learning and research. The following themes are currently in my mind:
 
 - Trends and developments in fields like AI, web development, and systems programming
 - Programming languages, tools, and news in communities I'm interested in, including but not limited to JavaScript/TypeScript, Python, Rust, Zig, and C
@@ -119,7 +121,7 @@ The topics I'll cover may vary. Generally I'll start with technical learnings an
 
 Currently, there are two types of content on this blog:
 
-- **Notes:** Short-form entries, typically written and published within a day. They are the main focus of this blog, flowing through the timeline. As of now, [four categories](/notes/categories) of notes are here:
+- **Notes:** Short-form entries, typically written and published within a day. They are the main focus of this blog, flowing through the timeline. As of now, [five categories](/notes/categories) of notes are here:
     - _Regular notes_ capture my scattered thoughts on relevant topics
     - _Link notes_ bookmark things I found on the internet and share my comments on them, inspired by Simon Willison's _blogmarks_
     - _Quote notes_ share quotes from books, articles, and other sources
