@@ -51,7 +51,7 @@ async function main() {
   
   const rawTitle = titleParts.join(" ").trim()
   const hasTitle = rawTitle.length > 0
-  const title = hasTitle ? rawTitle : "无标题"
+  const title = hasTitle ? rawTitle : "Untitled"
   const slug = slugify(title, { lower: true })
 
   const now = new Date()
