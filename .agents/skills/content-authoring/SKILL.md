@@ -25,12 +25,13 @@ bun run ship:tech                                      # Ship post on `tech`
 bun run ship:days                                      # Ship post on `days`
 ```
 
+## Style guide
+
+There's a detailed writing style guide in [style-guide.md](./style-guide.md). This guide is language-agnostic. Use it proactively when reviewing writing style.
+
 ## Workflow
 
 1. **Notes:** Create → write → remove `draft: true` → commit
 2. **Posts:** Create draft → write/polish → `bun run ship` → commit
 
-## References
-
-- For the style guide, see [style-guide.md](./style-guide.md)
-- For the detailed workflow, see [workflow.md](./workflow.md)
+For the detailed workflow, see [workflow.md](./workflow.md).
