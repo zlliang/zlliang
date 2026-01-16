@@ -11,4 +11,4 @@ tags: [watching, writing]
 
 为此我准备出门透透气。早上刷到一个关于如何写日记的视频[^1]，种草了村上春树的《[当我谈跑步时，我谈些什么](https://book.douban.com/subject/37021151/)》，准备买来看看。洗发水用光了，我也要去买。
 
-[^1]: 哔哩哔哩视频：[【中英+文稿】如何像村上春树一样写日记 | 日记不只是记录生活](https://b23.tv/A3lUEzS)
+[^1]: 哔哩哔哩视频：[【中英+文稿】如何像村上春树一样写日记 | 日记不只是记录生活](https://b23.tv/A3lUEzS)；YouTube 原视频：[How to Journal Like Haruki Murakami](https://www.youtube.com/watch?v=4yvhDLt-qfk)
