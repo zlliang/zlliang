@@ -3,17 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "new:tech": "pnpm --filter @zlliang/tech new",
-    "new:days": "pnpm --filter @zlliang/days new",
-    "ship:tech": "pnpm --filter @zlliang/tech ship",
-    "ship:days": "pnpm --filter @zlliang/days ship",
-    "dev:www": "pnpm --filter @zlliang/www dev",
-    "dev:tech": "pnpm --filter @zlliang/tech dev",
-    "dev:days": "pnpm --filter @zlliang/days dev",
-    "build:www": "pnpm --filter @zlliang/www build",
-    "build:tech": "pnpm --filter @zlliang/tech build",
-    "build:days": "pnpm --filter @zlliang/days build",
-    "dev": "pnpm -r dev",
-    "build": "pnpm -r build"
+    "www:dev": "pnpm --filter @zlliang/www dev",
+    "www:build": "pnpm --filter @zlliang/www build",
+    "tech:dev": "pnpm --filter @zlliang/tech dev",
+    "tech:build": "pnpm --filter @zlliang/tech build",
+    "tech:new": "pnpm --filter @zlliang/tech new",
+    "tech:ship": "pnpm --filter @zlliang/tech ship",
+    "days:dev": "pnpm --filter @zlliang/days dev",
+    "days:build": "pnpm --filter @zlliang/days build",
+    "days:new": "pnpm --filter @zlliang/days new",
+    "days:ship": "pnpm --filter @zlliang/days ship"
   }
 }
