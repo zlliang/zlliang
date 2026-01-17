@@ -1,6 +1,5 @@
-import fs from "node:fs/promises"
+import fs, { glob } from "node:fs/promises"
 import path from "node:path"
-import { glob } from "node:fs/promises"
 import { format } from "date-fns"
 import slugify from "slugify"
 import { stringify as stringifyYaml } from "yaml"

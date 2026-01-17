@@ -15,6 +15,7 @@ interface Frontmatter {
 
 const CONTENT_ROOT = path.join(process.cwd(), "content")
 const DRAFTS_DIR = path.join(CONTENT_ROOT, "posts", "drafts")
+const DRAFTS_IMAGES_DIR = path.join(DRAFTS_DIR, "images")
 const POSTS_DIR = path.join(CONTENT_ROOT, "posts")
 
 async function main() {
@@ -103,6 +104,8 @@ async function shipDraft(filename: string) {
   const notePath = await createNote(title, "post")
   await addPostReference(notePath, postRef)
 
+  await moveImages(postDir)
+
   await fs.unlink(draftPath)
   console.log(`Deleted draft: ${draftPath}`)
 }
@@ -150,6 +153,27 @@ async function createNote(title: string, category: string): Promise<string> {
       resolve(match[1].trim())
     })
   })
+}
+
+async function moveImages(postDir: string) {
+  try {
+    const entries = await fs.readdir(DRAFTS_IMAGES_DIR)
+    if (entries.length === 0) return
+
+    const targetImagesDir = path.join(postDir, "images")
+    await fs.mkdir(targetImagesDir, { recursive: true })
+
+    for (const entry of entries) {
+      const src = path.join(DRAFTS_IMAGES_DIR, entry)
+      const dest = path.join(targetImagesDir, entry)
+      await fs.rename(src, dest)
+    }
+
+    await fs.rmdir(DRAFTS_IMAGES_DIR)
+    console.log(`Moved images to: ${targetImagesDir}`)
+  } catch {
+    // No images folder or empty, skip silently
+  }
 }
 
 async function addPostReference(notePath: string, postRef: string) {
