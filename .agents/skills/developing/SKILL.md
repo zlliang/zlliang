@@ -11,7 +11,7 @@ description: Guides development of the Astro-based personal websites in this mon
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Icons:** [Iconify](https://iconify.design/)
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Runtime:** [Bun](https://bun.com/)
+- **Package manager:** [pnpm](https://pnpm.io/)
 - **Deployment:** [Vercel](https://vercel.com/)
 
 ## Monorepo structure
@@ -30,18 +30,18 @@ websites/
 From the repository root:
 
 ```bash
-bun install        # Install all dependencies
+pnpm install        # Install all dependencies
 
-bun run dev:www    # Start www dev server, on port 3001
-bun run dev:tech   # Start tech dev server, on port 3002
-bun run dev:days   # Start days dev server, on port 3003
+pnpm run dev:www    # Start www dev server, on port 3001
+pnpm run dev:tech   # Start tech dev server, on port 3002
+pnpm run dev:days   # Start days dev server, on port 3003
 
-bun run build:www  # Build www for production
-bun run build:tech # Build tech for production
-bun run build:days # Build days for production
+pnpm run build:www  # Build www for production
+pnpm run build:tech # Build tech for production
+pnpm run build:days # Build days for production
 
-bun run dev        # Start all dev servers concurrently
-bun run build      # Build all sites for production
+pnpm run dev        # Start all dev servers concurrently
+pnpm run build      # Build all sites for production
 ```
 
 ## Conventions

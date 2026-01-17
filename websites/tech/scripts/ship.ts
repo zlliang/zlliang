@@ -1,6 +1,7 @@
 import fs from "node:fs/promises"
 import path from "node:path"
 import readline from "node:readline"
+import { spawn } from "node:child_process"
 import { format } from "date-fns"
 import { parse as parseYaml, stringify as stringifyYaml } from "yaml"
 
@@ -122,28 +123,33 @@ function serializeFrontmatter(fm: Frontmatter): string {
 }
 
 async function createNote(title: string, category: string): Promise<string> {
-  const proc = Bun.spawn(["bun", "run", "new", "note", "--category", category, title], {
-    cwd: process.cwd(),
-    stdout: "pipe",
-    stderr: "inherit",
+  return new Promise((resolve) => {
+    const proc = spawn("pnpm", ["run", "new", "note", "--category", category, title], {
+      cwd: process.cwd(),
+      stdio: ["inherit", "pipe", "inherit"],
+    })
+
+    let output = ""
+    proc.stdout?.on("data", (data) => {
+      output += data.toString()
+    })
+
+    proc.on("close", (code) => {
+      if (code !== 0) {
+        console.error("Failed to create note")
+        process.exit(1)
+      }
+
+      const match = output.match(/Created note #\d+: (.+)/)
+      if (!match) {
+        console.error("Could not parse note path from output")
+        process.exit(1)
+      }
+
+      console.log(output.trim())
+      resolve(match[1].trim())
+    })
   })
-
-  const output = await new Response(proc.stdout).text()
-  await proc.exited
-
-  if (proc.exitCode !== 0) {
-    console.error("Failed to create note")
-    process.exit(1)
-  }
-
-  const match = output.match(/Created note #\d+: (.+)/)
-  if (!match) {
-    console.error("Could not parse note path from output")
-    process.exit(1)
-  }
-
-  console.log(output.trim())
-  return match[1].trim()
 }
 
 async function addPostReference(notePath: string, postRef: string) {
@@ -163,4 +169,4 @@ async function addPostReference(notePath: string, postRef: string) {
   await fs.writeFile(notePath, newContent, "utf-8")
 }
 
-await main()
+main()

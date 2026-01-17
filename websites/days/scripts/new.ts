@@ -1,5 +1,6 @@
 import fs from "node:fs/promises"
 import path from "node:path"
+import { glob } from "node:fs/promises"
 import { format } from "date-fns"
 import slugify from "slugify"
 import { stringify as stringifyYaml } from "yaml"
@@ -25,7 +26,7 @@ async function main() {
   const [typeArg, ...rest] = args
 
   if (typeArg !== "note" && typeArg !== "post") {
-    console.error("Usage: bun run new <note|post> [--category <category>] [title]")
+    console.error("Usage: pnpm run new <note|post> [--category <category>] [title]")
     process.exit(1)
   }
 
@@ -114,11 +115,9 @@ async function fileExists(p: string): Promise<boolean> {
 
 async function getNextNo(notesRoot: string): Promise<number> {
   let maxNo = 0
-  const glob = new Bun.Glob("**/*.md")
+  const pattern = path.join(notesRoot, "**/*.md")
 
-  for await (const relPath of glob.scan(notesRoot)) {
-    const fullPath = path.join(notesRoot, relPath)
-
+  for await (const fullPath of glob(pattern)) {
     let text: string
     try {
       text = await fs.readFile(fullPath, "utf-8")
@@ -142,4 +141,4 @@ async function getNextNo(notesRoot: string): Promise<number> {
   return maxNo + 1
 }
 
-await main()
+main()

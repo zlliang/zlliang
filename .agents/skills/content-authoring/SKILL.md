@@ -17,12 +17,12 @@ Currently the `tech` and `days` websites share a similar structure. Here are ins
 From the repository root:
 
 ```bash
-bun run new:tech note [--category <category>] [title]  # Create note on `tech`
-bun run new:days note [--category <category>] [title]  # Create note on `days`
-bun run new:tech post [title]                          # Create post draft on `tech`
-bun run new:days post [title]                          # Create post draft on `days`
-bun run ship:tech                                      # Ship post on `tech`
-bun run ship:days                                      # Ship post on `days`
+pnpm run new:tech note [--category <category>] [title]  # Create note on `tech`
+pnpm run new:days note [--category <category>] [title]  # Create note on `days`
+pnpm run new:tech post [title]                          # Create post draft on `tech`
+pnpm run new:days post [title]                          # Create post draft on `days`
+pnpm run ship:tech                                      # Ship post on `tech`
+pnpm run ship:days                                      # Ship post on `days`
 ```
 
 ## Style guide
@@ -32,6 +32,6 @@ There's a detailed writing style guide in [style-guide.md](./style-guide.md). Th
 ## Workflow
 
 1. **Notes:** Create → write → remove `draft: true` → commit
-2. **Posts:** Create draft → write/polish → `bun run ship` → commit
+2. **Posts:** Create draft → write/polish → `pnpm run ship` → commit
 
 For the detailed workflow, see [workflow.md](./workflow.md).
