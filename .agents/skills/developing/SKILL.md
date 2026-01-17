@@ -32,16 +32,13 @@ From the repository root:
 ```bash
 pnpm install        # Install all dependencies
 
-pnpm run dev:www    # Start www dev server, on port 3001
-pnpm run dev:tech   # Start tech dev server, on port 3002
-pnpm run dev:days   # Start days dev server, on port 3003
+pnpm run www:dev    # Start www dev server, on port 3001
+pnpm run tech:dev   # Start tech dev server, on port 3002
+pnpm run days:dev   # Start days dev server, on port 3003
 
-pnpm run build:www  # Build www for production
-pnpm run build:tech # Build tech for production
-pnpm run build:days # Build days for production
-
-pnpm run dev        # Start all dev servers concurrently
-pnpm run build      # Build all sites for production
+pnpm run www:build  # Build www for production
+pnpm run tech:build # Build tech for production
+pnpm run days:build # Build days for production
 ```
 
 ## Conventions

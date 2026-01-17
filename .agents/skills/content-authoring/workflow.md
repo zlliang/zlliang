@@ -7,8 +7,8 @@ There are notes and posts on the `tech` and `days` websites. I created some util
 Notes are short-form entries, typically written and published within a day.
 
 ```bash
-pnpm run new:tech note [--category <category>] [title] # Create a new note on the `tech` website from the project root
-pnpm run new:days note [--category <category>] [title] # Create a new note from the `days` website from the project root
+pnpm run tech:new note [--category <category>] [title] # Create a new note on the `tech` website from the project root
+pnpm run days:new note [--category <category>] [title] # Create a new note from the `days` website from the project root
 
 pnpm run new note [--category <category>] [title]      # From each website
 ```
@@ -24,8 +24,8 @@ Posts are long-form entries that take days to draft and polish.
 ### Create a draft
 
 ```bash
-pnpm run new:tech post [title] # Create a new post on the `tech` website from the project root
-pnpm run new:days post [title] # Create a new post from the `days` website from the project root
+pnpm run tech:new post [title] # Create a new post on the `tech` website from the project root
+pnpm run days:new post [title] # Create a new post from the `days` website from the project root
 
 pnpm run new post [title]      # From each website
 ```
@@ -35,8 +35,8 @@ pnpm run new post [title]      # From each website
 ### Ship the post
 
 ```bash
-pnpm run ship:tech # Ship a post on the `tech` website from the project root
-pnpm run ship:days # Ship a post on the `days` website from the project root
+pnpm run tech:ship # Ship a post on the `tech` website from the project root
+pnpm run days:ship # Ship a post on the `days` website from the project root
 
 pnpm run ship      # Ship a post from each website
 ```
