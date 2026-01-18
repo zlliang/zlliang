@@ -1,0 +1,130 @@
+---
+import type { Locale } from "@/utils/i18n"
+import type { Place } from "@/data/places"
+
+interface Props {
+  lang?: Locale
+  places: Place[]
+}
+
+const { lang = "en", places } = Astro.props
+---
+
+<div class="world-map-container" data-lang={lang} data-places={JSON.stringify(places)}>
+  <svg class="world-map"></svg>
+  <div class="map-tooltip"></div>
+</div>
+
+<script>
+  import * as d3 from "d3"
+  import * as topojson from "topojson-client"
+
+  document.querySelectorAll<HTMLDivElement>(".world-map-container").forEach((container) => {
+    const lang = container.dataset.lang
+    const places = JSON.parse(container.dataset.places || "[]")
+    const svg = d3.select(container).select<SVGSVGElement>(".world-map")
+    const tooltip = d3.select(container).select<HTMLDivElement>(".map-tooltip")
+    const tooltipEl = tooltip.node()!
+
+    let hideTimeout: ReturnType<typeof setTimeout> | null = null
+
+    const showTooltip = () => {
+      if (hideTimeout) clearTimeout(hideTimeout)
+      tooltip.style("opacity", "1")
+    }
+
+    const hideTooltip = () => {
+      hideTimeout = setTimeout(() => tooltip.style("opacity", "0"), 100)
+    }
+
+    tooltipEl.addEventListener("mouseenter", showTooltip)
+    tooltipEl.addEventListener("mouseleave", hideTooltip)
+
+    const width = 800
+    const height = 400
+
+    svg
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .attr("preserveAspectRatio", "xMidYMid meet")
+
+    const projection = d3.geoNaturalEarth1()
+      .scale(150)
+      .translate([width / 2, height / 2])
+
+    const path = d3.geoPath().projection(projection)
+
+    d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then((world: any) => {
+      const countries = topojson.feature(world, world.objects.countries) as any
+
+      svg.append("g")
+        .selectAll("path")
+        .data(countries.features)
+        .join("path")
+        .attr("d", path as any)
+        .attr("class", "country")
+
+      svg.append("g")
+        .selectAll("circle")
+        .data(places)
+        .join("circle")
+        .attr("cx", (d: any) => projection([d.lng, d.lat])![0])
+        .attr("cy", (d: any) => projection([d.lng, d.lat])![1])
+        .attr("r", 4)
+        .attr("class", "pin")
+        .on("mouseenter", (event: MouseEvent, d: any) => {
+          const name = lang === "zh" && d.nameZh ? d.nameZh : d.name
+          const visitsHtml = d.visits
+            .map((v: any) =>
+              v.link
+                ? `<a href="${v.link}" target="_blank" class="visit-link">${v.date}</a>`
+                : v.date
+            )
+            .join("<br/>")
+          tooltip
+            .html(`<strong>${name}</strong><br/>${visitsHtml}`)
+            .style("left", `${event.offsetX + 10}px`)
+            .style("top", `${event.offsetY - 10}px`)
+          showTooltip()
+        })
+        .on("mouseleave", hideTooltip)
+    })
+  })
+</script>
+
+<style>
+  @reference "../styles/main.css";
+
+  .world-map-container {
+    @apply relative w-full;
+  }
+
+  .world-map {
+    @apply w-full h-auto border border-neutral-200 dark:border-neutral-800;
+  }
+
+  :global(.country) {
+    @apply fill-neutral-100 dark:fill-neutral-800 stroke-neutral-300 dark:stroke-neutral-600;
+    stroke-width: 0.5;
+  }
+
+  :global(.pin) {
+    @apply fill-cyan-500 dark:fill-cyan-400 cursor-pointer;
+    transition: r 0.15s ease;
+  }
+
+  :global(.pin:hover) {
+    r: 6;
+  }
+
+  .map-tooltip {
+    @apply absolute px-2 py-1 text-xs bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 opacity-0 transition-opacity whitespace-nowrap z-10;
+  }
+
+  .map-tooltip:has(.visit-link) {
+    @apply pointer-events-auto;
+  }
+
+  :global(.visit-link) {
+    @apply text-cyan-600 dark:text-cyan-400 hover:underline;
+  }
+</style>
