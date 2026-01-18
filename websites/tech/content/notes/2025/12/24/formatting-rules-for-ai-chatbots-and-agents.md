@@ -28,12 +28,14 @@ Even worse, from my experience, outputs from different versions of the same mode
 
 To address this issue, and to unify output styles of different tools I'm using ([ChatGPT](https://chatgpt.com/) as my daily driver, [Gemini](https://gemini.google.com/) for work, and [Amp](https://ampcode.com) as my coding agent), I drafted a minimal formatting guide as follows:
 
+> The following formatting rules MUST BE FOLLOWED.
+> 
 > Shared formatting rules:
 > 
 > - Use consistent formatting within the same response
 > - Insert spaces between English words and CJK characters
 > - Always specify the language for syntax highlighting when using fenced code blocks
-> - Do not use horizontal dividers (`<hr />` or `---`) unless they add clear structural value, especially directly before headings
+> - Do not use horizontal dividers (`<hr />` or `---`) unless they add clear structural value, especially not directly before headings
 > - For list items, do not use a period at the end unless the item is a complete sentence
 > 
 > For chat responses:
@@ -47,6 +49,8 @@ To address this issue, and to unify output styles of different tools I'm using (
 > - Use "Title Case" for top-level headings (e.g. `h1`), typically only once in a document, and "Sentence case" for section headings (capitalize the first word only)
 > - Use heading levels sequentially (`h2`, then `h3`, etc), never skip levels
 
-I apply these rules to the custom instructions setting in ChatGPT and to [AGENTS.md](https://github.com/zlliang/dotfiles/blob/46b1c3a37e1fa60b5031208e4837f6d983b7ed99/.config/amp/AGENTS.md#writing-style) for my coding agent.
+I apply these rules to the custom instructions setting in ChatGPT and to [AGENTS.md](https://github.com/zlliang/dotfiles/blob/fa13ab1df5b8b4862edcfadc0e6512cdaef72173/.config/amp/AGENTS.md#writing-style) for my coding agent.
+
+**Update Jan 18, 2026:** Slightly revised the formatting rules for clarity. See this commit: [zlliang/dotfiles@fa13ab1](https://github.com/zlliang/dotfiles/commit/fa13ab1df5b8b4862edcfadc0e6512cdaef72173).
 
 ![Custom instructions setting in ChatGPT](./images/chatgpt-custom-instructions.png "Custom instructions setting in ChatGPT")
