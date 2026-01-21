@@ -140,7 +140,7 @@ img {
 }
 
 p > img {
-  @apply w-auto max-h-120;
+  @apply w-[attr(width_px,auto)] h-auto max-w-full max-h-120;
 }
 
 /* Codes */
