@@ -28,7 +28,7 @@ Here are clarifications for the shared terms:
 
 Notes are categorized by a `category` field in frontmatter.
 
-Available values for the `tech` website: `regular`, `link`, `quote`, `til`, `post`.
+Available values: `regular`, `link`, `quote`, `til`, `post`.
 
 | Category | Description | Content format |
 |----------|-------------|----------------|
@@ -36,14 +36,6 @@ Available values for the `tech` website: `regular`, `link`, `quote`, `til`, `pos
 | `link` | Link notes with commentary | Start with `[Link](url) ([via](url)). ...` (the source is optional) |
 | `quote` | Quoted sentences or paragraphs with source | Use blockquote `> ...` with source attribution; optional commentary |
 | `til` | Today I Learned entries | Start with `**TIL:** ...` |
-| `post` | Notes introducing a blog post | Introduce the corresponding post; set `post:` reference |
-
-Available values for the `days` website: `regular`, `quote`, `post`.
-
-| Category | Description | Content format |
-|----------|-------------|----------------|
-| `regular` | General notes, observations, thoughts | No convention |
-| `quote` | Quoted sentences or paragraphs with source | Use blockquote `> ...` with source attribution; optional commentary |
 | `post` | Notes introducing a blog post | Introduce the corresponding post; set `post:` reference |
 
 More categories may be added in the future.

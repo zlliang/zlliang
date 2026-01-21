@@ -3,7 +3,7 @@ import { glob } from "astro/loaders"
 
 import { getTagDisplay } from "@/utils/tags"
 
-export const categories = ["regular", "quote", "post"] as const
+export const categories = ["regular", "link", "quote", "til", "post"] as const
 
 const notes = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./content/notes" }),
