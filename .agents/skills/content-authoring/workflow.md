@@ -14,7 +14,7 @@ pnpm run new note [--category <category>] [title]      # From each website
 ```
 
 - Creates `notes/[year]/[month]/[day]/[slug].md` with `draft: true`
-- Supported categories: `regular` (default), `link` (only for `tech`), `quote`, `til` (only for `tech`), `post`
+- Supported categories: `regular` (default), `link` , `quote`, `til`, `post`
 - Write, review, then remove `draft: true` to publish
 
 ## Posts
