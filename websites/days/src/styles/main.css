@@ -247,6 +247,10 @@ span.caption {
   @apply sm:mb-4 sm:grid sm:grid-cols-2 sm:gap-4;
 }
 
+.image-grid.compact {
+  @apply grid-cols-3;
+}
+
 .image-grid p {
   @apply sm:mb-0;
 }

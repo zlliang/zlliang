@@ -35,7 +35,7 @@ Available values: `regular`, `link`, `quote`, `til`, `post`.
 | `regular` | General notes, observations, thoughts | No convention |
 | `link` | Link notes with commentary | Start with `[Link](url) ([via](url)). ...` (the source is optional) |
 | `quote` | Quoted sentences or paragraphs with source | Use blockquote `> ...` with source attribution; optional commentary |
-| `til` | Today I Learned entries | Start with `**TIL:** ...` |
+| `til` | Today I Learned entries | Start with `**TIL:** ...` for English notes |
 | `post` | Notes introducing a blog post | Introduce the corresponding post; set `post:` reference |
 
 More categories may be added in the future.
