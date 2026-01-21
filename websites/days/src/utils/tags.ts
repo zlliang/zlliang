@@ -12,6 +12,7 @@ const registry: Record<string, string> = {
   "gaming": "游戏",
   "home": "居家",
   "japanese-drama": "日剧",
+  "love": "感情",
   "watching": "观影",
   "writing": "写作",
 }
