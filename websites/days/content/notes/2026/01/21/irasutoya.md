@@ -22,7 +22,7 @@ tags: [design, assets]
 
 ![irasutoya 网站截图](./images/irasutoya-screenshot.png "irasutoya 的官方网站 https://irasutoya.com")
 
-irasutoya 是由日本插画师 Takashi Mifune（たかしみふね，汉字可以写作「三船隆」）创办的。从 2012 年创办以来，网站上已经收录了成千上万张插画，全部都由作者一人完成。直到今天，他还在源源不断地更新作品。
+irasutoya 是由日本插画师 Takashi Mifune（みふねたかし，汉字可以写作「三船隆」）创办的。从 2012 年创办以来，网站上已经收录了成千上万张插画，全部都由作者一人完成。直到今天，他还在源源不断地更新作品。
 
 人物、事件、生活、社会、建筑、动物，irasutoya 的插画覆盖了方方面面的话题，一共有上百种分类。每一个插图，网站都提供了透明背景的 PNG 版本。根据网站条款，所有素材都可以免费使用，包括 20 张以内的免费商用。
 
