@@ -25,6 +25,7 @@ export function getCategoryDisplay(category: NoteCategory) {
   return ({
     regular: "Regular",
     link: "Link",
+    collection: "Collection",
     quote: "Quote",
     til: "TIL (Today I Learned)",
     post: "Post",

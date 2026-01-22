@@ -2,7 +2,7 @@ import { defineCollection, reference, z } from "astro:content"
 import { glob } from "astro/loaders"
 import slugify from "slugify"
 
-export const categories = ["regular", "link", "quote", "til", "post"] as const
+export const categories = ["regular", "link", "collection", "quote", "til", "post"] as const
 
 const notes = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./content/notes" }),
