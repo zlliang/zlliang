@@ -40,10 +40,9 @@ websites/[tech|days]/
 │   ├── pages/        # File-based routing
 │   ├── styles/       # Global CSS (main.css)
 │   └── utils/        # Helper functions
-├── content/
-│   ├── notes/        # Short-form notes ([year]/[month]/[day]/[slug].md)
-│   ├── posts/        # Long-form posts ([year]/[month]/[day]/[slug].md)
-└── scripts/          # CLI scripts
+└── content/
+    ├── notes/        # Short-form notes ([year]/[month]/[day]/[slug].md)
+    └── posts/        # Long-form posts ([year]/[month]/[day]/[slug].md)
 ```
 
 ## Content schema

@@ -30,16 +30,13 @@ websites/
 From the repository root:
 
 ```bash
-pnpm install        # Install all dependencies
+pnpm install         # Install all dependencies
 
-pnpm run www:dev    # Start www dev server, on port 3001
-pnpm run tech:dev   # Start tech dev server, on port 3002
-pnpm run days:dev   # Start days dev server, on port 3003
-
-pnpm run www:build  # Build www for production
-pnpm run tech:build # Build tech for production
-pnpm run days:build # Build days for production
+pnpm dev <site>      # Start dev server (www: 3001, tech: 3002, days: 3003)
+pnpm build <site>    # Build for production
 ```
+
+Where `<site>` is one of: `www`, `tech`, `days`.
 
 ## Conventions
 

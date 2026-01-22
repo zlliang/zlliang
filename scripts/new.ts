@@ -1,32 +1,25 @@
 import fs, { glob } from "node:fs/promises"
 import path from "node:path"
-import { format } from "date-fns"
 import slugify from "slugify"
-import capitalize from "title"
-import { stringify as stringifyYaml } from "yaml"
+
+import { getSiteConfig, parseContentSiteArg } from "./config"
+import { fileExists, getDateParts, serializeFrontmatter } from "./utils"
+
+import type { Frontmatter } from "./utils"
 
 type EntryType = "note" | "post"
 
 type NoteCategory = "regular" | "link" | "collection" | "quote" | "til" | "post"
 
-interface Frontmatter {
-  no?: number
-  title?: string
-  created?: string
-  category?: NoteCategory
-  tags?: string[]
-  draft?: boolean
-  [key: string]: unknown
-}
-
-const CONTENT_ROOT = path.join(process.cwd(), "content")
-
 async function main() {
   const args = process.argv.slice(2)
-  const [typeArg, ...rest] = args
+  const { site, rest } = parseContentSiteArg(args, "Usage: pnpm new <tech|days> <note|post> [options]")
+  const config = getSiteConfig(site)
+
+  const [typeArg, ...remaining] = rest
 
   if (typeArg !== "note" && typeArg !== "post") {
-    console.error("Usage: pnpm run new <note|post> [--category <category>] [title]")
+    console.error("Usage: pnpm new <tech|days> <note|post> [--category <category>] [title]")
     process.exit(1)
   }
 
@@ -35,9 +28,9 @@ async function main() {
   let category: NoteCategory = "regular"
   const titleParts: string[] = []
 
-  for (let i = 0; i < rest.length; i++) {
-    if (rest[i] === "--category" && rest[i + 1]) {
-      const c = rest[i + 1]
+  for (let i = 0; i < remaining.length; i++) {
+    if (remaining[i] === "--category" && remaining[i + 1]) {
+      const c = remaining[i + 1]
       if (c === "regular" || c === "link" || c === "collection" || c === "quote" || c === "til" || c === "post") {
         category = c
         i++
@@ -46,22 +39,18 @@ async function main() {
         process.exit(1)
       }
     } else {
-      titleParts.push(rest[i])
+      titleParts.push(remaining[i])
     }
   }
-  
+
   const rawTitle = titleParts.join(" ").trim()
   const hasTitle = rawTitle.length > 0
   const title = hasTitle ? rawTitle : "Untitled"
   const slug = slugify(title, { lower: true })
 
-  const now = new Date()
-  const date = format(now, "yyyy-MM-dd")
-  const year = format(now, "yyyy")
-  const month = format(now, "MM")
-  const day = format(now, "dd")
-  
-  const collectionPath = path.join(CONTENT_ROOT, type === "note" ? "notes" : "posts")
+  const { date, year, month, day } = getDateParts()
+
+  const collectionPath = path.join(config.contentRoot, type === "note" ? "notes" : "posts")
   const dirPath = type === "note"
     ? path.join(collectionPath, year, month, day)
     : path.join(collectionPath, "drafts")
@@ -89,7 +78,7 @@ async function main() {
     console.log(`Created note #${nextNo}: ${filePath}`)
   } else {
     frontmatter = {
-      title: capitalize(title),
+      title,
       created: date,
       draft: true,
     }
@@ -98,19 +87,6 @@ async function main() {
 
   const content = serializeFrontmatter(frontmatter) + "TODO"
   await fs.writeFile(filePath, content, "utf8")
-}
-
-function serializeFrontmatter(fm: Frontmatter): string {
-  return `---\n${stringifyYaml(fm)}---\n\n`
-}
-
-async function fileExists(p: string): Promise<boolean> {
-  try {
-    await fs.access(p)
-    return true
-  } catch {
-    return false
-  }
 }
 
 async function getNextNo(notesRoot: string): Promise<number> {
