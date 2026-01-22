@@ -2,24 +2,23 @@ import fs from "node:fs/promises"
 import path from "node:path"
 import readline from "node:readline"
 import { spawn } from "node:child_process"
-import { format } from "date-fns"
-import { parse as parseYaml, stringify as stringifyYaml } from "yaml"
 
-interface Frontmatter {
-  title?: string
-  created?: string
-  draft?: boolean
-  post?: string
-  [key: string]: unknown
-}
+import { getSiteConfig, parseContentSiteArg } from "./config"
+import { getDateParts, parseFrontmatter, serializeFrontmatter } from "./utils"
 
-const CONTENT_ROOT = path.join(process.cwd(), "content")
-const DRAFTS_DIR = path.join(CONTENT_ROOT, "posts", "drafts")
-const DRAFTS_IMAGES_DIR = path.join(DRAFTS_DIR, "images")
-const POSTS_DIR = path.join(CONTENT_ROOT, "posts")
+import type { ContentSite } from "./config"
+import type { Frontmatter } from "./utils"
 
 async function main() {
-  const drafts = await listDrafts()
+  const args = process.argv.slice(2)
+  const { site } = parseContentSiteArg(args, "Usage: pnpm ship <tech|days>")
+  const config = getSiteConfig(site)
+
+  const draftsDir = path.join(config.contentRoot, "posts", "drafts")
+  const draftsImagesDir = path.join(draftsDir, "images")
+  const postsDir = path.join(config.contentRoot, "posts")
+
+  const drafts = await listDrafts(draftsDir)
 
   if (drafts.length === 0) {
     console.log("No drafts to ship.")
@@ -33,12 +32,12 @@ async function main() {
     selected = await promptSelection(drafts)
   }
 
-  await shipDraft(selected)
+  await shipDraft(selected, site, draftsDir, draftsImagesDir, postsDir)
 }
 
-async function listDrafts(): Promise<string[]> {
+async function listDrafts(draftsDir: string): Promise<string[]> {
   try {
-    const entries = await fs.readdir(DRAFTS_DIR)
+    const entries = await fs.readdir(draftsDir)
     return entries.filter((e) => e.endsWith(".md"))
   } catch {
     return []
@@ -70,22 +69,24 @@ async function promptSelection(drafts: string[]): Promise<string> {
   })
 }
 
-async function shipDraft(filename: string) {
+async function shipDraft(
+  filename: string,
+  site: ContentSite,
+  draftsDir: string,
+  draftsImagesDir: string,
+  postsDir: string
+) {
   const slug = filename.replace(/\.md$/, "")
-  const draftPath = path.join(DRAFTS_DIR, filename)
+  const draftPath = path.join(draftsDir, filename)
 
   const content = await fs.readFile(draftPath, "utf-8")
   const { frontmatter, body } = parseFrontmatter(content)
 
-  const title = frontmatter.title || "无标题"
+  const title = frontmatter.title || "Untitled"
 
-  const now = new Date()
-  const date = format(now, "yyyy-MM-dd")
-  const year = format(now, "yyyy")
-  const month = format(now, "MM")
-  const day = format(now, "dd")
+  const { date, year, month, day } = getDateParts()
 
-  const postDir = path.join(POSTS_DIR, year, month, day)
+  const postDir = path.join(postsDir, year, month, day)
   const postPath = path.join(postDir, filename)
   const postRef = `${year}/${month}/${day}/${slug}`
 
@@ -101,34 +102,19 @@ async function shipDraft(filename: string) {
   await fs.writeFile(postPath, postContent, "utf-8")
   console.log(`Shipped post: ${postPath}`)
 
-  const notePath = await createNote(title, "post")
+  const notePath = await createNote(title, "post", site)
   await addPostReference(notePath, postRef)
 
-  await moveImages(postDir)
+  await moveImages(postDir, draftsImagesDir)
 
   await fs.unlink(draftPath)
   console.log(`Deleted draft: ${draftPath}`)
 }
 
-function parseFrontmatter(content: string): {
-  frontmatter: Frontmatter
-  body: string
-} {
-  const match = content.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/)
-  if (!match) {
-    return { frontmatter: {}, body: content }
-  }
-  return { frontmatter: parseYaml(match[1]) as Frontmatter, body: match[2] }
-}
-
-function serializeFrontmatter(fm: Frontmatter): string {
-  return `---\n${stringifyYaml(fm)}---\n\n`
-}
-
-async function createNote(title: string, category: string): Promise<string> {
+async function createNote(title: string, category: string, site: ContentSite): Promise<string> {
   return new Promise((resolve) => {
-    const proc = spawn("pnpm", ["run", "new", "note", "--category", category, title], {
-      cwd: process.cwd(),
+    const proc = spawn("pnpm", ["new", site, "note", "--category", category, title], {
+      cwd: path.join(import.meta.dirname, ".."),
       stdio: ["inherit", "pipe", "inherit"],
     })
 
@@ -155,21 +141,21 @@ async function createNote(title: string, category: string): Promise<string> {
   })
 }
 
-async function moveImages(postDir: string) {
+async function moveImages(postDir: string, draftsImagesDir: string) {
   try {
-    const entries = await fs.readdir(DRAFTS_IMAGES_DIR)
+    const entries = await fs.readdir(draftsImagesDir)
     if (entries.length === 0) return
 
     const targetImagesDir = path.join(postDir, "images")
     await fs.mkdir(targetImagesDir, { recursive: true })
 
     for (const entry of entries) {
-      const src = path.join(DRAFTS_IMAGES_DIR, entry)
+      const src = path.join(draftsImagesDir, entry)
       const dest = path.join(targetImagesDir, entry)
       await fs.rename(src, dest)
     }
 
-    await fs.rmdir(DRAFTS_IMAGES_DIR)
+    await fs.rmdir(draftsImagesDir)
     console.log(`Moved images to: ${targetImagesDir}`)
   } catch {
     // No images folder or empty, skip silently

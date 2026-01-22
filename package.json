@@ -2,16 +2,19 @@
   "name": "zlliang",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "www:dev": "pnpm --filter @zlliang/www dev",
-    "www:build": "pnpm --filter @zlliang/www build",
-    "tech:dev": "pnpm --filter @zlliang/tech dev",
-    "tech:build": "pnpm --filter @zlliang/tech build",
-    "tech:new": "pnpm --filter @zlliang/tech new",
-    "tech:ship": "pnpm --filter @zlliang/tech ship",
-    "days:dev": "pnpm --filter @zlliang/days dev",
-    "days:build": "pnpm --filter @zlliang/days build",
-    "days:new": "pnpm --filter @zlliang/days new",
-    "days:ship": "pnpm --filter @zlliang/days ship"
+    "dev": "tsx scripts/run.ts dev",
+    "build": "tsx scripts/run.ts build",
+    "new": "tsx scripts/new.ts",
+    "ship": "tsx scripts/ship.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.9",
+    "date-fns": "^4.1.0",
+    "slugify": "^1.6.6",
+    "tsx": "^4.19.4",
+    "typescript": "^5.9.3",
+    "yaml": "^2.8.2"
   }
 }
