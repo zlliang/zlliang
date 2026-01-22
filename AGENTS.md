@@ -54,7 +54,7 @@ Notes use frontmatter with these fields:
 no: 1               # Required, unique note number (auto-incremented)
 title: ...          # Optional
 created: YYYY-MM-DD # Required
-category: regular   # Required
+category: regular   # Required, one of: regular, link, collection, quote, til, post
 post: ...           # Optional, refers to a post
 tags: []            # Optional, sorted alphabetically
 draft: true         # Remove this field to publish

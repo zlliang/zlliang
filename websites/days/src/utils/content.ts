@@ -25,6 +25,7 @@ export function getCategoryDisplay(category: NoteCategory) {
   return ({
     regular: "日常",
     link: "链接",
+    collection: "收藏",
     quote: "摘录",
     til: "小知识",
     post: "文章",
