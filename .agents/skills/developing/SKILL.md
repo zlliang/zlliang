@@ -23,6 +23,7 @@ websites/
 ├── www/    # zlliang.me – Personal landing page (English and Chinese, with [Astro's i18n support](https://docs.astro.build/guides/internationalization/))
 ├── tech/   # tech.zlliang.me – Tech learning and research (English)
 └── days/   # days.zlliang.me – Daily life and reflections (Chinese)
+scripts/    # Helper scripts for dev, build, and content authoring (pnpm dev, pnpm build, pnpm new, pnpm ship)
 ```
 
 ## Commands
