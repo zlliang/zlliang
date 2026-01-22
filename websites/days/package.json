@@ -27,7 +27,7 @@
     "astro": "^5.16.9",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
-    "lodash-es": "^4.17.22",
+    "lodash-es": "^4.17.23",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-external-links": "^3.0.0",
     "slugify": "^1.6.6",
