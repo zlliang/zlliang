@@ -34,7 +34,7 @@ websites/www/
 Currently the `tech` and `days` websites share a similar structure:
 
 ```
-websites/[tech|days]/
+websites/<tech|days>/
 ├── src/
 │   ├── components/   # Astro components (.astro)
 │   ├── pages/        # File-based routing
