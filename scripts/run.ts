@@ -15,5 +15,4 @@ const { site } = parseSiteArg(rest, `Usage: pnpm ${command} <www|tech|days>`)
 
 spawn("pnpm", ["--filter", `@zlliang/${site}`, command], {
   stdio: "inherit",
-  shell: true,
 }).on("exit", (code) => process.exit(code ?? 0))
