@@ -15,5 +15,6 @@ const registry: Record<string, string> = {
   "love": "感情",
   "shinobu-yoshii": "吉井忍",
   "watching": "观影",
+  "working": "工作",
   "writing": "写作",
 }
