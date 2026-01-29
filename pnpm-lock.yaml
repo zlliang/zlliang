@@ -134,6 +134,9 @@ importers:
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
+      '@types/mdast':
+        specifier: ^4.0.4
+        version: 4.0.4
       '@vercel/analytics':
         specifier: ^1.6.1
         version: 1.6.1
@@ -143,6 +146,9 @@ importers:
       astro:
         specifier: ^5.16.16
         version: 5.16.16(@types/node@24.10.9)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.57.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)
+      beautiful-mermaid:
+        specifier: ^0.1.2
+        version: 0.1.2
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -275,6 +281,13 @@ packages:
 
   '@cyberalien/svg-utils@1.0.11':
     resolution: {integrity: sha512-qEE9mnyI+avfGT3emKuRs3ucYkITeaV0Xi7VlYN41f+uGnZBecQP3jwz/AF437H9J4Q7qPClHKm4NiTYpNE6hA==}
+
+  '@dagrejs/dagre@1.1.8':
+    resolution: {integrity: sha512-5SEDlndt4W/LaVzPYJW+bSmSEZc9EzTf8rJ20WCKvjS5EAZAN0b+x0Yww7VMT4R3Wootkg+X9bUfUxazYw6Blw==}
+
+  '@dagrejs/graphlib@2.2.4':
+    resolution: {integrity: sha512-mepCf/e9+SKYy1d02/UkvSy6+6MoyXhVxP8lLDfA7BPE1X1d4dR0sZznmbM8/XVJ1GPM+Svnx7Xj6ZweByWUkw==}
+    engines: {node: '>17.0.0'}
 
   '@emnapi/runtime@1.8.1':
     resolution: {integrity: sha512-mehfKSMWjjNol8659Z8KxEMrdSJDDot5SXMq00dM8BN4o+CLNXQ0xH2V7EchNHV4RmbZLmmPdEaXZc5H2FXmDg==}
@@ -1221,6 +1234,9 @@ packages:
 
   base-64@1.0.0:
     resolution: {integrity: sha512-kwDPIFCGx0NZHog36dj+tHiwP4QMzsZ3AgMViUBKI0+V5n4U0ufTCUMhnQ04diaRI8EX/QcPfql7zlhZ7j4zgg==}
+
+  beautiful-mermaid@0.1.2:
+    resolution: {integrity: sha512-pTsXNdjmiZW0ITC2IlVt6YdQucA1ArhnXYnRJWGRnSuCIbypV0NbVgdZF1c2zh+S6H5GhgfFJE2YL6FN9en8Qg==}
 
   bindings@1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
@@ -2559,6 +2575,12 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
+  '@dagrejs/dagre@1.1.8':
+    dependencies:
+      '@dagrejs/graphlib': 2.2.4
+
+  '@dagrejs/graphlib@2.2.4': {}
+
   '@emnapi/runtime@1.8.1':
     dependencies:
       tslib: 2.8.1
@@ -3323,6 +3345,10 @@ snapshots:
   balanced-match@1.0.2: {}
 
   base-64@1.0.0: {}
+
+  beautiful-mermaid@0.1.2:
+    dependencies:
+      '@dagrejs/dagre': 1.1.8
 
   bindings@1.5.0:
     dependencies:

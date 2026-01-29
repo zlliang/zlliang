@@ -250,3 +250,21 @@ span.caption {
 .image-grid p {
   @apply sm:mb-0;
 }
+
+/* Mermaid diagrams */
+
+.mermaid-diagram {
+  @apply mb-4 overflow-x-auto;
+}
+
+.mermaid-diagram svg {
+  @apply mx-auto max-w-full h-auto;
+}
+
+.mermaid-light {
+  @apply dark:hidden;
+}
+
+.mermaid-dark {
+  @apply hidden dark:block;
+}

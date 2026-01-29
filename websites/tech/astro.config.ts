@@ -6,6 +6,7 @@ import { rehypeHeadingIds } from "@astrojs/markdown-remark"
 import rehypeExternalLinks from "rehype-external-links"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 
+import { remarkMermaid } from "./src/utils/remark"
 import { rehypeFootnotePrefix, rehypeImageCaption } from "./src/utils/rehype"
 
 export default defineConfig({
@@ -30,6 +31,9 @@ export default defineConfig({
       footnoteLabelTagName: "div",
       footnoteBackContent: "↵",
     },
+    remarkPlugins: [
+      [remarkMermaid, {}]
+    ],
     rehypePlugins: [
       [rehypeHeadingIds, {}],
       [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
