@@ -74,3 +74,4 @@ This repository provides several skills for specialized tasks. Load the appropri
 - **developing:** For building features, fixing bugs, or running dev/build commands for any of the websites
 - **content-authoring:** For creating, drafting, editing, or publishing notes and posts on `tech` or `days`
 - **english-writing:** For reviewing and improving English prose, fixing grammar, or refining writing style
+- **reviewing:** Reviews drafts for grammar, style, phrasing, clarity, and structure. Use when asked to review a draft or article.

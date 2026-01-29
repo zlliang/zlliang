@@ -1,4 +1,11 @@
-Review this draft for:
+---
+name: reviewing
+description: Reviews drafts for grammar, style, phrasing, clarity, and structure. Use when asked to review a draft or article.
+---
+
+# Reviewing
+
+Review the draft for:
 
 1. Grammar and writing style issues
 2. Awkward or unnatural phrasing
