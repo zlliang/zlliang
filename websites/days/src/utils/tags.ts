@@ -5,6 +5,7 @@ export function getTagDisplay(tag: string) {
 
 const registry: Record<string, string> = {
   "assets": "素材",
+  "choir": "合唱",
   "coffee": "咖啡",
   "demo": "示例",
   "design": "设计",
@@ -15,6 +16,6 @@ const registry: Record<string, string> = {
   "love": "感情",
   "shinobu-yoshii": "吉井忍",
   "watching": "观影",
-  "working": "工作",
+  "work": "工作",
   "writing": "写作",
 }
