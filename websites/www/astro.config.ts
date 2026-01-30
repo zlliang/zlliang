@@ -2,7 +2,8 @@ import { defineConfig } from "astro/config"
 import vercel from "@astrojs/vercel"
 import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
-import rehypeExternalLinks from "rehype-external-links"
+
+import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeExternalLinks, rehypeFootnotePrefix, rehypeImageCaption } from "@zlliang/rehype"
 
 export default defineConfig({
   site: "https://zlliang.me",
@@ -36,8 +37,17 @@ export default defineConfig({
     shikiConfig: {
       themes: { light: "github-light-default", dark: "github-dark-default" },
     },
+    remarkRehype: {
+      footnoteLabel: " ",
+      footnoteLabelTagName: "div",
+      footnoteBackContent: "↵",
+    },
     rehypePlugins: [
+      [rehypeHeadingIds, {}],
+      [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
       [rehypeExternalLinks, { target: "_blank", rel: ["noopener"] }],
+      [rehypeFootnotePrefix, {}],
+      [rehypeImageCaption, {}],
     ],
   },
   devToolbar: {

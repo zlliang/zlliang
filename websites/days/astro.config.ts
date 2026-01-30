@@ -2,11 +2,8 @@ import { defineConfig } from "astro/config"
 import vercel from "@astrojs/vercel"
 import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
-import { rehypeHeadingIds } from "@astrojs/markdown-remark"
-import rehypeExternalLinks from "rehype-external-links"
-import rehypeAutolinkHeadings from "rehype-autolink-headings"
 
-import { rehypeFootnotePrefix, rehypeImageCaption } from "./src/utils/rehype"
+import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeExternalLinks, rehypeFootnotePrefix, rehypeImageCaption } from "@zlliang/rehype"
 
 export default defineConfig({
   site: "https://days.zlliang.me",
