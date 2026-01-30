@@ -7,10 +7,12 @@ This document defines how AI assistants (e.g., ChatGPT, Codex, Amp) help me deve
 This repository contains my personal websites:
 
 ```
+packages/
+└── rehype/  # Shared rehype plugins (@zlliang/rehype)
 websites/
-├── www/  # zlliang.me – Personal landing page (English and Chinese)
-├── tech/ # tech.zlliang.me – Tech learning and research (English)
-└── days/ # days.zlliang.me – Daily life and reflections (Chinese)
+├── www/     # zlliang.me – Personal landing page (English and Chinese)
+├── tech/    # tech.zlliang.me – Tech learning and research (English)
+└── days/    # days.zlliang.me – Daily life and reflections (Chinese)
 ```
 
 The websites are built with [Astro](https://astro.build/) and are deployed on [Vercel](https://vercel.com/).
