@@ -30,7 +30,7 @@ scripts/      # Helper scripts for dev, build, and content authoring (pnpm dev, 
 
 ### Shared packages
 
-- **@zlliang/rehype:** Rehype plugins for Markdown processing (rehypeHeadingIds, rehypeAutolinkHeadings, rehypeExternalLinks, rehypeFootnotePrefix, rehypeImageCaption). Used by all three websites via `workspace:*` dependency.
+- **@zlliang/rehype:** Rehype plugins for Markdown processing (rehypeHeadingIds, rehypeAutolinkHeadings, rehypeExternalLinks, rehypeFootnotePrefixes, rehypeImageCaptions). Used by all three websites via `workspace:*` dependency.
 
 ## Commands
 
