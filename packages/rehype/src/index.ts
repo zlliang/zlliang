@@ -7,7 +7,7 @@ export { default as rehypeAutolinkHeadings } from "rehype-autolink-headings"
 export { default as rehypeExternalLinks } from "rehype-external-links"
 
 /** Prefix footnote IDs with the file path to avoid collisions when multiple notes render on one page. */
-export function rehypeFootnotePrefix() {
+export function rehypeFootnotePrefixes() {
   return (tree: Root, file: { history: string[] }) => {
     const filePath = file.history[0] || ""
     const slug = filePath.replace(/^.*\/content\//, "").replace(/\.mdx?$/, "").replace(/\//g, "-")
@@ -28,7 +28,7 @@ export function rehypeFootnotePrefix() {
 }
 
 /** Retrieve the `title` property of the `img` element and append a caption element after it. */
-export function rehypeImageCaption() {
+export function rehypeImageCaptions() {
   return (tree: Root) => {
     visit(tree, "element", (node, _, parent) => {
       if (parent && node.tagName === "img" && node.properties.title) {
