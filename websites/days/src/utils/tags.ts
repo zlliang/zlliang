@@ -14,6 +14,7 @@ const registry: Record<string, string> = {
   "home": "居家",
   "japanese-drama": "日剧",
   "love": "感情",
+  "monthly": "月刊",
   "shinobu-yoshii": "吉井忍",
   "watching": "观影",
   "work": "工作",
