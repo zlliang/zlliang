@@ -244,25 +244,9 @@ span.caption {
 /* Image grid */
 
 .image-grid {
-  @apply sm:mb-4 sm:grid sm:grid-cols-2 sm:gap-4;
+  @apply mb-4 grid grid-cols-2 gap-4;
 }
 
 .image-grid p {
-  @apply sm:mb-0;
-}
-
-.image-grid.compact-2 {
-  @apply mb-4 grid grid-cols-2 sm:grid-cols-2 items-center gap-4;
-}
-
-.image-grid.compact-2 p {
-  @apply mb-0;
-}
-
-.image-grid.compact-3 {
-  @apply mb-4 grid grid-cols-3 sm:grid-cols-3 items-center gap-4;
-}
-
-.image-grid.compact-3 p {
   @apply mb-0;
 }

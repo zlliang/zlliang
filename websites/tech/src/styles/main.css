@@ -244,9 +244,9 @@ span.caption {
 /* Image grid */
 
 .image-grid {
-  @apply sm:mb-4 sm:grid sm:grid-cols-2 sm:gap-4;
+  @apply mb-4 grid grid-cols-2 gap-4;
 }
 
 .image-grid p {
-  @apply sm:mb-0;
+  @apply mb-0;
 }
