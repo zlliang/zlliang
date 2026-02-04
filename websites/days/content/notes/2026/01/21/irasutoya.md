@@ -8,7 +8,7 @@ tags: [design, assets]
 
 在网上是不是经常可以看到这种风格的插画小人呢：
 
-<div class="image-grid compact-3">
+<div class="image-grid grid-cols-3!">
 
 ![irasutoya 例子 1](./images/desinger-free-sozai.png)
   
