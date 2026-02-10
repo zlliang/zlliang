@@ -4,6 +4,7 @@ import { Image } from "astro:assets"
 import Layout from "@/components/Layout.astro"
 import Section from "@/components/Section.astro"
 import Link from "@/components/Link.astro"
+import WorldMap from "@/components/WorldMap.astro"
 
 import { renderFragment } from "@/utils/content"
 
@@ -19,7 +20,7 @@ const Bio = await renderFragment("bio-en")
   </div>
 
   <!-- Writing -->
-  <Section title="Writing">
+  <Section title="Writing" class="mb-6">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <Link href="https://tech.zlliang.me" external={false} class="secondary flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950 hover:text-blue-500!">
         <Image src={logoTech} alt="Logo of tech.zlliang.me" class="size-8" loading="eager" />
@@ -38,5 +39,10 @@ const Bio = await renderFragment("bio-en")
         </div>
       </Link>
     </div>
+  </Section>
+
+  <!-- Where I've been -->
+  <Section title="Where I've been">
+    <WorldMap lang="en" />
   </Section>
 </Layout>
