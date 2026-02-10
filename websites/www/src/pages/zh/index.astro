@@ -2,6 +2,7 @@
 import { Image } from "astro:assets"
 
 import Layout from "@/components/Layout.astro"
+import Section from "@/components/Section.astro"
 import Link from "@/components/Link.astro"
 
 import { renderFragment } from "@/utils/content"
@@ -13,26 +14,29 @@ const Bio = await renderFragment("bio-zh")
 ---
 
 <Layout lang="zh">
-  <Bio />
+  <div class="mb-12">
+    <Bio />
+  </div>
 
   <!-- Writing -->
-  <h2>写作</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <Link href="https://tech.zlliang.me" external={false} class="secondary flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950 hover:text-blue-500!">
-      <Image src={logoTech} alt="tech.zlliang.me 的图标" class="size-8" loading="eager" />
-      <div class="flex-1">
-        <div><span class="font-bold">子龙的技术笔记</span> (英文)</div>
-        <div class="text-sm opacity-60">tech.zlliang.me</div>
-        <div class="mt-2 text-sm">我的技术学习和研究</div>
-      </div>
-    </Link>
-    <Link href="https://days.zlliang.me" external={false} class="secondary flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-indigo-200 dark:hover:border-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950 hover:text-indigo-500!">
-      <Image src={logoDays} alt="days.zlliang.me 的图标" class="size-8" loading="eager" />
-      <div class="flex-1">
-        <div><span class="font-bold">子龙的生活手记</span> (中文)</div>
-        <div class="text-sm opacity-60">days.zlliang.me</div>
-        <div class="mt-2 text-sm">我的日常生活和感悟</div>
-      </div>
-    </Link>
-  </div>
+  <Section title="写作">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <Link href="https://tech.zlliang.me" external={false} class="secondary flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950 hover:text-blue-500!">
+        <Image src={logoTech} alt="tech.zlliang.me 的图标" class="size-8" loading="eager" />
+        <div class="flex-1">
+          <div><span class="font-bold">子龙的技术笔记</span> (英文)</div>
+          <div class="text-sm opacity-60">tech.zlliang.me</div>
+          <div class="mt-2 text-sm">我的技术学习和研究</div>
+        </div>
+      </Link>
+      <Link href="https://days.zlliang.me" external={false} class="secondary flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-indigo-200 dark:hover:border-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950 hover:text-indigo-500!">
+        <Image src={logoDays} alt="days.zlliang.me 的图标" class="size-8" loading="eager" />
+        <div class="flex-1">
+          <div><span class="font-bold">子龙的生活手记</span> (中文)</div>
+          <div class="text-sm opacity-60">days.zlliang.me</div>
+          <div class="mt-2 text-sm">我的日常生活和感悟</div>
+        </div>
+      </Link>
+    </div>
+  </Section>
 </Layout>
