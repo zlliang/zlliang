@@ -1,0 +1,219 @@
+---
+import { getCollection } from "astro:content"
+
+import { t } from "@/utils/i18n"
+
+import type { Locale } from "@/utils/i18n"
+
+interface Props {
+  lang: Locale
+}
+
+const { lang } = Astro.props
+const places = await getCollection("places")
+---
+
+<div lang={lang} class="world-map-wrapper" data-lang={lang} data-places={JSON.stringify(places.map((p) => p.data))}>
+  <div class="world-map-container">
+    <svg class="world-map" />
+  </div>
+  <div class="map-detail">
+    <div class="map-detail-placeholder">
+      {t(lang, "ui.map.placeholder")}
+    </div>
+    <div class="map-detail-content" style="display: none;">
+      <div class="map-detail-name" />
+      <ul class="map-detail-visits" />
+    </div>
+  </div>
+</div>
+
+<script>
+  import * as d3 from "d3"
+  import { feature } from "topojson-client"
+  import { format } from "date-fns"
+
+  import { t } from "@/utils/i18n"
+
+  import type { InferEntrySchema } from "astro:content"
+  import type { Topology } from "topojson-specification"
+  import type { Locale } from "@/utils/i18n"
+
+  type Place = InferEntrySchema<"places">
+
+  function initMap(wrapper: HTMLElement) {
+    const lang = wrapper.dataset.lang as Locale
+    const places: Place[] = JSON.parse(wrapper.dataset.places!)
+    const svg = wrapper.querySelector<SVGSVGElement>(".world-map")!
+    const detail = wrapper.querySelector<HTMLElement>(".map-detail")!
+    const placeholder = detail.querySelector<HTMLElement>(".map-detail-placeholder")!
+    const content = detail.querySelector<HTMLElement>(".map-detail-content")!
+    const nameEl = detail.querySelector<HTMLElement>(".map-detail-name")!
+    const visitsList = detail.querySelector<HTMLElement>(".map-detail-visits")!
+
+    const width = 800
+    const height = 394
+
+    const d3svg = d3
+      .select(svg)
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .attr("preserveAspectRatio", "xMidYMid meet")
+
+    const projection = d3.geoNaturalEarth1().fitExtent(
+      [[-20, -10], [width + 20, height + 10]],
+      { type: "Sphere" }
+    )
+    const path = d3.geoPath().projection(projection)
+
+    d3.json<Topology>("https://cdn.jsdelivr.net/npm/world-atlas/countries-110m.json").then(
+      (world) => {
+        if (!world) return
+
+        const countries = feature(world, world.objects.countries)
+        const features = ("features" in countries ? countries.features : [countries]) as GeoJSON.Feature[]
+
+        d3svg
+          .append("g")
+          .selectAll<SVGPathElement, GeoJSON.Feature>("path")
+          .data(features)
+          .join("path")
+          .attr("d", (d) => path(d) ?? "")
+          .attr("class", "map-country")
+
+        const pins = d3svg
+          .append("g")
+          .selectAll("circle")
+          .data(places)
+          .join("circle")
+          .attr("cx", (d) => projection([d.lng, d.lat])![0])
+          .attr("cy", (d) => projection([d.lng, d.lat])![1])
+          .attr("r", 4)
+          .attr("class", "map-pin")
+
+        let activePin: SVGCircleElement | null = null
+        let lockedPin: SVGCircleElement | null = null
+
+        function renderDetail(d: Place) {
+          nameEl.textContent = `${d.name[lang]} ${d.flag}`
+          visitsList.innerHTML = d.visits
+            .map((v) =>
+              v.link
+                ? `<li><a href="${v.link}" target="_blank" rel="noopener">${format(v.date, t(lang, "ui.map.dateFormat"))}</a></li>`
+                : `<li>${format(v.date, t(lang, "ui.map.dateFormat"))}</li>`
+            )
+            .join("")
+          placeholder.style.display = "none"
+          content.style.display = ""
+        }
+
+        function showPlaceholder() {
+          placeholder.style.display = ""
+          content.style.display = "none"
+        }
+
+        function setActivePin(pinEl: SVGCircleElement | null) {
+          if (activePin) d3.select(activePin).classed("map-pin-active", false)
+          activePin = pinEl
+          if (activePin) d3.select(activePin).classed("map-pin-active", true)
+        }
+
+        pins.on("mouseenter", function (_, d) {
+          if (lockedPin) return
+          setActivePin(this as SVGCircleElement)
+          renderDetail(d)
+        })
+
+        pins.on("mouseleave", function () {
+          if (lockedPin) return
+          setActivePin(null)
+          showPlaceholder()
+        })
+
+        pins.on("click", function (_, d) {
+          const pinEl = this as SVGCircleElement
+          if (lockedPin === pinEl) {
+            d3.select(lockedPin).classed("map-pin-locked", false)
+            lockedPin = null
+            setActivePin(null)
+            showPlaceholder()
+            return
+          }
+          if (lockedPin) d3.select(lockedPin).classed("map-pin-locked", false)
+          lockedPin = pinEl
+          d3.select(lockedPin).classed("map-pin-locked", true)
+          setActivePin(pinEl)
+          renderDetail(d)
+        })
+
+        svg.addEventListener("click", (e) => {
+          if (!(e.target as Element).classList.contains("map-pin") && lockedPin) {
+            d3.select(lockedPin).classed("map-pin-locked", false)
+            lockedPin = null
+            setActivePin(null)
+            showPlaceholder()
+          }
+        })
+      }
+    )
+  }
+
+  document.querySelectorAll<HTMLElement>(".world-map-wrapper").forEach(initMap)
+</script>
+
+<style is:global>
+  @reference "../styles/main.css";
+
+  .world-map-wrapper {
+    @apply flex flex-col sm:flex-row border border-neutral-200 dark:border-neutral-800;
+  }
+
+  .world-map-container {
+    @apply flex-1 min-w-0 overflow-hidden;
+  }
+
+  .world-map {
+    @apply  block w-full h-auto;
+  }
+
+  .map-detail {
+    @apply sm:w-48 border-t sm:border-t-0 sm:border-l border-neutral-200 dark:border-neutral-800 text-sm;
+  }
+
+  .map-detail-placeholder {
+    @apply h-full flex justify-center items-center p-2 text-neutral-400 dark:text-neutral-600;
+  }
+
+  .map-detail-name {
+    @apply font-bold px-2 py-1;
+  }
+
+  .map-detail-visits {
+    @apply list-none leading-normal! pl-0 mb-0 text-neutral-600 dark:text-neutral-400;
+  }
+
+  .map-detail-visits > li {
+    @apply px-2 py-1;
+  }
+
+  .map-detail-visits > li:nth-child(odd) {
+    @apply bg-neutral-100 dark:bg-neutral-800;
+  }
+
+  .map-country {
+    @apply fill-neutral-100 dark:fill-neutral-900 stroke-neutral-300 dark:stroke-neutral-700;
+    stroke-width: 0.5;
+  }
+
+  .map-pin {
+    @apply fill-cyan-500 cursor-pointer;
+  }
+
+  .map-pin:hover,
+  .map-pin-active {
+    r: 6;
+  }
+
+  .map-pin-locked {
+    @apply stroke-2 stroke-cyan-600 dark:stroke-cyan-400;
+  }
+</style>
