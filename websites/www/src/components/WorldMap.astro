@@ -90,6 +90,19 @@ const places = await getCollection("places")
           .attr("r", 4)
           .attr("class", "map-pin")
 
+        const pinNodes = pins.nodes() as SVGCircleElement[]
+
+        const hitTargets = d3svg
+          .append("g")
+          .selectAll("circle")
+          .data(places)
+          .join("circle")
+          .attr("cx", (d) => projection([d.lng, d.lat])![0])
+          .attr("cy", (d) => projection([d.lng, d.lat])![1])
+          .attr("r", 14)
+          .attr("fill", "transparent")
+          .style("cursor", "pointer")
+
         let activePin: SVGCircleElement | null = null
         let lockedPin: SVGCircleElement | null = null
 
@@ -117,20 +130,22 @@ const places = await getCollection("places")
           if (activePin) d3.select(activePin).classed("map-pin-active", true)
         }
 
-        pins.on("mouseenter", function (_, d) {
+        hitTargets.on("mouseenter", function (_, d) {
           if (lockedPin) return
-          setActivePin(this as SVGCircleElement)
+          const i = hitTargets.nodes().indexOf(this as SVGCircleElement)
+          setActivePin(pinNodes[i])
           renderDetail(d)
         })
 
-        pins.on("mouseleave", function () {
+        hitTargets.on("mouseleave", function () {
           if (lockedPin) return
           setActivePin(null)
           showPlaceholder()
         })
 
-        pins.on("click", function (_, d) {
-          const pinEl = this as SVGCircleElement
+        hitTargets.on("click", function (_, d) {
+          const i = hitTargets.nodes().indexOf(this as SVGCircleElement)
+          const pinEl = pinNodes[i]
           if (lockedPin === pinEl) {
             d3.select(lockedPin).classed("map-pin-locked", false)
             lockedPin = null
@@ -146,7 +161,8 @@ const places = await getCollection("places")
         })
 
         svg.addEventListener("click", (e) => {
-          if (!(e.target as Element).classList.contains("map-pin") && lockedPin) {
+          const target = e.target as Element
+          if (!target.classList.contains("map-pin") && !hitTargets.nodes().includes(target) && lockedPin) {
             d3.select(lockedPin).classed("map-pin-locked", false)
             lockedPin = null
             setActivePin(null)
@@ -205,7 +221,7 @@ const places = await getCollection("places")
   }
 
   .map-pin {
-    @apply fill-cyan-500 cursor-pointer;
+    @apply fill-cyan-500;
   }
 
   .map-pin:hover,
