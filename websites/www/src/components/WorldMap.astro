@@ -188,7 +188,7 @@ const places = await getCollection("places")
   }
 
   .world-map {
-    @apply  block w-full h-auto;
+    @apply block w-full h-auto;
   }
 
   .map-detail {
@@ -216,8 +216,7 @@ const places = await getCollection("places")
   }
 
   .map-country {
-    @apply fill-neutral-100 dark:fill-neutral-900 stroke-neutral-300 dark:stroke-neutral-700;
-    stroke-width: 0.5;
+    @apply fill-neutral-100 dark:fill-neutral-900 stroke-[0.5] stroke-neutral-300 dark:stroke-neutral-700;
   }
 
   .map-pin {
