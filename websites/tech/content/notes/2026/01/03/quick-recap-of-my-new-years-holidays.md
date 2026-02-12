@@ -12,7 +12,7 @@ I finished watching [_The King of Internet Writing_](https://www.youtube.com/wat
 
 On New Year's Eve, I was traveling with my partner in [Chongqing](https://en.wikipedia.org/wiki/Chongqing). We ate spicy hotpot and walked through the hilly streets!
 
-![Chongqing's cityscape on New Year's Eve](./images/chongqings-cityscape-on-new-years-eve.jpg "Chongqing's cityscape on New Year's Eve")
+![Chongqing's cityscape on New Year's Eve](./images/chongqings-cityscape-on-new-years-eve.jpg)
 
 I'm planning to add new features to this website. I created two GitHub issues, following Simon Willison's approach to building features[^1]:
 

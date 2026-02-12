@@ -25,9 +25,9 @@ Here are two previous attempts (I'm not good at keeping records. I asked my codi
 
 <div class="image-grid">
 
-![Screenshot in August 2018](./images/blog-screenshot-2018-08.png "2018 version, attempting to run a mix of Chinese and English content, built with VuePress")
+![2018 version, attempting to run a mix of Chinese and English content, built with VuePress](./images/blog-screenshot-2018-08.png)
 
-![Screenshot in July 2019](./images/blog-screenshot-2019-07.png "2019 version, more of a portfolio-style site, built with Next.js")
+![2019 version, more of a portfolio-style site, built with Next.js](./images/blog-screenshot-2019-07.png)
 
 </div>
 
@@ -141,7 +141,7 @@ I edit [Markdown](https://www.markdownguide.org/) files in [VS Code](https://cod
 
 You can find the source code, along with the Markdown files for all posts, in this GitHub repository: [zlliang/zlliang](https://github.com/zlliang/zlliang).
 
-![Screenshot of the current version](./images/blog-screenshot-2025-12.png "What it looks like now")
+![What it looks like now](./images/blog-screenshot-2025-12.png)
 
 ### My take on AI assistance
 

@@ -35,7 +35,7 @@ Here's a table:
 
 Here's a random image:
 
-![Random image](https://picsum.photos/600/300 "Optional image caption here (I wrote a custom rehype plugin for this)")
+![Optional image caption here (I wrote a custom rehype plugin for this)](https://picsum.photos/600/300)
 
 Here's a blockquote:
 
@@ -77,13 +77,13 @@ The following is an image grid:
 
 <div class="image-grid">
 
-![Random image 1](https://picsum.photos/400/300?random=1 "Random image 1")
+![Random image 1](https://picsum.photos/400/300?random=1)
 
-![Random image 2](https://picsum.photos/400/300?random=2 "Random image 2")
+![Random image 2](https://picsum.photos/400/300?random=2)
 
-![Random image 3](https://picsum.photos/400/300?random=3 "Random image 3")
+![Random image 3](https://picsum.photos/400/300?random=3)
 
-![Random image 4](https://picsum.photos/400/300?random=4 "Random image 4")
+![Random image 4](https://picsum.photos/400/300?random=4)
 
 </div>
 

@@ -27,16 +27,16 @@ export function rehypeFootnotePrefixes() {
   }
 }
 
-/** Retrieve the `title` property of the `img` element and append a caption element after it. */
+/** Retrieve the `alt` property of the `img` element and append a caption element after it. */
 export function rehypeImageCaptions() {
   return (tree: Root) => {
     visit(tree, "element", (node, _, parent) => {
-      if (parent && node.tagName === "img" && node.properties.title) {
+      if (parent && node.tagName === "img" && node.properties.alt) {
         parent.children.push({
           type: "element",
           tagName: "span",
           properties: { class: "caption" },
-          children: [{ type: "text", value: node.properties.title as string }],
+          children: [{ type: "text", value: node.properties.alt as string }],
         })
       }
     })

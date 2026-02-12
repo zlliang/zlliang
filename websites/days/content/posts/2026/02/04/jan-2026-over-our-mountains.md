@@ -13,9 +13,9 @@ created: 2026-02-04
 
 <div class="image-grid">
 
-![《当我谈跑步时，我谈些什么》](./images/dang-wo-tan-pao-bu.jpg "《当我谈跑步时，我谈些什么》")
+![《当我谈跑步时，我谈些什么》](./images/dang-wo-tan-pao-bu.jpg)
 
-![吉井忍的两本书](./images/shinobu-yoshii-books.jpg "吉井忍的两本书")
+![吉井忍的两本书](./images/shinobu-yoshii-books.jpg)
 
 </div>
 
@@ -29,11 +29,11 @@ created: 2026-02-04
 
 <div class="image-grid grid-cols-3!">
 
-![《机智医生生活》](./images/jizhi-yisheng.webp "《机智医生生活》")
+![《机智医生生活》](./images/jizhi-yisheng.webp)
 
-![《住宅区的两人》](./images/danchi-no-futari.webp "《住宅区的两人》")
+![《住宅区的两人》](./images/danchi-no-futari.webp)
 
-![《神探狄仁杰》](./images/direnjie.webp "《神探狄仁杰》")
+![《神探狄仁杰》](./images/direnjie.webp)
 
 </div>
 
@@ -55,7 +55,7 @@ created: 2026-02-04
 
 诗胤和我有点像，遇到事情心情就会很沉重，每天都叫着「完蛋了，干不完了」。然后带着这种沉重的包袱，又总会点点滴滴做完每件事情的人。进入一月中下旬，好消息到来：经过一番修改，论文被研究领域内很不错的期刊接收。[Elsevier](https://www.elsevier.com/) 的论文页面上，看到他的英文名列在首位，很为他激动。此刻，他又埋头开始写毕业论文了，身影出现在家里的书桌前、咖啡馆、学校的教室和图书馆。接下来的这座山，他也会勇敢翻过。
 
-![诗胤的学习身影](./images/studying.jpg "诗胤的学习身影")
+![诗胤的学习身影](./images/studying.jpg)
 
 说回我自己。从十二月末到一月中旬，生活给了我一个舒服的空档。按照外企通常的工作节奏，十二月末同事们陆续开始休假，我手上的事也不必着急了，恰逢半年的试用期刚刚通过，于是非常轻松地度过了这段时光。工作日历上堆满了大家的 OoO（out of office）日程，这个缩写是多么地俏皮可爱。另一边呢，彩虹合唱在月初有一场《活在爱里面》。虽有难度不小的新曲目，但有几年的应对经验，也算是驾轻就熟。
 
@@ -65,9 +65,9 @@ created: 2026-02-04
 
 <div class="image-grid">
 
-![《罗刹国纪·海之篇》星光合影](./images/luocha-1.jpg "《罗刹国纪·海之篇》星光合影")
+![《罗刹国纪·海之篇》星光合影](./images/luocha-1.jpg)
 
-![演出次日的庆功宴](./images/luocha-2.jpg "演出次日的庆功宴")
+![演出次日的庆功宴](./images/luocha-2.jpg)
 
 </div>
 
@@ -81,9 +81,9 @@ created: 2026-02-04
 
 <div class="image-grid">
 
-![第一顿就来吃火锅](./images/chongqing-1.jpg "第一顿就来吃火锅")
+![第一顿就来吃火锅](./images/chongqing-1.jpg)
 
-![两江夜景](./images/chongqing-2.jpg "两江夜景")
+![两江夜景](./images/chongqing-2.jpg)
 
 </div>
 
@@ -95,15 +95,15 @@ created: 2026-02-04
 
 <div class="image-grid">
 
-![和平公园](./images/park-1.jpg "和平公园")
+![和平公园](./images/park-1.jpg)
 
-![共青森林公园](./images/park-2.jpg "共青森林公园")
+![共青森林公园](./images/park-2.jpg)
 
 </div>
 
 这个冬天，似乎每个超市、烘焙店都在渲染「草莓季」的气氛，满眼红色，贩卖盒装草莓和草莓制品。以往几年会有吗？我从没注意过。和诗胤一起生活后，我比以往爱吃水果了。这个月买了好多次草莓，回家切来吃。
 
-![某天的早餐](./images/breakfast.jpg "某天的早餐，抹茶蛋糕配草莓果切")
+![某天的早餐，抹茶蛋糕配草莓果切](./images/breakfast.jpg)
 
 元旦到新年的这段时间，适合老朋友相见，也适合整理家里的一切。我跟腾讯的前同事聚餐，他们曾是我进入职场的第一波伙伴；在美国工作的大学室友回国，途径上海，也约着一起吃了顿饭，在江边走走、聊天。
 
@@ -113,11 +113,11 @@ created: 2026-02-04
 
 <div class="image-grid grid-cols-3!">
 
-![刚移栽完的可怜白掌](./images/plant.jpg "刚移栽完的可怜白掌")
+![刚移栽完的可怜白掌](./images/plant.jpg)
 
-![厨房推车](./images/kitchen-cart.jpg "厨房推车")
+![厨房推车](./images/kitchen-cart.jpg)
 
-![每天都得丢垃圾](./images/trash.jpg "每天都得丢垃圾")
+![每天都得丢垃圾](./images/trash.jpg)
 
 </div>
 
@@ -127,14 +127,14 @@ created: 2026-02-04
 
 为了这次旅行，我在二月初请了几天年假。我供职的公司 Booking.com 实行混合办公政策，每两周仅需来办公室四天。具体是哪四天，按惯例，一般是其中一周的周一到周四。于是同事们一起算了算，二月的第一周结束之后，是居家办公周，接着是春节假期，接着又是居家办公周。那么下次来公司现场办公，就要到三月了。
 
-![工位照片](./images/workstation.jpg "想到这里，对工位居然产生一丝眷恋，拍照留念")
+![想到这里，对工位居然产生一丝眷恋，拍照留念](./images/workstation.jpg)
 
 公司在一月末就布置上了各类春节装饰，还派发了春节小礼物，氛围慢慢变浓。进入二月，工作的积极性也大打折扣，不由自主地进入「年后再说」模式。感谢国家的政策，今年比以往多了两天假期，从除夕前一天开始。我订好了回山西老家的机票，和家人一起过年之后，还会一起去潮汕玩几天。诗胤决定在老家待久一点，陪陪长辈，应该会到三月才回来。
 
 <div class="image-grid">
 
-![公司的春节装饰 1](./images/festival-1.jpg "公司的春节装饰 1")
+![公司的春节装饰 1](./images/festival-1.jpg)
 
-![公司的春节装饰 2](./images/festival-2.jpg "公司的春节装饰 2")
+![公司的春节装饰 2](./images/festival-2.jpg)
 
 </div>

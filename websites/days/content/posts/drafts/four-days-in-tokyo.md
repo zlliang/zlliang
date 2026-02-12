@@ -14,7 +14,7 @@ draft: true
 
 [三井花园酒店五反田](https://www.gardenhotels.co.jp/gotanda/)。
 
-![酒店顶楼的露天浴场](./images/mitsui-garden-hotel-gotanda-bath.jpg "酒店顶楼的露天浴场（照片来自酒店官网，实景基本就是这样，只是冬天多了些水雾）")
+![酒店顶楼的露天浴场（照片来自酒店官网，实景基本就是这样，只是冬天多了些水雾）](./images/mitsui-garden-hotel-gotanda-bath.jpg)
 
 自习。Share lounge。
 
@@ -26,9 +26,9 @@ draft: true
 
 <div class="image-grid">
 
-![晴天的湘南海岸](./images/film-shonan-kaigan.jpg "晴天的湘南海岸")
+![晴天的湘南海岸](./images/film-shonan-kaigan.jpg)
 
-![雪中的滨离宫恩赐庭园](./images/film-hama-rikyu.jpg "雪中的滨离宫恩赐庭园")
+![雪中的滨离宫恩赐庭园](./images/film-hama-rikyu.jpg)
 
 </div>
 
@@ -36,16 +36,16 @@ draft: true
 
 <div class="image-grid">
 
-![备齐抹茶用具](./images/matcha-1.jpg "备齐抹茶用具")
+![备齐抹茶用具](./images/matcha-1.jpg)
 
-![第一杯抹茶，像模像样](./images/matcha-2.jpg "第一杯抹茶，像模像样")
+![第一杯抹茶，像模像样](./images/matcha-2.jpg)
 
 </div>
 
 <div class="image-grid">
 
-![文明堂的长崎蛋糕，成为我们回家后的早餐](./images/okashi-1.jpg "文明堂的长崎蛋糕，成为我们回家后的早餐")
+![文明堂的长崎蛋糕，成为我们回家后的早餐](./images/okashi-1.jpg)
 
-![桂新堂的虾饼，之前同事带到公司分享过，很好吃](./images/okashi-2.jpg "桂新堂的虾饼，之前同事带到公司分享过，很好吃")
+![桂新堂的虾饼，之前同事带到公司分享过，很好吃](./images/okashi-2.jpg)
 
 </div>

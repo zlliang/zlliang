@@ -10,7 +10,7 @@ tags: [coding agents, typefaces]
 
 > Berkeley Mono coalesces the objectivity of machine-readable typefaces of the 70's while simultaneously retaining the humanist sans-serif qualities. Inspired by the legendary typefaces of the past, Berkeley Mono offers exceptional straightforwardness and clarity in its form. Its purpose is to make the user productive and get out of the way.
 
-![Berkeley Mono teaser](./images/berkeley-mono-teaser.svg "Berkeley Mono specimen from the official website")
+![Berkeley Mono specimen from the official website](./images/berkeley-mono-teaser.svg)
 
 As the introduction suggests, the typeface reminds me of man pages, telephone books, and vintage technical documentation. [The foundry's website](https://usgraphics.com/) also reflects that aesthetic.
 
