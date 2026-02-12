@@ -14,9 +14,9 @@ I haven't looked into it deeply yet, but it looks promising at a glance. I hope 
 
 <div class="image-grid">
 
-![Screenshot of Beautiful Mermaid](./images/screenshot-beautiful-mermaid.png "Beautiful Mermaid")
+![Beautiful Mermaid](./images/screenshot-beautiful-mermaid.png)
 
-![Screenshot of Mermaid's default theme](./images/screenshot-mermaid.png "Mermaid's default theme")
+![Mermaid's default theme](./images/screenshot-mermaid.png)
 
 </div>
 

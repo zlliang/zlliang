@@ -35,7 +35,7 @@ int main() {
 
 这是一张随机图片：
 
-![随机图片](https://picsum.photos/600/300 "这里可以写图片说明（我写了一个自定义的 rehype 插件来实现这个功能）")
+![这里可以写图片说明（我写了一个自定义的 rehype 插件来实现这个功能）](https://picsum.photos/600/300)
 
 这是一段引用：
 
@@ -77,13 +77,13 @@ int main() {
 
 <div class="image-grid">
 
-![随机图片 1](https://picsum.photos/400/300?random=1 "随机图片 1")
+![随机图片 1](https://picsum.photos/400/300?random=1)
 
-![随机图片 2](https://picsum.photos/400/300?random=2 "随机图片 2")
+![随机图片 2](https://picsum.photos/400/300?random=2)
 
-![随机图片 3](https://picsum.photos/400/300?random=3 "随机图片 3")
+![随机图片 3](https://picsum.photos/400/300?random=3)
 
-![随机图片 4](https://picsum.photos/400/300?random=4 "随机图片 4")
+![随机图片 4](https://picsum.photos/400/300?random=4)
 
 </div>
 

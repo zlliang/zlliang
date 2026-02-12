@@ -32,21 +32,21 @@ That's how I arrived at the current setup.
 
 As a result, I split my writing into two spaces: https://tech.zlliang.me and https://days.zlliang.me. There's also a personal landing page, https://zlliang.me, with a brief introduction that navigates readers to either space. My hope is that every reader (just me for now) can find all my work on the landing page and choose to follow either side of me.
 
-![Screenshot of my landing page](./images/screenshot-landing-page.png "My landing page, https://zlliang.me")
+![My landing page, https://zlliang.me](./images/screenshot-landing-page.png)
 
 I simply duplicated the original blog's codebase and changed the theme slightly to make "Zilong's Days" go live. Links to each other are also added.
 
 <div class="image-grid">
 
-![Screenshot of my tech notes website](./images/screenshot-tech.png "Zilong's Tech Notes, https://tech.zlliang.me")
+![Zilong's Tech Notes, https://tech.zlliang.me](./images/screenshot-tech.png)
 
-![Screenshot of my personal journal website](./images/screenshot-days.png "Zilong's Days, https://days.zlliang.me")
+![Zilong's Days, https://days.zlliang.me](./images/screenshot-days.png)
 
 </div>
 
 Also, I updated the note number system for the two spaces. For example, `#tech123` for tech notes, instead of `#123` previously, and `#days123` for personal notes.
 
-![Screenshot of the new number system for notes](./images/new-number-system-for-notes.png "New number system for notes")
+![New number system for notes](./images/new-number-system-for-notes.png)
 
 Last but not least, I formalized the writing workflows and reorganized my AI coding agent instruction files. All the work is tracked and documented in the [GitHub issue](https://github.com/zlliang/zlliang/issues/76).
 

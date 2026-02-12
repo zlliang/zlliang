@@ -15,6 +15,6 @@ Today, I found that nightly master builds have resumed! The [download index JSON
 
 Nevertheless, good news! I'm looking forward to trying out exciting [follow-ups](https://codeberg.org/ziglang/zig/issues/30150) on the [new async I/O](https://andrewkelley.me/post/zig-new-async-io-text-version.html).
 
-![Zig download page](./images/zig-download-page.png "Zig download page")
+![Zig download page](./images/zig-download-page.png)
 
 **Update Dec 23, 2025:** The download page is now updating again!

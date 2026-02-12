@@ -14,13 +14,13 @@ Here are examples I tried on [OpenRouter](https://openrouter.ai/), prompting "Ex
 
 <div class="image-grid">
 
-![Python explanation by GPT-5.2](./images/python-explanation-by-gpt-5.2.png "GPT-5.2, starting with an introductory paragraph and followed by sections")
+![GPT-5.2, starting with an introductory paragraph and followed by sections](./images/python-explanation-by-gpt-5.2.png)
 
-![Python explanation by Claude Opus 4.5](./images/python-explanation-by-claude-opus-4.5.png "Claude Opus 4.5, a document-like output with an h1 heading at the top and multiple horizontal rules")
+![Claude Opus 4.5, a document-like output with an h1 heading at the top and multiple horizontal rules](./images/python-explanation-by-claude-opus-4.5.png)
 
-![Python explanation by Gemini 3 Flash](./images/python-explanation-by-gemini-3-flash.png "Gemini 3 Flash, using h3 headings directly")
+![Gemini 3 Flash, using h3 headings directly](./images/python-explanation-by-gemini-3-flash.png)
 
-![Python explanation by Kimi K2 Thinking](./images/python-explanation-by-kimi-k2-thinking.png "Kimi K2 Thinking, also a document-like one")
+![Kimi K2 Thinking, also a document-like one](./images/python-explanation-by-kimi-k2-thinking.png)
 
 </div>
 
@@ -54,4 +54,4 @@ I apply these rules to the custom instructions setting in ChatGPT and to [AGENTS
 
 **Update Jan 18, 2026:** Slightly revised the formatting rules for clarity. See this commit: [zlliang/dotfiles@fa13ab1](https://github.com/zlliang/dotfiles/commit/fa13ab1df5b8b4862edcfadc0e6512cdaef72173).
 
-![Custom instructions setting in ChatGPT](./images/chatgpt-custom-instructions.png "Custom instructions setting in ChatGPT")
+![Custom instructions setting in ChatGPT](./images/chatgpt-custom-instructions.png)

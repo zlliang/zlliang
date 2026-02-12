@@ -10,8 +10,8 @@ I just added pagination to note pages like [/notes](/notes) and [/notes/categori
 
 <div class="image-grid">
 
-![Pagination indicator on the notes page](./images/pagination-indicator-on-the-note-pages.png "Pagination indicator on the notes page")
+![Pagination indicator on the notes page](./images/pagination-indicator-on-the-note-pages.png)
 
-![Pagination indicator on the notes page](./images/pagination-indicator-on-the-index-page.png "Pagination indicator on the index page, guiding you to the second page of notes")
+![Pagination indicator on the index page, guiding you to the second page of notes](./images/pagination-indicator-on-the-index-page.png)
 
 </div>

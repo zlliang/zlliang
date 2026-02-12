@@ -10,7 +10,7 @@ tags: [coffee, japanese-drama, watching]
 
 今天居家办公，开完早会，我把沙发上堆了一周的衣服整理好，十一点出头就点了午饭。伴着午饭，我看完了日剧《[住宅区的两人](https://movie.douban.com/subject/36902276/)》的第二集。
 
-![《住宅区的两人》第二集剧照](./images/still-of-danchi-no-futari.jpg "阿姨的表情太可爱了")
+![阿姨的表情太可爱了](./images/still-of-danchi-no-futari.jpg)
 
 下个月初，我和诗胤准备去东京旅行。规划之余，我又拿起了一些旧书、旧杂志，比如《[东京八平米](https://book.douban.com/subject/36096287/)》和 2025 年的一期《[&Premium](https://andpremium.jp/)》，体会那种味道和氛围。
 
@@ -18,4 +18,4 @@ tags: [coffee, japanese-drama, watching]
 
 看完这一集，阳光还不错。现在是下午一点出头，我又冲了一杯咖啡，准备开始下午的工作。
 
-![挂耳咖啡](./images/coffee.jpg "最近发现的 Blendy 挂耳咖啡，便宜好喝")
+![最近发现的 Blendy 挂耳咖啡，便宜好喝](./images/coffee.jpg)
