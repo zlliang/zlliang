@@ -6,7 +6,7 @@
     "lat": 36.2048,
     "lng": 138.2529,
     "visits": [
-      { "date": "2026-02" },
+      { "date": "2026-02", "link": "https://days.zlliang.me/posts/2026/02/13/four-days-in-tokyo" },
       { "date": "2025-06" },
       { "date": "2025-02" },
       { "date": "2024-09" },
