@@ -73,7 +73,6 @@ async function main() {
       created: date,
       category,
       tags: [],
-      draft: true,
     }
     console.log(`Created note #${nextNo}: ${filePath}`)
   } else {
