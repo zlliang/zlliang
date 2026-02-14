@@ -201,7 +201,7 @@ th {
 /* Image captions */
 
 span.caption {
-  @apply flex justify-center mt-1 text-sm text-neutral-500;
+  @apply flex justify-center mt-2 text-sm text-neutral-500;
 }
 
 /* Footnotes */

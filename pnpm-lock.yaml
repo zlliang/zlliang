@@ -27,6 +27,12 @@ importers:
         specifier: ^2.8.2
         version: 2.8.2
 
+  packages/lightbox:
+    devDependencies:
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/rehype:
     dependencies:
       '@astrojs/markdown-remark':
@@ -84,6 +90,9 @@ importers:
       '@vercel/speed-insights':
         specifier: ^1.3.1
         version: 1.3.1
+      '@zlliang/lightbox':
+        specifier: workspace:*
+        version: link:../../packages/lightbox
       '@zlliang/rehype':
         specifier: workspace:*
         version: link:../../packages/rehype
@@ -144,6 +153,9 @@ importers:
       '@vercel/speed-insights':
         specifier: ^1.3.1
         version: 1.3.1
+      '@zlliang/lightbox':
+        specifier: workspace:*
+        version: link:../../packages/lightbox
       '@zlliang/rehype':
         specifier: workspace:*
         version: link:../../packages/rehype
@@ -210,6 +222,9 @@ importers:
       '@vercel/speed-insights':
         specifier: ^1.3.1
         version: 1.3.1
+      '@zlliang/lightbox':
+        specifier: workspace:*
+        version: link:../../packages/lightbox
       '@zlliang/rehype':
         specifier: workspace:*
         version: link:../../packages/rehype
