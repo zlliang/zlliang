@@ -18,6 +18,7 @@ const registry: Record<string, string> = {
   "love": "感情",
   "monthly": "月刊",
   "photography": "摄影",
+  "reading": "阅读",
   "shinobu-yoshii": "吉井忍",
   "tokyo": "东京",
   "travel": "旅行",
