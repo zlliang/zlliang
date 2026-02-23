@@ -8,7 +8,7 @@
 }
 
 ::selection {
-  @apply bg-indigo-100 dark:bg-indigo-900;
+  @apply bg-primary-100 dark:bg-primary-900;
 }
 
 body {
@@ -25,6 +25,54 @@ body {
   --font-sans: "Public Sans Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-display: "Public Sans Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: "Roboto Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --color-www-50: var(--color-cyan-50);
+  --color-www-100: var(--color-cyan-100);
+  --color-www-200: var(--color-cyan-200);
+  --color-www-300: var(--color-cyan-300);
+  --color-www-400: var(--color-cyan-400);
+  --color-www-500: var(--color-cyan-500);
+  --color-www-600: var(--color-cyan-600);
+  --color-www-700: var(--color-cyan-700);
+  --color-www-800: var(--color-cyan-800);
+  --color-www-900: var(--color-cyan-900);
+  --color-www-950: var(--color-cyan-950);
+
+  --color-tech-50: var(--color-blue-50);
+  --color-tech-100: var(--color-blue-100);
+  --color-tech-200: var(--color-blue-200);
+  --color-tech-300: var(--color-blue-300);
+  --color-tech-400: var(--color-blue-400);
+  --color-tech-500: var(--color-blue-500);
+  --color-tech-600: var(--color-blue-600);
+  --color-tech-700: var(--color-blue-700);
+  --color-tech-800: var(--color-blue-800);
+  --color-tech-900: var(--color-blue-900);
+  --color-tech-950: var(--color-blue-950);
+
+  --color-days-50: var(--color-indigo-50);
+  --color-days-100: var(--color-indigo-100);
+  --color-days-200: var(--color-indigo-200);
+  --color-days-300: var(--color-indigo-300);
+  --color-days-400: var(--color-indigo-400);
+  --color-days-500: var(--color-indigo-500);
+  --color-days-600: var(--color-indigo-600);
+  --color-days-700: var(--color-indigo-700);
+  --color-days-800: var(--color-indigo-800);
+  --color-days-900: var(--color-indigo-900);
+  --color-days-950: var(--color-indigo-950);
+
+  --color-primary-50: var(--color-days-50);
+  --color-primary-100: var(--color-days-100);
+  --color-primary-200: var(--color-days-200);
+  --color-primary-300: var(--color-days-300);
+  --color-primary-400: var(--color-days-400);
+  --color-primary-500: var(--color-days-500);
+  --color-primary-600: var(--color-days-600);
+  --color-primary-700: var(--color-days-700);
+  --color-primary-800: var(--color-days-800);
+  --color-primary-900: var(--color-days-900);
+  --color-primary-950: var(--color-days-950);
 }
 
 /* Icons */
@@ -66,7 +114,7 @@ p {
 }
 
 a {
-  @apply text-indigo-600 dark:text-indigo-400 hover:text-indigo-500;
+  @apply text-primary-600 dark:text-primary-400 hover:text-primary-500;
 }
 
 a.nocolor {
@@ -74,7 +122,7 @@ a.nocolor {
 }
 
 a.secondary {
-  @apply text-inherit dark:text-inherit hover:text-indigo-500;
+  @apply text-inherit dark:text-inherit hover:text-primary-500;
 }
 
 b, strong {
