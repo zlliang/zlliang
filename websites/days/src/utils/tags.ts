@@ -10,6 +10,8 @@ const registry: Record<string, string> = {
   "coffee": "咖啡",
   "demo": "示例",
   "design": "设计",
+  "documentary": "纪录片",
+  "douban": "豆瓣",
   "festivals": "节日",
   "gaming": "游戏",
   "home": "居家",
