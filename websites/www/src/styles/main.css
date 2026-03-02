@@ -1,31 +1,9 @@
 @import "tailwindcss";
 @plugin "@iconify/tailwind4";
 
-/* Root */
-
-:root {
-  @apply text-sm sm:text-base;
-}
-
-::selection {
-  @apply bg-primary-100 dark:bg-primary-900;
-}
-
-body {
-  @apply bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 leading-normal;
-}
-
-[lang="zh"] body {
-  @apply leading-[1.6];
-}
-
-/* Fonts */
+/* Theme variables */
 
 @theme {
-  --font-sans: "Public Sans Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-display: "Public Sans Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: "Roboto Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-
   --color-www-50: var(--color-cyan-50);
   --color-www-100: var(--color-cyan-100);
   --color-www-200: var(--color-cyan-200);
@@ -73,6 +51,32 @@ body {
   --color-primary-800: var(--color-www-800);
   --color-primary-900: var(--color-www-900);
   --color-primary-950: var(--color-www-950);
+}
+
+/* Root */
+
+:root {
+  @apply text-sm sm:text-base;
+}
+
+::selection {
+  @apply bg-primary-100 dark:bg-primary-900;
+}
+
+body {
+  @apply bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 leading-normal;
+}
+
+[lang="zh"] body {
+  @apply leading-[1.6];
+}
+
+/* Fonts */
+
+@theme {
+  --font-sans: "Public Sans Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: "Public Sans Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: "Roboto Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /* Icons */
