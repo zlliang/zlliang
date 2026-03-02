@@ -22,19 +22,19 @@ const Bio = await renderFragment("bio-en")
   <!-- Writing -->
   <Section title="Writing" class="mb-6">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <Link href="https://tech.zlliang.me" external={false} class="secondary flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-tech-200 dark:hover:border-tech-800 hover:bg-tech-50 dark:hover:bg-tech-950 hover:text-tech-500!">
+      <Link href="https://tech.zlliang.me" external={false} class="group secondary flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-tech-200 dark:hover:border-tech-800 hover:bg-tech-50 dark:hover:bg-tech-950 hover:text-tech-500!">
         <Image src={logoTech} alt="Logo of tech.zlliang.me" class="size-8" loading="eager" />
         <div class="flex-1">
           <div><span class="font-bold">Zilong's Tech Notes</span> (English)</div>
-          <div class="text-sm opacity-60">tech.zlliang.me</div>
+          <div class="text-sm text-neutral-400 dark:text-neutral-600 group-hover:text-tech-400 dark:group-hover:text-tech-600">tech.zlliang.me</div>
           <div class="mt-2 text-sm">My tech learning and research</div>
         </div>
       </Link>
-      <Link href="https://days.zlliang.me" external={false} class="secondary flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-days-200 dark:hover:border-days-800 hover:bg-days-50 dark:hover:bg-days-950 hover:text-days-500!">
+      <Link href="https://days.zlliang.me" external={false} class="group secondary flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-days-200 dark:hover:border-days-800 hover:bg-days-50 dark:hover:bg-days-950 hover:text-days-500!">
         <Image src={logoDays} alt="Logo of days.zlliang.me" class="size-8" loading="eager" />
         <div class="flex-1">
           <div><span class="font-bold">Zilong's Days</span> (Chinese)</div>
-          <div class="text-sm opacity-60">days.zlliang.me</div>
+          <div class="text-sm text-neutral-400 dark:text-neutral-600 group-hover:text-days-400 dark:group-hover:text-days-600">days.zlliang.me</div>
           <div class="mt-2 text-sm">My daily life and reflections</div>
         </div>
       </Link>
