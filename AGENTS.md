@@ -8,7 +8,8 @@ This repository contains my personal websites:
 
 ```
 packages/
-└── rehype/  # Shared rehype plugins (@zlliang/rehype)
+├── rehype/  # Shared rehype plugins (@zlliang/rehype)
+└── styles/  # Shared styles (@zlliang/styles)
 websites/
 ├── www/     # zlliang.me – Personal landing page (English and Chinese)
 ├── tech/    # tech.zlliang.me – Tech learning and research (English)
