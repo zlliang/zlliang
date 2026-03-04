@@ -22,7 +22,7 @@ const { author, builtWithPrefix = "Built with", builtWithSuffix = "" } = Astro.p
     <Link href="https://creativecommons.org/licenses/by/4.0/" class="secondary">CC BY 4.0</Link>
     <span>2025–PRESENT</span>
     <span class="icon-[lucide--copyright] scale-90" />
-    <Link href="https://zlliang.me/" class="secondary">{author}</Link>
+    <Link href="https://zlliang.me/" external={false} class="secondary">{author}</Link>
     <span class="hidden sm:inline">
       <span class="icon-[lucide--dot]" />
       <span>{builtWithPrefix} <Link href="https://astro.build" class="secondary">Astro</Link> {builtWithSuffix}</span>
