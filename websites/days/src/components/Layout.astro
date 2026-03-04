@@ -2,8 +2,8 @@
 import VercelWebAnalytics from "@vercel/analytics/astro"
 import VercelSpeedInsights from "@vercel/speed-insights/astro"
 
+import Footer from "@zlliang/theme/components/Footer.astro"
 import Header from "@/components/Header.astro"
-import Footer from "@/components/Footer.astro"
 import Aside from "@/components/Aside.astro"
 
 import { getTitle, siteTitle } from "@/utils/site"
@@ -78,7 +78,7 @@ const url = new URL(Astro.url.pathname, Astro.site)
         </Aside>
       )}
     </div>
-    <Footer />
+    <Footer author="梁子龙" builtWithPrefix="使用" builtWithSuffix="构建" />
   </div>
 
   <!-- Vercel -->

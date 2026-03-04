@@ -1,5 +1,13 @@
 ---
-import Link from "@zlliang/theme/components/Link.astro"
+import Link from "./Link.astro"
+
+interface Props {
+  author: string
+  builtWithPrefix?: string
+  builtWithSuffix?: string
+}
+
+const { author, builtWithPrefix = "Built with", builtWithSuffix = "" } = Astro.props
 ---
 
 <footer class="mt-16 mb-8 text-xs text-neutral-400 dark:text-neutral-600">
@@ -14,13 +22,13 @@ import Link from "@zlliang/theme/components/Link.astro"
     <Link href="https://creativecommons.org/licenses/by/4.0/" class="secondary">CC BY 4.0</Link>
     <span>2025–PRESENT</span>
     <span class="icon-[lucide--copyright] scale-90" />
-    <Link href="https://zlliang.me/" class="secondary">Zilong Liang</Link>
+    <Link href="https://zlliang.me/" class="secondary">{author}</Link>
     <span class="hidden sm:inline">
       <span class="icon-[lucide--dot]" />
-      <span>Built with <Link href="https://astro.build" class="secondary">Astro</Link></span>
+      <span>{builtWithPrefix} <Link href="https://astro.build" class="secondary">Astro</Link> {builtWithSuffix}</span>
     </span>
   </div>
   <div class="mt-1 sm:hidden">
-    <span>Built with <Link href="https://astro.build" class="secondary">Astro</Link></span>
+    <span>{builtWithPrefix} <Link href="https://astro.build" class="secondary">Astro</Link> {builtWithSuffix}</span>
   </div>
 </footer>
