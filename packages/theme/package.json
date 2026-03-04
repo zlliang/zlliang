@@ -1,0 +1,23 @@
+{
+  "name": "@zlliang/theme",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./main.css": "./src/main.css",
+    "./components/Link.astro": "./src/components/Link.astro",
+    "./components/Section.astro": "./src/components/Section.astro",
+    "./components/Pagination.astro": "./src/components/Pagination.astro"
+  },
+  "dependencies": {
+    "@iconify/tailwind4": "^1.2.1",
+    "astro": "^5.18.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

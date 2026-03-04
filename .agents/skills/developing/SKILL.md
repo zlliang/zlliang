@@ -20,7 +20,8 @@ This repository contains three Astro websites and shared packages:
 
 ```
 packages/
-└── rehype/   # Shared rehype plugins (@zlliang/rehype)
+├── rehype/   # Shared rehype plugins (@zlliang/rehype)
+└── theme/    # Shared theme package (styles, utilities, components) (@zlliang/theme)
 websites/
 ├── www/      # zlliang.me – Personal landing page (English and Chinese, with [Astro's i18n support](https://docs.astro.build/guides/internationalization/))
 ├── tech/     # tech.zlliang.me – Tech learning and research (English)
@@ -31,6 +32,7 @@ scripts/      # Helper scripts for dev, build, and content authoring (pnpm dev, 
 ### Shared packages
 
 - **@zlliang/rehype:** Rehype plugins for Markdown processing (rehypeHeadingIds, rehypeAutolinkHeadings, rehypeExternalLinks, rehypeFootnotePrefixes, rehypeImageCaptions). Used by all three websites via `workspace:*` dependency.
+- **@zlliang/theme:** Shared package for global styles (`@zlliang/theme/main.css`), style utilities (`@zlliang/theme/style`), and shared Astro components (`@zlliang/theme/components/*`).
 
 ## Commands
 
@@ -57,4 +59,5 @@ Where `<site>` is one of: `www`, `tech`, `days`.
 
 - Use `lodash-es` and `date-fns` for utilities
 - Shared rehype plugins are in `packages/rehype`; import from `@zlliang/rehype`
+- Shared styles/utilities/components are in `packages/theme`; import from `@zlliang/theme/*`
 - Always verify production builds

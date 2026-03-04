@@ -1,5 +1,6 @@
 /** Locales */
 export const locales = ["en", "zh"] as const
+
 /** Locale type */
 export type Locale = (typeof locales)[number]
 
