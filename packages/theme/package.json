@@ -10,6 +10,7 @@
     "./components/Section.astro": "./src/components/Section.astro",
     "./components/Pagination.astro": "./src/components/Pagination.astro",
     "./components/PageTitle.astro": "./src/components/PageTitle.astro",
+    "./components/Header.astro": "./src/components/Header.astro",
     "./components/Footer.astro": "./src/components/Footer.astro"
   },
   "dependencies": {
