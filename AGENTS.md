@@ -9,7 +9,7 @@ This repository contains my personal websites:
 ```
 packages/
 ├── rehype/  # Shared rehype plugins (@zlliang/rehype)
-└── styles/  # Shared styles (@zlliang/styles)
+└── theme/   # Shared theme package (styles, utilities, components) (@zlliang/theme)
 websites/
 ├── www/     # zlliang.me – Personal landing page (English and Chinese)
 ├── tech/    # tech.zlliang.me – Tech learning and research (English)

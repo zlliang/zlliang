@@ -2,12 +2,12 @@
 import { getEntry } from "astro:content"
 import { format } from "date-fns"
 
+import Link from "@zlliang/theme/components/Link.astro"
 import Layout from "@/components/Layout.astro"
 import NoteItem from "@/components/NoteItem.astro"
-import Link from "@/components/Link.astro"
 
+import { cn } from "@zlliang/theme"
 import { notes } from "@/utils/content"
-import { cn } from "@/utils/style"
 
 import type { GetStaticPaths } from "astro"
 
