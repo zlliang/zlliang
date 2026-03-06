@@ -14,7 +14,7 @@
     "./components/Footer.astro": "./src/components/Footer.astro"
   },
   "dependencies": {
-    "@iconify/tailwind4": "^1.2.1",
+    "@iconify/tailwind4": "^1.2.3",
     "astro": "^5.18.0",
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.5.0",

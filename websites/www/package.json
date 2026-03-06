@@ -14,7 +14,7 @@
     "@fontsource-variable/roboto-mono": "^5.2.8",
     "@iconify-json/lucide": "^1.2.95",
     "@iconify-json/simple-icons": "^1.2.72",
-    "@iconify/tailwind4": "^1.2.1",
+    "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/vite": "^4.2.1",
     "@types/d3": "^7.4.3",
     "@types/topojson-client": "^3.1.5",
