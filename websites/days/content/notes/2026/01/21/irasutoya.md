@@ -18,7 +18,7 @@ tags: [design, assets]
 
 </div>
 
-原来，这些插画都来自于一个叫做 [**irasutoya**](https://www.irasutoya.com/)（いらすとや，直译是「插画屋」）的素材库！
+原来，这些插画都来自于一个叫做 **[irasutoya](https://www.irasutoya.com/)**（いらすとや，直译是「插画屋」）的素材库！
 
 ![irasutoya 的官方网站 https://irasutoya.com](./images/irasutoya-screenshot.png)
 
