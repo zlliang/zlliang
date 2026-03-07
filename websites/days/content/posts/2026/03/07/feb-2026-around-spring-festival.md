@@ -171,15 +171,17 @@ created: 2026-03-07
 
 可以发现，节前节后，我都会乐此不疲地整理房间。这是我回顾生活细节、整顿心情的方式。
 
-<div class="image-grid">
+<div class="image-grid grid-cols-3!">
 
 <div class="image-grid grid-cols-1!">
 
 ![](./images/room-1.jpg)
 
-![](./images/room-2.jpg)
+![](./images/room-4.jpg)
 
 </div>
+
+![](./images/room-2.jpg)
 
 ![](./images/room-3.jpg)
 
