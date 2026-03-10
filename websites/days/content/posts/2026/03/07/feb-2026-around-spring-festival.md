@@ -111,7 +111,7 @@ created: 2026-03-07
 
 <div class="image-grid grid-cols-3!">
 
-<div class="image-grid grid-cols-1!">
+<div class="image-column">
 
 ![](./images/film-1.jpg)
 
@@ -119,7 +119,7 @@ created: 2026-03-07
 
 </div>
 
-<div class="image-grid grid-cols-1!">
+<div class="image-column">
 
 ![](./images/film-3.jpg)
 
@@ -129,7 +129,11 @@ created: 2026-03-07
 
 </div>
 
+<div class="image-column">
+
 ![](./images/film-4.jpg)
+
+</div>
 
 </div>
 
@@ -177,7 +181,7 @@ created: 2026-03-07
 
 <div class="image-grid grid-cols-3!">
 
-<div class="image-grid grid-cols-1!">
+<div class="image-column">
 
 ![](./images/room-1.jpg)
 
@@ -185,9 +189,17 @@ created: 2026-03-07
 
 </div>
 
+<div class="image-column">
+
 ![](./images/room-2.jpg)
 
+</div>
+
+<div class="image-column">
+
 ![](./images/room-3.jpg)
+
+</div>
 
 </div>
 
