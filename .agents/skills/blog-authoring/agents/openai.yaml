@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blog Authoring"
+  short_description: "Help with blog drafting and publishing workflows"
+  default_prompt: "Use $blog-authoring to create, revise, or publish content for tech or days."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "English Review"
+  short_description: "Help with English technical writing reviews"
+  default_prompt: "Use $english-review to revise English technical prose for clarity, tone, and grammar."

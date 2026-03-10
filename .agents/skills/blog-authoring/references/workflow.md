@@ -1,6 +1,6 @@
-# Content Authoring Workflow
+# Blog Authoring Workflow
 
-There are notes and posts on the `tech` and `days` websites. Utility scripts at the project root help with the content authoring workflow.
+There are notes and posts on the `tech` and `days` websites. Utility scripts at the project root help with the blog authoring workflow.
 
 ## Notes
 

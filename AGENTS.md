@@ -48,33 +48,12 @@ websites/<tech|days>/
     └── posts/        # Long-form posts ([year]/[month]/[day]/[slug].md)
 ```
 
-## Content schema
-
-Notes use frontmatter with these fields:
-
-```yaml
-no: 1               # Required, unique note number (auto-incremented)
-title: ...          # Optional
-created: YYYY-MM-DD # Required
-category: regular   # Required, one of: regular, link, collection, quote, til, post
-post: ...           # Optional, refers to a post
-tags: []            # Optional, sorted alphabetically
-draft: true         # Remove this field to publish
-```
-
-Posts use frontmatter with these fields:
-
-```yaml
-title: ...          # Required
-created: YYYY-MM-DD # Required
-draft: true         # Remove this field to publish
-```
-
 ## Skills
 
-This repository provides several skills for specialized tasks. Load the appropriate skill when working on related tasks:
+This repository provides local skills for recurring tasks:
 
-- **developing:** For building features, fixing bugs, or running dev/build commands for any of the websites
-- **content-authoring:** For creating, drafting, editing, or publishing notes and posts on `tech` or `days`
-- **english-writing:** For reviewing and improving English prose, fixing grammar, or refining writing style
-- **reviewing:** Reviews drafts for grammar, style, phrasing, clarity, and structure. Use when asked to review a draft or article.
+- **website-development:** For website and shared-package development
+- **blog-authoring:** For note/post drafting, review, schema, and publishing workflow
+- **english-review:** For English prose revision and voice coaching
+
+For English blog drafts, use `blog-authoring` together with `english-review`.
