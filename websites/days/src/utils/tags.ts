@@ -24,6 +24,7 @@ const registry: Record<string, string> = {
   "photography": "摄影",
   "reading": "阅读",
   "shinobu-yoshii": "吉井忍",
+  "shopping": "逛街",
   "tokyo": "东京",
   "travel": "旅行",
   "watching": "观影",
