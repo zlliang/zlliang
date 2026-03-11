@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config"
+import { defineConfig, fontProviders } from "astro/config"
 import vercel from "@astrojs/vercel"
 import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
@@ -7,6 +7,26 @@ import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeExternalLinks, rehypeFo
 
 export default defineConfig({
   site: "https://days.zlliang.me",
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: "Public Sans",
+      cssVariable: "--font-public-sans",
+      weights: [400, 700],
+      styles: ["normal", "italic"],
+      subsets: ["latin"],
+      fallbacks: ["sans-serif"],
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: "Roboto Mono",
+      cssVariable: "--font-roboto-mono",
+      weights: [400],
+      styles: ["normal"],
+      subsets: ["latin"],
+      fallbacks: ["monospace"],
+    },
+  ],
   adapter: vercel({
     imageService: true,
     imagesConfig: {

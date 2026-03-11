@@ -1,4 +1,5 @@
 ---
+import { Font } from "astro:assets"
 import VercelWebAnalytics from "@vercel/analytics/astro"
 import VercelSpeedInsights from "@vercel/speed-insights/astro"
 
@@ -10,13 +11,6 @@ import { getTitle } from "@/utils/site"
 import { locales, t } from "@/utils/i18n"
 
 import type { Locale } from "@/utils/i18n"
-
-import "@fontsource-variable/public-sans"
-import "@fontsource-variable/public-sans/wght-italic.css"
-import publicSansWoff2 from "@fontsource-variable/public-sans/files/public-sans-latin-wght-normal.woff2?url"
-
-import "@fontsource-variable/roboto-mono"
-import "@fontsource-variable/roboto-mono/wght-italic.css"
 
 import "@/styles/main.css"
 
@@ -48,7 +42,8 @@ const url = new URL(Astro.url.pathname, Astro.site)
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
   <!-- Fonts -->
-  <link rel="preload" as="font" type="font/woff2" href={publicSansWoff2} crossorigin="anonymous" />
+  <Font cssVariable="--font-public-sans" preload />
+  <Font cssVariable="--font-roboto-mono" preload />
 
   <!-- SEO, OpenGraph and Twitter -->
   <link rel="sitemap" href="/sitemap-index.xml" />
