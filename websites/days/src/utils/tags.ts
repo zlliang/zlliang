@@ -13,6 +13,7 @@ const registry: Record<string, string> = {
   "documentary": "纪录片",
   "douban": "豆瓣",
   "driving": "驾车",
+  "duku": "读库",
   "festivals": "节日",
   "finance": "财务",
   "gaming": "游戏",
