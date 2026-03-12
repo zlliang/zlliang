@@ -27,6 +27,7 @@ pnpm new days post [title]  # Create a new post on the `days` website
 ```
 
 - Creates `posts/drafts/[slug].md` with `draft: true`
+- Optionally set `pinned: true` in post frontmatter for living documents
 
 ### Ship the post
 
@@ -38,3 +39,8 @@ pnpm ship days  # Ship a post on the `days` website
 - Moves the draft to `posts/[year]/[month]/[day]/[slug].md`
 - Removes `draft: true` from the post
 - Creates an associated note with `category: post` and a `post:` reference
+
+### Pin a post
+
+- Add `pinned: true` to a post's frontmatter when it should be treated as a long-lived reference document
+- Pinned posts appear in the top sidebar section (`Pinned posts` on `tech`, `置顶文章` on `days`)

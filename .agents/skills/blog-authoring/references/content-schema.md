@@ -33,6 +33,7 @@ Draft posts are created in `content/posts/drafts/` and published posts live unde
 ```yaml
 title: ...
 created: YYYY-MM-DD
+pinned: false
 draft: true
 ```
 
@@ -40,4 +41,5 @@ draft: true
 
 - `title`: required
 - `created`: required date in `YYYY-MM-DD`
+- `pinned`: optional boolean, defaults to `false`; set `true` for living documents that should appear in the sidebar's pinned section
 - `draft: true`: remove to publish
