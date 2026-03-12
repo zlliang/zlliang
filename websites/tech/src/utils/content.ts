@@ -39,7 +39,7 @@ export const tags = getTags(notes)
 export function getTags(notes: CollectionEntry<"notes">[]) {
   const tags = uniqBy(notes.flatMap((note) => note.data.tags).filter(Boolean) as Exclude<CollectionEntry<"notes">["data"]["tags"], undefined>, "slug")
     .toSorted((a, b) => a.slug.localeCompare(b.slug))
-  
+
   return tags
 }
 
@@ -55,10 +55,20 @@ export async function groupNotesByDate(notes: CollectionEntry<"notes">[]) {
 /** All posts */
 export const posts = await getPosts()
 
-/** Get all posts */  
+/** Get all posts */
 async function getPosts() {
   const collection = await getCollection("posts", ({ data }) => !import.meta.env.PROD || !data.draft)
   const posts = collection.toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf())
 
   return posts
+}
+
+/** All pinned posts */
+export const pinnedPosts = getPinnedPosts(posts)
+
+/** Get all pinned posts */
+function getPinnedPosts(posts: CollectionEntry<"posts">[]) {
+  const pinnedPosts = posts.filter((post) => post.data.pinned)
+
+  return pinnedPosts
 }

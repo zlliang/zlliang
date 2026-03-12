@@ -2,6 +2,7 @@
 title: Demonstrate Markdown Capabilities of This Website
 created: 2025-12-17
 tags: [demo]
+pinned: true
 draft: true
 ---
 

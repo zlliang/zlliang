@@ -2,6 +2,7 @@
 title: 展示本站的 Markdown 功能
 created: 2026-01-10
 tags: [示例]
+pinned: true
 draft: true
 ---
 

@@ -28,6 +28,7 @@ const posts = defineCollection({
   schema: z.object({
     title: z.string().min(1),
     created: z.coerce.date(),
+    pinned: z.boolean().default(false),
     draft: z.boolean().default(false),
   }),
 })

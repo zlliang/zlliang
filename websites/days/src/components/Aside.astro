@@ -5,7 +5,7 @@ import Section from "@zlliang/theme/components/Section.astro"
 import Link from "@zlliang/theme/components/Link.astro"
 import PostList from "@/components/PostList.astro"
 
-import { notes, categories, tags, posts } from "@/utils/content"
+import { notes, categories, tags, posts, pinnedPosts } from "@/utils/content"
 
 import { cn } from "@zlliang/theme"
 
@@ -23,6 +23,13 @@ const recentPosts = posts.slice(0, 10)
 <aside class={cn("space-y-6", className)}>
   <!-- Prefix -->
   <slot name="prefix" />
+
+  <!-- Pinned posts -->
+  {pinnedPosts.length > 0 && (
+    <Section title="置顶文章">
+      <PostList posts={pinnedPosts} />
+    </Section>
+  )}
 
   <!-- Recent posts -->
   {showRecentPosts && recentPosts.length > 0 && (
