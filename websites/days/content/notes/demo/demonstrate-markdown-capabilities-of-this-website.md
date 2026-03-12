@@ -4,7 +4,7 @@ title: 展示本站的 Markdown 功能
 created: 2026-01-10
 category: post
 post: demo/demonstrate-markdown-capabilities-of-this-website
-tags: [示例]
+tags: [demo]
 draft: true
 ---
 
