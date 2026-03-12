@@ -1,6 +1,7 @@
 ---
 title: What's next in this world of agents
 created: 2026-03-06
+draft: true
 ---
 
 It's a world of agents, and changing every single day. Amp is still my daily driver, but new concepts like [Pi] and new models like [GPT-5.4](https://openai.com/index/introducing-gpt-5-4/) announced earlier today made me confused.
