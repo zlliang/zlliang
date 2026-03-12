@@ -10,7 +10,7 @@
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.1",
     "@astrojs/vercel": "^10.0.0",
-    "@iconify-json/lucide": "^1.2.96",
+    "@iconify-json/lucide": "^1.2.97",
     "@iconify-json/simple-icons": "^1.2.73",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/vite": "^4.2.1",
