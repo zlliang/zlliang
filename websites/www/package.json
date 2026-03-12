@@ -21,7 +21,7 @@
     "@vercel/speed-insights": "^2.0.0",
     "@zlliang/rehype": "workspace:*",
     "@zlliang/theme": "workspace:*",
-    "astro": "^6.0.2",
+    "astro": "^6.0.3",
     "d3": "^7.9.0",
     "tailwindcss": "^4.2.1",
     "topojson-client": "^3.1.0",

@@ -19,7 +19,7 @@
     "@vercel/speed-insights": "^2.0.0",
     "@zlliang/rehype": "workspace:*",
     "@zlliang/theme": "workspace:*",
-    "astro": "^6.0.2",
+    "astro": "^6.0.3",
     "date-fns": "^4.1.0",
     "lodash-es": "^4.17.23",
     "tailwindcss": "^4.2.1",
