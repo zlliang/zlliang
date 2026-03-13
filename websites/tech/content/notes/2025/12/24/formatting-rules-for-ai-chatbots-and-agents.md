@@ -6,12 +6,6 @@ type: regular
 tags: [ai, writing]
 ---
 
-<div class="card">
-
-**Update Jan 18, 2026:** Slightly revised the formatting rules for clarity. See this commit: [zlliang/dotfiles@fa13ab1](https://github.com/zlliang/dotfiles/commit/fa13ab1df5b8b4862edcfadc0e6512cdaef72173).
-
-</div>
-
 I gradually realized that a unified formatting rule set is needed when working with multiple AI chatbots and agents.
 
 Output formatting styles vary from model to model. For technical topics, I've found that Claude tends to output responses like complete documents, starting with an `h1` heading and loves to use horizontal rules to separate sections; Gemini usually skips to `h3` headings directly without `h2` ones, which in my opinion is not a good practice.
@@ -59,3 +53,9 @@ To address this issue, and to unify output styles of different tools I'm using (
 I apply these rules to the custom instructions setting in ChatGPT and to [AGENTS.md](https://github.com/zlliang/dotfiles/blob/15fa31221ccd49d5a4ca5abb000ca543c8888bd4/.config/amp/AGENTS.md#writing-style) for my coding agent.
 
 ![Custom instructions setting in ChatGPT](./images/chatgpt-custom-instructions.png)
+
+<div class="card">
+
+**Update Jan 18, 2026:** Slightly revised the formatting rules for clarity. See this commit: [zlliang/dotfiles@fa13ab1](https://github.com/zlliang/dotfiles/commit/fa13ab1df5b8b4862edcfadc0e6512cdaef72173).
+
+</div>

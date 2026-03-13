@@ -6,12 +6,6 @@ type: regular
 tags: [programming]
 ---
 
-<div class="card">
-
-**Update Dec 23, 2025:** The download page is now updating again!
-
-</div>
-
 Since [Zig](https://ziglang.org/) hasn't hit 1.0 and is still evolving rapidly, following the master branch is common practice for trying out new features and tracking where the language is heading.
 Even its [release notes](https://ziglang.org/download/0.15.1/release-notes.html#This-Release-Contains-Bugs) say "working on a non-trivial project using Zig may require participating in the development process."
 
@@ -22,3 +16,9 @@ Today, I found that nightly master builds have resumed! The [download index JSON
 Nevertheless, good news! I'm looking forward to trying out exciting [follow-ups](https://codeberg.org/ziglang/zig/issues/30150) on the [new async I/O](https://andrewkelley.me/post/zig-new-async-io-text-version.html).
 
 ![Zig download page](./images/zig-download-page.png)
+
+<div class="card">
+
+**Update Dec 23, 2025:** The download page is now updating again!
+
+</div>

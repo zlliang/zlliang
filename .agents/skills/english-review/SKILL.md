@@ -21,4 +21,4 @@ Use this skill for English prose quality, not for publishing workflow.
 - Prefer concrete edits and short explanations over generic praise
 - If the task also involves repo-specific content workflow, pair this skill with `blog-authoring`
 - Leave tag selection and taxonomy changes to `tag-governance`
-- When reviewing updated English notes or posts in this repo, preserve the update-note convention defined by `blog-authoring` and keep update text concise and front-loaded
+- When reviewing updated English notes or posts in this repo, preserve the update-note convention defined by `blog-authoring` and keep update text concise and suitable for an end-of-piece follow-up note

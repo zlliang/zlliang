@@ -37,11 +37,12 @@ Here are clarifications for the shared terms:
 
 - Use an update note when an existing note or post has later changes that readers should know before reading the original text
 - This includes direct content updates, corrections, reversals, and new conclusions that materially qualify the original piece
-- Place update notes immediately after frontmatter, before the original body
+- Place update notes after the original body by default, so readers encounter the original text first and the later follow-up as an afterword
 - Wrap all update notes for the same entry in a single `<div class="card">...</div>` block
 - Format each entry as `**Update Mon D, YYYY:** ...` in English content and `**更新 YYYY 年 M 月 D 日：**...` in Chinese content
 - When there are multiple update notes, order them newest first inside the same card
 - Prefer linking to the follow-up note, post, commit, or source of truth when relevant
+- Only move an update note to the top when the original content would otherwise seriously mislead readers before they reach the end
 
 ## Misc
 

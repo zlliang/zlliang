@@ -3,12 +3,6 @@ title: Splitting My Websites and Finalizing My Writing Framework
 created: 2026-01-13
 ---
 
-<div class="card">
-
-**Update Mar 13, 2026:** I reverted the note number prefixes on both `tech` and `days`. Notes are now shown as `#123` again instead of `#tech123` and `#days123`. I wrote a note about the change: [_Removed the prefixes from note numbers_](/notes/2026/03/13/removed-the-prefixes-from-note-numbers).
-
-</div>
-
 After starting my blog from scratch at the end of 2025, and writing for a few weeks, I started rethinking how I want to structure my writing for the next ten years.
 
 In short, my personal websites are now organized into three parts:
@@ -67,3 +61,9 @@ Now I'm ready to mark the 1.0 version of my writing framework. I can freely writ
 As a follow-up task, I may write a post on each website to introduce what I'll cover on that site and how I write, and pin them as living documents.
 
 Again, it's time to write, write, and write.
+
+<div class="card">
+
+**Update Mar 13, 2026:** I reverted the note number prefixes on both `tech` and `days`. Notes are now shown as `#123` again instead of `#tech123` and `#days123`. I wrote a note about the change: [_Removed the prefixes from note numbers_](/notes/2026/03/13/removed-the-prefixes-from-note-numbers).
+
+</div>
