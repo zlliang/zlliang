@@ -1,7 +1,7 @@
 ---
 no: 4
 created: 2026-01-16
-category: regular
+type: regular
 tags: [relationship]
 ---
 

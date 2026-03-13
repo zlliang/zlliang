@@ -4,12 +4,12 @@ import PageTitle from "@zlliang/theme/components/PageTitle.astro"
 import Layout from "@/components/Layout.astro"
 
 import { notes } from "@/utils/content"
-import { categories, getCategoryDisplay } from "@/utils/categories"
+import { types, getTypeDisplay } from "@/utils/types"
 
 const title = "手记分类"
 
-function getCategoryCount(slug: string) {
-  return notes.filter((note) => note.data.category === slug).length
+function getTypeCount(slug: string) {
+  return notes.filter((note) => note.data.type === slug).length
 }
 ---
 
@@ -17,13 +17,13 @@ function getCategoryCount(slug: string) {
   <!-- Title -->
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <span slot="subtitle">共 {categories.length} 个</span>
+    <span slot="subtitle">共 {types.length} 个</span>
   </PageTitle>
 
-  <!-- Categories -->
-  {categories?.length > 0 ? categories.map((category) => (
+  <!-- Types -->
+  {types?.length > 0 ? types.map((type) => (
     <div class="mb-1">
-      <Link href={`/notes/categories/${category}`}>{getCategoryDisplay(category)} ({getCategoryCount(category)})</Link>
+      <Link href={`/notes/types/${type}`}>{getTypeDisplay(type)} ({getTypeCount(type)})</Link>
     </div>
   )) : <p class="text-neutral-500">暂无分类。</p>}
 </Layout>

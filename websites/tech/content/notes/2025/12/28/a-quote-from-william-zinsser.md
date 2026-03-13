@@ -2,7 +2,7 @@
 no: 12
 title: A quote from William Zinsser
 created: 2025-12-28
-category: quote
+type: quote
 tags: [writing]
 ---
 

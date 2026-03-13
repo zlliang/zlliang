@@ -2,7 +2,7 @@
 no: 14
 title: 在教学楼工作一下午
 created: 2026-01-30
-category: regular
+type: regular
 tags: [everyday, work]
 ---
 

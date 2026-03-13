@@ -2,7 +2,7 @@
 no: 2
 title: Agent Skills
 created: 2025-12-19
-category: link
+type: link
 tags: [ai-agents]
 ---
 

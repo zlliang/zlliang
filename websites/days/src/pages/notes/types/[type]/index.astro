@@ -1,0 +1,7 @@
+---
+export const prerender = false
+
+const { type } = Astro.params
+
+return Astro.redirect(`/notes/types/${type}/1`)
+---

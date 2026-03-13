@@ -2,7 +2,7 @@
 no: 1
 title: Berkeley Mono
 created: 2025-12-18
-category: link
+type: link
 tags: [tools]
 ---
 

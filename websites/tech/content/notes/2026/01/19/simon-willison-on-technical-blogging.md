@@ -2,7 +2,7 @@
 no: 26
 title: Simon Willison on Technical Blogging
 created: 2026-01-19
-category: link
+type: link
 tags: [blogging, writing]
 ---
 

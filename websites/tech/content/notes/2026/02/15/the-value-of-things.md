@@ -2,7 +2,7 @@
 no: 36
 title: The Value of Things
 created: 2026-02-15
-category: link
+type: link
 tags: [ai, career]
 ---
 

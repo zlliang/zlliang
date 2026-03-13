@@ -2,7 +2,7 @@
 no: 25
 title: 读完了《教养之托付：日本文库本溯源》
 created: 2026-03-04
-category: regular
+type: regular
 tags: [duku, reading]
 ---
 

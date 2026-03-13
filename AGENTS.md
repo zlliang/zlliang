@@ -48,6 +48,8 @@ websites/<tech|days>/
     └── posts/        # Long-form posts ([year]/[month]/[day]/[slug].md)
 ```
 
+Notes use a required `type` field in frontmatter, plus tags and an optional `post` reference.
+
 ## Skills
 
 This repository provides local skills for recurring tasks:

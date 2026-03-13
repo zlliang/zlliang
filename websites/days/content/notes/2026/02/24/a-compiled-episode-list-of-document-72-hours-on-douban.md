@@ -2,7 +2,7 @@
 no: 23
 title: 豆瓣上的《纪实 72 小时》历年片单整理
 created: 2026-02-24
-category: link
+type: link
 tags: [japan, watching]
 ---
 

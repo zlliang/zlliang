@@ -2,7 +2,7 @@
 no: 11
 title: 开会之后的反思
 created: 2026-01-27
-category: regular
+type: regular
 tags: [work, writing]
 ---
 

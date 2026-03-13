@@ -1,7 +1,7 @@
 ---
 no: 34
 created: 2026-02-11
-category: link
+type: link
 tags: [ai, career]
 ---
 

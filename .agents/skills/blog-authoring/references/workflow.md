@@ -16,12 +16,12 @@ There are notes and posts on the `tech` and `days` websites. Utility scripts at 
 Notes are short-form entries, typically written and published within a day.
 
 ```bash
-pnpm new tech note [--category <category>] [title]  # Create a new note on the `tech` website
-pnpm new days note [--category <category>] [title]  # Create a new note on the `days` website
+pnpm new tech note [--type <type>] [title]  # Create a new note on the `tech` website
+pnpm new days note [--type <type>] [title]  # Create a new note on the `days` website
 ```
 
 - Creates `notes/[year]/[month]/[day]/[slug].md` with `draft: true`
-- `category` must be one of the canonical note categories from `content-schema.md`
+- `type` must be one of the canonical note types from `content-schema.md`
 - Write first, review and revise the content, then assign or confirm tags before removing `draft: true`
 
 ## Posts
@@ -47,7 +47,7 @@ pnpm ship days  # Ship a post on the `days` website
 
 - Moves the draft to `posts/[year]/[month]/[day]/[slug].md`
 - Removes `draft: true` from the post
-- Creates an associated note with `category: post` and a `post:` reference
+- Creates an associated note with `type: post` and a `post:` reference
 
 ### Pin a post
 

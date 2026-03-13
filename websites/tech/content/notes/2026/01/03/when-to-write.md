@@ -2,7 +2,7 @@
 no: 18
 title: When to write
 created: 2026-01-03
-category: regular
+type: regular
 tags: [writing]
 ---
 

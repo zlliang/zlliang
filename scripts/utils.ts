@@ -6,7 +6,7 @@ export interface Frontmatter {
   no?: number
   title?: string
   created?: string
-  category?: string
+  type?: string
   post?: string
   tags?: string[]
   draft?: boolean

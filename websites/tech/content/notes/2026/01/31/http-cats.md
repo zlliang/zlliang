@@ -2,7 +2,7 @@
 no: 31
 title: HTTP Cats
 created: 2026-01-31
-category: link
+type: link
 tags: [tools]
 ---
 

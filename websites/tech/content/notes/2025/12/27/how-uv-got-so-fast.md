@@ -2,7 +2,7 @@
 no: 11
 title: How uv got so fast
 created: 2025-12-27
-category: link
+type: link
 tags: [programming, tools]
 ---
 

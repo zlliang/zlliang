@@ -1,7 +1,7 @@
 ---
 no: 5
 created: 2026-01-19
-category: regular
+type: regular
 tags: [everyday]
 ---
 

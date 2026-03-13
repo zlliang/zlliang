@@ -2,7 +2,7 @@
 no: 27
 title: 准备四月去青海和甘肃
 created: 2026-03-08
-category: regular
+type: regular
 tags: [travel]
 ---
 

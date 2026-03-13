@@ -2,7 +2,7 @@
 no: 14
 title: Paul Graham's post on X about writing
 created: 2025-12-28
-category: link
+type: link
 tags: [writing]
 ---
 

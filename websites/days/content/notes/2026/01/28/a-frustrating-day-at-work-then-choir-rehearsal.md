@@ -2,7 +2,7 @@
 no: 12
 title: 工作的烦恼，和晚上的合唱排练
 created: 2026-01-29
-category: regular
+type: regular
 tags: [choir, work]
 ---
 

@@ -2,7 +2,7 @@
 no: 17
 title: How I use ChatGPT and Amp
 created: 2026-01-03
-category: regular
+type: regular
 tags: [ai, ai-agents]
 ---
 

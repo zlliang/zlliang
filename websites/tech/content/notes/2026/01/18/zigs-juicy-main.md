@@ -2,7 +2,7 @@
 no: 25
 title: Zig's juicy main
 created: 2026-01-18
-category: link
+type: link
 tags: [programming]
 ---
 

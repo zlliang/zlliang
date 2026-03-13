@@ -2,7 +2,7 @@
 no: 4
 title: OpenAI Codex now officially supports skills
 created: 2025-12-20
-category: link
+type: link
 tags: [ai-agents]
 ---
 

@@ -2,7 +2,7 @@
 no: 23
 title: Ralph Wiggum as a "software engineer"
 created: 2026-01-14
-category: link
+type: link
 tags: [ai-agents]
 ---
 

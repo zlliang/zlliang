@@ -2,7 +2,7 @@
 no: 40
 title: VS Code has moved to a weekly release cycle
 created: 2026-03-10
-category: regular
+type: regular
 tags: [tools]
 ---
 

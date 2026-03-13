@@ -18,7 +18,7 @@ The default authoring flow is:
 
 - Read [references/workflow.md](./references/workflow.md) for note and post operations
 - Read [references/content-schema.md](./references/content-schema.md) before editing frontmatter or publishing content
-- Read [references/style-guide.md](./references/style-guide.md) when adjusting formatting, category-specific content shape, or Markdown structure
+- Read [references/style-guide.md](./references/style-guide.md) when adjusting formatting, type-specific content shape, or Markdown structure
 
 ## Review mode
 

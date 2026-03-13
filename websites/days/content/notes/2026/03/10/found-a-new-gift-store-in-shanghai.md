@@ -2,7 +2,7 @@
 no: 29
 title: 逛街发现「自然造物 · 中国礼物商店」
 created: 2026-03-10
-category: regular
+type: regular
 tags: [design, everyday]
 ---
 

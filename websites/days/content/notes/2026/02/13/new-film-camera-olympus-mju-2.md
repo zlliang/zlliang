@@ -2,7 +2,7 @@
 no: 21
 title: 购入胶片相机，奥林巴斯 U2
 created: 2026-02-13
-category: regular
+type: regular
 tags: [photography]
 ---
 

@@ -2,7 +2,7 @@
 no: 19
 title: Just updated the license of this website
 created: 2026-01-04
-category: regular
+type: regular
 tags: [blogging]
 ---
 

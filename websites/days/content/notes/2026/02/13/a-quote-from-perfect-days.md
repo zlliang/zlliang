@@ -2,7 +2,7 @@
 no: 20
 title: 《完美的日子》的一段台词
 created: 2026-02-13
-category: quote
+type: quote
 tags: [japan, watching]
 ---
 

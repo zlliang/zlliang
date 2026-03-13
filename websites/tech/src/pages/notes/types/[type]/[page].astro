@@ -4,20 +4,20 @@ import Layout from "@/components/Layout.astro"
 import NoteList from "@/components/NoteList.astro"
 
 import { notes } from "@/utils/content"
-import { categories, getCategoryDisplay } from "@/utils/categories"
+import { types, getTypeDisplay } from "@/utils/types"
 import { NOTES_PER_PAGE } from "@/utils/site"
 
 import type { GetStaticPaths } from "astro"
 
-export const getStaticPaths = (({ paginate }) => categories.flatMap((category) => {
-  const filteredNotes = notes.filter((note) => note.data.category === category)
-  return paginate(filteredNotes, { params: { category }, pageSize: NOTES_PER_PAGE })
+export const getStaticPaths = (({ paginate }) => types.flatMap((type) => {
+  const filteredNotes = notes.filter((note) => note.data.type === type)
+  return paginate(filteredNotes, { params: { type }, pageSize: NOTES_PER_PAGE })
 })) satisfies GetStaticPaths
 
-const { category } = Astro.params
+const { type } = Astro.params
 const { page } = Astro.props
 
-const title = `${getCategoryDisplay(category)} Notes`
+const title = `${getTypeDisplay(type)} Notes`
 ---
 
 <Layout title={title}>

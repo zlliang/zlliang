@@ -5,9 +5,11 @@ created: 2025-12-25
 
 <div class="card">
 
-**Update Jan 11, 2026:** I splitted this into separate websites for tech and personal writing. The tech blog now lives at https://tech.zlliang.me. I revised this post accordingly, and wrote about the change: [_Splitting My Websites for Tech and Personal Writing_](/posts/2026/01/13/splitting-my-websites-for-tech-and-personal-writing).
+**Update Mar 13, 2026:** I reworked the note tags across both `tech` and `days`, and renamed the note `category` field to `type` throughout the sites. I also wrote a note about it: [_Reworked tags and renamed note categories to types_](/notes/2026/03/13/reworked-tags-and-renamed-note-categories-to-types).
 
-**Update Dec 28, 2025:** I added descriptions for the "quote" category of notes.
+**Update Jan 11, 2026:** I splitted this into separate websites for tech and personal writing. The tech blog now lives at https://tech.zlliang.me. I revised this post accordingly, and wrote about the change: [_Splitting My Websites and Finalizing My Writing Framework_](/posts/2026/01/13/splitting-my-websites-and-finalizing-my-writing-framework).
+
+**Update Dec 28, 2025:** I added descriptions for the "quote" type of notes.
 
 </div>
 
@@ -121,9 +123,10 @@ The topics I'll cover may vary, starting with my technical learning and research
 
 Currently, there are two types of content on this blog:
 
-- **Notes:** Short-form entries, typically written and published within a day. They are the main focus of this blog, flowing through the timeline. As of now, [five categories](/notes/categories) of notes are here:
+- **Notes:** Short-form entries, typically written and published within a day. They are the main focus of this blog, flowing through the timeline. As of now, [six types](/notes/types) of notes are here:
     - _Regular notes_ capture my scattered thoughts on relevant topics
     - _Link notes_ bookmark things I found on the internet and share my comments on them, inspired by Simon Willison's _blogmarks_
+    - _Collection notes_ gather related resources on a single topic
     - _Quote notes_ share quotes from books, articles, and other sources
     - _TIL (Today I Learned) notes_ share things I learned today
     - _Post notes_ introduce any new post I've just published

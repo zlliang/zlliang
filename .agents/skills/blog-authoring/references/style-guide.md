@@ -10,7 +10,7 @@ Here are clarifications for the shared terms:
 |------|------------|---------|---------|--------------------|
 | note | Short-form notes | note | 手记 | 则 |
 | post | Long-form posts | post | 文章 | 篇 |
-| category | Note category | category | 分类 | 个 |
+| type | Note type | type | 分类 | 个 |
 | tag | Note topic | tag | 标签 | 个 |
 
 ## Titles and headings
@@ -24,7 +24,7 @@ Here are clarifications for the shared terms:
   - ❌ "How It Works"
 - **Keep headings short:** Aim for 3–8 words; avoid punctuation at the end
 
-## Category-specific content shape
+## Type-specific content shape
 
 - `regular`: No special content shape
 - `link`: Start with `[Link](url)`, optionally followed by `([via](url))`, then add commentary

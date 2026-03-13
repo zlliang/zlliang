@@ -2,7 +2,7 @@
 no: 5
 title: You can paste URLs as Markdown formatted links in VS Code
 created: 2025-12-22
-category: til
+type: til
 tags: [tools, writing]
 ---
 

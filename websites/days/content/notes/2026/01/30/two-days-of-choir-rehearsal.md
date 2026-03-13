@@ -2,7 +2,7 @@
 no: 13
 title: 两天的合唱排练
 created: 2026-01-30
-category: regular
+type: regular
 tags: [choir]
 ---
 

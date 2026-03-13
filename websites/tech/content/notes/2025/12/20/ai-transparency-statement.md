@@ -2,7 +2,7 @@
 no: 3
 title: AI Transparency Statement
 created: 2025-12-20
-category: link
+type: link
 tags: [ai, writing]
 ---
 

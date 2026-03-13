@@ -2,7 +2,7 @@
 no: 32
 title: What I missed this week
 created: 2026-02-09
-category: regular
+type: regular
 tags: [ai, ai-agents, tools]
 ---
 

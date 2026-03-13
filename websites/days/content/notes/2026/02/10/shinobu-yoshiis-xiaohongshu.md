@@ -2,7 +2,7 @@
 no: 18
 title: 吉井忍开设了小红书账号
 created: 2026-02-10
-category: regular
+type: regular
 tags: [japan, reading]
 ---
 

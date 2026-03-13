@@ -2,7 +2,7 @@
 no: 29
 title: Beautiful Mermaid
 created: 2026-01-29
-category: link
+type: link
 tags: [tools]
 ---
 

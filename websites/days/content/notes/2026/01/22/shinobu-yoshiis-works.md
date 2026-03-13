@@ -2,7 +2,7 @@
 no: 10
 title: 吉井忍作品
 created: 2026-01-22
-category: collection
+type: collection
 tags: [japan, reading]
 ---
 

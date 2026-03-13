@@ -1,0 +1,29 @@
+---
+import Link from "@zlliang/theme/components/Link.astro"
+import PageTitle from "@zlliang/theme/components/PageTitle.astro"
+import Layout from "@/components/Layout.astro"
+
+import { notes } from "@/utils/content"
+import { types, getTypeDisplay } from "@/utils/types"
+
+const title = "Note Types"
+
+function getTypeCount(slug: string) {
+  return notes.filter((note) => note.data.type === slug).length
+}
+---
+
+<Layout title={title}>
+  <!-- Title -->
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <span slot="subtitle">{types.length} in total</span>
+  </PageTitle>
+
+  <!-- Types -->
+  {types?.length > 0 ? types.map((type) => (
+    <div class="mb-1">
+      <Link href={`/notes/types/${type}`}>{getTypeDisplay(type)} ({getTypeCount(type)})</Link>
+    </div>
+  )) : <p class="text-neutral-500">No types found.</p>}
+</Layout>

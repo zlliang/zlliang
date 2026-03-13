@@ -2,7 +2,7 @@
 no: 24
 title: 春节假期后，上班的第一天
 created: 2026-02-24
-category: regular
+type: regular
 tags: [work]
 ---
 

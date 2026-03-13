@@ -2,7 +2,7 @@
 no: 28
 title: 还完了两年的车贷
 created: 2026-03-10
-category: regular
+type: regular
 tags: [everyday]
 ---
 

@@ -2,7 +2,7 @@
 no: 6
 title: Zig has restored its nightly master builds
 created: 2025-12-22
-category: regular
+type: regular
 tags: [programming]
 ---
 

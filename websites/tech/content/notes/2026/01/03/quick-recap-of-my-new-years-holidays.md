@@ -2,7 +2,7 @@
 no: 16
 title: Quick recap of my New Year's break
 created: 2026-01-03
-category: regular
+type: regular
 tags: [writing]
 ---
 

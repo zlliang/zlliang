@@ -2,7 +2,7 @@
 no: 30
 title: Diffs
 created: 2026-01-30
-category: link
+type: link
 tags: [tools]
 ---
 

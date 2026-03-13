@@ -1,7 +1,7 @@
 ---
 no: 22
 created: 2026-02-14
-category: regular
+type: regular
 tags: [duku, reading]
 ---
 

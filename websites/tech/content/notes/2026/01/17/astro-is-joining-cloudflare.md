@@ -2,7 +2,7 @@
 no: 24
 title: Astro is joining Cloudflare
 created: 2026-01-17
-category: link
+type: link
 tags: [astro]
 ---
 

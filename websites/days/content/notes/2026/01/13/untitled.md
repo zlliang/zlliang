@@ -1,7 +1,7 @@
 ---
 no: 2
 created: 2026-01-13
-category: regular
+type: regular
 tags: [everyday, relationship]
 ---
 

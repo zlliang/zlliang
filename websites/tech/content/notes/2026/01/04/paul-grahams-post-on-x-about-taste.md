@@ -2,7 +2,7 @@
 no: 20
 title: Paul Graham's post on X about taste
 created: 2026-01-04
-category: link
+type: link
 tags: [writing]
 ---
 

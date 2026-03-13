@@ -1,7 +1,7 @@
 ---
 no: 3
 created: 2026-01-14
-category: regular
+type: regular
 tags: [watching, writing]
 ---
 

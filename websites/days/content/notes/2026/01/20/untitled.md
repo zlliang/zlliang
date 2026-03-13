@@ -1,7 +1,7 @@
 ---
 no: 6
 created: 2026-01-20
-category: regular
+type: regular
 tags: [everyday, watching]
 ---
 

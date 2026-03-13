@@ -2,7 +2,7 @@
 no: -2
 title: 手记示例
 created: 2026-01-10
-category: regular
+type: regular
 tags: [demo]
 draft: true
 ---

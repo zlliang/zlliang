@@ -2,7 +2,7 @@
 no: 30
 title: 《读库》的第三个十年
 created: 2026-03-12
-category: regular
+type: regular
 tags: [duku, reading]
 ---
 

@@ -8,7 +8,7 @@ import type { Frontmatter } from "./utils"
 
 type EntryType = "note" | "post"
 
-type NoteCategory = "regular" | "link" | "collection" | "quote" | "til" | "post"
+type NoteType = "regular" | "link" | "collection" | "quote" | "til" | "post"
 
 async function main() {
   const args = process.argv.slice(2)
@@ -18,23 +18,23 @@ async function main() {
   const [typeArg, ...remaining] = rest
 
   if (typeArg !== "note" && typeArg !== "post") {
-    console.error("Usage: pnpm new <tech|days> <note|post> [--category <category>] [title]")
+    console.error("Usage: pnpm new <tech|days> <note|post> [--type <type>] [title]")
     process.exit(1)
   }
 
-  const type = typeArg as EntryType
+  const entryType = typeArg as EntryType
 
-  let category: NoteCategory = "regular"
+  let noteType: NoteType = "regular"
   const titleParts: string[] = []
 
   for (let i = 0; i < remaining.length; i++) {
-    if (remaining[i] === "--category" && remaining[i + 1]) {
-      const c = remaining[i + 1]
-      if (c === "regular" || c === "link" || c === "collection" || c === "quote" || c === "til" || c === "post") {
-        category = c
+    if (remaining[i] === "--type" && remaining[i + 1]) {
+      const t = remaining[i + 1]
+      if (t === "regular" || t === "link" || t === "collection" || t === "quote" || t === "til" || t === "post") {
+        noteType = t
         i++
       } else {
-        console.error(`Invalid category: ${c}. Must be one of: regular, link, collection, quote, til, post`)
+        console.error(`Invalid note type: ${t}. Must be one of: regular, link, collection, quote, til, post`)
         process.exit(1)
       }
     } else {
@@ -49,8 +49,8 @@ async function main() {
 
   const { date, year, month, day } = getDateParts()
 
-  const collectionPath = path.join(config.contentRoot, type === "note" ? "notes" : "posts")
-  const dirPath = type === "note"
+  const collectionPath = path.join(config.contentRoot, entryType === "note" ? "notes" : "posts")
+  const dirPath = entryType === "note"
     ? path.join(collectionPath, year, month, day)
     : path.join(collectionPath, "drafts")
   const filePath = path.join(dirPath, `${slug}.md`)
@@ -64,13 +64,13 @@ async function main() {
 
   let frontmatter: Frontmatter
 
-  if (type === "note") {
+  if (entryType === "note") {
     const nextNo = await getNextNo(collectionPath)
     frontmatter = {
       no: nextNo,
       ...(hasTitle && { title }),
       created: date,
-      category,
+      type: noteType,
       tags: [],
     }
     console.log(`Created note #${nextNo}: ${filePath}`)

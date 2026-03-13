@@ -4,7 +4,7 @@ import { format } from "date-fns"
 
 import Link from "@zlliang/theme/components/Link.astro"
 
-import { getCategoryDisplay } from "@/utils/categories"
+import { getTypeDisplay } from "@/utils/types"
 
 import type { CollectionEntry } from "astro:content"
 
@@ -27,9 +27,9 @@ const post = note.data.post ? await getEntry(note.data.post) : null
     <Content />
   </div>
 
-  <!-- Category and tags -->
+  <!-- Type and tags -->
   <div class="mb-1 text-xs text-neutral-500">
-    <Link href={`/notes/categories/${note.data.category}`} class="font-bold">{getCategoryDisplay(note.data.category)}</Link>{note.data.tags && note.data.tags.length > 0 && <span class="text-neutral-500">; </span>}
+    <Link href={`/notes/types/${note.data.type}`} class="font-bold">{getTypeDisplay(note.data.type)}</Link>{note.data.tags && note.data.tags.length > 0 && <span class="text-neutral-500">; </span>}
     {note.data.tags?.map((tag, index) => <Fragment><Link href={`/notes/tags/${tag.slug}`}>{tag.display}</Link>{index !== note.data.tags!.length - 1 && <span>, </span>}</Fragment>)}
   </div>
 

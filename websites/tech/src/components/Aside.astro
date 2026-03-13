@@ -6,7 +6,7 @@ import Link from "@zlliang/theme/components/Link.astro"
 import PostList from "@/components/PostList.astro"
 
 import { notes, tags, posts, pinnedPosts } from "@/utils/content"
-import { categories } from "@/utils/categories"
+import { types } from "@/utils/types"
 
 import { cn } from "@zlliang/theme"
 
@@ -46,8 +46,8 @@ const recentPosts = posts.slice(0, 10)
       <span class="text-sm text-neutral-500">{notes.length} in total</span>
     </div>
     <div class="flex justify-between items-center mb-1">
-      <span><span class="mr-2 font-mono text-neutral-500">├</span><Link href="/notes/categories"><span class="icon-[lucide--folder-open]" /> Categories</Link></span>
-      <span class="text-sm text-neutral-500">{categories.length} in total</span>
+      <span><span class="mr-2 font-mono text-neutral-500">├</span><Link href="/notes/types"><span class="icon-[lucide--folder-open]" /> Types</Link></span>
+      <span class="text-sm text-neutral-500">{types.length} in total</span>
     </div>
     <div class="flex justify-between items-center mb-1">
       <span><span class="mr-2 font-mono text-neutral-500">└</span><Link href="/notes/tags"><span class="icon-[lucide--tag]" /> Tags</Link></span>

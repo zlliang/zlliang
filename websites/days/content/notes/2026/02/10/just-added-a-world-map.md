@@ -2,7 +2,7 @@
 no: 17
 title: 给主页添加了地图
 created: 2026-02-10
-category: regular
+type: regular
 tags: [travel]
 ---
 

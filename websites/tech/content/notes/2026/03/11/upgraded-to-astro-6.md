@@ -2,7 +2,7 @@
 no: 41
 title: Upgraded to Astro 6.0
 created: 2026-03-11
-category: regular
+type: regular
 tags: [astro, blogging]
 ---
 

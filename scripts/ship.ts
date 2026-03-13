@@ -111,9 +111,9 @@ async function shipDraft(
   console.log(`Deleted draft: ${draftPath}`)
 }
 
-async function createNote(title: string, category: string, site: ContentSite): Promise<string> {
+async function createNote(title: string, noteType: string, site: ContentSite): Promise<string> {
   return new Promise((resolve) => {
-    const proc = spawn("pnpm", ["new", site, "note", "--category", category, title], {
+    const proc = spawn("pnpm", ["new", site, "note", "--type", noteType, title], {
       cwd: path.join(import.meta.dirname, ".."),
       stdio: ["inherit", "pipe", "inherit"],
     })

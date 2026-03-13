@@ -2,7 +2,7 @@
 no: 8
 title: 昨晚和诗胤的矛盾
 created: 2026-01-21
-category: regular
+type: regular
 tags: [relationship]
 ---
 
