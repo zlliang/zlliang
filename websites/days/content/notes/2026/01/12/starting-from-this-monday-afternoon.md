@@ -3,7 +3,7 @@ no: 1
 title: 从这个周一午后开始
 created: 2026-01-12
 category: regular
-tags: [coffee, japanese-drama, watching]
+tags: [everyday, japan, writing]
 ---
 
 用什么来开启这第一则手记呢？不如就从这个简单的，周一的午后说起。

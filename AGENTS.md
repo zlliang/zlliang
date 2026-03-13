@@ -55,5 +55,7 @@ This repository provides local skills for recurring tasks:
 - **website-development:** For website and shared-package development
 - **blog-authoring:** For note/post drafting, review, schema, and publishing workflow
 - **english-review:** For English prose revision and voice coaching
+- **tag-governance:** For note tag taxonomy, registry maintenance, AI tagging rules, and tag migrations
 
 For English blog drafts, use `blog-authoring` together with `english-review`.
+For note tag selection, review, or taxonomy work, use `blog-authoring` together with `tag-governance`.

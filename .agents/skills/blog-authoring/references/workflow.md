@@ -2,6 +2,15 @@
 
 There are notes and posts on the `tech` and `days` websites. Utility scripts at the project root help with the blog authoring workflow.
 
+## Recommended flow
+
+1. Write the draft
+2. Review wording, structure, and style with `blog-authoring`
+3. If the draft is in English, use `english-review` for grammar, phrasing, and naturalness
+4. Revise the draft
+5. Tag the note with `tag-governance`
+6. If the tag registry changes, revisit older notes that may need retagging
+
 ## Notes
 
 Notes are short-form entries, typically written and published within a day.
@@ -12,8 +21,8 @@ pnpm new days note [--category <category>] [title]  # Create a new note on the `
 ```
 
 - Creates `notes/[year]/[month]/[day]/[slug].md` with `draft: true`
-- Supported categories: `regular` (default), `link`, `collection`, `quote`, `til`, `post`
-- Write, review, then remove `draft: true` to publish
+- `category` must be one of the canonical note categories from `content-schema.md`
+- Write first, review and revise the content, then assign or confirm tags before removing `draft: true`
 
 ## Posts
 

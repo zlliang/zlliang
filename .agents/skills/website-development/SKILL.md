@@ -9,8 +9,8 @@ Use this skill for implementation work on the websites and shared packages.
 
 ## Read first
 
-- Read [references/repo-structure.md](./references/repo-structure.md) to understand the monorepo layout and shared packages
 - Read [references/commands.md](./references/commands.md) before running dev, build, or content-related commands
+- Read [references/repo-structure.md](./references/repo-structure.md) when package boundaries or shared ownership matter
 
 ## Workflow
 

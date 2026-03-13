@@ -3,7 +3,7 @@ no: 35
 title: Two articles on work habits
 created: 2026-02-12
 category: collection
-tags: [work]
+tags: [career]
 ---
 
 Two articles on work habits:

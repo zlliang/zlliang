@@ -3,7 +3,7 @@ no: 20
 title: 《完美的日子》的一段台词
 created: 2026-02-13
 category: quote
-tags: [watching]
+tags: [japan, watching]
 ---
 
 > この世界は、本当はたくさんの世界がある。繋がっているように見えでも、繋がっていない世界がある。僕のいる世界は、ニコのママのいる世界とは違う。

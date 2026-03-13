@@ -1,6 +1,5 @@
 import fs, { glob } from "node:fs/promises"
 import path from "node:path"
-import slugify from "slugify"
 
 import { getSiteConfig, parseContentSiteArg } from "./config"
 import { fileExists, getDateParts, serializeFrontmatter } from "./utils"
@@ -46,7 +45,7 @@ async function main() {
   const rawTitle = titleParts.join(" ").trim()
   const hasTitle = rawTitle.length > 0
   const title = hasTitle ? rawTitle : "Untitled"
-  const slug = slugify(title, { lower: true })
+  const slug = toSlug(title)
 
   const { date, year, month, day } = getDateParts()
 
@@ -86,6 +85,17 @@ async function main() {
 
   const content = serializeFrontmatter(frontmatter) + "TODO"
   await fs.writeFile(filePath, content, "utf8")
+}
+
+function toSlug(input: string) {
+  const slug = input
+    .normalize("NFKD")
+    .toLowerCase()
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+
+  return slug || "untitled"
 }
 
 async function getNextNo(notesRoot: string): Promise<number> {

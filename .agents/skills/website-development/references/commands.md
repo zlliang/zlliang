@@ -21,7 +21,6 @@ pnpm build <site>
 ## Related tooling
 
 - Use `pnpm new ...` and `pnpm ship ...` for content workflows rather than hand-creating files when the task is authoring-oriented
-- Use `lodash-es` and `date-fns` when the existing codebase already relies on them
 - Import shared rehype plugins from `@zlliang/rehype`
 - Import shared styles, utilities, and components from `@zlliang/theme/*`
 

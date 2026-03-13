@@ -3,7 +3,7 @@ no: 38
 title: Two articles on sandboxing for AI agents
 created: 2026-02-28
 category: collection
-tags: [coding agents, sandboxing]
+tags: [ai-agents]
 ---
 
 Two articles on sandboxing for AI agents:

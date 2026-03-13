@@ -1,9 +1,9 @@
 import { defineCollection, reference } from "astro:content"
 import { z } from "astro/zod"
 import { glob } from "astro/loaders"
-import slugify from "slugify"
 
-export const categories = ["regular", "link", "collection", "quote", "til", "post"] as const
+import { categories } from "@/utils/categories"
+import { registry, tagSlugs } from "@/utils/tags"
 
 const notes = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./content/notes" }),
@@ -13,11 +13,8 @@ const notes = defineCollection({
     created: z.coerce.date(),
     category: z.enum(categories).default("regular"),
     post: reference("posts").optional(),
-    tags: z.array(z.string().min(1)).optional()
-      .transform((tags) => tags
-        ?.map((tag) => ({ display: tag, slug: slugify(tag, { lower: true }) }))
-        .toSorted((a, b) => a.slug.localeCompare(b.slug))
-      ),
+    tags: z.array(z.enum(tagSlugs)).min(1)
+      .transform((slugs) => slugs.toSorted((a, b) => a.localeCompare(b, "en")).map((s) => registry.find((t) => t.slug === s)!)),
     draft: z.boolean().default(false),
   }),
 })

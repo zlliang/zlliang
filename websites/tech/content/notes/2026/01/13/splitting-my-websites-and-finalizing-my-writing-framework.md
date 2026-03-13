@@ -4,7 +4,7 @@ title: Splitting My Websites and Finalizing My Writing Framework
 created: 2026-01-13
 post: 2026/01/13/splitting-my-websites-and-finalizing-my-writing-framework
 category: post
-tags: [Astro, blogging, releases, writing]
+tags: [blogging, writing]
 ---
 
 Last weekend, I reorganized my personal websites. Here's the new structure:

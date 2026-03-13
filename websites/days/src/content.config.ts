@@ -2,7 +2,7 @@ import { defineCollection, reference } from "astro:content"
 import { z } from "astro/zod"
 import { glob } from "astro/loaders"
 
-import { getTagDisplay } from "@/utils/tags"
+import { registry, tagSlugs } from "@/utils/tags"
 
 export const categories = ["regular", "link", "collection", "quote", "til", "post"] as const
 
@@ -14,11 +14,8 @@ const notes = defineCollection({
     created: z.coerce.date(),
     category: z.enum(categories).default("regular"),
     post: reference("posts").optional(),
-    tags: z.array(z.string().min(1)).optional()
-      .transform((tags) => tags
-        ?.map((tag) => ({ display: getTagDisplay(tag), slug: tag }))
-        .toSorted((a, b) => a.slug.localeCompare(b.slug))
-      ),
+    tags: z.array(z.enum(tagSlugs)).min(1)
+      .transform((slugs) => slugs.toSorted((a, b) => a.localeCompare(b, "en")).map((s) => registry.find((t) => t.slug === s)!)),
     draft: z.boolean().default(false),
   }),
 })

@@ -28,3 +28,4 @@ Example:
 - Technically accurate
 - Grammatically natural
 - Readable aloud
+- Ready for tagging after revision

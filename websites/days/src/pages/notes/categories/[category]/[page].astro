@@ -3,7 +3,8 @@ import PageTitle from "@zlliang/theme/components/PageTitle.astro"
 import Layout from "@/components/Layout.astro"
 import NoteList from "@/components/NoteList.astro"
 
-import { notes, categories, getCategoryDisplay } from "@/utils/content"
+import { notes } from "@/utils/content"
+import { categories, getCategoryDisplay } from "@/utils/categories"
 import { NOTES_PER_PAGE } from "@/utils/site"
 
 import type { GetStaticPaths } from "astro"

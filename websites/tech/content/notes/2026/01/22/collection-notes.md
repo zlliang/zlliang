@@ -3,7 +3,7 @@ no: 27
 title: Collection notes
 created: 2026-01-22
 category: regular
-tags: [blogging, releases]
+tags: [blogging]
 ---
 
 I just added a new category of notes called "[collection notes](/notes/categories/collection)".

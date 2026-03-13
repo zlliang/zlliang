@@ -3,7 +3,7 @@ no: 23
 title: Ralph Wiggum as a "software engineer"
 created: 2026-01-14
 category: link
-tags: [coding agents, Ralph]
+tags: [ai-agents]
 ---
 
 [Ralph Wiggum as a "software engineer"](https://ghuntley.com/ralph/). The AI field is evolving so fast like your math classes in high school, that if you miss a week, you're suddenly lost. For me recently, it's **Ralph**, a new pattern for coding agents that pushes them to a higher automation level.

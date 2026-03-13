@@ -3,7 +3,7 @@ no: -2
 title: My approach to running a link blog
 created: 2025-12-17
 category: link
-tags: [blogging, demo, Simon Willison]
+tags: [blogging, demo, writing]
 draft: true
 ---
 

@@ -3,7 +3,7 @@ no: 20
 title: Paul Graham's post on X about taste
 created: 2026-01-04
 category: link
-tags: [Paul Graham]
+tags: [writing]
 ---
 
 [Paul Graham's post on X about taste](https://x.com/paulg/status/2007487786505646369). Another interesting post from [Paul Graham](https://paulgraham.com/)[^1] — what struck me is how his posts spark real discussion. All the comments are worth reading. I'm following him now.

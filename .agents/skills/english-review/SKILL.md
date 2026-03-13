@@ -15,7 +15,9 @@ Use this skill for English prose quality, not for publishing workflow.
 
 ## Workflow
 
+- Use this skill after drafting and before note tagging
 - Prioritize correctness, clarity, and natural rhythm
 - Preserve the author's intent and technical meaning
 - Prefer concrete edits and short explanations over generic praise
 - If the task also involves repo-specific content workflow, pair this skill with `blog-authoring`
+- Leave tag selection and taxonomy changes to `tag-governance`

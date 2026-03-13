@@ -12,7 +12,7 @@ title: ...
 created: YYYY-MM-DD
 category: regular
 post: ...
-tags: []
+tags: [demo]
 draft: true
 ```
 
@@ -23,7 +23,7 @@ draft: true
 - `created`: required date in `YYYY-MM-DD`
 - `category`: required, one of `regular`, `link`, `collection`, `quote`, `til`, `post`
 - `post`: optional reference to an associated post
-- `tags`: optional, sorted alphabetically
+- `tags`: required, must contain one or more canonical slugs from the site's registry, sorted alphabetically by slug
 - `draft: true`: remove to publish
 
 ## Posts

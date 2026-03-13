@@ -3,7 +3,7 @@ no: 37
 title: Individuals in the AI field
 created: 2026-02-27
 category: collection
-tags: [Armin Ronacher, coding agents, LLMs, Mario Zechner, Mitchell Hashimoto, Pi, Simon Willison]
+tags: [ai, writing]
 ---
 
 Individuals I'm following, who actively write and contribute in the AI field:

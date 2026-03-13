@@ -1,8 +1,6 @@
 import { getCollection } from "astro:content"
 import { uniqBy, groupBy } from "lodash-es"
 
-import { categories } from "@/content.config"
-
 import type { CollectionEntry } from "astro:content"
 
 /** All notes */
@@ -16,29 +14,13 @@ async function getNotes() {
   return notes
 }
 
-/** Note categories */
-export { categories }
-export type NoteCategory = typeof categories[number]
-
-/** Get the display name of a note category */
-export function getCategoryDisplay(category: NoteCategory) {
-  return ({
-    regular: "Regular",
-    link: "Link",
-    collection: "Collection",
-    quote: "Quote",
-    til: "TIL (Today I Learned)",
-    post: "Post",
-  })[category]
-}
-
 /** All tags */
 export const tags = getTags(notes)
 
 /** Get tags from notes, sorted alphabetically */
 export function getTags(notes: CollectionEntry<"notes">[]) {
-  const tags = uniqBy(notes.flatMap((note) => note.data.tags).filter(Boolean) as Exclude<CollectionEntry<"notes">["data"]["tags"], undefined>, "slug")
-    .toSorted((a, b) => a.slug.localeCompare(b.slug))
+  const tags = uniqBy(notes.flatMap((note) => note.data.tags), "slug")
+    .toSorted((a, b) => a.slug.localeCompare(b.slug, "en"))
 
   return tags
 }

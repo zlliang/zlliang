@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tag Governance"
+  short_description: "Manage note tags, taxonomy, and per-site registries"
+  default_prompt: "Use $tag-governance after content review to tag notes, evolve a site's tag registry, or retag older notes after registry changes."
