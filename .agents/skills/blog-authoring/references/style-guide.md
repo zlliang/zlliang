@@ -33,6 +33,16 @@ Here are clarifications for the shared terms:
 - `til`: English notes usually start with `**TIL:** ...`
 - `post`: Introduce the related post and set the `post:` reference in frontmatter
 
+## Update notes
+
+- Use an update note when an existing note or post has later changes that readers should know before reading the original text
+- This includes direct content updates, corrections, reversals, and new conclusions that materially qualify the original piece
+- Place update notes immediately after frontmatter, before the original body
+- Wrap all update notes for the same entry in a single `<div class="card">...</div>` block
+- Format each entry as `**Update Mon D, YYYY:** ...` in English content and `**更新 YYYY 年 M 月 D 日：**...` in Chinese content
+- When there are multiple update notes, order them newest first inside the same card
+- Prefer linking to the follow-up note, post, commit, or source of truth when relevant
+
 ## Misc
 
 - Write dates as `YYYY-MM-DD` in frontmatter; "Dec 18, 2025" in English prose and "2025 年 12 月 18 日" in Chinese prose

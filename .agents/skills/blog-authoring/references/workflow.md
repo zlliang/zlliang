@@ -23,6 +23,7 @@ pnpm new days note [--type <type>] [title]  # Create a new note on the `days` we
 - Creates `notes/[year]/[month]/[day]/[slug].md` with `draft: true`
 - `type` must be one of the canonical note types from `content-schema.md`
 - Write first, review and revise the content, then assign or confirm tags before removing `draft: true`
+- If an existing note needs a correction, a substantial clarification, or an update that changes how the original text should be read, add an update note at the very top of the file wrapped in a single `<div class="card">...</div>` block
 
 ## Posts
 
@@ -48,6 +49,7 @@ pnpm ship days  # Ship a post on the `days` website
 - Moves the draft to `posts/[year]/[month]/[day]/[slug].md`
 - Removes `draft: true` from the post
 - Creates an associated note with `type: post` and a `post:` reference
+- If a published post later needs corrections, clarifications, or important follow-up context, prepend update notes in a single top-level `<div class="card">...</div>` block instead of scattering them through the body
 
 ### Pin a post
 
