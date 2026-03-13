@@ -5,7 +5,7 @@ created: 2025-12-25
 
 <div class="card">
 
-**Update Jan 11, 2026:** I splitted this into separate websites for tech and personal writing. The tech blog now lives at https://tech.zlliang.me. I revised this post accordingly, and wrote about the change: [_Splitting My Websites for Tech and Personal Writing_](/posts/drafts/splitting-my-websites-for-tech-and-personal-writing).
+**Update Jan 11, 2026:** I splitted this into separate websites for tech and personal writing. The tech blog now lives at https://tech.zlliang.me. I revised this post accordingly, and wrote about the change: [_Splitting My Websites for Tech and Personal Writing_](/posts/2026/01/13/splitting-my-websites-for-tech-and-personal-writing).
 
 **Update Dec 28, 2025:** I added descriptions for the "quote" category of notes.
 

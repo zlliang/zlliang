@@ -10,3 +10,5 @@ draft: true
 [Amp](https://ampcode.com/) is a secondary tool I use, and my profile can be found [here](https://ampcode.com/@zlliang).
 
 At work, I also use [Cursor](https://cursor.com/).
+
+When using agents, I always turn on yolo modes.
