@@ -2,6 +2,7 @@ import { defineConfig, fontProviders } from "astro/config"
 import vercel from "@astrojs/vercel"
 import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
+import remarkCjkFriendly from "remark-cjk-friendly"
 
 import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeExternalLinks, rehypeFootnotePrefixes, rehypeImageCaptions } from "@zlliang/rehype"
 
@@ -57,6 +58,9 @@ export default defineConfig({
     shikiConfig: {
       themes: { light: "github-light-default", dark: "github-dark-default" },
     },
+    remarkPlugins: [
+      [remarkCjkFriendly, {}],
+    ],
     remarkRehype: {
       footnoteLabel: " ",
       footnoteLabelTagName: "div",

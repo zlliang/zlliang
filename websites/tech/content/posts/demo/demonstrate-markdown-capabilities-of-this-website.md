@@ -57,15 +57,7 @@ Here's a list:
 
 This paragraph is to test whether the spacing between lists and paragraphs is normal.
 
-## Custom containers
-
-Below is a custom container that can be used on this site:
-
-<div class="update-note">
-
-**Update Dec 18, 2025:** This is an update note demo. It is useful for corrections, follow-up context, or later changes that should be attached to an existing note or post.
-
-</div>
+## Image grid
 
 The following is an image grid:
 
@@ -98,3 +90,9 @@ The following is an image grid:
 ## Conclusion
 
 Basically, these are all the formats you need to write articles. Don't think about those fancy things, just start writing!
+
+<div class="update-note">
+
+**Update Dec 18, 2025:** This is an update note demo. It is useful for corrections, follow-up context, or later changes that should be attached to an existing note or post.
+
+</div>

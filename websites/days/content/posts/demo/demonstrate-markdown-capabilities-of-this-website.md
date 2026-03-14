@@ -57,15 +57,7 @@ int main() {
 
 这段话用来测试列表和段落之间的间距是否正常。
 
-## 自定义容器
-
-下面是一个可在本站使用的自定义容器：
-
-<div class="update-note">
-
-**2026 年 1 月 11 日更新：**这是一个 update note 演示。它适合用来补充更正、后续说明，或者记录后来发生的变化。
-
-</div>
+## 图片网格
 
 下面是一个图片网格：
 
@@ -98,3 +90,9 @@ Through these test paragraphs, I can verify whether the website's font choices a
 ## 结语
 
 基本上，写文章需要的格式就这些了。别想那些花里胡哨的，动笔就是了！
+
+<div class="update-note">
+
+**2026 年 1 月 11 日更新：**这是一个 update note 演示。它适合用来补充更正、后续说明，或者记录后来发生的变化。
+
+</div>
