@@ -4,12 +4,10 @@ There are notes and posts on the `tech` and `days` websites. Utility scripts at 
 
 ## Recommended flow
 
-1. Write the draft
-2. Review wording, structure, and style with `blog-authoring`
-3. If the draft is in English, use `english-review` for grammar, phrasing, and naturalness
-4. Revise the draft
-5. Tag the note with `tag-governance`
-6. If the tag registry changes, revisit older notes that may need retagging
+1. The author writes the draft
+2. Ask AI to review structure, schema, formatting, and publishing readiness with `blog-authoring`; If the draft is in English, AI should also review grammar, phrasing, tone, and naturalness with `english-review`
+3. The author revises or rewrites the draft based on the feedback
+4. Ask AI to tag the note with `tag-governance` after the content is stable; If the tag registry changes, AI should also revisit older notes that may need retagging
 
 ## Notes
 
@@ -20,9 +18,8 @@ pnpm new tech note [--type <type>] [title]  # Create a new note on the `tech` we
 pnpm new days note [--type <type>] [title]  # Create a new note on the `days` website
 ```
 
-- Creates `notes/[year]/[month]/[day]/[slug].md` with `draft: true`
+- Creates `notes/[year]/[month]/[day]/[slug].md`
 - `type` must be one of the canonical note types from `content-schema.md`
-- Write first, review and revise the content, then assign or confirm tags before removing `draft: true`
 - If an existing note needs a correction, a substantial clarification, or an update that changes how the original text should be read, add an update note near the end of the file, after the original body, wrapped in a single `<div class="update-note">...</div>` block
 
 ## Posts

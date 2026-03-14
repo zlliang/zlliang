@@ -4,7 +4,7 @@ The relevant site's registry is the source of truth for active tags and tag mean
 
 ## Tagging a note
 
-1. Use this workflow only after the note has been reviewed and revised for content
+1. Use this workflow only after the author has reviewed and revised the note for content
 2. Open the relevant site's registry and read the candidate tags' `description` fields
 3. Read the note and identify its primary subject
 4. Choose the smallest set of active tags that preserves future discovery
