@@ -54,7 +54,7 @@ I apply these rules to the custom instructions setting in ChatGPT and to [AGENTS
 
 ![Custom instructions setting in ChatGPT](./images/chatgpt-custom-instructions.png)
 
-<div class="card">
+<div class="update-note">
 
 **Update Jan 18, 2026:** Slightly revised the formatting rules for clarity. See this commit: [zlliang/dotfiles@fa13ab1](https://github.com/zlliang/dotfiles/commit/fa13ab1df5b8b4862edcfadc0e6512cdaef72173).
 

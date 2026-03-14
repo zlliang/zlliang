@@ -62,7 +62,7 @@ As a follow-up task, I may write a post on each website to introduce what I'll c
 
 Again, it's time to write, write, and write.
 
-<div class="card">
+<div class="update-note">
 
 **Update Mar 13, 2026:** I reverted the note number prefixes on both `tech` and `days`. Notes are now shown as `#123` again instead of `#tech123` and `#days123`. I wrote a note about the change: [_Removed the prefixes from note numbers_](/notes/2026/03/13/removed-the-prefixes-from-note-numbers).
 

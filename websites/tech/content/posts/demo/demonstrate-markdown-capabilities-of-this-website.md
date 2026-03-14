@@ -59,17 +59,11 @@ This paragraph is to test whether the spacing between lists and paragraphs is no
 
 ## Custom containers
 
-Below are some custom containers that can only be used on this site:
+Below is a custom container that can be used on this site:
 
-<div class="card">
+<div class="update-note">
 
-This is a card.
-
-</div>
-
-<div class="card amber">
-
-This is a warning card, it will attract more attention!
+**Update Dec 18, 2025:** This is an update note demo. It is useful for corrections, follow-up context, or later changes that should be attached to an existing note or post.
 
 </div>
 

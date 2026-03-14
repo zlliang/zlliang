@@ -17,7 +17,7 @@ Nevertheless, good news! I'm looking forward to trying out exciting [follow-ups]
 
 ![Zig download page](./images/zig-download-page.png)
 
-<div class="card">
+<div class="update-note">
 
 **Update Dec 23, 2025:** The download page is now updating again!
 

@@ -171,13 +171,13 @@ As a wrap-up, you can find the full instruction file for this website here: [AGE
 
 Time to write, write, and write. Can I accumulate thousands of notes in a decade? Can I leave behind some articles that others find valuable too? Let's see.
 
-<div class="card">
+<div class="update-note">
 
-**Update Mar 13, 2026:** I reworked the note tags across both `tech` and `days`, and renamed the note `category` field to `type` throughout the sites. I also wrote a note about it: [_Reworked tags and renamed note categories to types_](/notes/2026/03/13/reworked-tags-and-renamed-note-categories-to-types).
+**Update Dec 28, 2025:** I added descriptions for the "quote" type of notes.
 
 **Update Jan 11, 2026:** I splitted this into separate websites for tech and personal writing. The tech blog now lives at https://tech.zlliang.me. I revised this post accordingly, and wrote about the change: [_Splitting My Websites and Finalizing My Writing Framework_](/posts/2026/01/13/splitting-my-websites-and-finalizing-my-writing-framework).
 
-**Update Dec 28, 2025:** I added descriptions for the "quote" type of notes.
+**Update Mar 13, 2026:** I reworked the note tags across both `tech` and `days`, and renamed the note `category` field to `type` throughout the sites. I also wrote a note about it: [_Reworked tags and renamed note categories to types_](/notes/2026/03/13/reworked-tags-and-renamed-note-categories-to-types).
 
 </div>
 
