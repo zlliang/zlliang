@@ -19,8 +19,8 @@ const { posts } = Astro.props
     <div class={cn("@xl:flex justify-between items-start gap-4", index !== posts.length - 1 && "mb-1.5 pb-1.5 border-b border-neutral-200 dark:border-neutral-800")}>
       <Link href={`/posts/${post.id}`} class="block">{post.data.title}</Link>
       <span class="shrink-0 text-sm text-neutral-500 @xl:translate-y-0.5">
-        {post.data.pinned && <span class="icon-[lucide--pin] mr-0.5 inline-block" />}
         <span>{format(post.data.created, "yyyy 年 M 月 d 日")}</span>
+        {post.data.pinned && <span class="icon-[lucide--pin]" />}
         {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">草稿</span>}
       </span>
     </div>
