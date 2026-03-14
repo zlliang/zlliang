@@ -1,45 +1,46 @@
 # Content Schema
 
-Use these frontmatter rules for content on `tech` and `days`.
+This file is a working summary for `tech` and `days`. The code-level source of truth is each site's `src/content.config.ts`.
 
 ## Notes
 
-Notes live under `content/notes/[year]/[month]/[day]/[slug].md`.
+- Path: `content/notes/YYYY/MM/DD/slug.md`
 
 ```yaml
 no: 1
-title: ...
-created: YYYY-MM-DD
+title: Example title
+created: 2026-03-14
 type: regular
-post: ...
-tags: [demo]
+post: 2026/03/14/example-post
+tags: [writing]
 draft: true
 ```
 
-### Fields
+### Rules
 
 - `no`: required unique note number
-- `title`: optional
-- `created`: required date in `YYYY-MM-DD`
-- `type`: required, one of `regular`, `link`, `collection`, `quote`, `til`, `post`
-- `post`: optional reference to an associated post
-- `tags`: required, must contain one or more canonical slugs from the site's registry, sorted alphabetically by slug
-- `draft: true`: remove to publish
+- `title`: optional, but preferred when the note has a clear title
+- `created`: required, `YYYY-MM-DD`
+- `type`: `regular`, `link`, `collection`, `quote`, `til`, or `post`
+- `tags`: required canonical slugs from the site's registry; keep them sorted in ascending lexicographic order
+- `post`: optional reference to the related post; only for post notes
+- `draft`: optional boolean; omit it or set it to `false` when published
 
 ## Posts
 
-Draft posts are created in `content/posts/drafts/` and published posts live under `content/posts/[year]/[month]/[day]/[slug].md`.
+- Draft path: `content/posts/drafts/slug.md`
+- Published path: `content/posts/YYYY/MM/DD/slug.md`
 
 ```yaml
-title: ...
-created: YYYY-MM-DD
-pinned: false
+title: Example title
+created: 2026-03-14
+pinned: true
 draft: true
 ```
 
-### Fields
+### Rules
 
 - `title`: required
-- `created`: required date in `YYYY-MM-DD`
-- `pinned`: optional boolean, defaults to `false`; set `true` for living documents that should appear in the sidebar's pinned section
-- `draft: true`: remove to publish
+- `created`: required, `YYYY-MM-DD`
+- `pinned`: optional; use it for long-lived reference posts
+- `draft`: optional boolean; drafts are created with `true`, and shipping removes it

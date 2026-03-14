@@ -1,54 +1,35 @@
 # Blog Authoring Workflow
 
-There are notes and posts on the `tech` and `days` websites. Utility scripts at the project root help with the blog authoring workflow.
+Use this file for the repo-specific sequence. Detailed frontmatter rules live in `content-schema.md`. Formatting and update-note rules live in `style-guide.md`.
 
-## Recommended flow
+## Default sequence
 
-1. The author writes the draft
-2. Ask AI to review structure, schema, formatting, and publishing readiness with `blog-authoring`; If the draft is in English, AI should also review grammar, phrasing, tone, and naturalness with `english-review`
-3. The author revises or rewrites the draft based on the feedback
-4. Ask AI to tag the note with `tag-governance` after the content is stable; If the tag registry changes, AI should also revisit older notes that may need retagging
+1. Identify the target site and entry type
+2. Create the draft with `pnpm new <tech|days> <note|post> ...` when the built-in workflow fits
+3. The author writes the draft
+4. Review the draft for structure, schema, formatting, and publishing readiness
+5. If the draft is in English, load `english-review` for prose quality, tone, and voice
+6. The author revises or rewrites
+7. Tag with `tag-governance` only after the content is stable
+8. For posts, ship the draft with `pnpm ship <tech|days>` when it is ready
 
 ## Notes
 
-Notes are short-form entries, typically written and published within a day.
-
-```bash
-pnpm new tech note [--type <type>] [title]  # Create a new note on the `tech` website
-pnpm new days note [--type <type>] [title]  # Create a new note on the `days` website
-```
-
-- Creates `notes/[year]/[month]/[day]/[slug].md`
-- `type` must be one of the canonical note types from `content-schema.md`
-- If an existing note needs a correction, a substantial clarification, or an update that changes how the original text should be read, add an update note near the end of the file, after the original body, wrapped in a single `<div class="update-note">...</div>` block
+- Notes live under `content/notes/YYYY/MM/DD/slug.md`
+- Notes are short-form and usually move from draft to publish quickly
+- Keep the body aligned with the selected note `type`
+- If a published note later needs correction or qualification, append a single `<div class="update-note">...</div>` block near the end
 
 ## Posts
 
-Posts are long-form entries that take days to draft and polish.
+- New posts start in `content/posts/drafts/slug.md` with `draft: true`
+- `pnpm ship <site>` publishes the draft, removes `draft: true`, and creates the associated `type: post` note
+- `content/posts/drafts/images/` is moved to the published post's `images/` directory during shipping
+- Use `pinned: true` only for long-lived reference posts
+- Add later corrections or follow-up context as update notes instead of scattering them through the body
 
-### Create a draft
+## Optional bilingual loop
 
-```bash
-pnpm new tech post [title]  # Create a new post on the `tech` website
-pnpm new days post [title]  # Create a new post on the `days` website
-```
+For English-writing practice, especially on `tech`, the author may also use the optional loop in [bilingual-writing-workflow.md](./bilingual-writing-workflow.md).
 
-- Creates `posts/drafts/[slug].md` with `draft: true`
-- Optionally set `pinned: true` in post frontmatter for living documents
-
-### Ship the post
-
-```bash
-pnpm ship tech  # Ship a post on the `tech` website
-pnpm ship days  # Ship a post on the `days` website
-```
-
-- Moves the draft to `posts/[year]/[month]/[day]/[slug].md`
-- Removes `draft: true` from the post
-- Creates an associated note with `type: post` and a `post:` reference
-- If a published post later needs corrections, clarifications, or important follow-up context, append update notes near the end in a single `<div class="update-note">...</div>` block instead of scattering them through the body
-
-### Pin a post
-
-- Add `pinned: true` to a post's frontmatter when it should be treated as a long-lived reference document
-- Pinned posts appear in the top sidebar section (`Pinned posts` on `tech`, `置顶文章` on `days`)
+This loop is not part of the normal publishing sequence. Use it when the goal includes training English thinking, comparing drafts, or collecting reusable expressions.

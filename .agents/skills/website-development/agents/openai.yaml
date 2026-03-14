@@ -1,4 +1,4 @@
 interface:
   display_name: "Website Development"
-  short_description: "Help with website code and build workflows"
-  default_prompt: "Use $website-development to build or fix one of the Astro websites in this repo."
+  short_description: "Build and maintain the Astro websites and shared packages"
+  default_prompt: "Use $website-development to build, fix, refactor, or validate one of the Astro websites, shared packages, or root scripts."

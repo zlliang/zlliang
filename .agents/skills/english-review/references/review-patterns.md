@@ -1,19 +1,21 @@
 # Review Patterns
 
-Use this workflow when reviewing English drafts.
+Use this file for the order and shape of English review.
 
-## Priorities
+## Priority order
 
 1. Keep the technical meaning correct
-2. Fix grammar, punctuation, and unnatural phrasing
-3. Improve flow, emphasis, and paragraph structure
-4. Preserve the author's voice instead of rewriting into a generic style
+2. Fix grammar, punctuation, and idiom
+3. Improve natural phrasing and sentence flow
+4. Improve paragraph structure and emphasis
+5. Preserve the author's voice
 
 ## How to present edits
 
-- Show before and after when the user asks for review or learning-oriented feedback
-- Keep explanations brief and specific
-- Point out recurring patterns so the author can internalize them
+- Use before-and-after examples only when they help learning or the user asked for them
+- Group similar issues instead of nitpicking line by line
+- Keep explanations short and causal: what changed and why it reads better
+- In comparison tasks, highlight reusable differences rather than scoring winners
 
 Example:
 
@@ -23,9 +25,18 @@ Example:
 >
 > Why: Replace a noun-heavy phrase with a direct verb and remove redundant wording
 
-## Final check
+## Useful signals to call out
+
+- Cleaner verbs
+- Better sentence openings
+- Stronger transitions
+- Tighter paragraph shape
+- Cases where the author's original is already stronger than the rewrite
+
+## Done when
 
 - Technically accurate
 - Grammatically natural
 - Readable aloud
-- Ready for tagging after revision
+- Still sounds like the author
+- Leaves reusable takeaways when the task is practice-oriented

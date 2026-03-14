@@ -5,34 +5,37 @@ description: Create, draft, edit, review, and publish notes and posts for the `t
 
 # Blog Authoring
 
-Use this skill for content work on `tech` and `days`.
+Use this skill for content work on `tech` and `days`. It is the repo-specific coordination layer for note and post workflow.
 
 ## When to use
 
-- Use this skill for note and post drafting workflow, content review, frontmatter checks, formatting checks, and publishing readiness
-- Use this skill as the main coordination layer for blog authoring in this repository
+- Use this skill for note and post workflow, content review, frontmatter checks, formatting checks, and publishing readiness
+- Use this skill when the task is about how content should be structured, stored, revised, or shipped in this repo
+- Use this skill for the optional bilingual English-writing loop when the task is practice-oriented
 
 ## When not to use
 
-- Do not use this skill as the primary writing step; the author writes the draft and performs the final rewrite
-- Do not use this skill for English prose review alone; load `english-review` for that
-- Do not use this skill for standalone tag selection or tag taxonomy work; load `tag-governance` for that
+- Do not use this skill as the only English prose reviewer; load `english-review` when language quality or voice matters
+- Do not use this skill for standalone tag work; load `tag-governance` after the content is stable
+- Do not treat AI output as the final authorial step; the author owns the rewrite
 
 ## Read first
 
-- Read [references/workflow.md](./references/workflow.md) for note and post operations
-- Read [references/content-schema.md](./references/content-schema.md) before editing frontmatter or publishing content
-- Read [references/style-guide.md](./references/style-guide.md) when adjusting formatting, type-specific content shape, or Markdown structure
+- Read [references/workflow.md](./references/workflow.md) for the default note and post sequence
+- Read [references/content-schema.md](./references/content-schema.md) before touching frontmatter or moving content
+- Read [references/style-guide.md](./references/style-guide.md) when formatting, note shape, or update-note conventions matter
+- Read [references/bilingual-writing-workflow.md](./references/bilingual-writing-workflow.md) only when the task is English-writing practice or bilingual comparison
 
 ## Responsibilities
 
 - Review blog drafts for structure, schema, formatting, and publishing readiness
 - Keep the distinction between author work and AI-assisted work explicit
+- Treat bilingual drafting and AI comparison workflows as optional training loops, not mandatory steps for every note or post
 - Treat tagging as a later step that starts only after the author has stabilized the content
-- Respond in the user's language unless the user asks otherwise
+- Keep the repo workflow lightweight and easy to follow
 
 ## Coordination with other skills
 
-- Load `english-review` only when the draft is in English and the task focuses on prose quality, tone, phrasing, or voice
-- Load `tag-governance` only after the author has revised the draft and the content is stable
-- Treat [references/workflow.md](./references/workflow.md) as the source of truth for the end-to-end sequence
+- Pair with `english-review` for English drafts or bilingual comparison and synthesis
+- Pair with `tag-governance` only after revision is mostly done
+- Leave code and build changes to `website-development`

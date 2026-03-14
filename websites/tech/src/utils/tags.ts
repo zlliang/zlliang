@@ -5,8 +5,8 @@ interface Tag {
 }
 
 export const registry = [
+  { slug: "agents", display: "agents", description: "Coding agents, agent harnesses, AI-assisted programming workflows, and agent design patterns" },
   { slug: "ai", display: "AI", description: "LLMs, AI products, model releases, and broader shifts in the AI field" },
-  { slug: "ai-agents", display: "AI agents", description: "Coding agents, agent harnesses, AI-assisted programming workflows, and agent design patterns" },
   { slug: "astro", display: "Astro", description: "Astro-specific framework news, upgrades, and website work" },
   { slug: "blogging", display: "blogging", description: "Public blogging practice, link-blogging, personal site building, content architecture, and publishing workflow implementation" },
   { slug: "career", display: "career", description: "Career reflection, work habits, software craft, and how AI changes programming work" },

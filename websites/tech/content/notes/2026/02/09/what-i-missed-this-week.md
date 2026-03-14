@@ -3,7 +3,7 @@ no: 32
 title: What I missed this week
 created: 2026-02-09
 type: regular
-tags: [ai, ai-agents, tools]
+tags: [ai, agents, tools]
 ---
 
 Here's what I missed in the AI field this week — I was on holiday in Tokyo.

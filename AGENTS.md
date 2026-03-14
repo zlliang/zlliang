@@ -1,63 +1,61 @@
-# AGENTS.md
+# Repository Guide
 
-This document defines how AI assistants (e.g., ChatGPT, Codex, Amp) help me develop and write for my personal websites.
+This repository contains Zilong's personal websites, shared packages, and a small set of root scripts. Use this file as the high-level map. Use the local skills for task-specific workflow.
 
-## Websites in this repository
+## What lives here
 
-This repository contains my personal websites:
+- `websites/www`: bilingual landing site for `zlliang.me`
+- `websites/tech`: English site for technical notes and posts
+- `websites/days`: Chinese site for daily-life notes and posts
+- `packages/rehype`: shared rehype plugins
+- `packages/theme`: shared styles, utilities, and Astro components
+- `scripts`: root commands for dev, build, and content operations
 
-```
-packages/
-├── rehype/  # Shared rehype plugins (@zlliang/rehype)
-└── theme/   # Shared theme package (styles, utilities, components) (@zlliang/theme)
-websites/
-├── www/     # zlliang.me – Personal landing page (English and Chinese)
-├── tech/    # tech.zlliang.me – Tech learning and research (English)
-└── days/    # days.zlliang.me – Daily life and reflections (Chinese)
-```
+All websites are built with [Astro](https://astro.build/) and are deployed on [Vercel](https://vercel.com/).
 
-The websites are built with [Astro](https://astro.build/) and are deployed on [Vercel](https://vercel.com/).
+## Content model
 
-## Structure of the `www` website
+- `www` uses two collections:
+  - `content/fragments/*.md` for reusable localized fragments
+  - `content/places/places.json` for map and travel data
+- `tech` and `days` share the same note/post model:
+  - notes live under `content/notes/YYYY/MM/DD/slug.md`
+  - post drafts live under `content/posts/drafts/slug.md`
+  - published posts live under `content/posts/YYYY/MM/DD/slug.md`
+- Schema source of truth is each site's `src/content.config.ts`
+- Tag meaning source of truth is each site's `src/utils/tags.ts`
 
-```
-websites/www/
-├── src/
-│   ├── assets/     # Static assets (images, etc.)
-│   ├── components/ # Astro components (.astro)
-│   ├── pages/      # File-based routing
-│   ├── styles/     # Global CSS
-│   └── utils/      # Helper functions
-└── content/
-    └── fragments/  # Reusable content fragments with i18n (bio-en.md, bio-zh.md)
-```
+## Root commands
 
-## Structure of the `tech` and `days` websites
+Run commands from the repository root.
 
-Currently the `tech` and `days` websites share a similar structure:
-
-```
-websites/<tech|days>/
-├── src/
-│   ├── components/   # Astro components (.astro)
-│   ├── pages/        # File-based routing
-│   ├── styles/       # Global CSS (main.css)
-│   └── utils/        # Helper functions
-└── content/
-    ├── notes/        # Short-form notes ([year]/[month]/[day]/[slug].md)
-    └── posts/        # Long-form posts ([year]/[month]/[day]/[slug].md)
+```bash
+pnpm dev <www|tech|days>
+pnpm build <www|tech|days>
+pnpm new <tech|days> <note|post> [--type <type>] [title]
+pnpm ship <tech|days>
 ```
 
-Notes use a required `type` field in frontmatter, plus tags and an optional `post` reference.
+- Use the root scripts instead of hand-creating dated content files when the existing workflow fits
+- `pnpm ship` publishes a post draft and creates the associated `type: post` note
+
+## Working principles
+
+- Keep authorial ownership explicit. AI may help review, compare, structure, and implement, but it should not replace the author's thinking
+- Prefer existing shared packages and site conventions over per-site duplication
+- Treat tagging as a late-stage content decision, not part of drafting
+- When docs summarize behavior, code wins if there is a conflict
+- Preserve the repo's update-note convention and language-specific style when editing content
 
 ## Skills
 
-This repository provides local skills for recurring tasks:
+- `website-development`: website code, shared packages, root scripts, builds, and validation
+- `blog-authoring`: note/post workflow, schema, style, publishing readiness, and the optional bilingual English-writing loop
+- `english-review`: English prose review, comparison, synthesis, and voice coaching
+- `tag-governance`: note tagging, registry changes, and retagging after taxonomy changes
 
-- **website-development:** For website and shared-package development
-- **blog-authoring:** For note/post drafting, review, schema, and publishing workflow
-- **english-review:** For English prose revision and voice coaching
-- **tag-governance:** For note tag taxonomy, registry maintenance, AI tagging rules, and tag migrations
+## How to combine skills
 
-For English blog drafts, use `blog-authoring` together with `english-review`.
-For note tag selection, review, or taxonomy work, use `blog-authoring` together with `tag-governance`.
+- Use `blog-authoring` with `english-review` for English notes and posts
+- Use `blog-authoring` with `tag-governance` after the content is stable and ready for tagging
+- Use `website-development` alongside content skills only when the task changes site behavior, shared code, or build output

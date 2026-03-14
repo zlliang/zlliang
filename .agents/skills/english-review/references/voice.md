@@ -1,6 +1,6 @@
 # Voice
 
-The target voice is clear, direct, and conversational without becoming casual in a sloppy way.
+Aim for clear, direct, calm technical prose.
 
 ## Core principles
 
@@ -10,21 +10,24 @@ The target voice is clear, direct, and conversational without becoming casual in
 - Use active, vivid verbs where they improve readability
 - Keep structure easy to follow and avoid information dumps
 
-## Tone
+## Sentence-level preferences
 
-- Use a curious, calm, confident register
-- Avoid stiffness, pretension, and marketing language
-- Use `I` freely for ownership
-- Use `you` for direct guidance
-- Use `we` only when the shared scope is explicit
+- Use `I` for ownership, `you` for direct guidance, and `we` only when the shared scope is real
+- Prefer active verbs and concrete subjects
+- Avoid stiffness, inflated claims, and marketing phrasing
 
-## Reference points
+## Paragraph-level preferences
 
-Writers whose style is useful as a calibration point:
+- Keep one main move per paragraph
+- Let transitions do real work
+- Avoid dumping background before the point
+- Read for rhythm as well as correctness
 
-- Bob Nystrom
+## Reference writers
+
+- Paul Graham
 - Simon Willison
+- Bob Nystrom
 - Alex Kladov
 - Josh Comeau
 - Mitchell Hashimoto
-- Paul Graham

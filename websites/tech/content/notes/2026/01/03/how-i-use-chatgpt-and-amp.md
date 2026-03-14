@@ -3,7 +3,7 @@ no: 17
 title: How I use ChatGPT and Amp
 created: 2026-01-03
 type: regular
-tags: [ai, ai-agents]
+tags: [ai, agents]
 ---
 
 I now use [ChatGPT](https://chatgpt.com/) and [Amp](https://ampcode.com/) in a very simple way: I just create new threads and leave them as-is.

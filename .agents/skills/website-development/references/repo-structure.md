@@ -1,16 +1,20 @@
 # Repo Structure
 
-This monorepo contains three Astro websites plus shared `rehype` and `theme` packages.
+Use this file when ownership or shared boundaries matter.
 
-## Shared packages
+## Top-level layout
 
-- `@zlliang/rehype`: shared Markdown and rehype plugins used across the sites
-- `@zlliang/theme`: shared global CSS, style helpers, and Astro components
+- `websites/www`: landing site with `fragments` and `places` content collections
+- `websites/tech`: English note and post site
+- `websites/days`: Chinese note and post site
+- `packages/rehype`: shared Markdown and rehype plugins
+- `packages/theme`: shared CSS, utilities, and Astro components
+- `scripts`: root entry points for dev, build, and content workflow
 
-## Conventions
+## Shared rules
 
-- `www` is the landing site; `tech` and `days` share the note and post content model
-- Use `@/*` for `src/*` imports within a website
+- `tech` and `days` share the same content model and note types
+- Each site owns its own `src/content.config.ts` and `src/utils/tags.ts`
+- Use `@/*` for within-site `src/*` imports
 - Keep Astro components in PascalCase
-- Keep content files under date-based directories when applicable
-- Prefer shared packages when logic or styling is reused across websites
+- Prefer moving reusable logic or styles into shared packages instead of copying them between sites

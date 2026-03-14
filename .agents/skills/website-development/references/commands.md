@@ -2,29 +2,31 @@
 
 Run commands from the repository root.
 
-## Core commands
+## Development and build
 
 ```bash
-pnpm install
-pnpm dev <site>
-pnpm build <site>
+pnpm dev <www|tech|days>
+pnpm build <www|tech|days>
 ```
 
-`<site>` must be one of `www`, `tech`, or `days`.
+## Content workflow
 
-## Expected dev ports
+```bash
+pnpm new <tech|days> <note|post> [--type <type>] [title]
+pnpm ship <tech|days>
+```
 
-- `www`: `3001`
-- `tech`: `3002`
-- `days`: `3003`
+- `pnpm new ... note` creates a dated note file
+- `pnpm new ... post` creates a post draft under `content/posts/drafts/`
+- `pnpm ship ...` publishes a post draft, creates the associated `type: post` note, and moves draft images if present
 
-## Related tooling
+## Shared imports
 
-- Use `pnpm new ...` and `pnpm ship ...` for content workflows rather than hand-creating files when the task is authoring-oriented
 - Import shared rehype plugins from `@zlliang/rehype`
 - Import shared styles, utilities, and components from `@zlliang/theme/*`
 
 ## Validation
 
-- Run `pnpm build <site>` for each affected website before finishing
-- If a change touches shared packages, build every dependent website that could be affected
+- Build every affected site before finishing
+- If a shared package changes, build each dependent site that could be affected
+- If a registry or content schema changes, validate the site that owns it
