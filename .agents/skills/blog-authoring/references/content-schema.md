@@ -21,7 +21,7 @@ draft: true
 - `no`: required unique note number
 - `title`: optional, but preferred when the note has a clear title
 - `created`: required, `YYYY-MM-DD`
-- `type`: `regular`, `link`, `collection`, `quote`, `til`, or `post`
+- `type`: `regular`, `link`, `collection`, `quote`, `til`, or `post`; choose `type` by note intent; see [note-types.md](./note-types.md) for the goal and default body shape of each type
 - `tags`: required canonical slugs from the site's registry; keep them sorted in ascending lexicographic order
 - `post`: optional reference to the related post; only for post notes
 - `draft`: optional boolean; omit it or set it to `false` when published

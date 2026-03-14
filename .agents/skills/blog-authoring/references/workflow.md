@@ -4,7 +4,7 @@ Use this file for the repo-specific sequence. Detailed frontmatter rules live in
 
 ## Default sequence
 
-1. Identify the target site and entry type
+1. Identify the target site and entry type; for notes, choose the note type by what the draft is trying to do
 2. Create the draft with `pnpm new <tech|days> <note|post> ...` when the built-in workflow fits
 3. The author writes the draft
 4. Review the draft for structure, schema, formatting, and publishing readiness
@@ -17,6 +17,8 @@ Use this file for the repo-specific sequence. Detailed frontmatter rules live in
 
 - Notes live under `content/notes/YYYY/MM/DD/slug.md`
 - Notes are short-form and usually move from draft to publish quickly
+- Choose note types by intent: capture, respond, curate, share, or introduce a post
+- Use [note-types.md](./note-types.md) when you need the goal, mindset, or default shape of a note type
 - Keep the body aligned with the selected note `type`
 - If a published note later needs correction or qualification, append a single `<div class="update-note">...</div>` block near the end
 
