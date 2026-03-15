@@ -13,7 +13,7 @@ const notes = defineCollection({
     created: z.coerce.date(),
     type: z.enum(types).default("regular"),
     post: reference("posts").optional(),
-    tags: z.array(z.enum(tagSlugs)).min(1)
+    tags: z.array(z.enum(tagSlugs))
       .transform((slugs) => slugs.toSorted((a, b) => a.localeCompare(b, "en")).map((s) => registry.find((t) => t.slug === s)!)),
     draft: z.boolean().default(false),
   }),

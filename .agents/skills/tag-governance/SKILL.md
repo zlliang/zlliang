@@ -32,7 +32,7 @@ Use this skill for note tags on `tech` and `days`. Start only after the note its
 - Treat the registry as the only source of truth for active tags
 - Keep each registry sorted by tag `slug` in ascending lexicographic order
 - Treat tags as long-term navigation, not incidental annotations
-- Ensure every note has at least one tag and usually no more than three
+- Ensure every note has at least one tag and usually no more than five
 - Prefer broad, durable topics over one-off entities
 - When adding, splitting, or redefining tags, revisit older notes that may need retagging
 - When adding a new tag, update the relevant site's registry first, then validate the affected website
