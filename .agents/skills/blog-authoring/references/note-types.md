@@ -1,4 +1,4 @@
-# Note types
+# Note Types
 
 Use this file when the task depends on what a note is trying to do, not only how it is formatted.
 
