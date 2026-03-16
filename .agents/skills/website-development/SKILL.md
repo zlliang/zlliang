@@ -24,7 +24,19 @@ Use this skill for implementation work on the websites, shared packages, and roo
 - Use shared package boundaries instead of duplicating code between websites
 - Preserve existing Astro, Tailwind, and TypeScript patterns unless the task explicitly changes them
 - Prefer reusable code over per-site duplication
+- When editing `package.json`, classify dependencies by runtime ownership instead of copying the current layout blindly
 - Verify production builds for affected websites before finishing
+
+## Dependency classification
+
+- For `websites/*` app packages, put build-time and config-only tools in `devDependencies`
+- For `websites/*` app packages, put packages directly imported by pages, components, server-rendered code, or client scripts in `dependencies`
+- For `packages/*` library packages, put anything imported by exported runtime code in `dependencies`
+- For `packages/*` library packages, keep types, local validation tools, and package-only build helpers in `devDependencies`
+- Prefer `peerDependencies` for framework and build-tool contracts that must be provided by the consuming app, especially shared Astro, Tailwind, and plugin packages
+- When using `peerDependencies`, usually keep the same package in `devDependencies` too so the shared package can type-check and develop locally
+- Keep dependency entries sorted in a stable package-name order consistent with `pnpm add`
+- Refresh `pnpm-lock.yaml` after reclassifying dependencies
 
 ## Coordination with other skills
 

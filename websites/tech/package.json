@@ -7,6 +7,14 @@
     "build": "astro build",
     "preview": "astro preview"
   },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "@zlliang/theme": "workspace:*",
+    "date-fns": "^4.1.0",
+    "lodash-es": "^4.17.23",
+    "minisearch": "^7.2.0"
+  },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.1",
     "@astrojs/vercel": "^10.0.0",
@@ -15,18 +23,10 @@
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/vite": "^4.2.1",
     "@types/lodash-es": "^4.17.12",
-    "@vercel/analytics": "^2.0.1",
-    "@vercel/speed-insights": "^2.0.0",
     "@zlliang/rehype": "workspace:*",
-    "@zlliang/theme": "workspace:*",
     "astro": "^6.0.4",
-    "date-fns": "^4.1.0",
-    "lodash-es": "^4.17.23",
     "remark-cjk-friendly": "^2.0.1",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3"
-  },
-  "dependencies": {
-    "minisearch": "^7.2.0"
   }
 }

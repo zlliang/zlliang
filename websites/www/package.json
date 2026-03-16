@@ -7,6 +7,14 @@
     "build": "astro build",
     "preview": "astro preview"
   },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "@zlliang/theme": "workspace:*",
+    "d3": "^7.9.0",
+    "date-fns": "^4.1.0",
+    "topojson-client": "^3.1.0"
+  },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.1",
     "@astrojs/vercel": "^10.0.0",
@@ -17,15 +25,10 @@
     "@types/d3": "^7.4.3",
     "@types/topojson-client": "^3.1.5",
     "@types/topojson-specification": "^1.0.5",
-    "@vercel/analytics": "^2.0.1",
-    "@vercel/speed-insights": "^2.0.0",
     "@zlliang/rehype": "workspace:*",
-    "@zlliang/theme": "workspace:*",
     "astro": "^6.0.4",
-    "d3": "^7.9.0",
     "remark-cjk-friendly": "^2.0.1",
     "tailwindcss": "^4.2.1",
-    "topojson-client": "^3.1.0",
     "typescript": "^5.9.3"
   }
 }
