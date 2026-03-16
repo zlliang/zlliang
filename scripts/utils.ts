@@ -13,7 +13,7 @@ export interface Frontmatter {
   [key: string]: unknown
 }
 
-export interface DateParts {
+interface DateParts {
   date: string
   year: string
   month: string

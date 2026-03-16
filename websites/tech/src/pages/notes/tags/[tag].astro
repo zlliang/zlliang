@@ -3,13 +3,21 @@ import PageTitle from "@zlliang/theme/components/PageTitle.astro"
 import Layout from "@/components/Layout.astro"
 import NoteList from "@/components/NoteList.astro"
 
-import { notes } from "@/utils/content"
+import { notes, tags } from "@/utils/content"
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
 
 export const prerender = false
 
+const { tag: tagParam } = Astro.params
+const tag = tags.find((item) => item.slug === tagParam)
+
+if (!tag) {
+  return Astro.rewrite("/404")
+}
+
 const searchParams = Astro.url.searchParams
 const page = parsePageParam(searchParams.get("page"))
+const filteredNotes = notes.filter((note) => note.data.tags?.some((item) => item.slug === tag.slug))
 
 function getPageUrl(page: number) {
   const params = new URLSearchParams()
@@ -18,25 +26,25 @@ function getPageUrl(page: number) {
     params.set("page", page.toString())
   }
 
-  return params.size > 0 ? `/notes?${params}` : "/notes"
+  return params.size > 0 ? `/notes/tags/${tag!.slug}?${params}` : `/notes/tags/${tag!.slug}`
 }
 
-const pagination = paginate(notes, page, getPageUrl)
+const pagination = paginate(filteredNotes, page, getPageUrl)
 
 if (shouldRedirectPagination(searchParams, page, pagination)) {
   return Astro.redirect(pagination.url.current)
 }
 
-const title = "手记"
+const title = `Notes on "${tag.display}"`
 ---
 
 <Layout title={title}>
   <!-- Title -->
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <span slot="subtitle">共 {notes.length} 则</span>
+    <span slot="subtitle">{pagination.total} in total</span>
   </PageTitle>
 
   <!-- Notes -->
-  {pagination.data.length > 0 ? <NoteList notes={pagination.data} pagination={pagination} /> : <p class="text-neutral-500">暂无手记。</p>}
+  {pagination.data.length > 0 ? <NoteList notes={pagination.data} pagination={pagination} /> : <p class="text-neutral-500">No notes found.</p>}
 </Layout>

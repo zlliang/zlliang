@@ -1,0 +1,28 @@
+---
+import { cn } from "@zlliang/theme"
+
+interface Props {
+  q?: string
+  class?: string
+}
+
+const { q = "", class: className } = Astro.props
+---
+
+<form action="/notes/search" method="GET" class={cn("flex items-center gap-2 -mx-2", className)}>
+  <input
+    type="search"
+    name="q"
+    value={q}
+    placeholder="Search notes"
+    autocomplete="off"
+    class="flex-1 px-2 py-1 border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 text-sm placeholder:text-neutral-500 outline-none focus:border-primary-400 dark:focus:border-primary-600"
+  />
+  <button
+    type="submit"
+    class="shrink-0 px-1.5 py-1 border border-neutral-200 dark:border-neutral-800 hover:border-primary-200 dark:hover:border-primary-800 hover:bg-primary-50 dark:hover:bg-primary-950 text-sm text-neutral-700 dark:text-neutral-300 hover:text-primary-500 cursor-pointer"
+  >
+    <span class="icon-[lucide--search]" />
+    <span class="sr-only">Search</span>
+  </button>
+</form>

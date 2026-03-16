@@ -1,5 +1,42 @@
 ---
+import PageTitle from "@zlliang/theme/components/PageTitle.astro"
+import Layout from "@/components/Layout.astro"
+import NoteList from "@/components/NoteList.astro"
+
+import { notes } from "@/utils/content"
+import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
+
 export const prerender = false
 
-return Astro.redirect("/notes/1")
+const searchParams = Astro.url.searchParams
+const page = parsePageParam(searchParams.get("page"))
+
+function getPageUrl(page: number) {
+  const params = new URLSearchParams()
+
+  if (page > 1) {
+    params.set("page", page.toString())
+  }
+
+  return params.size > 0 ? `/notes?${params}` : "/notes"
+}
+
+const pagination = paginate(notes, page, getPageUrl)
+
+if (shouldRedirectPagination(searchParams, page, pagination)) {
+  return Astro.redirect(pagination.url.current)
+}
+
+const title = "Notes"
 ---
+
+<Layout title={title}>
+  <!-- Title -->
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <span slot="subtitle">{notes.length} in total</span>
+  </PageTitle>
+
+  <!-- Notes -->
+  {pagination.data.length > 0 ? <NoteList notes={pagination.data} pagination={pagination} /> : <p class="text-neutral-500">No notes found.</p>}
+</Layout>

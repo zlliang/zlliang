@@ -8,15 +8,15 @@ import NoteItem from "@/components/NoteItem.astro"
 import { cn } from "@zlliang/theme"
 import { groupNotesByDate } from "@/utils/content"
 
-import type { Page } from "astro"
 import type { CollectionEntry } from "astro:content"
+import type { PaginationData } from "@/utils/pagination"
 
 interface Props {
   notes: CollectionEntry<"notes">[]
-  page?: Page
+  pagination?: PaginationData<CollectionEntry<"notes">>
 }
 
-const { notes, page } = Astro.props
+const { notes, pagination } = Astro.props
 const grouped = await groupNotesByDate(notes)
 ---
 
@@ -30,9 +30,9 @@ const grouped = await groupNotesByDate(notes)
       ))}
     </Section>
   ))}
-  {Boolean(page) && (
+  {Boolean(pagination) && (
     <div class="pt-6 border-t-2 border-neutral-200 dark:border-neutral-800">
-      <Pagination {...page!} />
+      <Pagination {...pagination!} />
     </div>
   )}
 </div>

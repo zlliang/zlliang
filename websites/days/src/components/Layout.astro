@@ -19,11 +19,13 @@ interface Props {
   description?: string
   aside?: boolean
   showRecentPosts?: boolean
+  showSearch?: boolean
+  noindex?: boolean
 }
 
-const { title: rawTitle, description, aside = true, showRecentPosts = true } = Astro.props
+const { title: rawTitle, description, aside = true, showRecentPosts = true, showSearch = true, noindex = false } = Astro.props
 const title = getTitle(rawTitle)
-const url = new URL(Astro.url.pathname, Astro.site)
+const url = Astro.url
 ---
 
 <!DOCTYPE html>
@@ -47,6 +49,7 @@ const url = new URL(Astro.url.pathname, Astro.site)
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="canonical" href={url} />
   {Boolean(description) && <meta name="description" content={description} />}
+  {noindex && <meta name="robots" content="noindex, follow" />}
   <meta property="og:site_name" content={siteTitle} />
   <meta property="og:url" content={url} />
   <meta property="og:title" content={title} />
@@ -64,6 +67,7 @@ const url = new URL(Astro.url.pathname, Astro.site)
   <div class="flex flex-col min-h-dvh max-w-3xl lg:max-w-6xl m-auto px-6">
     <Header logo={logo} title={siteTitle}>
       <Fragment slot="menu">
+        <Link href="/notes/search"><span class="icon-[lucide--search]" /> 搜索</Link>
         <Link href="https://zlliang.me" external={false}><span class="icon-[lucide--user]" /> 关于我</Link>
       </Fragment>
     </Header>
@@ -72,7 +76,7 @@ const url = new URL(Astro.url.pathname, Astro.site)
         <slot />
       </main>
       {aside && (
-        <Aside showRecentPosts={showRecentPosts} class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80">
+        <Aside showSearch={showSearch} showRecentPosts={showRecentPosts} class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80">
           <Fragment slot="prefix"><slot name="aside-prefix" /></Fragment>
           <Fragment slot="suffix"><slot name="aside-suffix" /></Fragment>
         </Aside>

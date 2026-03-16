@@ -25,5 +25,8 @@
     "remark-cjk-friendly": "^2.0.1",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "minisearch": "^7.2.0"
   }
 }

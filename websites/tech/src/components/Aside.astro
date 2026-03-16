@@ -4,6 +4,7 @@ import { Image } from "astro:assets"
 import Section from "@zlliang/theme/components/Section.astro"
 import Link from "@zlliang/theme/components/Link.astro"
 import PostList from "@/components/PostList.astro"
+import SearchForm from "@/components/SearchForm.astro"
 
 import { notes, tags, posts, pinnedPosts } from "@/utils/content"
 import { types } from "@/utils/types"
@@ -13,15 +14,18 @@ import { cn } from "@zlliang/theme"
 import logoDays from "@/assets/images/logo-days.png"
 
 interface Props {
+  showSearch?: boolean
   showRecentPosts?: boolean
   class?: string
 }
 
-const { showRecentPosts = true, class: className } = Astro.props
+const { showSearch = true, showRecentPosts = true, class: className } = Astro.props
 const recentPosts = posts.slice(0, 10)
 ---
 
 <aside class={cn("space-y-6", className)}>
+  {showSearch && <SearchForm class="hidden sm:flex mb-6" />}
+
   <!-- Prefix -->
   <slot name="prefix" />
 

@@ -1,13 +1,20 @@
 ---
 import Link from "./Link.astro"
 
-import type { Page } from "astro"
-
-interface Props extends Page {
+interface Props {
+  current: number
+  last: number
+  url: {
+    current: string
+    first?: string
+    prev?: string
+    next?: string
+    last?: string
+  }
   label?: string
 }
 
-const { currentPage, lastPage, url, label = "Page" } = Astro.props
+const { current, last, url, label = "Page" } = Astro.props
 ---
 
 <div class="flex justify-end items-center text-sm gap-2">
@@ -17,7 +24,7 @@ const { currentPage, lastPage, url, label = "Page" } = Astro.props
       {url.prev && <Link href={url.prev}><span class="icon-[lucide--chevron-left]" /></Link>}
     </div>
   )}
-  <div>{label} {currentPage} / {lastPage}</div>
+  <div>{label} {current} / {last}</div>
   {Boolean(url.next || url.last) && (
     <div>
       {url.next && <Link href={url.next}><span class="icon-[lucide--chevron-right]" /></Link>}

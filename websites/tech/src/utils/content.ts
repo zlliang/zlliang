@@ -18,7 +18,7 @@ async function getNotes() {
 export const tags = getTags(notes)
 
 /** Get tags from notes, sorted alphabetically */
-export function getTags(notes: CollectionEntry<"notes">[]) {
+function getTags(notes: CollectionEntry<"notes">[]) {
   const tags = uniqBy(notes.flatMap((note) => note.data.tags), "slug")
     .toSorted((a, b) => a.slug.localeCompare(b.slug, "en"))
 
