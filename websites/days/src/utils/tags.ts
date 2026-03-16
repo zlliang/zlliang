@@ -13,7 +13,7 @@ export const registry = [
   { slug: "japan", display: "日本", description: "以日本为核心的文化兴趣、作品、作者、地点或旅行线索" },
   { slug: "monthly", display: "月刊", description: "每月回顾系列" },
   { slug: "photography", display: "摄影", description: "相机、胶片、照片，以及通过摄影记录生活的兴趣和实践" },
-  { slug: "reading", display: "阅读", description: "书籍、作者与阅读体验，但不含专门的读库线" },
+  { slug: "reading", display: "阅读", description: "书籍、作者与阅读体验" },
   { slug: "relationship", display: "感情", description: "伴侣关系、亲密关系，以及围绕关系展开的情绪和经历" },
   { slug: "travel", display: "旅行", description: "旅行计划、旅行过程，以及地点驱动的移动经历" },
   { slug: "watching", display: "观影", description: "电影、剧集、纪录片、视频，以及观看体验" },
