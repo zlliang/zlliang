@@ -130,7 +130,7 @@ b, strong {
 }
 
 blockquote {
-  @apply pl-6.5 border-l-2 border-neutral-200 dark:border-neutral-800 text-neutral-500;
+  @apply pl-6 border-l-4 border-neutral-200 dark:border-neutral-800 text-neutral-500;
 }
 
 ul, ol {
