@@ -46,6 +46,7 @@ pnpm ship <tech|days>
 - Treat tagging as a late-stage content decision, not part of drafting
 - When docs summarize behavior, code wins if there is a conflict
 - Preserve the repo's update-note convention and language-specific style when editing content
+- Treat `Deploy`, `发布`, and similar short commands as a request to write a Conventional Commit message, commit the current work, and push to GitHub so Vercel can deploy automatically
 
 ## Skills
 
