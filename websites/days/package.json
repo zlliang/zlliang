@@ -17,14 +17,14 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.1",
-    "@astrojs/vercel": "^10.0.0",
-    "@iconify-json/lucide": "^1.2.97",
-    "@iconify-json/simple-icons": "^1.2.73",
+    "@astrojs/vercel": "^10.0.1",
+    "@iconify-json/lucide": "^1.2.98",
+    "@iconify-json/simple-icons": "^1.2.74",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/vite": "^4.2.1",
     "@types/lodash-es": "^4.17.12",
     "@zlliang/rehype": "workspace:*",
-    "astro": "^6.0.4",
+    "astro": "^6.0.5",
     "remark-cjk-friendly": "^2.0.1",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3"
