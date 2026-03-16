@@ -13,10 +13,8 @@ const searchParams = Astro.url.searchParams
 const q = searchParams.get("q")?.trim() ?? ""
 const page = parsePageParam(searchParams.get("page"))
 
-if (!q) {
-  if (searchParams.has("q") || searchParams.has("page")) {
-    return Astro.redirect("/notes/search")
-  }
+if (!q && (searchParams.has("q") || searchParams.has("page"))) {
+  return Astro.redirect("/notes/search")
 }
 
 const results = q ? await searchNotes(q) : []
