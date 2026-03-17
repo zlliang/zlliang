@@ -36,15 +36,8 @@ const recentPosts = posts.slice(0, 10)
     </Section>
   )}
 
-  <!-- Recent posts -->
-  {showRecentPosts && recentPosts.length > 0 && (
-    <Section title="Recent posts">
-      <PostList posts={recentPosts} />
-    </Section>
-  )}
-
-  <!-- Archive -->
-  <Section title="Archive">
+  <!-- Explore -->
+  <Section title="Explore">
     <div class="flex justify-between items-center mb-1">
       <Link href="/notes"><span class="icon-[lucide--notebook-pen]" /> Notes</Link>
       <span class="text-sm text-neutral-500">{notes.length} in total</span>
@@ -62,6 +55,13 @@ const recentPosts = posts.slice(0, 10)
       <span class="text-sm text-neutral-500">{posts.length} in total</span>
     </div>
   </Section>
+
+  <!-- Recent posts -->
+  {showRecentPosts && recentPosts.length > 0 && (
+    <Section title="Recent posts">
+      <PostList posts={recentPosts} />
+    </Section>
+  )}
 
   <!-- Other websites -->
   <Section title="The other side of me">

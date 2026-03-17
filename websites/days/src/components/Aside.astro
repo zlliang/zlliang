@@ -36,15 +36,8 @@ const recentPosts = posts.slice(0, 10)
     </Section>
   )}
 
-  <!-- Recent posts -->
-  {showRecentPosts && recentPosts.length > 0 && (
-    <Section title="近期文章">
-      <PostList posts={recentPosts} />
-    </Section>
-  )}
-
-  <!-- Archive -->
-  <Section title="全部内容">
+  <!-- Explore -->
+  <Section title="探索">
     <div class="flex justify-between items-center mb-1">
       <Link href="/notes"><span class="icon-[lucide--notebook-pen]" /> 手记</Link>
       <span class="text-sm text-neutral-500">{notes.length} 则</span>
@@ -62,6 +55,13 @@ const recentPosts = posts.slice(0, 10)
       <span class="text-sm text-neutral-500">{posts.length} 篇</span>
     </div>
   </Section>
+
+  <!-- Recent posts -->
+  {showRecentPosts && recentPosts.length > 0 && (
+    <Section title="近期文章">
+      <PostList posts={recentPosts} />
+    </Section>
+  )}
 
   <!-- Other websites -->
   <Section title="我的另一面">
