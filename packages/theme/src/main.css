@@ -47,11 +47,8 @@
   --color-days-900: var(--color-indigo-900);
   --color-days-950: var(--color-indigo-950);
 
-  --leading-body-en: 1.5;
-  --leading-body-zh: 1.6;
   --leading-prose-en: 1.7;
   --leading-prose-zh: 1.8;
-  --leading-body: var(--leading-body-en);
   --leading-prose: var(--leading-prose-en);
 }
 
@@ -62,12 +59,10 @@
 }
 
 :lang(zh) {
-  --leading-body: var(--leading-body-zh);
   --leading-prose: var(--leading-prose-zh);
 }
 
 :lang(en) {
-  --leading-body: var(--leading-body-en);
   --leading-prose: var(--leading-prose-en);
 }
 
@@ -76,7 +71,7 @@
 }
 
 body {
-  @apply bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 leading-body;
+  @apply bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100;
 }
 
 /* Icons */
