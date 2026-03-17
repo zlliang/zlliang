@@ -35,7 +35,7 @@ if (shouldRedirectPagination(searchParams, page, pagination)) {
   return Astro.redirect(pagination.url.current)
 }
 
-const title = `Notes on "${tag.display}"`
+const title = `Notes tagged "${tag.display}"`
 ---
 
 <Layout title={title}>
