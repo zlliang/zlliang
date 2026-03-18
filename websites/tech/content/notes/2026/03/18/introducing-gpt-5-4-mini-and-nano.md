@@ -3,7 +3,6 @@ no: 51
 title: Introducing GPT-5.4 mini and nano
 created: 2026-03-18
 type: link
-tags: [agents, ai]
 ---
 
 [Introducing GPT-5.4 mini and nano](https://openai.com/index/introducing-gpt-5-4-mini-and-nano/) ([via](https://x.com/OpenAIDevs/status/2033953815834333608)). OpenAI finally refreshed its smaller and cheaper models. The previous mini/nano release was [GPT-5](https://openai.com/index/introducing-gpt-5-for-developers/) in August 2025, while [GPT-5.1-Codex-Mini](https://developers.openai.com/api/docs/models/gpt-5.1-codex-mini) in November 2025 was a more coding-specific branch.

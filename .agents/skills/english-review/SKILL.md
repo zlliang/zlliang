@@ -38,4 +38,3 @@ Use this skill for English prose quality and learning-oriented revision. It is n
 ## Coordination with other skills
 
 - Pair this skill with `blog-authoring` when the task also involves repo-specific content workflow
-- Leave tag selection and taxonomy changes to `tag-governance`

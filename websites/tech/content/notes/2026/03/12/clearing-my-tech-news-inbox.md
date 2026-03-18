@@ -3,7 +3,6 @@ no: 42
 title: Clearing my tech news inbox
 created: 2026-03-12
 type: collection
-tags: [ai, agents, tools]
 ---
 
 I check [X](https://x.com), [Hacker News](https://news.ycombinator.com), and blogs every day. Recently, too many things have been competing for my attention. Whenever something looks worth revisiting, I take a screenshot first, so my photo album has quietly turned into a messy reading inbox.

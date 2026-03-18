@@ -3,7 +3,6 @@ no: 39
 title: Two notable articles on AI and career
 created: 2026-03-01
 type: collection
-tags: [ai, career]
 ---
 
 Two notable articles on AI and career:

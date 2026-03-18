@@ -2,8 +2,7 @@ import { defineCollection, reference } from "astro:content"
 import { z } from "astro/zod"
 import { glob } from "astro/loaders"
 
-import { types } from "@/utils/types"
-import { registry, tagSlugs } from "@/utils/tags"
+import { slugs as typeSlugs } from "@/utils/types"
 
 const notes = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./content/notes" }),
@@ -11,10 +10,8 @@ const notes = defineCollection({
     no: z.number(),
     title: z.string().min(1).optional(),
     created: z.coerce.date(),
-    type: z.enum(types).default("regular"),
+    type: z.enum(typeSlugs).default("regular"),
     post: reference("posts").optional(),
-    tags: z.array(z.enum(tagSlugs))
-      .transform((slugs) => slugs.toSorted((a, b) => a.localeCompare(b, "en")).map((s) => registry.find((t) => t.slug === s)!)),
     draft: z.boolean().default(false),
   }),
 })

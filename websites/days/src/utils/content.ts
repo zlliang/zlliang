@@ -1,5 +1,5 @@
 import { getCollection } from "astro:content"
-import { uniqBy, groupBy } from "lodash-es"
+import { groupBy } from "lodash-es"
 
 import type { CollectionEntry } from "astro:content"
 
@@ -12,17 +12,6 @@ async function getNotes() {
   const notes = collection.toSorted((a, b) => b.data.no - a.data.no)
 
   return notes
-}
-
-/** All tags */
-export const tags = getTags(notes)
-
-/** Get tags from notes, sorted alphabetically */
-function getTags(notes: CollectionEntry<"notes">[]) {
-  const tags = uniqBy(notes.flatMap((note) => note.data.tags), "slug")
-    .toSorted((a, b) => a.slug.localeCompare(b.slug, "en"))
-
-  return tags
 }
 
 /** Group notes by created date */

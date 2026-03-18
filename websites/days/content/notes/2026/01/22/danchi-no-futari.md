@@ -3,7 +3,6 @@ no: 9
 title: 看完了《住宅区的两人》
 created: 2026-01-22
 type: regular
-tags: [japan, watching]
 ---
 
 看完了《[住宅区的两人](https://movie.douban.com/subject/36902276/)》！🌟🌟🌟🌟🌟

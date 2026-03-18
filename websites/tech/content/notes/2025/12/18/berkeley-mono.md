@@ -3,7 +3,6 @@ no: 1
 title: Berkeley Mono
 created: 2025-12-18
 type: link
-tags: [tools]
 ---
 
 [Berkeley Mono](https://t.co/dUqr2XX9Wm) ([via](https://x.com/usgraphics/status/2001308188919161017)). Looks like major coding agents like [Claude Code](https://claude.com/product/claude-code), [Cursor](https://cursor.com), and [Amp](https://ampcode.com) (which I mainly use these days) are all using this monospaced typeface on their social media[^1] and web pages[^2]. The typeface looks great and indeed has a retro-computing charm. The type foundry, [US Graphics Company](https://usgraphics.com/), also introduces it as "a love letter to the golden era of computing":

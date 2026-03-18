@@ -3,7 +3,6 @@ no: 13
 title: Just added quote notes
 created: 2025-12-28
 type: regular
-tags: [blogging]
 ---
 
 I just added a new note type called "[quote notes](/notes/types/quote)". Quote notes share quotes from books, articles, and other sources, sometimes with my own commentary.

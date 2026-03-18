@@ -4,13 +4,9 @@ import PageTitle from "@zlliang/theme/components/PageTitle.astro"
 import Layout from "@/components/Layout.astro"
 
 import { notes } from "@/utils/content"
-import { types, getTypeDisplay } from "@/utils/types"
+import { types } from "@/utils/types"
 
 const title = "手记分类"
-
-function getTypeCount(slug: string) {
-  return notes.filter((note) => note.data.type === slug).length
-}
 ---
 
 <Layout title={title}>
@@ -21,9 +17,24 @@ function getTypeCount(slug: string) {
   </PageTitle>
 
   <!-- Types -->
-  {types?.length > 0 ? types.map((type) => (
-    <div class="mb-1">
-      <Link href={`/notes/types/${type}`}>{getTypeDisplay(type)} ({getTypeCount(type)})</Link>
+  {types?.length > 0 ? (
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {types.map((type) => (
+        <Link
+          href={`/notes/types/${type.slug}`}
+          class="group secondary block p-4 border border-neutral-200 dark:border-neutral-800 hover:border-primary-200 dark:hover:border-primary-800 hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-500!"
+        >
+          <div class="flex items-start justify-between gap-4">
+            <div class="font-bold">{type.display}</div>
+            <div class="shrink-0 text-sm text-neutral-500 group-hover:text-primary-400 dark:group-hover:text-primary-600">
+              {notes.filter((note) => note.data.type === type.slug).length} 则
+            </div>
+          </div>
+          <div class="mt-2 text-sm text-neutral-500 group-hover:text-primary-400 dark:group-hover:text-primary-600">
+            {type.description}
+          </div>
+        </Link>
+      ))}
     </div>
-  )) : <p class="text-neutral-500">暂无分类。</p>}
+  ) : <p class="text-neutral-500">暂无分类。</p>}
 </Layout>

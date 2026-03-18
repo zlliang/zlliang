@@ -3,7 +3,6 @@ no: 8
 title: Formatting rules for AI chatbots and agents
 created: 2025-12-24
 type: regular
-tags: [ai, writing]
 ---
 
 I gradually realized that a unified formatting rule set is needed when working with multiple AI chatbots and agents.

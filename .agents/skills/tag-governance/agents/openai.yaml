@@ -1,4 +1,0 @@
-interface:
-  display_name: "Tag Governance"
-  short_description: "Choose and evolve note tags for tech and days"
-  default_prompt: "Use $tag-governance after content is stable to tag a note, update a registry, or retag older notes."

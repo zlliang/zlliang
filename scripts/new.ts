@@ -71,7 +71,6 @@ async function main() {
       ...(hasTitle && { title }),
       created: date,
       type: noteType,
-      tags: [],
     }
     console.log(`Created note #${nextNo}: ${filePath}`)
   } else {

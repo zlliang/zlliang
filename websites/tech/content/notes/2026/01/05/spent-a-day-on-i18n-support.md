@@ -3,7 +3,6 @@ no: 21
 title: Spent a day on i18n support
 created: 2026-01-05
 type: regular
-tags: [blogging]
 ---
 
 Today I spent a day trying to add i18n support to the website. I brainstormed ideas and documented them in a [GitHub issue](https://github.com/zlliang/zlliang/issues/71). I also tried to design and implement a translation key system and a new routing system, and wrote a lot of code.

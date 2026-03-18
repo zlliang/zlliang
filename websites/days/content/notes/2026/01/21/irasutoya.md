@@ -3,7 +3,6 @@ no: 7
 title: 免费贴纸素材库 irasutoya
 created: 2026-01-21
 type: til
-tags: [design, japan]
 ---
 
 在网上是不是经常可以看到这种风格的插画小人呢：

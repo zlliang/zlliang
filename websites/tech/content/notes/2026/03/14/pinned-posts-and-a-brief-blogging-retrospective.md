@@ -3,7 +3,6 @@ no: 45
 title: Pinned posts and a brief blogging retrospective
 created: 2026-03-14
 type: regular
-tags: [blogging]
 ---
 
 I added support for **pinned posts** on both https://tech.zlliang.me and https://days.zlliang.me in [zlliang/zlliang@f818e6d](https://github.com/zlliang/zlliang/commit/f818e6dc84777249b94c5f1941199770ff0bb7eb), which also closed [issue #77](https://github.com/zlliang/zlliang/issues/77). There still are no real pinned posts on either site yet. I added the feature in advance for a post draft I am currently writing.

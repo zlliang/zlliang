@@ -3,7 +3,6 @@ no: 16
 title: Quick recap of my New Year's break
 created: 2026-01-03
 type: regular
-tags: [writing]
 ---
 
 Happy New Year! Here's a quick recap of my New Year's break:

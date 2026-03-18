@@ -16,7 +16,6 @@ Use this skill for content work on `tech` and `days`. It is the repo-specific co
 ## When not to use
 
 - Do not use this skill as the only English prose reviewer; load `english-review` when language quality or voice matters
-- Do not use this skill for standalone tag work; load `tag-governance` after the content is stable
 - Do not treat AI output as the final authorial step; the author owns the rewrite
 
 ## Read first
@@ -33,11 +32,9 @@ Use this skill for content work on `tech` and `days`. It is the repo-specific co
 - Keep each note aligned with its selected type's goal, mindset, and default shape instead of flattening all notes into the same form
 - Keep the distinction between author work and AI-assisted work explicit
 - Treat bilingual drafting and AI comparison workflows as optional training loops, not mandatory steps for every note or post
-- Treat tagging as a later step that starts only after the author has stabilized the content
 - Keep the repo workflow lightweight and easy to follow
 
 ## Coordination with other skills
 
 - Pair with `english-review` for English drafts or bilingual comparison and synthesis
-- Pair with `tag-governance` only after revision is mostly done
 - Leave code and build changes to `website-development`

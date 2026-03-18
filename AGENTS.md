@@ -22,7 +22,6 @@ All websites are built with [Astro](https://astro.build/) and are deployed on [V
   - post drafts live under `content/posts/drafts/slug.md`
   - published posts live under `content/posts/YYYY/MM/DD/slug.md`
 - Schema source of truth is each site's `src/content.config.ts`
-- Tag meaning source of truth is each site's `src/utils/tags.ts`
 
 ## Root commands
 
@@ -42,7 +41,6 @@ pnpm ship <tech|days>
 
 - Keep authorial ownership explicit. AI may help review, compare, structure, and implement, but it should not replace the author's thinking
 - Prefer existing shared packages and site conventions over per-site duplication
-- Treat tagging as a late-stage content decision, not part of drafting
 - When docs summarize behavior, code wins if there is a conflict
 - Preserve the repo's update-note convention and language-specific style when editing content
 - Treat `Deploy`, `发布`, and similar short commands as a request to write a Conventional Commit message, commit the current work, and push to GitHub so Vercel can deploy automatically
@@ -52,10 +50,8 @@ pnpm ship <tech|days>
 - `website-development`: website code, shared packages, root scripts, builds, and validation
 - `blog-authoring`: note/post workflow, schema, style, publishing readiness, and the optional bilingual English-writing loop
 - `english-review`: English prose review, comparison, synthesis, and voice coaching
-- `tag-governance`: note tagging, registry changes, and retagging after taxonomy changes
 
 ## How to combine skills
 
 - Use `blog-authoring` with `english-review` for English notes and posts
-- Use `blog-authoring` with `tag-governance` after the content is stable and ready for tagging
 - Use `website-development` alongside content skills only when the task changes site behavior, shared code, or build output

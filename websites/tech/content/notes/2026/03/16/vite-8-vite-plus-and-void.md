@@ -3,7 +3,6 @@ no: 46
 title: Vite 8, Vite Plus and Void
 created: 2026-03-16
 type: collection
-tags: [tools, programming]
 ---
 
 [VoidZero](https://voidzero.dev/), the JavaScript tooling company founded by Evan You, the creator of [Vue](https://vuejs.org) and [Vite](https://vite.dev/), released several notable updates over the past week:

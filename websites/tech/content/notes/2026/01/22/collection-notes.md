@@ -3,7 +3,6 @@ no: 27
 title: Collection notes
 created: 2026-01-22
 type: regular
-tags: [blogging]
 ---
 
 I just added a new note type called "[collection notes](/notes/types/collection)".

@@ -6,7 +6,7 @@ import Link from "@zlliang/theme/components/Link.astro"
 import PostList from "@/components/PostList.astro"
 import SearchForm from "@/components/SearchForm.astro"
 
-import { notes, tags, posts, pinnedPosts } from "@/utils/content"
+import { notes, posts, pinnedPosts } from "@/utils/content"
 import { types } from "@/utils/types"
 
 import { cn } from "@zlliang/theme"
@@ -33,19 +33,13 @@ const recentPosts = posts.slice(0, 10)
   <Section title="Explore">
     <div class="flex justify-between items-center mb-1">
       <Link href="/notes"><span class="icon-[lucide--notebook-pen]" /> Notes</Link>
-      <span class="text-sm text-neutral-500">{notes.length} in total</span>
-    </div>
-    <div class="flex justify-between items-center mb-1">
-      <span><span class="mr-2 font-mono text-neutral-500">├</span><Link href="/notes/types"><span class="icon-[lucide--folder-open]" /> Types</Link></span>
-      <span class="text-sm text-neutral-500">{types.length} in total</span>
-    </div>
-    <div class="flex justify-between items-center mb-1">
-      <span><span class="mr-2 font-mono text-neutral-500">└</span><Link href="/notes/tags"><span class="icon-[lucide--tag]" /> Tags</Link></span>
-      <span class="text-sm text-neutral-500">{tags.length} in total</span>
+      <span class="text-sm text-neutral-500">
+        {notes.length} total<span class="icon-[lucide--dot]" /><Link href="/notes/types">{types.length} types</Link>
+      </span>
     </div>
     <div class="flex justify-between items-center">
       <Link href="/posts"><span class="icon-[lucide--book-open-text]" /> Posts</Link>
-      <span class="text-sm text-neutral-500">{posts.length} in total</span>
+      <span class="text-sm text-neutral-500">{posts.length} total</span>
     </div>
   </Section>
 

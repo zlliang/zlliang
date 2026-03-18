@@ -7,7 +7,6 @@ Use this file for repo-specific style decisions for notes and posts on `tech` an
 - `note` / `手记`: short-form entry
 - `post` / `文章`: long-form entry
 - `type` / `分类`: note type
-- `tag` / `标签`: note topic
 
 ## Titles and headings
 

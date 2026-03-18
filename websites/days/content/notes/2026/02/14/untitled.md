@@ -2,7 +2,6 @@
 no: 22
 created: 2026-02-14
 type: regular
-tags: [duku, reading]
 ---
 
 过年回家要带的两本书：

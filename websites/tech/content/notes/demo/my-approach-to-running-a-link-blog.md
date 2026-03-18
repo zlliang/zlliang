@@ -3,7 +3,6 @@ no: -2
 title: My approach to running a link blog
 created: 2025-12-17
 type: link
-tags: [blogging, demo, writing]
 draft: true
 ---
 

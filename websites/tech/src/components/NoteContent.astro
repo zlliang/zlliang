@@ -4,7 +4,7 @@ import { format } from "date-fns"
 
 import Link from "@zlliang/theme/components/Link.astro"
 
-import { getTypeDisplay } from "@/utils/types"
+import { types } from "@/utils/types"
 
 import type { CollectionEntry } from "astro:content"
 
@@ -16,6 +16,7 @@ interface Props {
 const { note, showLink = true } = Astro.props
 const { Content } = await render(note)
 const post = note.data.post ? await getEntry(note.data.post) : null
+const type = types.find((item) => item.slug === note.data.type)!
 ---
 
 <div>
@@ -27,16 +28,12 @@ const post = note.data.post ? await getEntry(note.data.post) : null
     <Content />
   </div>
 
-  <!-- Type and tags -->
-  <div class="mb-1 text-xs text-neutral-500">
-    <Link href={`/notes/types/${note.data.type}`} class="font-bold">{getTypeDisplay(note.data.type)}</Link>{note.data.tags && note.data.tags.length > 0 && <span class="text-neutral-500">; </span>}
-    {note.data.tags?.map((tag, index) => <Fragment><Link href={`/notes/tags/${tag.slug}`}>{tag.display}</Link>{index !== note.data.tags!.length - 1 && <span>, </span>}</Fragment>)}
-  </div>
-
-  <!-- Link and date -->
+  <!-- Metadata -->
   <div class="flex justify-between items-center gap-2">
     <div class="flex items-center text-sm text-neutral-500">
-      {showLink ? <Link href={`/notes/${note.id}`} class="font-mono">#{note.data.no}</Link> : <span class="font-mono">#{note.data.no}</span>}
+      {showLink ? <Link href={`/notes/${note.id}`} class="tabular-nums">#{note.data.no}</Link> : <span class="tabular-nums">#{note.data.no}</span>}
+      <span class="icon-[lucide--dot]" />
+      <Link href={`/notes/types/${note.data.type}`}>{type.display}</Link>
       <span class="icon-[lucide--dot]" />
       <span>{format(note.data.created, "PP")}</span>
       {note.data.draft && <span class="ml-2 text-amber-600 dark:text-amber-400">Draft</span>}

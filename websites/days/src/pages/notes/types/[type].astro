@@ -5,19 +5,21 @@ import NoteList from "@/components/NoteList.astro"
 
 import { notes } from "@/utils/content"
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
-import { getTypeDisplay, isNoteType } from "@/utils/types"
+import { isNoteType, types } from "@/utils/types"
 
 export const prerender = false
 
-const { type } = Astro.params
+const { type: slug } = Astro.params
 
-if (!type || !isNoteType(type)) {
+if (!slug || !isNoteType(slug)) {
   return Astro.rewrite("/404")
 }
 
+const type = types.find((item) => item.slug === slug)!
+
 const searchParams = Astro.url.searchParams
 const page = parsePageParam(searchParams.get("page"))
-const filteredNotes = notes.filter((note) => note.data.type === type)
+const filteredNotes = notes.filter((note) => note.data.type === slug)
 
 function getPageUrl(page: number) {
   const params = new URLSearchParams()
@@ -26,7 +28,7 @@ function getPageUrl(page: number) {
     params.set("page", page.toString())
   }
 
-  return params.size > 0 ? `/notes/types/${type}?${params}` : `/notes/types/${type}`
+  return params.size > 0 ? `/notes/types/${slug}?${params}` : `/notes/types/${slug}`
 }
 
 const pagination = paginate(filteredNotes, page, getPageUrl)
@@ -35,14 +37,17 @@ if (shouldRedirectPagination(searchParams, page, pagination)) {
   return Astro.redirect(pagination.url.current)
 }
 
-const title = `${getTypeDisplay(type)}手记`
+const title = `${type.display}手记`
 ---
 
 <Layout title={title}>
   <!-- Title -->
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <Fragment slot="subtitle">共 {pagination.total} 则</Fragment>
+    <div slot="subtitle" class="space-y-1">
+      <div>{type.description}</div>
+      <div>共 {pagination.total} 则</div>
+    </div>
   </PageTitle>
 
   <!-- Notes -->

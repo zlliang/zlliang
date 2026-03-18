@@ -3,7 +3,6 @@ no: -2
 title: 手记示例
 created: 2026-01-10
 type: regular
-tags: [demo]
 draft: true
 ---
 

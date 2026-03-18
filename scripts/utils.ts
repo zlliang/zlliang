@@ -8,7 +8,6 @@ export interface Frontmatter {
   created?: string
   type?: string
   post?: string
-  tags?: string[]
   draft?: boolean
   [key: string]: unknown
 }

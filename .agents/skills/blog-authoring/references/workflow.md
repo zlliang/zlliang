@@ -10,8 +10,7 @@ Use this file for the repo-specific sequence. Detailed frontmatter rules live in
 4. Review the draft for structure, schema, formatting, and publishing readiness
 5. If the draft is in English, load `english-review` for prose quality, tone, and voice
 6. The author revises or rewrites
-7. Tag with `tag-governance` only after the content is stable
-8. For posts, ship the draft with `pnpm ship <tech|days>` when it is ready
+7. For posts, ship the draft with `pnpm ship <tech|days>` when it is ready
 
 ## Notes
 

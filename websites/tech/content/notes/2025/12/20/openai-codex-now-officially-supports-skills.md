@@ -3,7 +3,6 @@ no: 4
 title: OpenAI Codex now officially supports skills
 created: 2025-12-20
 type: link
-tags: [agents]
 ---
 
 [OpenAI Codex now officially supports skills](https://x.com/OpenAIDevs/status/2002099762536010235). After a few days of people finding OpenAI was quietly adopting skills[^1], the announcement came today. The thread on X goes through how skills work in Codex and shows examples on how to install third-party pre-built skills like [Linear](https://linear.app/) and [Notion](https://notion.com/).

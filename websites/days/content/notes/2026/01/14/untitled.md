@@ -2,7 +2,6 @@
 no: 3
 created: 2026-01-14
 type: regular
-tags: [watching, writing]
 ---
 
 中午吃饭的时候，继续看《住宅区的两人》第五集。这集太好笑了，我一个人在小桌子前笑个不停。
