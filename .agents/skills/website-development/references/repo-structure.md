@@ -4,7 +4,7 @@ Use this file when ownership or shared boundaries matter.
 
 ## Top-level layout
 
-- `websites/www`: landing site with `fragments` and `places` content collections
+- `websites/www`: landing site with a `fragments` content collection
 - `websites/tech`: English note and post site
 - `websites/days`: Chinese note and post site
 - `packages/rehype`: shared Markdown and rehype plugins

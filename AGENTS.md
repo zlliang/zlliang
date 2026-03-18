@@ -15,9 +15,8 @@ All websites are built with [Astro](https://astro.build/) and are deployed on [V
 
 ## Content model
 
-- `www` uses two collections:
+- `www` uses one collection:
   - `content/fragments/*.md` for reusable localized fragments
-  - `content/places/places.json` for map and travel data
 - `tech` and `days` share the same note/post model:
   - notes live under `content/notes/YYYY/MM/DD/slug.md`
   - post drafts live under `content/posts/drafts/slug.md`
