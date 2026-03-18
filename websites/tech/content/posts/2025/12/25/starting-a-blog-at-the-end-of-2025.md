@@ -179,6 +179,8 @@ Time to write, write, and write. Can I accumulate thousands of notes in a decade
 
 **Update Mar 13, 2026:** I reworked the note tags across both `tech` and `days`, and renamed the note `category` field to `type` throughout the sites. I also wrote a note about it: [_Reworked tags and renamed note categories to types_](/notes/2026/03/13/reworked-tags-and-renamed-note-categories-to-types).
 
+**Update Mar 18, 2026:** I removed note tags after deciding they were adding more writing friction than value, especially now that note search exists. I also simplified the sidebar and refreshed the type index page. I wrote a short note about this cleanup: [_Removed tags and refreshed note navigation_](/notes/2026/03/18/removed-tags-and-refreshed-note-navigation).
+
 </div>
 
 [^1]: [The Amp thread](https://ampcode.com/threads/T-019b49fd-619b-77ce-af60-0ce81ffb0d7f)

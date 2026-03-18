@@ -66,4 +66,6 @@ Again, it's time to write, write, and write.
 
 **Update Mar 13, 2026:** I reverted the note number prefixes on both `tech` and `days`. Notes are now shown as `#123` again instead of `#tech123` and `#days123`. I wrote a note about the change: [_Removed the prefixes from note numbers_](/notes/2026/03/13/removed-the-prefixes-from-note-numbers).
 
+**Update Mar 18, 2026:** I removed note tags from both sites for now, simplified the sidebar, and improved the `/notes/types` page with a richer card-based layout. I wrote a note about the change: [_Removed tags and refreshed note navigation_](/notes/2026/03/18/removed-tags-and-refreshed-note-navigation).
+
 </div>
