@@ -10,7 +10,6 @@
 }
 
 @theme {
-
   --color-www-50: var(--color-cyan-50);
   --color-www-100: var(--color-cyan-100);
   --color-www-200: var(--color-cyan-200);
@@ -74,13 +73,13 @@ body {
   @apply bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100;
 }
 
-/* Icons */
+/* Icon */
 
 [class*="icon-"] {
   @apply inline-block size-[1.2em] align-text-bottom scale-95;
 }
 
-/* Titles */
+/* Title */
 
 h1, h2, h3, h4, h5, h6 {
   @apply font-display font-bold;
@@ -98,7 +97,7 @@ h3 {
   @apply mt-8 text-lg;
 }
 
-/* Contents */
+/* Content */
 
 main > *:last-child {
   @apply mb-0;
@@ -182,7 +181,7 @@ p > img {
   @apply max-h-120 object-contain;
 }
 
-/* Codes */
+/* Code */
 
 @media (prefers-color-scheme: dark) {
   .astro-code,
@@ -211,7 +210,33 @@ pre code {
   @apply p-0 border-none;
 }
 
-/* Tables */
+/* Code copy */
+
+.code-copy {
+  @apply relative;
+}
+
+.code-copy-button {
+  @apply absolute top-2 right-2 z-10 flex justify-center items-center size-8 rounded-sm backdrop-blur-sm text-neutral-400 dark:text-neutral-600 ;
+}
+
+.code-copy-copy {
+  @apply icon-[lucide--copy] hover:text-neutral-600 hover:dark:text-neutral-400 cursor-pointer;
+}
+
+.code-copy-check {
+  @apply icon-[lucide--check] hidden;
+}
+
+.code-copy-button.copied .code-copy-copy {
+  @apply hidden;
+}
+
+.code-copy-button.copied .code-copy-check {
+  @apply inline;
+}
+
+/* Table */
 
 table {
   @apply mb-4 mx-auto w-full border-collapse;
@@ -237,13 +262,13 @@ th {
   @apply bg-neutral-100 dark:bg-neutral-800;
 }
 
-/* Image captions */
+/* Image caption */
 
 span.caption {
   @apply flex justify-center mt-1 text-sm text-neutral-500;
 }
 
-/* Footnotes */
+/* Footnote */
 
 .footnotes {
   @apply text-sm;
