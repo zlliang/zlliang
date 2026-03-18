@@ -29,13 +29,6 @@ const recentPosts = posts.slice(0, 10)
   <!-- Prefix -->
   <slot name="prefix" />
 
-  <!-- Pinned posts -->
-  {pinnedPosts.length > 0 && (
-    <Section title="Pinned posts">
-      <PostList posts={pinnedPosts} />
-    </Section>
-  )}
-
   <!-- Explore -->
   <Section title="Explore">
     <div class="flex justify-between items-center mb-1">
@@ -55,6 +48,13 @@ const recentPosts = posts.slice(0, 10)
       <span class="text-sm text-neutral-500">{posts.length} in total</span>
     </div>
   </Section>
+
+  <!-- Pinned posts -->
+  {pinnedPosts.length > 0 && (
+    <Section title="Pinned posts">
+      <PostList posts={pinnedPosts} showMeta={false} />
+    </Section>
+  )}
 
   <!-- Recent posts -->
   {showRecentPosts && recentPosts.length > 0 && (
