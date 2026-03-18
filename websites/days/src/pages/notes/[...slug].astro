@@ -4,7 +4,7 @@ import { format } from "date-fns"
 
 import Link from "@zlliang/theme/components/Link.astro"
 import Layout from "@/components/Layout.astro"
-import NoteItem from "@/components/NoteItem.astro"
+import NoteContent from "@/components/NoteContent.astro"
 
 import { cn } from "@zlliang/theme"
 import { notes } from "@/utils/content"
@@ -29,7 +29,7 @@ const title = [note.data.title || post?.data.title, `手记 #${note.data.no}`].f
 
 <Layout title={title}>
   <!-- Content -->
-  <NoteItem note={note} showLink={false} />
+  <NoteContent note={note} showLink={false} />
 
   <!-- Links to next and previous notes -->
   {(next || previous) && (

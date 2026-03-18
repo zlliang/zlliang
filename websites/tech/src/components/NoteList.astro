@@ -3,7 +3,7 @@ import { format } from "date-fns"
 
 import Section from "@zlliang/theme/components/Section.astro"
 import Pagination from "@zlliang/theme/components/Pagination.astro"
-import NoteItem from "@/components/NoteItem.astro"
+import NoteContent from "@/components/NoteContent.astro"
 
 import { cn } from "@zlliang/theme"
 import { groupNotesByDate } from "@/utils/content"
@@ -25,7 +25,7 @@ const grouped = await groupNotesByDate(notes)
     <Section title={format(date, "PP")}>
       {notes.map((note, index) => (
         <div class={cn(index !== notes.length - 1 && "mb-6 pb-6 border-b-2 border-neutral-200 dark:border-neutral-800")}>
-          <NoteItem note={note} />
+          <NoteContent note={note} />
         </div>
       ))}
     </Section>
