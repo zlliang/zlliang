@@ -1,5 +1,5 @@
 ---
-no: 52
+no: 53
 title: Removed tags and refreshed note navigation
 created: 2026-03-18
 type: regular
