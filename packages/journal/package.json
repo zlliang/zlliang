@@ -7,7 +7,7 @@
     "journal": "./bin/journal.js"
   },
   "exports": {
-    "./note-types": "./src/note-types.ts"
+    "./note-types": "./src/utils/note-types.ts"
   },
   "dependencies": {
     "cac": "^7.0.0",

@@ -1,15 +1,18 @@
 import fs, { glob } from "node:fs/promises"
 import path from "node:path"
 
-import { noteTypeSlugs } from "../note-types"
+import { resolveJournalContext } from "../utils/context"
+import { handleCommand } from "../utils/command"
 import { JournalError } from "../utils/errors"
 import { pathExists } from "../utils/files"
 import { serializeFrontmatter } from "../utils/frontmatter"
+import { isNoteType, noteTypeSlugs } from "../utils/note-types"
 import { getDateParts, normalizeTitle, slugify } from "../utils/text"
 
-import type { NoteType } from "../note-types"
+import type { CAC } from "cac"
 import type { JournalContext } from "../utils/context"
 import type { Frontmatter } from "../utils/frontmatter"
+import type { NoteType } from "../utils/note-types"
 
 const BODY_PLACEHOLDER = "TODO"
 
@@ -22,6 +25,41 @@ export interface PreparedEntry {
 
 export interface PreparedNote extends PreparedEntry {
   number: number
+}
+
+interface NewCommandOptions {
+  type: string
+}
+
+export function registerNewCommand(cli: CAC) {
+  cli
+    .command("new <entry> [title...]", "Create a new note or post draft")
+    .option("--type <type>", `Note type when entry is \`note\` (${noteTypeSlugs.join(", ")})`, {
+      default: "regular",
+    })
+    .example("journal new note --type link \"A useful article\"")
+    .example("journal new post \"How I use AI agents\"")
+    .action((entry: string, title: string[], options: NewCommandOptions) => {
+      void handleCommand(async () => {
+        const context = await resolveJournalContext()
+
+        if (entry === "note") {
+          const noteType = validateNoteType(options.type)
+          const note = await createNote(context, title, noteType)
+          process.stdout.write(`Created note #${note.number}: ${note.filePath}\n`)
+          return
+        }
+
+        if (entry === "post") {
+          validatePostOptions(options)
+          const post = await createPostDraft(context, title)
+          process.stdout.write(`Created post draft: ${post.filePath}\n`)
+          return
+        }
+
+        throw new JournalError("Invalid entry type. Expected `note` or `post`.")
+      })
+    })
 }
 
 export async function createNote(
@@ -137,4 +175,18 @@ async function getNextNoteNumber(notesRoot: string): Promise<number> {
   }
 
   return maxNumber + 1
+}
+
+function validateNoteType(value: string): NoteType {
+  if (!isNoteType(value)) {
+    throw new JournalError(`Invalid note type: ${value}. Expected one of: ${noteTypeSlugs.join(", ")}`)
+  }
+
+  return value
+}
+
+function validatePostOptions(options: NewCommandOptions) {
+  if (options.type !== "regular") {
+    throw new JournalError("The --type option can only be used with `journal new note`.")
+  }
 }

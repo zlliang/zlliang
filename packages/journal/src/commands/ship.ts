@@ -2,12 +2,15 @@ import fs from "node:fs/promises"
 import path from "node:path"
 import { createInterface } from "node:readline/promises"
 
+import { resolveJournalContext } from "../utils/context"
+import { handleCommand } from "../utils/command"
 import { JournalError } from "../utils/errors"
 import { pathExists } from "../utils/files"
 import { parseFrontmatter, serializeFrontmatter } from "../utils/frontmatter"
 import { getDateParts } from "../utils/text"
 import { prepareNote } from "./new"
 
+import type { CAC } from "cac"
 import type { JournalContext } from "../utils/context"
 import type { PreparedNote } from "./new"
 
@@ -16,6 +19,28 @@ export interface ShippedDraft {
   postPath: string
   note: PreparedNote
   movedImagesPath?: string
+}
+
+export function registerShipCommand(cli: CAC) {
+  cli
+    .command("ship [draft]", "Publish a post draft and create the associated note")
+    .example("journal ship")
+    .example("journal ship how-i-use-ai-agents")
+    .action((draft: string | undefined) => {
+      void handleCommand(async () => {
+        const context = await resolveJournalContext()
+        const shipped = await shipDraft(context, draft)
+
+        process.stdout.write(`Shipped post: ${shipped.postPath}\n`)
+        process.stdout.write(`Created note #${shipped.note.number}: ${shipped.note.filePath}\n`)
+
+        if (shipped.movedImagesPath) {
+          process.stdout.write(`Moved images to: ${shipped.movedImagesPath}\n`)
+        }
+
+        process.stdout.write(`Deleted draft: ${shipped.draftPath}\n`)
+      })
+    })
 }
 
 export async function shipDraft(context: JournalContext, draftArg?: string): Promise<ShippedDraft> {
