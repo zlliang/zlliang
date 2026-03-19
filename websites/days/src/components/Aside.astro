@@ -5,6 +5,7 @@ import Section from "@zlliang/theme/components/Section.astro"
 import Link from "@zlliang/theme/components/Link.astro"
 import PostList from "@/components/PostList.astro"
 import SearchForm from "@/components/SearchForm.astro"
+import Heatmap from "@/components/Heatmap.astro"
 
 import { notes, posts, pinnedPosts } from "@/utils/content"
 import { types } from "@/utils/types"
@@ -41,6 +42,7 @@ const recentPosts = posts.slice(0, 10)
       <Link href="/posts"><span class="icon-[lucide--book-open-text]" /> 文章</Link>
       <span class="text-sm text-neutral-500">{posts.length} 篇</span>
     </div>
+    <Heatmap />
   </Section>
 
   <!-- Pinned posts -->
