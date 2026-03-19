@@ -67,7 +67,7 @@ const url = Astro.url
   <div class="flex flex-col min-h-dvh max-w-3xl lg:max-w-6xl m-auto px-6">
     <Header logo={logo} title={siteTitle}>
       <Fragment slot="menu">
-        <Link href="/notes/search"><span class="icon-[lucide--search]" /> Search</Link>
+        <Link href="/notes/search" class="lg:hidden"><span class="icon-[lucide--search]" /> Search</Link>
         <Link href="https://zlliang.me" external={false}><span class="icon-[lucide--user]" /> About</Link>
       </Fragment>
     </Header>
