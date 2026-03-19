@@ -1,0 +1,21 @@
+{
+  "name": "@zlliang/journal",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "journal": "./bin/journal.js"
+  },
+  "exports": {
+    "./note-types": "./src/note-types.ts"
+  },
+  "dependencies": {
+    "cac": "^6.7.14",
+    "tsx": "^4.21.0",
+    "yaml": "^2.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "typescript": "^5.9.3"
+  }
+}

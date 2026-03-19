@@ -5,12 +5,12 @@ Use this file for the repo-specific sequence. Detailed frontmatter rules live in
 ## Default sequence
 
 1. Identify the target site and entry type; for notes, choose the note type by what the draft is trying to do
-2. Create the draft with `pnpm new <tech|days> <note|post> ...` when the built-in workflow fits
+2. Create or ship content with `journal` when the built-in workflow fits; use `pnpm journal:<tech|days> --help` from the root, or `pnpm journal --help` inside `websites/tech` or `websites/days`, for the exact commands
 3. The author writes the draft
 4. Review the draft for structure, schema, formatting, and publishing readiness
 5. If the draft is in English, load `english-review` for prose quality, tone, and voice
 6. The author revises or rewrites
-7. For posts, ship the draft with `pnpm ship <tech|days>` when it is ready
+7. For posts, ship the draft with `journal` when it is ready
 
 ## Notes
 
@@ -24,7 +24,7 @@ Use this file for the repo-specific sequence. Detailed frontmatter rules live in
 ## Posts
 
 - New posts start in `content/posts/drafts/slug.md` with `draft: true`
-- `pnpm ship <site>` publishes the draft, removes `draft: true`, and creates the associated `type: post` note
+- Shipping removes `draft: true` and creates the associated `type: post` note
 - `content/posts/drafts/images/` is moved to the published post's `images/` directory during shipping
 - Use `pinned: true` only for long-lived reference posts
 - Add later corrections or follow-up context as update notes instead of scattering them through the body

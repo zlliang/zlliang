@@ -1,15 +1,15 @@
 # Repository Guide
 
-This repository contains Zilong's personal websites, shared packages, and a small set of root scripts. Use this file as the high-level map. Use the local skills for task-specific workflow.
+This repository contains Zilong's personal websites, shared packages, and a small set of root workspace commands. Use this file as the high-level map. Use the local skills for task-specific workflow.
 
 ## What lives here
 
 - `websites/www`: bilingual landing site for `zlliang.me`
 - `websites/tech`: English site for technical notes and posts
 - `websites/days`: Chinese site for daily-life notes and posts
+- `packages/journal`: CLI for note and post workflow based on the shared content structure used by `tech` and `days`
 - `packages/rehype`: shared rehype plugins
 - `packages/theme`: shared styles, utilities, and Astro components
-- `scripts`: root commands for dev, build, and content operations
 
 All websites are built with [Astro](https://astro.build/) and are deployed on [Vercel](https://vercel.com/).
 
@@ -28,14 +28,17 @@ All websites are built with [Astro](https://astro.build/) and are deployed on [V
 Run commands from the repository root.
 
 ```bash
-pnpm dev <www|tech|days>
-pnpm build <www|tech|days>
-pnpm new <tech|days> <note|post> [--type <type>] [title]
-pnpm ship <tech|days>
+pnpm dev
+pnpm build
+pnpm www:dev
+pnpm www:build
+pnpm tech:dev
+pnpm tech:build
+pnpm days:dev
+pnpm days:build
+pnpm journal:tech <command> [...]
+pnpm journal:days <command> [...]
 ```
-
-- Use the root scripts instead of hand-creating dated content files when the existing workflow fits
-- `pnpm ship` publishes a post draft and creates the associated `type: post` note
 
 ## Working principles
 
@@ -47,7 +50,7 @@ pnpm ship <tech|days>
 
 ## Skills
 
-- `website-development`: website code, shared packages, root scripts, builds, and validation
+- `website-development`: website code, shared packages, the `journal` CLI, builds, and validation
 - `blog-authoring`: note/post workflow, schema, style, publishing readiness, and the optional bilingual English-writing loop
 - `english-review`: English prose review, comparison, synthesis, and voice coaching
 

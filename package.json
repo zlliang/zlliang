@@ -4,16 +4,18 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx scripts/run.ts dev",
-    "build": "tsx scripts/run.ts build",
-    "new": "tsx scripts/new.ts",
-    "ship": "tsx scripts/ship.ts"
+    "dev": "pnpm -r --parallel --filter @zlliang/www --filter @zlliang/tech --filter @zlliang/days dev",
+    "build": "pnpm -r --filter @zlliang/www --filter @zlliang/tech --filter @zlliang/days build",
+    "www:dev": "pnpm --filter @zlliang/www dev",
+    "www:build": "pnpm --filter @zlliang/www build",
+    "tech:dev": "pnpm --filter @zlliang/tech dev",
+    "tech:build": "pnpm --filter @zlliang/tech build",
+    "days:dev": "pnpm --filter @zlliang/days dev",
+    "days:build": "pnpm --filter @zlliang/days build",
+    "journal:tech": "pnpm --dir websites/tech journal",
+    "journal:days": "pnpm --dir websites/days journal"
   },
   "devDependencies": {
-    "@types/node": "^25.5.0",
-    "date-fns": "^4.1.0",
-    "tsx": "^4.19.4",
-    "typescript": "^5.9.3",
-    "yaml": "^2.8.2"
+    "@zlliang/journal": "workspace:*"
   }
 }

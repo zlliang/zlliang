@@ -7,9 +7,9 @@ Use this file when ownership or shared boundaries matter.
 - `websites/www`: landing site with a `fragments` content collection
 - `websites/tech`: English note and post site
 - `websites/days`: Chinese note and post site
+- `packages/journal`: CLI for the shared note and post workflow
 - `packages/rehype`: shared Markdown and rehype plugins
 - `packages/theme`: shared CSS, utilities, and Astro components
-- `scripts`: root entry points for dev, build, and content workflow
 
 ## Shared rules
 

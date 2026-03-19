@@ -5,12 +5,12 @@ description: Develop and maintain the Astro-based websites in this monorepo. Use
 
 # Website Development
 
-Use this skill for implementation work on the websites, shared packages, and root scripts.
+Use this skill for implementation work on the websites, shared packages, and the `journal` CLI.
 
 ## When to use
 
 - Use this skill to build features, fix bugs, refactor, or update styles and components
-- Use this skill for work in `websites/*`, `packages/*`, or the root `scripts/` directory
+- Use this skill for work in `websites/*`, `packages/*`, or root workspace commands in `package.json`
 - Use this skill when dev or build validation is part of the task
 
 ## Read first

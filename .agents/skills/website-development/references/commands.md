@@ -5,20 +5,25 @@ Run commands from the repository root.
 ## Development and build
 
 ```bash
-pnpm dev <www|tech|days>
-pnpm build <www|tech|days>
+pnpm dev
+pnpm build
+pnpm www:dev
+pnpm www:build
+pnpm tech:dev
+pnpm tech:build
+pnpm days:dev
+pnpm days:build
 ```
 
 ## Content workflow
 
 ```bash
-pnpm new <tech|days> <note|post> [--type <type>] [title]
-pnpm ship <tech|days>
+pnpm journal:tech <command> [...]
+pnpm journal:days <command> [...]
 ```
 
-- `pnpm new ... note` creates a dated note file
-- `pnpm new ... post` creates a post draft under `content/posts/drafts/`
-- `pnpm ship ...` publishes a post draft, creates the associated `type: post` note, and moves draft images if present
+- Use `pnpm journal:tech ...` or `pnpm journal:days ...` from the root, or `pnpm journal ...` inside `websites/tech` or `websites/days`
+- `journal` assumes the shared `content/notes` and `content/posts` layout; use `pnpm journal:tech --help`, `pnpm journal:days --help`, or `pnpm journal --help` for the command surface and examples
 
 ## Shared imports
 
