@@ -1,0 +1,105 @@
+---
+import { format, isSameDay } from "date-fns"
+import { countBy } from "lodash-es"
+
+import Link from "@zlliang/theme/components/Link.astro"
+import PageTitle from "@zlliang/theme/components/PageTitle.astro"
+import Section from "@zlliang/theme/components/Section.astro"
+import Layout from "@/components/Layout.astro"
+import ArchiveCalendar from "@/components/ArchiveCalendar.astro"
+import NoteList from "@/components/NoteList.astro"
+
+import { notes } from "@/utils/content"
+import { getArchiveBounds, getDayNotesPath, getMonthNotesPath, pad, parseDay, parseMonth, parseYear } from "@/utils/archive"
+import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
+
+export const prerender = false
+
+const { year: yearSegment, month: monthSegment, day: daySegment } = Astro.params
+const year = parseYear(yearSegment)
+const month = parseMonth(monthSegment)
+const day = year !== null && month !== null ? parseDay(daySegment, year, month) : null
+const bounds = getArchiveBounds(notes)
+
+if (year === null || month === null || day === null || bounds === null) {
+  return Astro.rewrite("/404")
+}
+
+const monthRange = bounds.getMonthRange(year)
+if (!monthRange || month < monthRange.start || month > monthRange.end) {
+  return Astro.rewrite("/404")
+}
+
+const dayRange = bounds.getDayRange(year, month)
+if (!dayRange || day < dayRange.start || day > dayRange.end) {
+  return Astro.rewrite("/404")
+}
+
+const targetDate = new Date(year, month - 1, day)
+
+const canonicalMonthSegment = pad(month)
+const canonicalDaySegment = pad(day)
+if (monthSegment !== canonicalMonthSegment || daySegment !== canonicalDaySegment) {
+  const search = Astro.url.search
+  return Astro.redirect(`${getDayNotesPath(year, month, day)}${search}`)
+}
+
+const searchParams = Astro.url.searchParams
+const page = parsePageParam(searchParams.get("page"))
+const monthNotes = notes.filter((note) => note.data.created.getFullYear() === year && note.data.created.getMonth() === month - 1)
+const filteredNotes = notes.filter((note) => isSameDay(note.data.created, targetDate))
+const dayCounts = countBy(monthNotes, (note) => note.data.created.getDate())
+
+const dayItems = Array.from({ length: dayRange.end - dayRange.start + 1 }, (_, index) => {
+  const d = dayRange.start + index
+  const count = dayCounts[d] ?? 0
+
+  return {
+    day: d,
+    count,
+    href: count > 0 ? getDayNotesPath(year, month, d) : undefined,
+    active: d === day,
+  }
+})
+
+function getPageUrl(page: number) {
+  const params = new URLSearchParams()
+
+  if (page > 1) {
+    params.set("page", page.toString())
+  }
+
+  const basePath = getDayNotesPath(year!, month!, day!)
+  return params.size > 0 ? `${basePath}?${params}` : basePath
+}
+
+const pagination = paginate(filteredNotes, page, getPageUrl)
+
+if (shouldRedirectPagination(searchParams, page, pagination)) {
+  return Astro.redirect(pagination.url.current)
+}
+
+const title = `Notes on ${format(targetDate, "PP")}`
+---
+
+<Layout title={title}>
+  <!-- Archive -->
+  <Fragment slot="aside-prefix">
+    <Section title="Archive">
+      <div class="flex justify-between items-center gap-2 mb-2 text-xs">
+        <span class="text-neutral-500">Days in {format(targetDate, "MMMM yyyy")}</span>
+        <Link href={getMonthNotesPath(year, month)} class="text-xs">Back to {format(targetDate, "MMMM yyyy")}</Link>
+      </div>
+      <ArchiveCalendar year={year} month={month} items={dayItems} />
+    </Section>
+  </Fragment>
+
+  <!-- Title -->
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <span slot="subtitle">{pagination.total} total</span>
+  </PageTitle>
+
+  <!-- Notes -->
+  {pagination.data.length > 0 ? <NoteList notes={pagination.data} pagination={pagination} /> : <p class="text-neutral-500">No notes found.</p>}
+</Layout>

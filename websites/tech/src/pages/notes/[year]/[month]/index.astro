@@ -1,0 +1,113 @@
+---
+import { format } from "date-fns"
+import { countBy } from "lodash-es"
+
+import Link from "@zlliang/theme/components/Link.astro"
+import PageTitle from "@zlliang/theme/components/PageTitle.astro"
+import Section from "@zlliang/theme/components/Section.astro"
+import Layout from "@/components/Layout.astro"
+import ArchiveLinks from "@/components/ArchiveLinks.astro"
+import ArchiveCalendar from "@/components/ArchiveCalendar.astro"
+import NoteList from "@/components/NoteList.astro"
+
+import { notes } from "@/utils/content"
+import { getArchiveBounds, getDayNotesPath, getMonthNotesPath, getYearNotesPath, pad, parseMonth, parseYear } from "@/utils/archive"
+import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
+
+export const prerender = false
+
+const { year: yearSegment, month: monthSegment } = Astro.params
+const year = parseYear(yearSegment)
+const month = parseMonth(monthSegment)
+const bounds = getArchiveBounds(notes)
+
+if (year === null || month === null || bounds === null) {
+  return Astro.rewrite("/404")
+}
+
+const monthRange = bounds.getMonthRange(year)
+if (!monthRange || month < monthRange.start || month > monthRange.end) {
+  return Astro.rewrite("/404")
+}
+
+const canonicalMonthSegment = pad(month)
+if (monthSegment !== canonicalMonthSegment) {
+  const search = Astro.url.search
+  return Astro.redirect(`${getMonthNotesPath(year, month)}${search}`)
+}
+
+const searchParams = Astro.url.searchParams
+const page = parsePageParam(searchParams.get("page"))
+const yearNotes = notes.filter((note) => note.data.created.getFullYear() === year)
+const filteredNotes = notes.filter((note) => note.data.created.getFullYear() === year && note.data.created.getMonth() === month - 1)
+const dayRange = bounds.getDayRange(year, month)!
+const monthCounts = countBy(yearNotes, (note) => note.data.created.getMonth() + 1)
+const dayCounts = countBy(filteredNotes, (note) => note.data.created.getDate())
+
+const monthItems = Array.from({ length: monthRange.end - monthRange.start + 1 }, (_, index) => {
+  const m = monthRange.start + index
+  const count = monthCounts[m] ?? 0
+
+  return {
+    label: format(new Date(year, m - 1, 1), "MMM"),
+    count,
+    href: count > 0 ? getMonthNotesPath(year, m) : undefined,
+    active: m === month,
+  }
+})
+
+const dayItems = Array.from({ length: dayRange.end - dayRange.start + 1 }, (_, index) => {
+  const d = dayRange.start + index
+  const count = dayCounts[d] ?? 0
+
+  return {
+    day: d,
+    count,
+    href: count > 0 ? getDayNotesPath(year, month, d) : undefined,
+  }
+})
+
+function getPageUrl(page: number) {
+  const params = new URLSearchParams()
+
+  if (page > 1) {
+    params.set("page", page.toString())
+  }
+
+  const basePath = getMonthNotesPath(year!, month!)
+  return params.size > 0 ? `${basePath}?${params}` : basePath
+}
+
+const pagination = paginate(filteredNotes, page, getPageUrl)
+
+if (shouldRedirectPagination(searchParams, page, pagination)) {
+  return Astro.redirect(pagination.url.current)
+}
+
+const targetDate = new Date(year, month - 1, 1)
+const title = `Notes in ${format(targetDate, "MMMM yyyy")}`
+---
+
+<Layout title={title}>
+  <!-- Archive -->
+  <Fragment slot="aside-prefix">
+    <Section title="Archive">
+      <div class="flex justify-between items-center gap-2 mb-2 text-xs">
+        <span class="text-neutral-500">Months in {year}</span>
+        <Link href={getYearNotesPath(year)} class="text-xs">Back to {year}</Link>
+      </div>
+      <ArchiveLinks items={monthItems} />
+      <div class="mt-4 mb-2 text-xs text-neutral-500">Days in {format(targetDate, "MMMM yyyy")}</div>
+      <ArchiveCalendar year={year} month={month} items={dayItems} />
+    </Section>
+  </Fragment>
+
+  <!-- Title -->
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <span slot="subtitle">{pagination.total} total</span>
+  </PageTitle>
+
+  <!-- Notes -->
+  {pagination.data.length > 0 ? <NoteList notes={pagination.data} pagination={pagination} /> : <p class="text-neutral-500">No notes found.</p>}
+</Layout>

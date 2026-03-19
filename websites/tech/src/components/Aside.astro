@@ -5,6 +5,7 @@ import Section from "@zlliang/theme/components/Section.astro"
 import Link from "@zlliang/theme/components/Link.astro"
 import PostList from "@/components/PostList.astro"
 import SearchForm from "@/components/SearchForm.astro"
+import Heatmap from "@/components/Heatmap.astro"
 
 import { notes, posts, pinnedPosts } from "@/utils/content"
 import { types } from "@/utils/types"
@@ -41,6 +42,7 @@ const recentPosts = posts.slice(0, 10)
       <Link href="/posts"><span class="icon-[lucide--book-open-text]" /> Posts</Link>
       <span class="text-sm text-neutral-500">{posts.length} total</span>
     </div>
+    <Heatmap />
   </Section>
 
   <!-- Pinned posts -->
@@ -59,7 +61,7 @@ const recentPosts = posts.slice(0, 10)
 
   <!-- Other websites -->
   <Section title="The other side of me">
-    <Link href="https://days.zlliang.me" class="group secondary flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-days-400 dark:hover:border-days-600 hover:bg-days-50 dark:hover:bg-days-950 hover:text-days-500!">
+    <Link href="https://days.zlliang.me" class="secondary group flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-days-400 dark:hover:border-days-600 hover:bg-days-50 dark:hover:bg-days-950 hover:text-days-500!">
       <Image src={logoDays} alt="Logo of days.zlliang.me" class="size-8" loading="eager" />
       <div class="flex-1">
         <div><span class="font-bold">Zilong's Days</span> (Chinese)</div>

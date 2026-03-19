@@ -1,0 +1,103 @@
+---
+import { format } from "date-fns"
+import { countBy } from "lodash-es"
+
+import Link from "@zlliang/theme/components/Link.astro"
+import PageTitle from "@zlliang/theme/components/PageTitle.astro"
+import Section from "@zlliang/theme/components/Section.astro"
+import Layout from "@/components/Layout.astro"
+import ArchiveLinks from "@/components/ArchiveLinks.astro"
+import NoteList from "@/components/NoteList.astro"
+
+import { notes } from "@/utils/content"
+import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
+import { getArchiveBounds, getMonthNotesPath, getYearNotesPath, parseYear } from "@/utils/archive"
+
+export const prerender = false
+
+const { year: yearSegment } = Astro.params
+const year = parseYear(yearSegment)
+const bounds = getArchiveBounds(notes)
+
+if (year === null || bounds === null) {
+  return Astro.rewrite("/404")
+}
+
+const yearRange = bounds.getYearRange()
+if (year < yearRange.start || year > yearRange.end) {
+  return Astro.rewrite("/404")
+}
+
+const searchParams = Astro.url.searchParams
+const page = parsePageParam(searchParams.get("page"))
+const filteredNotes = notes.filter((note) => note.data.created.getFullYear() === year)
+const monthRange = bounds.getMonthRange(year)!
+const yearCounts = countBy(notes, (note) => note.data.created.getFullYear())
+const monthCounts = countBy(filteredNotes, (note) => note.data.created.getMonth() + 1)
+
+const yearItems = Array.from({ length: yearRange.end - yearRange.start + 1 }, (_, index) => {
+  const y = yearRange.start + index
+  const count = yearCounts[y] ?? 0
+
+  return {
+    label: String(y),
+    count,
+    href: count > 0 ? getYearNotesPath(y) : undefined,
+    active: y === year,
+  }
+})
+
+const monthItems = Array.from({ length: monthRange.end - monthRange.start + 1 }, (_, index) => {
+  const m = monthRange.start + index
+  const count = monthCounts[m] ?? 0
+
+  return {
+    label: format(new Date(year, m - 1, 1), "MMM"),
+    count,
+    href: count > 0 ? getMonthNotesPath(year, m) : undefined,
+  }
+})
+
+function getPageUrl(page: number) {
+  const params = new URLSearchParams()
+
+  if (page > 1) {
+    params.set("page", page.toString())
+  }
+
+  const basePath = getYearNotesPath(year!)
+  return params.size > 0 ? `${basePath}?${params}` : basePath
+}
+
+const pagination = paginate(filteredNotes, page, getPageUrl)
+
+if (shouldRedirectPagination(searchParams, page, pagination)) {
+  return Astro.redirect(pagination.url.current)
+}
+
+const title = `Notes in ${year}`
+---
+
+<Layout title={title}>
+  <!-- Archive -->
+  <Fragment slot="aside-prefix">
+    <Section title="Archive">
+      <div class="flex justify-between items-center gap-2 mb-2 text-xs">
+        <span class="text-neutral-500">Years</span>
+        <Link href="/notes" class="text-xs">Back to all notes</Link>
+      </div>
+      <ArchiveLinks items={yearItems} />
+      <div class="mt-4 mb-2 text-xs text-neutral-500">Months in {year}</div>
+      <ArchiveLinks items={monthItems} />
+    </Section>
+  </Fragment>
+
+  <!-- Title -->
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <span slot="subtitle">{pagination.total} total</span>
+  </PageTitle>
+
+  <!-- Notes -->
+  {pagination.data.length > 0 ? <NoteList notes={pagination.data} pagination={pagination} /> : <p class="text-neutral-500">No notes found.</p>}
+</Layout>
