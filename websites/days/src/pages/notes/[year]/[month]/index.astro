@@ -14,8 +14,6 @@ import { notes } from "@/utils/content"
 import { getArchiveBounds, getDayNotesPath, getMonthNotesPath, getYearNotesPath, pad, parseMonth, parseYear } from "@/utils/archive"
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
 
-export const prerender = false
-
 const { year: yearSegment, month: monthSegment } = Astro.params
 const year = parseYear(yearSegment)
 const month = parseMonth(monthSegment)

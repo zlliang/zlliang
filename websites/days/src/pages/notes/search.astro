@@ -7,8 +7,6 @@ import NoteList from "@/components/NoteList.astro"
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
 import { getSearchPageUrl, searchNotes } from "@/utils/search"
 
-export const prerender = false
-
 const searchParams = Astro.url.searchParams
 const q = searchParams.get("q")?.trim() ?? ""
 const page = parsePageParam(searchParams.get("page"))

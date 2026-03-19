@@ -7,8 +7,6 @@ import { notes } from "@/utils/content"
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
 import { isNoteType, types } from "@/utils/types"
 
-export const prerender = false
-
 const { type: slug } = Astro.params
 
 if (!slug || !isNoteType(slug)) {

@@ -11,6 +11,8 @@ import { notes } from "@/utils/content"
 
 import type { GetStaticPaths } from "astro"
 
+export const prerender = true
+
 export const getStaticPaths = (() => notes.map((note, index) => {
   const next = index > 0 ? notes[index - 1] : null
   const previous = index < notes.length - 1 ? notes[index + 1] : null

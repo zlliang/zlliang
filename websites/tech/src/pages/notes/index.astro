@@ -11,8 +11,6 @@ import { notes } from "@/utils/content"
 import { getArchiveBounds, getYearNotesPath } from "@/utils/archive"
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
 
-export const prerender = false
-
 const bounds = getArchiveBounds(notes)
 const yearRange = bounds?.getYearRange() ?? null
 const yearCounts = countBy(notes, (note) => note.data.created.getFullYear())

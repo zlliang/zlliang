@@ -13,8 +13,6 @@ import { notes } from "@/utils/content"
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
 import { getArchiveBounds, getMonthNotesPath, getYearNotesPath, parseYear } from "@/utils/archive"
 
-export const prerender = false
-
 const { year: yearSegment } = Astro.params
 const year = parseYear(yearSegment)
 const bounds = getArchiveBounds(notes)
