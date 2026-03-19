@@ -19,6 +19,7 @@ interface SearchIndex {
 /** Module-level cache */
 let searchIndexPromise: Promise<SearchIndex> | undefined
 
+/** Search notes by query relevance */
 export async function searchNotes(query: string) {
   const normalizedQuery = query.trim()
 
@@ -48,14 +49,21 @@ export async function searchNotes(query: string) {
     .map((result) => result.note)
 }
 
-export function getSearchPageUrl(query: string, page = 1) {
-  const searchParams = new URLSearchParams()
+/** Supported search result sort modes */
+export type SearchSort = "relevance" | "date"
 
-  searchParams.set("q", query)
+/** Parse the search sort query parameter */
+export function parseSearchSort(value: string | null): SearchSort {
+  return value === "date" ? "date" : "relevance"
+}
 
-  if (page > 1) {
-    searchParams.set("page", page.toString())
-  }
+/** Build the canonical search page URL */
+export function getSearchPageUrl(query: string, page = 1, sort: SearchSort = "relevance") {
+  const searchParams = new URLSearchParams({
+    q: query,
+    ...(page > 1 ? { page: page.toString() } : {}),
+    ...(sort === "date" ? { sort } : {}),
+  })
 
   return `/notes/search?${searchParams}`
 }
