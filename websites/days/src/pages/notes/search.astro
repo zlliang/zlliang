@@ -8,6 +8,8 @@ import NoteSearchResults from "@/components/NoteSearchResults.astro"
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
 import { getSearchPageUrl, parseSearchSort, searchNotes } from "@/utils/search"
 
+import type { SearchSort } from "@/utils/search"
+
 const searchParams = Astro.url.searchParams
 const q = searchParams.get("q")?.trim() ?? ""
 const page = parsePageParam(searchParams.get("page"))
@@ -33,6 +35,10 @@ if (q && shouldRedirectPagination(searchParams, page, pagination)) {
   return Astro.redirect(pagination.url.current)
 }
 
+function getSearchSortDisplay(sort: SearchSort) {
+  return sort === "relevance" ? "相关度" : "日期"
+}
+
 const title = q ? `搜索「${q}」的结果` : "搜索"
 ---
 
@@ -53,7 +59,7 @@ const title = q ? `搜索「${q}」的结果` : "搜索"
         <div class="flex items-center text-sm gap-2">
           <span class="text-neutral-500">排序方式</span>
           {(["relevance", "date"] as const).map((item) => (
-            item === sort ? <span>{item}</span> : <Link href={sortUrls[item]}>{item}</Link>
+            item === sort ? <span>{getSearchSortDisplay(item)}</span> : <Link href={sortUrls[item]}>{getSearchSortDisplay(item)}</Link>
           ))}
         </div>
       </div>

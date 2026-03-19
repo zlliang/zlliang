@@ -16,12 +16,14 @@ interface SearchIndex {
   notesById: Map<string, CollectionEntry<"notes">>
 }
 
+const segmenter = new Intl.Segmenter("en", { granularity: "word" })
+
 /** Module-level cache */
 let searchIndexPromise: Promise<SearchIndex> | undefined
 
 /** Search notes by query relevance */
 export async function searchNotes(query: string) {
-  const normalizedQuery = query.trim()
+  const normalizedQuery = normalizeSearchText(query)
 
   if (!normalizedQuery) {
     return []
@@ -80,6 +82,7 @@ async function buildSearchIndex() {
   const miniSearch = new MiniSearch<SearchDocument>({
     fields: ["title", "content"],
     storeFields: ["id", "no"],
+    tokenize: tokenizeSearchText,
   })
 
   const documents = notes.map((note) => {
@@ -96,4 +99,20 @@ async function buildSearchIndex() {
   miniSearch.addAll(documents)
 
   return { miniSearch, notesById }
+}
+
+function normalizeSearchText(text: string) {
+  return text.normalize("NFKC").trim()
+}
+
+function tokenizeSearchText(text: string) {
+  const normalizedText = normalizeSearchText(text)
+
+  if (!normalizedText) {
+    return []
+  }
+
+  return [...segmenter.segment(normalizedText)]
+    .filter((segment) => segment.isWordLike)
+    .map((segment) => segment.segment)
 }
