@@ -10,7 +10,7 @@
     "./note-types": "./src/note-types.ts"
   },
   "dependencies": {
-    "cac": "^6.7.14",
+    "cac": "^7.0.0",
     "tsx": "^4.21.0",
     "yaml": "^2.8.2"
   },
