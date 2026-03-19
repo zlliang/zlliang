@@ -78,7 +78,7 @@ function getLevel(count: number, maxCount: number) {
             )}
             tabindex="-1"
             aria-label={cell.hoverLabel}
-            data-heatmap-cell
+            data-heatmap-cell={Boolean(cell.href)}
             data-hover-label={cell.hoverLabel}
           />
         })}
@@ -99,7 +99,7 @@ function getLevel(count: number, maxCount: number) {
 
     if (heatmap instanceof HTMLElement && heatmap.matches("[data-heatmap]")) {
       const title = heatmap.querySelector("[data-heatmap-title]")
-      const cells = heatmap.querySelectorAll("[data-heatmap-cell]")
+      const cells = heatmap.querySelectorAll("[data-heatmap-cell=\"true\"]")
 
       if (title && cells.length > 0) {
         const defaultLabel = title.textContent ?? "Writing journey"
