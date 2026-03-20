@@ -10,3 +10,9 @@ type: link
 Here's the blog post from Astral's side: [_Astral to join OpenAI_](https://astral.sh/blog/openai). Here's the Hacker News [discussion](https://news.ycombinator.com/item?id=47438723).
 
 Another interesting angle is that [Anthropic acquired Bun](https://bun.com/blog/bun-joins-anthropic) last year. Anthropic now has deep JS/TS tooling expertise, while OpenAI is making a similar move around Python.
+
+<div class="update-note">
+
+**Update Mar 20, 2026:** Simon Willison published a detailed post on this acquisition: [_Thoughts on OpenAI acquiring Astral and uv/ruff/ty_](https://simonwillison.net/2026/Mar/19/openai-acquiring-astral/).
+
+</div>
