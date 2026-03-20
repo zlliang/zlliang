@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "pnpm -r --parallel --filter @zlliang/www --filter @zlliang/tech --filter @zlliang/days dev",
     "build": "pnpm -r --filter @zlliang/www --filter @zlliang/tech --filter @zlliang/days build",
-    "www:dev": "pnpm --filter @zlliang/www dev",
-    "www:build": "pnpm --filter @zlliang/www build",
-    "tech:dev": "pnpm --filter @zlliang/tech dev",
-    "tech:build": "pnpm --filter @zlliang/tech build",
-    "days:dev": "pnpm --filter @zlliang/days dev",
-    "days:build": "pnpm --filter @zlliang/days build",
+    "dev:www": "pnpm --filter @zlliang/www dev",
+    "build:www": "pnpm --filter @zlliang/www build",
+    "dev:tech": "pnpm --filter @zlliang/tech dev",
+    "build:tech": "pnpm --filter @zlliang/tech build",
+    "dev:days": "pnpm --filter @zlliang/days dev",
+    "build:days": "pnpm --filter @zlliang/days build",
     "journal:tech": "pnpm --dir websites/tech journal",
     "journal:days": "pnpm --dir websites/days journal"
   },
