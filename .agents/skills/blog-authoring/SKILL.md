@@ -33,6 +33,7 @@ Use this skill for content work on `tech` and `days`. It is the repo-specific co
 - Keep the distinction between author work and AI-assisted work explicit
 - Treat bilingual drafting and AI comparison workflows as optional training loops, not mandatory steps for every note or post
 - Keep the repo workflow lightweight and easy to follow
+- Reply in the user's language by default, even when the draft under review is in English; switch only if the user asked in English or explicitly requested an English response
 
 ## Coordination with other skills
 

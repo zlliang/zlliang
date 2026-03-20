@@ -25,20 +25,7 @@ All websites are built with [Astro](https://astro.build/) and are deployed on [V
 
 ## Root commands
 
-Run commands from the repository root.
-
-```bash
-pnpm dev
-pnpm build
-pnpm www:dev
-pnpm www:build
-pnpm tech:dev
-pnpm tech:build
-pnpm days:dev
-pnpm days:build
-pnpm journal:tech <command> [...]
-pnpm journal:days <command> [...]
-```
+Run commands from the repository root. Use the `website-development` skill for the command list and brief usage notes.
 
 ## Working principles
 
