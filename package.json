@@ -10,9 +10,9 @@
     "build:www": "pnpm --filter @zlliang/www build",
     "dev:tech": "pnpm --filter @zlliang/tech dev",
     "build:tech": "pnpm --filter @zlliang/tech build",
+    "journal:tech": "pnpm --dir websites/tech journal",
     "dev:days": "pnpm --filter @zlliang/days dev",
     "build:days": "pnpm --filter @zlliang/days build",
-    "journal:tech": "pnpm --dir websites/tech journal",
     "journal:days": "pnpm --dir websites/days journal"
   },
   "devDependencies": {
