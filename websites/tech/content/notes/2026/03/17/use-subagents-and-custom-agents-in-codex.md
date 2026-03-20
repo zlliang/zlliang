@@ -18,6 +18,6 @@ I first learned about subagents through [Amp](https://ampcode.com/), which ships
 Here are other comments on this Codex release:
 
 - Simon Willison's [post](https://simonwillison.net/2026/Mar/16/codex-subagents/)
-- Vaibhav (VB) Srivastav's article: [_You Should Be Using Subagents in Codex!_](https://x.com/reach_vb/status/2033636057690800452)
+- Vaibhav (VB) Srivastav's article: [You Should Be Using Subagents in Codex!](https://x.com/reach_vb/status/2033636057690800452)
 
 Now that major coding agents like [Claude Code](https://code.claude.com/docs/en/sub-agents), [OpenCode](https://opencode.ai/docs/agents/), and [Cursor](https://cursor.com/docs/subagents) all support subagents in broadly similar ways, will subagents become a standard, like [skills](https://agentskills.io)?

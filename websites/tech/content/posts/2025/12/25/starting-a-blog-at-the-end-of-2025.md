@@ -37,10 +37,10 @@ At the beginning of my professional career as a frontend web developer, learning
 
 Some of his excellent posts about web frontend:
 
-- [_An Interactive Guide to Flexbox_](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/)
-- [_Understanding useMemo and useCallback_](https://www.joshwcomeau.com/react/usememo-and-usecallback/)
-- [_Understanding Layout Algorithms_](https://www.joshwcomeau.com/css/understanding-layout-algorithms/)
-- [_The Quest for the Perfect Dark Mode_](https://www.joshwcomeau.com/react/dark-mode/)
+- [An Interactive Guide to Flexbox](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/)
+- [Understanding useMemo and useCallback](https://www.joshwcomeau.com/react/usememo-and-usecallback/)
+- [Understanding Layout Algorithms](https://www.joshwcomeau.com/css/understanding-layout-algorithms/)
+- [The Quest for the Perfect Dark Mode](https://www.joshwcomeau.com/react/dark-mode/)
 
 ### Alex Kladov (matklad)
 
@@ -50,24 +50,24 @@ Since 2023, he has worked at [TigerBeetle](https://tigerbeetle.com/), and since 
 
 Some highlights:
 
-- [_Zig's Lovely Syntax_](https://matklad.github.io/2025/08/09/zigs-lovely-syntax.html)
-- [_Caches in Rust_](https://matklad.github.io/2022/06/11/caches-in-rust.html)
-- [_Study of `std::io::Error`_](https://matklad.github.io/2020/10/15/study-of-std-io-error.html)
-- [_Simple but Powerful Pratt Parsing_](https://matklad.github.io/2020/04/13/simple-but-powerful-pratt-parsing.html)
+- [Zig's Lovely Syntax](https://matklad.github.io/2025/08/09/zigs-lovely-syntax.html)
+- [Caches in Rust](https://matklad.github.io/2022/06/11/caches-in-rust.html)
+- [Study of `std::io::Error`](https://matklad.github.io/2020/10/15/study-of-std-io-error.html)
+- [Simple but Powerful Pratt Parsing](https://matklad.github.io/2020/04/13/simple-but-powerful-pratt-parsing.html)
 
 ### Bob Nystrom
 
-I know [Bob Nystrom](https://stuffwithstuff.com) from his masterpiece [_Crafting Interpreters_](https://craftinginterpreters.com/). It's the book that led me into the world of compiler design, and it's a must-read for anyone who is interested in the "black magic" behind programming languages — it shows you that there's actually no magic at all.
+I know [Bob Nystrom](https://stuffwithstuff.com) from his masterpiece [Crafting Interpreters](https://craftinginterpreters.com/). It's the book that led me into the world of compiler design, and it's a must-read for anyone who is interested in the "black magic" behind programming languages — it shows you that there's actually no magic at all.
 
-His long-form writing is just art. The famous [_What Color is Your Function?_](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/) sheds new light on how people think about asynchronous programming, and [_Crafting "Crafting Interpreters"_](https://journal.stuffwithstuff.com/2020/04/05/crafting-crafting-interpreters/) shows how much one can devote to writing a book. What's precious is that he can put difficult concepts in an extremely simple and clear way. Many posts are about programming language design and compilers, including _Crafting Interpreters_, the book. A hard topic. But I can read any of them as a newcomer to the field, and take away a bunch of insightful ideas and a fundamental understanding of the topic he covered.
+His long-form writing is just art. The famous [What Color is Your Function?](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/) sheds new light on how people think about asynchronous programming, and [Crafting "Crafting Interpreters"](https://journal.stuffwithstuff.com/2020/04/05/crafting-crafting-interpreters/) shows how much one can devote to writing a book. What's precious is that he can put difficult concepts in an extremely simple and clear way. Many posts are about programming language design and compilers, including _Crafting Interpreters_, the book. A hard topic. But I can read any of them as a newcomer to the field, and take away a bunch of insightful ideas and a fundamental understanding of the topic he covered.
 
 Highly recommended ones:
 
-- [_Does Go Have Subtyping?_](https://journal.stuffwithstuff.com/2023/10/19/does-go-have-subtyping/)
-- [_Crafting "Crafting Interpreters"_](https://journal.stuffwithstuff.com/2020/04/05/crafting-crafting-interpreters/)
-- [_The Hardest Program I've Ever Written_](https://journal.stuffwithstuff.com/2015/09/08/the-hardest-program-ive-ever-written/)
-- [_What Color is Your Function?_](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/)
-- [_Pratt Parsers: Expression Parsing Made Easy_](https://journal.stuffwithstuff.com/2011/03/19/pratt-parsers-expression-parsing-made-easy/)
+- [Does Go Have Subtyping?](https://journal.stuffwithstuff.com/2023/10/19/does-go-have-subtyping/)
+- [Crafting "Crafting Interpreters"](https://journal.stuffwithstuff.com/2020/04/05/crafting-crafting-interpreters/)
+- [The Hardest Program I've Ever Written](https://journal.stuffwithstuff.com/2015/09/08/the-hardest-program-ive-ever-written/)
+- [What Color is Your Function?](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/)
+- [Pratt Parsers: Expression Parsing Made Easy](https://journal.stuffwithstuff.com/2011/03/19/pratt-parsers-expression-parsing-made-easy/)
 
 ### Simon Willison
 
@@ -87,9 +87,9 @@ I found blogmarks a great idea, a better way to bookmark interesting things I fi
 
 Some of his excellent posts:
 
-- [_My approach to running a link blog_](https://simonwillison.net/2024/Dec/22/link-blog/)
-- [_The Perfect Commit_](https://simonwillison.net/2022/Oct/29/the-perfect-commit/)
-- [_How I build a feature_](https://simonwillison.net/2022/Jan/12/how-i-build-a-feature/)
+- [My approach to running a link blog](https://simonwillison.net/2024/Dec/22/link-blog/)
+- [The Perfect Commit](https://simonwillison.net/2022/Oct/29/the-perfect-commit/)
+- [How I build a feature](https://simonwillison.net/2022/Jan/12/how-i-build-a-feature/)
 
 All of these writers have influenced me a lot and quietly motivated me to run my own blog. Following in their footsteps, I decided to build a corner of my own on the internet, and hope that one day I can help someone else on their journey.
 
@@ -146,9 +146,9 @@ I'm now using [Amp](https://ampcode.com) as my coding agent in a very restrained
 
 Here are example sessions between me and Amp, working on the source code of this website:
 
-- [_Rename kind field to category throughout codebase_](https://ampcode.com/threads/T-019b4b68-b5b2-76d2-bb81-98f068657b63)
-- [_Create a new automated drafting workflow_](https://ampcode.com/threads/T-019b3a33-f837-72cb-be2b-fd6f9000809c)
-- [_Remark-rehype footnote numbering collision issue_](https://ampcode.com/threads/T-019b3729-3371-71e4-8b5f-2b39bbc0d892)
+- [Rename kind field to category throughout codebase](https://ampcode.com/threads/T-019b4b68-b5b2-76d2-bb81-98f068657b63)
+- [Create a new automated drafting workflow](https://ampcode.com/threads/T-019b3a33-f837-72cb-be2b-fd6f9000809c)
+- [Remark-rehype footnote numbering collision issue](https://ampcode.com/threads/T-019b3729-3371-71e4-8b5f-2b39bbc0d892)
 
 Then it comes to **writing**. Thanks to LLMs, writing in a foreign language has become more accessible than ever before. And I would not be this confident to run an English blog without the help of AI tools. But they should be used with caution.
 
@@ -162,8 +162,8 @@ I won't post [slops](https://simonwillison.net/2024/May/8/slop/). All the conten
 
 Here are example threads between me and Amp, working on my posts:
 
-- [_Review write-up grammar, style, and content_](https://ampcode.com/threads/T-019b54a4-b126-753b-82f1-12faebcddfd2) (for this very post)
-- [_Review write-up grammar, style, and content_](https://ampcode.com/threads/T-019b4fcf-53d6-71fc-8a8b-594cecc5a789) (for [_Formatting rules for AI chatbots and agents_](/notes/2025/12/24/formatting-rules-for-ai-chatbots-and-agents))
+- [Review write-up grammar, style, and content](https://ampcode.com/threads/T-019b54a4-b126-753b-82f1-12faebcddfd2) (for this very post)
+- [Review write-up grammar, style, and content](https://ampcode.com/threads/T-019b4fcf-53d6-71fc-8a8b-594cecc5a789) (for [Formatting rules for AI chatbots and agents](/notes/2025/12/24/formatting-rules-for-ai-chatbots-and-agents))
 
 As a wrap-up, you can find the full instruction file for this website here: [AGENTS.md](https://github.com/zlliang/zlliang/blob/7f53718b60c8e5cc4532f70f9368d844d9cf6feb/AGENTS.md).
 
@@ -175,11 +175,11 @@ Time to write, write, and write. Can I accumulate thousands of notes in a decade
 
 **Update Dec 28, 2025:** I added descriptions for the "quote" type of notes.
 
-**Update Jan 11, 2026:** I splitted this into separate websites for tech and personal writing. The tech blog now lives at https://tech.zlliang.me. I revised this post accordingly, and wrote about the change: [_Splitting My Websites and Finalizing My Writing Framework_](/posts/2026/01/13/splitting-my-websites-and-finalizing-my-writing-framework).
+**Update Jan 11, 2026:** I splitted this into separate websites for tech and personal writing. The tech blog now lives at https://tech.zlliang.me. I revised this post accordingly, and wrote about the change: [Splitting My Websites and Finalizing My Writing Framework](/posts/2026/01/13/splitting-my-websites-and-finalizing-my-writing-framework).
 
-**Update Mar 13, 2026:** I reworked the note tags across both `tech` and `days`, and renamed the note `category` field to `type` throughout the sites. I also wrote a note about it: [_Reworked tags and renamed note categories to types_](/notes/2026/03/13/reworked-tags-and-renamed-note-categories-to-types).
+**Update Mar 13, 2026:** I reworked the note tags across both `tech` and `days`, and renamed the note `category` field to `type` throughout the sites. I also wrote a note about it: [Reworked tags and renamed note categories to types](/notes/2026/03/13/reworked-tags-and-renamed-note-categories-to-types).
 
-**Update Mar 18, 2026:** I removed note tags after deciding they were adding more writing friction than value, especially now that note search exists. I also simplified the sidebar and refreshed the type index page. I wrote a short note about this cleanup: [_Removed tags and refreshed note navigation_](/notes/2026/03/18/removed-tags-and-refreshed-note-navigation).
+**Update Mar 18, 2026:** I removed note tags after deciding they were adding more writing friction than value, especially now that note search exists. I also simplified the sidebar and refreshed the type index page. I wrote a short note about this cleanup: [Removed tags and refreshed note navigation](/notes/2026/03/18/removed-tags-and-refreshed-note-navigation).
 
 </div>
 

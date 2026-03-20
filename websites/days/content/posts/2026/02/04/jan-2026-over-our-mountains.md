@@ -5,7 +5,7 @@ created: 2026-02-04
 
 ## 写作与阅读，日拱一卒
 
-去年十二月，我重新搭建个人网站，开始用英文撰写技术笔记。进入 2026 年，我认为实践地还不错，可以继续扩展，于是又搭建起了这个用中文撰写的生活手记站点。一月中旬，我写下了[第一篇手记](/notes/2026/01/12/starting-from-this-monday-afternoon)，一个新的、令我满意的写作框架宣告完成。关于其中的思考，我用英文记录在了这篇文章中：[_Splitting My Websites and Finalizing My Writing Framework_](https://tech.zlliang.me/posts/2026/01/13/splitting-my-websites-and-finalizing-my-writing-framework)。
+去年十二月，我重新搭建个人网站，开始用英文撰写技术笔记。进入 2026 年，我认为实践地还不错，可以继续扩展，于是又搭建起了这个用中文撰写的生活手记站点。一月中旬，我写下了[第一篇手记](/notes/2026/01/12/starting-from-this-monday-afternoon)，一个新的、令我满意的写作框架宣告完成。关于其中的思考，我用英文记录在了这篇文章中：[Splitting My Websites and Finalizing My Writing Framework](https://tech.zlliang.me/posts/2026/01/13/splitting-my-websites-and-finalizing-my-writing-framework)。
 
 新的一年我有个目标，就是通过写作，来锻炼思考的深度，还有对生活的感受力。搭建个人网站和写作框架，就是为这个目标服务的。一月的阅读，也和这个目标相关。我用一周多的时间读完了《[当我谈跑步时，我谈些什么](https://book.douban.com/subject/37021151/)》，村上春树的一本回忆录。关于跑步和写作。从去年读《[没有色彩的多崎作和他的巡礼之年](https://book.douban.com/subject/25733470/)》开始，才头一次感受村上春树的写作，很喜欢。很早之前读过台版《挪威的森林》，但没什么印象了。今后可以多读一点。
 

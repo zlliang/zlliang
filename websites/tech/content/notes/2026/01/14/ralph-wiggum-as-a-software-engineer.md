@@ -11,9 +11,9 @@ Its name comes from a character called Ralph Wiggum in the show [_The Simpsons_]
 
 To get familiar with Ralph, I skimmed (and watched) these materials, in addition to the original post by [Geoffery Huntley](https://ghuntley.com/):
 
-- Matt Pocock's walkthroughs: [_Ship working code while you sleep with the Ralph Wiggum technique_](https://www.youtube.com/watch?v=_IK18goX4X8), and [_11 Tips For AI Coding With Ralph Wiggum_](https://www.aihero.dev/tips-for-ai-coding-with-ralph-wiggum)
-- Greg Isenberg's video: [_"Ralph Wiggum" AI Agent will 10x Claude Code/Amp_](https://www.youtube.com/watch?v=RpvQH0r0ecM)
-- Ryan Carson's article on X: [_Step-by-step guide to get Ralph working and shipping code_](https://x.com/ryancarson/status/2008548371712135632)
+- Matt Pocock's walkthroughs: [Ship working code while you sleep with the Ralph Wiggum technique](https://www.youtube.com/watch?v=_IK18goX4X8), and [11 Tips For AI Coding With Ralph Wiggum](https://www.aihero.dev/tips-for-ai-coding-with-ralph-wiggum)
+- Greg Isenberg's video: ["Ralph Wiggum" AI Agent will 10x Claude Code/Amp](https://www.youtube.com/watch?v=RpvQH0r0ecM)
+- Ryan Carson's article on X: [Step-by-step guide to get Ralph working and shipping code](https://x.com/ryancarson/status/2008548371712135632)
 
 In short, Ralph is a technique that **runs your coding agent sessions in a loop**. It pushes the typical coding agent workflow — you give it a task, watch it work, and then a new task based on its output — forward by making the agent itself assess the outputs and decide what's next. Back in 2025, we've got the agreement that an "agent" is simply an AI program running tools in a loop to achieve a goal[^1]. Ralph extends that idea naively: **It's a bash script running agent sessions in a loop to achieve a goal.**
 

@@ -15,6 +15,18 @@ Use this file for repo-specific style decisions for notes and posts on `tech` an
 - Section headings use sentence case
 - Keep headings short and avoid trailing punctuation
 
+## English italics
+
+- Do not italicize linked article, post, note, video, or thread titles; write them as plain links
+- Use italics for complete work titles such as books, films, shows, and publications
+- Use italics sparingly for words used as words, such as _slop_
+
+## English quotation marks
+
+- Use double quotation marks for ordinary quoted words and phrases in prose
+- Use double quotation marks, not italics, for short work titles when needed in running text
+- Keep punctuation inside quotation marks only when it belongs to the quoted material
+
 ## Note types
 
 - Read [note-types.md](./note-types.md) when the task depends on the note's goal, mindset, or "done" criteria

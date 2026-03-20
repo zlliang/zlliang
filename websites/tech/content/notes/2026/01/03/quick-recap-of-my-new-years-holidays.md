@@ -7,7 +7,7 @@ type: regular
 
 Happy New Year! Here's a quick recap of my New Year's break:
 
-I finished watching [_The King of Internet Writing_](https://www.youtube.com/watch?v=2OZ94b3fJvo), a video podcast by [David Perell](https://perell.com/) about what we can learn from [Paul Graham](https://paulgraham.com/)'s writing. I'm ready to write more, and better, in 2026.
+I finished watching [The King of Internet Writing](https://www.youtube.com/watch?v=2OZ94b3fJvo), a video podcast by [David Perell](https://perell.com/) about what we can learn from [Paul Graham](https://paulgraham.com/)'s writing. I'm ready to write more, and better, in 2026.
 
 On New Year's Eve, I was traveling with my partner in [Chongqing](https://en.wikipedia.org/wiki/Chongqing). We ate spicy hotpot and walked through the hilly streets!
 
