@@ -13,4 +13,8 @@ While doing this, I also reworked note pagination across both sites. Instead of 
 
 The commit is [zlliang/zlliang@b1dc071](https://github.com/zlliang/zlliang/commit/b1dc0710ba89e899dd903b57261133267882fa20), which also closed [issue #72](https://github.com/zlliang/zlliang/issues/72).
 
+<div class="update-note">
+
 **Update Mar 22, 2026:** This pagination change also changed note archive URLs, but I later added middleware-based redirects so legacy paths such as `/notes/2` still resolve to the new query-parameter URLs. That should also make it easier for search engines to consolidate the old pagination routes.
+
+</div>

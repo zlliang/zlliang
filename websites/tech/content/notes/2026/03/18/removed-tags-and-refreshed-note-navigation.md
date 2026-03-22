@@ -15,4 +15,8 @@ Along the way, I also simplified the sidebar and reworked the [/notes/types](/no
 
 The main commit is [zlliang/zlliang@0b3a096](https://github.com/zlliang/zlliang/commit/0b3a096019dd8ce562a4605e53798d4d7a27c7ec), a cleanup and simplification pass across both sites that removed tags, flattened the sidebar, and improved how note types are presented. Most of the code was written with the help of the Codex app.
 
+<div class="update-note">
+
 **Update Mar 22, 2026:** Removing tags also removed their old URLs, so I later added middleware handling for those legacy routes. Old tag pages now return `410 Gone` while the other migrated note URLs keep working through redirects, which should make the cleanup clearer to search engines.
+
+</div>
