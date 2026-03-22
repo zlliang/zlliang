@@ -1,6 +1,6 @@
 # Blog Authoring Workflow
 
-Use this file for the repo-specific sequence. Detailed frontmatter rules live in `content-schema.md`. Formatting and update-note rules live in `style-guide.md`.
+Use this file for the repo-specific sequence. Detailed frontmatter rules live in `content-schema.md`. Formatting and update note rules live in `style-guide.md`.
 
 ## Default sequence
 

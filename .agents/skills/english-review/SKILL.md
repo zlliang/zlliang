@@ -33,7 +33,7 @@ Use this skill for English prose quality and learning-oriented revision. It is n
 - Prefer concrete edits and short explanations over generic praise
 - Treat revision as the author's responsibility unless the user explicitly asks for a full rewrite
 - Support learning-oriented comparison and synthesis when the user is practicing rather than only polishing
-- When reviewing updated English notes or posts in this repo, preserve the update-note convention defined by `blog-authoring` and keep update text concise and suitable for an end-of-piece follow-up note
+- When reviewing updated English notes or posts in this repo, preserve the update note convention defined by `blog-authoring` and keep update text concise and suitable for an end-of-piece follow-up note
 
 ## Coordination with other skills
 

@@ -23,7 +23,7 @@ Use this skill for content work on `tech` and `days`. It is the repo-specific co
 - Read [references/workflow.md](./references/workflow.md) for the default note and post sequence
 - Read [references/content-schema.md](./references/content-schema.md) before touching frontmatter or moving content
 - Read [references/note-types.md](./references/note-types.md) when choosing a note type or reshaping a note to fit what it is trying to do
-- Read [references/style-guide.md](./references/style-guide.md) when formatting, note shape, or update-note conventions matter
+- Read [references/style-guide.md](./references/style-guide.md) when formatting, note shape, or update note conventions matter
 - Read [references/bilingual-writing-workflow.md](./references/bilingual-writing-workflow.md) only when the task is English-writing practice or bilingual comparison
 
 ## Responsibilities

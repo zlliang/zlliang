@@ -32,7 +32,7 @@ Run commands from the repository root. Use the `website-development` skill for t
 - Keep authorial ownership explicit. AI may help review, compare, structure, and implement, but it should not replace the author's thinking
 - Prefer existing shared packages and site conventions over per-site duplication
 - When docs summarize behavior, code wins if there is a conflict
-- Preserve the repo's update-note convention and language-specific style when editing content
+- Preserve the repo's update note convention and language-specific style when editing content
 - Treat `Deploy`, `发布`, and similar short commands as a request to write a Conventional Commit message, commit the current work, and push to GitHub so Vercel can deploy automatically
 
 ## Skills
