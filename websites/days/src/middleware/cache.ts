@@ -12,8 +12,10 @@ import { defineMiddleware } from "astro:middleware"
  */
 const CACHE_CONTROL = "public, max-age=120, s-maxage=7200, stale-while-revalidate=86400"
 
+/** Add the shared cache policy to SSR responses. */
 export const cache = defineMiddleware(async (_, next) => {
   const response = await next()
   response.headers.set("Cache-Control", CACHE_CONTROL)
+
   return response
 })
