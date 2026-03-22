@@ -12,6 +12,10 @@ import NoteList from "@/components/NoteList.astro"
 import { notes } from "@/utils/content"
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
 import { getArchiveBounds, getMonthNotesPath, getYearNotesPath, parseYear } from "@/utils/archive"
+import { SSR_CACHE_CONTROL } from "@/utils/cache"
+
+export const prerender = false
+Astro.response.headers.set("Cache-Control", SSR_CACHE_CONTROL)
 
 const { year: yearSegment } = Astro.params
 const year = parseYear(yearSegment)

@@ -6,6 +6,10 @@ import NoteList from "@/components/NoteList.astro"
 import { notes } from "@/utils/content"
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
 import { isNoteType, types } from "@/utils/types"
+import { SSR_CACHE_CONTROL } from "@/utils/cache"
+
+export const prerender = false
+Astro.response.headers.set("Cache-Control", SSR_CACHE_CONTROL)
 
 const { type: slug } = Astro.params
 

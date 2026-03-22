@@ -7,8 +7,12 @@ import NoteSearchResults from "@/components/NoteSearchResults.astro"
 
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
 import { getSearchPageUrl, parseSearchSort, searchNotes } from "@/utils/search"
+import { SSR_CACHE_CONTROL } from "@/utils/cache"
 
 import type { SearchSort } from "@/utils/search"
+
+export const prerender = false
+Astro.response.headers.set("Cache-Control", SSR_CACHE_CONTROL)
 
 const searchParams = Astro.url.searchParams
 const q = searchParams.get("q")?.trim() ?? ""

@@ -8,7 +8,6 @@ import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeExternalLinks, rehypeFo
 
 export default defineConfig({
   site: "https://tech.zlliang.me",
-  output: "server",
   fonts: [
     {
       provider: fontProviders.fontsource(),

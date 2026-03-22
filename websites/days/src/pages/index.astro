@@ -7,8 +7,6 @@ import NoteList from "@/components/NoteList.astro"
 import { notes } from "@/utils/content"
 import { NOTES_PER_PAGE } from "@/utils/site"
 
-export const prerender = true
-
 const filteredNotes = notes.slice(0, NOTES_PER_PAGE)
 ---
 
