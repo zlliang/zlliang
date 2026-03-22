@@ -7,7 +7,7 @@
       "permanent": true
     },
     {
-      "source": "/notes/categories/:type/:page([2-9][0-9]{0,2}|[1-9][0-9]{3,})",
+      "source": "/notes/categories/:type/:page([2-9]|[1-9][0-9]{1,2})",
       "destination": "/notes/types/:type?page=:page",
       "permanent": true
     },
@@ -22,7 +22,7 @@
       "permanent": true
     },
     {
-      "source": "/notes/types/:type/:page([2-9][0-9]{0,2}|[1-9][0-9]{3,})",
+      "source": "/notes/types/:type/:page([2-9]|[1-9][0-9]{1,2})",
       "destination": "/notes/types/:type?page=:page",
       "permanent": true
     },
@@ -32,7 +32,7 @@
       "permanent": true
     },
     {
-      "source": "/notes/:page([2-9][0-9]{0,2}|[1-9][0-9]{3,})",
+      "source": "/notes/:page([2-9]|[1-9][0-9]{1,2})",
       "destination": "/notes?page=:page",
       "permanent": true
     }
