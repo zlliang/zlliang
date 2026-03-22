@@ -8,6 +8,7 @@ interface PaginationUrls {
   last?: string
 }
 
+/** Describes the paginated result returned to list pages. */
 export interface PaginationData<T> {
   data: T[]
   total: number
@@ -16,11 +17,13 @@ export interface PaginationData<T> {
   url: PaginationUrls
 }
 
+/** Parses the page query parameter and falls back to the first page. */
 export function parsePageParam(value: string | null) {
   const page = Number(value ?? "1")
   return Number.isInteger(page) && page > 0 ? page : 1
 }
 
+/** Slices items for the current page and builds navigation URLs. */
 export function paginate<T>(items: T[], page: number, getPageUrl: (page: number) => string, pageSize = NOTES_PER_PAGE): PaginationData<T> {
   const total = items.length
   const last = Math.max(1, Math.ceil(total / pageSize))
@@ -43,6 +46,7 @@ export function paginate<T>(items: T[], page: number, getPageUrl: (page: number)
   }
 }
 
+/** Checks whether the current URL should redirect to the canonical page URL. */
 export function shouldRedirectPagination(searchParams: URLSearchParams, page: number, pagination: Pick<PaginationData<unknown>, "current">) {
   return page !== pagination.current || (pagination.current === 1 && searchParams.has("page"))
 }
