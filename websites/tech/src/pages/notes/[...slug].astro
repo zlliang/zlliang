@@ -7,23 +7,21 @@ import Layout from "@/components/Layout.astro"
 import NoteContent from "@/components/NoteContent.astro"
 
 import { cn } from "@zlliang/theme"
-import { notes } from "@/utils/content"
+import { getAdjacentNotes, getNoteById } from "@/utils/content"
 
-import type { GetStaticPaths } from "astro"
+const { slug } = Astro.params
+if (!slug) {
+  return Astro.rewrite("/404")
+}
 
-export const prerender = true
+const note = await getNoteById(slug)
+if (!note) {
+  return Astro.rewrite("/404")
+}
 
-export const getStaticPaths = (() => notes.map((note, index) => {
-  const next = index > 0 ? notes[index - 1] : null
-  const previous = index < notes.length - 1 ? notes[index + 1] : null
-
-  return {
-    params: { slug: note.id },
-    props: { note, next, previous },
-  }
-})) satisfies GetStaticPaths
-
-const { note, next, previous } = Astro.props
+const adjacent = await getAdjacentNotes(slug)
+const next = adjacent?.next ?? null
+const previous = adjacent?.previous ?? null
 const post = note.data.post ? await getEntry(note.data.post) : null
 
 const title = [note.data.title || post?.data.title, `Note #${note.data.no}`].filter(Boolean).join(" - ")

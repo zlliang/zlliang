@@ -1,6 +1,6 @@
 import MiniSearch from "minisearch"
 
-import { notes, posts } from "@/utils/content"
+import { getNotes, getPosts } from "@/utils/content"
 
 import type { CollectionEntry } from "astro:content"
 
@@ -18,7 +18,6 @@ interface SearchIndex {
 
 const segmenter = new Intl.Segmenter("zh", { granularity: "word" })
 
-/** Module-level cache */
 let searchIndexPromise: Promise<SearchIndex> | undefined
 
 /** Search notes by query relevance */
@@ -77,6 +76,9 @@ async function getSearchIndex() {
 }
 
 async function buildSearchIndex() {
+  const notes = await getNotes()
+  const posts = await getPosts()
+
   const notesById = new Map(notes.map((note) => [note.id, note]))
   const postsById = new Map(posts.map((post) => [post.id, post]))
   const miniSearch = new MiniSearch<SearchDocument>({

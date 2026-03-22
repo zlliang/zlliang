@@ -3,18 +3,17 @@ import Layout from "@/components/Layout.astro"
 import PostContent from "@/components/PostContent.astro"
 import TableOfContents from "@/components/TableOfContents.astro"
 
-import { posts } from "@/utils/content"
+import { getPostById } from "@/utils/content"
 
-import type { GetStaticPaths } from "astro"
+const { slug } = Astro.params
+if (!slug) {
+  return Astro.rewrite("/404")
+}
 
-export const prerender = true
-
-export const getStaticPaths = (() => posts.map((post) => ({
-  params: { slug: post.id },
-  props: { post },
-}))) satisfies GetStaticPaths
-
-const { post } = Astro.props
+const post = await getPostById(slug)
+if (!post) {
+  return Astro.rewrite("/404")
+}
 ---
 
 <Layout title={post.data.title}>

@@ -17,7 +17,6 @@
     "minisearch": "^7.2.0"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.7.1",
     "@astrojs/vercel": "^10.0.2",
     "@iconify-json/lucide": "^1.2.98",
     "@iconify-json/simple-icons": "^1.2.74",

@@ -4,11 +4,10 @@ import Layout from "@/components/Layout.astro"
 import SearchForm from "@/components/SearchForm.astro"
 import NoteList from "@/components/NoteList.astro"
 
-import { notes } from "@/utils/content"
+import { getNotes } from "@/utils/content"
 import { NOTES_PER_PAGE } from "@/utils/site"
 
-export const prerender = true
-
+const notes = await getNotes()
 const filteredNotes = notes.slice(0, NOTES_PER_PAGE)
 ---
 

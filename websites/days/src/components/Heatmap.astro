@@ -5,7 +5,7 @@ import { eachDayOfInterval, format, startOfDay, startOfWeek, subWeeks } from "da
 import Link from "@zlliang/theme/components/Link.astro"
 
 import { cn } from "@zlliang/theme"
-import { notes, posts } from "@/utils/content"
+import { getNotes, getPosts } from "@/utils/content"
 import { getArchiveBounds, getDayNotesPath } from "@/utils/archive"
 
 const WEEK_COLUMNS = 60
@@ -17,6 +17,9 @@ const levels = [
   "bg-primary-400 dark:bg-primary-700",
   "bg-primary-500 dark:bg-primary-600",
 ] as const
+
+const notes = await getNotes()
+const posts = await getPosts()
 
 const today = startOfDay(new Date())
 const startDate = subWeeks(startOfWeek(today, { weekStartsOn: 1 }), WEEK_COLUMNS - 1)

@@ -1,6 +1,5 @@
 import { defineConfig, fontProviders } from "astro/config"
 import vercel from "@astrojs/vercel"
-import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
 import remarkCjkFriendly from "remark-cjk-friendly"
 
@@ -36,7 +35,6 @@ export default defineConfig({
       domains: [],
     },
   }),
-  integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },

@@ -7,9 +7,11 @@ import Layout from "@/components/Layout.astro"
 import ArchiveLinks from "@/components/ArchiveLinks.astro"
 import NoteList from "@/components/NoteList.astro"
 
-import { notes } from "@/utils/content"
+import { getNotes } from "@/utils/content"
 import { getArchiveBounds, getYearNotesPath } from "@/utils/archive"
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
+
+const notes = await getNotes()
 
 const bounds = getArchiveBounds(notes)
 const yearRange = bounds?.getYearRange() ?? null

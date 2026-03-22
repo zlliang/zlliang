@@ -7,7 +7,7 @@ import PostList from "@/components/PostList.astro"
 import SearchForm from "@/components/SearchForm.astro"
 import Heatmap from "@/components/Heatmap.astro"
 
-import { notes, posts, pinnedPosts } from "@/utils/content"
+import { getNotes, getPosts, getPinnedPosts } from "@/utils/content"
 import { types } from "@/utils/types"
 
 import { cn } from "@zlliang/theme"
@@ -21,6 +21,9 @@ interface Props {
 }
 
 const { showSearch = true, showRecentPosts = true, class: className } = Astro.props
+const notes = await getNotes()
+const posts = await getPosts()
+const pinnedPosts = await getPinnedPosts()
 const recentPosts = posts.slice(0, 10)
 ---
 

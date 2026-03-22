@@ -3,11 +3,17 @@ import { groupBy } from "lodash-es"
 
 import type { CollectionEntry } from "astro:content"
 
-/** All notes */
-export const notes = await getNotes()
+let notesPromise: Promise<CollectionEntry<"notes">[]> | undefined
+let postsPromise: Promise<CollectionEntry<"posts">[]> | undefined
 
 /** Get all notes */
-async function getNotes() {
+export function getNotes() {
+  notesPromise ??= loadNotes()
+
+  return notesPromise
+}
+
+async function loadNotes() {
   const collection = await getCollection("notes", ({ data }) => !import.meta.env.PROD || !data.draft)
   const notes = collection.toSorted((a, b) => b.data.no - a.data.no)
 
@@ -23,22 +29,52 @@ export async function groupNotesByDate(notes: CollectionEntry<"notes">[]) {
   return grouped
 }
 
-/** All posts */
-export const posts = await getPosts()
-
 /** Get all posts */
-async function getPosts() {
+export function getPosts() {
+  postsPromise ??= loadPosts()
+
+  return postsPromise
+}
+
+async function loadPosts() {
   const collection = await getCollection("posts", ({ data }) => !import.meta.env.PROD || !data.draft)
   const posts = collection.toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf())
 
   return posts
 }
 
-/** All pinned posts */
-export const pinnedPosts = getPinnedPosts(posts)
+/** Get a note by id */
+export async function getNoteById(id: string) {
+  const notes = await getNotes()
+
+  return notes.find((note) => note.id === id) ?? null
+}
+
+/** Get the next and previous notes for a note id */
+export async function getAdjacentNotes(id: string) {
+  const notes = await getNotes()
+  const index = notes.findIndex((note) => note.id === id)
+
+  if (index < 0) {
+    return null
+  }
+
+  return {
+    next: index > 0 ? notes[index - 1] : null,
+    previous: index < notes.length - 1 ? notes[index + 1] : null,
+  }
+}
+
+/** Get a post by id */
+export async function getPostById(id: string) {
+  const posts = await getPosts()
+
+  return posts.find((post) => post.id === id) ?? null
+}
 
 /** Get all pinned posts */
-function getPinnedPosts(posts: CollectionEntry<"posts">[]) {
+export async function getPinnedPosts() {
+  const posts = await getPosts()
   const pinnedPosts = posts.filter((post) => post.data.pinned)
 
   return pinnedPosts

@@ -3,10 +3,9 @@ import PageTitle from "@zlliang/theme/components/PageTitle.astro"
 import Layout from "@/components/Layout.astro"
 import PostList from "@/components/PostList.astro"
 
-import { posts } from "@/utils/content"
+import { getPosts } from "@/utils/content"
 
-export const prerender = true
-
+const posts = await getPosts()
 const title = "文章"
 ---
 

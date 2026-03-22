@@ -10,6 +10,8 @@ import { getSearchPageUrl, parseSearchSort, searchNotes } from "@/utils/search"
 
 import type { SearchSort } from "@/utils/search"
 
+Astro.response.headers.set("Cache-Control", "public, max-age=0, s-maxage=60")
+
 const searchParams = Astro.url.searchParams
 const q = searchParams.get("q")?.trim() ?? ""
 const page = parsePageParam(searchParams.get("page"))
@@ -25,14 +27,15 @@ if (searchParams.has("sort") && searchParams.get("sort") !== "date") {
 
 const results = q ? await searchNotes(q) : []
 const sortedResults = sort === "date" ? results.toSorted((a, b) => b.data.no - a.data.no) : results
+
 const pagination = paginate(sortedResults, page, (page) => getSearchPageUrl(q, page, sort))
+if (q && shouldRedirectPagination(searchParams, page, pagination)) {
+  return Astro.redirect(pagination.url.current)
+}
+
 const sortUrls = {
   relevance: getSearchPageUrl(q, 1, "relevance"),
   date: getSearchPageUrl(q, 1, "date"),
-}
-
-if (q && shouldRedirectPagination(searchParams, page, pagination)) {
-  return Astro.redirect(pagination.url.current)
 }
 
 function getSearchSortDisplay(sort: SearchSort) {

@@ -1,21 +1,22 @@
 import { defineMiddleware } from "astro:middleware"
 
-/**
- * Shared cache policy for public SSR HTML pages on Vercel.
- *
- * - `max-age=120` lets browsers reuse a response for 2 minutes before revalidating.
- * - `s-maxage=7200` lets shared caches such as the Vercel CDN cache the response for 2 hours.
- * - `stale-while-revalidate=86400` lets the CDN keep serving a stale response for up to 1 day
- * while it refreshes the page in the background.
- *
- * Vercel docs: https://vercel.com/docs/headers/cache-control-headers
- */
-const CACHE_CONTROL = "public, max-age=120, s-maxage=7200, stale-while-revalidate=86400"
+/** Default cache policies for SSR responses. See [Vercel docs](https://vercel.com/docs/headers/cache-control-headers). */
+function getDefaultCacheControl(status: number) {
+  if (status >= 200 && status < 300) return "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400"
+  if (status === 301 || status === 308) return "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800"
+  if (status === 404) return "public, max-age=0, s-maxage=60"
+  if (status === 410) return "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400"
 
-/** Add the shared cache policy to SSR responses. */
+  return "no-store"
+}
+
+/** Add a default cache policy unless the page has already set one. */
 export const cache = defineMiddleware(async (_, next) => {
   const response = await next()
-  response.headers.set("Cache-Control", CACHE_CONTROL)
+
+  if (!response.headers.has("Cache-Control")) {
+    response.headers.set("Cache-Control", getDefaultCacheControl(response.status))
+  }
 
   return response
 })

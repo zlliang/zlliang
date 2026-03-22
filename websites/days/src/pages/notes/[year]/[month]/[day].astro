@@ -9,16 +9,17 @@ import Layout from "@/components/Layout.astro"
 import ArchiveCalendar from "@/components/ArchiveCalendar.astro"
 import NoteList from "@/components/NoteList.astro"
 
-import { notes } from "@/utils/content"
+import { getNotes } from "@/utils/content"
 import { getArchiveBounds, getDayNotesPath, getMonthNotesPath, pad, parseDay, parseMonth, parseYear } from "@/utils/archive"
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
+
+const notes = await getNotes()
 
 const { year: yearSegment, month: monthSegment, day: daySegment } = Astro.params
 const year = parseYear(yearSegment)
 const month = parseMonth(monthSegment)
 const day = year !== null && month !== null ? parseDay(daySegment, year, month) : null
 const bounds = getArchiveBounds(notes)
-
 if (year === null || month === null || day === null || bounds === null) {
   return Astro.rewrite("/404")
 }
@@ -33,21 +34,15 @@ if (!dayRange || day < dayRange.start || day > dayRange.end) {
   return Astro.rewrite("/404")
 }
 
-const targetDate = new Date(year, month - 1, day)
-
-const canonicalMonthSegment = pad(month)
-const canonicalDaySegment = pad(day)
-if (monthSegment !== canonicalMonthSegment || daySegment !== canonicalDaySegment) {
-  const search = Astro.url.search
-  return Astro.redirect(`${getDayNotesPath(year, month, day)}${search}`)
+if (monthSegment !== pad(month) || daySegment !== pad(day)) {
+  return Astro.redirect(`${getDayNotesPath(year, month, day)}${Astro.url.search}`)
 }
 
-const searchParams = Astro.url.searchParams
-const page = parsePageParam(searchParams.get("page"))
+const targetDate = new Date(year, month - 1, day)
 const monthNotes = notes.filter((note) => note.data.created.getFullYear() === year && note.data.created.getMonth() === month - 1)
 const filteredNotes = notes.filter((note) => isSameDay(note.data.created, targetDate))
-const dayCounts = countBy(monthNotes, (note) => note.data.created.getDate())
 
+const dayCounts = countBy(monthNotes, (note) => note.data.created.getDate())
 const dayItems = Array.from({ length: dayRange.end - dayRange.start + 1 }, (_, index) => {
   const d = dayRange.start + index
   const count = dayCounts[d] ?? 0
@@ -59,6 +54,9 @@ const dayItems = Array.from({ length: dayRange.end - dayRange.start + 1 }, (_, i
     active: d === day,
   }
 })
+
+const searchParams = Astro.url.searchParams
+const page = parsePageParam(searchParams.get("page"))
 
 function getPageUrl(page: number) {
   const params = new URLSearchParams()
@@ -72,7 +70,6 @@ function getPageUrl(page: number) {
 }
 
 const pagination = paginate(filteredNotes, page, getPageUrl)
-
 if (shouldRedirectPagination(searchParams, page, pagination)) {
   return Astro.redirect(pagination.url.current)
 }

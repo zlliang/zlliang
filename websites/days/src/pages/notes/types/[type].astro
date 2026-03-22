@@ -3,21 +3,21 @@ import PageTitle from "@zlliang/theme/components/PageTitle.astro"
 import Layout from "@/components/Layout.astro"
 import NoteList from "@/components/NoteList.astro"
 
-import { notes } from "@/utils/content"
+import { getNotes } from "@/utils/content"
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
 import { isNoteType, types } from "@/utils/types"
 
 const { type: slug } = Astro.params
-
 if (!slug || !isNoteType(slug)) {
   return Astro.rewrite("/404")
 }
 
+const notes = await getNotes()
+const filteredNotes = notes.filter((note) => note.data.type === slug)
 const type = types.find((item) => item.slug === slug)!
 
 const searchParams = Astro.url.searchParams
 const page = parsePageParam(searchParams.get("page"))
-const filteredNotes = notes.filter((note) => note.data.type === slug)
 
 function getPageUrl(page: number) {
   const params = new URLSearchParams()
@@ -30,7 +30,6 @@ function getPageUrl(page: number) {
 }
 
 const pagination = paginate(filteredNotes, page, getPageUrl)
-
 if (shouldRedirectPagination(searchParams, page, pagination)) {
   return Astro.redirect(pagination.url.current)
 }

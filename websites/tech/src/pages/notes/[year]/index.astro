@@ -9,14 +9,15 @@ import Layout from "@/components/Layout.astro"
 import ArchiveLinks from "@/components/ArchiveLinks.astro"
 import NoteList from "@/components/NoteList.astro"
 
-import { notes } from "@/utils/content"
+import { getNotes } from "@/utils/content"
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
 import { getArchiveBounds, getMonthNotesPath, getYearNotesPath, parseYear } from "@/utils/archive"
+
+const notes = await getNotes()
 
 const { year: yearSegment } = Astro.params
 const year = parseYear(yearSegment)
 const bounds = getArchiveBounds(notes)
-
 if (year === null || bounds === null) {
   return Astro.rewrite("/404")
 }
@@ -26,13 +27,9 @@ if (year < yearRange.start || year > yearRange.end) {
   return Astro.rewrite("/404")
 }
 
-const searchParams = Astro.url.searchParams
-const page = parsePageParam(searchParams.get("page"))
 const filteredNotes = notes.filter((note) => note.data.created.getFullYear() === year)
-const monthRange = bounds.getMonthRange(year)!
-const yearCounts = countBy(notes, (note) => note.data.created.getFullYear())
-const monthCounts = countBy(filteredNotes, (note) => note.data.created.getMonth() + 1)
 
+const yearCounts = countBy(notes, (note) => note.data.created.getFullYear())
 const yearItems = Array.from({ length: yearRange.end - yearRange.start + 1 }, (_, index) => {
   const y = yearRange.start + index
   const count = yearCounts[y] ?? 0
@@ -45,6 +42,8 @@ const yearItems = Array.from({ length: yearRange.end - yearRange.start + 1 }, (_
   }
 })
 
+const monthRange = bounds.getMonthRange(year)!
+const monthCounts = countBy(filteredNotes, (note) => note.data.created.getMonth() + 1)
 const monthItems = Array.from({ length: monthRange.end - monthRange.start + 1 }, (_, index) => {
   const m = monthRange.start + index
   const count = monthCounts[m] ?? 0
@@ -55,6 +54,9 @@ const monthItems = Array.from({ length: monthRange.end - monthRange.start + 1 },
     href: count > 0 ? getMonthNotesPath(year, m) : undefined,
   }
 })
+
+const searchParams = Astro.url.searchParams
+const page = parsePageParam(searchParams.get("page"))
 
 function getPageUrl(page: number) {
   const params = new URLSearchParams()
