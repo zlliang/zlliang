@@ -1,0 +1,46 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/notes/categories/:type/1",
+      "destination": "/notes/types/:type",
+      "permanent": true
+    },
+    {
+      "source": "/notes/categories/:type/:page([2-9][0-9]{0,2}|[1-9][0-9]{3,})",
+      "destination": "/notes/types/:type?page=:page",
+      "permanent": true
+    },
+    {
+      "source": "/notes/categories/:path*",
+      "destination": "/notes/types/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/notes/types/:type/1",
+      "destination": "/notes/types/:type",
+      "permanent": true
+    },
+    {
+      "source": "/notes/types/:type/:page([2-9][0-9]{0,2}|[1-9][0-9]{3,})",
+      "destination": "/notes/types/:type?page=:page",
+      "permanent": true
+    },
+    {
+      "source": "/notes/1",
+      "destination": "/notes",
+      "permanent": true
+    },
+    {
+      "source": "/notes/:page([2-9][0-9]{0,2}|[1-9][0-9]{3,})",
+      "destination": "/notes?page=:page",
+      "permanent": true
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/notes/tags(?:/.*)?$",
+      "status": 410
+    }
+  ]
+}
