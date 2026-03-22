@@ -12,11 +12,10 @@ import { getArchiveBounds, getYearNotesPath } from "@/utils/archive"
 import { paginate, parsePageParam, shouldRedirectPagination } from "@/utils/pagination"
 
 const notes = await getNotes()
-
 const bounds = getArchiveBounds(notes)
+
 const yearRange = bounds?.getYearRange() ?? null
 const yearCounts = countBy(notes, (note) => note.data.created.getFullYear())
-
 const yearItems = yearRange ? Array.from({ length: yearRange.end - yearRange.start + 1 }, (_, index) => {
   const y = yearRange.start + index
   const count = yearCounts[y] ?? 0
