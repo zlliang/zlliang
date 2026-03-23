@@ -5,6 +5,7 @@ import type { CollectionEntry } from "astro:content"
 
 let notesPromise: Promise<CollectionEntry<"notes">[]> | undefined
 let postsPromise: Promise<CollectionEntry<"posts">[]> | undefined
+let seriesPromise: Promise<CollectionEntry<"series">[]> | undefined
 
 /** Get all notes */
 export function getNotes() {
@@ -18,6 +19,28 @@ async function loadNotes() {
   const notes = collection.toSorted((a, b) => b.data.no - a.data.no)
 
   return notes
+}
+
+/** Get a note by id */
+export async function getNoteById(id: string) {
+  const notes = await getNotes()
+
+  return notes.find((note) => note.id === id) ?? null
+}
+
+/** Get the next and previous notes for a note id */
+export async function getAdjacentNotes(id: string) {
+  const notes = await getNotes()
+  const index = notes.findIndex((note) => note.id === id)
+
+  if (index < 0) {
+    return null
+  }
+
+  return {
+    next: index > 0 ? notes[index - 1] : null,
+    previous: index < notes.length - 1 ? notes[index + 1] : null,
+  }
 }
 
 /** Group notes by created date */
@@ -43,28 +66,6 @@ async function loadPosts() {
   return posts
 }
 
-/** Get a note by id */
-export async function getNoteById(id: string) {
-  const notes = await getNotes()
-
-  return notes.find((note) => note.id === id) ?? null
-}
-
-/** Get the next and previous notes for a note id */
-export async function getAdjacentNotes(id: string) {
-  const notes = await getNotes()
-  const index = notes.findIndex((note) => note.id === id)
-
-  if (index < 0) {
-    return null
-  }
-
-  return {
-    next: index > 0 ? notes[index - 1] : null,
-    previous: index < notes.length - 1 ? notes[index + 1] : null,
-  }
-}
-
 /** Get a post by id */
 export async function getPostById(id: string) {
   const posts = await getPosts()
@@ -75,7 +76,33 @@ export async function getPostById(id: string) {
 /** Get all pinned posts */
 export async function getPinnedPosts() {
   const posts = await getPosts()
-  const pinnedPosts = posts.filter((post) => post.data.pinned)
 
-  return pinnedPosts
+  return posts.filter((post) => post.data.pinned)
+}
+
+/** Get all series */
+export function getSeries() {
+  seriesPromise ??= loadSeries()
+
+  return seriesPromise!
+}
+
+async function loadSeries() {
+  const collection = await getCollection("series")
+
+  return collection
+}
+
+/** Get a series by id */
+export async function getSeriesById(id: string) {
+  const series = await getSeries()
+
+  return series.find((series) => series.id === id) ?? null
+}
+
+/** Filter posts in a series, sorted by created date in ascending order */
+export function filterPostsInSeries(posts: CollectionEntry<"posts">[], seriesId: string) {
+  return posts
+    .filter((post) => post.data.series?.id === seriesId)
+    .toSorted((a, b) => a.data.created.valueOf() - b.data.created.valueOf())
 }

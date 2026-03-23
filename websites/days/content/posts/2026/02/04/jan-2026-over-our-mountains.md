@@ -1,6 +1,7 @@
 ---
-title: 月刊 Jan 2026：翻过我们的山
+title: Jan 2026：翻过我们的山
 created: 2026-02-04
+series: life-monthly
 ---
 
 ## 写作与阅读，日拱一卒

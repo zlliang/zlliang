@@ -91,7 +91,7 @@ const title = `${format(targetDate, "yyyy 年 M 月")}手记`
     <Section title="归档">
       <div class="flex justify-between items-center gap-2 mb-2 text-xs">
         <span class="text-neutral-500">{year} 年每月</span>
-        <Link href={getYearNotesPath(year)} class="text-xs">返回 {year} 年</Link>
+        <Link href={getYearNotesPath(year)} class="text-xs"><span class="icon-[lucide--corner-left-up]" /> 返回 {year} 年</Link>
       </div>
       <ArchiveLinks items={monthItems} />
       <div class="mt-4 mb-2 text-xs text-neutral-500">{format(targetDate, "yyyy 年 M 月")}每天</div>

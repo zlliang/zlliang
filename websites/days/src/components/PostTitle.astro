@@ -1,0 +1,23 @@
+---
+import Link from "@zlliang/theme/components/Link.astro"
+
+import { getSeriesById } from "@/utils/content"
+import { cn } from "@zlliang/theme"
+
+import type { CollectionEntry } from "astro:content"
+
+interface Props {
+  post: CollectionEntry<"posts">
+  current?: boolean
+  showSeries?: boolean
+  class?: string
+}
+
+const { post, current = false, showSeries = true, class: className } = Astro.props
+const series = post.data.series ? await getSeriesById(post.data.series.id) : null
+---
+
+<div class={cn(className)}>
+  {series && showSeries && <span><Link href={`/posts/series/${series.id}`}>{series.data.title}</Link><span class="font-bold text-neutral-500"> / </span></span>}
+  {current ? <span>{post.data.title}</span> : <Link href={`/posts/${post.id}`}>{post.data.title}</Link>}
+</div>

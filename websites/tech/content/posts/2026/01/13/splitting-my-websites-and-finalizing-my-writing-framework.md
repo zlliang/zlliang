@@ -1,6 +1,7 @@
 ---
 title: Splitting My Websites and Finalizing My Writing Framework
 created: 2026-01-13
+series: how-i-write
 ---
 
 After starting my blog from scratch at the end of 2025, and writing for a few weeks, I started rethinking how I want to structure my writing for the next ten years.

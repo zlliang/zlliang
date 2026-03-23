@@ -91,7 +91,7 @@ const title = `Notes in ${format(targetDate, "MMMM yyyy")}`
     <Section title="Archive">
       <div class="flex justify-between items-center gap-2 mb-2 text-xs">
         <span class="text-neutral-500">Months in {year}</span>
-        <Link href={getYearNotesPath(year)} class="text-xs">Back to {year}</Link>
+        <Link href={getYearNotesPath(year)} class="text-xs"><span class="icon-[lucide--corner-left-up]" /> Back to {year}</Link>
       </div>
       <ArchiveLinks items={monthItems} />
       <div class="mt-4 mb-2 text-xs text-neutral-500">Days in {format(targetDate, "MMMM yyyy")}</div>

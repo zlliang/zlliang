@@ -1,7 +1,7 @@
 ---
 import { format } from "date-fns"
 
-import Link from "@zlliang/theme/components/Link.astro"
+import PostTitle from "@/components/PostTitle.astro"
 
 import { cn } from "@zlliang/theme"
 
@@ -9,16 +9,18 @@ import type { CollectionEntry } from "astro:content"
 
 interface Props {
   posts: CollectionEntry<"posts">[]
+  current?: string
   showMeta?: boolean
+  showSeries?: boolean
 }
 
-const { posts, showMeta = true } = Astro.props
+const { posts, current, showMeta = true, showSeries = true } = Astro.props
 ---
 
 <div class="@container">
   {posts.map((post, index) => (
     <div class={cn("@xl:flex justify-between items-start gap-4", index !== posts.length - 1 && "mb-1.5 pb-1.5 border-b border-neutral-200 dark:border-neutral-800")}>
-      <Link href={`/posts/${post.id}`} class="block">{post.data.title}</Link>
+      <PostTitle post={post} current={post.id === current} showSeries={showSeries} />
       {showMeta && (
         <span class="shrink-0 text-sm text-neutral-500 @xl:translate-y-0.5">
           <span>{format(post.data.created, "yyyy 年 M 月 d 日")}</span>

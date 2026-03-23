@@ -1,19 +1,10 @@
 ---
-import { cn } from "../index"
-
 interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
-  href?: string
   external?: boolean
-  class?: string
 }
 
-const { href, class: className, ...attrs } = Astro.props
-const external = Astro.props.external ?? (href?.startsWith("http") || href?.startsWith("//"))
+const { external: _external, ...attrs } = Astro.props
+const external = _external ?? (attrs.href?.toString().startsWith("http") || attrs.href?.toString().startsWith("//"))
 ---
 
-<a
-  href={href}
-  class={cn(className)}
-  {...(external ? { target: "_blank", rel: "noopener" } : {})}
-  {...attrs}
-><slot /></a>
+<a {...attrs} {...(external ? { target: "_blank", rel: "noopener" } : {})}><slot /></a>

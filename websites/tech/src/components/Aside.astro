@@ -7,7 +7,7 @@ import PostList from "@/components/PostList.astro"
 import SearchForm from "@/components/SearchForm.astro"
 import Heatmap from "@/components/Heatmap.astro"
 
-import { getNotes, getPosts, getPinnedPosts } from "@/utils/content"
+import { getNotes, getPosts, getPinnedPosts, getSeries } from "@/utils/content"
 import { types } from "@/utils/types"
 
 import { cn } from "@zlliang/theme"
@@ -25,6 +25,7 @@ const notes = await getNotes()
 const posts = await getPosts()
 const pinnedPosts = await getPinnedPosts()
 const recentPosts = posts.slice(0, 10)
+const series = await getSeries()
 ---
 
 <aside class={cn("space-y-6", className)}>
@@ -38,12 +39,14 @@ const recentPosts = posts.slice(0, 10)
     <div class="flex justify-between items-center mb-1">
       <Link href="/notes"><span class="icon-[lucide--notebook-pen]" /> Notes</Link>
       <span class="text-sm text-neutral-500">
-        {notes.length} total<span class="icon-[lucide--dot]" /><Link href="/notes/types">{types.length} types</Link>
+        <span>{notes.length} total</span><span class="icon-[lucide--dot]" /><Link href="/notes/types">{types.length} types</Link>
       </span>
     </div>
     <div class="flex justify-between items-center">
       <Link href="/posts"><span class="icon-[lucide--book-open-text]" /> Posts</Link>
-      <span class="text-sm text-neutral-500">{posts.length} total</span>
+      <span class="text-sm text-neutral-500">
+        <span>{posts.length} total</span><span class="icon-[lucide--dot]" /><Link href="/posts/series">{series.length} series</Link>
+      </span>
     </div>
     <Heatmap />
   </Section>

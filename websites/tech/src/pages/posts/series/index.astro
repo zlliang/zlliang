@@ -1,0 +1,30 @@
+---
+import PageTitle from "@zlliang/theme/components/PageTitle.astro"
+import Link from "@zlliang/theme/components/Link.astro"
+import Layout from "@/components/Layout.astro"
+import PostList from "@/components/PostList.astro"
+
+import { getPosts, getSeries, filterPostsInSeries } from "@/utils/content"
+
+const series = await getSeries()
+const posts = await getPosts()
+const title = "Series"
+---
+
+<Layout title={title} showRecentPosts={false}>
+  <!-- Title -->
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <div slot="subtitle" class="space-y-1">
+      <div>{series.length} total</div>
+      <div>Oldest first</div>
+    </div>
+  </PageTitle>
+
+  <!-- Series -->
+  {series.length > 0 ? series.map((series) => (
+    <h2><Link href={`/posts/series/${series.id}`}>{series.data.title}</Link></h2>
+    <Fragment>{series.data.description && <p>{series.data.description}</p>}</Fragment>
+    <Fragment>{filterPostsInSeries(posts, series.id).length > 0 ? <PostList posts={filterPostsInSeries(posts, series.id)} showSeries={false} /> : <p class="text-neutral-500">No posts found.</p>}</Fragment>
+  )) : <p class="text-neutral-500">No series found.</p>}
+</Layout>

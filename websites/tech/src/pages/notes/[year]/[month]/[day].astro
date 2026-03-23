@@ -83,7 +83,7 @@ const title = `Notes on ${format(targetDate, "PP")}`
     <Section title="Archive">
       <div class="flex justify-between items-center gap-2 mb-2 text-xs">
         <span class="text-neutral-500">Days in {format(targetDate, "MMMM yyyy")}</span>
-        <Link href={getMonthNotesPath(year, month)} class="text-xs">Back to {format(targetDate, "MMMM yyyy")}</Link>
+        <Link href={getMonthNotesPath(year, month)} class="text-xs"><span class="icon-[lucide--corner-left-up]" /> Back to {format(targetDate, "MMMM yyyy")}</Link>
       </div>
       <ArchiveCalendar year={year} month={month} items={dayItems} />
     </Section>

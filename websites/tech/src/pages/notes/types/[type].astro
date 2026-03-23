@@ -1,5 +1,6 @@
 ---
 import PageTitle from "@zlliang/theme/components/PageTitle.astro"
+import Link from "@zlliang/theme/components/Link.astro"
 import Layout from "@/components/Layout.astro"
 import NoteList from "@/components/NoteList.astro"
 
@@ -43,7 +44,10 @@ const title = `${type.display} Notes`
     <Fragment>{title}</Fragment>
     <div slot="subtitle" class="space-y-1">
       <div>{type.description}</div>
-      <div>{pagination.total} total</div>
+      <div class="flex justify-between">
+        <div>{pagination.total} total</div>
+        <Link href="/notes/types"><span class="icon-[lucide--corner-left-up]" /> Back to all types</div>
+      </div>
     </div>
   </PageTitle>
 
