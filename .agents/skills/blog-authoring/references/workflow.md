@@ -26,6 +26,7 @@ Use this file for the repo-specific sequence. Detailed frontmatter rules live in
 - New posts start in `content/posts/drafts/slug.md` with `draft: true`
 - Shipping removes `draft: true` and creates the associated `type: post` note
 - `content/posts/drafts/images/` is moved to the published post's `images/` directory during shipping
+- Posts may optionally join a series with `series: <series-id>`
 - Use `pinned: true` only for long-lived reference posts
 - Add later corrections or follow-up context as update notes instead of scattering them through the body
 
