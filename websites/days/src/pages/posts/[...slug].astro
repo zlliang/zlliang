@@ -1,4 +1,6 @@
 ---
+import { format } from "date-fns"
+
 import Section from "@zlliang/theme/components/Section.astro"
 import Link from "@zlliang/theme/components/Link.astro"
 import Layout from "@/components/Layout.astro"
@@ -7,6 +9,7 @@ import TableOfContents from "@/components/TableOfContents.astro"
 import PostList from "@/components/PostList.astro"
 
 import { getPosts, getPostById, getSeriesById, filterPostsInSeries } from "@/utils/content"
+import { cn } from "@zlliang/theme"
 
 const { slug } = Astro.params
 if (!slug) {
@@ -20,12 +23,39 @@ if (!post) {
 
 const series = post.data.series ? await getSeriesById(post.data.series.id) : null
 const posts = series ? filterPostsInSeries(await getPosts(), series.id) : null
+const index = posts ? posts.findIndex((item) => item.id === post.id) : -1
+const seriesPrevious = posts && index > 0 ? posts[index - 1] : null
+const seriesNext = posts && index >= 0 && index < posts.length - 1 ? posts[index + 1] : null
 const title = series ? `${series.data.title} / ${post.data.title}` : post.data.title
 ---
 
 <Layout title={title}>
   <!-- Content -->
   <PostContent post={post} />
+
+  <!-- Links to next and previous posts in the series -->
+  {series && (seriesPrevious || seriesNext) && (
+    <div class="grid grid-cols-2 mt-16">
+      {seriesPrevious && (
+        <div class={cn("col-start-1 pr-4 text-neutral-500", !seriesNext && "border-r border-neutral-200 dark:border-neutral-800")}>
+          <div class="text-sm mb-0.5"><Link href={`/posts/series/${series.id}`}>系列</Link>上一篇</div>
+          <Link href={`/posts/${seriesPrevious.id}`} class="block mb-0.5">{seriesPrevious.data.title}</Link>
+          <div class="text-sm">
+            <span>{format(seriesPrevious.data.created, "yyyy 年 M 月 d 日")}</span>
+          </div>
+        </div>
+      )}
+      {seriesNext && (
+        <div class="col-start-2 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-right text-neutral-500">
+          <div class="text-sm mb-0.5"><Link href={`/posts/series/${series.id}`}>系列</Link>下一篇</div>
+          <Link href={`/posts/${seriesNext.id}`} class="block mb-0.5">{seriesNext.data.title}</Link>
+          <div class="text-sm">
+            <span>{format(seriesNext.data.created, "yyyy 年 M 月 d 日")}</span>
+          </div>
+        </div>
+      )}
+    </div>
+  )}
 
   <!-- Aside -->
   <Fragment slot="aside-prefix">
