@@ -1,4 +1,4 @@
-import { format, getDate, getDaysInMonth, getMonth, getYear, isSameMonth, isWithinInterval, startOfDay } from "date-fns"
+import { format, getDaysInMonth, isSameMonth, isWithinInterval, startOfDay } from "date-fns"
 
 import type { CollectionEntry } from "astro:content"
 
@@ -20,8 +20,8 @@ export class ArchiveBounds {
   /** Return the year range that has archive pages */
   getYearRange(): ArchiveRange {
     return {
-      start: getYear(this.start),
-      end: getYear(this.end),
+      start: this.start.getFullYear(),
+      end: this.end.getFullYear(),
     }
   }
 
@@ -33,8 +33,8 @@ export class ArchiveBounds {
     }
 
     return {
-      start: year === yearRange.start ? getMonth(this.start) + 1 : 1,
-      end: year === yearRange.end ? getMonth(this.end) + 1 : 12,
+      start: year === yearRange.start ? this.start.getMonth() + 1 : 1,
+      end: year === yearRange.end ? this.end.getMonth() + 1 : 12,
     }
   }
 
@@ -46,8 +46,8 @@ export class ArchiveBounds {
     }
 
     const targetMonth = new Date(year, month - 1, 1)
-    const start = isSameMonth(this.start, targetMonth) ? getDate(this.start) : 1
-    const end = isSameMonth(this.end, targetMonth) ? getDate(this.end) : getDaysInMonth(targetMonth)
+    const start = isSameMonth(this.start, targetMonth) ? this.start.getDate() : 1
+    const end = isSameMonth(this.end, targetMonth) ? this.end.getDate() : getDaysInMonth(targetMonth)
 
     return { start, end }
   }
