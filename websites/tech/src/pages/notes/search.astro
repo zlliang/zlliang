@@ -46,16 +46,16 @@ const title = q ? `Search results for "${q}"` : "Search"
 ---
 
 <Layout title={title} showSearch={false} noindex>
-  <!-- Title -->
+  {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
     <span slot="subtitle">{q ? `${results.length} total` : "Please enter a search query"}</span>
   </PageTitle>
 
-  <!-- Search form -->
+  {/* Search form */}
   <SearchForm q={q} class="mb-6" />
 
-  <!-- Search results -->
+  {/* Search results */}
   {q && (
     results.length > 0 ? (
       <div class="pb-6 mb-6 border-b-2 border-neutral-200 dark:border-neutral-800">

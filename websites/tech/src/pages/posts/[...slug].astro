@@ -30,10 +30,10 @@ const title = series ? `${series.data.title} / ${post.data.title}` : post.data.t
 ---
 
 <Layout title={title}>
-  <!-- Content -->
+  {/* Content */}
   <PostContent post={post} />
 
-  <!-- Links to next and previous posts in the series -->
+  {/* Links to next and previous posts in the series */}
   {series && (seriesPrevious || seriesNext) && (
     <div class="grid grid-cols-2 mt-16">
       {seriesPrevious && (
@@ -57,7 +57,7 @@ const title = series ? `${series.data.title} / ${post.data.title}` : post.data.t
     </div>
   )}
 
-  <!-- Aside -->
+  {/* Aside */}
   <Fragment slot="aside-prefix">
     <TableOfContents post={post} class="hidden lg:block" />
     {series && posts && (

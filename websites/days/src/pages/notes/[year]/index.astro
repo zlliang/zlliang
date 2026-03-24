@@ -77,7 +77,7 @@ const title = `${year} 年手记`
 ---
 
 <Layout title={title}>
-  <!-- Archive -->
+  {/* Archive */}
   <Fragment slot="aside-prefix">
     <Section title="归档">
       <div class="flex justify-between items-center gap-2 mb-2 text-xs">
@@ -90,12 +90,12 @@ const title = `${year} 年手记`
     </Section>
   </Fragment>
 
-  <!-- Title -->
+  {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
     <span slot="subtitle">共 {pagination.total} 则</span>
   </PageTitle>
 
-  <!-- Notes -->
+  {/* Notes */}
   {pagination.data.length > 0 ? <NoteList notes={pagination.data} pagination={pagination} /> : <p class="text-neutral-500">暂无手记。</p>}
 </Layout>

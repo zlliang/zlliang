@@ -31,10 +31,10 @@ const series = await getSeries()
 <aside class={cn("space-y-6", className)}>
   {showSearch && <SearchForm class="hidden lg:flex mb-6" />}
 
-  <!-- Prefix -->
+  {/* Prefix */}
   <slot name="prefix" />
 
-  <!-- Explore -->
+  {/* Explore */}
   <Section title="Explore">
     <div class="flex justify-between items-center mb-1">
       <Link href="/notes"><span class="icon-[lucide--notebook-pen]" /> Notes</Link>
@@ -51,21 +51,21 @@ const series = await getSeries()
     <Heatmap />
   </Section>
 
-  <!-- Pinned posts -->
+  {/* Pinned posts */}
   {pinnedPosts.length > 0 && (
     <Section title="Pinned posts">
       <PostList posts={pinnedPosts} showMeta={false} />
     </Section>
   )}
 
-  <!-- Recent posts -->
+  {/* Recent posts */}
   {showRecentPosts && recentPosts.length > 0 && (
     <Section title="Recent posts">
       <PostList posts={recentPosts} />
     </Section>
   )}
 
-  <!-- Other websites -->
+  {/* Other websites */}
   <Section title="The other side of me">
     <Link href="https://days.zlliang.me" class="secondary group flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-days-400 dark:hover:border-days-600 hover:bg-days-50 dark:hover:bg-days-950 hover:text-days-500!">
       <Image src={logoDays} alt="Logo of days.zlliang.me" class="size-8" loading="eager" />
@@ -77,6 +77,6 @@ const series = await getSeries()
     </Link>
   </Section>
 
-  <!-- Suffix -->
+  {/* Suffix */}
   <slot name="suffix" />
 </aside>

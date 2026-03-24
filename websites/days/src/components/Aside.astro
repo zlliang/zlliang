@@ -31,10 +31,10 @@ const series = await getSeries()
 <aside class={cn("space-y-6", className)}>
   {showSearch && <SearchForm class="hidden lg:flex mb-6" />}
 
-  <!-- Prefix -->
+  {/* Prefix */}
   <slot name="prefix" />
 
-  <!-- Explore -->
+  {/* Explore */}
   <Section title="探索">
     <div class="flex justify-between items-center mb-1">
       <Link href="/notes"><span class="icon-[lucide--notebook-pen]" /> 手记</Link>
@@ -51,21 +51,21 @@ const series = await getSeries()
     <Heatmap />
   </Section>
 
-  <!-- Pinned posts -->
+  {/* Pinned posts */}
   {pinnedPosts.length > 0 && (
     <Section title="置顶文章">
       <PostList posts={pinnedPosts} showMeta={false} />
     </Section>
   )}
 
-  <!-- Recent posts -->
+  {/* Recent posts */}
   {showRecentPosts && recentPosts.length > 0 && (
     <Section title="近期文章">
       <PostList posts={recentPosts} />
     </Section>
   )}
 
-  <!-- Other websites -->
+  {/* Other websites */}
   <Section title="我的另一面">
     <Link href="https://tech.zlliang.me" class="secondary group flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-tech-400 dark:hover:border-tech-600 hover:bg-tech-50 dark:hover:bg-tech-950 hover:text-tech-500!">
       <Image src={logoTech} alt="tech.zlliang.me 的图标" class="size-8" loading="eager" />
@@ -77,6 +77,6 @@ const series = await getSeries()
     </Link>
   </Section>
 
-  <!-- Suffix -->
+  {/* Suffix */}
   <slot name="suffix" />
 </aside>

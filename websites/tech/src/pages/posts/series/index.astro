@@ -12,7 +12,7 @@ const title = "Series"
 ---
 
 <Layout title={title} showRecentPosts={false}>
-  <!-- Title -->
+  {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
     <div slot="subtitle" class="space-y-1">
@@ -21,7 +21,7 @@ const title = "Series"
     </div>
   </PageTitle>
 
-  <!-- Series -->
+  {/* Series */}
   {series.length > 0 ? series.map((series) => (
     <h2><Link href={`/posts/series/${series.id}`}>{series.data.title}</Link></h2>
     <Fragment>{series.data.description && <p>{series.data.description}</p>}</Fragment>

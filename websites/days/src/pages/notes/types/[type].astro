@@ -39,7 +39,7 @@ const title = `${type.display}手记`
 ---
 
 <Layout title={title}>
-  <!-- Title -->
+  {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
     <div slot="subtitle" class="space-y-1">
@@ -51,6 +51,6 @@ const title = `${type.display}手记`
     </div>
   </PageTitle>
 
-  <!-- Notes -->
+  {/* Notes */}
   {pagination.data.length > 0 ? <NoteList notes={pagination.data} pagination={pagination} /> : <p class="text-neutral-500">暂无手记。</p>}
 </Layout>

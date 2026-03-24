@@ -11,13 +11,13 @@ const title = "手记分类"
 ---
 
 <Layout title={title}>
-  <!-- Title -->
+  {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
     <span slot="subtitle">共 {types.length} 个</span>
   </PageTitle>
 
-  <!-- Types -->
+  {/* Types */}
   {types?.length > 0 ? (
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {types.map((type) => (

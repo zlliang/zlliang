@@ -35,17 +35,17 @@ const url = new URL(Astro.url.pathname, Astro.site)
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="generator" content={Astro.generator} />
 
-  <!-- Favicon -->
+  {/* Favicon */}
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-  <!-- Fonts -->
+  {/* Fonts */}
   <Font cssVariable="--font-public-sans" preload />
   <Font cssVariable="--font-roboto-mono" preload />
 
-  <!-- SEO, OpenGraph and Twitter -->
+  {/* SEO, OpenGraph and Twitter */}
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="canonical" href={url} />
   {locales.map((l) => <link rel="alternate" hreflang={l} href={new URL(`/${l}/`, Astro.site)} />)}
@@ -60,7 +60,7 @@ const url = new URL(Astro.url.pathname, Astro.site)
   {Boolean(description) && <meta name="twitter:description" content={description} />}
   <meta name="twitter:creator" content="@zlliang96" />
 
-  <!-- Title -->
+  {/* Title */}
   <title>{title}</title>
 </head>
 <body>
@@ -78,7 +78,7 @@ const url = new URL(Astro.url.pathname, Astro.site)
     <Footer author={t(lang, "site.title")} builtWithPrefix={t(lang, "ui.footer.builtWithPrefix")} builtWithSuffix={t(lang, "ui.footer.builtWithSuffix")} />
   </div>
 
-  <!-- Vercel -->
+  {/* Vercel */}
   <VercelWebAnalytics />
   <VercelSpeedInsights />
 </body>

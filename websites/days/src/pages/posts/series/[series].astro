@@ -16,7 +16,7 @@ const posts = filterPostsInSeries(await getPosts(), series.id)
 ---
 
 <Layout title={series.data.title}>
-  <!-- Title -->
+  {/* Title */}
   <PageTitle>
     <Fragment>{series.data.title}</Fragment>
     <div slot="subtitle" class="space-y-1">
@@ -28,6 +28,6 @@ const posts = filterPostsInSeries(await getPosts(), series.id)
     </div>
   </PageTitle>
 
-  <!-- Posts -->
+  {/* Posts */}
   {posts.length > 0 ? <PostList posts={posts} showSeries={false} /> : <p class="text-neutral-500">暂无文章。</p>}
 </Layout>

@@ -10,7 +10,7 @@ const { q = "", class: className } = Astro.props
 ---
 
 <form action="/notes/search" method="GET" class={cn("flex items-center gap-2 -mx-2", className)}>
-  <!-- Keep the control height aligned with the Section header (`text-sm` + `py-1` = `h-7`). -->
+  {/* Keep the control height aligned with the Section header (`text-sm` + `py-1` = `h-7`). */}
   <input
     type="search"
     name="q"

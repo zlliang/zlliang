@@ -10,12 +10,12 @@ const title = "Posts"
 ---
 
 <Layout title={title} showRecentPosts={false}>
-  <!-- Title -->
+  {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
     <span slot="subtitle">{posts.length} total</span>
   </PageTitle>
 
-  <!-- Posts -->
+  {/* Posts */}
   {posts.length > 0 ? <PostList posts={posts} /> : <p class="text-neutral-500">No posts found.</p>}
 </Layout>

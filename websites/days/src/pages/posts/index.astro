@@ -10,12 +10,12 @@ const title = "文章"
 ---
 
 <Layout title={title} showRecentPosts={false}>
-  <!-- Title -->
+  {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
     <span slot="subtitle">共 {posts.length} 篇</span>
   </PageTitle>
 
-  <!-- Posts -->
+  {/* Posts */}
   {posts.length > 0 ? <PostList posts={posts} /> : <p class="text-neutral-500">暂无文章。</p>}
 </Layout>

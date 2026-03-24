@@ -50,7 +50,7 @@ const title = "Notes"
 ---
 
 <Layout title={title}>
-  <!-- Archive -->
+  {/* Archive */}
   <Fragment slot="aside-prefix">
     <Section title="Archive">
       <div class="mb-2 text-xs text-neutral-500">Years</div>
@@ -58,12 +58,12 @@ const title = "Notes"
     </Section>
   </Fragment>
 
-  <!-- Title -->
+  {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
     <span slot="subtitle">{notes.length} total</span>
   </PageTitle>
 
-  <!-- Notes -->
+  {/* Notes */}
   {pagination.data.length > 0 ? <NoteList notes={pagination.data} pagination={pagination} /> : <p class="text-neutral-500">No notes found.</p>}
 </Layout>

@@ -19,7 +19,7 @@ const { Content } = await render(post)
 ---
 
 <div class="post-content">
-  <!-- Title -->
+  {/* Title */}
   <PageTitle>
     <Fragment>{post.data.title}</Fragment>
     <div slot="subtitle">
@@ -30,7 +30,7 @@ const { Content } = await render(post)
     </div>
   </PageTitle>
 
-  <!-- Content -->
+  {/* Content */}
   <div class="mb-4">
     <Content />
   </div>

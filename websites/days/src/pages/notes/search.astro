@@ -46,16 +46,16 @@ const title = q ? `搜索「${q}」的结果` : "搜索"
 ---
 
 <Layout title={title} showSearch={false} noindex>
-  <!-- Title -->
+  {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
     <span slot="subtitle">{q ? `共 ${results.length} 则` : "请输入搜索关键词"}</span>
   </PageTitle>
 
-  <!-- Search form -->
+  {/* Search form */}
   <SearchForm q={q} class="mb-6" />
 
-  <!-- Search results -->
+  {/* Search results */}
   {q && (
     results.length > 0 ? (
       <div class="pb-6 mb-6 border-b-2 border-neutral-200 dark:border-neutral-800">
