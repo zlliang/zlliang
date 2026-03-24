@@ -16,13 +16,13 @@
     "@astrojs/sitemap": "^3.7.1",
     "@astrojs/vercel": "^10.0.2",
     "@iconify-json/lucide": "^1.2.98",
-    "@iconify-json/simple-icons": "^1.2.74",
+    "@iconify-json/simple-icons": "^1.2.75",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/vite": "^4.2.2",
     "@zlliang/rehype": "workspace:*",
     "astro": "^6.0.8",
     "remark-cjk-friendly": "^2.0.1",
     "tailwindcss": "^4.2.2",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   }
 }
