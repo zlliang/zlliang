@@ -10,7 +10,7 @@ import { JournalError } from "../utils/errors"
 import type { CAC } from "cac"
 import type { Sharp } from "sharp"
 
-const MAX_EDGE = 1800
+const MAX_EDGE = 2560
 const SKIP_BYTES = 800 * 1024
 const TARGET_BYTES = 800 * 1024
 const QUALITY_STEP = 2
