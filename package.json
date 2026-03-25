@@ -18,7 +18,6 @@
     "journal:days": "pnpm --dir websites/days journal"
   },
   "devDependencies": {
-    "@zlliang/journal": "workspace:*",
     "husky": "^9.1.7",
     "sharp": "^0.34.5",
     "tsx": "^4.21.0",

@@ -8,9 +8,6 @@ importers:
 
   .:
     devDependencies:
-      '@zlliang/journal':
-        specifier: workspace:*
-        version: link:packages/journal
       husky:
         specifier: ^9.1.7
         version: 9.1.7
