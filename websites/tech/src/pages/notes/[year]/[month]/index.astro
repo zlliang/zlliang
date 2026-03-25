@@ -89,10 +89,7 @@ const title = `Notes in ${format(targetDate, "MMMM yyyy")}`
   {/* Archive */}
   <Fragment slot="aside-prefix">
     <Section title="Archive">
-      <div class="flex justify-between items-center gap-2 mb-2 text-xs">
-        <span class="text-neutral-500">Months in {year}</span>
-        <Link href={getYearNotesPath(year)} class="text-xs"><span class="icon-[lucide--corner-left-up]" /> Back to {year}</Link>
-      </div>
+      <div class="mb-2 text-xs text-neutral-500">Months in {year}</div>
       <ArchiveLinks items={monthItems} />
       <div class="mt-4 mb-2 text-xs text-neutral-500">Days in {format(targetDate, "MMMM yyyy")}</div>
       <ArchiveCalendar year={year} month={month} items={dayItems} />
@@ -102,7 +99,10 @@ const title = `Notes in ${format(targetDate, "MMMM yyyy")}`
   {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <span slot="subtitle">{pagination.total} total</span>
+    <div slot="subtitle" class="flex justify-between gap-4">
+      <span>{pagination.total} total</span>
+      <Link href={getYearNotesPath(year)}><span class="icon-[lucide--corner-left-up]" /> Back to {year}</Link>
+    </div>
   </PageTitle>
 
   {/* Notes */}

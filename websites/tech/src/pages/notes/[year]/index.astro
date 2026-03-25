@@ -82,10 +82,7 @@ const title = `Notes in ${year}`
   {/* Archive */}
   <Fragment slot="aside-prefix">
     <Section title="Archive">
-      <div class="flex justify-between items-center gap-2 mb-2 text-xs">
-        <span class="text-neutral-500">Years</span>
-        <Link href="/notes" class="text-xs"><span class="icon-[lucide--corner-left-up]" /> Back to all notes</Link>
-      </div>
+      <div class="mb-2 text-xs text-neutral-500">Years</div>
       <ArchiveLinks items={yearItems} />
       <div class="mt-4 mb-2 text-xs text-neutral-500">Months in {year}</div>
       <ArchiveLinks items={monthItems} />
@@ -95,7 +92,10 @@ const title = `Notes in ${year}`
   {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <span slot="subtitle">{pagination.total} total</span>
+    <div slot="subtitle" class="flex justify-between gap-4">
+      <span>{pagination.total} total</span>
+      <Link href="/notes"><span class="icon-[lucide--corner-left-up]" /> Back to all notes</Link>
+    </div>
   </PageTitle>
 
   {/* Notes */}
