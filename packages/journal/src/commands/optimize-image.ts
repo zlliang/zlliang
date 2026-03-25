@@ -52,7 +52,6 @@ const CODECS: readonly Codec[] = [
 interface OptimizationCandidate {
   repoPath: string
   absolutePath: string
-  indexMode: string
   codec: Codec
 }
 
@@ -76,7 +75,10 @@ export function registerOptimizeImageCommand(cli: CAC) {
           return
         }
 
-        const stats = await optimizeCandidates(repoRoot, candidates)
+        const stats = await optimizeCandidates(candidates)
+        if (stats.optimized.length > 0) {
+          restageFiles(repoRoot, stats.optimized)
+        }
 
         process.stdout.write(`Processed ${candidates.length} staged image(s): optimized ${stats.optimized.length}, skipped ${stats.skipped.length}, failed ${stats.failed.length}.\n`)
         if (stats.failed.length > 0) {
@@ -102,8 +104,6 @@ function collectCandidates(repoRoot: string, siteRoot: string): OptimizationCand
         ? {
             repoPath,
             absolutePath: path.resolve(repoRoot, repoPath),
-            // Keep original mode so update-index can replace blob without changing file mode bits.
-            indexMode: resolveIndexMode(repoRoot, repoPath),
             codec,
           }
         : undefined
@@ -122,27 +122,13 @@ function resolveCodec(filePath: string): Codec | undefined {
   return CODECS.find((codec) => codec.extensions.includes(extension))
 }
 
-function resolveIndexMode(repoRoot: string, repoPath: string): string {
-  const entry = execFileSync("git", ["-C", repoRoot, "ls-files", "-s", "--", repoPath], { encoding: "utf8" }).trim()
-  if (!entry) {
-    throw new JournalError(`Could not resolve staged index mode for ${repoPath}.`)
-  }
-
-  const mode = entry.split(" ", 1)[0]
-  if (!mode) {
-    throw new JournalError(`Could not parse staged index mode for ${repoPath}.`)
-  }
-
-  return mode
-}
-
 function isInSite(repoRoot: string, siteRoot: string, candidate: OptimizationCandidate): boolean {
   const absolutePath = path.resolve(repoRoot, candidate.repoPath)
   const relative = path.relative(siteRoot, absolutePath)
   return !relative.startsWith("..") && !path.isAbsolute(relative)
 }
 
-async function optimizeCandidates(repoRoot: string, candidates: OptimizationCandidate[]): Promise<OptimizationStats> {
+async function optimizeCandidates(candidates: OptimizationCandidate[]): Promise<OptimizationStats> {
   const stats: OptimizationStats = {
     optimized: [],
     skipped: [],
@@ -151,7 +137,7 @@ async function optimizeCandidates(repoRoot: string, candidates: OptimizationCand
 
   for (const candidate of candidates) {
     try {
-      if (await optimize(repoRoot, candidate)) {
+      if (await optimize(candidate)) {
         stats.optimized.push(candidate.repoPath)
       } else {
         stats.skipped.push(candidate.repoPath)
@@ -166,9 +152,8 @@ async function optimizeCandidates(repoRoot: string, candidates: OptimizationCand
   return stats
 }
 
-async function optimize(repoRoot: string, candidate: OptimizationCandidate): Promise<boolean> {
-  // Always optimize the staged snapshot, not working-tree bytes.
-  const input = readStagedContent(repoRoot, candidate)
+async function optimize(candidate: OptimizationCandidate): Promise<boolean> {
+  const input = await fs.readFile(candidate.absolutePath)
   const metadata = await sharp(input, { failOn: "none" }).metadata()
   const longEdge = Math.max(metadata.width ?? 0, metadata.height ?? 0)
   const shouldResize = longEdge > MAX_EDGE
@@ -188,13 +173,7 @@ async function optimize(repoRoot: string, candidate: OptimizationCandidate): Pro
     return false
   }
 
-  // Update staged content directly to avoid pulling unrelated unstaged edits into the commit.
-  writeStagedContent(repoRoot, candidate, output)
-
-  // Sync working tree only when there are no unstaged edits for this file.
-  if (!hasUnstagedChanges(repoRoot, candidate)) {
-    await fs.writeFile(candidate.absolutePath, output)
-  }
+  await fs.writeFile(candidate.absolutePath, output)
 
   process.stdout.write(`Optimized ${candidate.repoPath} (${input.byteLength} -> ${output.byteLength})\n`)
   return true
@@ -216,32 +195,6 @@ async function encode(input: Buffer, codec: Codec, shouldResize: boolean, qualit
   return codec.encode(pipeline, quality)
 }
 
-function readStagedContent(repoRoot: string, candidate: OptimizationCandidate): Buffer {
-  return execFileSync("git", ["-C", repoRoot, "show", `:${candidate.repoPath}`], { encoding: "buffer" })
-}
-
-function writeStagedContent(repoRoot: string, candidate: OptimizationCandidate, content: Buffer) {
-  const blobId = execFileSync("git", ["-C", repoRoot, "hash-object", "-w", "--stdin"], {
-    input: content,
-    encoding: "utf8",
-  }).trim()
-
-  // Format: <mode> <object>\t<path>, stage defaults to 0.
-  execFileSync("git", ["-C", repoRoot, "update-index", "--index-info"], {
-    input: `${candidate.indexMode} ${blobId}\t${candidate.repoPath}\n`,
-    encoding: "utf8",
-  })
-}
-
-function hasUnstagedChanges(repoRoot: string, candidate: OptimizationCandidate): boolean {
-  try {
-    execFileSync("git", ["-C", repoRoot, "diff", "--quiet", "--", candidate.repoPath], { stdio: "ignore" })
-    return false
-  } catch (error) {
-    if (typeof error === "object" && error !== null && "status" in error && error.status === 1) {
-      return true
-    }
-
-    throw error
-  }
+function restageFiles(repoRoot: string, files: string[]) {
+  execFileSync("git", ["-C", repoRoot, "add", "--", ...files], { stdio: "inherit" })
 }
