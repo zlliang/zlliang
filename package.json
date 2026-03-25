@@ -7,7 +7,6 @@
     "prepare": "husky",
     "dev": "pnpm -r --parallel --filter @zlliang/www --filter @zlliang/tech --filter @zlliang/days dev",
     "build": "pnpm -r --filter @zlliang/www --filter @zlliang/tech --filter @zlliang/days build",
-    "optimize-image": "tsx scripts/optimize-image.ts",
     "dev:www": "pnpm --filter @zlliang/www dev",
     "build:www": "pnpm --filter @zlliang/www build",
     "dev:tech": "pnpm --filter @zlliang/tech dev",
@@ -19,7 +18,6 @@
   },
   "devDependencies": {
     "husky": "^9.1.7",
-    "sharp": "^0.34.5",
     "tsx": "^4.21.0",
     "typescript": "^6.0.2"
   }
