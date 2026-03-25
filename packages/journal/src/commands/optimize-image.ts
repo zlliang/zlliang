@@ -3,7 +3,6 @@ import fs from "node:fs/promises"
 import path from "node:path"
 import sharp from "sharp"
 
-import { resolveJournalContext } from "../utils/context"
 import { handleCommand } from "../utils/command"
 import { JournalError } from "../utils/errors"
 
@@ -63,13 +62,12 @@ interface OptimizationStats {
 
 export function registerOptimizeImageCommand(cli: CAC) {
   cli
-    .command("optimize-image", "Optimize staged changed images for the current site")
+    .command("optimize-image", "Optimize staged changed images across the repository")
     .example("journal optimize-image")
     .action(() => {
       void handleCommand(async () => {
-        const context = await resolveJournalContext()
         const repoRoot = resolveRepoRoot()
-        const candidates = collectCandidates(repoRoot, context.siteRoot)
+        const candidates = collectCandidates(repoRoot)
         if (candidates.length === 0) {
           process.stdout.write("No staged changed images to optimize.\n")
           return
@@ -96,7 +94,7 @@ function resolveRepoRoot(): string {
   }
 }
 
-function collectCandidates(repoRoot: string, siteRoot: string): OptimizationCandidate[] {
+function collectCandidates(repoRoot: string): OptimizationCandidate[] {
   return stagedChangedFiles(repoRoot)
     .map((repoPath) => {
       const codec = resolveCodec(repoPath)
@@ -109,7 +107,6 @@ function collectCandidates(repoRoot: string, siteRoot: string): OptimizationCand
         : undefined
     })
     .filter((candidate): candidate is OptimizationCandidate => candidate !== undefined)
-    .filter((candidate) => isInSite(repoRoot, siteRoot, candidate))
 }
 
 function stagedChangedFiles(repoRoot: string): string[] {
@@ -120,12 +117,6 @@ function stagedChangedFiles(repoRoot: string): string[] {
 function resolveCodec(filePath: string): Codec | undefined {
   const extension = path.extname(filePath).toLowerCase()
   return CODECS.find((codec) => codec.extensions.includes(extension))
-}
-
-function isInSite(repoRoot: string, siteRoot: string, candidate: OptimizationCandidate): boolean {
-  const absolutePath = path.resolve(repoRoot, candidate.repoPath)
-  const relative = path.relative(siteRoot, absolutePath)
-  return !relative.startsWith("..") && !path.isAbsolute(relative)
 }
 
 async function optimizeCandidates(candidates: OptimizationCandidate[]): Promise<OptimizationStats> {

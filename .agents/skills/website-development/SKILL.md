@@ -25,6 +25,7 @@ Use this skill for implementation work on the websites, shared packages, and the
 - Preserve existing Astro, Tailwind, and TypeScript patterns unless the task explicitly changes them
 - Prefer reusable code over per-site duplication
 - When editing `package.json`, classify dependencies by runtime ownership instead of copying the current layout blindly
+- Account for the repository `pre-commit` hook, which runs `journal optimize-image` on staged images across the repo
 - Verify production builds for affected websites before finishing
 
 ## Dependency classification
