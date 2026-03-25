@@ -33,6 +33,8 @@ export default defineConfig({
     imagesConfig: {
       sizes: [320, 640, 960, 1280],
       domains: [],
+      formats: ["image/avif", "image/webp"],
+      minimumCacheTTL: 604800,
     },
   }),
   vite: {
