@@ -17,7 +17,10 @@ const title = "系列"
     <Fragment>{title}</Fragment>
     <div slot="subtitle" class="space-y-1">
       <div>共 {series.length} 个</div>
-      <div>文章按时间顺序排列</div>
+      <div class="flex justify-between gap-4">
+        <span>文章按时间顺序排列</span>
+        <Link href="/posts"><span class="icon-[lucide--corner-left-up]" /> 返回全部文章</Link>
+      </div>
     </div>
   </PageTitle>
 

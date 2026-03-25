@@ -17,7 +17,10 @@ const title = "Series"
     <Fragment>{title}</Fragment>
     <div slot="subtitle" class="space-y-1">
       <div>{series.length} total</div>
-      <div>Oldest first</div>
+      <div class="flex justify-between gap-4">
+        <span>Oldest first</span>
+        <Link href="/posts"><span class="icon-[lucide--corner-left-up]" /> Back to all posts</Link>
+      </div>
     </div>
   </PageTitle>
 

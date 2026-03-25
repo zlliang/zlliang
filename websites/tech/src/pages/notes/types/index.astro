@@ -14,7 +14,10 @@ const title = "Note Types"
   {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <span slot="subtitle">{types.length} total</span>
+    <div slot="subtitle" class="flex justify-between gap-4">
+      <span>{types.length} total</span>
+      <Link href="/notes"><span class="icon-[lucide--corner-left-up]" /> Back to all notes</Link>
+    </div>
   </PageTitle>
 
   {/* Types */}
