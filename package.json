@@ -16,9 +16,13 @@
     "build:days": "pnpm --filter @zlliang/days build",
     "journal:days": "pnpm --dir websites/days journal"
   },
+  "lint-staged": {
+    "*.{jpg,jpeg,png,webp,avif}": "pnpm exec journal optimize-image"
+  },
   "devDependencies": {
     "@zlliang/journal": "workspace:*",
     "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "typescript": "^6.0.2"
   }
 }

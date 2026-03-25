@@ -1,6 +1,7 @@
-import { execFileSync } from "node:child_process"
 import fs from "node:fs/promises"
 import path from "node:path"
+import { convertPathToPattern, globby, isDynamicPattern } from "globby"
+import prettyBytes from "pretty-bytes"
 import sharp from "sharp"
 
 import { handleCommand } from "../utils/command"
@@ -49,7 +50,7 @@ const CODECS: readonly Codec[] = [
 ]
 
 interface OptimizationCandidate {
-  repoPath: string
+  displayPath: string
   absolutePath: string
   codec: Codec
 }
@@ -62,23 +63,21 @@ interface OptimizationStats {
 
 export function registerOptimizeImageCommand(cli: CAC) {
   cli
-    .command("optimize-image", "Optimize staged changed images across the repository")
+    .command("optimize-image [...targets]", "Optimize images under the given paths or the current directory")
     .example("journal optimize-image")
-    .action(() => {
+    .example("journal optimize-image content/posts")
+    .example('journal optimize-image "content/posts/**/*.{jpg,png}"')
+    .example("journal optimize-image image-1.png image-2.webp")
+    .action((targets: string[] = []) => {
       void handleCommand(async () => {
-        const repoRoot = resolveRepoRoot()
-        const candidates = collectCandidates(repoRoot)
+        const candidates = await collectCandidates(targets)
         if (candidates.length === 0) {
-          process.stdout.write("No staged changed images to optimize.\n")
+          process.stdout.write("No images to optimize.\n")
           return
         }
 
         const stats = await optimizeCandidates(candidates)
-        if (stats.optimized.length > 0) {
-          restageFiles(repoRoot, stats.optimized)
-        }
-
-        process.stdout.write(`Processed ${candidates.length} staged image(s): optimized ${stats.optimized.length}, skipped ${stats.skipped.length}, failed ${stats.failed.length}.\n`)
+        process.stdout.write(`Processed ${candidates.length} image(s): optimized ${stats.optimized.length}, skipped ${stats.skipped.length}, failed ${stats.failed.length}.\n`)
         if (stats.failed.length > 0) {
           throw new JournalError(`Image optimization failed for ${stats.failed.length} file(s).`)
         }
@@ -86,31 +85,49 @@ export function registerOptimizeImageCommand(cli: CAC) {
     })
 }
 
-function resolveRepoRoot(): string {
-  try {
-    return execFileSync("git", ["rev-parse", "--show-toplevel"], { encoding: "utf8" }).trim()
-  } catch {
-    throw new JournalError("Could not locate the git repository root.")
-  }
-}
+async function collectCandidates(targets: string[]): Promise<OptimizationCandidate[]> {
+  const patterns = await Promise.all((targets.length > 0 ? targets : [process.cwd()]).map(resolvePattern))
+  const extensions = CODECS.flatMap((codec) => codec.extensions.map((extension) => extension.slice(1)))
+  const discovered = await globby(patterns, {
+    absolute: true,
+    expandDirectories: { extensions },
+    followSymbolicLinks: false,
+    gitignore: true,
+    onlyFiles: true,
+  })
 
-function collectCandidates(repoRoot: string): OptimizationCandidate[] {
-  return stagedChangedFiles(repoRoot)
-    .map((repoPath) => {
-      const codec = resolveCodec(repoPath)
-      return codec ? { repoPath, absolutePath: path.resolve(repoRoot, repoPath), codec } : undefined
+  return [...new Set(discovered)].sort((a, b) => a.localeCompare(b))
+    .map((absolutePath) => {
+      const codec = resolveCodec(absolutePath)
+      return codec ? { displayPath: toDisplayPath(absolutePath), absolutePath, codec } : undefined
     })
     .filter((candidate): candidate is OptimizationCandidate => candidate !== undefined)
 }
 
-function stagedChangedFiles(repoRoot: string): string[] {
-  return execFileSync("git", ["-C", repoRoot, "diff", "--cached", "--name-only", "--diff-filter=AMR", "-z"], { encoding: "utf8" })
-    .split("\0").filter(Boolean)
+async function resolvePattern(target: string): Promise<string> {
+  if (isDynamicPattern(target)) {
+    return target
+  }
+
+  const absolutePath = path.resolve(target)
+
+  try {
+    await fs.lstat(absolutePath)
+  } catch {
+    throw new JournalError(`Path not found: ${target}`)
+  }
+
+  return convertPathToPattern(absolutePath)
 }
 
 function resolveCodec(filePath: string): Codec | undefined {
   const extension = path.extname(filePath).toLowerCase()
   return CODECS.find((codec) => codec.extensions.includes(extension))
+}
+
+function toDisplayPath(absolutePath: string): string {
+  const relativePath = path.relative(process.cwd(), absolutePath)
+  return relativePath.length > 0 ? relativePath : absolutePath
 }
 
 async function optimizeCandidates(candidates: OptimizationCandidate[]): Promise<OptimizationStats> {
@@ -123,14 +140,14 @@ async function optimizeCandidates(candidates: OptimizationCandidate[]): Promise<
   for (const candidate of candidates) {
     try {
       if (await optimize(candidate)) {
-        stats.optimized.push(candidate.repoPath)
+        stats.optimized.push(candidate.displayPath)
       } else {
-        stats.skipped.push(candidate.repoPath)
+        stats.skipped.push(candidate.displayPath)
       }
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error)
-      process.stderr.write(`Error optimizing ${candidate.repoPath}: ${message}\n`)
-      stats.failed.push(candidate.repoPath)
+      process.stderr.write(`Error optimizing ${candidate.displayPath}: ${message}\n`)
+      stats.failed.push(candidate.displayPath)
     }
   }
 
@@ -159,7 +176,7 @@ async function optimize(candidate: OptimizationCandidate): Promise<boolean> {
 
   await fs.writeFile(candidate.absolutePath, output)
 
-  process.stdout.write(`Optimized ${candidate.repoPath} (${input.byteLength} -> ${output.byteLength})\n`)
+  process.stdout.write(`Optimized ${candidate.displayPath} (${prettyBytes(input.byteLength)} -> ${prettyBytes(output.byteLength)})\n`)
   return true
 }
 
@@ -177,8 +194,4 @@ async function encode(input: Buffer, codec: Codec, shouldResize: boolean, qualit
   }
 
   return codec.encode(pipeline, quality)
-}
-
-function restageFiles(repoRoot: string, files: string[]) {
-  execFileSync("git", ["-C", repoRoot, "add", "--", ...files], { stdio: "inherit" })
 }

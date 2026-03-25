@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-pnpm exec journal optimize-image
+pnpm exec lint-staged
