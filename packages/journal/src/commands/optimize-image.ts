@@ -77,7 +77,7 @@ export function registerOptimizeImageCommand(cli: CAC) {
         }
 
         const stats = await optimizeCandidates(candidates)
-        process.stdout.write(`Processed ${candidates.length} image(s): optimized ${stats.optimized.length}, skipped ${stats.skipped.length}, failed ${stats.failed.length}.\n`)
+        process.stdout.write(`Processed ${candidates.length} ${candidates.length === 1 ? "image" : "images"}: optimized ${stats.optimized.length}, skipped ${stats.skipped.length}, failed ${stats.failed.length}.\n`)
         if (stats.failed.length > 0) {
           throw new JournalError(`Image optimization failed for ${stats.failed.length} file(s).`)
         }
