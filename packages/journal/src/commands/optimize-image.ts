@@ -98,13 +98,7 @@ function collectCandidates(repoRoot: string): OptimizationCandidate[] {
   return stagedChangedFiles(repoRoot)
     .map((repoPath) => {
       const codec = resolveCodec(repoPath)
-      return codec
-        ? {
-            repoPath,
-            absolutePath: path.resolve(repoRoot, repoPath),
-            codec,
-          }
-        : undefined
+      return codec ? { repoPath, absolutePath: path.resolve(repoRoot, repoPath), codec } : undefined
     })
     .filter((candidate): candidate is OptimizationCandidate => candidate !== undefined)
 }
@@ -148,7 +142,6 @@ async function optimize(candidate: OptimizationCandidate): Promise<boolean> {
   const metadata = await sharp(input, { failOn: "none" }).metadata()
   const longEdge = Math.max(metadata.width ?? 0, metadata.height ?? 0)
   const shouldResize = longEdge > MAX_EDGE
-
   if (!shouldResize && input.byteLength < SKIP_BYTES) {
     return false
   }
