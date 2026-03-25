@@ -13,7 +13,7 @@ Along the way, I also simplified the sidebar and reworked the [/notes/types](/no
 
 ![The refreshed note types page](./images/new-note-types-page.png)
 
-The main commit is [zlliang/zlliang@0b3a096](https://github.com/zlliang/zlliang/commit/0b3a096019dd8ce562a4605e53798d4d7a27c7ec), a cleanup and simplification pass across both sites that removed tags, flattened the sidebar, and improved how note types are presented. Most of the code was written with the help of the Codex app.
+The main commit is [zlliang/zlliang@8381e33](https://github.com/zlliang/zlliang/commit/8381e33dc0f9ba7affabae99923c362f8134c4fd), a cleanup and simplification pass across both sites that removed tags, flattened the sidebar, and improved how note types are presented. Most of the code was written with the help of the Codex app.
 
 <div class="update-note">
 

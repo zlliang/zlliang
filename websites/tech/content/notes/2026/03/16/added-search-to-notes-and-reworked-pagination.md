@@ -11,7 +11,7 @@ I just added a search page for notes on both https://tech.zlliang.me and https:/
 
 While doing this, I also reworked note pagination across both sites. Instead of URLs like `/notes/2`, note archive pages now use query parameters such as `/notes?page=2` and `/notes/types/link?page=2`. I wanted the pagination model to be simpler and closer to common blog conventions, especially after reading Google's [documentation on pagination](https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading).
 
-The commit is [zlliang/zlliang@b1dc071](https://github.com/zlliang/zlliang/commit/b1dc0710ba89e899dd903b57261133267882fa20), which also closed [issue #72](https://github.com/zlliang/zlliang/issues/72).
+The commit is [zlliang/zlliang@5388c6d](https://github.com/zlliang/zlliang/commit/5388c6d21de694d238f18a08254bacfca83e6ff8), which also closed [issue #72](https://github.com/zlliang/zlliang/issues/72).
 
 <div class="update-note">
 

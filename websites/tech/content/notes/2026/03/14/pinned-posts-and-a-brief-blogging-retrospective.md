@@ -5,7 +5,7 @@ created: 2026-03-14
 type: regular
 ---
 
-I added support for **pinned posts** on both https://tech.zlliang.me and https://days.zlliang.me in [zlliang/zlliang@f818e6d](https://github.com/zlliang/zlliang/commit/f818e6dc84777249b94c5f1941199770ff0bb7eb), which also closed [issue #77](https://github.com/zlliang/zlliang/issues/77). There still are no real pinned posts on either site yet. I added the feature in advance for a post draft I am currently writing.
+I added support for **pinned posts** on both https://tech.zlliang.me and https://days.zlliang.me in [zlliang/zlliang@c283182](https://github.com/zlliang/zlliang/commit/c283182b98f2b2a2992969584eba76c168f067ca), which also closed [issue #77](https://github.com/zlliang/zlliang/issues/77). There still are no real pinned posts on either site yet. I added the feature in advance for a post draft I am currently writing.
 
 Over the past few days, I have been doing a series of minor blogging overhauls: reworking tags, adjusting parts of the UI, and cleaning up the agent skills and authoring references that support my blogging workflow. The more I work on both sites, the more I want to extract their highly similar logic into an [Astro](https://astro.build/) theme, something like my own small blog system in the spirit of [Starlight](https://starlight.astro.build/).
 
