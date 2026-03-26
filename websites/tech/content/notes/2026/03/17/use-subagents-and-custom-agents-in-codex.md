@@ -5,7 +5,7 @@ created: 2026-03-17
 type: link
 ---
 
-[Use subagents and custom agents in Codex](https://developers.openai.com/codex/subagents) ([via](https://x.com/OpenAIDevs/status/2033636701848174967)). Subagents are now generally available in Codex, after previously being introduced as an experimental feature called "multi-agents".
+[Use subagents and custom agents in Codex](https://developers.openai.com/codex/subagents)[^1]. Subagents are now generally available in Codex, after previously being introduced as an experimental feature called "multi-agents".
 
 In short, you can ask Codex to spawn subagents that run in parallel with one another and with the main agent. They use their own context windows and report back to the main agent when they are done. Subagents can have their own models and instructions. There are built-in agents like `explorer`, and you can define your own ones with TOML configuration files under `.codex/agents`.
 
@@ -21,3 +21,5 @@ Here are other comments on this Codex release:
 - Vaibhav (VB) Srivastav's article: [You Should Be Using Subagents in Codex!](https://x.com/reach_vb/status/2033636057690800452)
 
 Now that major coding agents like [Claude Code](https://code.claude.com/docs/en/sub-agents), [OpenCode](https://opencode.ai/docs/agents/), and [Cursor](https://cursor.com/docs/subagents) all support subagents in broadly similar ways, will subagents become a standard, like [skills](https://agentskills.io)?
+
+[^1]: [Post on X by OpenAI Developers](https://x.com/OpenAIDevs/status/2033636701848174967)

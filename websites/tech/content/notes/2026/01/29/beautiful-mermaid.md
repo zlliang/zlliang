@@ -5,7 +5,7 @@ created: 2026-01-29
 type: link
 ---
 
-[Beautiful Mermaid](https://agents.craft.do/mermaid) ([via](https://x.com/balintorosz/status/2016564307765424285)). [Mermaid](https://mermaid.js.org/) is the de facto tool for describing diagrams in plain text and embedding them in Markdown. GitHub supports it, for example[^1]. But I've never liked the default theme — that's why I still haven't adopted it.
+[Beautiful Mermaid](https://agents.craft.do/mermaid)[^1]. [Mermaid](https://mermaid.js.org/) is the de facto tool for describing diagrams in plain text and embedding them in Markdown. GitHub supports it, for example[^2]. But I've never liked the default theme — that's why I still haven't adopted it.
 
 Today I found out the [Craft](https://craft.do/) team felt the same way, and they released a new rendering engine for Mermaid diagrams. It outputs both SVG and ASCII art, and the default theme looks great.
 
@@ -19,4 +19,5 @@ I haven't looked into it deeply yet, but it looks promising at a glance. I hope 
 
 </div>
 
-[^1]: GitHub blog post: [Include diagrams in your Markdown files with Mermaid](https://github.blog/developer-skills/github/include-diagrams-markdown-files-mermaid/); GitHub documentation: [Creating diagrams](https://docs.github.com/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams#creating-mermaid-diagrams)
+[^1]: [Post on X by Balint Orosz](https://x.com/balintorosz/status/2016564307765424285)
+[^2]: GitHub blog post: [Include diagrams in your Markdown files with Mermaid](https://github.blog/developer-skills/github/include-diagrams-markdown-files-mermaid/); GitHub documentation: [Creating diagrams](https://docs.github.com/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams#creating-mermaid-diagrams)

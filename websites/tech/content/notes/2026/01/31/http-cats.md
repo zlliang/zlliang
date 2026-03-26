@@ -5,4 +5,6 @@ created: 2026-01-31
 type: link
 ---
 
-[HTTP Cats](https://http.cat) ([via](https://news.ycombinator.com/item?id=46824422)). Every HTTP status code gets its own cat. Cute and useful!
+[HTTP Cats](https://http.cat)[^1]. Every HTTP status code gets its own cat. Cute and useful!
+
+[^1]: [Discussion on Hacker News](https://news.ycombinator.com/item?id=46824422)

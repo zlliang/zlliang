@@ -31,7 +31,7 @@ Use this file for repo-specific style decisions for notes and posts on `tech` an
 
 - Read [note-types.md](./note-types.md) when the task depends on the note's goal, mindset, or "done" criteria
 - `regular`: free-form note; keep capture and speed over polish
-- `link`: start with `[Link](url)` and optional `([via](url))`, then comment
+- `link`: start with `[Link](url)`, then comment
 - `collection`: short intro plus a curated list
 - `quote`: blockquote with source attribution, then commentary
 - `til`: in English, usually start with `**TIL:** ...`

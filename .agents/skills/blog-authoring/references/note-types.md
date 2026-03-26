@@ -20,7 +20,7 @@ Use this file when the task depends on what a note is trying to do, not only how
 
 - Goal: consume and respond to something worth keeping
 - Mindset: do not use it as a bare bookmark; the comment is the actual note
-- Shape: start with `[Link](url)` and optional `([via](url))`, then explain what stood out, what you think, or how it connects to earlier topics
+- Shape: start with `[Link](url)`, then explain what stood out, what you think, or how it connects to earlier topics
 - Done when: a future reader can tell why this link matters to you, not only what the URL points to
 
 ## `quote`

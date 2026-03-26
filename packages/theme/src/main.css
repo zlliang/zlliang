@@ -287,7 +287,15 @@ span.caption {
 }
 
 [data-footnote-ref] {
-  @apply tabular-nums;
+  @apply tabular-nums text-neutral-500;
+}
+
+[data-footnote-ref]::before {
+  content: '[';
+}
+
+[data-footnote-ref]::after {
+  content: ']';
 }
 
 /* Update note */
