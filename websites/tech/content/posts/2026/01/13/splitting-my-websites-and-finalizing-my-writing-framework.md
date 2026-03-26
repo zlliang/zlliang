@@ -11,8 +11,8 @@ In short, my personal websites are now organized into three parts:
 | Website | URL | Description |
 |---------|-----|-------------|
 | Personal landing page | [https://zlliang.me](https://zlliang.me) | Brief introduction and navigation |
-| Zilong's Tech Notes | [https://tech.zlliang.me](https://tech.zlliang.me) | Tech learning and research (English) |
-| Zilong's Days | [https://days.zlliang.me](https://days.zlliang.me) | Daily life and reflections (Chinese) |
+| Zilong's Tech Notes | [https://tech.zlliang.me](https://tech.zlliang.me) | My tech exploration journal (English) |
+| Zilong's Days | [https://days.zlliang.me](https://days.zlliang.me) | My life reflection journal (Chinese) |
 
 ## A week's journey
 
@@ -68,5 +68,7 @@ Again, it's time to write, write, and write.
 **Update Mar 13, 2026:** I reverted the note number prefixes on both `tech` and `days`. Notes are now shown as `#123` again instead of `#tech123` and `#days123`. I wrote a note about the change: [Removed the prefixes from note numbers](/notes/2026/03/13/removed-the-prefixes-from-note-numbers).
 
 **Update Mar 18, 2026:** I removed note tags from both sites for now, simplified the sidebar, and improved the `/notes/types` page with a richer card-based layout. I wrote a note about the change: [Removed tags and refreshed note navigation](/notes/2026/03/18/removed-tags-and-refreshed-note-navigation).
+
+**Update Mar 26, 2026:** Refreshed the site descriptions to "My tech exploration journal" and "My life reflection journal."
 
 </div>
