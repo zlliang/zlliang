@@ -1,6 +1,5 @@
 ---
 import PageTitle from "@zlliang/theme/components/PageTitle.astro"
-import Link from "@zlliang/theme/components/Link.astro"
 import Layout from "@/components/Layout.astro"
 import PostList from "@/components/PostList.astro"
 
@@ -23,7 +22,7 @@ const posts = filterPostsInSeries(await getPosts(), series.id)
       <div>{posts.length} posts in this series</div>
       <div class="flex justify-between">
         <div>Oldest first</div>
-        <Link href="/posts/series"><span class="icon-[lucide--corner-left-up]" /> Back to all series</Link>
+        <a href="/posts/series"><span class="icon-[lucide--corner-left-up]" /> Back to all series</a>
       </div>
     </div>
   </PageTitle>

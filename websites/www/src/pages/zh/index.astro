@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets"
 
-import Link from "@zlliang/theme/components/Link.astro"
 import Section from "@zlliang/theme/components/Section.astro"
 import Layout from "@/components/Layout.astro"
 
@@ -21,22 +20,22 @@ const Bio = await renderFragment("bio-zh")
   {/* Writing */}
   <Section title="写作">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <Link href="https://tech.zlliang.me" external={false} class="secondary group flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-tech-400 dark:hover:border-tech-600 hover:bg-tech-50 dark:hover:bg-tech-950 hover:text-tech-500!">
+      <a href="https://tech.zlliang.me" class="secondary group flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-tech-400 dark:hover:border-tech-600 hover:bg-tech-50 dark:hover:bg-tech-950 hover:text-tech-500!">
         <Image src={logoTech} alt="tech.zlliang.me 的图标" class="size-8" loading="eager" />
         <div class="flex-1">
           <div><span class="font-bold">子龙的技术笔记</span> (英文)</div>
           <div class="text-sm text-neutral-500 group-hover:text-tech-400 dark:group-hover:text-tech-600">tech.zlliang.me</div>
           <div class="mt-2 text-sm">我的技术探索日志</div>
         </div>
-      </Link>
-      <Link href="https://days.zlliang.me" external={false} class="secondary group flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-days-400 dark:hover:border-days-600 hover:bg-days-50 dark:hover:bg-days-950 hover:text-days-500!">
+      </a>
+      <a href="https://days.zlliang.me" class="secondary group flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-days-400 dark:hover:border-days-600 hover:bg-days-50 dark:hover:bg-days-950 hover:text-days-500!">
         <Image src={logoDays} alt="days.zlliang.me 的图标" class="size-8" loading="eager" />
         <div class="flex-1">
           <div><span class="font-bold">子龙的生活手记</span> (中文)</div>
           <div class="text-sm text-neutral-500 group-hover:text-days-400 dark:group-hover:text-days-600">days.zlliang.me</div>
           <div class="mt-2 text-sm">我的生活感悟日志</div>
         </div>
-      </Link>
+      </a>
     </div>
   </Section>
 </Layout>

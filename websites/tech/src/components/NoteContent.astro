@@ -3,7 +3,6 @@ import { render } from "astro:content"
 import { format } from "date-fns"
 
 import PostTitle from "@/components/PostTitle.astro"
-import Link from "@zlliang/theme/components/Link.astro"
 
 import { getPostById } from "@/utils/content"
 import { types } from "@/utils/types"
@@ -33,13 +32,13 @@ const type = types.find((item) => item.slug === note.data.type)!
   {/* Metadata */}
   <div class="flex justify-between items-center gap-2">
     <div class="flex items-center text-sm text-neutral-500">
-      {showLink ? <Link href={`/notes/${note.id}`}>#{note.data.no}</Link> : <span>#{note.data.no}</span>}
+      {showLink ? <a href={`/notes/${note.id}`}>#{note.data.no}</a> : <span>#{note.data.no}</span>}
       <span class="icon-[lucide--dot]" />
-      <Link href={`/notes/types/${note.data.type}`}>{type.display}</Link>
+      <a href={`/notes/types/${note.data.type}`}>{type.display}</a>
       <span class="icon-[lucide--dot]" />
       <span>{format(note.data.created, "PP")}</span>
       {note.data.draft && <span class="ml-2 text-amber-600 dark:text-amber-400">Draft</span>}
     </div>
-    {post && <Link href={`/posts/${post.id}`} class="text-sm">Read the full post <span class="icon-[lucide--arrow-right] translate-y-px" /></Link>}
+    {post && <a href={`/posts/${post.id}`} class="text-sm">Read the full post <span class="icon-[lucide--arrow-right] translate-y-px" /></a>}
   </div>
 </div>

@@ -1,8 +1,6 @@
 ---
 import { Image } from "astro:assets"
 
-import Link from "./Link.astro"
-
 import type { ImageMetadata } from "astro"
 
 interface Props {
@@ -17,10 +15,10 @@ const { logo, title, homeHref = "/", logoAlt = "logo" } = Astro.props
 
 <header class="flex justify-between items-center h-16 mb-12">
   <div class="flex items-center gap-2">
-    <Link href={homeHref} class="nocolor flex items-center gap-2 font-display">
+    <a href={homeHref} class="nocolor flex items-center gap-2 font-display">
       <Image src={logo} alt={logoAlt} class="size-6" loading="eager" />
       <strong>{title}</strong>
-    </Link>
+    </a>
   </div>
   <div class="flex items-center gap-4">
     <slot name="menu" />

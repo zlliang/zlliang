@@ -5,7 +5,6 @@ import VercelSpeedInsights from "@vercel/speed-insights/astro"
 
 import Header from "@zlliang/theme/components/Header.astro"
 import Footer from "@zlliang/theme/components/Footer.astro"
-import Link from "@zlliang/theme/components/Link.astro"
 
 import { getTitle } from "@/utils/site"
 import { locales, t } from "@/utils/i18n"
@@ -68,7 +67,7 @@ const url = new URL(Astro.url.pathname, Astro.site)
     <Header logo={logo} title={t(lang, "site.title")} homeHref={`/${lang}/`}>
       {showMenu && (
         <Fragment slot="menu">
-          {locales.map((l) => lang === l ? null : <Link href={`/${l}/`}><span class="icon-[lucide--languages]" /> {t(l, "desc")}</Link>)}
+          {locales.map((l) => lang === l ? null : <a href={`/${l}/`}><span class="icon-[lucide--languages]" /> {t(l, "desc")}</a>)}
         </Fragment>
       )}
     </Header>

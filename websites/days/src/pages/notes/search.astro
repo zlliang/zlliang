@@ -1,5 +1,4 @@
 ---
-import Link from "@zlliang/theme/components/Link.astro"
 import PageTitle from "@zlliang/theme/components/PageTitle.astro"
 import Layout from "@/components/Layout.astro"
 import SearchForm from "@/components/SearchForm.astro"
@@ -62,7 +61,7 @@ const title = q ? `搜索「${q}」的结果` : "搜索"
         <div class="flex items-center text-sm gap-2">
           <span class="text-neutral-500">排序方式</span>
           {(["relevance", "date"] as const).map((item) => (
-            item === sort ? <span>{getSearchSortDisplay(item)}</span> : <Link href={sortUrls[item]}>{getSearchSortDisplay(item)}</Link>
+            item === sort ? <span>{getSearchSortDisplay(item)}</span> : <a href={sortUrls[item]}>{getSearchSortDisplay(item)}</a>
           ))}
         </div>
       </div>

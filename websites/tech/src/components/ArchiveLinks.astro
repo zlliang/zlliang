@@ -1,6 +1,4 @@
 ---
-import Link from "@zlliang/theme/components/Link.astro"
-
 import { cn } from "@zlliang/theme"
 
 interface ArchiveLinkItem {
@@ -22,7 +20,7 @@ const { items } = Astro.props
     {items.map((item) => {
       const active = Boolean(item.active)
       const disabled = !item.href
-      const Component = active || disabled ? 'div' : Link
+      const Component = active || disabled ? "div" : "a"
       return (
         <Component
           href={item.href}

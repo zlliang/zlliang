@@ -5,7 +5,6 @@ import VercelSpeedInsights from "@vercel/speed-insights/astro"
 
 import Header from "@zlliang/theme/components/Header.astro"
 import Footer from "@zlliang/theme/components/Footer.astro"
-import Link from "@zlliang/theme/components/Link.astro"
 import Aside from "@/components/Aside.astro"
 
 import { getTitle, siteTitle } from "@/utils/site"
@@ -66,8 +65,8 @@ const url = Astro.url
   <div class="flex flex-col min-h-dvh max-w-3xl lg:max-w-6xl m-auto px-6">
     <Header logo={logo} title={siteTitle}>
       <Fragment slot="menu">
-        <Link href="/notes/search" class="lg:hidden"><span class="icon-[lucide--search]" /> Search</Link>
-        <Link href="https://zlliang.me" external={false}><span class="icon-[lucide--user]" /> About</Link>
+        <a href="/notes/search" class="lg:hidden"><span class="icon-[lucide--search]" /> Search</a>
+        <a href="https://zlliang.me"><span class="icon-[lucide--user]" /> About</a>
       </Fragment>
     </Header>
     <div class="flex-1 lg:flex gap-12 w-full">

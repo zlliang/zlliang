@@ -1,6 +1,4 @@
 ---
-import Link from "./Link.astro"
-
 interface Props {
   author: string
   builtWithPrefix?: string
@@ -12,23 +10,23 @@ const { author, builtWithPrefix = "Built with", builtWithSuffix = "" } = Astro.p
 
 <footer class="mt-16 mb-8 text-xs text-neutral-400 dark:text-neutral-600">
   <div class="space-x-2">
-    <Link href="https://github.com/zlliang" class="icon-[simple-icons--github] secondary" aria-label="GitHub" />
-    <Link href="https://x.com/zlliang96" class="icon-[simple-icons--x] secondary scale-80!" aria-label="X" />
-    <Link href="https://www.instagram.com/zlliang96" class="icon-[simple-icons--instagram] secondary scale-90!" aria-label="Instagram" />
-    <Link href="https://xhslink.com/m/7jXHMqj1j6Q" class="icon-[simple-icons--xiaohongshu] secondary ml-1 mr-2.5 scale-160!" aria-label="Xiaohongshu" />
-    <Link href="https://space.bilibili.com/30470407" class="icon-[simple-icons--bilibili] secondary" aria-label="Bilibili" />
+    <a href="https://github.com/zlliang" class="icon-[simple-icons--github] secondary" aria-label="GitHub" />
+    <a href="https://x.com/zlliang96" class="icon-[simple-icons--x] secondary scale-80!" aria-label="X" />
+    <a href="https://www.instagram.com/zlliang96" class="icon-[simple-icons--instagram] secondary scale-90!" aria-label="Instagram" />
+    <a href="https://xhslink.com/m/7jXHMqj1j6Q" class="icon-[simple-icons--xiaohongshu] secondary ml-1 mr-2.5 scale-160!" aria-label="Xiaohongshu" />
+    <a href="https://space.bilibili.com/30470407" class="icon-[simple-icons--bilibili] secondary" aria-label="Bilibili" />
   </div>
   <div class="mt-2">
-    <Link href="https://creativecommons.org/licenses/by/4.0/" class="secondary">CC BY 4.0</Link>
+    <a href="https://creativecommons.org/licenses/by/4.0/" class="secondary">CC BY 4.0</a>
     <span>2025–PRESENT</span>
     <span class="icon-[lucide--copyright] scale-90" />
-    <Link href="https://zlliang.me/" external={false} class="secondary">{author}</Link>
+    <a href="https://zlliang.me/" class="secondary">{author}</a>
     <span class="hidden sm:inline">
       <span class="icon-[lucide--dot]" />
-      <span>{builtWithPrefix} <Link href="https://astro.build" class="secondary">Astro</Link> {builtWithSuffix}</span>
+      <span>{builtWithPrefix} <a href="https://astro.build" class="secondary">Astro</a> {builtWithSuffix}</span>
     </span>
   </div>
   <div class="mt-1 sm:hidden">
-    <span>{builtWithPrefix} <Link href="https://astro.build" class="secondary">Astro</Link> {builtWithSuffix}</span>
+    <span>{builtWithPrefix} <a href="https://astro.build" class="secondary">Astro</a> {builtWithSuffix}</span>
   </div>
 </footer>

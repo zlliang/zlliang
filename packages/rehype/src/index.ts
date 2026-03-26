@@ -4,7 +4,6 @@ import type { Root, Element } from "hast"
 
 export { rehypeHeadingIds } from "@astrojs/markdown-remark"
 export { default as rehypeAutolinkHeadings } from "rehype-autolink-headings"
-export { default as rehypeExternalLinks } from "rehype-external-links"
 
 /** Prefix footnote IDs with the file path to avoid collisions when multiple notes render on one page. */
 export function rehypeFootnotePrefixes() {

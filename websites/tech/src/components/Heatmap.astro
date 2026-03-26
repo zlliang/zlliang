@@ -2,8 +2,6 @@
 import { countBy } from "lodash-es"
 import { eachDayOfInterval, format, startOfDay, startOfWeek, subWeeks } from "date-fns"
 
-import Link from "@zlliang/theme/components/Link.astro"
-
 import { cn } from "@zlliang/theme"
 import { getNotes, getPosts } from "@/utils/content"
 import { getArchiveBounds, getDayNotesPath } from "@/utils/archive"
@@ -70,7 +68,7 @@ function getLevel(count: number, maxCount: number) {
     <div class="flex justify-end">
       <div class="grid grid-rows-7 grid-flow-col auto-cols-max gap-px w-max">
         {cells.map((cell) => {
-          const Component = cell.href ? Link : "div"
+          const Component = cell.href ? "a" : "div"
           return <Component
             href={cell.href}
             class={cn(

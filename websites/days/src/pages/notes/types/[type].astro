@@ -1,6 +1,5 @@
 ---
 import PageTitle from "@zlliang/theme/components/PageTitle.astro"
-import Link from "@zlliang/theme/components/Link.astro"
 import Layout from "@/components/Layout.astro"
 import NoteList from "@/components/NoteList.astro"
 
@@ -46,7 +45,7 @@ const title = `${type.display}手记`
       <div>{type.description}</div>
       <div class="flex justify-between">
         <div>共 {pagination.total} 则</div>
-        <Link href="/notes/types"><span class="icon-[lucide--corner-left-up]" /> 返回全部分类</div>
+        <a href="/notes/types"><span class="icon-[lucide--corner-left-up]" /> 返回全部分类</a>
       </div>
     </div>
   </PageTitle>

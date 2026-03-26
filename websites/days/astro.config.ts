@@ -3,7 +3,7 @@ import vercel from "@astrojs/vercel"
 import tailwindcss from "@tailwindcss/vite"
 import remarkCjkFriendly from "remark-cjk-friendly"
 
-import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeExternalLinks, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeCodeCopy } from "@zlliang/rehype"
+import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeCodeCopy } from "@zlliang/rehype"
 
 export default defineConfig({
   site: "https://days.zlliang.me",
@@ -54,7 +54,6 @@ export default defineConfig({
     rehypePlugins: [
       [rehypeHeadingIds, {}],
       [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
-      [rehypeExternalLinks, { target: "_blank", rel: ["noopener"] }],
       [rehypeFootnotePrefixes, {}],
       [rehypeImageCaptions, {}],
       [rehypeCodeCopy, {}],

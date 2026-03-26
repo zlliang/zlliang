@@ -2,7 +2,6 @@
 import { format } from "date-fns"
 import { countBy } from "lodash-es"
 
-import Link from "@zlliang/theme/components/Link.astro"
 import PageTitle from "@zlliang/theme/components/PageTitle.astro"
 import Section from "@zlliang/theme/components/Section.astro"
 import Layout from "@/components/Layout.astro"
@@ -101,7 +100,7 @@ const title = `${format(targetDate, "yyyy 年 M 月")}手记`
     <Fragment>{title}</Fragment>
     <div slot="subtitle" class="flex justify-between gap-4">
       <span>共 {pagination.total} 则</span>
-      <Link href={getYearNotesPath(year)}><span class="icon-[lucide--corner-left-up]" /> 返回 {year} 年</Link>
+      <a href={getYearNotesPath(year)}><span class="icon-[lucide--corner-left-up]" /> 返回 {year} 年</a>
     </div>
   </PageTitle>
 

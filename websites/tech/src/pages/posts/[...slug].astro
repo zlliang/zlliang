@@ -2,7 +2,6 @@
 import { format } from "date-fns"
 
 import Section from "@zlliang/theme/components/Section.astro"
-import Link from "@zlliang/theme/components/Link.astro"
 import Layout from "@/components/Layout.astro"
 import PostContent from "@/components/PostContent.astro"
 import TableOfContents from "@/components/TableOfContents.astro"
@@ -38,8 +37,8 @@ const title = series ? `${series.data.title} / ${post.data.title}` : post.data.t
     <div class="grid grid-cols-2 mt-16">
       {seriesPrevious && (
         <div class={cn("col-start-1 pr-4 text-neutral-500", !seriesNext && "border-r border-neutral-200 dark:border-neutral-800")}>
-          <div class="text-sm mb-0.5">Previous in <Link href={`/posts/series/${series.id}`}>series</Link></div>
-          <Link href={`/posts/${seriesPrevious.id}`} class="block mb-0.5">{seriesPrevious.data.title}</Link>
+          <div class="text-sm mb-0.5">Previous in <a href={`/posts/series/${series.id}`}>series</a></div>
+          <a href={`/posts/${seriesPrevious.id}`} class="block mb-0.5">{seriesPrevious.data.title}</a>
           <div class="text-sm">
             <span>{format(seriesPrevious.data.created, "PP")}</span>
           </div>
@@ -47,8 +46,8 @@ const title = series ? `${series.data.title} / ${post.data.title}` : post.data.t
       )}
       {seriesNext && (
         <div class="col-start-2 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-right text-neutral-500">
-          <div class="text-sm mb-0.5">Next in <Link href={`/posts/series/${series.id}`}>series</Link></div>
-          <Link href={`/posts/${seriesNext.id}`} class="block mb-0.5">{seriesNext.data.title}</Link>
+          <div class="text-sm mb-0.5">Next in <a href={`/posts/series/${series.id}`}>series</a></div>
+          <a href={`/posts/${seriesNext.id}`} class="block mb-0.5">{seriesNext.data.title}</a>
           <div class="text-sm">
             <span>{format(seriesNext.data.created, "PP")}</span>
           </div>
@@ -63,7 +62,7 @@ const title = series ? `${series.data.title} / ${post.data.title}` : post.data.t
     {series && posts && (
       <Section>
         <div slot="title" class="flex justify-between">
-          <span>Series: <Link href={`/posts/series/${series.id}`}>{series.data.title}</Link></span>
+          <span>Series: <a href={`/posts/series/${series.id}`}>{series.data.title}</a></span>
           <span>Oldest first</span>
         </div>
         <PostList posts={posts} current={post.id} showSeries={false} />

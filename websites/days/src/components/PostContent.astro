@@ -3,7 +3,6 @@ import { render } from "astro:content"
 import { format } from "date-fns"
 
 import PageTitle from "@zlliang/theme/components/PageTitle.astro"
-import Link from "@zlliang/theme/components/Link.astro"
 
 import { getSeriesById } from "@/utils/content"
 
@@ -26,7 +25,7 @@ const { Content } = await render(post)
       <span>{format(post.data.created, "yyyy 年 M 月 d 日")}</span>
       {post.data.pinned && <span class="icon-[lucide--pin]" />}
       {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">草稿</span>}
-      {series && <span class="ml-1">连载于系列：<Link href={`/posts/series/${series.id}`}>{series.data.title}</Link></span>}
+      {series && <span class="ml-1">连载于系列：<a href={`/posts/series/${series.id}`}>{series.data.title}</a></span>}
     </div>
   </PageTitle>
 
