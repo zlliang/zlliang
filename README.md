@@ -10,6 +10,6 @@ Here are my personal websites:
 
 | Website | URL | Description |
 |---------|-----|-------------|
-| **www** | [zlliang.me](https://zlliang.me) | Personal landing page |
-| **tech** | [tech.zlliang.me](https://tech.zlliang.me) | My tech exploration journal (English) |
-| **days** | [days.zlliang.me](https://days.zlliang.me) | My life reflection journal (Chinese) |
+| Personal landing page | [https://zlliang.me](https://zlliang.me) | Brief introduction and navigation |
+| Zilong's Tech Notes | [https://tech.zlliang.me](https://tech.zlliang.me) | My tech exploration journal (English) |
+| Zilong's Days | [https://days.zlliang.me](https://days.zlliang.me) | My life reflection journal (Chinese) |
