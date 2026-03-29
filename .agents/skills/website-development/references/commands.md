@@ -7,8 +7,8 @@ Run commands from the repository root.
 - `pnpm dev`: start the default local development workflow from the workspace root
 - `pnpm build`: build the whole workspace and catch cross-package or cross-site regressions
 - Root site scripts use the `task:site` pattern
-- `pnpm dev:www`: run the `www` site locally
-- `pnpm build:www`: build the `www` site for production validation
+- `pnpm dev:home`: run the `home` site locally
+- `pnpm build:home`: build the `home` site for production validation
 - `pnpm dev:tech`: run the `tech` site locally
 - `pnpm build:tech`: build the `tech` site for production validation
 - `pnpm dev:days`: run the `days` site locally

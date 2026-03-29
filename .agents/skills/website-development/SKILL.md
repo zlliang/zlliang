@@ -1,6 +1,6 @@
 ---
 name: website-development
-description: Develop and maintain the Astro-based websites in this monorepo. Use when building features, fixing bugs, refactoring code, running dev or build checks, or working on shared packages or any of the `www`, `tech`, or `days` websites.
+description: Develop and maintain the Astro-based websites in this monorepo. Use when building features, fixing bugs, refactoring code, running dev or build checks, or working on shared packages or any of the `home`, `tech`, or `days` websites.
 ---
 
 # Website Development

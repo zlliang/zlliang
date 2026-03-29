@@ -4,7 +4,7 @@ Use this file when ownership or shared boundaries matter.
 
 ## Top-level layout
 
-- `websites/www`: landing site with a `fragments` content collection
+- `websites/home`: landing site with a `fragments` content collection
 - `websites/tech`: English note and post site
 - `websites/days`: Chinese note and post site
 - `packages/journal`: CLI for the shared note and post workflow
