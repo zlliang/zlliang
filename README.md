@@ -8,8 +8,8 @@ Beyond code, I cherish life's simple pleasures: good food, cooking, reading, wri
 
 Here are my personal websites:
 
-| Website | URL | Description |
-|---------|-----|-------------|
+| Website | URL | Note |
+|---------|-----|------|
 | Personal landing page | [https://zlliang.me](https://zlliang.me) | Brief introduction and navigation |
-| Zilong's Tech Notes | [https://tech.zlliang.me](https://tech.zlliang.me) | My tech exploration journal (English) |
-| Zilong's Days | [https://days.zlliang.me](https://days.zlliang.me) | My life reflection journal (Chinese) |
+| Hack | [https://hack.zlliang.me](https://hack.zlliang.me) | In this ever-changing world of technology, trying to see things a little more clearly. |
+| Muse | [https://muse.zlliang.me](https://muse.zlliang.me) | Slowly writing down small things, passing thoughts, and the ones that linger a little longer. |

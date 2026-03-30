@@ -5,15 +5,15 @@ Use this file when ownership or shared boundaries matter.
 ## Top-level layout
 
 - `websites/home`: landing site with a `fragments` content collection
-- `websites/tech`: English note and post site
-- `websites/days`: Chinese note and post site
+- `websites/hack`: English note and post site
+- `websites/muse`: Chinese note and post site
 - `packages/journal`: CLI for the shared note and post workflow
 - `packages/rehype`: shared Markdown and rehype plugins
 - `packages/theme`: shared CSS, utilities, and Astro components
 
 ## Shared rules
 
-- `tech` and `days` share the same content model and note types
+- `hack` and `muse` share the same content model and note types
 - Each site owns its own `src/content.config.ts`
 - Use `@/*` for within-site `src/*` imports
 - Keep Astro components in PascalCase

@@ -5,9 +5,9 @@ This repository contains Zilong's personal websites, shared packages, and a smal
 ## What lives here
 
 - `websites/home`: bilingual landing site for `zlliang.me`
-- `websites/tech`: English site for technical notes and posts
-- `websites/days`: Chinese site for daily-life notes and posts
-- `packages/journal`: CLI for note and post workflow based on the shared content structure used by `tech` and `days`
+- `websites/hack`: English site for technical notes and posts
+- `websites/muse`: Chinese site for daily-life notes and posts
+- `packages/journal`: CLI for note and post workflow based on the shared content structure used by `hack` and `muse`
 - `packages/rehype`: shared rehype plugins
 - `packages/theme`: shared styles, utilities, and Astro components
 
@@ -17,7 +17,7 @@ All websites are built with [Astro](https://astro.build/) and are deployed on [V
 
 - `home` uses one collection:
   - `content/fragments/*.md` for reusable localized fragments
-- `tech` and `days` share the same note/post model:
+- `hack` and `muse` share the same note/post model:
   - notes live under `content/notes/YYYY/MM/DD/slug.md`
   - post drafts live under `content/posts/drafts/slug.md`
   - published posts live under `content/posts/YYYY/MM/DD/slug.md`

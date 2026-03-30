@@ -5,16 +5,16 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "dev": "pnpm -r --parallel --filter @zlliang/home --filter @zlliang/tech --filter @zlliang/days dev",
-    "build": "pnpm -r --filter @zlliang/home --filter @zlliang/tech --filter @zlliang/days build",
+    "dev": "pnpm -r --parallel --filter @zlliang/home --filter @zlliang/hack --filter @zlliang/muse dev",
+    "build": "pnpm -r --filter @zlliang/home --filter @zlliang/hack --filter @zlliang/muse build",
     "dev:home": "pnpm --filter @zlliang/home dev",
     "build:home": "pnpm --filter @zlliang/home build",
-    "dev:tech": "pnpm --filter @zlliang/tech dev",
-    "build:tech": "pnpm --filter @zlliang/tech build",
-    "journal:tech": "pnpm --dir websites/tech journal",
-    "dev:days": "pnpm --filter @zlliang/days dev",
-    "build:days": "pnpm --filter @zlliang/days build",
-    "journal:days": "pnpm --dir websites/days journal"
+    "dev:hack": "pnpm --filter @zlliang/hack dev",
+    "build:hack": "pnpm --filter @zlliang/hack build",
+    "journal:hack": "pnpm --dir websites/hack journal",
+    "dev:muse": "pnpm --filter @zlliang/muse dev",
+    "build:muse": "pnpm --filter @zlliang/muse build",
+    "journal:muse": "pnpm --dir websites/muse journal"
   },
   "lint-staged": {
     "*.{jpg,jpeg,png,webp,avif}": "pnpm exec journal optimize-image"

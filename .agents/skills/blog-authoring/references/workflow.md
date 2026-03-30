@@ -5,7 +5,7 @@ Use this file for the repo-specific sequence. Detailed frontmatter rules live in
 ## Default sequence
 
 1. Identify the target site and entry type; for notes, choose the note type by what the draft is trying to do
-2. Create or ship content with `journal` when the built-in workflow fits; use `pnpm journal:<tech|days> --help` from the root, or `pnpm journal --help` inside `websites/tech` or `websites/days`, for the exact commands
+2. Create or ship content with `journal` when the built-in workflow fits; use `pnpm journal:<hack|muse> --help` from the root, or `pnpm journal --help` inside `websites/hack` or `websites/muse`, for the exact commands
 3. The author writes the draft
 4. Review the draft for structure, schema, formatting, and publishing readiness
 5. If the draft is in English, load `english-review` for prose quality, tone, and voice
@@ -32,6 +32,6 @@ Use this file for the repo-specific sequence. Detailed frontmatter rules live in
 
 ## Optional bilingual loop
 
-For English-writing practice, especially on `tech`, the author may also use the optional loop in [bilingual-writing-workflow.md](./bilingual-writing-workflow.md).
+For English-writing practice, especially on `hack`, the author may also use the optional loop in [bilingual-writing-workflow.md](./bilingual-writing-workflow.md).
 
 This loop is not part of the normal publishing sequence. Use it when the goal includes training English thinking, comparing drafts, or collecting reusable expressions.

@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets"
+
+import Section from "@zlliang/theme/components/Section.astro"
+import PostList from "@/components/PostList.astro"
+import SearchForm from "@/components/SearchForm.astro"
+import Heatmap from "@/components/Heatmap.astro"
+
+import { getNotes, getPosts, getPinnedPosts, getSeries } from "@/utils/content"
+import { types } from "@/utils/types"
+
+import { cn } from "@zlliang/theme"
+
+import logoHack from "@/assets/images/logo-hack.png"
+
+interface Props {
+  showSearch?: boolean
+  showRecentPosts?: boolean
+  class?: string
+}
+
+const { showSearch = true, showRecentPosts = true, class: className } = Astro.props
+const notes = await getNotes()
+const posts = await getPosts()
+const pinnedPosts = await getPinnedPosts()
+const recentPosts = posts.slice(0, 10)
+const series = await getSeries()
+---
+
+<aside class={cn("space-y-6", className)}>
+  {showSearch && <SearchForm class="hidden lg:flex mb-6" />}
+
+  {/* Prefix */}
+  <slot name="prefix" />
+
+  {/* Explore */}
+  <Section title="探索">
+    <div class="flex justify-between items-center mb-1">
+      <a href="/notes"><span class="icon-[lucide--notebook-pen]" /> 手记</a>
+      <span class="text-sm text-neutral-500">
+        <span>{notes.length} 则</span><span class="icon-[lucide--dot]" /><a href="/notes/types">{types.length} 个分类</a>
+      </span>
+    </div>
+    <div class="flex justify-between items-center">
+      <a href="/posts"><span class="icon-[lucide--book-open-text]" /> 文章</a>
+      <span class="text-sm text-neutral-500">
+        <span>{posts.length} 篇</span><span class="icon-[lucide--dot]" /><a href="/posts/series">{series.length} 个系列</a>
+      </span>
+    </div>
+    <Heatmap />
+  </Section>
+
+  {/* Pinned posts */}
+  {pinnedPosts.length > 0 && (
+    <Section title="置顶文章">
+      <PostList posts={pinnedPosts} showMeta={false} />
+    </Section>
+  )}
+
+  {/* Recent posts */}
+  {showRecentPosts && recentPosts.length > 0 && (
+    <Section title="近期文章">
+      <PostList posts={recentPosts} />
+    </Section>
+  )}
+
+  {/* Other websites */}
+  <Section title="我的另一面">
+    <a href="https://hack.zlliang.me" class="secondary group flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-hack-400 dark:hover:border-hack-600 hover:bg-hack-50 dark:hover:bg-hack-950 hover:text-hack-500!">
+      <Image src={logoHack} alt="hack.zlliang.me 的图标" class="size-8" loading="eager" />
+      <div class="flex-1">
+        <div class="font-bold">技术手记</div>
+        <div class="text-sm text-neutral-500 group-hover:text-hack-400 dark:group-hover:text-hack-600">hack.zlliang.me</div>
+        <div class="mt-2 text-sm">在这个每天都在变的技术世界里，看得更清楚一点。</div>
+      </div>
+    </a>
+  </Section>
+
+  {/* Suffix */}
+  <slot name="suffix" />
+</aside>

@@ -93,7 +93,7 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2
 
-  websites/days:
+  websites/muse:
     dependencies:
       '@vercel/analytics':
         specifier: ^2.0.1
@@ -197,7 +197,7 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2
 
-  websites/tech:
+  websites/hack:
     dependencies:
       '@vercel/analytics':
         specifier: ^2.0.1

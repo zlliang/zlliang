@@ -1,11 +1,11 @@
 ---
 name: blog-authoring
-description: Create, draft, edit, review, and publish notes and posts for the `tech` and `days` websites. Use when working on blog content structure, frontmatter, publishing workflow, bilingual content conventions, or repo-specific writing and review tasks for these sites.
+description: Create, draft, edit, review, and publish notes and posts for the `hack` and `muse` websites. Use when working on blog content structure, frontmatter, publishing workflow, bilingual content conventions, or repo-specific writing and review tasks for these sites.
 ---
 
 # Blog Authoring
 
-Use this skill for content work on `tech` and `days`. It is the repo-specific coordination layer for note and post workflow.
+Use this skill for content work on `hack` and `muse`. It is the repo-specific coordination layer for note and post workflow.
 
 ## When to use
 

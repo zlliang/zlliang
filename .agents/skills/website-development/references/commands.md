@@ -9,17 +9,17 @@ Run commands from the repository root.
 - Root site scripts use the `task:site` pattern
 - `pnpm dev:home`: run the `home` site locally
 - `pnpm build:home`: build the `home` site for production validation
-- `pnpm dev:tech`: run the `tech` site locally
-- `pnpm build:tech`: build the `tech` site for production validation
-- `pnpm dev:days`: run the `days` site locally
-- `pnpm build:days`: build the `days` site for production validation
+- `pnpm dev:hack`: run the `hack` site locally
+- `pnpm build:hack`: build the `hack` site for production validation
+- `pnpm dev:muse`: run the `muse` site locally
+- `pnpm build:muse`: build the `muse` site for production validation
 
 ## Content workflow
 
-- `pnpm journal:tech <command> [...]`: run the `journal` CLI against the `tech` site from the root
-- `pnpm journal:days <command> [...]`: run the `journal` CLI against the `days` site from the root
-- Use `pnpm journal:tech ...` or `pnpm journal:days ...` from the root, or `pnpm journal ...` inside `websites/tech` or `websites/days`
-- `journal` assumes the shared `content/notes` and `content/posts` layout; use `pnpm journal:tech --help`, `pnpm journal:days --help`, or `pnpm journal --help` for the command surface and examples
+- `pnpm journal:hack <command> [...]`: run the `journal` CLI against the `hack` site from the root
+- `pnpm journal:muse <command> [...]`: run the `journal` CLI against the `muse` site from the root
+- Use `pnpm journal:hack ...` or `pnpm journal:muse ...` from the root, or `pnpm journal ...` inside `websites/hack` or `websites/muse`
+- `journal` assumes the shared `content/notes` and `content/posts` layout; use `pnpm journal:hack --help`, `pnpm journal:muse --help`, or `pnpm journal --help` for the command surface and examples
 
 ## Shared imports
 
