@@ -19,11 +19,15 @@
     "tailwind-merge": "^3.5.0"
   },
   "peerDependencies": {
+    "@iconify-json/lucide": "^1.2.100",
+    "@iconify-json/simple-icons": "^1.2.75",
     "@iconify/tailwind4": "^1.2.3",
     "astro": "^6.0.4",
     "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "^1.2.100",
+    "@iconify-json/simple-icons": "^1.2.75",
     "@iconify/tailwind4": "^1.2.3",
     "astro": "^6.1.1",
     "tailwindcss": "^4.2.2",
