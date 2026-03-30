@@ -5,7 +5,7 @@ Use this file for the repo-specific sequence. Detailed frontmatter rules live in
 ## Default sequence
 
 1. Identify the target site and entry type; for notes, choose the note type by what the draft is trying to do
-2. Create or ship content with `journal` when the built-in workflow fits; use `pnpm journal:<hack|muse> --help` from the root, or `pnpm journal --help` inside `websites/hack` or `websites/muse`, for the exact commands
+2. Create or ship content with `journal` when the built-in workflow fits; use `pnpm journal:<hack|muse> --help` from the root, or `pnpm exec journal --help`, and pass `--dir` when you need to target a site explicitly
 3. The author writes the draft
 4. Review the draft for structure, schema, formatting, and publishing readiness
 5. If the draft is in English, load `english-review` for prose quality, tone, and voice
