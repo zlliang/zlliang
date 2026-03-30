@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "cac": "^7.0.0",
-    "globby": "^16.1.1",
+    "globby": "^16.2.0",
     "pretty-bytes": "^7.1.0",
     "sharp": "^0.34.5",
     "tsx": "^4.21.0",
