@@ -12,8 +12,9 @@ function getDefaultCacheControl(status: number) {
 
 /** Add a default cache policy unless the page has already set one. */
 export const cache = defineMiddleware(async (_, next) => {
-  const response = await next()
+  if (import.meta.env.DEV) return next()
 
+  const response = await next()
   if (!response.headers.has("Cache-Control")) {
     response.headers.set("Cache-Control", getDefaultCacheControl(response.status))
   }
