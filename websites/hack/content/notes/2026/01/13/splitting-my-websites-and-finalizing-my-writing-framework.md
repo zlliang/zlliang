@@ -8,16 +8,16 @@ type: post
 
 Last weekend, I reorganized my personal websites. Here's the new structure:
 
-| Website | URL | Note |
-|---------|-----|------|
-| Homepage | [https://zlliang.me](https://zlliang.me) | Brief introduction and navigation |
-| Zilong's Tech Notes | [https://hack.zlliang.me](https://hack.zlliang.me) | English technical journal; now called **Hack** |
-| Zilong's Days | [https://muse.zlliang.me](https://muse.zlliang.me) | Chinese personal journal; now called **Muse** |
+| Website | URL | Description |
+|---------|-----|-------------|
+| Personal landing page | [https://zlliang.me](https://zlliang.me) | Brief introduction and navigation |
+| Zilong's Tech Notes | [https://tech.zlliang.me](https://tech.zlliang.me) | My tech exploration journal (English) |
+| Zilong's Days | [https://days.zlliang.me](https://days.zlliang.me) | My life reflection journal (Chinese) |
 
 In this post, I explain my motivation for splitting the sites. After this change, I'm ready to mark version 1.0 of my writing framework. The permalinks will be stable, and I'm excited to share more technical and personal topics in these spaces.
 
 <div class="update-note">
 
-**Update Mar 30, 2026:** This entry reflects Jan 2026, when the two journals were still called **Zilong's Tech Notes** and **Zilong's Days**. They are now **Hack** at [hack.zlliang.me](https://hack.zlliang.me) and **Muse** at [muse.zlliang.me](https://muse.zlliang.me). I keep the original names above because they belong to that moment, but links in this entry point to the current sites. I wrote a note about the rename: [Renamed the two journal websites to Hack and Muse](/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse).
+**Update Mar 30, 2026:** In late March, I renamed my two journal websites. **Zilong's Tech Notes** became **Hack** at [hack.zlliang.me](https://hack.zlliang.me), and **Zilong's Days** became **Muse** at [muse.zlliang.me](https://muse.zlliang.me). The previous domains now redirect to the new ones. I wrote a note about this branding change: [Renamed the two journal websites to Hack and Muse](/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse).
 
 </div>

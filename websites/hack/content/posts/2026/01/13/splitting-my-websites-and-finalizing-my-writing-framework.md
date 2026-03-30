@@ -8,11 +8,11 @@ After starting my blog from scratch at the end of 2025, and writing for a few we
 
 In short, my personal websites are now organized into three parts:
 
-| Website | URL | Note |
-|---------|-----|------|
-| Homepage | [https://zlliang.me](https://zlliang.me) | Brief introduction and navigation |
-| Zilong's Tech Notes | [https://hack.zlliang.me](https://hack.zlliang.me) | English technical journal; now called **Hack** |
-| Zilong's Days | [https://muse.zlliang.me](https://muse.zlliang.me) | Chinese personal journal; now called **Muse** |
+| Website | URL | Description |
+|---------|-----|-------------|
+| Personal landing page | [https://zlliang.me](https://zlliang.me) | Brief introduction and navigation |
+| Zilong's Tech Notes | [https://tech.zlliang.me](https://tech.zlliang.me) | My tech exploration journal (English) |
+| Zilong's Days | [https://days.zlliang.me](https://days.zlliang.me) | My life reflection journal (Chinese) |
 
 ## A week's journey
 
@@ -31,7 +31,7 @@ That's how I arrived at the current setup.
 
 ## Finalizing my writing framework
 
-As a result, I split my writing into two spaces: Zilong's Tech Notes and Zilong's Days. There's also a personal landing page, https://zlliang.me, with a brief introduction that navigates readers to either space. My hope is that every reader (just me for now) can find all my work on the landing page and choose to follow either side of me.
+As a result, I split my writing into two spaces: https://tech.zlliang.me and https://days.zlliang.me. There's also a personal landing page, https://zlliang.me, with a brief introduction that navigates readers to either space. My hope is that every reader (just me for now) can find all my work on the landing page and choose to follow either side of me.
 
 ![My landing page, https://zlliang.me](./images/screenshot-landing-page.png)
 
@@ -39,9 +39,9 @@ I simply duplicated the original blog's codebase and changed the theme slightly 
 
 <div class="image-grid">
 
-![Zilong's Tech Notes](./images/screenshot-tech.png)
+![Zilong's Tech Notes, https://tech.zlliang.me](./images/screenshot-tech.png)
 
-![Zilong's Days](./images/screenshot-days.png)
+![Zilong's Days, https://days.zlliang.me](./images/screenshot-days.png)
 
 </div>
 
@@ -65,12 +65,12 @@ Again, it's time to write, write, and write.
 
 <div class="update-note">
 
-**Update Mar 13, 2026:** I reverted the note number prefixes on both sites. Notes are now shown as `#123` again instead of `#tech123` and `#days123`. I wrote a note about the change: [Removed the prefixes from note numbers](/notes/2026/03/13/removed-the-prefixes-from-note-numbers).
+**Update Mar 13, 2026:** I reverted the note number prefixes on both `tech` and `days`. Notes are now shown as `#123` again instead of `#tech123` and `#days123`. I wrote a note about the change: [Removed the prefixes from note numbers](/notes/2026/03/13/removed-the-prefixes-from-note-numbers).
 
 **Update Mar 18, 2026:** I removed note tags from both sites for now, simplified the sidebar, and improved the `/notes/types` page with a richer card-based layout. I wrote a note about the change: [Removed tags and refreshed note navigation](/notes/2026/03/18/removed-tags-and-refreshed-note-navigation).
 
-**Update Mar 26, 2026:** Refreshed the site descriptions for both journals.
+**Update Mar 26, 2026:** Refreshed the site descriptions to "My tech exploration journal" and "My life reflection journal."
 
-**Update Mar 30, 2026:** This entry reflects Jan 2026, when the two journals were still called **Zilong's Tech Notes** and **Zilong's Days**. They are now **Hack** at [hack.zlliang.me](https://hack.zlliang.me) and **Muse** at [muse.zlliang.me](https://muse.zlliang.me). I keep the original names above because they belong to that moment, but links in this entry point to the current sites. I wrote a note about the rename: [Renamed the two journal websites to Hack and Muse](/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse).
+**Update Mar 30, 2026:** In late March, I renamed my two journal websites. **Zilong's Tech Notes** became **Hack** at [hack.zlliang.me](https://hack.zlliang.me), and **Zilong's Days** became **Muse** at [muse.zlliang.me](https://muse.zlliang.me). The previous domains now redirect to the new ones. I wrote a note about this branding change: [Renamed the two journal websites to Hack and Muse](/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse).
 
 </div>

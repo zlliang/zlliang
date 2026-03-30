@@ -5,7 +5,7 @@ created: 2026-03-16
 type: regular
 ---
 
-I just added a search page for notes on both https://hack.zlliang.me and https://muse.zlliang.me. There is now a search button in the header, plus a small search form in the sidebar on larger screens and on the home page on mobile. The search indexes note titles and bodies, and for post notes it also includes the full content of the related post. The implementation uses [MiniSearch](https://github.com/lucaong/minisearch).
+I just added a search page for notes on both https://tech.zlliang.me and https://days.zlliang.me. There is now a search button in the header, plus a small search form in the sidebar on larger screens and on the home page on mobile. The search indexes note titles and bodies, and for post notes it also includes the full content of the related post. The implementation uses [MiniSearch](https://github.com/lucaong/minisearch).
 
 ![Enjoy the search feature!](./images/search.png)
 

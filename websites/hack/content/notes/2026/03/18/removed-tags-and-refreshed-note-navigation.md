@@ -5,7 +5,7 @@ created: 2026-03-18
 type: regular
 ---
 
-I just removed note tags from both https://hack.zlliang.me and https://muse.zlliang.me.
+I just removed note tags from both https://tech.zlliang.me and https://days.zlliang.me.
 
 While writing notes, I kept thinking about how tags should be organized. Sometimes I would spend quite a while deciding which tags to use, and that gradually turned them into a writing burden instead of a helpful tool. I found that tags are simply hard to plan well and maintain over the long term. On top of that, after [adding search to notes](/notes/2026/03/16/added-search-to-notes-and-reworked-pagination) a few days ago, part of the original value of tags was already covered. I would rather leave tags out for now and add them back only after I find a better way to organize notes.
 

@@ -5,7 +5,7 @@ created: 2026-03-19
 type: regular
 ---
 
-I just finished a fairly big notes-navigation refresh for both https://hack.zlliang.me and https://muse.zlliang.me. Archive pages by year, month, and day are now fully in place, and the sidebar now has a "Writing journey" heatmap.
+I just finished a fairly big notes-navigation refresh for both https://tech.zlliang.me and https://days.zlliang.me. Archive pages by year, month, and day are now fully in place, and the sidebar now has a "Writing journey" heatmap.
 
 This makes the notes feel much easier to browse as a body of work instead of a flat reverse-chronological list. For example, visit [/notes/2026](/notes/2026) for notes in 2026, [/notes/2026/03](/notes/2026/03) for notes in March 2026, and [/notes/2026/03/19](/notes/2026/03/19) for notes on Mar 19, 2026. Each cell in the heatmap takes you to the archive page for that specific day.
 

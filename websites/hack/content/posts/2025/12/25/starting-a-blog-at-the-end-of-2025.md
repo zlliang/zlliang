@@ -24,7 +24,7 @@ Here are two previous attempts (I'm not good at keeping records. I asked my codi
 
 </div>
 
-I value these previous attempts. There is no success without failure. Now it's another attempt, a serious one (although I say that every time). I'm excited to see what I can do with this blog, on https://hack.zlliang.me.
+I value these previous attempts. There is no success without failure. Now it's another attempt, a serious one (although I say that every time). I'm excited to see what I can do with this blog, on https://tech.zlliang.me.
 
 ## Writers who inspired me
 
@@ -176,9 +176,9 @@ Time to write, write, and write. Can I accumulate thousands of notes in a decade
 
 **Update Dec 28, 2025:** I added descriptions for the "quote" type of notes.
 
-**Update Jan 11, 2026:** I split this into separate websites for technical and personal writing. The technical journal now lives at https://hack.zlliang.me. I revised this post accordingly, and wrote about the change: [Splitting My Websites and Finalizing My Writing Framework](/posts/2026/01/13/splitting-my-websites-and-finalizing-my-writing-framework).
+**Update Jan 11, 2026:** I split this into separate websites for tech and personal writing. The tech blog now lives at https://tech.zlliang.me. I revised this post accordingly, and wrote about the change: [Splitting My Websites and Finalizing My Writing Framework](/posts/2026/01/13/splitting-my-websites-and-finalizing-my-writing-framework).
 
-**Update Mar 13, 2026:** I reworked the note tags across both sites, and renamed the note `category` field to `type` throughout them. I also wrote a note about it: [Reworked tags and renamed note categories to types](/notes/2026/03/13/reworked-tags-and-renamed-note-categories-to-types).
+**Update Mar 13, 2026:** I reworked the note tags across both `tech` and `days`, and renamed the note `category` field to `type` throughout the sites. I also wrote a note about it: [Reworked tags and renamed note categories to types](/notes/2026/03/13/reworked-tags-and-renamed-note-categories-to-types).
 
 **Update Mar 18, 2026:** I removed note tags after deciding they were adding more writing friction than value, especially now that note search exists. I also simplified the sidebar and refreshed the type index page. I wrote a short note about this cleanup: [Removed tags and refreshed note navigation](/notes/2026/03/18/removed-tags-and-refreshed-note-navigation).
 

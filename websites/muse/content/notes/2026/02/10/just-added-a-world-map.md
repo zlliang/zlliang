@@ -11,6 +11,6 @@ type: regular
 
 <div class="update-note">
 
-**2026 年 3 月 18 日更新：**我暂时把这个地图从主页上移除了。这个交互我自己还不够满意，还是先删繁就简；等以后有了更好的点子、把体验打磨到足够好，再考虑放回来。在技术笔记中，我写了一则简短说明：[Removed the world map from my landing page](https://hack.zlliang.me/notes/2026/03/18/removed-the-world-map-from-my-landing-page)。
+**2026 年 3 月 18 日更新：**我暂时把这个地图从主页上移除了。这个交互我自己还不够满意，还是先删繁就简；等以后有了更好的点子、把体验打磨到足够好，再考虑放回来。在技术笔记中，我写了一则简短说明：[Removed the world map from my landing page](https://tech.zlliang.me/notes/2026/03/18/removed-the-world-map-from-my-landing-page)。
 
 </div>
