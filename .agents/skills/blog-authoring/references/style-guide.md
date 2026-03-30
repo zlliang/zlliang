@@ -39,7 +39,6 @@ Use this file for repo-specific style decisions for notes and posts on `hack` an
 
 ## Update notes
 
-- Use update notes for later corrections, reversals, clarifications, or important follow-up context
 - Keep all updates for one entry inside a single `<div class="update-note">...</div>` block
 - Put the block near the end by default
 - Format each update as `**Update MMM D, YYYY:** ...` in English or `**YYYY 年 M 月 D 日更新：**...` in Chinese

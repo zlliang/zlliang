@@ -19,7 +19,6 @@ Use this file for the repo-specific sequence. Detailed frontmatter rules live in
 - Choose note types by intent: capture, respond, curate, share, or introduce a post
 - Use [note-types.md](./note-types.md) when you need the goal, mindset, or default shape of a note type
 - Keep the body aligned with the selected note `type`
-- If a published note later needs correction or qualification, append a single `<div class="update-note">...</div>` block near the end
 
 ## Posts
 
@@ -28,7 +27,11 @@ Use this file for the repo-specific sequence. Detailed frontmatter rules live in
 - `content/posts/drafts/images/` is moved to the published post's `images/` directory during shipping
 - Posts may optionally join a series with `series: <series-id>`
 - Use `pinned: true` only for long-lived reference posts
-- Add later corrections or follow-up context as update notes instead of scattering them through the body
+
+## Updating an existing published entry
+
+- Treat a published note or post as a historical snapshot. Edit the body in place only for typos, punctuation, grammar, obviously awkward phrasing, light wording, formatting, or links that do not change the original meaning, conclusions, or narrative structure
+- Put all later corrections, reversals, clarifications, and important follow-up context into an update note. Follow [style-guide.md](./style-guide.md) for the format
 
 ## Optional bilingual loop
 
