@@ -1,6 +1,6 @@
 ---
 import Section from "@zlliang/theme/components/Section.astro"
-import HackCard from "@zlliang/theme/components/HackCard.astro"
+import SiteCard from "@zlliang/theme/components/SiteCard.astro"
 import PostList from "@/components/PostList.astro"
 import SearchForm from "@/components/SearchForm.astro"
 import Heatmap from "@/components/Heatmap.astro"
@@ -63,7 +63,7 @@ const series = await getSeries()
 
   {/* Other websites */}
   <Section title="我的另一面">
-    <HackCard lang="zh" />
+    <SiteCard site="hack" lang="zh" />
   </Section>
 
   {/* Suffix */}
