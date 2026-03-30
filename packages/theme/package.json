@@ -6,6 +6,8 @@
   "exports": {
     ".": "./src/index.ts",
     "./main.css": "./src/main.css",
+    "./components/HackCard.astro": "./src/components/HackCard.astro",
+    "./components/MuseCard.astro": "./src/components/MuseCard.astro",
     "./components/Section.astro": "./src/components/Section.astro",
     "./components/Pagination.astro": "./src/components/Pagination.astro",
     "./components/PageTitle.astro": "./src/components/PageTitle.astro",

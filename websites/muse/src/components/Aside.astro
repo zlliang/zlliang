@@ -1,7 +1,6 @@
 ---
-import { Image } from "astro:assets"
-
 import Section from "@zlliang/theme/components/Section.astro"
+import HackCard from "@zlliang/theme/components/HackCard.astro"
 import PostList from "@/components/PostList.astro"
 import SearchForm from "@/components/SearchForm.astro"
 import Heatmap from "@/components/Heatmap.astro"
@@ -10,8 +9,6 @@ import { getNotes, getPosts, getPinnedPosts, getSeries } from "@/utils/content"
 import { types } from "@/utils/types"
 
 import { cn } from "@zlliang/theme"
-
-import logoHack from "@/assets/images/logo-hack.png"
 
 interface Props {
   showSearch?: boolean
@@ -66,14 +63,7 @@ const series = await getSeries()
 
   {/* Other websites */}
   <Section title="我的另一面">
-    <a href="https://hack.zlliang.me" class="secondary group flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-hack-400 dark:hover:border-hack-600 hover:bg-hack-50 dark:hover:bg-hack-950 hover:text-hack-500!">
-      <Image src={logoHack} alt="hack.zlliang.me 的图标" class="size-8" loading="eager" />
-      <div class="flex-1">
-        <div class="font-bold">技术手记</div>
-        <div class="text-sm text-neutral-500 group-hover:text-hack-400 dark:group-hover:text-hack-600">hack.zlliang.me</div>
-        <div class="mt-2 text-sm">在这个每天都在变的技术世界里，看得更清楚一点。</div>
-      </div>
-    </a>
+    <HackCard lang="zh" />
   </Section>
 
   {/* Suffix */}

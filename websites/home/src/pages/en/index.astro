@@ -1,13 +1,10 @@
 ---
-import { Image } from "astro:assets"
-
 import Section from "@zlliang/theme/components/Section.astro"
+import HackCard from "@zlliang/theme/components/HackCard.astro"
+import MuseCard from "@zlliang/theme/components/MuseCard.astro"
 import Layout from "@/components/Layout.astro"
 
 import { renderFragment } from "@/utils/content"
-
-import logoHack from "@/assets/images/logo-hack.png"
-import logoMuse from "@/assets/images/logo-muse.png"
 
 const Bio = await renderFragment("bio-en")
 ---
@@ -20,22 +17,8 @@ const Bio = await renderFragment("bio-en")
   {/* Writing */}
   <Section title="Writing">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <a href="https://hack.zlliang.me" class="secondary group flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-hack-400 dark:hover:border-hack-600 hover:bg-hack-50 dark:hover:bg-hack-950 hover:text-hack-500!">
-        <Image src={logoHack} alt="Logo of hack.zlliang.me" class="size-8" loading="eager" />
-        <div class="flex-1">
-          <div class="font-bold">Hack</div>
-          <div class="text-sm text-neutral-500 group-hover:text-hack-400 dark:group-hover:text-hack-600">hack.zlliang.me</div>
-          <div class="mt-2 text-sm">In this ever-changing world of technology, trying to see things a little more clearly.</div>
-        </div>
-      </a>
-      <a href="https://muse.zlliang.me" class="secondary group flex gap-4 p-4 border border-neutral-200 dark:border-neutral-800 hover:border-muse-400 dark:hover:border-muse-600 hover:bg-muse-50 dark:hover:bg-muse-950 hover:text-muse-500!">
-        <Image src={logoMuse} alt="Logo of muse.zlliang.me" class="size-8" loading="eager" />
-        <div class="flex-1">
-          <div class="font-bold">Muse</div>
-          <div class="text-sm text-neutral-500 group-hover:text-muse-400 dark:group-hover:text-muse-600">muse.zlliang.me</div>
-          <div class="mt-2 text-sm">Slowly writing down small things, passing thoughts, and the ones that linger a little longer.</div>
-        </div>
-      </a>
+      <HackCard lang="en" />
+      <MuseCard lang="en" />
     </div>
   </Section>
 </Layout>
