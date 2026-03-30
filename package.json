@@ -6,14 +6,14 @@
   "scripts": {
     "prepare": "husky",
     "dev": "pnpm -r --parallel --filter @zlliang/home --filter @zlliang/hack --filter @zlliang/muse dev",
-    "build": "pnpm -r --filter @zlliang/home --filter @zlliang/hack --filter @zlliang/muse build",
     "dev:home": "pnpm --filter @zlliang/home dev",
-    "build:home": "pnpm --filter @zlliang/home build",
     "dev:hack": "pnpm --filter @zlliang/hack dev",
-    "build:hack": "pnpm --filter @zlliang/hack build",
-    "journal:hack": "pnpm exec journal --dir websites/hack",
     "dev:muse": "pnpm --filter @zlliang/muse dev",
+    "build": "pnpm -r --reporter=append-only --filter @zlliang/home --filter @zlliang/hack --filter @zlliang/muse build",
+    "build:home": "pnpm --filter @zlliang/home build",
+    "build:hack": "pnpm --filter @zlliang/hack build",
     "build:muse": "pnpm --filter @zlliang/muse build",
+    "journal:hack": "pnpm exec journal --dir websites/hack",
     "journal:muse": "pnpm exec journal --dir websites/muse"
   },
   "lint-staged": {
