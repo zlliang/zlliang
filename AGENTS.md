@@ -6,7 +6,7 @@ This repository contains Zilong's personal websites, shared packages, and a smal
 
 - `websites/home`: bilingual landing site for `zlliang.me`
 - `websites/hack`: English site for technical notes and posts
-- `websites/muse`: Chinese site for daily-life notes and posts
+- `websites/muse`: Chinese site for musing notes and posts
 - `packages/journal`: CLI for note and post workflow based on the shared content structure used by `hack` and `muse`
 - `packages/rehype`: shared rehype plugins
 - `packages/theme`: shared styles, utilities, and Astro components
