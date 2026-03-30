@@ -8,6 +8,11 @@ Beyond code, I cherish life's simple pleasures: good food, cooking, reading, wri
 
 Here are my personal websites:
 
-- **Homepage**: [https://zlliang.me](https://zlliang.me). _An introduction to who I am, what I care about, and where to explore next across my websites._
-- **Hack**, a technical journal: [https://hack.zlliang.me](https://hack.zlliang.me). _In this ever-changing world of technology, trying to see things a little more clearly._
-- **Muse**, a personal journal: [https://muse.zlliang.me](https://muse.zlliang.me). _Slowly writing down small things, passing thoughts, and the ones that linger a little longer._
+**Homepage**: [https://zlliang.me](https://zlliang.me).
+> _An introduction to who I am, what I care about, and where to explore next across my websites._
+
+**Hack**, a technical journal: [https://hack.zlliang.me](https://hack.zlliang.me).
+> _In this ever-changing world of technology, trying to see things a little more clearly._
+
+**Muse**, a personal journal: [https://muse.zlliang.me](https://muse.zlliang.me).
+> _Slowly writing down small things, passing thoughts, and the ones that linger a little longer._
