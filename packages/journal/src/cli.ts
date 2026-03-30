@@ -7,7 +7,11 @@ import { registerOptimizeImageCommand } from "./commands/optimize-image"
 
 const cli = cac("journal")
 
-cli.help().version(packageJson.version)
+cli
+  .usage("[options] <command>")
+  .option("--dir <dir>", "Path to a journal site root or a child directory inside it")
+  .help()
+  .version(packageJson.version)
 
 registerNewCommand(cli)
 registerShipCommand(cli)

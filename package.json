@@ -11,10 +11,10 @@
     "build:home": "pnpm --filter @zlliang/home build",
     "dev:hack": "pnpm --filter @zlliang/hack dev",
     "build:hack": "pnpm --filter @zlliang/hack build",
-    "journal:hack": "pnpm --dir websites/hack journal",
+    "journal:hack": "pnpm exec journal --dir websites/hack",
     "dev:muse": "pnpm --filter @zlliang/muse dev",
     "build:muse": "pnpm --filter @zlliang/muse build",
-    "journal:muse": "pnpm --dir websites/muse journal"
+    "journal:muse": "pnpm exec journal --dir websites/muse"
   },
   "lint-staged": {
     "*.{jpg,jpeg,png,webp,avif}": "pnpm exec journal optimize-image"

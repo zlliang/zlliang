@@ -1,7 +1,7 @@
 import path from "node:path"
 
 import { JournalError } from "./errors"
-import { pathExists } from "./files"
+import { ensurePathExists, pathExists } from "./files"
 
 export interface JournalContext {
   siteRoot: string
@@ -12,8 +12,11 @@ export interface JournalContext {
   draftsImagesRoot: string
 }
 
-export async function resolveJournalContext(cwd = process.cwd()): Promise<JournalContext> {
-  const siteRoot = await findJournalRoot(cwd)
+export async function resolveJournalContext(startPath = process.cwd()): Promise<JournalContext> {
+  const resolvedPath = path.resolve(startPath)
+  await ensurePathExists(resolvedPath, startPath)
+
+  const siteRoot = await findJournalRoot(resolvedPath)
   const contentRoot = path.join(siteRoot, "content")
   const notesRoot = path.join(contentRoot, "notes")
   const postsRoot = path.join(contentRoot, "posts")
@@ -29,8 +32,8 @@ export async function resolveJournalContext(cwd = process.cwd()): Promise<Journa
   }
 }
 
-async function findJournalRoot(start = process.cwd()): Promise<string> {
-  let current = path.resolve(start)
+async function findJournalRoot(startPath: string): Promise<string> {
+  let current = startPath
 
   while (true) {
     if (await hasJournalStructure(current)) {
@@ -45,7 +48,7 @@ async function findJournalRoot(start = process.cwd()): Promise<string> {
     current = parent
   }
 
-  throw new JournalError("Could not find a journal content root from the current directory. Run the command from a website directory that contains `content/notes` and `content/posts`.")
+  throw new JournalError(`Could not find a journal content root from ${startPath}. Pass a path that contains \`content/notes\` and \`content/posts\`, or run the command from that directory.`)
 }
 
 async function hasJournalStructure(siteRoot: string): Promise<boolean> {

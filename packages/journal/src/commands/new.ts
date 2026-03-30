@@ -28,6 +28,7 @@ export interface PreparedNote extends PreparedEntry {
 }
 
 interface NewCommandOptions {
+  dir?: string
   type: string
 }
 
@@ -37,11 +38,12 @@ export function registerNewCommand(cli: CAC) {
     .option("--type <type>", `Note type when entry is \`note\` (${noteTypeSlugs.join(", ")})`, {
       default: "regular",
     })
+    .example("journal --dir websites/muse new note --type link \"A useful article\"")
     .example("journal new note --type link \"A useful article\"")
     .example("journal new post \"How I use AI agents\"")
     .action((entry: string, title: string[], options: NewCommandOptions) => {
       void handleCommand(async () => {
-        const context = await resolveJournalContext()
+        const context = await resolveJournalContext(options.dir)
 
         if (entry === "note") {
           const noteType = validateNoteType(options.type)

@@ -21,14 +21,19 @@ export interface ShippedDraft {
   movedImagesPath?: string
 }
 
+interface ShipCommandOptions {
+  dir?: string
+}
+
 export function registerShipCommand(cli: CAC) {
   cli
     .command("ship [draft]", "Publish a post draft and create the associated note")
+    .example("journal --dir websites/hack ship")
     .example("journal ship")
     .example("journal ship how-i-use-ai-agents")
-    .action((draft: string | undefined) => {
+    .action((draft: string | undefined, options: ShipCommandOptions) => {
       void handleCommand(async () => {
-        const context = await resolveJournalContext()
+        const context = await resolveJournalContext(options.dir)
         const shipped = await shipDraft(context, draft)
 
         process.stdout.write(`Shipped post: ${shipped.postPath}\n`)

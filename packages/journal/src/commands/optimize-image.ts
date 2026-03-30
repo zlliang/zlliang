@@ -6,6 +6,7 @@ import sharp from "sharp"
 
 import { handleCommand } from "../utils/command"
 import { JournalError } from "../utils/errors"
+import { ensurePathExists } from "../utils/files"
 
 import type { CAC } from "cac"
 import type { Sharp } from "sharp"
@@ -61,16 +62,22 @@ interface OptimizationStats {
   failed: string[]
 }
 
+interface OptimizeImageCommandOptions {
+  dir?: string
+}
+
 export function registerOptimizeImageCommand(cli: CAC) {
   cli
     .command("optimize-image [...targets]", "Optimize images under the given paths or the current directory")
     .example("journal optimize-image")
+    .example("journal --dir websites/muse optimize-image")
     .example("journal optimize-image content/posts")
+    .example("journal --dir websites/muse optimize-image content/posts")
     .example('journal optimize-image "content/posts/**/*.{jpg,png}"')
     .example("journal optimize-image image-1.png image-2.webp")
-    .action((targets: string[] = []) => {
+    .action((targets: string[] = [], options: OptimizeImageCommandOptions) => {
       void handleCommand(async () => {
-        const candidates = await collectCandidates(targets)
+        const candidates = await collectCandidates(targets, options.dir)
         if (candidates.length === 0) {
           process.stdout.write("No images to optimize.\n")
           return
@@ -85,11 +92,15 @@ export function registerOptimizeImageCommand(cli: CAC) {
     })
 }
 
-async function collectCandidates(targets: string[]): Promise<OptimizationCandidate[]> {
-  const patterns = await Promise.all((targets.length > 0 ? targets : [process.cwd()]).map(resolvePattern))
+async function collectCandidates(targets: string[], dir?: string): Promise<OptimizationCandidate[]> {
+  const baseDir = path.resolve(dir ?? process.cwd())
+  await ensurePathExists(baseDir, dir ?? process.cwd())
+
+  const patterns = await Promise.all((targets.length > 0 ? targets : [baseDir]).map((target) => resolvePattern(target, baseDir)))
   const extensions = CODECS.flatMap((codec) => codec.extensions.map((extension) => extension.slice(1)))
   const discovered = await globby(patterns, {
     absolute: true,
+    cwd: baseDir,
     expandDirectories: { extensions },
     followSymbolicLinks: false,
     gitignore: true,
@@ -104,18 +115,13 @@ async function collectCandidates(targets: string[]): Promise<OptimizationCandida
     .filter((candidate): candidate is OptimizationCandidate => candidate !== undefined)
 }
 
-async function resolvePattern(target: string): Promise<string> {
+async function resolvePattern(target: string, baseDir: string): Promise<string> {
   if (isDynamicPattern(target)) {
     return target
   }
 
-  const absolutePath = path.resolve(target)
-
-  try {
-    await fs.lstat(absolutePath)
-  } catch {
-    throw new JournalError(`Path not found: ${target}`)
-  }
+  const absolutePath = path.resolve(baseDir, target)
+  await ensurePathExists(absolutePath, target)
 
   return convertPathToPattern(absolutePath)
 }
