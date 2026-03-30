@@ -10,6 +10,6 @@ Here are my personal websites:
 
 | Website | URL | Note |
 |---------|-----|------|
-| Personal landing page | [https://zlliang.me](https://zlliang.me) | Brief introduction and navigation |
+| Homepage | [https://zlliang.me](https://zlliang.me) | Brief introduction and navigation |
 | Hack | [https://hack.zlliang.me](https://hack.zlliang.me) | In this ever-changing world of technology, trying to see things a little more clearly. |
 | Muse | [https://muse.zlliang.me](https://muse.zlliang.me) | Slowly writing down small things, passing thoughts, and the ones that linger a little longer. |
