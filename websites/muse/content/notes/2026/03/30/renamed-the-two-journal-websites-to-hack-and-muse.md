@@ -5,7 +5,7 @@ created: 2026-03-30
 type: regular
 ---
 
-周末，我花了些时间重新思考了一下两个网站的定位和目标，并最终做了一波重命名：原先的**生活手记**现在叫做**随想手记**，域名改为了 [https://muse.zlliang.me](https://muse.zlliang.me)；原先的 **Tech Notes** 现在叫做 **Hack**，域名改为了 [https://hack.zlliang.me](https://hack.zlliang.me)。重命名之后，我自信两个站点将会走的更久、更稳。更详细的描述，我记在了技术手记的一篇 note 里：[Renamed the two journal websites to Hack and Muse](https://hack.zlliang.me/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse)。
+周末，我花了些时间重新思考了一下两个网站的定位和目标，并最终做了一波重命名：原先的**生活手记**现在叫做**随想手记**，域名改为了 [https://muse.zlliang.me](https://muse.zlliang.me)；原先的**技术笔记**现在叫做**技术手记**，域名改为了 [https://hack.zlliang.me](https://hack.zlliang.me)。重命名之后，我自信两个站点将会走的更久、更稳。详细的描述，我记在了技术手记的一篇 note 里：[Renamed the two journal websites to Hack and Muse](https://hack.zlliang.me/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse)。
 
 我开始在这两个网站上写作，也过去三个月了。感觉磕磕绊绊的，但也感觉在进步。随想手记中的[生活月刊](/posts/series/life-monthly)系列，我写下来感觉不错，想继续写；技术手记却大多数是一些链接收藏，其实还没能形成自己的思考路径，写作效果不佳。没关系，还在进步。
 
