@@ -13,13 +13,13 @@ const { lang = "en", class: className } = Astro.props
 const copy = {
   en: {
     title: "Hack",
-    description: "In this ever-changing world of technology, trying to see things a little more clearly.",
+    descriptionLines: ["In this ever-changing world of technology, trying to see things a little more clearly."],
     languageLabel: "English",
     logoAlt: "Logo of hack.zlliang.me",
   },
   zh: {
     title: "技术手记",
-    description: "在这个每天都在变的技术世界里，看得更清楚一点。",
+    descriptionLines: ["在这个每天都在变的技术世界里，", "看得更清楚一点。"],
     languageLabel: "英文",
     logoAlt: "hack.zlliang.me 的图标",
   },
@@ -29,7 +29,7 @@ const copy = {
 <SiteLinkCard
   href="https://hack.zlliang.me"
   title={copy.title}
-  description={copy.description}
+  descriptionLines={copy.descriptionLines}
   domain="hack.zlliang.me"
   languageLabel={copy.languageLabel}
   logo={logoHack}

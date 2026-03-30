@@ -8,7 +8,7 @@ import type { ImageMetadata } from "astro"
 interface Props {
   href: string
   title: string
-  description: string
+  descriptionLines: string[]
   domain: string
   languageLabel: string
   logo: ImageMetadata
@@ -20,7 +20,7 @@ interface Props {
 const {
   href,
   title,
-  description,
+  descriptionLines,
   domain,
   languageLabel,
   logo,
@@ -43,7 +43,7 @@ const secondaryClasses = {
 <a
   href={href}
   class={cn(
-    "secondary group flex gap-4 border border-neutral-200 p-4 dark:border-neutral-800",
+    "secondary group flex gap-4 px-4 py-3 border border-neutral-200 dark:border-neutral-800",
     accentClasses[accent],
     className,
   )}
@@ -55,6 +55,8 @@ const secondaryClasses = {
       <div class={cn("shrink-0 text-sm", secondaryClasses[accent])}>{languageLabel}</div>
     </div>
     <div class={cn("text-sm", secondaryClasses[accent])}>{domain}</div>
-    <div class="mt-2 text-sm">{description}</div>
+    <div class="mt-2 text-sm leading-6">
+      {descriptionLines.map((line) => <div>{line}</div>)}
+    </div>
   </div>
 </a>
