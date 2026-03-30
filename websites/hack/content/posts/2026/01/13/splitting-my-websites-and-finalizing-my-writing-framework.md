@@ -31,7 +31,7 @@ That's how I arrived at the current setup.
 
 ## Finalizing my writing framework
 
-As a result, I split my writing into two spaces: https://tech.zlliang.me and https://days.zlliang.me. There's also a personal landing page, https://zlliang.me, with a brief introduction that navigates readers to either space. My hope is that every reader (just me for now) can find all my work on the landing page and choose to follow either side of me.
+As a result, I split my writing into two spaces: [https://tech.zlliang.me](https://tech.zlliang.me) and [https://days.zlliang.me](https://days.zlliang.me). There's also a personal landing page, [https://zlliang.me](https://zlliang.me), with a brief introduction that navigates readers to either space. My hope is that every reader (just me for now) can find all my work on the landing page and choose to follow either side of me.
 
 ![My landing page, https://zlliang.me](./images/screenshot-landing-page.png)
 
@@ -71,6 +71,6 @@ Again, it's time to write, write, and write.
 
 **Update Mar 26, 2026:** Refreshed the site descriptions to "My tech exploration journal" and "My life reflection journal."
 
-**Update Mar 30, 2026:** In late March, I renamed my two journal websites. **Zilong's Tech Notes** became **Hack** at https://hack.zlliang.me, and **Zilong's Days** became **Muse** at https://muse.zlliang.me. The previous domains now redirect to the new ones. I wrote a note about this branding change: [Renamed the two journal websites to Hack and Muse](/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse).
+**Update Mar 30, 2026:** In late March, I renamed my two journal websites. **Zilong's Tech Notes** became **Hack** at [https://hack.zlliang.me](https://hack.zlliang.me), and **Zilong's Days** became **Muse** at [https://muse.zlliang.me](https://muse.zlliang.me). The previous domains now redirect to the new ones. I wrote a note about this branding change: [Renamed the two journal websites to Hack and Muse](/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse).
 
 </div>

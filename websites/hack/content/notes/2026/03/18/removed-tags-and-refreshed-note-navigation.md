@@ -5,7 +5,7 @@ created: 2026-03-18
 type: regular
 ---
 
-I just removed note tags from both https://tech.zlliang.me and https://days.zlliang.me.
+I just removed note tags from both [https://tech.zlliang.me](https://tech.zlliang.me) and [https://days.zlliang.me](https://days.zlliang.me).
 
 While writing notes, I kept thinking about how tags should be organized. Sometimes I would spend quite a while deciding which tags to use, and that gradually turned them into a writing burden instead of a helpful tool. I found that tags are simply hard to plan well and maintain over the long term. On top of that, after [adding search to notes](/notes/2026/03/16/added-search-to-notes-and-reworked-pagination) a few days ago, part of the original value of tags was already covered. I would rather leave tags out for now and add them back only after I find a better way to organize notes.
 
@@ -18,5 +18,7 @@ The main commit is [zlliang/zlliang@8381e33](https://github.com/zlliang/zlliang/
 <div class="update-note">
 
 **Update Mar 22, 2026:** Removing tags also removed their old URLs, so I later added middleware handling for those legacy routes. Old tag pages now return `410 Gone` while the other migrated note URLs keep working through redirects, which should make the cleanup clearer to search engines.
+
+**Update Mar 30, 2026:** In late March, I renamed my two journal websites. They are now Hack [https://hack.zlliang.me](https://hack.zlliang.me) and Muse [https://muse.zlliang.me](https://muse.zlliang.me). See: [Renamed the two journal websites to Hack and Muse](/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse).
 
 </div>

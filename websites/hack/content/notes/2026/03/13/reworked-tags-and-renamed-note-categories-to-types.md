@@ -5,7 +5,7 @@ created: 2026-03-13
 type: regular
 ---
 
-I just finished another round of cleanup on my https://tech.zlliang.me and https://days.zlliang.me websites. This time I reworked the note tags across both sites, aiming for a smaller and more durable taxonomy that better reflects long-term themes instead of one-off entities.
+I just finished another round of cleanup on my [https://tech.zlliang.me](https://tech.zlliang.me) and [https://days.zlliang.me](https://days.zlliang.me) websites. This time I reworked the note tags across both sites, aiming for a smaller and more durable taxonomy that better reflects long-term themes instead of one-off entities.
 
 At the same time, I renamed the note `category` field to `type` for both websites. The canonical page is now [/notes/types](/notes/types). This is a small breaking change, but I think the new naming is clearer.
 
@@ -14,5 +14,7 @@ Recently, I've started using [Codex](https://openai.com/codex) and [GPT-5.4](htt
 <div class="update-note">
 
 **Update Mar 22, 2026:** This introduced URL-level breaking changes, but I later added middleware-based redirects so old `/notes/categories/...` URLs continue to work. That should also help search engines consolidate signals more cleanly toward the new `/notes/types/...` routes.
+
+**Update Mar 30, 2026:** In late March, I renamed my two journal websites. They are now Hack [https://hack.zlliang.me](https://hack.zlliang.me) and Muse [https://muse.zlliang.me](https://muse.zlliang.me). See: [Renamed the two journal websites to Hack and Muse](/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse).
 
 </div>
