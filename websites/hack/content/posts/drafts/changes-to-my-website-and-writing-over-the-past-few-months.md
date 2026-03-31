@@ -31,3 +31,8 @@ draft: true
 - note topics，TBD
 
 讲述现状。Journal 的现状。
+
+## 写作经验总结成的原则
+
+- 更新原则
+- 不同 types 的目的
