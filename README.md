@@ -4,18 +4,4 @@ Hi! I'm **Zilong**, a software engineer at [Booking.com](https://booking.com/). 
 
 Beyond code, I cherish life's simple pleasures: good food, cooking, reading, writing, and traveling. I also sing tenor with the [Shanghai Rainbow Chamber Singers](https://en.wikipedia.org/wiki/Shanghai_Rainbow_Chamber_Singers).
 
-## Websites
-
-Here are my personal websites:
-
-**Homepage**: [https://zlliang.me](https://zlliang.me).
-
-> _An introduction to who I am, what I care about, and where to explore next across my websites._
-
-**Hack**, a technical journal: [https://hack.zlliang.me](https://hack.zlliang.me).
-
-> _In this ever-changing world of technology, trying to see things a little more clearly._
-
-**Muse**, a personal journal: [https://muse.zlliang.me](https://muse.zlliang.me).
-
-> _Slowly writing down small things, passing thoughts, and the ones that linger a little longer._
+Welcome to my personal website: [https://zlliang.me](https://zlliang.me).
