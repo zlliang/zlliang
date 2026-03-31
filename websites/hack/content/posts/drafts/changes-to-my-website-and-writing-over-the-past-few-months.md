@@ -36,3 +36,7 @@ draft: true
 
 - 更新原则
 - 不同 types 的目的
+
+## What to write
+
+- Open question: 是否要追随 trending 话题？Pros and cons - 最终通过 topics 形成自己对 trending 和 what I care about 的叙事。
