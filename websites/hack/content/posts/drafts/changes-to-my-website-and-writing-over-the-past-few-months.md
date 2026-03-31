@@ -29,3 +29,5 @@ draft: true
 - image workflow，#60
 - rebranding，#61
 - note topics，TBD
+
+讲述现状。Journal 的现状。
