@@ -14,3 +14,18 @@ draft: true
 - 我近期关注的内容，我的技术阅读与写作流
 - Muse 站点会承载哪些内容？两者有何关系，未来如何演进？
 - How I use AI-assisted writing?
+
+## 过去三个月的变化
+
+尤其是三月中下旬，是一个收拢期：
+
+- 为主页增加地图（主要是为了展示二月的旅行日志），又在三月去掉 #52
+- category -> type，#43
+- 去掉 tags，#43、#53
+- pinned posts，#45（虽然现在还没有 pinned posts）
+- search 和 pagination URL 的修改，#48
+- 日期 archive，#54
+- post series，#58
+- image workflow，#60
+- rebranding，#61
+- note topics，TBD
