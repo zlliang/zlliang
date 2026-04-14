@@ -18,12 +18,12 @@
   "devDependencies": {
     "@astrojs/vercel": "^10.0.4",
     "@iconify-json/lucide": "^1.2.102",
-    "@iconify-json/simple-icons": "^1.2.77",
+    "@iconify-json/simple-icons": "^1.2.78",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/vite": "^4.2.2",
     "@types/lodash-es": "^4.17.12",
     "@zlliang/rehype": "workspace:*",
-    "astro": "^6.1.5",
+    "astro": "^6.1.6",
     "remark-cjk-friendly": "^2.0.1",
     "tailwindcss": "^4.2.2",
     "typescript": "^6.0.2"

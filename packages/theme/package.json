@@ -26,9 +26,9 @@
   },
   "devDependencies": {
     "@iconify-json/lucide": "^1.2.102",
-    "@iconify-json/simple-icons": "^1.2.77",
+    "@iconify-json/simple-icons": "^1.2.78",
     "@iconify/tailwind4": "^1.2.3",
-    "astro": "^6.1.5",
+    "astro": "^6.1.6",
     "tailwindcss": "^4.2.2",
     "typescript": "^6.0.2"
   }
