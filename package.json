@@ -23,6 +23,6 @@
     "@zlliang/journal": "workspace:*",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.3"
   }
 }
