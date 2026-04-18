@@ -15,9 +15,9 @@ This is another paragraph. Putting two paragraphs together shows whether the par
 
 ### Third level heading
 
-In this section I plan to test some common tools. For example, here's a C code snippet:
+In this section I plan to test some common tools. For example, here's a C code snippet, with a file title:
 
-```c
+```c:hello-world.c
 #include <stdio.h>
 
 int main() {
@@ -28,10 +28,10 @@ int main() {
 
 Here's a table:
 
-|Header 1|Header 2|Header 3|
-|-|-|-|
-|Content 1-1|Content 1-2|Content 1-3|
-|Content 2-1|Content 2-2|Content 2-3|
+| Header 1 | Header 2 | Header 3 |
+|---|---|---|
+| Content 1-1 | Content 1-2 | Content 1-3 |
+| Content 2-1 | Content 2-2 | Content 2-3 |
 
 Here's a random image:
 
