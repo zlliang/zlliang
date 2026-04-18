@@ -3,6 +3,7 @@ import vercel from "@astrojs/vercel"
 import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
 import remarkCjkFriendly from "remark-cjk-friendly"
+import remarkCodeTitles from "remark-flexible-code-titles"
 
 import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeCodeCopy } from "@zlliang/rehype"
 
@@ -61,6 +62,7 @@ export default defineConfig({
     },
     remarkPlugins: [
       [remarkCjkFriendly, {}],
+      [remarkCodeTitles, {}],
     ],
     remarkRehype: {
       footnoteLabel: " ",

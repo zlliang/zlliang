@@ -1,0 +1,14 @@
+{
+  "Insert image grid": {
+    "scope": "markdown",
+    "prefix": "image-grid",
+    "body": [
+      "<div class=\"image-grid\">",
+      "",
+      "$0",
+      "",
+      "</div>"
+    ],
+    "description": "Insert an image grid container"
+  }
+}

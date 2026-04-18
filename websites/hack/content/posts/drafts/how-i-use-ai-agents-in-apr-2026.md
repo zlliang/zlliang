@@ -13,13 +13,73 @@ In this fast-changing agentic engineering world, I thought it's valuable to reco
 
 [Amp](https://ampcode.com/) is my primary coding agent for my persoanl use now. My profile here: [@zlliang](https://ampcode.com/@zlliang).
 
+<div class="image-grid">
+
+![Amp](./images/amp.png)
+
+![My Amp profile](./images/amp-profile.png)
+
+</div>
+
+Here are my Amp settings:
+
+```json:~/.config/amp/settings.json
+{
+  "amp.git.commit.coauthor.enabled": true,
+  "amp.git.commit.ampThread.enabled": false,
+  "amp.skills.path": "~/.agents/skills",
+  "amp.skills.disableClaudeCodeSkills": true
+}
+```
+
 ### Codex
 
 Codex is my secondary agent. I installed the standalone Codex app and use it in there mostly. I also installed the CLI, but barely use it. I use Codex through my ChatGPT Plus subscription.
 
+<div class="image-grid">
+
+![Codex app](./images/codex-app.png)
+
+![Codex TUI](./images/codex.png)
+
+</div>
+
 ### Claude Code
 
 I mainly use Claude Code on my work laptop, via my company's API gateway. On my personal laptop, I use it via Vercel AI Gateway.
+
+![Claude Code](./images/claude-code.png)
+
+From my short period of usage, I found several annoying things for Claude Code, like it silently installs the VS Code extension when I run it in the editor's integrate terminal; like it shows somehow different welcome screens, which I [took note on before](/notes/2026/04/15/the-is-demo-environment-variable-for-claude-code). Fortunately there are always relevant environment variables to control.
+
+Here are my Claude Code settings:
+
+```json:~/.claude/settings.json
+{
+  "env": {
+    "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": "1",
+    "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "1",
+    "IS_DEMO": "1"
+  },
+  "model": "opus[1m]",
+  "effortLevel": "high",
+  "skipDangerousModePermissionPrompt": true
+}
+```
+
+### Skip permissions by default
+
+I use the coding agents without annoying permission dialogs. The three agents above all provide settings to bypass permissons and allow the model run anything it wants. I haven't encountered any problems with this.
+
+Here are my shell aliases:
+
+```fish
+alias amp "amp --dangerously-allow-all"
+alias codex "codex --dangerously-bypass-approvals-and-sandbox"
+alias claude "echo && command claude --dangerously-skip-permissions"
+```
+
+You may notice that I add a new line with `echo` when launching Claude Code to make it prittier. See the screenshot above.
 
 ## Harnesses
 
