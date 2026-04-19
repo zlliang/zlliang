@@ -1,4 +1,0 @@
-interface:
-  display_name: "English Review"
-  short_description: "Review English drafts and coach technical writing"
-  default_prompt: "Use $english-review to review or compare English technical prose for clarity, naturalness, tone, and voice."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Blog Authoring"
-  short_description: "Guide note and post workflow on hack and muse"
-  default_prompt: "Use $blog-authoring for note or post workflow, schema, style, publishing readiness, or the optional bilingual writing loop."
