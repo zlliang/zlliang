@@ -4,6 +4,8 @@ created: 2026-02-04
 series: life-monthly
 ---
 
+回看这一个月积累下来的照片，才发现，一个月里居然能经历这么多事情。所谓的平凡生活，其实只是我们忘记了好好观察、好好感受。有关刚刚过去的一月，我从点滴细节讲起，旅行、写作、阅读、观影、生活，还有需要面对的挑战。
+
 ## 写作与阅读，日拱一卒
 
 去年十二月，我重新搭建个人网站，开始用英文撰写技术笔记。进入 2026 年，我认为实践地还不错，可以继续扩展，于是又搭建起了这个用中文撰写的生活手记站点。一月中旬，我写下了[第一篇手记](/notes/2026/01/12/starting-from-this-monday-afternoon)，一个新的、令我满意的写作框架宣告完成。关于其中的思考，我用英文记录在了这篇文章中：[Splitting My Websites and Finalizing My Writing Framework](https://tech.zlliang.me/posts/2026/01/13/splitting-my-websites-and-finalizing-my-writing-framework)。
