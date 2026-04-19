@@ -44,6 +44,16 @@ Codex is my secondary agent. I installed the standalone Codex app and use it in 
 
 </div>
 
+Here are my Codex settings:
+
+```toml:~/.codex/config.toml
+model = "gpt-5.4"
+model_reasoning_effort = "high"
+
+[features]
+memories = true
+```
+
 ### Claude Code
 
 I mainly use Claude Code on my work laptop, via my company's API gateway. On my personal laptop, I use it via Vercel AI Gateway.
@@ -87,12 +97,20 @@ You may notice that I add a new line with `echo` when launching Claude Code to m
 
 My global [AGENTS.md](https://github.com/zlliang/dotfiles/blob/main/.chezmoitemplates/AGENTS.md). This file is stored in my dotfiles repository. It is synced by [chezmoi](https://chezmoi.io/) across all coding agents I'm using, including aliasing it to CLAUDE.md for Claude Code.
 
+Project-wise, I'll create AGENTS.md and CLAUDE.md, and only fill `@AGENTS.md` in CLAUDE.md.
+
 ### MCP
 
 I don't use MCP for my personal use. In my company, we have a unified MCP server providing access to multiple internal engineering platforms.
 
 ### Skills
 
-I'm using [skills.sh](https://skills.sh/) to manage my skills for now, though I'm not quite satisfied. [gh-cli](https://skills.sh/github/awesome-copilot/gh-cli) and [git-commit](https://skills.sh/github/awesome-copilot/git-commit) are two essential skills.
+I'm using [skills.sh](https://skills.sh/) to manage my skills, with the following general skills installed globally:
+
+- [git-commit](https://skills.sh/github/awesome-copilot/git-commit)
+- [gh-cli](https://skills.sh/github/awesome-copilot/gh-cli)
+- [agent-browser](https://skills.sh/vercel-labs/agent-browser)
 
 My company uses Google Workspace, and fortunately Google released a [CLI](https://github.com/googleworkspace/cli) and a bunch of agent skills to work with Google Workspace.
+
+I install these skills under `~/.agents/skills` and symlink to `~/.claude/skills`. Project-wise: `.agent/skills` and `.claude/skills`.
