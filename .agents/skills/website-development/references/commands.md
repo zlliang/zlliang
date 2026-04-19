@@ -23,6 +23,7 @@ Run commands from the repository root.
 
 ## Shared imports
 
+- Import shared remark plugins from `@zlliang/remark`
 - Import shared rehype plugins from `@zlliang/rehype`
 - Import shared styles, utilities, and components from `@zlliang/theme/*`
 

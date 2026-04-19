@@ -8,7 +8,8 @@ Use this file when ownership or shared boundaries matter.
 - `websites/hack`: English note and post site
 - `websites/muse`: Chinese note and post site
 - `packages/journal`: CLI for the shared note and post workflow
-- `packages/rehype`: shared Markdown and rehype plugins
+- `packages/remark`: shared remark plugins
+- `packages/rehype`: shared rehype plugins
 - `packages/theme`: shared CSS, utilities, and Astro components
 
 ## Shared rules

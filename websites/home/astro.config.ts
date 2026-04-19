@@ -2,8 +2,7 @@ import { defineConfig, fontProviders } from "astro/config"
 import vercel from "@astrojs/vercel"
 import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
-import remarkCjkFriendly from "remark-cjk-friendly"
-import remarkCodeTitles from "remark-flexible-code-titles"
+import { remarkCjkFriendly, remarkCodeTitles } from "@zlliang/remark"
 
 import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeCodeCopy } from "@zlliang/rehype"
 
