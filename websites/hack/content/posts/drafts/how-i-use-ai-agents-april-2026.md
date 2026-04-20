@@ -1,5 +1,5 @@
 ---
-title: How I Use AI Agents (in April 2026)
+title: How I Use AI Agents, April 2026
 created: 2026-04-18
 pinned: true
 draft: true
@@ -21,6 +21,12 @@ In this fast-changing agentic engineering world, I thought it's valuable to reco
 
 </div>
 
+Amp doesn't provide a model selector, but leans on a managed approach of selecting models, system prompts, tools, and subagents as a bundle. They call them "agent modes". Now the smart mode uses Claude Opus 4.6, and the deep mode uses GPT-5.4 as main models.
+
+It uses pay-as-you-go pricing policy.
+
+The Amp team are actively developing the next evolution, and recently releases are not as much as last year. My experience on Amp are amazing, so looking forward to what they'll bring to us.
+
 Here are my Amp settings:
 
 ```json:~/.config/amp/settings.json
@@ -34,7 +40,7 @@ Here are my Amp settings:
 
 ### Codex
 
-Codex is my secondary agent. I installed the standalone Codex app and use it in there mostly. I also installed the CLI, but barely use it. I use Codex through my ChatGPT Plus subscription.
+Codex is my secondary agent. I installed the standalone Codex app and use it in there mostly. I also installed the CLI, but barely use it. I use Codex through my ChatGPT Plus subscription on my personal laptop, and my company's ChatGPT Enterprise subscription on my work laptop.
 
 <div class="image-grid">
 
