@@ -24,8 +24,8 @@ const { Content } = await render(post)
     <div slot="subtitle">
       <span>{format(post.data.created, "PP")}</span>
       {post.data.pinned && <span class="icon-[lucide--pin]" />}
-      {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
       {series && <span class="ml-1">Part of the series: <a href={`/posts/series/${series.id}`}>{series.data.title}</a></span>}
+      {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">Draft</span>}
     </div>
   </PageTitle>
 
