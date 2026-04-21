@@ -15,7 +15,7 @@ const from = rawFrom?.startsWith("/") ? rawFrom : null
 <Layout title={title} aside={false} noindex>
   <img src={src} alt={caption} />
   <div class="flex justify-between gap-6 mt-4">
-    {Boolean(caption) && <div class="text-neutral-500">{caption}</div>}
+    <div class="text-neutral-500">{caption}</div>
     {Boolean(from) && (
       <a id="back" href={from} class="shrink-0">
         <span class="icon-[lucide--arrow-left]" /> 返回
