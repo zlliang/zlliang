@@ -3,7 +3,7 @@ import vercel from "@astrojs/vercel"
 import tailwindcss from "@tailwindcss/vite"
 import { remarkCjkFriendly, remarkCodeTitles } from "@zlliang/remark"
 
-import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeCodeCopy } from "@zlliang/rehype"
+import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeImageLinks, rehypeCodeCopy } from "@zlliang/rehype"
 
 export default defineConfig({
   site: "https://hack.zlliang.me",
@@ -57,6 +57,7 @@ export default defineConfig({
       [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
       [rehypeFootnotePrefixes, {}],
       [rehypeImageCaptions, {}],
+      [rehypeImageLinks, {}],
       [rehypeCodeCopy, {}],
     ],
   },

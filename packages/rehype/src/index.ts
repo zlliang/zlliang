@@ -42,6 +42,60 @@ export function rehypeImageCaptions() {
   }
 }
 
+/** Wrap standalone images in links to the dedicated image viewer page. */
+export function rehypeImageLinks() {
+  const script = String.raw`if (!globalThis.__imageLink) {
+    globalThis.__imageLink = true
+    document.addEventListener("click", (event) => {
+      const link = event.target instanceof Element ? event.target.closest("a.image-link") : null
+      if (!link) return
+      event.preventDefault()
+
+      const img = link.querySelector("img")
+      if (!img || !img.src) return
+
+      try {
+        const imgUrl = new URL(img.src)
+        if (imgUrl.origin !== window.location.origin) return
+
+        const params = new URLSearchParams()
+        params.set("src", imgUrl.pathname + imgUrl.search)
+        const caption = img.alt
+        if (caption) params.set("caption", caption)
+        params.set("from", window.location.pathname + window.location.search)
+
+        window.location.href = "/image?" + params.toString()
+      } catch {}
+    })
+  }`
+
+  return (tree: Root) => {
+    let hasImage = false
+
+    visit(tree, "element", (node: Element, index, parent) => {
+      if (!parent || typeof index !== "number" || node.tagName !== "img") return
+      if (parent.type === "element" && parent.tagName === "a") return
+
+      hasImage = true
+      parent.children[index] = {
+        type: "element",
+        tagName: "a",
+        properties: { class: "image-link", href: "#" },
+        children: [node],
+      }
+    })
+
+    if (!hasImage) return
+
+    tree.children.unshift({
+      type: "element",
+      tagName: "script",
+      properties: {},
+      children: [{ type: "text", value: script }],
+    })
+  }
+}
+
 /** Add a copy button to fenced code blocks rendered as `pre > code`. */
 export function rehypeCodeCopy() {
   const script = String.raw`if (!globalThis.__codeCopy) {
