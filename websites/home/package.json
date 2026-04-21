@@ -18,11 +18,11 @@
     "@iconify-json/lucide": "^1.2.102",
     "@iconify-json/simple-icons": "^1.2.79",
     "@iconify/tailwind4": "^1.2.3",
-    "@tailwindcss/vite": "^4.2.2",
+    "@tailwindcss/vite": "^4.2.3",
     "@zlliang/rehype": "workspace:*",
     "@zlliang/remark": "workspace:*",
     "astro": "^6.1.8",
-    "tailwindcss": "^4.2.2",
+    "tailwindcss": "^4.2.3",
     "typescript": "^6.0.3"
   }
 }
