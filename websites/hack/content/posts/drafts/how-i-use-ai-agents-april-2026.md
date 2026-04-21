@@ -113,9 +113,9 @@ I don't use MCP for my personal use. In my company, we have a unified MCP server
 
 I'm using [skills.sh](https://skills.sh/) to manage my skills, with the following general skills installed globally:
 
-- [git-commit](https://skills.sh/github/awesome-copilot/git-commit)
+- [git-commit](https://skills.sh/zlliang/skills/git-commit)
 - [gh-cli](https://skills.sh/github/awesome-copilot/gh-cli)
-- [agent-browser](https://skills.sh/vercel-labs/agent-browser)
+- [agent-browser](https://skills.sh/vercel-labs/agent-browser/agent-browser)
 
 My company uses Google Workspace, and fortunately Google released a [CLI](https://github.com/googleworkspace/cli) and a bunch of agent skills to work with Google Workspace.
 
