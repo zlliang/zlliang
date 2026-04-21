@@ -271,7 +271,7 @@ th {
 /* Image link */
 
 a.image-link {
-  @apply inline-block cursor-zoom-in;
+  @apply block cursor-zoom-in;
 }
 
 /* Image caption */
