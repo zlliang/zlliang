@@ -9,4 +9,4 @@ type: quote
 >
 > 翻译成白话牛马文，其实就是写工作日志。
 
-— 马伯庸，《[一个中年人决定写日记](https://mp.weixin.qq.com/s/Dz1V_Y296xzxVxvr3sVU-g)》
+— 马伯庸《[一个中年人决定写日记](https://mp.weixin.qq.com/s/Dz1V_Y296xzxVxvr3sVU-g)》
