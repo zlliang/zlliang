@@ -73,8 +73,9 @@ Here are my Claude Code settings:
 ```json:~/.claude/settings.json
 {
   "env": {
-    "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": "1",
     "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "1",
+    "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": "1",
+    "CLAUDE_CODE_NO_FLICKER": "1",
     "IS_DEMO": "1"
   },
   "model": "opus[1m]",
@@ -82,6 +83,8 @@ Here are my Claude Code settings:
   "skipDangerousModePermissionPrompt": true
 }
 ```
+
+I'm using the new [fullscreen rendering](https://code.claude.com/docs/en/fullscreen) mode and feeling good!
 
 ### Skip permissions by default
 
@@ -92,7 +95,7 @@ Here are my shell aliases:
 ```fish
 alias amp "amp --dangerously-allow-all"
 alias codex "codex --dangerously-bypass-approvals-and-sandbox"
-alias claude "echo && command claude --dangerously-skip-permissions"
+alias claude "claude --dangerously-skip-permissions"
 ```
 
 You may notice that I add a new line with `echo` when launching Claude Code to make it prittier. See the screenshot above.
@@ -101,9 +104,13 @@ You may notice that I add a new line with `echo` when launching Claude Code to m
 
 ### AGENTS.md
 
-My global [AGENTS.md](https://github.com/zlliang/dotfiles/blob/main/.chezmoitemplates/AGENTS.md). This file is stored in my dotfiles repository. It is synced by [chezmoi](https://chezmoi.io/) across all coding agents I'm using, including aliasing it to CLAUDE.md for Claude Code.
+My global [AGENTS.md](https://github.com/zlliang/dotfiles/blob/main/.chezmoitemplates/AGENTS.md). This file is stored in my dotfiles repository. It is synced by [chezmoi](https://chezmoi.io/) across all coding agents I'm using, including aliasing it to [CLAUDE.md](https://code.claude.com/docs/en/memory) for Claude Code.
 
-Project-wise, I'll create AGENTS.md and CLAUDE.md, and only fill `@AGENTS.md` in CLAUDE.md.
+Project-wise, I'll create AGENTS.md and CLAUDE.md, and only mention AGENTS.md in it:
+
+```md:CLAUDE.md
+@AGENTS.md
+```
 
 ### MCP
 
