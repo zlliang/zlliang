@@ -80,7 +80,7 @@ const title = format(targetDate, "yyyy 年 M 月 d 日手记")
   {/* Archive */}
   <Fragment slot="aside-prefix">
     <Section title="归档">
-      <div class="mb-2 text-xs text-neutral-500">{format(targetDate, "yyyy 年 M 月")}每天</div>
+      <div class="mb-2 text-xs text-neutral-500">{format(targetDate, "yyyy 年 M 月")}</div>
       <ArchiveCalendar year={year} month={month} items={dayItems} />
     </Section>
   </Fragment>

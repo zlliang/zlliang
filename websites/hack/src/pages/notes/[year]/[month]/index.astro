@@ -88,9 +88,9 @@ const title = `Notes in ${format(targetDate, "MMMM yyyy")}`
   {/* Archive */}
   <Fragment slot="aside-prefix">
     <Section title="Archive">
-      <div class="mb-2 text-xs text-neutral-500">Months in {year}</div>
+      <div class="mb-2 text-xs text-neutral-500">{year}</div>
       <ArchiveLinks items={monthItems} />
-      <div class="mt-4 mb-2 text-xs text-neutral-500">Days in {format(targetDate, "MMMM yyyy")}</div>
+      <div class="mt-4 mb-2 text-xs text-neutral-500">{format(targetDate, "MMMM yyyy")}</div>
       <ArchiveCalendar year={year} month={month} items={dayItems} />
     </Section>
   </Fragment>
