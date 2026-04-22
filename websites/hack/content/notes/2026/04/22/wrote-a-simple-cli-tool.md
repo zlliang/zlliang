@@ -5,7 +5,7 @@ created: 2026-04-22
 type: regular
 ---
 
-I got up early this morning. After making a cup of coffee, I had two to three hours before work. I spun up my coding agents and completed a first version of [Chore](https://github.com/zlliang/chore).
+I got up early this morning. After making a cup of coffee, I had two to three hours before work. I spun up my coding agents and completed a first version of **[Chore](https://github.com/zlliang/chore)**.
 
 It's a simple task runner for repetitive daily chores. I found myself regularly updating all the software and packages on my computers. On my work laptop, I also have to run two authentication commands every day due to my company's security policy. I used to handle these with shell scripts, but I wanted a dedicated tool.
 
