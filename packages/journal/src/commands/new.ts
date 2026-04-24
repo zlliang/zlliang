@@ -1,5 +1,6 @@
 import fs, { glob } from "node:fs/promises"
 import path from "node:path"
+import { slug as slugify } from "github-slugger"
 
 import { resolveJournalContext } from "../utils/context"
 import { handleCommand } from "../utils/command"
@@ -7,7 +8,7 @@ import { JournalError } from "../utils/errors"
 import { pathExists } from "../utils/files"
 import { serializeFrontmatter } from "../utils/frontmatter"
 import { isNoteType, noteTypeSlugs } from "../utils/note-types"
-import { getDateParts, normalizeTitle, slugify } from "../utils/text"
+import { getDateParts, normalizeTitle } from "../utils/text"
 
 import type { CAC } from "cac"
 import type { JournalContext } from "../utils/context"

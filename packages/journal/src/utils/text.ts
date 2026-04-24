@@ -20,17 +20,6 @@ export function normalizeTitle(titleParts: string | string[] | undefined): {
   }
 }
 
-export function slugify(value: string): string {
-  const slug = value
-    .normalize("NFKD")
-    .toLowerCase()
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-
-  return slug || "untitled"
-}
-
 export function getDateParts(date = new Date()): DateParts {
   const year = String(date.getFullYear())
   const month = String(date.getMonth() + 1).padStart(2, "0")
