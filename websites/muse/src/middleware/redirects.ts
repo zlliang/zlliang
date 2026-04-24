@@ -1,7 +1,9 @@
 import { defineMiddleware } from "astro:middleware"
 
+type Context = Parameters<Parameters<typeof defineMiddleware>[0]>[0]
+
 // Mar 22, 2026: Renamed categories to types, removed tags, migrated pagination to query params.
-async function redirectsBefore20260322(context: Parameters<Parameters<typeof defineMiddleware>[0]>[0]) {
+async function redirectsBefore20260322(context: Context) {
   const { pathname, search } = context.url
 
   const notesPaginationMatch = pathname.match(/^\/notes\/([1-9]\d{0,2})$/)
@@ -56,7 +58,7 @@ async function redirectsBefore20260322(context: Parameters<Parameters<typeof def
 }
 
 // Apr 24, 2026: Consolidated note types (regular → daily, link/collection/quote → bookmark).
-function redirectsBefore20260424(context: Parameters<Parameters<typeof defineMiddleware>[0]>[0]) {
+function redirectsBefore20260424(context: Context) {
   const renamedTypes: Record<string, string> = {
     regular: "daily",
     link: "bookmark",
