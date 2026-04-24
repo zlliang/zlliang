@@ -2,7 +2,7 @@
 no: 54
 title: Added archive pages and a writing journey heatmap
 created: 2026-03-19
-type: regular
+type: daily
 ---
 
 I just finished a fairly big notes-navigation refresh for both [https://tech.zlliang.me](https://tech.zlliang.me) and [https://days.zlliang.me](https://days.zlliang.me). Archive pages by year, month, and day are now fully in place, and the sidebar now has a "Writing journey" heatmap.

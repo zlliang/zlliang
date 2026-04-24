@@ -2,7 +2,7 @@
 no: 49
 title: Use subagents and custom agents in Codex
 created: 2026-03-17
-type: link
+type: bookmark
 ---
 
 [Use subagents and custom agents in Codex](https://developers.openai.com/codex/subagents)[^1]. Subagents are now generally available in Codex, after previously being introduced as an experimental feature called "multi-agents".

@@ -9,33 +9,31 @@ Use this file when the task depends on what a note is trying to do, not only how
 - Prefer a small, complete note over an over-expanded one
 - Do not force every note into the same essay-like shape
 
-## `regular`
+## Type registry
+
+| Slug | English display | Chinese display | English description | Chinese description |
+|---|---|---|---|---|
+| `daily` | Daily | 日常 | A fresh thought, moment, or observation. | 鲜活的想法、片段或观察。 |
+| `bookmark` | Bookmark | 书签 | Findings worth keeping, with my commentary. | 值得记录的发现，附上我的评论和想法。 |
+| `til` | TIL (Today I Learned) | 小知识 | New knowledge worth sharing. | 值得分享的新知识、新收获。 |
+| `post` | Post | 文章 | An introduction to a newly published post. | 介绍一篇新文章。 |
+
+## `daily`
 
 - Goal: capture something quickly while it is still alive
 - Mindset: improvise first; record before polishing
 - Shape: one or more paragraphs, fragments, or scenes; anything is acceptable if it preserves the moment, thought, or observation
 - Done when: the note keeps the raw thing worth remembering; completeness matters less than traceability
 
-## `link`
+## `bookmark`
 
-- Goal: consume and respond to something worth keeping
-- Mindset: do not use it as a bare bookmark; the comment is the actual note
-- Shape: start with `[Link](url)`, then explain what stood out, what you think, or how it connects to earlier topics
-- Done when: a future reader can tell why this link matters to you, not only what the URL points to
-
-## `quote`
-
-- Goal: preserve a passage and show why it deserves attention
-- Mindset: do not stop at clipping; add commentary that interprets the quote, places it in context, or links it to earlier thoughts
-- Shape: blockquote plus source attribution, then commentary; images or translation are optional support, not the whole note
-- Done when: the note shows how you have consumed the quote, not merely stored it
-
-## `collection`
-
-- Goal: give related materials a compact editorial frame
-- Mindset: act like an editor or curator, not a dumper of links
-- Shape: short intro plus a grouped list; add light framing around why these items belong together and what pattern or theme they share
-- Done when: the collection feels selected and arranged, with a point of view
+- Goal: consume findings and show why they matter to you
+- Mindset: your voice is the actual note, not the source; do not stop at clipping or bare linking
+- Shape: flexible — a single annotated link, a curated list of related items, or a quoted passage with commentary; the common requirement is that your response is present, not just the source
+  - For a single link: start with `[Link](url)`, then explain what stood out, what you think, or how it connects to earlier topics
+  - For a curated set: short intro plus a grouped list; add light framing around why these items belong together and what pattern or theme they share
+  - For a quoted passage: blockquote plus source attribution, then commentary that interprets, contextualizes, or connects
+- Done when: a future reader can tell why this material matters to you, not only what the source is
 
 ## `til`
 

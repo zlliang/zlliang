@@ -2,7 +2,7 @@
 no: 59
 title: Markdown Ate The World
 created: 2026-03-24
-type: link
+type: bookmark
 ---
 
 [Markdown Ate The World](https://matduggan.com/markdown-ate-the-world/)[^1]. Recommended reading. Always bet on plain text!

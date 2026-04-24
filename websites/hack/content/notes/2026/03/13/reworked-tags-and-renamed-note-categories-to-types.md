@@ -2,7 +2,7 @@
 no: 43
 title: Reworked tags and renamed note categories to types
 created: 2026-03-13
-type: regular
+type: daily
 ---
 
 I just finished another round of cleanup on my [https://tech.zlliang.me](https://tech.zlliang.me) and [https://days.zlliang.me](https://days.zlliang.me) websites. This time I reworked the note tags across both sites, aiming for a smaller and more durable taxonomy that better reflects long-term themes instead of one-off entities.

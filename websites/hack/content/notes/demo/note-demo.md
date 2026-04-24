@@ -2,7 +2,7 @@
 no: -3
 title: Note demo
 created: 2025-12-17
-type: regular
+type: daily
 draft: true
 ---
 

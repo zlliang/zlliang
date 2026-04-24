@@ -2,7 +2,7 @@
 no: 31
 title: 看完了一集《陈鲁豫 · 慢谈》
 created: 2026-03-15
-type: link
+type: bookmark
 ---
 
 [鲁豫对话庞颖詹青云：跨越 70、80、90 年代，三条平行线在表达里交汇](https://www.bilibili.com/video/BV1k9PHz8ERM/)。这是视频播客《陈鲁豫 · 慢谈》的第十四期，我在从景德镇回上海的火车上看完了。我会挑喜欢的嘉宾看，上次是看[窦文涛那一期](https://www.bilibili.com/video/BV1jCpizuEPg/)。长达两三个小时的谈话节目，是一种消遣，也承载了值得长期、反复咀嚼的内容厚度。

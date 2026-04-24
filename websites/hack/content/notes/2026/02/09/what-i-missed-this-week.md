@@ -2,7 +2,7 @@
 no: 32
 title: What I missed this week
 created: 2026-02-09
-type: regular
+type: daily
 ---
 
 Here's what I missed in the AI field this week — I was on holiday in Tokyo.

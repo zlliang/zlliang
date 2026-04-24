@@ -2,7 +2,7 @@
 no: 53
 title: Removed tags and refreshed note navigation
 created: 2026-03-18
-type: regular
+type: daily
 ---
 
 I just removed note tags from both [https://tech.zlliang.me](https://tech.zlliang.me) and [https://days.zlliang.me](https://days.zlliang.me).

@@ -37,10 +37,10 @@ export function registerNewCommand(cli: CAC) {
   cli
     .command("new <entry> [title...]", "Create a new note or post draft")
     .option("--type <type>", `Note type when entry is \`note\` (${noteTypeSlugs.join(", ")})`, {
-      default: "regular",
+      default: "daily",
     })
-    .example("journal --dir websites/muse new note --type link \"A useful article\"")
-    .example("journal new note --type link \"A useful article\"")
+    .example("journal --dir websites/muse new note --type bookmark \"A useful article\"")
+    .example("journal new note --type bookmark \"A useful article\"")
     .example("journal new post \"How I use AI agents\"")
     .action((entry: string, title: string[], options: NewCommandOptions) => {
       void handleCommand(async () => {
@@ -189,7 +189,7 @@ function validateNoteType(value: string): NoteType {
 }
 
 function validatePostOptions(options: NewCommandOptions) {
-  if (options.type !== "regular") {
+  if (options.type !== "daily") {
     throw new JournalError("The --type option can only be used with `journal new note`.")
   }
 }

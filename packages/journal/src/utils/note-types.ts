@@ -1,8 +1,6 @@
 export const noteTypeSlugs = [
-  "regular",
-  "link",
-  "collection",
-  "quote",
+  "daily",
+  "bookmark",
   "til",
   "post",
 ] as const

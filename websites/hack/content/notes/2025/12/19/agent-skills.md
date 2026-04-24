@@ -2,7 +2,7 @@
 no: 2
 title: Agent Skills
 created: 2025-12-19
-type: link
+type: bookmark
 ---
 
 [Agent Skills](https://agentskills.io/)[^1]. Anthropic published Agent Skills as an open standard yesterday[^2], just a few days after they co-founded the [Agentic AI Foundation](https://aaif.io/) and donated the [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) to it[^3]. Now, along with the widely adopted [AGENTS.md](https://agents.md/), there are three major agentic AI patterns for managing context and tools.

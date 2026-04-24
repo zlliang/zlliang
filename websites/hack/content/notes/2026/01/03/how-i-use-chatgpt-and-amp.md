@@ -2,7 +2,7 @@
 no: 17
 title: How I use ChatGPT and Amp
 created: 2026-01-03
-type: regular
+type: daily
 ---
 
 I now use [ChatGPT](https://chatgpt.com/) and [Amp](https://ampcode.com/) in a very simple way: I just create new threads and leave them as-is.

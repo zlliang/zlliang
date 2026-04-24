@@ -2,7 +2,7 @@
 no: 6
 title: Zig has restored its nightly master builds
 created: 2025-12-22
-type: regular
+type: daily
 ---
 
 Since [Zig](https://ziglang.org/) hasn't hit 1.0 and is still evolving rapidly, following the master branch is common practice for trying out new features and tracking where the language is heading.

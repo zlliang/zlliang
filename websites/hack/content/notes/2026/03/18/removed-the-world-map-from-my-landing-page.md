@@ -2,7 +2,7 @@
 no: 52
 title: Removed the world map from my landing page
 created: 2026-03-18
-type: regular
+type: daily
 ---
 
 I have removed the world map from my [landing page](https://zlliang.me) for now.

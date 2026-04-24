@@ -2,7 +2,7 @@
 no: 12
 title: A quote from William Zinsser
 created: 2025-12-28
-type: quote
+type: bookmark
 ---
 
 > I don't know what still newer marvels will make writing twice as easy in the next 30 years. But I do know they won't make writing twice as good. That will still require plain old hard thinking.

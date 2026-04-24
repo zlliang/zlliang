@@ -2,7 +2,7 @@
 no: 37
 title: Individuals in the AI field
 created: 2026-02-27
-type: collection
+type: bookmark
 ---
 
 Individuals I'm following, who actively write and contribute in the AI field:

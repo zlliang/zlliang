@@ -2,7 +2,7 @@
 no: 8
 title: 昨晚和诗胤的矛盾
 created: 2026-01-21
-type: regular
+type: daily
 ---
 
 我还不知道如何公开地写下我与伴侣的相处问题，总感觉很羞耻。我就简略说说吧。

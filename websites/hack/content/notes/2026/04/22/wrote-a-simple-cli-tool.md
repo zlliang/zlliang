@@ -2,7 +2,7 @@
 no: 67
 title: Wrote a simple CLI tool
 created: 2026-04-22
-type: regular
+type: daily
 ---
 
 I got up early this morning. After making a cup of coffee, I had two to three hours before work. I spun up my coding agents and completed a first version of **[Chore](https://github.com/zlliang/chore)**.

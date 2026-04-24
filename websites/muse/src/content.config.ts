@@ -10,7 +10,7 @@ const notes = defineCollection({
     no: z.number().int(),
     title: z.string().min(1).optional(),
     created: z.coerce.date(),
-    type: z.enum(typeSlugs).default("regular"),
+    type: z.enum(typeSlugs).default("daily"),
     post: reference("posts").optional(),
     draft: z.boolean().default(false),
   }),

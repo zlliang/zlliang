@@ -2,7 +2,7 @@
 no: 10
 title: 吉井忍作品
 created: 2026-01-22
-type: collection
+type: bookmark
 ---
 
 [吉井忍](https://www.douban.com/people/48894112/)的部分作品：

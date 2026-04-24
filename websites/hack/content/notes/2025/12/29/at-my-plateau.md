@@ -2,7 +2,7 @@
 no: 15
 title: At my plateau
 created: 2025-12-29
-type: regular
+type: daily
 ---
 
 ![Andrew Kelley's growth curve](./images/andrew-kelleys-growth-curve.png)

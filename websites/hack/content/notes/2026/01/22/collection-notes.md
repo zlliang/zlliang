@@ -2,7 +2,7 @@
 no: 27
 title: Collection notes
 created: 2026-01-22
-type: regular
+type: daily
 ---
 
 I just added a new note type called "[collection notes](/notes/types/collection)".

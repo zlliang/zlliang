@@ -2,7 +2,7 @@
 no: 33
 title: Just added a world map
 created: 2026-02-10
-type: regular
+type: daily
 ---
 
 I just added a world map to my [landing page](https://zlliang.me), showing where I've been. Have a look! I'm looking forward to exploring more of this world!

@@ -2,7 +2,7 @@
 no: 29
 title: Beautiful Mermaid
 created: 2026-01-29
-type: link
+type: bookmark
 ---
 
 [Beautiful Mermaid](https://agents.craft.do/mermaid)[^1]. [Mermaid](https://mermaid.js.org/) is the de facto tool for describing diagrams in plain text and embedding them in Markdown. GitHub supports it, for example[^2]. But I've never liked the default theme — that's why I still haven't adopted it.

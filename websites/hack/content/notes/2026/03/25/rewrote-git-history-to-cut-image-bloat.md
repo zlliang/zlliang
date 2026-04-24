@@ -2,7 +2,7 @@
 no: 60
 title: Rewrote Git history to cut image bloat
 created: 2026-03-25
-type: regular
+type: daily
 ---
 
 I just finished a full Git history cleanup for my website monorepo to remove oversized historical image blobs. I used to track full-size images in the repo, which is not sustainable as my blogs grow.
