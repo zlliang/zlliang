@@ -1,7 +1,7 @@
 import { defineMiddleware } from "astro:middleware"
 
 // Mar 22, 2026: Renamed categories to types, removed tags, migrated pagination to query params.
-async function legacyNoteRoutes(context: Parameters<Parameters<typeof defineMiddleware>[0]>[0]) {
+async function redirectsBefore20260322(context: Parameters<Parameters<typeof defineMiddleware>[0]>[0]) {
   const { pathname, search } = context.url
 
   const notesPaginationMatch = pathname.match(/^\/notes\/([1-9]\d{0,2})$/)
@@ -56,7 +56,7 @@ async function legacyNoteRoutes(context: Parameters<Parameters<typeof defineMidd
 }
 
 // Apr 24, 2026: Consolidated note types (regular → daily, link/collection/quote → bookmark).
-function renamedNoteTypes(context: Parameters<Parameters<typeof defineMiddleware>[0]>[0]) {
+function redirectsBefore20260424(context: Parameters<Parameters<typeof defineMiddleware>[0]>[0]) {
   const renamedTypes: Record<string, string> = {
     regular: "daily",
     link: "bookmark",
@@ -79,11 +79,11 @@ function renamedNoteTypes(context: Parameters<Parameters<typeof defineMiddleware
 }
 
 export const redirects = defineMiddleware(async (context, next) => {
-  const legacy = await legacyNoteRoutes(context)
-  if (legacy) return legacy
+  const before20260322 = await redirectsBefore20260322(context)
+  if (before20260322) return before20260322
 
-  const renamed = renamedNoteTypes(context)
-  if (renamed) return renamed
+  const before20260424 = await redirectsBefore20260424(context)
+  if (before20260424) return before20260424
 
   return next()
 })
