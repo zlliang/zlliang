@@ -184,6 +184,8 @@ Time to write, write, and write. Can I accumulate thousands of notes in a decade
 
 **Update Mar 30, 2026:** In late March, I renamed my two journal websites. They are now Hack [https://hack.zlliang.me](https://hack.zlliang.me) and Muse [https://muse.zlliang.me](https://muse.zlliang.me). See: [Renamed the two journal websites to Hack and Muse](/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse).
 
+**Update Apr 24, 2026:** I consolidated note types from six down to four: `regular` became `daily`, and `link`, `collection`, `quote` merged into `bookmark`. See: [Consolidated note types](/notes/2026/04/24/consolidated-note-types).
+
 </div>
 
 [^1]: [The Amp thread](https://ampcode.com/threads/T-019b49fd-619b-77ce-af60-0ce81ffb0d7f)
