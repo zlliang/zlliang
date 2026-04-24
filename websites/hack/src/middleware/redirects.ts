@@ -1,7 +1,7 @@
 import { defineMiddleware } from "astro:middleware"
 
-// Normalize legacy note URLs into the current route scheme and return 410 for removed tags pages.
-export const redirects = defineMiddleware(async (context, next) => {
+// Mar 22, 2026: Renamed categories to types, removed tags, migrated pagination to query params.
+async function legacyNoteRoutes(context: Parameters<Parameters<typeof defineMiddleware>[0]>[0]) {
   const { pathname, search } = context.url
 
   const notesPaginationMatch = pathname.match(/^\/notes\/([1-9]\d{0,2})$/)
@@ -51,6 +51,39 @@ export const redirects = defineMiddleware(async (context, next) => {
       headers,
     })
   }
+
+  return null
+}
+
+// Apr 24, 2026: Consolidated note types (regular → daily, link/collection/quote → bookmark).
+function renamedNoteTypes(context: Parameters<Parameters<typeof defineMiddleware>[0]>[0]) {
+  const renamedTypes: Record<string, string> = {
+    regular: "daily",
+    link: "bookmark",
+    collection: "bookmark",
+    quote: "bookmark",
+  }
+
+  const { pathname, search } = context.url
+
+  const match = pathname.match(/^\/notes\/types\/([^/]+)\/?$/)
+  if (match) {
+    const [, rawType] = match
+    const resolved = renamedTypes[rawType]
+    if (resolved) {
+      return context.redirect(`/notes/types/${resolved}${search}`, 308)
+    }
+  }
+
+  return null
+}
+
+export const redirects = defineMiddleware(async (context, next) => {
+  const legacy = await legacyNoteRoutes(context)
+  if (legacy) return legacy
+
+  const renamed = renamedNoteTypes(context)
+  if (renamed) return renamed
 
   return next()
 })
