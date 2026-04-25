@@ -22,7 +22,7 @@ const next = adjacent?.next ?? null
 const previous = adjacent?.previous ?? null
 const post = note.data.post ? await getPostById(note.data.post.id) : null
 
-const title = [note.data.title || post?.data.title, `Note #${note.data.no}`].filter(Boolean).join(" - ")
+const title = [note.data.title || post?.data.title, `Note #${note.data.number}`].filter(Boolean).join(" - ")
 ---
 
 <Layout title={title}>
@@ -37,7 +37,7 @@ const title = [note.data.title || post?.data.title, `Note #${note.data.no}`].fil
           <div class="text-sm mb-0.5">Next</div>
           <a href={`/notes/${next.id}`} class="block mb-0.5">{next.data.title || "Untitled note"}</a>
           <div class="text-sm">
-            <span>{format(next.data.created, "PP")}</span><span class="icon-[lucide--dot]" /><span>#{next.data.no}</span>
+            <span>{format(next.data.created, "PP")}</span><span class="icon-[lucide--dot]" /><span>#{next.data.number}</span>
           </div>
         </div>
       )}
@@ -46,7 +46,7 @@ const title = [note.data.title || post?.data.title, `Note #${note.data.no}`].fil
           <div class="text-sm mb-0.5">Previous</div>
           <a href={`/notes/${previous.id}`} class="block mb-0.5">{previous.data.title || "Untitled note"}</a>
           <div class="text-sm">
-            <span>#{previous.data.no}</span><span class="icon-[lucide--dot]" /><span>{format(previous.data.created, "PP")}</span>
+            <span>#{previous.data.number}</span><span class="icon-[lucide--dot]" /><span>{format(previous.data.created, "PP")}</span>
           </div>
         </div>
       )}

@@ -1,5 +1,5 @@
 ---
-no: 45
+number: 45
 title: Pinned posts and a brief blogging retrospective
 created: 2026-03-14
 ---

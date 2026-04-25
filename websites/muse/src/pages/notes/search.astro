@@ -25,7 +25,7 @@ if (searchParams.has("sort") && searchParams.get("sort") !== "date") {
 }
 
 const results = q ? await searchNotes(q) : []
-const sortedResults = sort === "date" ? results.toSorted((a, b) => b.data.no - a.data.no) : results
+const sortedResults = sort === "date" ? results.toSorted((a, b) => b.data.number - a.data.number) : results
 
 const pagination = paginate(sortedResults, page, (page) => getSearchPageUrl(q, page, sort))
 if (q && shouldRedirectPagination(searchParams, page, pagination)) {

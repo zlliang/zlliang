@@ -1,5 +1,5 @@
 ---
-no: 42
+number: 42
 title: Clearing my tech news inbox
 created: 2026-03-12
 ---

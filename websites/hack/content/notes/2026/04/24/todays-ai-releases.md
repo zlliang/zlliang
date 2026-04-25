@@ -1,5 +1,5 @@
 ---
-no: 73
+number: 73
 title: Today's AI releases
 created: 2026-04-24
 ---

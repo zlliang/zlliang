@@ -1,5 +1,5 @@
 ---
-no: 27
+number: 27
 title: Collection notes
 created: 2026-01-22
 ---

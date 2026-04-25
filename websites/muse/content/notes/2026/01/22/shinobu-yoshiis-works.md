@@ -1,5 +1,5 @@
 ---
-no: 10
+number: 10
 title: 吉井忍作品
 created: 2026-01-22
 ---

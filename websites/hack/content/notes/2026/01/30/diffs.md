@@ -1,5 +1,5 @@
 ---
-no: 30
+number: 30
 title: Diffs
 created: 2026-01-30
 ---

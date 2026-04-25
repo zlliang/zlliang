@@ -1,5 +1,5 @@
 ---
-no: 52
+number: 52
 title: Removed the world map from my landing page
 created: 2026-03-18
 ---

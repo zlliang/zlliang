@@ -7,7 +7,7 @@ This file is a working summary for `hack` and `muse`. The code-level source of t
 - Path: `content/notes/YYYY/MM/DD/slug.md`
 
 ```yaml
-no: 1
+number: 1
 title: Example title
 created: 2026-03-14
 post: 2026/03/14/example-post
@@ -16,7 +16,7 @@ draft: true
 
 ### Rules
 
-- `no`: required unique note number
+- `number`: required unique note number
 - `title`: optional, but preferred when the note has a clear title
 - `created`: required, `YYYY-MM-DD`
 - `post`: optional reference to the related post; only for notes that introduce a published post

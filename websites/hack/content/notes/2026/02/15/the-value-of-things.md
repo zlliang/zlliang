@@ -1,5 +1,5 @@
 ---
-no: 36
+number: 36
 title: The Value of Things
 created: 2026-02-15
 ---

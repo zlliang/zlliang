@@ -1,5 +1,5 @@
 ---
-no: 66
+number: 66
 title: Added a dedicated image viewer page
 created: 2026-04-21
 ---

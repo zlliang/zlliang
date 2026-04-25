@@ -1,5 +1,5 @@
 ---
-no: 74
+number: 74
 title: Eliminated note types
 created: 2026-04-25
 ---

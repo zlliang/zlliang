@@ -1,5 +1,5 @@
 ---
-no: 70
+number: 70
 title: Consolidated note types
 created: 2026-04-24
 ---

@@ -1,5 +1,5 @@
 ---
-no: 12
+number: 12
 title: A quote from William Zinsser
 created: 2025-12-28
 ---

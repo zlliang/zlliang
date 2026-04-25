@@ -1,5 +1,5 @@
 ---
-no: 20
+number: 20
 title: Paul Graham's post on X about taste
 created: 2026-01-04
 ---

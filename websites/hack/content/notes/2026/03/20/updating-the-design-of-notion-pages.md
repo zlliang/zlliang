@@ -1,5 +1,5 @@
 ---
-no: 56
+number: 56
 title: Updating the design of Notion pages
 created: 2026-03-20
 ---

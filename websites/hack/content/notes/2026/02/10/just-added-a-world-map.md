@@ -1,5 +1,5 @@
 ---
-no: 33
+number: 33
 title: Just added a world map
 created: 2026-02-10
 ---

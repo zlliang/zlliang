@@ -1,5 +1,5 @@
 ---
-no: 32
+number: 32
 title: What I missed this week
 created: 2026-02-09
 ---

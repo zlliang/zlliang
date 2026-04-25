@@ -1,7 +1,7 @@
 import { parse as parseYaml, stringify as stringifyYaml } from "yaml"
 
 export interface Frontmatter {
-  no?: number
+  number?: number
   title?: string
   created?: string
   post?: string

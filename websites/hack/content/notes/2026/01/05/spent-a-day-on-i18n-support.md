@@ -1,5 +1,5 @@
 ---
-no: 21
+number: 21
 title: Spent a day on i18n support
 created: 2026-01-05
 ---

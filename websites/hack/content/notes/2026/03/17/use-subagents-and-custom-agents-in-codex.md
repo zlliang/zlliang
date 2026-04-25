@@ -1,5 +1,5 @@
 ---
-no: 49
+number: 49
 title: Use subagents and custom agents in Codex
 created: 2026-03-17
 ---

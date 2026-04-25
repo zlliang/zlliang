@@ -1,5 +1,5 @@
 ---
-no: 1
+number: 1
 title: 从这个周一午后开始
 created: 2026-01-12
 ---

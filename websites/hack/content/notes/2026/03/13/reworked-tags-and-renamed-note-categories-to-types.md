@@ -1,5 +1,5 @@
 ---
-no: 43
+number: 43
 title: Reworked tags and renamed note categories to types
 created: 2026-03-13
 ---

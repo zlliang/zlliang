@@ -1,5 +1,5 @@
 ---
-no: 64
+number: 64
 title: The IS_DEMO environment variable for Claude Code
 created: 2026-04-15
 ---

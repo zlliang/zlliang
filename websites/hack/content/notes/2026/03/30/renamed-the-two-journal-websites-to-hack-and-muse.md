@@ -1,5 +1,5 @@
 ---
-no: 61
+number: 61
 title: Renamed the two journal websites to Hack and Muse
 created: 2026-03-30
 ---

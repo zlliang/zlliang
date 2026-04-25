@@ -1,5 +1,5 @@
 ---
-no: 50
+number: 50
 title: Turning my Astro theme into a reusable integration
 created: 2026-03-17
 ---

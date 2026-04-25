@@ -1,5 +1,5 @@
 ---
-no: 2
+number: 2
 title: Agent Skills
 created: 2025-12-19
 ---

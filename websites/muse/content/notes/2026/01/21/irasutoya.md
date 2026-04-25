@@ -1,5 +1,5 @@
 ---
-no: 7
+number: 7
 title: 免费贴纸素材库 irasutoya
 created: 2026-01-21
 ---

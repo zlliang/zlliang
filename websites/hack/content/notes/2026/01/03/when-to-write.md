@@ -1,5 +1,5 @@
 ---
-no: 18
+number: 18
 title: When to write
 created: 2026-01-03
 ---

@@ -1,5 +1,5 @@
 ---
-no: -2
+number: -2
 title: My approach to running a link blog
 created: 2025-12-17
 draft: true

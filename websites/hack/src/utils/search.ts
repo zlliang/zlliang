@@ -6,7 +6,7 @@ import type { CollectionEntry } from "astro:content"
 
 interface SearchDocument {
   id: string
-  no: number
+  number: number
   title: string
   content: string
 }
@@ -45,7 +45,7 @@ export async function searchNotes(query: string) {
         return b.score - a.score
       }
 
-      return b.note.data.no - a.note.data.no
+      return b.note.data.number - a.note.data.number
     })
     .map((result) => result.note)
 }
@@ -83,7 +83,7 @@ async function buildSearchIndex() {
   const postsById = new Map(posts.map((post) => [post.id, post]))
   const miniSearch = new MiniSearch<SearchDocument>({
     fields: ["title", "content"],
-    storeFields: ["id", "no"],
+    storeFields: ["id", "number"],
     tokenize: tokenizeSearchText,
   })
 
@@ -92,7 +92,7 @@ async function buildSearchIndex() {
 
     return {
       id: note.id,
-      no: note.data.no,
+      number: note.data.number,
       title: note.data.title || post?.data.title || "Untitled note",
       content: [note.body, post?.body].filter(Boolean).join("\n\n"),
     }

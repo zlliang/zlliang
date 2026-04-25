@@ -1,5 +1,5 @@
 ---
-no: 69
+number: 69
 title: Today's observations
 created: 2026-04-23
 ---

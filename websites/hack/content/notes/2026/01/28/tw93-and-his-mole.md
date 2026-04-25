@@ -1,5 +1,5 @@
 ---
-no: 28
+number: 28
 title: tw93 and his mole
 created: 2026-01-28
 ---

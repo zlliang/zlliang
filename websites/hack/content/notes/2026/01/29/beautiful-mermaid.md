@@ -1,5 +1,5 @@
 ---
-no: 29
+number: 29
 title: Beautiful Mermaid
 created: 2026-01-29
 ---

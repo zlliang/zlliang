@@ -1,5 +1,5 @@
 ---
-no: 75
+number: 75
 title: Two bookmarks to write today
 created: 2026-04-25
 draft: true

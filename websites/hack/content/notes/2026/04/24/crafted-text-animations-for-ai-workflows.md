@@ -1,5 +1,5 @@
 ---
-no: 71
+number: 71
 title: Crafted text animations for AI workflows
 created: 2026-04-24
 ---

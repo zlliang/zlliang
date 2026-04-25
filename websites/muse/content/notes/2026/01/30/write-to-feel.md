@@ -1,5 +1,5 @@
 ---
-no: 15
+number: 15
 title: 用写作来感受
 created: 2026-01-30
 ---

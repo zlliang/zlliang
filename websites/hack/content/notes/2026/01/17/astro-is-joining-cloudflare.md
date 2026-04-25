@@ -1,5 +1,5 @@
 ---
-no: 24
+number: 24
 title: Astro is joining Cloudflare
 created: 2026-01-17
 ---

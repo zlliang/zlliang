@@ -1,5 +1,5 @@
 ---
-no: 62
+number: 62
 title: Don't Let AI Write For You
 created: 2026-03-31
 ---

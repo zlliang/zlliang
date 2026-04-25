@@ -1,5 +1,5 @@
 ---
-no: 31
+number: 31
 title: HTTP Cats
 created: 2026-01-31
 ---

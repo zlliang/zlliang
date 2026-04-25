@@ -1,5 +1,5 @@
 ---
-no: 13
+number: 13
 title: 两天的合唱排练
 created: 2026-01-30
 ---

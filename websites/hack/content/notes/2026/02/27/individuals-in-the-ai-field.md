@@ -1,5 +1,5 @@
 ---
-no: 37
+number: 37
 title: Individuals in the AI field
 created: 2026-02-27
 ---

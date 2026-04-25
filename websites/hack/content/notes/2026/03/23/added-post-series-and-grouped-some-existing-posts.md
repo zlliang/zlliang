@@ -1,5 +1,5 @@
 ---
-no: 58
+number: 58
 title: Added post series and grouped some existing posts
 created: 2026-03-23
 ---

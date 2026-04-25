@@ -1,5 +1,5 @@
 ---
-no: 19
+number: 19
 title: 在东京的四天
 created: 2026-02-13
 post: 2026/02/13/four-days-in-tokyo

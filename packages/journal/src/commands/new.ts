@@ -92,7 +92,7 @@ export async function prepareNote(
   }
 
   const frontmatter: Frontmatter = {
-    no: number,
+    number,
     ...(hasTitle && { title: rawTitle }),
     created: date,
     ...(options?.post && { post: options.post }),
@@ -153,7 +153,7 @@ async function getNextNoteNumber(notesRoot: string): Promise<number> {
     const match = content.match(/^---\s*\n([\s\S]*?)\n---/)
     if (!match) continue
 
-    const numberMatch = match[1].match(/^\s*no:\s*([0-9]+)/m)
+    const numberMatch = match[1].match(/^\s*number:\s*([0-9]+)/m)
     if (!numberMatch) continue
 
     const value = Number(numberMatch[1])

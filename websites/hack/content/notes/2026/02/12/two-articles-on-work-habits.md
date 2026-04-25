@@ -1,5 +1,5 @@
 ---
-no: 35
+number: 35
 title: Two articles on work habits
 created: 2026-02-12
 ---

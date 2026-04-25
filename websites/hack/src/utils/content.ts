@@ -16,7 +16,7 @@ export function getNotes() {
 
 async function loadNotes() {
   const collection = await getCollection("notes", ({ data }) => !import.meta.env.PROD || !data.draft)
-  const notes = collection.toSorted((a, b) => b.data.no - a.data.no)
+  const notes = collection.toSorted((a, b) => b.data.number - a.data.number)
 
   return notes
 }

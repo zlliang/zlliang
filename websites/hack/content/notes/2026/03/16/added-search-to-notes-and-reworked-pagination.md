@@ -1,5 +1,5 @@
 ---
-no: 48
+number: 48
 title: Added search to notes and reworked pagination
 created: 2026-03-16
 ---

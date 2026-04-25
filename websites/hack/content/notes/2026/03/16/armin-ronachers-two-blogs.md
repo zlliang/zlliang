@@ -1,5 +1,5 @@
 ---
-no: 47
+number: 47
 title: Armin Ronacher's two blogs
 created: 2026-03-16
 ---

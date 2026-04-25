@@ -1,5 +1,5 @@
 ---
-no: 6
+number: 6
 title: Zig has restored its nightly master builds
 created: 2025-12-22
 ---

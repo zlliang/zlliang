@@ -1,5 +1,5 @@
 ---
-no: 9
+number: 9
 title: Starting a Blog at the End of 2025
 created: 2025-12-25
 post: 2025/12/25/starting-a-blog-at-the-end-of-2025

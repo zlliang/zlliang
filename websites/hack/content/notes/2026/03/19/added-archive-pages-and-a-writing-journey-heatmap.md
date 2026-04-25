@@ -1,5 +1,5 @@
 ---
-no: 54
+number: 54
 title: Added archive pages and a writing journey heatmap
 created: 2026-03-19
 ---

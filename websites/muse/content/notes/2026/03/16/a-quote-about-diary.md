@@ -1,5 +1,5 @@
 ---
-no: 32
+number: 32
 title: 马伯庸谈写日记
 created: 2026-03-16
 ---

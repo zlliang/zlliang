@@ -5,7 +5,7 @@ import { glob, file } from "astro/loaders"
 const notes = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./content/notes" }),
   schema: z.object({
-    no: z.number().int(),
+    number: z.number().int(),
     title: z.string().min(1).optional(),
     created: z.coerce.date(),
     post: reference("posts").optional(),

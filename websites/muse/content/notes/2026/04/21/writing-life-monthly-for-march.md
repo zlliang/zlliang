@@ -1,5 +1,5 @@
 ---
-no: 37
+number: 37
 title: 三月的生活月刊
 created: 2026-04-21
 ---

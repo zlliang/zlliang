@@ -1,5 +1,5 @@
 ---
-no: 46
+number: 46
 title: Vite 8, Vite Plus and Void
 created: 2026-03-16
 ---

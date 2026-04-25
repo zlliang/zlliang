@@ -1,5 +1,5 @@
 ---
-no: 38
+number: 38
 title: Two articles on sandboxing for AI agents
 created: 2026-02-28
 ---

@@ -1,5 +1,5 @@
 ---
-no: 4
+number: 4
 title: OpenAI Codex now officially supports skills
 created: 2025-12-20
 ---

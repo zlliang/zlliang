@@ -1,5 +1,5 @@
 ---
-no: 25
+number: 25
 title: Zig's juicy main
 created: 2026-01-18
 ---

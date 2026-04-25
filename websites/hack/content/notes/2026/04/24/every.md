@@ -1,5 +1,5 @@
 ---
-no: 72
+number: 72
 title: Every
 created: 2026-04-24
 ---

@@ -1,5 +1,5 @@
 ---
-no: 13
+number: 13
 title: Just added quote notes
 created: 2025-12-28
 ---

@@ -1,5 +1,5 @@
 ---
-no: 68
+number: 68
 title: Today's notable news and observations
 created: 2026-04-22
 ---

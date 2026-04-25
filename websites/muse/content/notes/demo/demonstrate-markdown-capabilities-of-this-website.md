@@ -1,5 +1,5 @@
 ---
-no: -1
+number: -1
 title: 展示本站的 Markdown 功能
 created: 2026-01-10
 post: demo/demonstrate-markdown-capabilities-of-this-website

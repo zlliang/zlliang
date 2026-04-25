@@ -1,5 +1,5 @@
 ---
-no: 7
+number: 7
 title: GLM 4.7 and MiniMax M2.1
 created: 2025-12-23
 ---

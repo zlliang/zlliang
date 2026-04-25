@@ -1,5 +1,5 @@
 ---
-no: 23
+number: 23
 title: Ralph Wiggum as a "software engineer"
 created: 2026-01-14
 ---

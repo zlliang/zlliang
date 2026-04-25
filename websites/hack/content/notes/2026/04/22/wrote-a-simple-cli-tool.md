@@ -1,5 +1,5 @@
 ---
-no: 67
+number: 67
 title: Wrote a simple CLI tool
 created: 2026-04-22
 ---

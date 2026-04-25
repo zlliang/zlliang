@@ -1,5 +1,5 @@
 ---
-no: 55
+number: 55
 title: OpenAI to acquire Astral
 created: 2026-03-19
 ---

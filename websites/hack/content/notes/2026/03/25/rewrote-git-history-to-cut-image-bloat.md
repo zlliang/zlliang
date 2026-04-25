@@ -1,5 +1,5 @@
 ---
-no: 60
+number: 60
 title: Rewrote Git history to cut image bloat
 created: 2026-03-25
 ---

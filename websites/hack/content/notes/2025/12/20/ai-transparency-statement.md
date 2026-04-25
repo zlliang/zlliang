@@ -1,5 +1,5 @@
 ---
-no: 3
+number: 3
 title: AI Transparency Statement
 created: 2025-12-20
 ---

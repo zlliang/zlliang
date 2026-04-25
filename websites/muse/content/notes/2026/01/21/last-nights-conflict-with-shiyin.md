@@ -1,5 +1,5 @@
 ---
-no: 8
+number: 8
 title: 昨晚和诗胤的矛盾
 created: 2026-01-21
 ---

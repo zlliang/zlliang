@@ -1,5 +1,5 @@
 ---
-no: 10
+number: 10
 title: Just added pagination to notes
 created: 2025-12-26
 ---

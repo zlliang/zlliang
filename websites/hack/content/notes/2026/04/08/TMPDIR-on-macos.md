@@ -1,5 +1,5 @@
 ---
-no: 63
+number: 63
 title: $TMPDIR on macOS
 created: 2026-04-08
 ---

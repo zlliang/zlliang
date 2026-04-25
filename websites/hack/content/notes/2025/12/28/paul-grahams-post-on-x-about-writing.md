@@ -1,5 +1,5 @@
 ---
-no: 14
+number: 14
 title: Paul Graham's post on X about writing
 created: 2025-12-28
 ---

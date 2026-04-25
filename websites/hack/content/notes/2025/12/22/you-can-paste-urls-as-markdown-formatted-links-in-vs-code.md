@@ -1,5 +1,5 @@
 ---
-no: 5
+number: 5
 title: You can paste URLs as Markdown formatted links in VS Code
 created: 2025-12-22
 ---

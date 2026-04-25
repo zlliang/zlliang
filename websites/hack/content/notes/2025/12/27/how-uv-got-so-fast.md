@@ -1,5 +1,5 @@
 ---
-no: 11
+number: 11
 title: How uv got so fast
 created: 2025-12-27
 ---

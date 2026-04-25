@@ -1,5 +1,5 @@
 ---
-no: 44
+number: 44
 title: Removed the prefixes from note numbers
 created: 2026-03-13
 ---

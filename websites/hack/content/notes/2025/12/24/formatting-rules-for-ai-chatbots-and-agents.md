@@ -1,5 +1,5 @@
 ---
-no: 8
+number: 8
 title: Formatting rules for AI chatbots and agents
 created: 2025-12-24
 ---

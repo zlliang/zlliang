@@ -1,5 +1,5 @@
 ---
-no: 51
+number: 51
 title: Introducing GPT-5.4 mini and nano
 created: 2026-03-18
 ---

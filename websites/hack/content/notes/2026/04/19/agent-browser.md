@@ -1,5 +1,5 @@
 ---
-no: 65
+number: 65
 title: agent-browser
 created: 2026-04-19
 ---

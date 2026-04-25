@@ -1,5 +1,5 @@
 ---
-no: 57
+number: 57
 title: Some Things Just Take Time
 created: 2026-03-22
 ---
