@@ -2,7 +2,6 @@
 no: 68
 title: Today's notable news and observations
 created: 2026-04-22
-type: daily
 ---
 
 Today's notable news and observations:

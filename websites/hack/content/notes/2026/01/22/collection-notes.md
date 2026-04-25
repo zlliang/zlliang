@@ -2,7 +2,6 @@
 no: 27
 title: Collection notes
 created: 2026-01-22
-type: daily
 ---
 
 I just added a new note type called "[collection notes](/notes/types/collection)".
@@ -14,5 +13,9 @@ I've already written one on my [Zilong's Days](https://days.zlliang.me) (Chinese
 <div class="update-note">
 
 **Update Mar 30, 2026:** In late March, I renamed my two journal websites. They are now Hack [https://hack.zlliang.me](https://hack.zlliang.me) and Muse [https://muse.zlliang.me](https://muse.zlliang.me). See: [Renamed the two journal websites to Hack and Muse](/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse).
+
+**Update Apr 24, 2026:** I [consolidated note types](/notes/2026/04/24/consolidated-note-types) and folded the `collection` type into the broader `bookmark` type.
+
+**Update Apr 25, 2026:** I removed note types entirely. The `/notes/types/...` URLs no longer exist; old links redirect to `/notes`. See: [Eliminated note types](/notes/2026/04/25/eliminated-note-types).
 
 </div>

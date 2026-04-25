@@ -2,7 +2,6 @@
 no: 9
 title: Starting a Blog at the End of 2025
 created: 2025-12-25
-type: post
 post: 2025/12/25/starting-a-blog-at-the-end-of-2025
 ---
 

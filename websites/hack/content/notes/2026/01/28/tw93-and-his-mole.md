@@ -2,7 +2,6 @@
 no: 28
 title: tw93 and his mole
 created: 2026-01-28
-type: bookmark
 ---
 
 [Tw93](https://tw93.fun/), and his [Mole](https://github.com/tw93/Mole). I heard of this macOS cleaner app called Mole before, but today I finally tried it out — a neat CLI utility that digs through and cleans up your macOS.

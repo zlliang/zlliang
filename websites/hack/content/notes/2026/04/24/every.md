@@ -2,7 +2,6 @@
 no: 72
 title: Every
 created: 2026-04-24
-type: bookmark
 ---
 
 [Every](https://every.to/). A well-known AI publication I hadn't looked into until today, after I noticed it again in the [announcement of GPT-5.5](https://openai.com/index/introducing-gpt-5-5/).

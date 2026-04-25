@@ -2,7 +2,6 @@
 no: 44
 title: Removed the prefixes from note numbers
 created: 2026-03-13
-type: daily
 ---
 
 I reverted the note number prefixes on both [https://tech.zlliang.me](https://tech.zlliang.me) and [https://days.zlliang.me](https://days.zlliang.me). Notes are now shown as `#44` again instead of `#tech44` or `#days44`.

@@ -22,14 +22,12 @@ Use this skill for content work on `hack` and `muse`. It is the repo-specific co
 
 - Read [references/workflow.md](./references/workflow.md) for the default note and post sequence
 - Read [references/content-schema.md](./references/content-schema.md) before touching frontmatter or moving content
-- Read [references/note-types.md](./references/note-types.md) when choosing a note type or reshaping a note to fit what it is trying to do
 - Read [references/style-guide.md](./references/style-guide.md) when formatting, note shape, or update note conventions matter
 - Read [references/bilingual-writing-workflow.md](./references/bilingual-writing-workflow.md) only when the task is English-writing practice or bilingual comparison
 
 ## Responsibilities
 
 - Review blog drafts for structure, schema, formatting, and publishing readiness
-- Keep each note aligned with its selected type's goal, mindset, and default shape instead of flattening all notes into the same form
 - Keep the distinction between author work and AI-assisted work explicit
 - Treat bilingual drafting and AI comparison workflows as optional training loops, not mandatory steps for every note or post
 - Keep the repo workflow lightweight and easy to follow

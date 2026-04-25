@@ -2,7 +2,6 @@
 no: 69
 title: Today's observations
 created: 2026-04-23
-type: daily
 ---
 
 Today's observations:

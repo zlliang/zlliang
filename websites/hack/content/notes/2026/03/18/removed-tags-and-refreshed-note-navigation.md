@@ -2,7 +2,6 @@
 no: 53
 title: Removed tags and refreshed note navigation
 created: 2026-03-18
-type: daily
 ---
 
 I just removed note tags from both [https://tech.zlliang.me](https://tech.zlliang.me) and [https://days.zlliang.me](https://days.zlliang.me).
@@ -20,5 +19,7 @@ The main commit is [zlliang/zlliang@8381e33](https://github.com/zlliang/zlliang/
 **Update Mar 22, 2026:** Removing tags also removed their old URLs, so I later added middleware handling for those legacy routes. Old tag pages now return `410 Gone` while the other migrated note URLs keep working through redirects, which should make the cleanup clearer to search engines.
 
 **Update Mar 30, 2026:** In late March, I renamed my two journal websites. They are now Hack [https://hack.zlliang.me](https://hack.zlliang.me) and Muse [https://muse.zlliang.me](https://muse.zlliang.me). See: [Renamed the two journal websites to Hack and Muse](/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse).
+
+**Update Apr 25, 2026:** Following the same simplifying instinct, I later removed note types altogether. The refreshed `/notes/types` page described above is gone; old type URLs now redirect to `/notes`. See: [Eliminated note types](/notes/2026/04/25/eliminated-note-types).
 
 </div>

@@ -68,7 +68,7 @@ export async function shipDraft(context: JournalContext, draftArg?: string): Pro
   const postDir = path.join(context.postsRoot, year, month, day)
   const postPath = path.join(postDir, selectedDraft)
   const postReference = `${year}/${month}/${day}/${slug}`
-  const note = await prepareNote(context, [title], "post", { post: postReference })
+  const note = await prepareNote(context, [title], { post: postReference })
 
   if (await pathExists(postPath)) {
     throw new JournalError(`Published post already exists: ${postPath}`)

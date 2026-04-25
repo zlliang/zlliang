@@ -2,7 +2,6 @@
 no: 73
 title: Today's AI releases
 created: 2026-04-24
-type: daily
 ---
 
 Today's AI releases:

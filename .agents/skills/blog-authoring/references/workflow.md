@@ -4,7 +4,7 @@ Use this file for the repo-specific sequence. Detailed frontmatter rules live in
 
 ## Default sequence
 
-1. Identify the target site and entry type; for notes, choose the note type by what the draft is trying to do
+1. Identify the target site and entry type
 2. Create or ship content with `journal` when the built-in workflow fits; use `pnpm journal:<hack|muse> --help` from the root, or `pnpm exec journal --help`, and pass `--dir` when you need to target a site explicitly
 3. The author writes the draft
 4. Review the draft for structure, schema, formatting, and publishing readiness
@@ -16,14 +16,12 @@ Use this file for the repo-specific sequence. Detailed frontmatter rules live in
 
 - Notes live under `content/notes/YYYY/MM/DD/slug.md`
 - Notes are short-form and usually move from draft to publish quickly
-- Choose note types by intent: capture, respond, curate, share, or introduce a post
-- Use [note-types.md](./note-types.md) when you need the goal, mindset, or default shape of a note type
-- Keep the body aligned with the selected note `type`
+- Let each note's body follow what it is trying to do — capture, respond, curate, share, or introduce a post — without forcing a single shape
 
 ## Posts
 
 - New posts start in `content/posts/drafts/slug.md` with `draft: true`
-- Shipping removes `draft: true` and creates the associated `type: post` note
+- Shipping removes `draft: true` and creates an associated note that links to the post via `post:`
 - `content/posts/drafts/images/` is moved to the published post's `images/` directory during shipping
 - Posts may optionally join a series with `series: <series-id>`
 - Use `pinned: true` only for long-lived reference posts

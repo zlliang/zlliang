@@ -2,7 +2,6 @@
 no: 58
 title: Added post series and grouped some existing posts
 created: 2026-03-23
-type: daily
 ---
 
 I just added support for **post series** on both [https://tech.zlliang.me](https://tech.zlliang.me) and [https://days.zlliang.me](https://days.zlliang.me). There is now a [/posts/series](/posts/series) index page, each series has its own page, and individual post pages can show the other posts in the same series in the sidebar.

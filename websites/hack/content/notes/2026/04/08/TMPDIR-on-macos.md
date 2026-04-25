@@ -2,7 +2,6 @@
 no: 63
 title: $TMPDIR on macOS
 created: 2026-04-08
-type: til
 ---
 
 **TIL:** `$TMPDIR` is an environment variable set by macOS (not fish-specific) that points to a per-user temporary directory. Its value looks something like:

@@ -3,7 +3,6 @@ no: 22
 title: Splitting My Websites and Finalizing My Writing Framework
 created: 2026-01-13
 post: 2026/01/13/splitting-my-websites-and-finalizing-my-writing-framework
-type: post
 ---
 
 Last weekend, I reorganized my personal websites. Here's the new structure:

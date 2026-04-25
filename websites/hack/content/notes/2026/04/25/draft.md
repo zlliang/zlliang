@@ -1,8 +1,7 @@
 ---
-no: 74
+no: 75
 title: Two bookmarks to write today
-created: 2026-04-24
-type: daily
+created: 2026-04-25
 draft: true
 ---
 

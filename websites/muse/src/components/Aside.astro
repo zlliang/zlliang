@@ -6,7 +6,6 @@ import SearchForm from "@/components/SearchForm.astro"
 import Heatmap from "@/components/Heatmap.astro"
 
 import { getNotes, getPosts, getPinnedPosts, getSeries } from "@/utils/content"
-import { types } from "@/utils/types"
 
 import { cn } from "@zlliang/theme"
 
@@ -35,7 +34,7 @@ const series = await getSeries()
     <div class="flex justify-between items-center mb-1">
       <a href="/notes"><span class="icon-[lucide--notebook-pen]" /> 手记</a>
       <span class="text-sm text-neutral-500">
-        <span>{notes.length} 则</span><span class="icon-[lucide--dot]" /><a href="/notes/types">{types.length} 个分类</a>
+        <span>{notes.length} 则</span>
       </span>
     </div>
     <div class="flex justify-between items-center">

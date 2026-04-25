@@ -2,7 +2,6 @@
 no: 70
 title: Consolidated note types
 created: 2026-04-24
-type: daily
 ---
 
 I just simplified the note type system on both [Hack](https://hack.zlliang.me) and [Muse](https://muse.zlliang.me), going from six types down to four.
@@ -14,3 +13,9 @@ The bigger change is merging `link`, `collection`, and `quote` into a single `bo
 ![The updated note types page](./images/note-types-page.png)
 
 The final type list: **Daily**, **Bookmark**, **TIL**, **Post**. The commit is [zlliang/zlliang@1a162b9](https://github.com/zlliang/zlliang/commit/1a162b9).
+
+<div class="update-note">
+
+**Update Apr 25, 2026:** A day after this consolidation, I removed note types altogether. The `type` field, the `/notes/types` pages, and the type chip in note metadata are all gone. See: [Eliminated note types](/notes/2026/04/25/eliminated-note-types).
+
+</div>

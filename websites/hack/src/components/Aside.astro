@@ -6,7 +6,6 @@ import SearchForm from "@/components/SearchForm.astro"
 import Heatmap from "@/components/Heatmap.astro"
 
 import { getNotes, getPosts, getPinnedPosts, getSeries } from "@/utils/content"
-import { types } from "@/utils/types"
 
 import { cn } from "@zlliang/theme"
 
@@ -35,7 +34,7 @@ const series = await getSeries()
     <div class="flex justify-between items-center mb-1">
       <a href="/notes"><span class="icon-[lucide--notebook-pen]" /> Notes</a>
       <span class="text-sm text-neutral-500">
-        <span>{notes.length} total</span><span class="icon-[lucide--dot]" /><a href="/notes/types">{types.length} types</a>
+        <span>{notes.length} total</span>
       </span>
     </div>
     <div class="flex justify-between items-center">

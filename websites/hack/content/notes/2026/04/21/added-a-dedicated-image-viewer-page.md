@@ -2,7 +2,6 @@
 no: 66
 title: Added a dedicated image viewer page
 created: 2026-04-21
-type: daily
 ---
 
 I just added a dedicated image viewer page to both [Hack](https://hack.zlliang.me) and [Muse](https://muse.zlliang.me). Clicking any image in a note or post now opens it on a clean, full-width page with the caption and a back link below.

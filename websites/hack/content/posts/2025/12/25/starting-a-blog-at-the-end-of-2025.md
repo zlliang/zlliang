@@ -186,6 +186,8 @@ Time to write, write, and write. Can I accumulate thousands of notes in a decade
 
 **Update Apr 24, 2026:** I consolidated note types from six down to four: `regular` became `daily`, and `link`, `collection`, `quote` merged into `bookmark`. See: [Consolidated note types](/notes/2026/04/24/consolidated-note-types).
 
+**Update Apr 25, 2026:** I removed note types entirely. The `type` field is gone from the notes schema, the `/notes/types` pages no longer exist, and the type chip in note metadata is gone. See: [Eliminated note types](/notes/2026/04/25/eliminated-note-types).
+
 </div>
 
 [^1]: [The Amp thread](https://ampcode.com/threads/T-019b49fd-619b-77ce-af60-0ce81ffb0d7f)

@@ -2,7 +2,6 @@
 no: 65
 title: agent-browser
 created: 2026-04-19
-type: bookmark
 ---
 
 [agent-browser](https://github.com/vercel-labs/agent-browser). A browser automation CLI built for AI agents. I started looking for browser automation tools and skills that generally enhance coding agents' capabilities. First I recalled [Playwright MCP](https://github.com/microsoft/playwright-mcp), a tool I already knew about but hadn't tried. Its README recommended the CLI + skills pair for this generation of coding agents, and pointed to [Playwright CLI](https://github.com/microsoft/playwright-cli). Makes sense, I thought.

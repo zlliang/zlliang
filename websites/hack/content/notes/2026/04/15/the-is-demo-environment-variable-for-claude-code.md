@@ -2,7 +2,6 @@
 no: 64
 title: The IS_DEMO environment variable for Claude Code
 created: 2026-04-15
-type: til
 ---
 
 **TIL:** You can set `IS_DEMO=1` to simplify the welcome screen of Claude Code. There are two types of welcome screens (shown below), and there's no obvious logic behind which one appears for a given project — I found this annoying. After digging into it, I discovered an undocumented environment variable `IS_DEMO`[^1] that forces the simpler one. Run `IS_DEMO=1 claude`, or set it in Claude Code's `settings.json` under the `env` key.

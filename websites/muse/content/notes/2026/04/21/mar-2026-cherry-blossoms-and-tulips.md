@@ -2,7 +2,6 @@
 no: 38
 title: Mar 2026：樱花开了，郁金香开了
 created: 2026-04-21
-type: post
 post: 2026/04/21/mar-2026-cherry-blossoms-and-tulips
 ---
 

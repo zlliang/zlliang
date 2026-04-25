@@ -10,7 +10,6 @@ This file is a working summary for `hack` and `muse`. The code-level source of t
 no: 1
 title: Example title
 created: 2026-03-14
-type: regular
 post: 2026/03/14/example-post
 draft: true
 ```
@@ -20,8 +19,7 @@ draft: true
 - `no`: required unique note number
 - `title`: optional, but preferred when the note has a clear title
 - `created`: required, `YYYY-MM-DD`
-- `type`: `regular`, `link`, `collection`, `quote`, `til`, or `post`; choose `type` by note intent; see [note-types.md](./note-types.md) for the goal and default body shape of each type
-- `post`: optional reference to the related post; only for post notes
+- `post`: optional reference to the related post; only for notes that introduce a published post
 - `draft`: optional boolean; omit it or set it to `false` when published
 
 ## Posts

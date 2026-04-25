@@ -6,12 +6,11 @@ Use this file for repo-specific style decisions for notes and posts on `hack` an
 
 - `note` / `手记`: short-form entry
 - `post` / `文章`: long-form entry
-- `type` / `分类`: note type
 
 ## Titles and headings
 
 - Post titles use title case
-- Note titles usually use sentence case; for `link` and `post` notes, match the linked item's or post's title when that reads better
+- Note titles usually use sentence case; when a note introduces a linked item or a published post, match that item's or post's title if it reads better
 - Section headings use sentence case
 - Keep headings short and avoid trailing punctuation
 
@@ -26,16 +25,6 @@ Use this file for repo-specific style decisions for notes and posts on `hack` an
 - Use double quotation marks for ordinary quoted words and phrases in prose
 - Use double quotation marks, not italics, for short work titles when needed in running text
 - Keep punctuation inside quotation marks only when it belongs to the quoted material
-
-## Note types
-
-- Read [note-types.md](./note-types.md) when the task depends on the note's goal, mindset, or "done" criteria
-- `regular`: free-form note; keep capture and speed over polish
-- `link`: start with `[Link](url)`, then comment
-- `collection`: short intro plus a curated list
-- `quote`: blockquote with source attribution, then commentary
-- `til`: in English, usually start with `**TIL:** ...`
-- `post`: introduce the related post, create interest, and set `post:` in frontmatter
 
 ## Update notes
 

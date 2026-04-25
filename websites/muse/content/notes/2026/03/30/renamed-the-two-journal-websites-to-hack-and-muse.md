@@ -2,7 +2,6 @@
 no: 36
 title: 更新两个手记站点名称为「技术手记」和「随想手记」
 created: 2026-03-30
-type: daily
 ---
 
 周末，我花了些时间重新思考了一下两个网站的定位和目标，并最终做了一波重命名：原先的**生活手记**现在叫做**随想手记**，域名改为了 [https://muse.zlliang.me](https://muse.zlliang.me)；原先的**技术笔记**现在叫做**技术手记**，域名改为了 [https://hack.zlliang.me](https://hack.zlliang.me)。重命名之后，我自信两个站点将会走的更久、更稳。详细的描述，我记在了技术手记的一篇 note 里：[Renamed the two journal websites to Hack and Muse](https://hack.zlliang.me/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse)。

@@ -2,7 +2,6 @@
 no: 25
 title: Zig's juicy main
 created: 2026-01-18
-type: bookmark
 ---
 
 [Zig's new juicy main is here](https://www.youtube.com/watch?v=GfzCJzm8S6M). Not quite following [Zig](https://ziglang.org/)'s new features recently, and a quick check yesterday made me find that the **juicy main** has landed!

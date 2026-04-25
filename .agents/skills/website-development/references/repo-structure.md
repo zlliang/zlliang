@@ -14,7 +14,7 @@ Use this file when ownership or shared boundaries matter.
 
 ## Shared rules
 
-- `hack` and `muse` share the same content model and note types
+- `hack` and `muse` share the same content model
 - Each site owns its own `src/content.config.ts`
 - Use `@/*` for within-site `src/*` imports
 - Keep Astro components in PascalCase

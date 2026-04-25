@@ -5,7 +5,6 @@ import { format } from "date-fns"
 import PostTitle from "@/components/PostTitle.astro"
 
 import { getPostById } from "@/utils/content"
-import { types } from "@/utils/types"
 
 import type { CollectionEntry } from "astro:content"
 
@@ -17,7 +16,6 @@ interface Props {
 const { note, showLink = true } = Astro.props
 const { Content } = await render(note)
 const post = note.data.post ? await getPostById(note.data.post.id) : null
-const type = types.find((item) => item.slug === note.data.type)!
 ---
 
 <div>
@@ -33,8 +31,6 @@ const type = types.find((item) => item.slug === note.data.type)!
   <div class="flex justify-between items-center gap-2">
     <div class="flex items-center text-sm text-neutral-500">
       {showLink ? <a href={`/notes/${note.id}`}>#{note.data.no}</a> : <span>#{note.data.no}</span>}
-      <span class="icon-[lucide--dot]" />
-      <a href={`/notes/types/${note.data.type}`}>{type.display}</a>
       <span class="icon-[lucide--dot]" />
       <span>{format(note.data.created, "yyyy 年 M 月 d 日")}</span>
       {note.data.draft && <span class="ml-2 text-amber-600 dark:text-amber-400">草稿</span>}

@@ -57,24 +57,12 @@ async function redirectsBefore20260322(context: Context) {
   return null
 }
 
-// Apr 24, 2026: Consolidated note types (regular → daily, link/collection/quote → bookmark).
-function redirectsBefore20260424(context: Context) {
-  const renamedTypes: Record<string, string> = {
-    regular: "daily",
-    link: "bookmark",
-    collection: "bookmark",
-    quote: "bookmark",
-  }
-
+// Apr 25, 2026: Eliminated note types; all type pages now redirect to /notes.
+function redirectsBefore20260425(context: Context) {
   const { pathname, search } = context.url
 
-  const match = pathname.match(/^\/notes\/types\/([^/]+)\/?$/)
-  if (match) {
-    const [, rawType] = match
-    const resolved = renamedTypes[rawType]
-    if (resolved) {
-      return context.redirect(`/notes/types/${resolved}${search}`, 308)
-    }
+  if (pathname === "/notes/types" || pathname.startsWith("/notes/types/")) {
+    return context.redirect(`/notes${search}`, 308)
   }
 
   return null
@@ -84,8 +72,8 @@ export const redirects = defineMiddleware(async (context, next) => {
   const before20260322 = await redirectsBefore20260322(context)
   if (before20260322) return before20260322
 
-  const before20260424 = await redirectsBefore20260424(context)
-  if (before20260424) return before20260424
+  const before20260425 = redirectsBefore20260425(context)
+  if (before20260425) return before20260425
 
   return next()
 })

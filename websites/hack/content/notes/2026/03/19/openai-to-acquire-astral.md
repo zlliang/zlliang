@@ -2,7 +2,6 @@
 no: 55
 title: OpenAI to acquire Astral
 created: 2026-03-19
-type: bookmark
 ---
 
 [OpenAI to acquire Astral](https://openai.com/index/openai-to-acquire-astral/)[^1]. This one is big. `uv`, `Ruff`, and `ty` are all best-in-class tools from Astral that have significantly improved the Python developer experience. After the acquisition, the Astral team will join OpenAI's Codex team. Given how quickly Codex has been improving recently, this feels like a strong combination for the future of developer tooling.

@@ -4,7 +4,6 @@ export interface Frontmatter {
   no?: number
   title?: string
   created?: string
-  type?: string
   post?: string
   draft?: boolean
   pinned?: boolean
