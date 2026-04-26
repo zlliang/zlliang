@@ -20,7 +20,7 @@ const post = note.data.post ? await getPostById(note.data.post.id) : null
 
 <div>
   {/* Link to the post */}
-  {post && <p><PostTitle post={post} class="font-bold" /></p>}
+  {post && <div class="mb-4 leading-prose"><PostTitle post={post} class="font-bold" /></div>}
 
   {/* Content */}
   <div class="mb-4">
