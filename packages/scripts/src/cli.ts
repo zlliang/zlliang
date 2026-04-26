@@ -5,11 +5,11 @@ import { registerNewCommand } from "./commands/new"
 import { registerShipCommand } from "./commands/ship"
 import { registerOptimizeImageCommand } from "./commands/optimize-image"
 
-const cli = cac("journal")
+const cli = cac("scripts")
 
 cli
   .usage("[options] <command>")
-  .option("--dir <dir>", "Path to a journal site root or a child directory inside it")
+  .option("--dir <dir>", "Path to a site root that contains `content/notes` and `content/posts`, or a child directory inside it")
   .help()
   .version(packageJson.version)
 

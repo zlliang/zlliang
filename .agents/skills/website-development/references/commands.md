@@ -16,10 +16,10 @@ Run commands from the repository root.
 
 ## Content workflow
 
-- `pnpm journal:hack <command> [...]`: run the `journal` CLI against the `hack` site from the root.
-- `pnpm journal:muse <command> [...]`: run the `journal` CLI against the `muse` site from the root.
-- The root scripts expand to `pnpm exec journal --dir websites/hack ...` and `pnpm exec journal --dir websites/muse ...`.
-- `journal` assumes the shared `content/notes` and `content/posts` layout; use `pnpm journal:hack --help`, `pnpm journal:muse --help`, or `pnpm exec journal --help` for the command surface and examples.
+- `pnpm scripts:hack <command> [...]`: run the `scripts` CLI against the `hack` site from the root.
+- `pnpm scripts:muse <command> [...]`: run the `scripts` CLI against the `muse` site from the root.
+- The root scripts expand to `pnpm exec scripts --dir websites/hack ...` and `pnpm exec scripts --dir websites/muse ...`.
+- `scripts` assumes the shared `content/notes` and `content/posts` layout; use `pnpm scripts:hack --help`, `pnpm scripts:muse --help`, or `pnpm exec scripts --help` for the command surface and examples.
 
 ## Shared imports
 

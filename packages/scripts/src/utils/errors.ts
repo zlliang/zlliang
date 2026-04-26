@@ -1,9 +1,9 @@
-export class JournalError extends Error {
+export class CliError extends Error {
   readonly exitCode: number
 
   constructor(message: string, exitCode = 1) {
     super(message)
-    this.name = "JournalError"
+    this.name = "CliError"
     this.exitCode = exitCode
   }
 }

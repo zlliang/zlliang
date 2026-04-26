@@ -1,10 +1,10 @@
 {
-  "name": "@zlliang/journal",
+  "name": "@zlliang/scripts",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "bin": {
-    "journal": "./bin/journal.js"
+    "scripts": "./bin/scripts.js"
   },
   "dependencies": {
     "cac": "^7.0.0",

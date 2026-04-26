@@ -2,16 +2,16 @@ import fs from "node:fs/promises"
 import path from "node:path"
 import { createInterface } from "node:readline/promises"
 
-import { resolveJournalContext } from "../utils/context"
+import { resolveSiteContext } from "../utils/context"
 import { handleCommand } from "../utils/command"
-import { JournalError } from "../utils/errors"
+import { CliError } from "../utils/errors"
 import { pathExists } from "../utils/files"
 import { parseFrontmatter, serializeFrontmatter } from "../utils/frontmatter"
 import { getDateParts } from "../utils/text"
 import { prepareNote } from "./new"
 
 import type { CAC } from "cac"
-import type { JournalContext } from "../utils/context"
+import type { SiteContext } from "../utils/context"
 import type { PreparedNote } from "./new"
 
 export interface ShippedDraft {
@@ -28,12 +28,12 @@ interface ShipCommandOptions {
 export function registerShipCommand(cli: CAC) {
   cli
     .command("ship [draft]", "Publish a post draft and create the associated note")
-    .example("journal --dir websites/hack ship")
-    .example("journal ship")
-    .example("journal ship how-i-use-ai-agents")
+    .example("scripts --dir websites/hack ship")
+    .example("scripts ship")
+    .example("scripts ship how-i-use-ai-agents")
     .action((draft: string | undefined, options: ShipCommandOptions) => {
       void handleCommand(async () => {
-        const context = await resolveJournalContext(options.dir)
+        const context = await resolveSiteContext(options.dir)
         const shipped = await shipDraft(context, draft)
 
         process.stdout.write(`Shipped post: ${shipped.postPath}\n`)
@@ -48,11 +48,11 @@ export function registerShipCommand(cli: CAC) {
     })
 }
 
-export async function shipDraft(context: JournalContext, draftArg?: string): Promise<ShippedDraft> {
+export async function shipDraft(context: SiteContext, draftArg?: string): Promise<ShippedDraft> {
   const drafts = await listDrafts(context.draftsRoot)
 
   if (drafts.length === 0) {
-    throw new JournalError("No drafts to ship.")
+    throw new CliError("No drafts to ship.")
   }
 
   const selectedDraft = await selectDraft(drafts, draftArg)
@@ -71,7 +71,7 @@ export async function shipDraft(context: JournalContext, draftArg?: string): Pro
   const note = await prepareNote(context, [title], { post: postReference })
 
   if (await pathExists(postPath)) {
-    throw new JournalError(`Published post already exists: ${postPath}`)
+    throw new CliError(`Published post already exists: ${postPath}`)
   }
 
   const nextFrontmatter = {
@@ -114,7 +114,7 @@ async function selectDraft(drafts: string[], draftArg?: string): Promise<string>
   if (draftArg) {
     const normalized = draftArg.endsWith(".md") ? draftArg : `${draftArg}.md`
     if (!drafts.includes(normalized)) {
-      throw new JournalError(`Draft not found: ${draftArg}`)
+      throw new CliError(`Draft not found: ${draftArg}`)
     }
 
     return normalized
@@ -125,7 +125,7 @@ async function selectDraft(drafts: string[], draftArg?: string): Promise<string>
   }
 
   if (!process.stdin.isTTY || !process.stdout.isTTY) {
-    throw new JournalError("Multiple drafts found. Pass a draft slug to `journal ship`.")
+    throw new CliError("Multiple drafts found. Pass a draft slug to `scripts ship`.")
   }
 
   process.stdout.write("Select a draft to ship:\n\n")
@@ -144,7 +144,7 @@ async function selectDraft(drafts: string[], draftArg?: string): Promise<string>
     const index = Number.parseInt(answer, 10) - 1
 
     if (index < 0 || index >= drafts.length || Number.isNaN(index)) {
-      throw new JournalError("Invalid draft selection.")
+      throw new CliError("Invalid draft selection.")
     }
 
     return drafts[index]

@@ -13,14 +13,14 @@
     "build:home": "pnpm --filter @zlliang/home build",
     "build:hack": "pnpm --filter @zlliang/hack build",
     "build:muse": "pnpm --filter @zlliang/muse build",
-    "journal:hack": "pnpm exec journal --dir websites/hack",
-    "journal:muse": "pnpm exec journal --dir websites/muse"
+    "scripts:hack": "pnpm exec scripts --dir websites/hack",
+    "scripts:muse": "pnpm exec scripts --dir websites/muse"
   },
   "lint-staged": {
-    "*.{jpg,jpeg,png,webp,avif}": "pnpm exec journal optimize-image"
+    "*.{jpg,jpeg,png,webp,avif}": "pnpm exec scripts optimize-image"
   },
   "devDependencies": {
-    "@zlliang/journal": "workspace:*",
+    "@zlliang/scripts": "workspace:*",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "typescript": "^6.0.3"

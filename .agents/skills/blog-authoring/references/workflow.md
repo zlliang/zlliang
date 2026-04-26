@@ -5,12 +5,12 @@ Use this file for the repo-specific sequence. Detailed frontmatter rules live in
 ## Default sequence
 
 1. Identify the target site and entry type.
-2. Create or ship content with `journal` when the built-in workflow fits; use `pnpm journal:<hack|muse> --help` from the root, or `pnpm exec journal --help`, and pass `--dir` when you need to target a site explicitly.
+2. Create or ship content with `scripts` when the built-in workflow fits; use `pnpm scripts:<hack|muse> --help` from the root, or `pnpm exec scripts --help`, and pass `--dir` when you need to target a site explicitly.
 3. The author writes the draft.
 4. Review the draft for structure, schema, formatting, and publishing readiness.
 5. If the draft is in English, load `english-review` for prose quality, tone, and voice.
 6. The author revises or rewrites.
-7. For posts, ship the draft with `journal` when it is ready.
+7. For posts, ship the draft with `scripts` when it is ready.
 
 ## Notes
 

@@ -5,7 +5,7 @@ import prettyBytes from "pretty-bytes"
 import sharp from "sharp"
 
 import { handleCommand } from "../utils/command"
-import { JournalError } from "../utils/errors"
+import { CliError } from "../utils/errors"
 import { ensurePathExists } from "../utils/files"
 
 import type { CAC } from "cac"
@@ -69,12 +69,12 @@ interface OptimizeImageCommandOptions {
 export function registerOptimizeImageCommand(cli: CAC) {
   cli
     .command("optimize-image [...targets]", "Optimize images under the given paths or the current directory")
-    .example("journal optimize-image")
-    .example("journal --dir websites/muse optimize-image")
-    .example("journal optimize-image content/posts")
-    .example("journal --dir websites/muse optimize-image content/posts")
-    .example('journal optimize-image "content/posts/**/*.{jpg,png}"')
-    .example("journal optimize-image image-1.png image-2.webp")
+    .example("scripts optimize-image")
+    .example("scripts --dir websites/muse optimize-image")
+    .example("scripts optimize-image content/posts")
+    .example("scripts --dir websites/muse optimize-image content/posts")
+    .example('scripts optimize-image "content/posts/**/*.{jpg,png}"')
+    .example("scripts optimize-image image-1.png image-2.webp")
     .action((targets: string[] = [], options: OptimizeImageCommandOptions) => {
       void handleCommand(async () => {
         const candidates = await collectCandidates(targets, options.dir)
@@ -86,7 +86,7 @@ export function registerOptimizeImageCommand(cli: CAC) {
         const stats = await optimizeCandidates(candidates)
         process.stdout.write(`Processed ${candidates.length} ${candidates.length === 1 ? "image" : "images"}: optimized ${stats.optimized.length}, skipped ${stats.skipped.length}, failed ${stats.failed.length}.\n`)
         if (stats.failed.length > 0) {
-          throw new JournalError(`Image optimization failed for ${stats.failed.length} file(s).`)
+          throw new CliError(`Image optimization failed for ${stats.failed.length} file(s).`)
         }
       })
     })

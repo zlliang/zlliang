@@ -1,10 +1,10 @@
-import { JournalError } from "./errors"
+import { CliError } from "./errors"
 
 export async function handleCommand(task: () => Promise<void>) {
   try {
     await task()
   } catch (error) {
-    if (error instanceof JournalError) {
+    if (error instanceof CliError) {
       process.stderr.write(`${error.message}\n`)
       process.exitCode = error.exitCode
       return

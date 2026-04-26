@@ -1,9 +1,9 @@
 import path from "node:path"
 
-import { JournalError } from "./errors"
+import { CliError } from "./errors"
 import { ensurePathExists, pathExists } from "./files"
 
-export interface JournalContext {
+export interface SiteContext {
   siteRoot: string
   contentRoot: string
   notesRoot: string
@@ -12,11 +12,11 @@ export interface JournalContext {
   draftsImagesRoot: string
 }
 
-export async function resolveJournalContext(startPath = process.cwd()): Promise<JournalContext> {
+export async function resolveSiteContext(startPath = process.cwd()): Promise<SiteContext> {
   const resolvedPath = path.resolve(startPath)
   await ensurePathExists(resolvedPath, startPath)
 
-  const siteRoot = await findJournalRoot(resolvedPath)
+  const siteRoot = await findSiteRoot(resolvedPath)
   const contentRoot = path.join(siteRoot, "content")
   const notesRoot = path.join(contentRoot, "notes")
   const postsRoot = path.join(contentRoot, "posts")
@@ -32,11 +32,11 @@ export async function resolveJournalContext(startPath = process.cwd()): Promise<
   }
 }
 
-async function findJournalRoot(startPath: string): Promise<string> {
+async function findSiteRoot(startPath: string): Promise<string> {
   let current = startPath
 
   while (true) {
-    if (await hasJournalStructure(current)) {
+    if (await hasSiteStructure(current)) {
       return current
     }
 
@@ -48,10 +48,10 @@ async function findJournalRoot(startPath: string): Promise<string> {
     current = parent
   }
 
-  throw new JournalError(`Could not find a journal content root from ${startPath}. Pass a path that contains \`content/notes\` and \`content/posts\`, or run the command from that directory.`)
+  throw new CliError(`Could not find a site content root from ${startPath}. Pass a path that contains \`content/notes\` and \`content/posts\`, or run the command from that directory.`)
 }
 
-async function hasJournalStructure(siteRoot: string): Promise<boolean> {
+async function hasSiteStructure(siteRoot: string): Promise<boolean> {
   const contentRoot = path.join(siteRoot, "content")
 
   return await pathExists(path.join(contentRoot, "notes"))

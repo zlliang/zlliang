@@ -2,15 +2,15 @@ import fs, { glob } from "node:fs/promises"
 import path from "node:path"
 import { slug as slugify } from "github-slugger"
 
-import { resolveJournalContext } from "../utils/context"
+import { resolveSiteContext } from "../utils/context"
 import { handleCommand } from "../utils/command"
-import { JournalError } from "../utils/errors"
+import { CliError } from "../utils/errors"
 import { pathExists } from "../utils/files"
 import { serializeFrontmatter } from "../utils/frontmatter"
 import { getDateParts, normalizeTitle } from "../utils/text"
 
 import type { CAC } from "cac"
-import type { JournalContext } from "../utils/context"
+import type { SiteContext } from "../utils/context"
 import type { Frontmatter } from "../utils/frontmatter"
 
 const BODY_PLACEHOLDER = "TODO"
@@ -33,12 +33,12 @@ interface NewCommandOptions {
 export function registerNewCommand(cli: CAC) {
   cli
     .command("new <entry> [title...]", "Create a new note or post draft")
-    .example("journal --dir websites/muse new note \"A useful article\"")
-    .example("journal new note \"A useful article\"")
-    .example("journal new post \"How I use AI agents\"")
+    .example("scripts --dir websites/muse new note \"A useful article\"")
+    .example("scripts new note \"A useful article\"")
+    .example("scripts new post \"How I use AI agents\"")
     .action((entry: string, title: string[], options: NewCommandOptions) => {
       void handleCommand(async () => {
-        const context = await resolveJournalContext(options.dir)
+        const context = await resolveSiteContext(options.dir)
 
         if (entry === "note") {
           const note = await createNote(context, title)
@@ -52,13 +52,13 @@ export function registerNewCommand(cli: CAC) {
           return
         }
 
-        throw new JournalError("Invalid entry type. Expected `note` or `post`.")
+        throw new CliError("Invalid entry type. Expected `note` or `post`.")
       })
     })
 }
 
 export async function createNote(
-  context: JournalContext,
+  context: SiteContext,
   titleParts: string[] | undefined
 ): Promise<PreparedNote> {
   const note = await prepareNote(context, titleParts)
@@ -67,7 +67,7 @@ export async function createNote(
 }
 
 export async function createPostDraft(
-  context: JournalContext,
+  context: SiteContext,
   titleParts: string[] | undefined
 ): Promise<PreparedEntry> {
   const post = await preparePostDraft(context, titleParts)
@@ -76,7 +76,7 @@ export async function createPostDraft(
 }
 
 export async function prepareNote(
-  context: JournalContext,
+  context: SiteContext,
   titleParts: string[] | undefined,
   options?: { post?: string }
 ): Promise<PreparedNote> {
@@ -88,7 +88,7 @@ export async function prepareNote(
   const filePath = path.join(dirPath, `${slug}.md`)
 
   if (await pathExists(filePath)) {
-    throw new JournalError(`File already exists: ${filePath}`)
+    throw new CliError(`File already exists: ${filePath}`)
   }
 
   const frontmatter: Frontmatter = {
@@ -108,7 +108,7 @@ export async function prepareNote(
 }
 
 export async function preparePostDraft(
-  context: JournalContext,
+  context: SiteContext,
   titleParts: string[] | undefined
 ): Promise<PreparedEntry> {
   const { date } = getDateParts()
@@ -117,7 +117,7 @@ export async function preparePostDraft(
   const filePath = path.join(context.draftsRoot, `${slug}.md`)
 
   if (await pathExists(filePath)) {
-    throw new JournalError(`File already exists: ${filePath}`)
+    throw new CliError(`File already exists: ${filePath}`)
   }
 
   const frontmatter: Frontmatter = {
