@@ -9,6 +9,7 @@
     "./main.css": "./src/styles/main.css",
     "./schemas/content": "./src/schemas/content.ts",
     "./middleware": "./src/middleware/index.ts",
+    "./components/Layout.astro": "./src/components/Layout.astro",
     "./components/SiteCard.astro": "./src/components/SiteCard.astro",
     "./components/Section.astro": "./src/components/Section.astro",
     "./components/Pagination.astro": "./src/components/Pagination.astro",
@@ -43,6 +44,7 @@
     "@types/lodash-es": "^4.17.12",
     "astro": "^6.1.9",
     "tailwindcss": "^4.2.4",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vite": "^7.3.2"
   }
 }

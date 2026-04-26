@@ -7,6 +7,7 @@ export default defineConfig({
   output: "server",
   integrations: [
     zlliangTheme({
+      type: "blog",
       locale: "en",
       primaryColor: "blue",
       title: "Zilong Liang / Mesh",

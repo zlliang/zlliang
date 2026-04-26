@@ -7,6 +7,7 @@ export default defineConfig({
   output: "server",
   integrations: [
     zlliangTheme({
+      type: "blog",
       locale: "zh",
       primaryColor: "indigo",
       title: "梁子龙 / 随想手记",

@@ -61,9 +61,11 @@ const series = await getSeries()
   )}
 
   {/* Other websites */}
-  <Section title={t.otherSide}>
-    <SiteCard site={themeConfig.sister.site} lang={themeConfig.sister.lang} />
-  </Section>
+  {themeConfig.sister && (
+    <Section title={t.otherSide}>
+      <SiteCard site={themeConfig.sister.site} lang={themeConfig.sister.lang} />
+    </Section>
+  )}
 
   {/* Suffix */}
   <slot name="suffix" />
