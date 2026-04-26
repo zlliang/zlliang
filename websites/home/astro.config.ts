@@ -6,9 +6,12 @@ export default defineConfig({
   site: "https://zlliang.me",
   integrations: [
     zlliangTheme({
+      type: "portfolio",
       primaryColor: "cyan",
-      routes: false,
-      content: false,
+      title: "Zilong Liang",
+      logo: "./src/assets/images/logo.png",
+      footerAuthor: "Zilong Liang",
+      twitterCreator: "@zlliang96",
     }),
   ],
   adapter: vercel({

@@ -10,10 +10,5 @@ import config from "virtual:zlliang-theme/config"
 import logo from "virtual:zlliang-theme/logo"
 
 export const themeConfig = config as Omit<ResolvedThemeConfig, "logo">
-
 export const themeLogo = logo as ImageMetadata
-
-export const t: Tokens = {
-  ...tokensByLocale[themeConfig.locale],
-  ...themeConfig.overrides,
-}
+export const t: Tokens = { ...tokensByLocale[themeConfig.locale], ...themeConfig.overrides }

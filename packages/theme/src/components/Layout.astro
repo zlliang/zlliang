@@ -7,26 +7,68 @@ import Header from "./Header.astro"
 import Footer from "./Footer.astro"
 import Aside from "./Aside.astro"
 
-import { t, themeConfig, themeLogo } from "../runtime/config"
+import { themeConfig, themeLogo, t } from "../runtime/config"
 
 import "../styles/main.css"
 
+import type { ImageMetadata } from "astro"
+
 interface Props {
+  /** Raw page title. The doc `<title>` becomes `${title} - ${siteTitle}`, or just `siteTitle` when omitted. */
   title?: string
   description?: string
+  /** Value for `<html lang>`. Defaults to the configured locale's HTML lang. */
+  lang?: string
+  /** When provided, emits `<link rel="alternate" hreflang>` for each entry. */
+  hreflangs?: { code: string; href: string | URL }[]
+  /** Emit `<meta name="robots" content="noindex, follow">`. */
+  noindex?: boolean
+  /** Header */
+  logo?: ImageMetadata
+  siteTitle?: string
+  homeHref?: string
+  /** OG / Twitter */
+  ogSiteName?: string
+  twitterCreator?: string | null
+  /** Footer */
+  footerAuthor?: string
+  footerBuiltWithPrefix?: string
+  footerBuiltWithSuffix?: string
+  /** Wider container that opens up room for an aside. Defaults to `aside`. */
+  wide?: boolean
+  /** Render the blog `Aside`. Defaults to `true` in blog mode and `false` otherwise. */
   aside?: boolean
   showRecentPosts?: boolean
   showSearch?: boolean
-  noindex?: boolean
 }
 
-const { title: rawTitle, description = themeConfig.description, aside = true, showRecentPosts = true, showSearch = true, noindex = false } = Astro.props
-const title = rawTitle ? `${rawTitle} - ${themeConfig.title}` : themeConfig.title
-const url = Astro.url
+const {
+  title: rawTitle,
+  description = themeConfig.description,
+  lang = t.htmlLang,
+  hreflangs,
+  noindex = false,
+  logo = themeLogo,
+  siteTitle = themeConfig.title,
+  homeHref = "/",
+  ogSiteName,
+  twitterCreator = themeConfig.twitterCreator,
+  footerAuthor = themeConfig.footerAuthor,
+  footerBuiltWithPrefix = t.builtWithPrefix,
+  footerBuiltWithSuffix = t.builtWithSuffix,
+  aside = themeConfig.type === "blog",
+  wide = aside,
+  showRecentPosts = true,
+  showSearch = true,
+} = Astro.props
+
+const title = rawTitle ? `${rawTitle} - ${siteTitle}` : siteTitle
+const url = new URL(Astro.url.pathname, Astro.site)
+const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
 ---
 
 <!DOCTYPE html>
-<html lang={t.htmlLang}>
+<html lang={lang}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,9 +86,10 @@ const url = Astro.url
 
   {/* SEO, OpenGraph and Twitter */}
   <link rel="canonical" href={url} />
+  {hreflangs?.map(({ code, href }) => <link rel="alternate" hreflang={code} href={href} />)}
   {Boolean(description) && <meta name="description" content={description} />}
   {noindex && <meta name="robots" content="noindex, follow" />}
-  <meta property="og:site_name" content={themeConfig.title} />
+  <meta property="og:site_name" content={ogSiteName ?? siteTitle} />
   <meta property="og:url" content={url} />
   <meta property="og:title" content={title} />
   {Boolean(description) && <meta property="og:description" content={description} />}
@@ -54,31 +97,32 @@ const url = Astro.url
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content={title} />
   {Boolean(description) && <meta name="twitter:description" content={description} />}
-  {themeConfig.twitterCreator && <meta name="twitter:creator" content={themeConfig.twitterCreator} />}
+  {twitterCreator && <meta name="twitter:creator" content={twitterCreator} />}
 
   {/* Title */}
   <title>{title}</title>
 </head>
 <body>
-  <div class="flex flex-col min-h-dvh max-w-3xl lg:max-w-6xl m-auto px-6">
-    <Header logo={themeLogo} title={themeConfig.title}>
-      <Fragment slot="menu">
-        <a href="/search" class="lg:hidden"><span class="icon-[lucide--search]" /> {t.search}</a>
-        <a href={themeConfig.aboutHref}><span class="icon-[lucide--user]" /> {t.about}</a>
-      </Fragment>
+  <div class:list={["flex flex-col min-h-dvh m-auto px-6", containerClass]}>
+    <Header logo={logo} title={siteTitle} homeHref={homeHref}>
+      <Fragment slot="menu"><slot name="menu" /></Fragment>
     </Header>
-    <div class="flex-1 lg:flex gap-12 w-full">
-      <main class="flex-1 min-w-0">
-        <slot />
-      </main>
-      {aside && (
+    {aside ? (
+      <div class="flex-1 lg:flex gap-12 w-full">
+        <main class="flex-1 min-w-0">
+          <slot />
+        </main>
         <Aside showSearch={showSearch} showRecentPosts={showRecentPosts} class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80">
           <Fragment slot="prefix"><slot name="aside-prefix" /></Fragment>
           <Fragment slot="suffix"><slot name="aside-suffix" /></Fragment>
         </Aside>
-      )}
-    </div>
-    <Footer author={themeConfig.footerAuthor} builtWithPrefix={t.builtWithPrefix} builtWithSuffix={t.builtWithSuffix} />
+      </div>
+    ) : (
+      <main class="flex-1">
+        <slot />
+      </main>
+    )}
+    <Footer author={footerAuthor} builtWithPrefix={footerBuiltWithPrefix} builtWithSuffix={footerBuiltWithSuffix} />
   </div>
 
   {/* Vercel */}

@@ -1,6 +1,7 @@
 import { primaryColorShades } from "../config"
 
 import type { PrimaryColor } from "../config"
+import type { Plugin } from "vite"
 
 /**
  * Marker placed inside `main.css`. The Vite plugin replaces it with a
@@ -9,16 +10,7 @@ import type { PrimaryColor } from "../config"
  */
 const PRIMARY_COLOR_MARKER = "/* @zlliang-theme-primary */"
 
-/** Minimal Vite plugin shape, kept local to avoid a `vite` dependency. */
-export interface ThemeVitePlugin {
-  name: string
-  enforce?: "pre" | "post"
-  resolveId?(id: string): string | null
-  load?(id: string): string | null
-  transform?(code: string, id: string): string | null
-}
-
-export function primaryColorPlugin(primaryColor: PrimaryColor): ThemeVitePlugin {
+export function virtualPrimaryColorPlugin(primaryColor: PrimaryColor): Plugin {
   const themeBlock = buildPrimaryColorThemeBlock(primaryColor)
 
   return {

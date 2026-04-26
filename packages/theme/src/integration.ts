@@ -4,21 +4,16 @@ import { resolve as resolvePath } from "node:path"
 import { fontProviders } from "astro/config"
 import tailwindcss from "@tailwindcss/vite"
 import { remarkCjkFriendly, remarkCodeTitles } from "@zlliang/remark"
-import {
-  rehypeHeadingIds,
-  rehypeAutolinkHeadings,
-  rehypeFootnotePrefixes,
-  rehypeImageCaptions,
-  rehypeImageLinks,
-  rehypeCodeCopy,
-} from "@zlliang/rehype"
+import {rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeImageLinks, rehypeCodeCopy } from "@zlliang/rehype"
 
 import { resolveThemeConfig } from "./config"
-import { primaryColorPlugin } from "./styles/primary"
+import { virtualConfigPlugin } from "./plugins/virtual-config"
+import { virtualLogoPlugin } from "./plugins/virtual-logo"
+import { virtualPrimaryColorPlugin } from "./plugins/virtual-primary-color"
 
 import type { AstroIntegration } from "astro"
-import type { ThemeRouteConfig, ThemeUserConfig } from "./config"
-import type { ThemeVitePlugin } from "./styles/primary"
+import type { PluginOption as VitePluginOption } from "vite"
+import type { ThemeUserConfig } from "./config"
 
 const ROUTES: Array<{ pattern: string; entrypoint: string }> = [
   { pattern: "/", entrypoint: "routes/index.astro" },
@@ -36,62 +31,23 @@ const ROUTES: Array<{ pattern: string; entrypoint: string }> = [
   { pattern: "/posts/series/[series]", entrypoint: "routes/posts/series/[series].astro" },
 ]
 
-function hasThemeRoutes(config: ThemeUserConfig): config is ThemeRouteConfig {
-  return config.routes !== false
-}
-
-function virtualModulePlugin(opts: {
-  serializableConfig: string
-  logoImportPath: string
-}): ThemeVitePlugin {
-  const ids = {
-    config: "virtual:zlliang-theme/config",
-    logo: "virtual:zlliang-theme/logo",
-  }
-  const resolved = Object.fromEntries(Object.entries(ids).map(([k, v]) => [k, "\0" + v])) as Record<keyof typeof ids, string>
-
-  return {
-    name: "zlliang-theme:virtual",
-    enforce: "pre",
-    resolveId(id) {
-      if (id === ids.config) return resolved.config
-      if (id === ids.logo) return resolved.logo
-      return null
-    },
-    load(id) {
-      if (id === resolved.config) {
-        return `export default ${opts.serializableConfig}`
-      }
-      if (id === resolved.logo) {
-        return `import logo from ${JSON.stringify(opts.logoImportPath)}\nexport default logo`
-      }
-      return null
-    },
-  }
-}
-
 export default function theme(userConfig: ThemeUserConfig): AstroIntegration {
   return {
     name: "@zlliang/theme",
     hooks: {
       "astro:config:setup": ({ config: astroConfig, updateConfig, addMiddleware, injectRoute, logger }) => {
-        const injectRoutes = hasThemeRoutes(userConfig)
-        const content = userConfig.content ?? injectRoutes
-        const vitePlugins = [primaryColorPlugin(userConfig.primaryColor), tailwindcss()]
+        const config = resolveThemeConfig(userConfig)
+        const siteRoot = fileURLToPath(astroConfig.root)
+        const logoAbsPath = resolvePath(siteRoot, config.logo)
+        const { logo: _omitLogo, overrides: _omitOverrides, ...serializableConfig } = config
+        const serializedConfig = JSON.stringify({ ...serializableConfig, overrides: {} })
 
-        let config: ReturnType<typeof resolveThemeConfig> | null = null
-        if (injectRoutes) {
-          config = resolveThemeConfig(userConfig)
-          const siteRoot = fileURLToPath(astroConfig.root)
-          const logoAbsPath = resolvePath(siteRoot, config.logo)
-          const { logo: _omitLogo, overrides: _omitOverrides, ...serializableConfig } = config
-          const serializableWithOverrides = { ...serializableConfig, overrides: {} }
-
-          vitePlugins.push(virtualModulePlugin({
-            serializableConfig: JSON.stringify(serializableWithOverrides),
-            logoImportPath: logoAbsPath,
-          }))
-        }
+        const vitePlugins: VitePluginOption[] = [
+          virtualPrimaryColorPlugin(userConfig.primaryColor),
+          tailwindcss(),
+          virtualConfigPlugin(serializedConfig),
+          virtualLogoPlugin(logoAbsPath),
+        ]
 
         updateConfig({
           fonts: [
@@ -142,11 +98,11 @@ export default function theme(userConfig: ThemeUserConfig): AstroIntegration {
         })
 
         addMiddleware({
-          entrypoint: new URL(content ? "./middleware/index.ts" : "./middleware/cache.ts", import.meta.url),
+          entrypoint: new URL(userConfig.type === "blog" ? "./middleware/index.ts" : "./middleware/cache.ts", import.meta.url),
           order: "pre",
         })
 
-        if (injectRoutes) {
+        if (userConfig.type === "blog") {
           for (const { pattern, entrypoint } of ROUTES) {
             injectRoute({
               pattern,
@@ -155,11 +111,7 @@ export default function theme(userConfig: ThemeUserConfig): AstroIntegration {
           }
         }
 
-        if (config) {
-          logger.info(`Configured for site "${config.title}" (${config.locale}, ${config.primaryColor})`)
-        } else {
-          logger.info(`Configured shared setup (${userConfig.primaryColor})`)
-        }
+        logger.info(`Configured ${config.type} site "${config.title}" (${config.locale}, ${config.primaryColor})`)
       },
     },
   }

@@ -18,66 +18,100 @@ function isPrimaryColorScale(value: unknown): value is PrimaryColorScale {
 }
 
 export const primaryColors = Object.keys(colors).filter((color): color is PrimaryColor => isPrimaryColorScale(colors[color as keyof typeof colors]))
+
 export type SisterSite = "mesh" | "muse"
 
+/** Site type. Determines which features the theme integration enables. */
+export type ThemeType = "portfolio" | "blog"
+
 export interface ThemeSharedConfig {
+  /** Site type. `portfolio` ships only shared setup; `blog` injects routes and the note/post content layer. */
+  type: ThemeType
   /** Tailwind primary color palette. Maps `--color-primary-*` to the matching Tailwind palette. */
   primaryColor: PrimaryColor
-  /** Inject the note/post routes shipped by the theme. Defaults to `true`. */
-  routes?: boolean
-  /** Enable note/post conventions such as legacy redirects. Defaults to the value of `routes`. */
-  content?: boolean
-}
-
-export interface ThemeRouteConfig extends ThemeSharedConfig {
-  routes?: true
-  content?: true
-  /** Locale for the entire site. Determines `<html lang>`, UI strings, and search segmenter. */
-  locale: Locale
   /** Site title shown in the header, footer, and `<title>`. */
   title: string
-  /** Site description used as the default meta description. */
-  description: string
   /** Path to the logo image, relative to the site root (e.g. `./src/assets/images/logo.png`). */
   logo: string
-  /** Sister site card shown in the aside. */
-  sister: { site: SisterSite; lang: Locale }
   /** Footer author name. Defaults to `title`. */
   footerAuthor?: string
+  /** Twitter creator handle for OpenGraph tags. */
+  twitterCreator?: string
+}
+
+export interface ThemePortfolioConfig extends ThemeSharedConfig {
+  type: "portfolio"
+}
+
+export interface ThemeBlogConfig extends ThemeSharedConfig {
+  type: "blog"
+  /** Locale for the entire site. Determines `<html lang>`, UI strings, and search segmenter. */
+  locale: Locale
+  /** Site description used as the default meta description. */
+  description: string
+  /** Sister site card shown in the aside. */
+  sister: { site: SisterSite; lang: Locale }
   /** Optional URL for the "About" link in the header. */
   aboutHref?: string
   /** Notes-per-page for note listings. Defaults to 20. */
   notesPerPage?: number
-  /** Twitter creator handle for OpenGraph tags. */
-  twitterCreator?: string
   /** Override individual UI tokens. */
   overrides?: Partial<Tokens>
 }
 
-export interface ThemeSetupConfig extends ThemeSharedConfig {
-  routes: false
-  content?: false
-}
+export type ThemeUserConfig = ThemePortfolioConfig | ThemeBlogConfig
 
-export type ThemeUserConfig = ThemeRouteConfig | ThemeSetupConfig
-
-export interface ResolvedThemeConfig extends Required<Omit<ThemeRouteConfig, "overrides" | "twitterCreator" | "routes" | "content">> {
+export interface ResolvedThemeConfig {
+  type: ThemeType
+  primaryColor: PrimaryColor
+  title: string
+  logo: string
+  footerAuthor: string
   twitterCreator: string | null
+  /** Defaults to `"en"` for portfolio sites; the runtime `t` is derived from this. */
+  locale: Locale
+  /** `""` for portfolio sites. */
+  description: string
+  /** `null` for portfolio sites. */
+  sister: { site: SisterSite; lang: Locale } | null
+  aboutHref: string
+  notesPerPage: number
   overrides: Partial<Tokens>
 }
 
-export function resolveThemeConfig(user: ThemeRouteConfig): ResolvedThemeConfig {
-  return {
-    locale: user.locale,
+const DEFAULT_ABOUT_HREF = "https://zlliang.me"
+const DEFAULT_NOTES_PER_PAGE = 20
+const DEFAULT_TWITTER_CREATOR = "@zlliang96"
+
+export function resolveThemeConfig(user: ThemeUserConfig): ResolvedThemeConfig {
+  const shared = {
+    type: user.type,
     primaryColor: user.primaryColor,
     title: user.title,
-    description: user.description,
     logo: user.logo,
-    sister: user.sister,
     footerAuthor: user.footerAuthor ?? user.title,
-    aboutHref: user.aboutHref ?? "https://zlliang.me",
-    notesPerPage: user.notesPerPage ?? 20,
-    twitterCreator: user.twitterCreator ?? "@zlliang96",
-    overrides: user.overrides ?? {},
+    twitterCreator: user.twitterCreator ?? DEFAULT_TWITTER_CREATOR,
+  }
+
+  if (user.type === "blog") {
+    return {
+      ...shared,
+      locale: user.locale,
+      description: user.description,
+      sister: user.sister,
+      aboutHref: user.aboutHref ?? DEFAULT_ABOUT_HREF,
+      notesPerPage: user.notesPerPage ?? DEFAULT_NOTES_PER_PAGE,
+      overrides: user.overrides ?? {},
+    }
+  }
+
+  return {
+    ...shared,
+    locale: "en",
+    description: "",
+    sister: null,
+    aboutHref: DEFAULT_ABOUT_HREF,
+    notesPerPage: DEFAULT_NOTES_PER_PAGE,
+    overrides: {},
   }
 }
