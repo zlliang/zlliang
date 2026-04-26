@@ -1,9 +1,13 @@
+import { fileURLToPath } from "node:url"
+
 import { defineConfig, fontProviders } from "astro/config"
 import vercel from "@astrojs/vercel"
 import tailwindcss from "@tailwindcss/vite"
 import { remarkCjkFriendly, remarkCodeTitles } from "@zlliang/remark"
 
 import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeImageLinks, rehypeCodeCopy } from "@zlliang/rehype"
+
+const primaryCssPath = fileURLToPath(new URL("../../packages/theme/src/styles/primary/home.css", import.meta.url))
 
 export default defineConfig({
   site: "https://zlliang.me",
@@ -45,6 +49,11 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      alias: [
+        { find: "virtual:zlliang-theme/primary.css", replacement: primaryCssPath },
+      ],
+    },
   },
   markdown: {
     shikiConfig: {

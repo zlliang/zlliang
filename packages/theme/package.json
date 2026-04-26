@@ -5,7 +5,13 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
-    "./main.css": "./src/main.css",
+    "./integration": "./src/integration.ts",
+    "./main.css": "./src/styles/main.css",
+    "./styles/primary/hack.css": "./src/styles/primary/hack.css",
+    "./styles/primary/muse.css": "./src/styles/primary/muse.css",
+    "./styles/primary/home.css": "./src/styles/primary/home.css",
+    "./schemas/content": "./src/schemas/content.ts",
+    "./middleware": "./src/middleware/index.ts",
     "./components/SiteCard.astro": "./src/components/SiteCard.astro",
     "./components/Section.astro": "./src/components/Section.astro",
     "./components/Pagination.astro": "./src/components/Pagination.astro",
@@ -14,13 +20,21 @@
     "./components/Footer.astro": "./src/components/Footer.astro"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "@zlliang/rehype": "workspace:*",
+    "@zlliang/remark": "workspace:*",
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "lodash-es": "^4.18.1",
+    "minisearch": "^7.2.0",
     "tailwind-merge": "^3.5.0"
   },
   "peerDependencies": {
     "@iconify-json/lucide": "^1.2.100",
     "@iconify-json/simple-icons": "^1.2.75",
     "@iconify/tailwind4": "^1.2.3",
+    "@tailwindcss/vite": "^4.2.1",
     "astro": "^6.0.4",
     "tailwindcss": "^4.2.1"
   },
@@ -28,6 +42,8 @@
     "@iconify-json/lucide": "^1.2.103",
     "@iconify-json/simple-icons": "^1.2.79",
     "@iconify/tailwind4": "^1.2.3",
+    "@tailwindcss/vite": "^4.2.4",
+    "@types/lodash-es": "^4.17.12",
     "astro": "^6.1.9",
     "tailwindcss": "^4.2.4",
     "typescript": "^6.0.3"

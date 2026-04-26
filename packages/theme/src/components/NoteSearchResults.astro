@@ -1,0 +1,30 @@
+---
+import Pagination from "./Pagination.astro"
+import NoteContent from "./NoteContent.astro"
+
+import { cn } from "../index"
+import { t } from "../runtime/config"
+
+import type { CollectionEntry } from "astro:content"
+import type { PaginationData } from "../content/pagination"
+
+interface Props {
+  notes: CollectionEntry<"notes">[]
+  pagination?: PaginationData<CollectionEntry<"notes">>
+}
+
+const { notes, pagination } = Astro.props
+---
+
+<div>
+  {notes.map((note, index) => (
+    <div class={cn(index !== notes.length - 1 && "mb-6 pb-6 border-b-2 border-neutral-200 dark:border-neutral-800")}>
+      <NoteContent note={note} />
+    </div>
+  ))}
+  {Boolean(pagination) && (
+    <div class="mt-6 pt-6 border-t-2 border-neutral-200 dark:border-neutral-800">
+      <Pagination {...pagination!} label={t.pageLabel} />
+    </div>
+  )}
+</div>

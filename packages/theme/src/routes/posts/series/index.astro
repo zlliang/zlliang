@@ -1,0 +1,33 @@
+---
+import PageTitle from "../../../components/PageTitle.astro"
+import Layout from "../../../components/Layout.astro"
+import PostList from "../../../components/PostList.astro"
+
+import { t } from "../../../runtime/config"
+import { getPosts, getSeries, filterPostsInSeries } from "../../../content/content"
+
+const series = await getSeries()
+const posts = await getPosts()
+const title = t.seriesTitle
+---
+
+<Layout title={title} showRecentPosts={false}>
+  {/* Title */}
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <div slot="subtitle" class="space-y-1">
+      <div>{t.seriesCountSubtitle(series.length)}</div>
+      <div class="flex justify-between gap-4">
+        <span>{t.oldestFirst}</span>
+        <a href="/posts"><span class="icon-[lucide--corner-left-up]" /> {t.morePostsBackToAll}</a>
+      </div>
+    </div>
+  </PageTitle>
+
+  {/* Series */}
+  {series.length > 0 ? series.map((series) => (
+    <h2><a href={`/posts/series/${series.id}`}>{series.data.title}</a></h2>
+    <Fragment>{series.data.description && <p>{series.data.description}</p>}</Fragment>
+    <Fragment>{filterPostsInSeries(posts, series.id).length > 0 ? <PostList posts={filterPostsInSeries(posts, series.id)} showSeries={false} /> : <p class="text-neutral-500">{t.postsEmpty}</p>}</Fragment>
+  )) : <p class="text-neutral-500">{t.seriesEmpty}</p>}
+</Layout>
