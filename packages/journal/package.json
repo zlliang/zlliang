@@ -6,9 +6,6 @@
   "bin": {
     "journal": "./bin/journal.js"
   },
-  "exports": {
-    "./note-types": "./src/utils/note-types.ts"
-  },
   "dependencies": {
     "cac": "^7.0.0",
     "github-slugger": "^2.0.0",
