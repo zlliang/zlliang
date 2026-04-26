@@ -4,18 +4,18 @@ Use this file for the order and shape of English review.
 
 ## Priority order
 
-1. Keep the technical meaning correct
-2. Fix grammar, punctuation, and idiom
-3. Improve natural phrasing and sentence flow
-4. Improve paragraph structure and emphasis
-5. Preserve the author's voice
+1. Keep the technical meaning correct.
+2. Fix grammar, punctuation, and idiom.
+3. Improve natural phrasing and sentence flow.
+4. Improve paragraph structure and emphasis.
+5. Preserve the author's voice.
 
 ## How to present edits
 
-- Use before-and-after examples only when they help learning or the user asked for them
-- Group similar issues instead of nitpicking line by line
-- Keep explanations short and causal: what changed and why it reads better
-- In comparison tasks, highlight reusable differences rather than scoring winners
+- Use before-and-after examples only when they help learning or the user asked for them.
+- Group similar issues instead of nitpicking line by line.
+- Keep explanations short and causal: what changed and why it reads better.
+- In comparison tasks, highlight reusable differences rather than scoring winners.
 
 Example:
 

@@ -12,8 +12,8 @@ Watch for these recurring patterns in English technical writing.
 
 ## Style and clarity
 
-- Prefer direct verbs over noun-heavy phrases: `make a decision` -> `decide`
-- Cut filler and repeated qualifiers unless they are deliberate for voice
-- Use one term consistently after introducing it
-- Keep code terms, file paths, and commands in backticks
-- Keep code snippets short and explain why they matter
+- Prefer direct verbs over noun-heavy phrases: `make a decision` -> `decide`.
+- Cut filler and repeated qualifiers unless they are deliberate for voice.
+- Use one term consistently after introducing it.
+- Keep code terms, file paths, and commands in backticks.
+- Keep code snippets short and explain why they matter.

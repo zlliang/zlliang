@@ -16,19 +16,19 @@ Run commands from the repository root.
 
 ## Content workflow
 
-- `pnpm journal:hack <command> [...]`: run the `journal` CLI against the `hack` site from the root
-- `pnpm journal:muse <command> [...]`: run the `journal` CLI against the `muse` site from the root
-- The root scripts expand to `pnpm exec journal --dir websites/hack ...` and `pnpm exec journal --dir websites/muse ...`
-- `journal` assumes the shared `content/notes` and `content/posts` layout; use `pnpm journal:hack --help`, `pnpm journal:muse --help`, or `pnpm exec journal --help` for the command surface and examples
+- `pnpm journal:hack <command> [...]`: run the `journal` CLI against the `hack` site from the root.
+- `pnpm journal:muse <command> [...]`: run the `journal` CLI against the `muse` site from the root.
+- The root scripts expand to `pnpm exec journal --dir websites/hack ...` and `pnpm exec journal --dir websites/muse ...`.
+- `journal` assumes the shared `content/notes` and `content/posts` layout; use `pnpm journal:hack --help`, `pnpm journal:muse --help`, or `pnpm exec journal --help` for the command surface and examples.
 
 ## Shared imports
 
-- Import shared remark plugins from `@zlliang/remark`
-- Import shared rehype plugins from `@zlliang/rehype`
-- Import shared styles, utilities, and components from `@zlliang/theme/*`
+- Import shared remark plugins from `@zlliang/remark`.
+- Import shared rehype plugins from `@zlliang/rehype`.
+- Import shared styles, utilities, and components from `@zlliang/theme/*`.
 
 ## Validation
 
-- Build every affected site before finishing
-- If a shared package changes, build each dependent site that could be affected
-- If a registry or content schema changes, validate the site that owns it
+- Build every affected site before finishing.
+- If a shared package changes, build each dependent site that could be affected.
+- If a registry or content schema changes, validate the site that owns it.

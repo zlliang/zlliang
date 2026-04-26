@@ -16,11 +16,11 @@ draft: true
 
 ### Rules
 
-- `number`: required unique note number
-- `title`: optional, but preferred when the note has a clear title
-- `created`: required, `YYYY-MM-DD`
-- `post`: optional reference to the related post; only for notes that introduce a published post
-- `draft`: optional boolean; omit it or set it to `false` when published
+- `number`: required unique note number.
+- `title`: optional, but preferred when the note has a clear title.
+- `created`: required, `YYYY-MM-DD`.
+- `post`: optional reference to the related post; only for notes that introduce a published post.
+- `draft`: optional boolean; omit it or set it to `false` when published.
 
 ## Posts
 
@@ -38,11 +38,11 @@ draft: true
 
 ### Rules
 
-- `title`: required
-- `created`: required, `YYYY-MM-DD`
-- `series`: optional reference to a registered series id in `content/posts/series.json`
-- `pinned`: optional; use it for long-lived reference posts
-- `draft`: optional boolean; drafts are created with `true`, and shipping removes it
+- `title`: required.
+- `created`: required, `YYYY-MM-DD`.
+- `series`: optional reference to a registered series id in `content/posts/series.json`.
+- `pinned`: optional; use it for long-lived reference posts.
+- `draft`: optional boolean; drafts are created with `true`, and shipping removes it.
 
 ## Series
 
@@ -60,8 +60,8 @@ draft: true
 
 ### Rules
 
-- Each site owns its own series registry; `hack` and `muse` do not share series entries
-- `id`: required slug used by post frontmatter and by `/posts/series/[series]`
-- `title`: required display name
-- `description`: optional summary shown on the series index page
-- Add the series entry before assigning `series: ...` in a post frontmatter block
+- Each site owns its own series registry; `hack` and `muse` do not share series entries.
+- `id`: required slug used by post frontmatter and by `/posts/series/[series]`.
+- `title`: required display name.
+- `description`: optional summary shown on the series index page.
+- Add the series entry before assigning `series: ...` in a post frontmatter block.

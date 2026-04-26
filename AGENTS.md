@@ -17,12 +17,12 @@ All websites are built with [Astro](https://astro.build/) and are deployed on [V
 ## Content model
 
 - `home` uses one collection:
-  - `content/fragments/*.md` for reusable localized fragments
+  - `content/fragments/*.md` for reusable localized fragments.
 - `hack` and `muse` share the same note/post model:
-  - notes live under `content/notes/YYYY/MM/DD/slug.md`
-  - post drafts live under `content/posts/drafts/slug.md`
-  - published posts live under `content/posts/YYYY/MM/DD/slug.md`
-- Schema source of truth is each site's `src/content.config.ts`
+  - Notes live under `content/notes/YYYY/MM/DD/slug.md`.
+  - Post drafts live under `content/posts/drafts/slug.md`.
+  - Published posts live under `content/posts/YYYY/MM/DD/slug.md`.
+- Schema source of truth is each site's `src/content.config.ts`.
 
 ## Root commands
 
@@ -30,11 +30,11 @@ Run commands from the repository root. Use the `website-development` skill for t
 
 ## Working principles
 
-- Keep authorial ownership explicit. AI may help review, compare, structure, and implement, but it should not replace the author's thinking
-- Prefer existing shared packages and site conventions over per-site duplication
-- When docs summarize behavior, code wins if there is a conflict
-- Preserve the repo's update note convention and language-specific style when editing content
-- Treat `Deploy`, `发布`, and similar short commands as a request to write a Conventional Commit message, commit the current work, and push to GitHub so Vercel can deploy automatically
+- Keep authorial ownership explicit. AI may help review, compare, structure, and implement, but it should not replace the author's thinking.
+- Prefer existing shared packages and site conventions over per-site duplication.
+- When docs summarize behavior, code wins if there is a conflict.
+- Preserve the repo's update note convention and language-specific style when editing content.
+- Treat `Deploy`, `发布`, and similar short commands as a request to write a Conventional Commit message, commit the current work, and push to GitHub so Vercel can deploy automatically.
 
 ## Skills
 
@@ -44,5 +44,5 @@ Run commands from the repository root. Use the `website-development` skill for t
 
 ## How to combine skills
 
-- Use `blog-authoring` with `english-review` for English notes and posts
-- Use `website-development` alongside content skills only when the task changes site behavior, shared code, or build output
+- Use `blog-authoring` with `english-review` for English notes and posts.
+- Use `website-development` alongside content skills only when the task changes site behavior, shared code, or build output.
