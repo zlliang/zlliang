@@ -17,7 +17,7 @@ const page = parsePageParam(searchParams.get("page"))
 const sort = parseSearchSort(searchParams.get("sort"))
 
 if (!q && (searchParams.has("q") || searchParams.has("page"))) {
-  return Astro.redirect("/notes/search")
+  return Astro.redirect("/search")
 }
 
 if (searchParams.has("sort") && searchParams.get("sort") !== "date") {
@@ -38,17 +38,17 @@ const sortUrls = {
 }
 
 function getSearchSortDisplay(sort: SearchSort) {
-  return sort === "relevance" ? "relevance" : "date"
+  return sort === "relevance" ? "相关度" : "日期"
 }
 
-const title = q ? `Search results for "${q}"` : "Search"
+const title = q ? `搜索「${q}」的结果` : "搜索"
 ---
 
 <Layout title={title} showSearch={false} noindex>
   {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
-    <span slot="subtitle">{q ? `${results.length} total` : "Please enter a search query"}</span>
+    <span slot="subtitle">{q ? `共 ${results.length} 则` : "请输入搜索关键词"}</span>
   </PageTitle>
 
   {/* Search form */}
@@ -59,13 +59,13 @@ const title = q ? `Search results for "${q}"` : "Search"
     results.length > 0 ? (
       <div class="pb-6 mb-6 border-b-2 border-neutral-200 dark:border-neutral-800">
         <div class="flex items-center text-sm gap-2">
-          <span class="text-neutral-500">Sorted by</span>
+          <span class="text-neutral-500">排序方式</span>
           {(["relevance", "date"] as const).map((item) => (
             item === sort ? <span>{getSearchSortDisplay(item)}</span> : <a href={sortUrls[item]}>{getSearchSortDisplay(item)}</a>
           ))}
         </div>
       </div>
       <NoteSearchResults notes={pagination.data} pagination={pagination} />
-    ) : <p class="text-neutral-500">No notes found for "{q}".</p>
+    ) : <p class="text-neutral-500">没有找到与「{q}」相关的手记。</p>
   )}
 </Layout>

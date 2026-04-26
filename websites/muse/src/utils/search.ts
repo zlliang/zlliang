@@ -66,7 +66,7 @@ export function getSearchPageUrl(query: string, page = 1, sort: SearchSort = "re
     ...(sort === "date" ? { sort } : {}),
   })
 
-  return `/notes/search?${searchParams}`
+  return `/search?${searchParams}`
 }
 
 async function getSearchIndex() {

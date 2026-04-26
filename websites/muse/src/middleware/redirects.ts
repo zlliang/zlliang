@@ -68,12 +68,26 @@ function redirectsBefore20260425(context: Context) {
   return null
 }
 
+// Apr 26, 2026: Moved the search route from /notes/search to /search.
+function redirectsBefore20260426(context: Context) {
+  const { pathname, search } = context.url
+
+  if (pathname === "/notes/search") {
+    return context.redirect(`/search${search}`, 308)
+  }
+
+  return null
+}
+
 export const redirects = defineMiddleware(async (context, next) => {
   const before20260322 = await redirectsBefore20260322(context)
   if (before20260322) return before20260322
 
   const before20260425 = redirectsBefore20260425(context)
   if (before20260425) return before20260425
+
+  const before20260426 = redirectsBefore20260426(context)
+  if (before20260426) return before20260426
 
   return next()
 })
