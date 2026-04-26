@@ -1,10 +1,9 @@
 import { defineConfig, fontProviders } from "astro/config"
 import vercel from "@astrojs/vercel"
-import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
 import { remarkCjkFriendly, remarkCodeTitles } from "@zlliang/remark"
 
-import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeCodeCopy } from "@zlliang/rehype"
+import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeImageLinks, rehypeCodeCopy } from "@zlliang/rehype"
 
 export default defineConfig({
   site: "https://zlliang.me",
@@ -44,14 +43,6 @@ export default defineConfig({
       redirectToDefaultLocale: false,
     },
   },
-  integrations: [
-    sitemap({
-      i18n: {
-        locales: { en: "en", zh: "zh-Hans" },
-        defaultLocale: "en",
-      },
-    }),
-  ],
   vite: {
     plugins: [tailwindcss()],
   },
@@ -73,6 +64,7 @@ export default defineConfig({
       [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
       [rehypeFootnotePrefixes, {}],
       [rehypeImageCaptions, {}],
+      [rehypeImageLinks, {}],
       [rehypeCodeCopy, {}],
     ],
   },
