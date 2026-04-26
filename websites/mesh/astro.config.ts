@@ -7,9 +7,8 @@ export default defineConfig({
   output: "server",
   integrations: [
     zlliangTheme({
-      site: "https://mesh.zlliang.me",
       locale: "en",
-      primaryColor: "mesh",
+      primaryColor: "blue",
       title: "Zilong Liang / Mesh",
       description: "In this ever-changing world of technology, trying to see things a little more clearly.",
       logo: "./src/assets/images/logo.png",

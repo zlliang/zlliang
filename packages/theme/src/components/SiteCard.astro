@@ -4,7 +4,7 @@ import { Image } from "astro:assets"
 import logoMesh from "../assets/logo-mesh.png"
 import logoMuse from "../assets/logo-muse.png"
 
-import { cn } from "../index"
+import { cn } from "../styles/cn"
 
 import type { ImageMetadata } from "astro"
 
@@ -78,13 +78,13 @@ const { href, domain, logo, copy } = siteConfig[site]
 const { title, descriptionLines, languageLabel, logoAlt } = copy[lang]
 
 const accentClasses = {
-  mesh: "hover:border-mesh-400 dark:hover:border-mesh-600 hover:bg-mesh-50 dark:hover:bg-mesh-950 hover:text-mesh-500!",
-  muse: "hover:border-muse-400 dark:hover:border-muse-600 hover:bg-muse-50 dark:hover:bg-muse-950 hover:text-muse-500!",
+  mesh: "hover:border-blue-400 dark:hover:border-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950 hover:text-blue-500!",
+  muse: "hover:border-indigo-400 dark:hover:border-indigo-600 hover:bg-indigo-50 dark:hover:bg-indigo-950 hover:text-indigo-500!",
 }
 
 const secondaryClasses = {
-  mesh: "text-neutral-500 group-hover:text-mesh-400 dark:group-hover:text-mesh-600",
-  muse: "text-neutral-500 group-hover:text-muse-400 dark:group-hover:text-muse-600",
+  mesh: "text-neutral-500 group-hover:text-blue-400 dark:group-hover:text-blue-600",
+  muse: "text-neutral-500 group-hover:text-indigo-400 dark:group-hover:text-indigo-600",
 }
 ---
 

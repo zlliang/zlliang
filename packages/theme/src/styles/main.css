@@ -1,8 +1,7 @@
 @import "tailwindcss";
 @plugin "@iconify/tailwind4";
 
-/* Per-site primary color, resolved by the theme integration via a Vite alias. */
-@import "virtual:zlliang-theme/primary.css";
+/* @zlliang-theme-primary */
 
 @source "../components/**/*.astro";
 @source "../routes/**/*.astro";
@@ -16,42 +15,6 @@
 }
 
 @theme {
-  --color-home-50: var(--color-cyan-50);
-  --color-home-100: var(--color-cyan-100);
-  --color-home-200: var(--color-cyan-200);
-  --color-home-300: var(--color-cyan-300);
-  --color-home-400: var(--color-cyan-400);
-  --color-home-500: var(--color-cyan-500);
-  --color-home-600: var(--color-cyan-600);
-  --color-home-700: var(--color-cyan-700);
-  --color-home-800: var(--color-cyan-800);
-  --color-home-900: var(--color-cyan-900);
-  --color-home-950: var(--color-cyan-950);
-
-  --color-mesh-50: var(--color-blue-50);
-  --color-mesh-100: var(--color-blue-100);
-  --color-mesh-200: var(--color-blue-200);
-  --color-mesh-300: var(--color-blue-300);
-  --color-mesh-400: var(--color-blue-400);
-  --color-mesh-500: var(--color-blue-500);
-  --color-mesh-600: var(--color-blue-600);
-  --color-mesh-700: var(--color-blue-700);
-  --color-mesh-800: var(--color-blue-800);
-  --color-mesh-900: var(--color-blue-900);
-  --color-mesh-950: var(--color-blue-950);
-
-  --color-muse-50: var(--color-indigo-50);
-  --color-muse-100: var(--color-indigo-100);
-  --color-muse-200: var(--color-indigo-200);
-  --color-muse-300: var(--color-indigo-300);
-  --color-muse-400: var(--color-indigo-400);
-  --color-muse-500: var(--color-indigo-500);
-  --color-muse-600: var(--color-indigo-600);
-  --color-muse-700: var(--color-indigo-700);
-  --color-muse-800: var(--color-indigo-800);
-  --color-muse-900: var(--color-indigo-900);
-  --color-muse-950: var(--color-indigo-950);
-
   --leading-prose-en: 1.7;
   --leading-prose-zh: 1.8;
   --leading-prose: var(--leading-prose-en);

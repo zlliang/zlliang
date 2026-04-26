@@ -91,3 +91,5 @@ export const redirects = defineMiddleware(async (context, next) => {
 
   return next()
 })
+
+export const onRequest = redirects
