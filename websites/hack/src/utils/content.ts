@@ -73,6 +73,21 @@ export async function getPostById(id: string) {
   return posts.find((post) => post.id === id) ?? null
 }
 
+/** Get the next and previous posts for a post id */
+export async function getAdjacentPosts(id: string) {
+  const posts = await getPosts()
+  const index = posts.findIndex((post) => post.id === id)
+
+  if (index < 0) {
+    return null
+  }
+
+  return {
+    next: index > 0 ? posts[index - 1] : null,
+    previous: index < posts.length - 1 ? posts[index + 1] : null,
+  }
+}
+
 /** Get all pinned posts */
 export async function getPinnedPosts() {
   const posts = await getPosts()
