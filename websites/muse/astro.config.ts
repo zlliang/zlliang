@@ -7,9 +7,8 @@ export default defineConfig({
   output: "server",
   integrations: [
     zlliangTheme({
-      site: "https://muse.zlliang.me",
       locale: "zh",
-      primaryColor: "muse",
+      primaryColor: "indigo",
       title: "梁子龙 / 随想手记",
       description: "慢慢记下一些小事和随想，还有那些停留更久的念头。",
       logo: "./src/assets/images/logo.png",

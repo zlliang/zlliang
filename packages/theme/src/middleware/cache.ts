@@ -21,3 +21,5 @@ export const cache = defineMiddleware(async (_, next) => {
 
   return response
 })
+
+export const onRequest = cache

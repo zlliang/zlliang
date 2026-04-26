@@ -169,12 +169,6 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.2.4
         version: 4.2.4(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.3))
-      '@zlliang/rehype':
-        specifier: workspace:*
-        version: link:../../packages/rehype
-      '@zlliang/remark':
-        specifier: workspace:*
-        version: link:../../packages/remark
       astro:
         specifier: ^6.1.9
         version: 6.1.9(@types/node@25.6.0)(@vercel/functions@3.4.4)(db0@0.3.4)(ioredis@5.10.1)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(terser@5.46.0)(tsx@4.21.0)(typescript@6.0.3)(yaml@2.8.3)

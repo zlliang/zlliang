@@ -1,5 +1,5 @@
 import { fileURLToPath } from "node:url"
-import { resolve as resolvePath, dirname } from "node:path"
+import { resolve as resolvePath } from "node:path"
 
 import { fontProviders } from "astro/config"
 import tailwindcss from "@tailwindcss/vite"
@@ -14,12 +14,11 @@ import {
 } from "@zlliang/rehype"
 
 import { resolveThemeConfig } from "./config"
+import { primaryColorPlugin } from "./styles/primary"
 
 import type { AstroIntegration } from "astro"
-import type { Plugin as VitePlugin } from "vite"
-import type { ThemeUserConfig } from "./config"
-
-const PACKAGE_DIR = dirname(fileURLToPath(import.meta.url))
+import type { ThemeRouteConfig, ThemeUserConfig } from "./config"
+import type { ThemeVitePlugin } from "./styles/primary"
 
 const ROUTES: Array<{ pattern: string; entrypoint: string }> = [
   { pattern: "/", entrypoint: "routes/index.astro" },
@@ -37,10 +36,14 @@ const ROUTES: Array<{ pattern: string; entrypoint: string }> = [
   { pattern: "/posts/series/[series]", entrypoint: "routes/posts/series/[series].astro" },
 ]
 
+function hasThemeRoutes(config: ThemeUserConfig): config is ThemeRouteConfig {
+  return config.routes !== false
+}
+
 function virtualModulePlugin(opts: {
   serializableConfig: string
   logoImportPath: string
-}): VitePlugin {
+}): ThemeVitePlugin {
   const ids = {
     config: "virtual:zlliang-theme/config",
     logo: "virtual:zlliang-theme/logo",
@@ -68,18 +71,27 @@ function virtualModulePlugin(opts: {
 }
 
 export default function theme(userConfig: ThemeUserConfig): AstroIntegration {
-  const config = resolveThemeConfig(userConfig)
-
   return {
     name: "@zlliang/theme",
     hooks: {
       "astro:config:setup": ({ config: astroConfig, updateConfig, addMiddleware, injectRoute, logger }) => {
-        const siteRoot = fileURLToPath(astroConfig.root)
-        const logoAbsPath = resolvePath(siteRoot, config.logo)
-        const primaryCssPath = resolvePath(PACKAGE_DIR, "styles", "primary", `${config.primaryColor}.css`)
+        const injectRoutes = hasThemeRoutes(userConfig)
+        const content = userConfig.content ?? injectRoutes
+        const vitePlugins = [primaryColorPlugin(userConfig.primaryColor), tailwindcss()]
 
-        const { logo: _omitLogo, overrides: _omitOverrides, ...serializableConfig } = config
-        const serializableWithOverrides = { ...serializableConfig, overrides: {} }
+        let config: ReturnType<typeof resolveThemeConfig> | null = null
+        if (injectRoutes) {
+          config = resolveThemeConfig(userConfig)
+          const siteRoot = fileURLToPath(astroConfig.root)
+          const logoAbsPath = resolvePath(siteRoot, config.logo)
+          const { logo: _omitLogo, overrides: _omitOverrides, ...serializableConfig } = config
+          const serializableWithOverrides = { ...serializableConfig, overrides: {} }
+
+          vitePlugins.push(virtualModulePlugin({
+            serializableConfig: JSON.stringify(serializableWithOverrides),
+            logoImportPath: logoAbsPath,
+          }))
+        }
 
         updateConfig({
           fonts: [
@@ -125,34 +137,29 @@ export default function theme(userConfig: ThemeUserConfig): AstroIntegration {
             ],
           },
           vite: {
-            plugins: [
-              tailwindcss(),
-              virtualModulePlugin({
-                serializableConfig: JSON.stringify(serializableWithOverrides),
-                logoImportPath: logoAbsPath,
-              }),
-            ],
-            resolve: {
-              alias: [
-                { find: "virtual:zlliang-theme/primary.css", replacement: primaryCssPath },
-              ],
-            },
+            plugins: vitePlugins,
           },
         })
 
         addMiddleware({
-          entrypoint: new URL("./middleware/index.ts", import.meta.url),
+          entrypoint: new URL(content ? "./middleware/index.ts" : "./middleware/cache.ts", import.meta.url),
           order: "pre",
         })
 
-        for (const { pattern, entrypoint } of ROUTES) {
-          injectRoute({
-            pattern,
-            entrypoint: new URL(`./${entrypoint}`, import.meta.url),
-          })
+        if (injectRoutes) {
+          for (const { pattern, entrypoint } of ROUTES) {
+            injectRoute({
+              pattern,
+              entrypoint: new URL(`./${entrypoint}`, import.meta.url),
+            })
+          }
         }
 
-        logger.info(`Configured for site "${config.title}" (${config.locale}, ${config.primaryColor})`)
+        if (config) {
+          logger.info(`Configured for site "${config.title}" (${config.locale}, ${config.primaryColor})`)
+        } else {
+          logger.info(`Configured shared setup (${userConfig.primaryColor})`)
+        }
       },
     },
   }
