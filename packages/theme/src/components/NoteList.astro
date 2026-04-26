@@ -1,0 +1,39 @@
+---
+import Section from "./Section.astro"
+import Pagination from "./Pagination.astro"
+import NoteContent from "./NoteContent.astro"
+
+import { cn } from "../index"
+import { t } from "../runtime/config"
+import { groupNotesByDate } from "../content/content"
+import { getDayNotesPath } from "../content/archive"
+
+import type { CollectionEntry } from "astro:content"
+import type { PaginationData } from "../content/pagination"
+
+interface Props {
+  notes: CollectionEntry<"notes">[]
+  pagination?: PaginationData<CollectionEntry<"notes">>
+}
+
+const { notes, pagination } = Astro.props
+const grouped = await groupNotesByDate(notes)
+---
+
+<div class="space-y-6">
+  {grouped.map(({ date, notes }) => (
+    <Section>
+      <a slot="title" href={getDayNotesPath(date)} class="nocolor">{t.formatDateForGroup(date)}</a>
+      {notes.map((note, index) => (
+        <div class={cn(index !== notes.length - 1 && "mb-6 pb-6 border-b-2 border-neutral-200 dark:border-neutral-800")}>
+          <NoteContent note={note} />
+        </div>
+      ))}
+    </Section>
+  ))}
+  {Boolean(pagination) && (
+    <div class="pt-6 border-t-2 border-neutral-200 dark:border-neutral-800">
+      <Pagination {...pagination!} label={t.pageLabel} />
+    </div>
+  )}
+</div>

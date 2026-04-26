@@ -1,0 +1,45 @@
+---
+import { cn } from "../index"
+
+interface ArchiveDayItem {
+  day: number
+  count: number
+  href?: string
+  active?: boolean
+}
+
+interface Props {
+  year: number
+  month: number
+  items: ArchiveDayItem[]
+}
+
+const { year, month, items } = Astro.props
+const offset = (new Date(year, month - 1, 1).getDay() + 6) % 7
+---
+
+<div>
+  <div class="grid grid-cols-7 gap-1">
+    {Array.from({ length: offset }, () => <div class="h-1" aria-hidden="true" />)}
+    {items.map((item) => {
+      const active = Boolean(item.active)
+      const disabled = !item.href
+      const Component = active || disabled ? "div" : "a"
+      return (
+        <Component
+          href={item.href}
+          class={cn(
+            "secondary group flex items-center justify-between gap-1 px-1.5 py-0.5 border border-neutral-200 dark:border-neutral-800 text-xs",
+            disabled && "bg-neutral-100 dark:bg-neutral-900 border-neutral-100 dark:border-neutral-900 text-neutral-400 dark:text-neutral-600",
+            active && "bg-primary-50 dark:bg-primary-950 border-primary-400 dark:border-primary-600 text-primary-500",
+            !disabled && !active && "hover:border-primary-400 dark:hover:border-primary-600 hover:bg-primary-50 dark:hover:bg-primary-950",
+          )}
+          aria-current={item.active ? "page" : undefined}
+        >
+          <span>{item.day}</span>
+          {item.count > 0 && <span class={cn("shrink-0 text-xs", active ? "text-primary-400 dark:text-primary-600" : "text-neutral-500 group-hover:text-primary-400 dark:group-hover:text-primary-600")}>{item.count}</span>}
+        </Component>
+      )
+    })}
+  </div>
+</div>

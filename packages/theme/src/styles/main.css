@@ -1,0 +1,346 @@
+@import "tailwindcss";
+@plugin "@iconify/tailwind4";
+
+/* Per-site primary color, resolved by the theme integration via a Vite alias. */
+@import "virtual:zlliang-theme/primary.css";
+
+@source "../components/**/*.astro";
+@source "../routes/**/*.astro";
+
+/* Theme variables */
+
+@theme inline {
+  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: var(--font-roboto-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@theme {
+  --color-home-50: var(--color-cyan-50);
+  --color-home-100: var(--color-cyan-100);
+  --color-home-200: var(--color-cyan-200);
+  --color-home-300: var(--color-cyan-300);
+  --color-home-400: var(--color-cyan-400);
+  --color-home-500: var(--color-cyan-500);
+  --color-home-600: var(--color-cyan-600);
+  --color-home-700: var(--color-cyan-700);
+  --color-home-800: var(--color-cyan-800);
+  --color-home-900: var(--color-cyan-900);
+  --color-home-950: var(--color-cyan-950);
+
+  --color-mesh-50: var(--color-blue-50);
+  --color-mesh-100: var(--color-blue-100);
+  --color-mesh-200: var(--color-blue-200);
+  --color-mesh-300: var(--color-blue-300);
+  --color-mesh-400: var(--color-blue-400);
+  --color-mesh-500: var(--color-blue-500);
+  --color-mesh-600: var(--color-blue-600);
+  --color-mesh-700: var(--color-blue-700);
+  --color-mesh-800: var(--color-blue-800);
+  --color-mesh-900: var(--color-blue-900);
+  --color-mesh-950: var(--color-blue-950);
+
+  --color-muse-50: var(--color-indigo-50);
+  --color-muse-100: var(--color-indigo-100);
+  --color-muse-200: var(--color-indigo-200);
+  --color-muse-300: var(--color-indigo-300);
+  --color-muse-400: var(--color-indigo-400);
+  --color-muse-500: var(--color-indigo-500);
+  --color-muse-600: var(--color-indigo-600);
+  --color-muse-700: var(--color-indigo-700);
+  --color-muse-800: var(--color-indigo-800);
+  --color-muse-900: var(--color-indigo-900);
+  --color-muse-950: var(--color-indigo-950);
+
+  --leading-prose-en: 1.7;
+  --leading-prose-zh: 1.8;
+  --leading-prose: var(--leading-prose-en);
+}
+
+/* Root */
+
+:root {
+  @apply text-sm sm:text-base;
+}
+
+:lang(zh) {
+  --leading-prose: var(--leading-prose-zh);
+}
+
+:lang(en) {
+  --leading-prose: var(--leading-prose-en);
+}
+
+::selection {
+  @apply bg-primary-100 dark:bg-primary-900;
+}
+
+body {
+  @apply bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100;
+}
+
+/* Icon */
+
+[class*="icon-"] {
+  @apply inline-block size-[1.2em] align-text-bottom scale-95;
+}
+
+/* Title */
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display font-bold;
+}
+
+h2, h3, h4, h5, h6 {
+  @apply my-4;
+}
+
+h2 {
+  @apply mt-8 text-2xl;
+}
+
+h3 {
+  @apply mt-6 text-lg;
+}
+
+/* Content */
+
+main > *:last-child {
+  @apply mb-0;
+}
+
+p {
+  @apply mb-4 leading-prose;
+}
+
+a {
+  @apply text-primary-600 dark:text-primary-400 hover:text-primary-500;
+}
+
+a.nocolor {
+  @apply text-inherit dark:text-inherit hover:text-inherit dark:hover:text-inherit;
+}
+
+a.secondary {
+  @apply text-inherit dark:text-inherit hover:text-primary-500;
+}
+
+b, strong {
+  @apply font-bold;
+}
+
+blockquote {
+  @apply pl-6 border-l-4 border-neutral-200 dark:border-neutral-800 text-neutral-500;
+}
+
+ul, ol {
+  @apply mb-4 pl-7 leading-prose marker:text-neutral-500;
+}
+
+ul {
+  @apply list-disc;
+}
+
+ul ul, ol ul {
+  @apply mb-0 list-[circle];
+}
+
+ul ul ul, ol ul ul, ul ol ul, ol ol ul {
+  @apply mb-0 list-[square];
+}
+
+ol {
+  @apply list-decimal;
+}
+
+ol ol, ul ol {
+  @apply mb-0 list-[lower-roman];
+}
+
+ol ol ol, ul ol ol, ol ul ol, ul ul ol {
+  @apply mb-0 list-[lower-alpha];
+}
+
+ul.contains-task-list {
+  @apply pl-3 list-none;
+}
+
+hr {
+  @apply relative my-6 h-auto border-neutral-200 dark:border-neutral-800 overflow-visible;
+}
+
+hr:before {
+  content: "";
+  @apply absolute -top-3 left-0 right-0 mx-auto w-12 block h-6 bg-white dark:bg-neutral-950;
+}
+
+hr:after {
+  content: "";
+  @apply icon-[lucide--waves] absolute top-[-0.65rem] left-0 right-0 mx-auto block h-5 w-5 text-neutral-200 dark:text-neutral-800;
+}
+
+img {
+  @apply mx-auto;
+}
+
+p > img {
+  @apply max-h-120 object-contain;
+}
+
+/* Code */
+
+@media (prefers-color-scheme: dark) {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--color-neutral-950) !important; /* In place of --shiki-dark-bg */
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
+}
+
+code {
+  @apply px-[0.3em] border border-neutral-200 dark:border-neutral-800 text-sm;
+}
+
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
+  @apply text-[0.9em];
+}
+
+pre {
+  @apply mb-4 px-4 py-3 border border-neutral-200 dark:border-neutral-800 text-sm;
+}
+
+pre code {
+  @apply p-0 border-none;
+}
+
+/* Code copy */
+
+.code-copy {
+  @apply relative;
+}
+
+.code-copy-button {
+  @apply absolute top-2 right-2 z-10 flex justify-center items-center size-8 rounded-sm backdrop-blur-sm text-neutral-400 dark:text-neutral-600 ;
+}
+
+.code-copy-copy {
+  @apply icon-[lucide--copy] hover:text-neutral-600 hover:dark:text-neutral-400 cursor-pointer;
+}
+
+.code-copy-check {
+  @apply icon-[lucide--check] hidden;
+}
+
+.code-copy-button.copied .code-copy-copy {
+  @apply hidden;
+}
+
+.code-copy-button.copied .code-copy-check {
+  @apply inline;
+}
+
+/* Code title */
+
+.remark-code-title {
+  @apply px-4 py-1.5 border border-b-0 border-neutral-200 dark:border-neutral-800 font-mono text-sm text-neutral-500;
+}
+
+/* Table */
+
+table {
+  @apply mb-4 mx-auto w-full border-collapse;
+}
+
+th {
+  @apply text-left;
+}
+
+tr {
+  @apply border border-neutral-200 dark:border-neutral-800;
+}
+
+tr:nth-child(2n) {
+  @apply bg-neutral-50 dark:bg-neutral-900;
+}
+
+th, td {
+  @apply px-3 py-1 border border-neutral-200 dark:border-neutral-700;
+}
+
+th {
+  @apply bg-neutral-100 dark:bg-neutral-800;
+}
+
+/* Image link */
+
+a.image-link {
+  @apply block cursor-zoom-in;
+}
+
+/* Image caption */
+
+span.caption {
+  @apply flex justify-center mt-1 text-sm text-neutral-500;
+}
+
+/* Footnote */
+
+.footnotes {
+  @apply text-sm;
+}
+
+.footnotes p {
+  @apply mb-0;
+}
+
+#footnote-label {
+  @apply mb-4 w-16 border-b border-neutral-200 dark:border-neutral-800;
+}
+
+.post-content #footnote-label {
+  @apply mt-16;
+}
+
+[data-footnote-ref] {
+  @apply tabular-nums text-neutral-500;
+}
+
+[data-footnote-ref]::before {
+  content: '[';
+}
+
+[data-footnote-ref]::after {
+  content: ']';
+}
+
+/* Update note */
+
+.update-note {
+  @apply mb-4 px-4 py-3 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400;
+}
+
+.update-note > *:last-child,
+.update-note > *:last-child > *:last-child {
+  @apply mb-0;
+}
+
+.post-content .update-note {
+  @apply mt-12;
+}
+
+/* Image grid */
+
+.image-grid {
+  @apply mb-4 grid grid-cols-2 gap-4 items-start;
+}
+
+.image-grid .image-column {
+  @apply grid grid-cols-1 gap-4 items-start;
+}
+
+.image-grid p {
+  @apply mb-0;
+}

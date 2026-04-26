@@ -1,0 +1,18 @@
+---
+import Layout from "../components/Layout.astro"
+
+import { t } from "../runtime/config"
+
+const error = Astro.locals.error ?? {
+  status: 404,
+  statusText: "Not Found",
+}
+---
+
+<Layout title={`${error.status} ${error.statusText}`} aside={false}>
+  <div class="flex flex-col justify-center items-center mt-32 text-neutral-400 dark:text-neutral-600">
+    <div class="icon-[lucide--frown] text-5xl" />
+    <div class="mt-2 text-2xl font-display font-bold">{error.status} {error.statusText}</div>
+    <a href="/" class="mt-6"><span class="icon-[lucide--arrow-left]" /> {t.notFoundBack}</a>
+  </div>
+</Layout>

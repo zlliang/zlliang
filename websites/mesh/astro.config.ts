@@ -1,32 +1,21 @@
-import { defineConfig, fontProviders } from "astro/config"
+import { defineConfig } from "astro/config"
 import vercel from "@astrojs/vercel"
-import tailwindcss from "@tailwindcss/vite"
-import { remarkCjkFriendly, remarkCodeTitles } from "@zlliang/remark"
-
-import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeImageLinks, rehypeCodeCopy } from "@zlliang/rehype"
+import zlliangTheme from "@zlliang/theme/integration"
 
 export default defineConfig({
   site: "https://mesh.zlliang.me",
   output: "server",
-  fonts: [
-    {
-      provider: fontProviders.fontsource(),
-      name: "Public Sans",
-      cssVariable: "--font-public-sans",
-      weights: [400, 700],
-      styles: ["normal", "italic"],
-      subsets: ["latin"],
-      fallbacks: ["sans-serif"],
-    },
-    {
-      provider: fontProviders.fontsource(),
-      name: "Roboto Mono",
-      cssVariable: "--font-roboto-mono",
-      weights: [400],
-      styles: ["normal"],
-      subsets: ["latin"],
-      fallbacks: ["monospace"],
-    },
+  integrations: [
+    zlliangTheme({
+      site: "https://mesh.zlliang.me",
+      locale: "en",
+      primaryColor: "mesh",
+      title: "Zilong Liang / Mesh",
+      description: "In this ever-changing world of technology, trying to see things a little more clearly.",
+      logo: "./src/assets/images/logo.png",
+      sister: { site: "muse", lang: "en" },
+      footerAuthor: "Zilong Liang",
+    }),
   ],
   adapter: vercel({
     imageService: true,
@@ -36,31 +25,6 @@ export default defineConfig({
       formats: ["image/avif", "image/webp"],
     },
   }),
-  vite: {
-    plugins: [tailwindcss()],
-  },
-  markdown: {
-    shikiConfig: {
-      themes: { light: "github-light-default", dark: "github-dark-default" },
-    },
-    remarkPlugins: [
-      [remarkCjkFriendly, {}],
-      [remarkCodeTitles, {}],
-    ],
-    remarkRehype: {
-      footnoteLabel: " ",
-      footnoteLabelTagName: "div",
-      footnoteBackContent: "↵",
-    },
-    rehypePlugins: [
-      [rehypeHeadingIds, {}],
-      [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
-      [rehypeFootnotePrefixes, {}],
-      [rehypeImageCaptions, {}],
-      [rehypeImageLinks, {}],
-      [rehypeCodeCopy, {}],
-    ],
-  },
   devToolbar: {
     enabled: false,
   },

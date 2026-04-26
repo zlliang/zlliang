@@ -1,0 +1,31 @@
+---
+import { render } from "astro:content"
+
+import Section from "./Section.astro"
+
+import { cn } from "../index"
+import { t } from "../runtime/config"
+
+import type { CollectionEntry } from "astro:content"
+
+interface Props {
+  post: CollectionEntry<"posts">
+  class?: string
+}
+
+const { post, class: className } = Astro.props
+const { headings } = await render(post)
+const filteredHeadings = headings.filter((h) => h.depth <= 3)
+---
+
+{filteredHeadings.length > 0 && (
+  <Section title={t.tableOfContents} class={cn(className)}>
+    <ul class="pl-0! list-none! text-sm">
+      {filteredHeadings.map((heading) => (
+        <li class={cn(heading.depth === 3 && "pl-4")}>
+          <a href={`#${heading.slug}`} class="secondary">{heading.text}</a>
+        </li>
+      ))}
+    </ul>
+  </Section>
+)}

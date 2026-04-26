@@ -1,0 +1,70 @@
+---
+import Section from "./Section.astro"
+import SiteCard from "./SiteCard.astro"
+import PostList from "./PostList.astro"
+import SearchForm from "./SearchForm.astro"
+import Heatmap from "./Heatmap.astro"
+
+import { cn } from "../index"
+import { t, themeConfig } from "../runtime/config"
+import { getNotes, getPosts, getPinnedPosts, getSeries } from "../content/content"
+
+interface Props {
+  showSearch?: boolean
+  showRecentPosts?: boolean
+  class?: string
+}
+
+const { showSearch = true, showRecentPosts = true, class: className } = Astro.props
+const notes = await getNotes()
+const posts = await getPosts()
+const pinnedPosts = await getPinnedPosts()
+const recentPosts = posts.slice(0, 10)
+const series = await getSeries()
+---
+
+<aside class={cn("space-y-6", className)}>
+  {showSearch && <SearchForm class="hidden lg:flex mb-6" />}
+
+  {/* Prefix */}
+  <slot name="prefix" />
+
+  {/* Explore */}
+  <Section title={t.explore}>
+    <div class="flex justify-between items-center mb-1">
+      <a href="/notes"><span class="icon-[lucide--notebook-pen]" /> {t.notes}</a>
+      <span class="text-sm text-neutral-500">
+        <span>{t.notesUnit(notes.length)}</span>
+      </span>
+    </div>
+    <div class="flex justify-between items-center">
+      <a href="/posts"><span class="icon-[lucide--book-open-text]" /> {t.posts}</a>
+      <span class="text-sm text-neutral-500">
+        <span>{t.postsUnit(posts.length)}</span><span class="icon-[lucide--dot]" /><a href="/posts/series">{t.seriesUnit(series.length)}</a>
+      </span>
+    </div>
+    <Heatmap />
+  </Section>
+
+  {/* Pinned posts */}
+  {pinnedPosts.length > 0 && (
+    <Section title={t.pinnedPosts}>
+      <PostList posts={pinnedPosts} showMeta={false} />
+    </Section>
+  )}
+
+  {/* Recent posts */}
+  {showRecentPosts && recentPosts.length > 0 && (
+    <Section title={t.recentPosts}>
+      <PostList posts={recentPosts} />
+    </Section>
+  )}
+
+  {/* Other websites */}
+  <Section title={t.otherSide}>
+    <SiteCard site={themeConfig.sister.site} lang={themeConfig.sister.lang} />
+  </Section>
+
+  {/* Suffix */}
+  <slot name="suffix" />
+</aside>
