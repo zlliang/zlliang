@@ -10,6 +10,9 @@ import Aside from "./Aside.astro"
 import { themeConfig, themeLogo } from "../runtime/config"
 import { createI18n } from "../i18n"
 
+// @ts-expect-error virtual module provided by the theme integration
+import * as Slots from "virtual:zlliang-theme/slots"
+
 import "../styles/main.css"
 
 import type { ImageMetadata } from "astro"
@@ -107,12 +110,10 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
       <Fragment slot="menu">
         <slot name="menu">
           {themeConfig.type === "blog" && (
-            <>
-              <a href="/search" class="lg:hidden"><span class="icon-[lucide--search]" /> {t.search}</a>
-              <a href={themeConfig.aboutHref}><span class="icon-[lucide--user]" /> {t.about}</a>
-            </>
+            <a href="/search" class="lg:hidden"><span class="icon-[lucide--search]" /> {t.search}</a>
           )}
         </slot>
+        {Slots.headerSuffix && <Slots.headerSuffix />}
       </Fragment>
     </Header>
     {aside ? (
@@ -120,10 +121,7 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
         <main class="flex-1 min-w-0">
           <slot />
         </main>
-        <Aside locale={locale} showSearch={showSearch} showRecentPosts={showRecentPosts} class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80">
-          <Fragment slot="prefix"><slot name="aside-prefix" /></Fragment>
-          <Fragment slot="suffix"><slot name="aside-suffix" /></Fragment>
-        </Aside>
+        <Aside locale={locale} showSearch={showSearch} showRecentPosts={showRecentPosts} class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80" />
       </div>
     ) : (
       <main class="flex-1">
