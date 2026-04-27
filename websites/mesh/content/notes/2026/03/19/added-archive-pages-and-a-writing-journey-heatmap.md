@@ -22,4 +22,6 @@ The work happened in two commits: [zlliang/zlliang@9ed325f](https://github.com/z
 
 **Update Mar 30, 2026:** In late March, I renamed my two journal websites. They are now Hack [https://hack.zlliang.me](https://hack.zlliang.me) and Muse [https://muse.zlliang.me](https://muse.zlliang.me). See: [Renamed the two journal websites to Hack and Muse](/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse).
 
+**Update Apr 27, 2026:** I renamed the English site again — Hack is now Mesh at [https://mesh.zlliang.me](https://mesh.zlliang.me). The previous `hack.zlliang.me` redirects to the new domain. See: [Renamed Hack to Mesh](/notes/2026/04/27/renamed-hack-to-mesh).
+
 </div>

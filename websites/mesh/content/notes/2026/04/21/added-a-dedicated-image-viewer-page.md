@@ -11,3 +11,9 @@ I had originally planned to add a lightbox overlay, but decided to keep things s
 ![The image viewer page](./images/image-viewer.png)
 
 The commit is [zlliang/zlliang@4ccbab5](https://github.com/zlliang/zlliang/commit/4ccbab509c8f9b0cf7d2d71b92b854dcc37f96db). Most of the implementation was done with help from [Claude Code](https://www.anthropic.com/product/claude-code).
+
+<div class="update-note">
+
+**Update Apr 27, 2026:** I renamed the English site again — Hack is now Mesh at [https://mesh.zlliang.me](https://mesh.zlliang.me). The previous `hack.zlliang.me` redirects to the new domain. See: [Renamed Hack to Mesh](/notes/2026/04/27/renamed-hack-to-mesh).
+
+</div>

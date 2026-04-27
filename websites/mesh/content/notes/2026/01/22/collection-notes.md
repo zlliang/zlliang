@@ -18,4 +18,6 @@ I've already written one on my [Zilong's Days](https://days.zlliang.me) (Chinese
 
 **Update Apr 25, 2026:** I removed note types entirely. The `/notes/types/...` URLs no longer exist; old links redirect to `/notes`. See: [Eliminated note types](/notes/2026/04/25/eliminated-note-types).
 
+**Update Apr 27, 2026:** I renamed the English site again — Hack is now Mesh at [https://mesh.zlliang.me](https://mesh.zlliang.me). The previous `hack.zlliang.me` redirects to the new domain. See: [Renamed Hack to Mesh](/notes/2026/04/27/renamed-hack-to-mesh).
+
 </div>

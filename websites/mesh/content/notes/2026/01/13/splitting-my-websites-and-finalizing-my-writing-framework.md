@@ -19,4 +19,6 @@ In this post, I explain my motivation for splitting the sites. After this change
 
 **Update Mar 30, 2026:** In late March, I renamed my two journal websites. **Zilong's Tech Notes** became **Hack** at [https://hack.zlliang.me](https://hack.zlliang.me), and **Zilong's Days** became **Muse** at [https://muse.zlliang.me](https://muse.zlliang.me). The previous domains now redirect to the new ones. I wrote a note about this branding change: [Renamed the two journal websites to Hack and Muse](/notes/2026/03/30/renamed-the-two-journal-websites-to-hack-and-muse).
 
+**Update Apr 27, 2026:** I renamed the English site again — Hack is now Mesh at [https://mesh.zlliang.me](https://mesh.zlliang.me). The previous `hack.zlliang.me` redirects to the new domain. See: [Renamed Hack to Mesh](/notes/2026/04/27/renamed-hack-to-mesh).
+
 </div>

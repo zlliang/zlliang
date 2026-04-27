@@ -18,4 +18,6 @@ Recently, I've started using [Codex](https://openai.com/codex) and [GPT-5.4](htt
 
 **Update Apr 25, 2026:** I removed note types entirely. The `/notes/types` page is gone, and old `/notes/types/...` and `/notes/categories/...` URLs now redirect to `/notes`. See: [Eliminated note types](/notes/2026/04/25/eliminated-note-types).
 
+**Update Apr 27, 2026:** I renamed the English site again — Hack is now Mesh at [https://mesh.zlliang.me](https://mesh.zlliang.me). The previous `hack.zlliang.me` redirects to the new domain. See: [Renamed Hack to Mesh](/notes/2026/04/27/renamed-hack-to-mesh).
+
 </div>

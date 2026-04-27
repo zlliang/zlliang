@@ -22,4 +22,6 @@ The main commit is [zlliang/zlliang@8381e33](https://github.com/zlliang/zlliang/
 
 **Update Apr 25, 2026:** Following the same simplifying instinct, I later removed note types altogether. The refreshed `/notes/types` page described above is gone; old type URLs now redirect to `/notes`. See: [Eliminated note types](/notes/2026/04/25/eliminated-note-types).
 
+**Update Apr 27, 2026:** I renamed the English site again — Hack is now Mesh at [https://mesh.zlliang.me](https://mesh.zlliang.me). The previous `hack.zlliang.me` redirects to the new domain. See: [Renamed Hack to Mesh](/notes/2026/04/27/renamed-hack-to-mesh).
+
 </div>

@@ -188,6 +188,8 @@ Time to write, write, and write. Can I accumulate thousands of notes in a decade
 
 **Update Apr 25, 2026:** I removed note types entirely. The `type` field is gone from the notes schema, the `/notes/types` pages no longer exist, and the type chip in note metadata is gone. See: [Eliminated note types](/notes/2026/04/25/eliminated-note-types).
 
+**Update Apr 27, 2026:** I renamed the English site again — Hack is now Mesh at [https://mesh.zlliang.me](https://mesh.zlliang.me). The previous `hack.zlliang.me` redirects to the new domain. See: [Renamed Hack to Mesh](/notes/2026/04/27/renamed-hack-to-mesh).
+
 </div>
 
 [^1]: [The Amp thread](https://ampcode.com/threads/T-019b49fd-619b-77ce-af60-0ce81ffb0d7f)
