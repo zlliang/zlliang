@@ -1,18 +1,19 @@
 import { defineConfig } from "astro/config"
 import vercel from "@astrojs/vercel"
-import zlliangTheme from "@zlliang/theme/integration"
+import theme from "@zlliang/theme/integration"
+import { siteData, authorData } from "@zlliang/shared"
 
 export default defineConfig({
   site: "https://mesh.zlliang.me",
   output: "server",
   integrations: [
-    zlliangTheme({
+    theme({
       type: "blog",
       color: "blue",
-      title: "Zilong Liang / Mesh",
-      description: "In this ever-changing world of technology, trying to see things a little more clearly.",
-      logo: "./src/assets/images/logo.png",
-      footerAuthor: "Zilong Liang",
+      title: `${authorData.en.author} / ${siteData.mesh.copy.en.title}`,
+      description: siteData.mesh.copy.en.descriptionLines.join(""),
+      logo: "./src/assets/logo.png",
+      footerAuthor: authorData.en.author,
       slots: {
         headerSuffix: "./src/components/HeaderSuffix.astro",
         asideSuffix: "./src/components/AsideSuffix.astro",

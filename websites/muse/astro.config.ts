@@ -1,19 +1,20 @@
 import { defineConfig } from "astro/config"
 import vercel from "@astrojs/vercel"
-import zlliangTheme from "@zlliang/theme/integration"
+import theme from "@zlliang/theme/integration"
+import { siteData, authorData } from "@zlliang/shared"
 
 export default defineConfig({
   site: "https://muse.zlliang.me",
   output: "server",
   integrations: [
-    zlliangTheme({
+    theme({
       type: "blog",
       locale: "zh",
       color: "indigo",
-      title: "梁子龙 / 随想手记",
-      description: "慢慢记下一些小事和随想，还有那些停留更久的念头。",
-      logo: "./src/assets/images/logo.png",
-      footerAuthor: "梁子龙",
+      title: `${authorData.zh.author} / ${siteData.muse.copy.zh.title}`,
+      description: siteData.muse.copy.zh.descriptionLines.join(""),
+      logo: "./src/assets/logo.png",
+      footerAuthor: authorData.zh.author,
       slots: {
         headerSuffix: "./src/components/HeaderSuffix.astro",
         asideSuffix: "./src/components/AsideSuffix.astro",
