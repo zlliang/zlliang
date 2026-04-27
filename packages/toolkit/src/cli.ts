@@ -5,7 +5,7 @@ import { registerNewCommand } from "./commands/new"
 import { registerShipCommand } from "./commands/ship"
 import { registerOptimizeImageCommand } from "./commands/optimize-image"
 
-const cli = cac("scripts")
+const cli = cac("toolkit")
 
 cli
   .usage("[options] <command>")

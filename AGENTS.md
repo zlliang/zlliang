@@ -7,7 +7,7 @@ This repository contains Zilong's personal websites, shared packages, and a smal
 - `websites/home`: bilingual landing site for `zlliang.me`
 - `websites/mesh`: English site for technical notes and posts
 - `websites/muse`: Chinese site for musing notes and posts
-- `packages/scripts`: CLI for note and post workflow based on the shared content structure used by `mesh` and `muse`
+- `packages/toolkit`: CLI for note and post workflow based on the shared content structure used by `mesh` and `muse`
 - `packages/remark`: shared remark plugins
 - `packages/rehype`: shared rehype plugins
 - `packages/theme`: shared styles, utilities, and Astro components
@@ -38,7 +38,7 @@ Run commands from the repository root. Use the `website-development` skill for t
 
 ## Skills
 
-- `website-development`: website code, shared packages, the `scripts` CLI, builds, and validation
+- `website-development`: website code, shared packages, the `toolkit` CLI, builds, and validation
 - `blog-authoring`: note/post workflow, schema, style, publishing readiness, and the optional bilingual English-writing loop
 - `english-review`: English prose review, comparison, synthesis, and voice coaching
 

@@ -69,12 +69,12 @@ interface OptimizeImageCommandOptions {
 export function registerOptimizeImageCommand(cli: CAC) {
   cli
     .command("optimize-image [...targets]", "Optimize images under the given paths or the current directory")
-    .example("scripts optimize-image")
-    .example("scripts --dir websites/muse optimize-image")
-    .example("scripts optimize-image content/posts")
-    .example("scripts --dir websites/muse optimize-image content/posts")
-    .example('scripts optimize-image "content/posts/**/*.{jpg,png}"')
-    .example("scripts optimize-image image-1.png image-2.webp")
+    .example("toolkit optimize-image")
+    .example("toolkit --dir websites/muse optimize-image")
+    .example("toolkit optimize-image content/posts")
+    .example("toolkit --dir websites/muse optimize-image content/posts")
+    .example('toolkit optimize-image "content/posts/**/*.{jpg,png}"')
+    .example("toolkit optimize-image image-1.png image-2.webp")
     .action((targets: string[] = [], options: OptimizeImageCommandOptions) => {
       void handleCommand(async () => {
         const candidates = await collectCandidates(targets, options.dir)

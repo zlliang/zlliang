@@ -33,9 +33,9 @@ interface NewCommandOptions {
 export function registerNewCommand(cli: CAC) {
   cli
     .command("new <entry> [title...]", "Create a new note or post draft")
-    .example("scripts --dir websites/muse new note \"A useful article\"")
-    .example("scripts new note \"A useful article\"")
-    .example("scripts new post \"How I use AI agents\"")
+    .example("toolkit --dir websites/muse new note \"A useful article\"")
+    .example("toolkit new note \"A useful article\"")
+    .example("toolkit new post \"How I use AI agents\"")
     .action((entry: string, title: string[], options: NewCommandOptions) => {
       void handleCommand(async () => {
         const context = await resolveSiteContext(options.dir)

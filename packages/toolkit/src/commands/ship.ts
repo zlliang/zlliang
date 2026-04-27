@@ -28,9 +28,9 @@ interface ShipCommandOptions {
 export function registerShipCommand(cli: CAC) {
   cli
     .command("ship [draft]", "Publish a post draft and create the associated note")
-    .example("scripts --dir websites/mesh ship")
-    .example("scripts ship")
-    .example("scripts ship how-i-use-ai-agents")
+    .example("toolkit --dir websites/mesh ship")
+    .example("toolkit ship")
+    .example("toolkit ship how-i-use-ai-agents")
     .action((draft: string | undefined, options: ShipCommandOptions) => {
       void handleCommand(async () => {
         const context = await resolveSiteContext(options.dir)
@@ -125,7 +125,7 @@ async function selectDraft(drafts: string[], draftArg?: string): Promise<string>
   }
 
   if (!process.stdin.isTTY || !process.stdout.isTTY) {
-    throw new CliError("Multiple drafts found. Pass a draft slug to `scripts ship`.")
+    throw new CliError("Multiple drafts found. Pass a draft slug to `toolkit ship`.")
   }
 
   process.stdout.write("Select a draft to ship:\n\n")

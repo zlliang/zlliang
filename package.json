@@ -13,14 +13,14 @@
     "build:home": "pnpm --filter @zlliang/home build",
     "build:mesh": "pnpm --filter @zlliang/mesh build",
     "build:muse": "pnpm --filter @zlliang/muse build",
-    "scripts:mesh": "pnpm exec scripts --dir websites/mesh",
-    "scripts:muse": "pnpm exec scripts --dir websites/muse"
+    "toolkit:mesh": "pnpm exec toolkit --dir websites/mesh",
+    "toolkit:muse": "pnpm exec toolkit --dir websites/muse"
   },
   "lint-staged": {
-    "*.{jpg,jpeg,png,webp,avif}": "pnpm exec scripts optimize-image"
+    "*.{jpg,jpeg,png,webp,avif}": "pnpm exec toolkit optimize-image"
   },
   "devDependencies": {
-    "@zlliang/scripts": "workspace:*",
+    "@zlliang/toolkit": "workspace:*",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "typescript": "^6.0.3"
