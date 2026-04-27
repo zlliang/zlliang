@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite"
 
 export default defineConfig({
   site: "https://zlliang.me",
+  output: "server",
   fonts: [
     {
       provider: fontProviders.fontsource(),

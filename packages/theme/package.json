@@ -9,6 +9,7 @@
     "./main.css": "./src/styles/main.css",
     "./schemas/content": "./src/schemas/content.ts",
     "./middleware": "./src/middleware/index.ts",
+    "./middleware/cache": "./src/middleware/cache.ts",
     "./components/Layout.astro": "./src/components/Layout.astro",
     "./components/SiteCard.astro": "./src/components/SiteCard.astro",
     "./components/Section.astro": "./src/components/Section.astro",
