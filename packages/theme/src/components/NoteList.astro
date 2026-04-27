@@ -27,7 +27,7 @@ const grouped = await groupNotesByDate(notes)
 <div class="space-y-6">
   {grouped.map(({ date, notes }) => (
     <Section>
-      <a slot="title" href={getDayNotesPath(date)} class="nocolor">{t.formatDateForGroup(date)}</a>
+      <a slot="title" href={getDayNotesPath(date)} class="nocolor">{t.formatDate(date)}</a>
       {notes.map((note, index) => (
         <div class={cn(index !== notes.length - 1 && "mb-6 pb-6 border-b-2 border-neutral-200 dark:border-neutral-800")}>
           <NoteContent locale={locale} note={note} />
