@@ -7,7 +7,8 @@ import Header from "./Header.astro"
 import Footer from "./Footer.astro"
 import Aside from "./Aside.astro"
 
-import { themeConfig, themeLogo, createT } from "../runtime/config"
+import { themeConfig, themeLogo } from "../runtime/config"
+import { createI18n } from "../i18n"
 
 import "../styles/main.css"
 
@@ -18,10 +19,10 @@ interface Props {
   /** Raw page title. The doc `<title>` becomes `${title} - ${siteTitle}`, or just `siteTitle` when omitted. */
   title?: string
   description?: string
-  /** Page language. Determines `<html lang>` and UI text translations. Defaults to the configured `lang`. */
-  lang?: Locale
+  /** Page locale. Determines `<html lang>` and UI text translations. Defaults to the configured `locale`. */
+  locale?: Locale
   /** When provided, emits `<link rel="alternate" hreflang>` for each entry. */
-  hreflangs?: { code: string; href: string | URL }[]
+  alternateLocales?: { code: string; href: string | URL }[]
   /** Emit `<meta name="robots" content="noindex, follow">`. */
   noindex?: boolean
   /** Header */
@@ -44,8 +45,8 @@ interface Props {
 const {
   title: rawTitle,
   description = themeConfig.description,
-  lang,
-  hreflangs,
+  locale,
+  alternateLocales,
   noindex = false,
   logo = themeLogo,
   siteTitle = themeConfig.title,
@@ -59,14 +60,14 @@ const {
   showSearch = true,
 } = Astro.props
 
-const t = createT(lang)
+const t = createI18n(locale)
 const title = rawTitle ? `${rawTitle} - ${siteTitle}` : siteTitle
 const url = new URL(Astro.url.pathname, Astro.site)
 const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
 ---
 
 <!DOCTYPE html>
-<html lang={t.htmlLang}>
+<html lang={t.htmlLocale}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -84,7 +85,7 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
 
   {/* SEO, OpenGraph and Twitter */}
   <link rel="canonical" href={url} />
-  {hreflangs?.map(({ code, href }) => <link rel="alternate" hreflang={code} href={href} />)}
+  {alternateLocales?.map(({ code, href }) => <link rel="alternate" hreflang={code} href={href} />)}
   {Boolean(description) && <meta name="description" content={description} />}
   {noindex && <meta name="robots" content="noindex, follow" />}
   <meta property="og:site_name" content={ogSiteName ?? siteTitle} />
@@ -110,7 +111,7 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
         <main class="flex-1 min-w-0">
           <slot />
         </main>
-        <Aside lang={lang} showSearch={showSearch} showRecentPosts={showRecentPosts} class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80">
+        <Aside locale={locale} showSearch={showSearch} showRecentPosts={showRecentPosts} class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80">
           <Fragment slot="prefix"><slot name="aside-prefix" /></Fragment>
           <Fragment slot="suffix"><slot name="aside-suffix" /></Fragment>
         </Aside>
@@ -120,7 +121,7 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
         <slot />
       </main>
     )}
-    <Footer lang={lang} author={footerAuthor} />
+    <Footer locale={locale} author={footerAuthor} />
   </div>
 
   {/* Vercel */}

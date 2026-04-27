@@ -1,8 +1,9 @@
 ---
 import Layout from "../components/Layout.astro"
 
-import { t } from "../runtime/config"
+import { createI18n } from "../i18n"
 
+const t = createI18n()
 const src = Astro.url.searchParams.get("src")
 if (!src) {
   return Astro.rewrite("/404")

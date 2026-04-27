@@ -4,19 +4,23 @@ import Pagination from "./Pagination.astro"
 import NoteContent from "./NoteContent.astro"
 
 import { cn } from "../styles"
-import { t } from "../runtime/config"
+import { createI18n } from "../i18n"
 import { groupNotesByDate } from "../content/content"
 import { getDayNotesPath } from "../content/archive"
 
 import type { CollectionEntry } from "astro:content"
+import type { Locale } from "../i18n"
 import type { PaginationData } from "../content/pagination"
 
 interface Props {
+  /** Page locale. Defaults to the configured `locale`. */
+  locale?: Locale
   notes: CollectionEntry<"notes">[]
   pagination?: PaginationData<CollectionEntry<"notes">>
 }
 
-const { notes, pagination } = Astro.props
+const { locale, notes, pagination } = Astro.props
+const t = createI18n(locale)
 const grouped = await groupNotesByDate(notes)
 ---
 
@@ -26,7 +30,7 @@ const grouped = await groupNotesByDate(notes)
       <a slot="title" href={getDayNotesPath(date)} class="nocolor">{t.formatDateForGroup(date)}</a>
       {notes.map((note, index) => (
         <div class={cn(index !== notes.length - 1 && "mb-6 pb-6 border-b-2 border-neutral-200 dark:border-neutral-800")}>
-          <NoteContent note={note} />
+          <NoteContent locale={locale} note={note} />
         </div>
       ))}
     </Section>

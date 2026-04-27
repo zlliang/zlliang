@@ -5,8 +5,8 @@ export const locales = ["en", "zh"] as const
 export type Locale = (typeof locales)[number]
 
 /** Translation helper */
-export function t(lang: Locale, key: keyof (typeof messages)[Locale]): string {
-  return messages[lang][key] || messages["en"][key]
+export function t(locale: Locale, key: keyof (typeof messages)[Locale]): string {
+  return messages[locale][key] || messages["en"][key]
 }
 
 const messages = {

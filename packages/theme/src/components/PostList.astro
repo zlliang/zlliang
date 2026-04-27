@@ -2,18 +2,22 @@
 import PostTitle from "./PostTitle.astro"
 
 import { cn } from "../styles"
-import { t } from "../runtime/config"
+import { createI18n } from "../i18n"
 
 import type { CollectionEntry } from "astro:content"
+import type { Locale } from "../i18n"
 
 interface Props {
+  /** Page locale. Defaults to the configured `locale`. */
+  locale?: Locale
   posts: CollectionEntry<"posts">[]
   current?: string
   showMeta?: boolean
   showSeries?: boolean
 }
 
-const { posts, current, showMeta = true, showSeries = true } = Astro.props
+const { locale, posts, current, showMeta = true, showSeries = true } = Astro.props
+const t = createI18n(locale)
 ---
 
 <div class="@container">

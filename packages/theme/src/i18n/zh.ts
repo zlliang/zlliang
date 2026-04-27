@@ -3,7 +3,7 @@ import { format } from "date-fns"
 import type { Tokens } from "./types"
 
 const tokens: Tokens = {
-  htmlLang: "zh",
+  htmlLocale: "zh",
   segmenterLocale: "zh",
 
   search: "搜索",

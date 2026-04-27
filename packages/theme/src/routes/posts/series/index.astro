@@ -3,9 +3,10 @@ import PageTitle from "../../../components/PageTitle.astro"
 import Layout from "../../../components/Layout.astro"
 import PostList from "../../../components/PostList.astro"
 
-import { t } from "../../../runtime/config"
+import { createI18n } from "../../../i18n"
 import { getPosts, getSeries, filterPostsInSeries } from "../../../content/content"
 
+const t = createI18n()
 const series = await getSeries()
 const posts = await getPosts()
 const title = t.seriesTitle

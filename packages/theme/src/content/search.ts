@@ -1,6 +1,7 @@
 import MiniSearch from "minisearch"
 
-import { t, themeConfig } from "../runtime/config"
+import { themeConfig } from "../runtime/config"
+import { createI18n } from "../i18n"
 import { getNotes, getPosts } from "./content"
 
 import type { CollectionEntry } from "astro:content"
@@ -17,7 +18,8 @@ interface SearchIndex {
   notesById: Map<string, CollectionEntry<"notes">>
 }
 
-const segmenter = new Intl.Segmenter(themeConfig.lang, { granularity: "word" })
+const t = createI18n()
+const segmenter = new Intl.Segmenter(themeConfig.locale, { granularity: "word" })
 
 let searchIndexPromise: Promise<SearchIndex> | undefined
 

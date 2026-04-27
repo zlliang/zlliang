@@ -12,7 +12,7 @@ export default defineConfig({
       title: "Zilong Liang / Mesh",
       description: "In this ever-changing world of technology, trying to see things a little more clearly.",
       logo: "./src/assets/images/logo.png",
-      sister: { site: "muse", lang: "en" },
+      sister: { site: "muse", locale: "en" },
       footerAuthor: "Zilong Liang",
     }),
   ],

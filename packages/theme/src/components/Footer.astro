@@ -1,16 +1,16 @@
 ---
-import { createT } from "../runtime/config"
+import { createI18n } from "../i18n"
 
 import type { Locale } from "../i18n"
 
 interface Props {
   author: string
-  /** Page language. Defaults to the configured `lang`. */
-  lang?: Locale
+  /** Page locale. Defaults to the configured `locale`. */
+  locale?: Locale
 }
 
-const { author, lang } = Astro.props
-const t = createT(lang)
+const { author, locale } = Astro.props
+const t = createI18n(locale)
 ---
 
 <footer class="mt-16 mb-8 text-xs text-neutral-400 dark:text-neutral-600">

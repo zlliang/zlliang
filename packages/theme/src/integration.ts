@@ -111,7 +111,7 @@ export default function theme(userConfig: ThemeUserConfig): AstroIntegration {
           }
         }
 
-        logger.info(`Configured ${config.type} site "${config.title}" (${config.lang}, ${config.color})`)
+        logger.info(`Configured ${config.type} site "${config.title}" (${config.locale}, ${config.color})`)
       },
     },
   }

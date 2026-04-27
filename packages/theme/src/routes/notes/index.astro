@@ -7,11 +7,12 @@ import Layout from "../../components/Layout.astro"
 import ArchiveLinks from "../../components/ArchiveLinks.astro"
 import NoteList from "../../components/NoteList.astro"
 
-import { t } from "../../runtime/config"
+import { createI18n } from "../../i18n"
 import { getNotes } from "../../content/content"
 import { getArchiveBounds, getYearNotesPath } from "../../content/archive"
 import { paginate, parsePageParam, shouldRedirectPagination } from "../../content/pagination"
 
+const t = createI18n()
 const notes = await getNotes()
 const bounds = getArchiveBounds(notes)
 

@@ -3,14 +3,14 @@ import { locales, t } from "@/utils/i18n"
 import type { Locale } from "@/utils/i18n"
 
 /** Builds the props for `@zlliang/theme`'s `Layout` for a given locale. */
-export function getLayoutProps(lang: Locale, pageTitle?: string) {
-  const siteTitle = t(lang, "site.title")
+export function getLayoutProps(locale: Locale, pageTitle?: string) {
+  const siteTitle = t(locale, "site.title")
   return {
     title: pageTitle,
-    lang,
+    locale,
     siteTitle,
-    homeHref: `/${lang}/`,
+    homeHref: `/${locale}/`,
     footerAuthor: siteTitle,
-    hreflangs: locales.map((code) => ({ code, href: `/${code}/` })),
+    alternateLocales: locales.map((code) => ({ code, href: `/${code}/` })),
   }
 }

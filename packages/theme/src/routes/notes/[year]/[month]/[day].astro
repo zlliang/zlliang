@@ -8,11 +8,12 @@ import Layout from "../../../../components/Layout.astro"
 import ArchiveCalendar from "../../../../components/ArchiveCalendar.astro"
 import NoteList from "../../../../components/NoteList.astro"
 
-import { t } from "../../../../runtime/config"
+import { createI18n } from "../../../../i18n"
 import { getNotes } from "../../../../content/content"
 import { getArchiveBounds, getDayNotesPath, getMonthNotesPath, pad, parseDay, parseMonth, parseYear } from "../../../../content/archive"
 import { paginate, parsePageParam, shouldRedirectPagination } from "../../../../content/pagination"
 
+const t = createI18n()
 const notes = await getNotes()
 
 const { year: yearSegment, month: monthSegment, day: daySegment } = Astro.params
