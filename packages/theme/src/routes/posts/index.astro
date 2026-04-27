@@ -1,10 +1,10 @@
 ---
-import PageTitle from "../../../../components/PageTitle.astro"
-import Layout from "../../../../components/Layout.astro"
-import PostList from "../../../../components/PostList.astro"
+import PageTitle from "../../components/PageTitle.astro"
+import Layout from "../../components/Layout.astro"
+import PostList from "../../components/PostList.astro"
 
-import { createI18n } from "../../../../i18n"
-import { getPosts } from "../../../../content/content"
+import { createI18n } from "../../i18n"
+import { getPosts } from "../../content/content"
 
 const t = createI18n()
 const posts = await getPosts()

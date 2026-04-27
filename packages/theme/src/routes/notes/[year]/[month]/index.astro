@@ -1,17 +1,17 @@
 ---
 import { countBy } from "lodash-es"
 
-import PageTitle from "../../../../../../components/PageTitle.astro"
-import Section from "../../../../../../components/Section.astro"
-import Layout from "../../../../../../components/Layout.astro"
-import ArchiveLinks from "../../../../../../components/ArchiveLinks.astro"
-import ArchiveCalendar from "../../../../../../components/ArchiveCalendar.astro"
-import NoteList from "../../../../../../components/NoteList.astro"
+import PageTitle from "../../../../components/PageTitle.astro"
+import Section from "../../../../components/Section.astro"
+import Layout from "../../../../components/Layout.astro"
+import ArchiveLinks from "../../../../components/ArchiveLinks.astro"
+import ArchiveCalendar from "../../../../components/ArchiveCalendar.astro"
+import NoteList from "../../../../components/NoteList.astro"
 
-import { createI18n } from "../../../../../../i18n"
-import { getNotes } from "../../../../../../content/content"
-import { getArchiveBounds, getDayNotesPath, getMonthNotesPath, getYearNotesPath, pad, parseMonth, parseYear } from "../../../../../../content/archive"
-import { paginate, parsePageParam, shouldRedirectPagination } from "../../../../../../content/pagination"
+import { createI18n } from "../../../../i18n"
+import { getNotes } from "../../../../content/content"
+import { getArchiveBounds, getDayNotesPath, getMonthNotesPath, getYearNotesPath, pad, parseMonth, parseYear } from "../../../../content/archive"
+import { paginate, parsePageParam, shouldRedirectPagination } from "../../../../content/pagination"
 
 const t = createI18n()
 const notes = await getNotes()

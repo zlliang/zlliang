@@ -8,7 +8,6 @@ export default defineConfig({
   output: "server",
   integrations: [
     theme({
-      preset: "journal",
       color: "blue",
       title: `${authorData.en.author} / ${siteData.mesh.copy.en.title}`,
       description: siteData.mesh.copy.en.descriptionLines.join(""),
