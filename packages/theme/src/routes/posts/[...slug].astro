@@ -1,14 +1,14 @@
 ---
-import Section from "../../../../components/Section.astro"
-import Layout from "../../../../components/Layout.astro"
-import PostContent from "../../../../components/PostContent.astro"
-import PostTitle from "../../../../components/PostTitle.astro"
-import TableOfContents from "../../../../components/TableOfContents.astro"
-import PostList from "../../../../components/PostList.astro"
+import Section from "../../components/Section.astro"
+import Layout from "../../components/Layout.astro"
+import PostContent from "../../components/PostContent.astro"
+import PostTitle from "../../components/PostTitle.astro"
+import TableOfContents from "../../components/TableOfContents.astro"
+import PostList from "../../components/PostList.astro"
 
-import { cn } from "../../../../styles"
-import { createI18n } from "../../../../i18n"
-import { getAdjacentPosts, getPosts, getPostById, getSeriesById, filterPostsInSeries } from "../../../../content/content"
+import { cn } from "../../styles"
+import { createI18n } from "../../i18n"
+import { getAdjacentPosts, getPosts, getPostById, getSeriesById, filterPostsInSeries } from "../../content/content"
 
 const t = createI18n()
 const { slug } = Astro.params

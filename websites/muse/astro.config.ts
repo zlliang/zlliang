@@ -8,7 +8,6 @@ export default defineConfig({
   output: "server",
   integrations: [
     theme({
-      preset: "journal",
       locale: "zh",
       color: "indigo",
       title: `${authorData.zh.author} / ${siteData.muse.copy.zh.title}`,
