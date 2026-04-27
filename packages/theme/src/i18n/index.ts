@@ -2,7 +2,7 @@ import { themeConfig } from "../runtime/config"
 import en from "./locales/en"
 import zh from "./locales/zh"
 
-import type { Tokens } from "./types"
+import type { Tokens } from "./tokens"
 
 export type Locale = "en" | "zh"
 

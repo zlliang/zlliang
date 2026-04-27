@@ -1,8 +1,7 @@
 export interface Tokens {
-  /** `<html lang>` value */
-  htmlLocale: string
-  /** Locale tag for `Intl.Segmenter` */
-  segmenterLocale: string
+  // Locale
+  lang: string
+  formatDate: (date: Date) => string
 
   // Search
   search: string
@@ -17,10 +16,20 @@ export interface Tokens {
   searchSortDate: string
   searchNoResults: (query: string) => string
 
-  // Header
+  // Navigation
   about: string
+  explore: string
+  archive: string
+  back: string
+  next: string
+  previous: string
+  morePostsBackToAll: string
+  backToAllNotes: string
+  backToYear: (year: number) => string
+  backToMonth: (date: Date) => string
+  backToAllSeries: string
 
-  // Aside / counts
+  // Content labels and counts
   notes: string
   posts: string
   series: string
@@ -32,56 +41,36 @@ export interface Tokens {
   seriesCountSubtitle: (count: number) => string
   postsInSeriesUnit: (count: number) => string
 
-  pinnedPosts: string
-  recentPosts: string
-  explore: string
-  archive: string
-  yearsLabel: string
-  yearLabel: (year: number) => string
-  monthYearLabel: (date: Date) => string
-  monthShortLabel: (date: Date) => string
-  otherSide: string
-
-  // Content states
+  // Notes
   noteDraft: string
-  postDraft: string
   noteUntitled: string
   notesEmpty: string
-  postsEmpty: string
-  seriesEmpty: string
-  readPost: string
-  partOfSeries: string
-  oldestFirst: string
-
-  // 404 / image
-  notFoundBack: string
-  back: string
-  imageTitle: (caption: string | null | undefined) => string
-
-  // Footer / pagination
-  builtWithPrefix: string
-  builtWithSuffix: string
-  pageLabel: string
-
-  // Adjacency / nav
-  next: string
-  previous: string
   noteIdLabel: (number: number) => string
-  morePostsBackToAll: string
-  backToAllNotes: string
-  backToYear: (year: number) => string
-  backToMonth: (date: Date) => string
-  backToAllSeries: string
   moreNotes: (count: number) => string
-
-  // Page titles
   notesIndexTitle: string
   notesYearTitle: (year: number) => string
   notesMonthTitle: (date: Date) => string
   notesDayTitle: (date: Date) => string
+
+  // Posts
+  pinnedPosts: string
+  recentPosts: string
+  postDraft: string
+  postsEmpty: string
+  readPost: string
   postsTitle: string
+
+  // Series
+  seriesEmpty: string
   seriesTitle: string
-  tableOfContents: string
+  partOfSeries: string
+  oldestFirst: string
+
+  // Archive
+  yearsLabel: string
+  yearLabel: (year: number) => string
+  monthYearLabel: (date: Date) => string
+  monthShortLabel: (date: Date) => string
 
   // Heatmap
   heatmapTitle: string
@@ -90,8 +79,12 @@ export interface Tokens {
   heatmapPostOnly: (count: number, date: Date) => string
   heatmapNoteAndPost: (notes: number, posts: number, date: Date) => string
 
-  // Date formatting
-  formatDate: (date: Date) => string
-  formatDateLong: (date: Date) => string
-  formatDateForGroup: (date: Date) => string
+  // Page chrome
+  tableOfContents: string
+  otherSide: string
+  notFoundBack: string
+  imageTitle: (caption: string | null | undefined) => string
+  builtWithPrefix: string
+  builtWithSuffix: string
+  pageLabel: string
 }
