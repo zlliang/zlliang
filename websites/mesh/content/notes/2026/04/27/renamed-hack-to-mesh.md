@@ -1,5 +1,5 @@
 ---
-number: 78
+number: 77
 title: Renamed Hack to Mesh
 created: 2026-04-27
 ---
