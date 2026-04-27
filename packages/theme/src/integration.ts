@@ -6,39 +6,35 @@ import tailwindcss from "@tailwindcss/vite"
 import { remarkCjkFriendly, remarkCodeTitles } from "@zlliang/remark"
 import {rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeImageLinks, rehypeCodeCopy } from "@zlliang/rehype"
 
-import { resolveThemeConfig } from "./config"
 import { virtualConfigPlugin } from "./plugins/virtual-config"
 import { virtualLogoPlugin } from "./plugins/virtual-logo"
 import { virtualColorPlugin } from "./plugins/virtual-color"
 import { virtualSlotsPlugin, SLOT_KEYS } from "./plugins/virtual-slots"
+import { journalPreset, type ThemeJournalConfig } from "./presets/journal"
+import { portfolioPreset, type ThemePortfolioConfig } from "./presets/portfolio"
 
 import type { AstroIntegration } from "astro"
 import type { PluginOption as VitePluginOption } from "vite"
-import type { ThemeUserConfig } from "./config"
+import type { ThemePreset } from "./config"
 import type { SlotKey } from "./plugins/virtual-slots"
 
-const ROUTES: Array<{ pattern: string; entrypoint: string }> = [
-  { pattern: "/", entrypoint: "routes/index.astro" },
-  { pattern: "/404", entrypoint: "routes/404.astro" },
-  { pattern: "/image", entrypoint: "routes/image.astro" },
-  { pattern: "/search", entrypoint: "routes/search.astro" },
-  { pattern: "/notes", entrypoint: "routes/notes/index.astro" },
-  { pattern: "/notes/[...slug]", entrypoint: "routes/notes/[...slug].astro" },
-  { pattern: "/notes/[year]", entrypoint: "routes/notes/[year]/index.astro" },
-  { pattern: "/notes/[year]/[month]", entrypoint: "routes/notes/[year]/[month]/index.astro" },
-  { pattern: "/notes/[year]/[month]/[day]", entrypoint: "routes/notes/[year]/[month]/[day].astro" },
-  { pattern: "/posts", entrypoint: "routes/posts/index.astro" },
-  { pattern: "/posts/[...slug]", entrypoint: "routes/posts/[...slug].astro" },
-  { pattern: "/posts/series", entrypoint: "routes/posts/series/index.astro" },
-  { pattern: "/posts/series/[series]", entrypoint: "routes/posts/series/[series].astro" },
-]
+export type ThemeUserConfig = ThemeJournalConfig | ThemePortfolioConfig
+
+const PRESETS = {
+  journal: journalPreset,
+  portfolio: portfolioPreset,
+} satisfies Record<string, ThemePreset<never>>
 
 export default function theme(userConfig: ThemeUserConfig): AstroIntegration {
   return {
     name: "@zlliang/theme",
     hooks: {
-      "astro:config:setup": ({ config: astroConfig, updateConfig, addMiddleware, injectRoute, logger }) => {
-        const config = resolveThemeConfig(userConfig)
+      "astro:config:setup": (astro) => {
+        const { config: astroConfig, updateConfig, addMiddleware, logger } = astro
+
+        const preset = PRESETS[userConfig.preset] as ThemePreset<ThemeUserConfig>
+        const config = preset.resolveConfig(userConfig)
+
         const siteRoot = fileURLToPath(astroConfig.root)
         const logoAbsPath = resolvePath(siteRoot, config.logo)
         const { logo: _omitLogo, overrides: _omitOverrides, ...serializableConfig } = config
@@ -107,20 +103,13 @@ export default function theme(userConfig: ThemeUserConfig): AstroIntegration {
         })
 
         addMiddleware({
-          entrypoint: new URL(userConfig.type === "blog" ? "./middleware/index.ts" : "./middleware/cache.ts", import.meta.url),
+          entrypoint: new URL("./middleware/cache.ts", import.meta.url),
           order: "pre",
         })
 
-        if (userConfig.type === "blog") {
-          for (const { pattern, entrypoint } of ROUTES) {
-            injectRoute({
-              pattern,
-              entrypoint: new URL(`./${entrypoint}`, import.meta.url),
-            })
-          }
-        }
+        preset.apply({ userConfig, config, astro })
 
-        logger.info(`Configured ${config.type} site "${config.title}" (${config.locale}, ${config.color})`)
+        logger.info(`Configured ${config.preset} site "${config.title}" (${config.locale}, ${config.color})`)
       },
     },
   }

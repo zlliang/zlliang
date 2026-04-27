@@ -1,14 +1,14 @@
 ---
-import PageTitle from "../components/PageTitle.astro"
-import Layout from "../components/Layout.astro"
-import SearchForm from "../components/SearchForm.astro"
-import NoteSearchResults from "../components/NoteSearchResults.astro"
+import PageTitle from "../../../components/PageTitle.astro"
+import Layout from "../../../components/Layout.astro"
+import SearchForm from "../../../components/SearchForm.astro"
+import NoteSearchResults from "../../../components/NoteSearchResults.astro"
 
-import { createI18n } from "../i18n"
-import { paginate, parsePageParam, shouldRedirectPagination } from "../content/pagination"
-import { getSearchPageUrl, parseSearchSort, searchNotes } from "../content/search"
+import { createI18n } from "../../../i18n"
+import { paginate, parsePageParam, shouldRedirectPagination } from "../../../content/pagination"
+import { getSearchPageUrl, parseSearchSort, searchNotes } from "../../../content/search"
 
-import type { SearchSort } from "../content/search"
+import type { SearchSort } from "../../../content/search"
 
 Astro.response.headers.set("Cache-Control", "public, max-age=0, s-maxage=60")
 
