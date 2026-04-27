@@ -1,23 +1,5 @@
-import colors from "tailwindcss/colors"
-
+import type { PrimaryColor } from "./styles"
 import type { Locale, Tokens } from "./i18n"
-
-export const primaryColorShades = ["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"] as const
-
-type PrimaryColorScale = Record<typeof primaryColorShades[number], string>
-
-export type PrimaryColor = {
-  [Color in keyof typeof colors]: typeof colors[Color] extends PrimaryColorScale ? Color : never
-}[keyof typeof colors] & string
-
-function isPrimaryColorScale(value: unknown): value is PrimaryColorScale {
-  if (!value || typeof value !== "object") return false
-
-  const scale = value as Record<string, unknown>
-  return primaryColorShades.every((shade) => typeof scale[shade] === "string")
-}
-
-export const primaryColors = Object.keys(colors).filter((color): color is PrimaryColor => isPrimaryColorScale(colors[color as keyof typeof colors]))
 
 export type SisterSite = "mesh" | "muse"
 
