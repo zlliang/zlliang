@@ -20,7 +20,7 @@ export interface ThemeSharedConfig {
   color: keyof typeof colors
   /** Site title shown in the header, footer, and `<title>`. */
   title: string
-  /** Path to the logo image, relative to the site root (e.g. `./src/assets/images/logo.png`). */
+  /** Path to the logo image, relative to the site root (e.g. `./src/assets/logo.png`). */
   logo: string
   /** Footer author name. Defaults to `title`. */
   footerAuthor?: string

@@ -1,15 +1,15 @@
 import { defineConfig } from "astro/config"
 import vercel from "@astrojs/vercel"
-import zlliangTheme from "@zlliang/theme/integration"
+import theme from "@zlliang/theme/integration"
 
 export default defineConfig({
   site: "https://zlliang.me",
   integrations: [
-    zlliangTheme({
+    theme({
       type: "portfolio",
       color: "cyan",
       title: "Zilong Liang",
-      logo: "./src/assets/images/logo.png",
+      logo: "./src/assets/logo.png",
       footerAuthor: "Zilong Liang",
       twitterCreator: "@zlliang96",
     }),
