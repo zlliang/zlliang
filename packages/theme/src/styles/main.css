@@ -1,12 +1,12 @@
 @import "tailwindcss";
 @plugin "@iconify/tailwind4";
 
-/* @zlliang-theme-primary */
-
 @source "../components/**/*.astro";
 @source "../routes/**/*.astro";
 
 /* Theme variables */
+
+/* @zlliang-theme-color */
 
 @theme inline {
   --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

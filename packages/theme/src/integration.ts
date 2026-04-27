@@ -9,7 +9,7 @@ import {rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehype
 import { resolveThemeConfig } from "./config"
 import { virtualConfigPlugin } from "./plugins/virtual-config"
 import { virtualLogoPlugin } from "./plugins/virtual-logo"
-import { virtualPrimaryColorPlugin } from "./plugins/virtual-primary-color"
+import { virtualColorPlugin } from "./plugins/virtual-color"
 
 import type { AstroIntegration } from "astro"
 import type { PluginOption as VitePluginOption } from "vite"
@@ -43,7 +43,7 @@ export default function theme(userConfig: ThemeUserConfig): AstroIntegration {
         const serializedConfig = JSON.stringify({ ...serializableConfig, overrides: {} })
 
         const vitePlugins: VitePluginOption[] = [
-          virtualPrimaryColorPlugin(userConfig.primaryColor),
+          virtualColorPlugin(userConfig.color),
           tailwindcss(),
           virtualConfigPlugin(serializedConfig),
           virtualLogoPlugin(logoAbsPath),
@@ -111,7 +111,7 @@ export default function theme(userConfig: ThemeUserConfig): AstroIntegration {
           }
         }
 
-        logger.info(`Configured ${config.type} site "${config.title}" (${config.locale}, ${config.primaryColor})`)
+        logger.info(`Configured ${config.type} site "${config.title}" (${config.locale}, ${config.color})`)
       },
     },
   }

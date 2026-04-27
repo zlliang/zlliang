@@ -9,7 +9,7 @@ export default defineConfig({
     zlliangTheme({
       type: "blog",
       locale: "zh",
-      primaryColor: "indigo",
+      color: "indigo",
       title: "梁子龙 / 随想手记",
       description: "慢慢记下一些小事和随想，还有那些停留更久的念头。",
       logo: "./src/assets/images/logo.png",

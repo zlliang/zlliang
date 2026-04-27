@@ -7,7 +7,7 @@ export default defineConfig({
   integrations: [
     zlliangTheme({
       type: "portfolio",
-      primaryColor: "cyan",
+      color: "cyan",
       title: "Zilong Liang",
       logo: "./src/assets/images/logo.png",
       footerAuthor: "Zilong Liang",
