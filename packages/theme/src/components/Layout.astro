@@ -7,18 +7,19 @@ import Header from "./Header.astro"
 import Footer from "./Footer.astro"
 import Aside from "./Aside.astro"
 
-import { themeConfig, themeLogo, t } from "../runtime/config"
+import { themeConfig, themeLogo, createT } from "../runtime/config"
 
 import "../styles/main.css"
 
 import type { ImageMetadata } from "astro"
+import type { Locale } from "../i18n"
 
 interface Props {
   /** Raw page title. The doc `<title>` becomes `${title} - ${siteTitle}`, or just `siteTitle` when omitted. */
   title?: string
   description?: string
-  /** Value for `<html lang>`. Defaults to the configured locale's HTML lang. */
-  lang?: string
+  /** Page language. Determines `<html lang>` and UI text translations. Defaults to the configured `lang`. */
+  lang?: Locale
   /** When provided, emits `<link rel="alternate" hreflang>` for each entry. */
   hreflangs?: { code: string; href: string | URL }[]
   /** Emit `<meta name="robots" content="noindex, follow">`. */
@@ -32,8 +33,6 @@ interface Props {
   twitterCreator?: string | null
   /** Footer */
   footerAuthor?: string
-  footerBuiltWithPrefix?: string
-  footerBuiltWithSuffix?: string
   /** Wider container that opens up room for an aside. Defaults to `aside`. */
   wide?: boolean
   /** Render the blog `Aside`. Defaults to `true` in blog mode and `false` otherwise. */
@@ -45,7 +44,7 @@ interface Props {
 const {
   title: rawTitle,
   description = themeConfig.description,
-  lang = t.htmlLang,
+  lang,
   hreflangs,
   noindex = false,
   logo = themeLogo,
@@ -54,21 +53,20 @@ const {
   ogSiteName,
   twitterCreator = themeConfig.twitterCreator,
   footerAuthor = themeConfig.footerAuthor,
-  footerBuiltWithPrefix = t.builtWithPrefix,
-  footerBuiltWithSuffix = t.builtWithSuffix,
   aside = themeConfig.type === "blog",
   wide = aside,
   showRecentPosts = true,
   showSearch = true,
 } = Astro.props
 
+const t = createT(lang)
 const title = rawTitle ? `${rawTitle} - ${siteTitle}` : siteTitle
 const url = new URL(Astro.url.pathname, Astro.site)
 const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
 ---
 
 <!DOCTYPE html>
-<html lang={lang}>
+<html lang={t.htmlLang}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -112,7 +110,7 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
         <main class="flex-1 min-w-0">
           <slot />
         </main>
-        <Aside showSearch={showSearch} showRecentPosts={showRecentPosts} class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80">
+        <Aside lang={lang} showSearch={showSearch} showRecentPosts={showRecentPosts} class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80">
           <Fragment slot="prefix"><slot name="aside-prefix" /></Fragment>
           <Fragment slot="suffix"><slot name="aside-suffix" /></Fragment>
         </Aside>
@@ -122,7 +120,7 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
         <slot />
       </main>
     )}
-    <Footer author={footerAuthor} builtWithPrefix={footerBuiltWithPrefix} builtWithSuffix={footerBuiltWithSuffix} />
+    <Footer lang={lang} author={footerAuthor} />
   </div>
 
   {/* Vercel */}

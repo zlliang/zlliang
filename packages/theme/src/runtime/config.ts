@@ -1,7 +1,7 @@
 import { tokensByLocale } from "../i18n"
 
 import type { ResolvedThemeConfig } from "../config"
-import type { Tokens } from "../i18n"
+import type { Locale, Tokens } from "../i18n"
 import type { ImageMetadata } from "astro"
 
 // @ts-expect-error virtual module provided by the theme integration
@@ -11,4 +11,10 @@ import logo from "virtual:zlliang-theme/logo"
 
 export const themeConfig = config as Omit<ResolvedThemeConfig, "logo">
 export const themeLogo = logo as ImageMetadata
-export const t: Tokens = { ...tokensByLocale[themeConfig.locale], ...themeConfig.overrides }
+
+/** Build a `Tokens` object for the given language, falling back to the configured default. */
+export function createT(lang?: Locale): Tokens {
+  return { ...tokensByLocale[lang ?? themeConfig.lang], ...themeConfig.overrides }
+}
+
+export const t: Tokens = createT()

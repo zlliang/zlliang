@@ -17,7 +17,7 @@ interface SearchIndex {
   notesById: Map<string, CollectionEntry<"notes">>
 }
 
-const segmenter = new Intl.Segmenter(themeConfig.locale, { granularity: "word" })
+const segmenter = new Intl.Segmenter(themeConfig.lang, { granularity: "word" })
 
 let searchIndexPromise: Promise<SearchIndex> | undefined
 

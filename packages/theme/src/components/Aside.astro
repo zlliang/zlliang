@@ -6,16 +6,21 @@ import SearchForm from "./SearchForm.astro"
 import Heatmap from "./Heatmap.astro"
 
 import { cn } from "../styles"
-import { t, themeConfig } from "../runtime/config"
+import { createT, themeConfig } from "../runtime/config"
 import { getNotes, getPosts, getPinnedPosts, getSeries } from "../content/content"
 
+import type { Locale } from "../i18n"
+
 interface Props {
+  /** Page language. Defaults to the configured `lang`. */
+  lang?: Locale
   showSearch?: boolean
   showRecentPosts?: boolean
   class?: string
 }
 
-const { showSearch = true, showRecentPosts = true, class: className } = Astro.props
+const { lang, showSearch = true, showRecentPosts = true, class: className } = Astro.props
+const t = createT(lang)
 const notes = await getNotes()
 const posts = await getPosts()
 const pinnedPosts = await getPinnedPosts()
@@ -24,7 +29,7 @@ const series = await getSeries()
 ---
 
 <aside class={cn("space-y-6", className)}>
-  {showSearch && <SearchForm class="hidden lg:flex mb-6" />}
+  {showSearch && <SearchForm lang={lang} class="hidden lg:flex mb-6" />}
 
   {/* Prefix */}
   <slot name="prefix" />

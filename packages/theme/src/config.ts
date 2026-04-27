@@ -28,8 +28,8 @@ export interface ThemePortfolioConfig extends ThemeSharedConfig {
 
 export interface ThemeBlogConfig extends ThemeSharedConfig {
   type: "blog"
-  /** Locale for the entire site. Determines `<html lang>`, UI strings, and search segmenter. */
-  locale: Locale
+  /** Default language for the entire site. Determines `<html lang>`, UI strings, and search segmenter. Defaults to `"en"`. */
+  lang?: Locale
   /** Site description used as the default meta description. */
   description: string
   /** Sister site card shown in the aside. */
@@ -51,8 +51,8 @@ export interface ResolvedThemeConfig {
   logo: string
   footerAuthor: string
   twitterCreator: string | null
-  /** Defaults to `"en"` for portfolio sites; the runtime `t` is derived from this. */
-  locale: Locale
+  /** Defaults to `"en"`; the runtime `t` is derived from this. */
+  lang: Locale
   /** `""` for portfolio sites. */
   description: string
   /** `null` for portfolio sites. */
@@ -79,7 +79,7 @@ export function resolveThemeConfig(user: ThemeUserConfig): ResolvedThemeConfig {
   if (user.type === "blog") {
     return {
       ...shared,
-      locale: user.locale,
+      lang: user.lang ?? "en",
       description: user.description,
       sister: user.sister,
       aboutHref: user.aboutHref ?? DEFAULT_ABOUT_HREF,
@@ -90,7 +90,7 @@ export function resolveThemeConfig(user: ThemeUserConfig): ResolvedThemeConfig {
 
   return {
     ...shared,
-    locale: "en",
+    lang: "en",
     description: "",
     sister: null,
     aboutHref: DEFAULT_ABOUT_HREF,
