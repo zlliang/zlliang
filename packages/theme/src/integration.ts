@@ -114,7 +114,7 @@ export default function theme(userConfig: ThemeUserConfig): AstroIntegration {
         })
 
         addMiddleware({
-          entrypoint: new URL("./middleware/index.ts", import.meta.url),
+          entrypoint: new URL("./middlewares/index.ts", import.meta.url),
           order: "pre",
         })
 

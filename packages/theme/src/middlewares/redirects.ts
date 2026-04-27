@@ -1,9 +1,7 @@
-import { defineMiddleware } from "astro:middleware"
-
-type Context = Parameters<Parameters<typeof defineMiddleware>[0]>[0]
+import { defineMiddleware, sequence } from "astro:middleware"
 
 // Mar 22, 2026: Renamed categories to types, removed tags, migrated pagination to query params.
-async function redirectsBefore20260322(context: Context) {
+const redirectsBefore20260322 = defineMiddleware(async (context, next) => {
   const { pathname, search } = context.url
 
   const notesPaginationMatch = pathname.match(/^\/notes\/([1-9]\d{0,2})$/)
@@ -54,42 +52,33 @@ async function redirectsBefore20260322(context: Context) {
     })
   }
 
-  return null
-}
+  return next()
+})
 
 // Apr 25, 2026: Eliminated note types; all type pages now redirect to /notes.
-function redirectsBefore20260425(context: Context) {
+const redirectsBefore20260425 = defineMiddleware((context, next) => {
   const { pathname, search } = context.url
 
   if (pathname === "/notes/types" || pathname.startsWith("/notes/types/")) {
     return context.redirect(`/notes${search}`, 308)
   }
 
-  return null
-}
+  return next()
+})
 
 // Apr 26, 2026: Moved the search route from /notes/search to /search.
-function redirectsBefore20260426(context: Context) {
+const redirectsBefore20260426 = defineMiddleware((context, next) => {
   const { pathname, search } = context.url
 
   if (pathname === "/notes/search") {
     return context.redirect(`/search${search}`, 308)
   }
 
-  return null
-}
-
-export const redirects = defineMiddleware(async (context, next) => {
-  const before20260322 = await redirectsBefore20260322(context)
-  if (before20260322) return before20260322
-
-  const before20260425 = redirectsBefore20260425(context)
-  if (before20260425) return before20260425
-
-  const before20260426 = redirectsBefore20260426(context)
-  if (before20260426) return before20260426
-
   return next()
 })
 
-export const onRequest = redirects
+export const redirects = sequence(
+  redirectsBefore20260322,
+  redirectsBefore20260425,
+  redirectsBefore20260426,
+)

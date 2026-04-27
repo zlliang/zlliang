@@ -1,1 +1,3 @@
-export { cache as onRequest } from "@zlliang/theme/middleware/cache"
+import { cache } from "@zlliang/theme/middlewares"
+
+export const onRequest = cache
