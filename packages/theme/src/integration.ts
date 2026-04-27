@@ -10,10 +10,12 @@ import { resolveThemeConfig } from "./config"
 import { virtualConfigPlugin } from "./plugins/virtual-config"
 import { virtualLogoPlugin } from "./plugins/virtual-logo"
 import { virtualColorPlugin } from "./plugins/virtual-color"
+import { virtualSlotsPlugin, SLOT_KEYS } from "./plugins/virtual-slots"
 
 import type { AstroIntegration } from "astro"
 import type { PluginOption as VitePluginOption } from "vite"
 import type { ThemeUserConfig } from "./config"
+import type { SlotKey } from "./plugins/virtual-slots"
 
 const ROUTES: Array<{ pattern: string; entrypoint: string }> = [
   { pattern: "/", entrypoint: "routes/index.astro" },
@@ -42,11 +44,18 @@ export default function theme(userConfig: ThemeUserConfig): AstroIntegration {
         const { logo: _omitLogo, overrides: _omitOverrides, ...serializableConfig } = config
         const serializedConfig = JSON.stringify({ ...serializableConfig, overrides: {} })
 
+        const resolvedSlots: Partial<Record<SlotKey, string>> = {}
+        for (const key of SLOT_KEYS) {
+          const relPath = userConfig.slots?.[key]
+          if (relPath) resolvedSlots[key] = resolvePath(siteRoot, relPath)
+        }
+
         const vitePlugins: VitePluginOption[] = [
           virtualColorPlugin(userConfig.color),
           tailwindcss(),
           virtualConfigPlugin(serializedConfig),
           virtualLogoPlugin(logoAbsPath),
+          virtualSlotsPlugin(resolvedSlots),
         ]
 
         updateConfig({

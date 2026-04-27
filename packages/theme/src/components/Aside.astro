@@ -1,14 +1,15 @@
 ---
 import Section from "./Section.astro"
-import SiteCard from "./SiteCard.astro"
 import PostList from "./PostList.astro"
 import SearchForm from "./SearchForm.astro"
 import Heatmap from "./Heatmap.astro"
 
 import { cn } from "../styles"
-import { themeConfig } from "../runtime/config"
 import { createI18n } from "../i18n"
 import { getNotes, getPosts, getPinnedPosts, getSeries } from "../content/content"
+
+// @ts-expect-error virtual module provided by the theme integration
+import * as Slots from "virtual:zlliang-theme/slots"
 
 import type { Locale } from "../i18n"
 
@@ -31,9 +32,6 @@ const series = await getSeries()
 
 <aside class={cn("space-y-6", className)}>
   {showSearch && <SearchForm locale={locale} class="hidden lg:flex mb-6" />}
-
-  {/* Prefix */}
-  <slot name="prefix" />
 
   {/* Explore */}
   <Section title={t.explore}>
@@ -66,13 +64,6 @@ const series = await getSeries()
     </Section>
   )}
 
-  {/* Other websites */}
-  {themeConfig.sister && (
-    <Section title={t.otherSide}>
-      <SiteCard site={themeConfig.sister.site} locale={themeConfig.sister.locale} />
-    </Section>
-  )}
-
-  {/* Suffix */}
-  <slot name="suffix" />
+  {/* Site-supplied suffix */}
+  {Slots.asideSuffix && <Slots.asideSuffix locale={locale} />}
 </aside>

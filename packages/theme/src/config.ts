@@ -2,10 +2,16 @@ import colors from "tailwindcss/colors"
 
 import type { Locale, Tokens } from "./i18n"
 
-export type SisterSite = "mesh" | "muse"
-
 /** Site type. Determines which features the theme integration enables. */
 export type ThemeType = "portfolio" | "blog"
+
+/** Site-specific Astro components plugged into theme slots. Paths are relative to the site root. */
+export interface ThemeSlots {
+  /** Appended to the right end of the header menu, after the built-in mobile search link. */
+  headerSuffix?: string
+  /** Appended to the bottom of the blog aside, after the built-in sections. */
+  asideSuffix?: string
+}
 
 export interface ThemeSharedConfig {
   /** Site type. `portfolio` ships only shared setup; `blog` injects routes and the note/post content layer. */
@@ -20,6 +26,8 @@ export interface ThemeSharedConfig {
   footerAuthor?: string
   /** Twitter creator handle for OpenGraph tags. */
   twitterCreator?: string
+  /** Site-specific Astro components plugged into named theme slots. */
+  slots?: ThemeSlots
 }
 
 export interface ThemePortfolioConfig extends ThemeSharedConfig {
@@ -32,10 +40,6 @@ export interface ThemeBlogConfig extends ThemeSharedConfig {
   locale?: Locale
   /** Site description used as the default meta description. */
   description: string
-  /** Sister site card shown in the aside. */
-  sister: { site: SisterSite; locale: Locale }
-  /** Optional URL for the "About" link in the header. */
-  aboutHref?: string
   /** Notes-per-page for note listings. Defaults to 20. */
   notesPerPage?: number
   /** Override individual UI tokens. */
@@ -55,14 +59,10 @@ export interface ResolvedThemeConfig {
   locale: Locale
   /** `""` for portfolio sites. */
   description: string
-  /** `null` for portfolio sites. */
-  sister: { site: SisterSite; locale: Locale } | null
-  aboutHref: string
   notesPerPage: number
   overrides: Partial<Tokens>
 }
 
-const DEFAULT_ABOUT_HREF = "https://zlliang.me"
 const DEFAULT_NOTES_PER_PAGE = 20
 const DEFAULT_TWITTER_CREATOR = "@zlliang96"
 
@@ -81,8 +81,6 @@ export function resolveThemeConfig(user: ThemeUserConfig): ResolvedThemeConfig {
       ...shared,
       locale: user.locale ?? "en",
       description: user.description,
-      sister: user.sister,
-      aboutHref: user.aboutHref ?? DEFAULT_ABOUT_HREF,
       notesPerPage: user.notesPerPage ?? DEFAULT_NOTES_PER_PAGE,
       overrides: user.overrides ?? {},
     }
@@ -92,8 +90,6 @@ export function resolveThemeConfig(user: ThemeUserConfig): ResolvedThemeConfig {
     ...shared,
     locale: "en",
     description: "",
-    sister: null,
-    aboutHref: DEFAULT_ABOUT_HREF,
     notesPerPage: DEFAULT_NOTES_PER_PAGE,
     overrides: {},
   }
