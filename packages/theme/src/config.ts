@@ -1,4 +1,5 @@
-import type { PrimaryColor } from "./styles"
+import colors from "tailwindcss/colors"
+
 import type { Locale, Tokens } from "./i18n"
 
 export type SisterSite = "mesh" | "muse"
@@ -10,7 +11,7 @@ export interface ThemeSharedConfig {
   /** Site type. `portfolio` ships only shared setup; `blog` injects routes and the note/post content layer. */
   type: ThemeType
   /** Tailwind primary color palette. Maps `--color-primary-*` to the matching Tailwind palette. */
-  primaryColor: PrimaryColor
+  color: keyof typeof colors
   /** Site title shown in the header, footer, and `<title>`. */
   title: string
   /** Path to the logo image, relative to the site root (e.g. `./src/assets/images/logo.png`). */
@@ -45,7 +46,7 @@ export type ThemeUserConfig = ThemePortfolioConfig | ThemeBlogConfig
 
 export interface ResolvedThemeConfig {
   type: ThemeType
-  primaryColor: PrimaryColor
+  color: keyof typeof colors
   title: string
   logo: string
   footerAuthor: string
@@ -68,7 +69,7 @@ const DEFAULT_TWITTER_CREATOR = "@zlliang96"
 export function resolveThemeConfig(user: ThemeUserConfig): ResolvedThemeConfig {
   const shared = {
     type: user.type,
-    primaryColor: user.primaryColor,
+    color: user.color,
     title: user.title,
     logo: user.logo,
     footerAuthor: user.footerAuthor ?? user.title,
