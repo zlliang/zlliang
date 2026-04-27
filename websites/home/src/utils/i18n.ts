@@ -13,9 +13,11 @@ const messages = {
   en: {
     "desc": "English",
     "site.title": "Zilong Liang",
+    "journals": "Journals",
   },
   zh: {
     "desc": "中文",
     "site.title": "梁子龙",
+    "journals": "手记",
   },
 } as const
