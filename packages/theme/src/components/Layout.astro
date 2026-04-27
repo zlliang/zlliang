@@ -39,7 +39,7 @@ interface Props {
   footerAuthor?: string
   /** Wider container that opens up room for an aside. Defaults to `aside`. */
   wide?: boolean
-  /** Render the blog `Aside`. Defaults to `true` in blog mode and `false` otherwise. */
+  /** Render the journal `Aside`. Defaults to `true` in journal mode and `false` otherwise. */
   aside?: boolean
   showRecentPosts?: boolean
   showSearch?: boolean
@@ -57,7 +57,7 @@ const {
   ogSiteName,
   twitterCreator = themeConfig.twitterCreator,
   footerAuthor = themeConfig.footerAuthor,
-  aside = themeConfig.type === "blog",
+  aside = themeConfig.preset === "journal",
   wide = aside,
   showRecentPosts = true,
   showSearch = true,
@@ -109,7 +109,7 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
     <Header logo={logo} title={siteTitle} homeHref={homeHref}>
       <Fragment slot="menu">
         <slot name="menu">
-          {themeConfig.type === "blog" && (
+          {themeConfig.preset === "journal" && (
             <a href="/search" class="lg:hidden"><span class="icon-[lucide--search]" /> {t.search}</a>
           )}
         </slot>

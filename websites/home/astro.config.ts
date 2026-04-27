@@ -6,7 +6,7 @@ export default defineConfig({
   site: "https://zlliang.me",
   integrations: [
     theme({
-      type: "portfolio",
+      preset: "portfolio",
       color: "cyan",
       title: "Zilong Liang",
       logo: "./src/assets/logo.png",
