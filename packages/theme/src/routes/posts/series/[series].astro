@@ -3,9 +3,10 @@ import PageTitle from "../../../components/PageTitle.astro"
 import Layout from "../../../components/Layout.astro"
 import PostList from "../../../components/PostList.astro"
 
-import { t } from "../../../runtime/config"
+import { createI18n } from "../../../i18n"
 import { getPosts, getSeries, getSeriesById, filterPostsInSeries } from "../../../content/content"
 
+const t = createI18n()
 const { series: slug } = Astro.params
 if (!slug || !(await getSeries()).some((series) => series.id === slug)) {
   return Astro.rewrite("/404")

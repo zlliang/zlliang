@@ -3,17 +3,21 @@ import { render } from "astro:content"
 
 import PostTitle from "./PostTitle.astro"
 
-import { t } from "../runtime/config"
+import { createI18n } from "../i18n"
 import { getPostById } from "../content/content"
 
 import type { CollectionEntry } from "astro:content"
+import type { Locale } from "../i18n"
 
 interface Props {
+  /** Page locale. Defaults to the configured `locale`. */
+  locale?: Locale
   note: CollectionEntry<"notes">
   showLink?: boolean
 }
 
-const { note, showLink = true } = Astro.props
+const { locale, note, showLink = true } = Astro.props
+const t = createI18n(locale)
 const { Content } = await render(note)
 const post = note.data.post ? await getPostById(note.data.post.id) : null
 ---

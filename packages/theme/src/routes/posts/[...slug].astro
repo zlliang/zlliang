@@ -7,9 +7,10 @@ import TableOfContents from "../../components/TableOfContents.astro"
 import PostList from "../../components/PostList.astro"
 
 import { cn } from "../../styles"
-import { t } from "../../runtime/config"
+import { createI18n } from "../../i18n"
 import { getAdjacentPosts, getPosts, getPostById, getSeriesById, filterPostsInSeries } from "../../content/content"
 
+const t = createI18n()
 const { slug } = Astro.params
 if (!slug) {
   return Astro.rewrite("/404")

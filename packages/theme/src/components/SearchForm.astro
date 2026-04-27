@@ -1,18 +1,18 @@
 ---
 import { cn } from "../styles"
-import { createT } from "../runtime/config"
+import { createI18n } from "../i18n"
 
 import type { Locale } from "../i18n"
 
 interface Props {
-  /** Page language. Defaults to the configured `lang`. */
-  lang?: Locale
+  /** Page locale. Defaults to the configured `locale`. */
+  locale?: Locale
   q?: string
   class?: string
 }
 
-const { lang, q = "", class: className } = Astro.props
-const t = createT(lang)
+const { locale, q = "", class: className } = Astro.props
+const t = createI18n(locale)
 ---
 
 <form action="/search" method="GET" class={cn("flex items-center gap-2 -mx-2", className)}>

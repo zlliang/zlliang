@@ -8,12 +8,12 @@ export default defineConfig({
   integrations: [
     zlliangTheme({
       type: "blog",
-      lang: "zh",
+      locale: "zh",
       color: "indigo",
       title: "梁子龙 / 随想手记",
       description: "慢慢记下一些小事和随想，还有那些停留更久的念头。",
       logo: "./src/assets/images/logo.png",
-      sister: { site: "mesh", lang: "zh" },
+      sister: { site: "mesh", locale: "zh" },
       footerAuthor: "梁子龙",
     }),
   ],

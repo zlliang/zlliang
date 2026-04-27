@@ -4,16 +4,20 @@ import { render } from "astro:content"
 import Section from "./Section.astro"
 
 import { cn } from "../styles"
-import { t } from "../runtime/config"
+import { createI18n } from "../i18n"
 
 import type { CollectionEntry } from "astro:content"
+import type { Locale } from "../i18n"
 
 interface Props {
+  /** Page locale. Defaults to the configured `locale`. */
+  locale?: Locale
   post: CollectionEntry<"posts">
   class?: string
 }
 
-const { post, class: className } = Astro.props
+const { locale, post, class: className } = Astro.props
+const t = createI18n(locale)
 const { headings } = await render(post)
 const filteredHeadings = headings.filter((h) => h.depth <= 3)
 ---

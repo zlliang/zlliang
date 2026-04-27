@@ -3,9 +3,16 @@ import { countBy } from "lodash-es"
 import { eachDayOfInterval, startOfDay, startOfWeek, subWeeks } from "date-fns"
 
 import { cn } from "../styles"
-import { t } from "../runtime/config"
+import { createI18n } from "../i18n"
 import { getNotes, getPosts } from "../content/content"
 import { getArchiveBounds, getDayNotesPath } from "../content/archive"
+
+import type { Locale } from "../i18n"
+
+interface Props {
+  /** Page locale. Defaults to the configured `locale`. */
+  locale?: Locale
+}
 
 const WEEK_COLUMNS = 60
 
@@ -17,6 +24,8 @@ const levels = [
   "bg-primary-500 dark:bg-primary-600",
 ] as const
 
+const { locale } = Astro.props
+const t = createI18n(locale)
 const notes = await getNotes()
 const posts = await getPosts()
 

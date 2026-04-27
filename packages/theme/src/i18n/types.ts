@@ -1,6 +1,6 @@
 export interface Tokens {
   /** `<html lang>` value */
-  htmlLang: string
+  htmlLocale: string
   /** Locale tag for `Intl.Segmenter` */
   segmenterLocale: string
 

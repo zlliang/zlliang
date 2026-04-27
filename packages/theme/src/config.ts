@@ -28,12 +28,12 @@ export interface ThemePortfolioConfig extends ThemeSharedConfig {
 
 export interface ThemeBlogConfig extends ThemeSharedConfig {
   type: "blog"
-  /** Default language for the entire site. Determines `<html lang>`, UI strings, and search segmenter. Defaults to `"en"`. */
-  lang?: Locale
+  /** Default locale for the entire site. Determines `<html lang>`, UI strings, and search segmenter. Defaults to `"en"`. */
+  locale?: Locale
   /** Site description used as the default meta description. */
   description: string
   /** Sister site card shown in the aside. */
-  sister: { site: SisterSite; lang: Locale }
+  sister: { site: SisterSite; locale: Locale }
   /** Optional URL for the "About" link in the header. */
   aboutHref?: string
   /** Notes-per-page for note listings. Defaults to 20. */
@@ -52,11 +52,11 @@ export interface ResolvedThemeConfig {
   footerAuthor: string
   twitterCreator: string | null
   /** Defaults to `"en"`; the runtime `t` is derived from this. */
-  lang: Locale
+  locale: Locale
   /** `""` for portfolio sites. */
   description: string
   /** `null` for portfolio sites. */
-  sister: { site: SisterSite; lang: Locale } | null
+  sister: { site: SisterSite; locale: Locale } | null
   aboutHref: string
   notesPerPage: number
   overrides: Partial<Tokens>
@@ -79,7 +79,7 @@ export function resolveThemeConfig(user: ThemeUserConfig): ResolvedThemeConfig {
   if (user.type === "blog") {
     return {
       ...shared,
-      lang: user.lang ?? "en",
+      locale: user.locale ?? "en",
       description: user.description,
       sister: user.sister,
       aboutHref: user.aboutHref ?? DEFAULT_ABOUT_HREF,
@@ -90,7 +90,7 @@ export function resolveThemeConfig(user: ThemeUserConfig): ResolvedThemeConfig {
 
   return {
     ...shared,
-    lang: "en",
+    locale: "en",
     description: "",
     sister: null,
     aboutHref: DEFAULT_ABOUT_HREF,
