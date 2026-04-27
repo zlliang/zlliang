@@ -9,17 +9,17 @@ Run commands from the repository root.
 - Root site scripts use the `task:site` pattern
 - `pnpm dev:home`: run the `home` site locally
 - `pnpm build:home`: build the `home` site for production validation
-- `pnpm dev:hack`: run the `hack` site locally
-- `pnpm build:hack`: build the `hack` site for production validation
+- `pnpm dev:mesh`: run the `mesh` site locally
+- `pnpm build:mesh`: build the `mesh` site for production validation
 - `pnpm dev:muse`: run the `muse` site locally
 - `pnpm build:muse`: build the `muse` site for production validation
 
 ## Content workflow
 
-- `pnpm scripts:hack <command> [...]`: run the `scripts` CLI against the `hack` site from the root.
+- `pnpm scripts:mesh <command> [...]`: run the `scripts` CLI against the `mesh` site from the root.
 - `pnpm scripts:muse <command> [...]`: run the `scripts` CLI against the `muse` site from the root.
-- The root scripts expand to `pnpm exec scripts --dir websites/hack ...` and `pnpm exec scripts --dir websites/muse ...`.
-- `scripts` assumes the shared `content/notes` and `content/posts` layout; use `pnpm scripts:hack --help`, `pnpm scripts:muse --help`, or `pnpm exec scripts --help` for the command surface and examples.
+- The root scripts expand to `pnpm exec scripts --dir websites/mesh ...` and `pnpm exec scripts --dir websites/muse ...`.
+- `scripts` assumes the shared `content/notes` and `content/posts` layout; use `pnpm scripts:mesh --help`, `pnpm scripts:muse --help`, or `pnpm exec scripts --help` for the command surface and examples.
 
 ## Shared imports
 

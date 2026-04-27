@@ -29,7 +29,7 @@ Use this optional workflow when the goal is to improve English writing, not just
 ## When to use it
 
 - The user explicitly wants English-writing practice.
-- The piece is a high-value English draft, especially on `hack`.
+- The piece is a high-value English draft, especially on `mesh`.
 - The task is about comparison, rewrite strategy, or phrase collection.
 
 ## When to skip it

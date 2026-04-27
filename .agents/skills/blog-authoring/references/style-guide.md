@@ -1,6 +1,6 @@
 # Content Style Guide
 
-Use this file for repo-specific style decisions for notes and posts on `hack` and `muse`.
+Use this file for repo-specific style decisions for notes and posts on `mesh` and `muse`.
 
 ## Terms
 

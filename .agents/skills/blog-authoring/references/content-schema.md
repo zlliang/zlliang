@@ -1,6 +1,6 @@
 # Content Schema
 
-This file is a working summary for `hack` and `muse`. The code-level source of truth is each site's `src/content.config.ts`.
+This file is a working summary for `mesh` and `muse`. The code-level source of truth is each site's `src/content.config.ts`.
 
 ## Notes
 
@@ -60,7 +60,7 @@ draft: true
 
 ### Rules
 
-- Each site owns its own series registry; `hack` and `muse` do not share series entries.
+- Each site owns its own series registry; `mesh` and `muse` do not share series entries.
 - `id`: required slug used by post frontmatter and by `/posts/series/[series]`.
 - `title`: required display name.
 - `description`: optional summary shown on the series index page.

@@ -1,5 +1,5 @@
 /** Stores the default site title used across pages. */
-export const siteTitle = "Zilong Liang / Hack"
+export const siteTitle = "Zilong Liang / Mesh"
 
 /** Stores the default site description used across pages. */
 export const siteDescription = "In this ever-changing world of technology, trying to see things a little more clearly."

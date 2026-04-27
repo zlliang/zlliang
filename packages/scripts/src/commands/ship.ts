@@ -28,7 +28,7 @@ interface ShipCommandOptions {
 export function registerShipCommand(cli: CAC) {
   cli
     .command("ship [draft]", "Publish a post draft and create the associated note")
-    .example("scripts --dir websites/hack ship")
+    .example("scripts --dir websites/mesh ship")
     .example("scripts ship")
     .example("scripts ship how-i-use-ai-agents")
     .action((draft: string | undefined, options: ShipCommandOptions) => {

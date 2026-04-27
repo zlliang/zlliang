@@ -5,15 +5,15 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "dev": "pnpm -r --parallel --filter @zlliang/home --filter @zlliang/hack --filter @zlliang/muse dev",
+    "dev": "pnpm -r --parallel --filter @zlliang/home --filter @zlliang/mesh --filter @zlliang/muse dev",
     "dev:home": "pnpm --filter @zlliang/home dev",
-    "dev:hack": "pnpm --filter @zlliang/hack dev",
+    "dev:mesh": "pnpm --filter @zlliang/mesh dev",
     "dev:muse": "pnpm --filter @zlliang/muse dev",
-    "build": "pnpm -r --reporter=append-only --filter @zlliang/home --filter @zlliang/hack --filter @zlliang/muse build",
+    "build": "pnpm -r --reporter=append-only --filter @zlliang/home --filter @zlliang/mesh --filter @zlliang/muse build",
     "build:home": "pnpm --filter @zlliang/home build",
-    "build:hack": "pnpm --filter @zlliang/hack build",
+    "build:mesh": "pnpm --filter @zlliang/mesh build",
     "build:muse": "pnpm --filter @zlliang/muse build",
-    "scripts:hack": "pnpm exec scripts --dir websites/hack",
+    "scripts:mesh": "pnpm exec scripts --dir websites/mesh",
     "scripts:muse": "pnpm exec scripts --dir websites/muse"
   },
   "lint-staged": {

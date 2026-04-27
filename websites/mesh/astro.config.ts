@@ -6,7 +6,7 @@ import { remarkCjkFriendly, remarkCodeTitles } from "@zlliang/remark"
 import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeImageLinks, rehypeCodeCopy } from "@zlliang/rehype"
 
 export default defineConfig({
-  site: "https://hack.zlliang.me",
+  site: "https://mesh.zlliang.me",
   output: "server",
   fonts: [
     {

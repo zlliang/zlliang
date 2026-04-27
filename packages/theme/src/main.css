@@ -22,17 +22,17 @@
   --color-home-900: var(--color-cyan-900);
   --color-home-950: var(--color-cyan-950);
 
-  --color-hack-50: var(--color-blue-50);
-  --color-hack-100: var(--color-blue-100);
-  --color-hack-200: var(--color-blue-200);
-  --color-hack-300: var(--color-blue-300);
-  --color-hack-400: var(--color-blue-400);
-  --color-hack-500: var(--color-blue-500);
-  --color-hack-600: var(--color-blue-600);
-  --color-hack-700: var(--color-blue-700);
-  --color-hack-800: var(--color-blue-800);
-  --color-hack-900: var(--color-blue-900);
-  --color-hack-950: var(--color-blue-950);
+  --color-mesh-50: var(--color-blue-50);
+  --color-mesh-100: var(--color-blue-100);
+  --color-mesh-200: var(--color-blue-200);
+  --color-mesh-300: var(--color-blue-300);
+  --color-mesh-400: var(--color-blue-400);
+  --color-mesh-500: var(--color-blue-500);
+  --color-mesh-600: var(--color-blue-600);
+  --color-mesh-700: var(--color-blue-700);
+  --color-mesh-800: var(--color-blue-800);
+  --color-mesh-900: var(--color-blue-900);
+  --color-mesh-950: var(--color-blue-950);
 
   --color-muse-50: var(--color-indigo-50);
   --color-muse-100: var(--color-indigo-100);
