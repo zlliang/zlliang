@@ -21,7 +21,16 @@ importers:
         specifier: ^6.0.3
         version: 6.0.3
 
-  packages/rehype:
+  packages/data:
+    devDependencies:
+      astro:
+        specifier: ^6.1.9
+        version: 6.1.9(@types/node@25.6.0)(@vercel/functions@3.4.4)(db0@0.3.4)(ioredis@5.10.1)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(terser@5.46.0)(tsx@4.21.0)(typescript@6.0.3)(yaml@2.8.3)
+      typescript:
+        specifier: ^6.0.3
+        version: 6.0.3
+
+  packages/markdown:
     dependencies:
       '@astrojs/markdown-remark':
         specifier: ^7.1.1
@@ -29,6 +38,12 @@ importers:
       rehype-autolink-headings:
         specifier: ^7.1.0
         version: 7.1.0
+      remark-cjk-friendly:
+        specifier: ^2.0.1
+        version: 2.0.1(@types/mdast@4.0.4)(micromark-util-types@2.0.2)(micromark@4.0.2)(unified@11.0.5)
+      remark-flexible-code-titles:
+        specifier: ^1.3.3
+        version: 1.3.3(unified@11.0.5)
       unist-util-visit:
         specifier: ^5.1.0
         version: 5.1.0
@@ -36,28 +51,6 @@ importers:
       '@types/hast':
         specifier: ^3.0.4
         version: 3.0.4
-      typescript:
-        specifier: ^6.0.3
-        version: 6.0.3
-
-  packages/remark:
-    dependencies:
-      remark-cjk-friendly:
-        specifier: ^2.0.1
-        version: 2.0.1(@types/mdast@4.0.4)(micromark-util-types@2.0.2)(micromark@4.0.2)(unified@11.0.5)
-      remark-flexible-code-titles:
-        specifier: ^1.3.3
-        version: 1.3.3(unified@11.0.5)
-    devDependencies:
-      typescript:
-        specifier: ^6.0.3
-        version: 6.0.3
-
-  packages/shared:
-    devDependencies:
-      astro:
-        specifier: ^6.1.9
-        version: 6.1.9(@types/node@25.6.0)(@vercel/functions@3.4.4)(db0@0.3.4)(ioredis@5.10.1)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(terser@5.46.0)(tsx@4.21.0)(typescript@6.0.3)(yaml@2.8.3)
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
@@ -70,15 +63,12 @@ importers:
       '@vercel/speed-insights':
         specifier: ^2.0.0
         version: 2.0.0(nuxt@4.3.1(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(@parcel/watcher@2.5.6)(@types/node@25.6.0)(@vercel/functions@3.4.4)(@vue/compiler-sfc@3.5.33)(cac@6.7.14)(db0@0.3.4)(ioredis@5.10.1)(lightningcss@1.32.0)(magicast@0.5.2)(rollup@4.60.2)(srvx@0.11.15)(terser@5.46.0)(tsx@4.21.0)(typescript@6.0.3)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.3))(yaml@2.8.3))(vue-router@4.6.4(vue@3.5.30(typescript@6.0.3)))(vue@3.5.30(typescript@6.0.3))
-      '@zlliang/rehype':
+      '@zlliang/data':
         specifier: workspace:*
-        version: link:../rehype
-      '@zlliang/remark':
+        version: link:../data
+      '@zlliang/markdown':
         specifier: workspace:*
-        version: link:../remark
-      '@zlliang/shared':
-        specifier: workspace:*
-        version: link:../shared
+        version: link:../markdown
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -162,9 +152,9 @@ importers:
       '@vercel/speed-insights':
         specifier: ^2.0.0
         version: 2.0.0(nuxt@4.3.1(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(@parcel/watcher@2.5.6)(@types/node@25.6.0)(@vercel/functions@3.4.4)(@vue/compiler-sfc@3.5.33)(cac@6.7.14)(db0@0.3.4)(ioredis@5.10.1)(lightningcss@1.32.0)(magicast@0.5.2)(rollup@4.60.2)(terser@5.46.0)(tsx@4.21.0)(typescript@6.0.3)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.3))(yaml@2.8.3))(vue-router@4.6.4(vue@3.5.30(typescript@6.0.3)))(vue@3.5.30(typescript@6.0.3))
-      '@zlliang/shared':
+      '@zlliang/data':
         specifier: workspace:*
-        version: link:../../packages/shared
+        version: link:../../packages/data
       '@zlliang/theme':
         specifier: workspace:*
         version: link:../../packages/theme
@@ -205,9 +195,9 @@ importers:
       '@vercel/speed-insights':
         specifier: ^2.0.0
         version: 2.0.0(nuxt@4.3.1(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(@parcel/watcher@2.5.6)(@types/node@25.6.0)(@vercel/functions@3.4.4)(@vue/compiler-sfc@3.5.33)(cac@6.7.14)(db0@0.3.4)(ioredis@5.10.1)(lightningcss@1.32.0)(magicast@0.5.2)(rollup@4.60.2)(terser@5.46.0)(tsx@4.21.0)(typescript@6.0.3)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.3))(yaml@2.8.3))(vue-router@4.6.4(vue@3.5.30(typescript@6.0.3)))(vue@3.5.30(typescript@6.0.3))
-      '@zlliang/shared':
+      '@zlliang/data':
         specifier: workspace:*
-        version: link:../../packages/shared
+        version: link:../../packages/data
       '@zlliang/theme':
         specifier: workspace:*
         version: link:../../packages/theme
@@ -239,12 +229,6 @@ importers:
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
-      '@zlliang/rehype':
-        specifier: workspace:*
-        version: link:../../packages/rehype
-      '@zlliang/remark':
-        specifier: workspace:*
-        version: link:../../packages/remark
       astro:
         specifier: ^6.1.9
         version: 6.1.9(@types/node@25.6.0)(@vercel/functions@3.4.4)(db0@0.3.4)(ioredis@5.10.1)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(terser@5.46.0)(tsx@4.21.0)(typescript@6.0.3)(yaml@2.8.3)
@@ -263,9 +247,9 @@ importers:
       '@vercel/speed-insights':
         specifier: ^2.0.0
         version: 2.0.0(nuxt@4.3.1(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(@parcel/watcher@2.5.6)(@types/node@25.6.0)(@vercel/functions@3.4.4)(@vue/compiler-sfc@3.5.33)(cac@6.7.14)(db0@0.3.4)(ioredis@5.10.1)(lightningcss@1.32.0)(magicast@0.5.2)(rollup@4.60.2)(terser@5.46.0)(tsx@4.21.0)(typescript@6.0.3)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.3))(yaml@2.8.3))(vue-router@4.6.4(vue@3.5.30(typescript@6.0.3)))(vue@3.5.30(typescript@6.0.3))
-      '@zlliang/shared':
+      '@zlliang/data':
         specifier: workspace:*
-        version: link:../../packages/shared
+        version: link:../../packages/data
       '@zlliang/theme':
         specifier: workspace:*
         version: link:../../packages/theme
@@ -297,12 +281,6 @@ importers:
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
-      '@zlliang/rehype':
-        specifier: workspace:*
-        version: link:../../packages/rehype
-      '@zlliang/remark':
-        specifier: workspace:*
-        version: link:../../packages/remark
       astro:
         specifier: ^6.1.9
         version: 6.1.9(@types/node@25.6.0)(@vercel/functions@3.4.4)(db0@0.3.4)(ioredis@5.10.1)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(terser@5.46.0)(tsx@4.21.0)(typescript@6.0.3)(yaml@2.8.3)

@@ -1,14 +1,17 @@
 {
-  "name": "@zlliang/rehype",
+  "name": "@zlliang/markdown",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    "./remark": "./src/remark.ts",
+    "./rehype": "./src/rehype.ts"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.1.1",
     "rehype-autolink-headings": "^7.1.0",
+    "remark-cjk-friendly": "^2.0.1",
+    "remark-flexible-code-titles": "^1.3.3",
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {

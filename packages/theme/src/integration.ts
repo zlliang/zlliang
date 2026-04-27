@@ -3,8 +3,15 @@ import { resolve as resolvePath } from "node:path"
 
 import { fontProviders } from "astro/config"
 import tailwindcss from "@tailwindcss/vite"
-import { remarkCjkFriendly, remarkCodeTitles } from "@zlliang/remark"
-import {rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeImageLinks, rehypeCodeCopy } from "@zlliang/rehype"
+import { remarkCjkFriendly, remarkCodeTitles } from "@zlliang/markdown/remark"
+import {
+  rehypeHeadingIds,
+  rehypeAutolinkHeadings,
+  rehypeFootnotePrefixes,
+  rehypeImageCaptions,
+  rehypeImageLinks,
+  rehypeCodeCopy,
+} from "@zlliang/markdown/rehype"
 
 import { virtualConfigPlugin } from "./plugins/virtual-config"
 import { virtualLogoPlugin } from "./plugins/virtual-logo"
