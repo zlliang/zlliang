@@ -104,7 +104,16 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
 <body>
   <div class:list={["flex flex-col min-h-dvh m-auto px-6", containerClass]}>
     <Header logo={logo} title={siteTitle} homeHref={homeHref}>
-      <Fragment slot="menu"><slot name="menu" /></Fragment>
+      <Fragment slot="menu">
+        <slot name="menu">
+          {themeConfig.type === "blog" && (
+            <>
+              <a href="/search" class="lg:hidden"><span class="icon-[lucide--search]" /> {t.search}</a>
+              <a href={themeConfig.aboutHref}><span class="icon-[lucide--user]" /> {t.about}</a>
+            </>
+          )}
+        </slot>
+      </Fragment>
     </Header>
     {aside ? (
       <div class="flex-1 lg:flex gap-12 w-full">
