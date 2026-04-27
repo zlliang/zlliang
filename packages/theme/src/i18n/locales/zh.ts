@@ -1,6 +1,6 @@
 import { format } from "date-fns"
 
-import type { Tokens } from "./types"
+import type { Tokens } from "../types"
 
 const tokens: Tokens = {
   htmlLocale: "zh",

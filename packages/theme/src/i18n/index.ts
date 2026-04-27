@@ -1,6 +1,6 @@
 import { themeConfig } from "../runtime/config"
-import en from "./en"
-import zh from "./zh"
+import en from "./locales/en"
+import zh from "./locales/zh"
 
 import type { Tokens } from "./types"
 
