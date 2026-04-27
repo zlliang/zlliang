@@ -1,6 +1,6 @@
-import { primaryColorShades } from "../config"
+import { shades } from "../styles"
 
-import type { PrimaryColor } from "../config"
+import type { PrimaryColor } from "../styles"
 import type { Plugin } from "vite"
 
 /**
@@ -29,7 +29,7 @@ function isCssId(id: string): boolean {
 }
 
 function buildPrimaryColorThemeBlock(primaryColor: PrimaryColor): string {
-  const declarations = primaryColorShades
+  const declarations = shades
     .map((shade) => `  --color-primary-${shade}: var(--color-${primaryColor}-${shade});`)
     .join("\n")
 
