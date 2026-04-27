@@ -13,13 +13,9 @@ const messages = {
   en: {
     "desc": "English",
     "site.title": "Zilong Liang",
-    "ui.footer.builtWithPrefix": "Built with",
-    "ui.footer.builtWithSuffix": "",
   },
   zh: {
     "desc": "中文",
     "site.title": "梁子龙",
-    "ui.footer.builtWithPrefix": "使用",
-    "ui.footer.builtWithSuffix": "构建",
   },
 } as const

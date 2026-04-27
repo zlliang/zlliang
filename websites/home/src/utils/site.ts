@@ -11,8 +11,6 @@ export function getLayoutProps(lang: Locale, pageTitle?: string) {
     siteTitle,
     homeHref: `/${lang}/`,
     footerAuthor: siteTitle,
-    footerBuiltWithPrefix: t(lang, "ui.footer.builtWithPrefix"),
-    footerBuiltWithSuffix: t(lang, "ui.footer.builtWithSuffix"),
     hreflangs: locales.map((code) => ({ code, href: `/${code}/` })),
   }
 }
