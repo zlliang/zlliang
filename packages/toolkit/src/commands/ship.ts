@@ -1,25 +1,15 @@
 import fs from "node:fs/promises"
 import path from "node:path"
-import { createInterface } from "node:readline/promises"
 
-import { resolveSiteContext } from "../utils/context"
 import { handleCommand } from "../utils/command"
-import { CliError } from "../utils/errors"
-import { pathExists } from "../utils/files"
-import { parseFrontmatter, serializeFrontmatter } from "../utils/frontmatter"
-import { getDateParts } from "../utils/text"
+import { resolveStructure } from "../utils/structure"
+import { pathExists, removePath, writeFile } from "../utils/files"
+import { parse, stringify, getDateParts, getTitleParts } from "../utils/content"
 import { prepareNote } from "./new"
+import { CliError } from "../utils/errors"
 
 import type { CAC } from "cac"
-import type { SiteContext } from "../utils/context"
-import type { PreparedNote } from "./new"
-
-export interface ShippedDraft {
-  draftPath: string
-  postPath: string
-  note: PreparedNote
-  movedImagesPath?: string
-}
+import type { Structure } from "../utils/structure"
 
 interface ShipCommandOptions {
   dir?: string
@@ -28,89 +18,77 @@ interface ShipCommandOptions {
 export function registerShipCommand(cli: CAC) {
   cli
     .command("ship [draft]", "Publish a post draft and create the associated note")
-    .example("toolkit --dir websites/mesh ship")
     .example("toolkit ship")
     .example("toolkit ship how-i-use-ai-agents")
-    .action((draft: string | undefined, options: ShipCommandOptions) => {
-      void handleCommand(async () => {
-        const context = await resolveSiteContext(options.dir)
-        const shipped = await shipDraft(context, draft)
+    .example("toolkit --dir websites/mesh ship")
+    .action((draft: string | undefined, options: ShipCommandOptions) => handleCommand(async () => {
+      const structure = await resolveStructure(options.dir)
+      const shipped = await shipDraft(structure, draft)
 
-        process.stdout.write(`Shipped post: ${shipped.postPath}\n`)
-        process.stdout.write(`Created note #${shipped.note.number}: ${shipped.note.filePath}\n`)
-
-        if (shipped.movedImagesPath) {
-          process.stdout.write(`Moved images to: ${shipped.movedImagesPath}\n`)
-        }
-
-        process.stdout.write(`Deleted draft: ${shipped.draftPath}\n`)
-      })
-    })
+      process.stdout.write(`Shipped post: ${shipped.postPath}\n`)
+      process.stdout.write(`Created note #${shipped.note.number}: ${shipped.note.filePath}\n`)
+      if (shipped.movedImagesPath) {
+        process.stdout.write(`Moved images to: ${shipped.movedImagesPath}\n`)
+      }
+      process.stdout.write(`Deleted draft: ${shipped.draftPath}\n`)
+    }))
 }
 
-export async function shipDraft(context: SiteContext, draftArg?: string): Promise<ShippedDraft> {
-  const drafts = await listDrafts(context.draftsRoot)
-
-  if (drafts.length === 0) {
-    throw new CliError("No drafts to ship.")
-  }
-
-  const selectedDraft = await selectDraft(drafts, draftArg)
-  const draftPath = path.join(context.draftsRoot, selectedDraft)
+async function shipDraft(structure: Structure, draftArg?: string) {
+  const draft = await resolveDraft(structure.draftsPath, draftArg)
+  const draftPath = path.join(structure.draftsPath, draft)
   const draftContent = await fs.readFile(draftPath, "utf8")
-  const { frontmatter, body } = parseFrontmatter(draftContent)
-  const title = typeof frontmatter.title === "string" && frontmatter.title.trim().length > 0
-    ? frontmatter.title.trim()
-    : "Untitled"
+
+  const { frontmatter: draftFrontmatter, body } = parse(draftContent)
+  const titleParts = getTitleParts(draftFrontmatter.title)
 
   const { date, year, month, day } = getDateParts()
-  const slug = selectedDraft.replace(/\.md$/, "")
-  const postDir = path.join(context.postsRoot, year, month, day)
-  const postPath = path.join(postDir, selectedDraft)
-  const postReference = `${year}/${month}/${day}/${slug}`
-  const note = await prepareNote(context, [title], { post: postReference })
+  const slug = draft.replace(/\.md$/, "") // Strip the Markdown extension from the draft filename.
+  const datePath = path.join(structure.postsPath, year, month, day)
+  const postPath = path.join(datePath, draft)
 
   if (await pathExists(postPath)) {
     throw new CliError(`Published post already exists: ${postPath}`)
   }
 
-  const nextFrontmatter = {
-    ...frontmatter,
-    created: date,
-  }
-  delete nextFrontmatter.draft
+  const frontmatter = { ...draftFrontmatter, created: date }
+  delete frontmatter.draft
 
-  const postContent = serializeFrontmatter(nextFrontmatter) + body
+  // Prepare the companion note up front so collisions surface before any files are written.
+  const note = await prepareNote(structure, titleParts, { post: `${year}/${month}/${day}/${slug}` })
+  await writeFile(note.filePath, note.content)
 
-  await fs.mkdir(postDir, { recursive: true })
-  await fs.mkdir(path.dirname(note.filePath), { recursive: true })
-  await fs.writeFile(postPath, postContent, "utf8")
-  await fs.writeFile(note.filePath, note.content, "utf8")
+  const postContent = stringify(frontmatter, body)
+  await writeFile(postPath, postContent)
 
-  const movedImagesPath = await moveDraftImages(context.draftsImagesRoot, path.join(postDir, "images"))
+  const movedImagesPath = await moveDraftImages(body, structure.draftsImagesPath, path.join(datePath, "images"))
 
-  await fs.unlink(draftPath)
+  await removePath(draftPath)
+  await removePath(structure.draftsPath)
 
   return {
     draftPath,
     postPath,
     note,
-    movedImagesPath,
+    ...(movedImagesPath && { movedImagesPath }),
   }
 }
 
-export async function listDrafts(draftsRoot: string): Promise<string[]> {
+async function resolveDraft(draftsPath: string, draftArg?: string): Promise<string> {
+  let drafts: string[]
   try {
-    const entries = await fs.readdir(draftsRoot)
-    return entries
+    const entries = await fs.readdir(draftsPath)
+    drafts = entries
       .filter((entry) => entry.endsWith(".md"))
       .sort((left, right) => left.localeCompare(right))
   } catch {
-    return []
+    drafts = []
   }
-}
 
-async function selectDraft(drafts: string[], draftArg?: string): Promise<string> {
+  if (drafts.length === 0) {
+    throw new CliError("No drafts to ship.")
+  }
+
   if (draftArg) {
     const normalized = draftArg.endsWith(".md") ? draftArg : `${draftArg}.md`
     if (!drafts.includes(normalized)) {
@@ -121,56 +99,78 @@ async function selectDraft(drafts: string[], draftArg?: string): Promise<string>
   }
 
   if (drafts.length === 1) {
-    return drafts[0]
-  }
-
-  if (!process.stdin.isTTY || !process.stdout.isTTY) {
-    throw new CliError("Multiple drafts found. Pass a draft slug to `toolkit ship`.")
-  }
-
-  process.stdout.write("Select a draft to ship:\n\n")
-  drafts.forEach((draft, index) => {
-    process.stdout.write(`  ${index + 1}. ${draft}\n`)
-  })
-  process.stdout.write("\n")
-
-  const readline = createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  })
-
-  try {
-    const answer = await readline.question("Enter number: ")
-    const index = Number.parseInt(answer, 10) - 1
-
-    if (index < 0 || index >= drafts.length || Number.isNaN(index)) {
-      throw new CliError("Invalid draft selection.")
+    const draft = drafts[0]
+    if (draft === undefined) {
+      throw new CliError("No drafts to ship.")
     }
 
-    return drafts[index]
-  } finally {
-    readline.close()
+    return draft
   }
+
+  throw new CliError("Multiple drafts found. Pass a draft slug to `toolkit ship`.")
 }
 
-async function moveDraftImages(sourceDir: string, targetDir: string): Promise<string | undefined> {
-  let entries: string[]
-  try {
-    entries = await fs.readdir(sourceDir)
-  } catch {
+async function moveDraftImages(body: string, sourceDir: string, targetDir: string): Promise<string | undefined> {
+  const imagePaths = getReferencedDraftImagePaths(body)
+  if (imagePaths.length === 0) {
     return undefined
   }
 
-  if (entries.length === 0) {
-    return undefined
+  for (const imagePath of imagePaths) {
+    const sourcePath = path.join(sourceDir, imagePath)
+    const targetPath = path.join(targetDir, imagePath)
+    if (!await pathExists(sourcePath)) {
+      throw new CliError(`Referenced draft image not found: ${sourcePath}`)
+    }
+
+    await fs.mkdir(path.dirname(targetPath), { recursive: true })
+    await fs.rename(sourcePath, targetPath)
+    await removePath(path.dirname(sourcePath))
   }
 
-  await fs.mkdir(targetDir, { recursive: true })
-
-  for (const entry of entries) {
-    await fs.rename(path.join(sourceDir, entry), path.join(targetDir, entry))
-  }
-
-  await fs.rm(sourceDir, { recursive: true, force: true })
+  await removePath(sourceDir)
   return targetDir
+}
+
+function getReferencedDraftImagePaths(body: string) {
+  const imagePaths = new Set<string>()
+  const imageRegex = /!\[[^\]]*]\(([^)\s]+)(?:\s+["'][^"']*["'])?\)/g // Match Markdown image URLs.
+
+  for (const match of body.matchAll(imageRegex)) {
+    const rawPath = match[1]
+    if (rawPath === undefined) continue
+
+    const imagePath = normalizeDraftImagePath(rawPath)
+    if (imagePath) {
+      imagePaths.add(imagePath)
+    }
+  }
+
+  return [...imagePaths].sort((left, right) => left.localeCompare(right))
+}
+
+function normalizeDraftImagePath(rawPath: string) {
+  const withoutWrapper = rawPath.replace(/^<(.+)>$/, "$1") // Remove optional angle brackets around Markdown URLs.
+  const withoutHash = withoutWrapper.split("#", 1)[0] ?? ""
+  const withoutQuery = withoutHash.split("?", 1)[0] ?? ""
+
+  let decodedPath: string
+  try {
+    decodedPath = decodeURIComponent(withoutQuery)
+  } catch {
+    decodedPath = withoutQuery
+  }
+
+  const normalizedPath = path.posix.normalize(decodedPath)
+  if (normalizedPath === "images" || normalizedPath.startsWith("images/")) {
+    const imagePath = normalizedPath.replace(/^images\/?/, "") // Remove the draft images directory prefix.
+    return imagePath.length > 0 ? imagePath : undefined
+  }
+
+  if (normalizedPath === "images" || normalizedPath.startsWith("./images/")) {
+    const imagePath = normalizedPath.replace(/^\.\/images\/?/, "") // Remove the relative draft images directory prefix.
+    return imagePath.length > 0 ? imagePath : undefined
+  }
+
+  return undefined
 }

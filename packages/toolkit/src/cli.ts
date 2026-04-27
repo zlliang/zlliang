@@ -1,9 +1,10 @@
 import { cac } from "cac"
 
-import packageJson from "../package.json" with { type: "json" }
 import { registerNewCommand } from "./commands/new"
 import { registerShipCommand } from "./commands/ship"
 import { registerOptimizeImageCommand } from "./commands/optimize-image"
+
+import packageJson from "../package.json"
 
 const cli = cac("toolkit")
 

@@ -5,8 +5,8 @@ import prettyBytes from "pretty-bytes"
 import sharp from "sharp"
 
 import { handleCommand } from "../utils/command"
-import { CliError } from "../utils/errors"
 import { ensurePathExists } from "../utils/files"
+import { CliError } from "../utils/errors"
 
 import type { CAC } from "cac"
 import type { Sharp } from "sharp"
@@ -70,26 +70,24 @@ export function registerOptimizeImageCommand(cli: CAC) {
   cli
     .command("optimize-image [...targets]", "Optimize images under the given paths or the current directory")
     .example("toolkit optimize-image")
-    .example("toolkit --dir websites/muse optimize-image")
     .example("toolkit optimize-image content/posts")
+    .example("toolkit --dir websites/muse optimize-image")
     .example("toolkit --dir websites/muse optimize-image content/posts")
     .example('toolkit optimize-image "content/posts/**/*.{jpg,png}"')
     .example("toolkit optimize-image image-1.png image-2.webp")
-    .action((targets: string[] = [], options: OptimizeImageCommandOptions) => {
-      void handleCommand(async () => {
-        const candidates = await collectCandidates(targets, options.dir)
-        if (candidates.length === 0) {
-          process.stdout.write("No images to optimize.\n")
-          return
-        }
+    .action((targets: string[] = [], options: OptimizeImageCommandOptions) => handleCommand(async () => {
+      const candidates = await collectCandidates(targets, options.dir)
+      if (candidates.length === 0) {
+        process.stdout.write("No images to optimize.\n")
+        return
+      }
 
-        const stats = await optimizeCandidates(candidates)
-        process.stdout.write(`Processed ${candidates.length} ${candidates.length === 1 ? "image" : "images"}: optimized ${stats.optimized.length}, skipped ${stats.skipped.length}, failed ${stats.failed.length}.\n`)
-        if (stats.failed.length > 0) {
-          throw new CliError(`Image optimization failed for ${stats.failed.length} file(s).`)
-        }
-      })
-    })
+      const stats = await optimizeCandidates(candidates)
+      process.stdout.write(`Processed ${candidates.length} ${candidates.length === 1 ? "image" : "images"}: optimized ${stats.optimized.length}, skipped ${stats.skipped.length}, failed ${stats.failed.length}.\n`)
+      if (stats.failed.length > 0) {
+        throw new CliError(`Image optimization failed for ${stats.failed.length} file(s).`)
+      }
+    }))
 }
 
 async function collectCandidates(targets: string[], dir?: string): Promise<OptimizationCandidate[]> {

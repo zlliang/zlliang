@@ -2,29 +2,17 @@ import fs, { glob } from "node:fs/promises"
 import path from "node:path"
 import { slug as slugify } from "github-slugger"
 
-import { resolveSiteContext } from "../utils/context"
 import { handleCommand } from "../utils/command"
+import { resolveStructure } from "../utils/structure"
+import { pathExists, writeFile } from "../utils/files"
+import { parse, stringify, getDateParts, getTitleParts } from "../utils/content"
 import { CliError } from "../utils/errors"
-import { pathExists } from "../utils/files"
-import { serializeFrontmatter } from "../utils/frontmatter"
-import { getDateParts, normalizeTitle } from "../utils/text"
 
 import type { CAC } from "cac"
-import type { SiteContext } from "../utils/context"
-import type { Frontmatter } from "../utils/frontmatter"
+import type { Structure } from "../utils/structure"
+import type { Frontmatter, TitleParts } from "../utils/content"
 
 const BODY_PLACEHOLDER = "TODO"
-
-export interface PreparedEntry {
-  filePath: string
-  title: string
-  slug: string
-  content: string
-}
-
-export interface PreparedNote extends PreparedEntry {
-  number: number
-}
 
 interface NewCommandOptions {
   dir?: string
@@ -32,60 +20,49 @@ interface NewCommandOptions {
 
 export function registerNewCommand(cli: CAC) {
   cli
-    .command("new <entry> [title...]", "Create a new note or post draft")
-    .example("toolkit --dir websites/muse new note \"A useful article\"")
-    .example("toolkit new note \"A useful article\"")
-    .example("toolkit new post \"How I use AI agents\"")
-    .action((entry: string, title: string[], options: NewCommandOptions) => {
-      void handleCommand(async () => {
-        const context = await resolveSiteContext(options.dir)
+    .command("new <entry> [...title]", "Create a new note or post draft")
+    .example("toolkit new note A basic note")
+    .example("toolkit new note \"A basic note\"")
+    .example("toolkit new post \"A useful post\"")
+    .example("toolkit --dir websites/muse new post \"A useful post\"")
+    .action((entry: string, title: string | string[] | undefined, options: NewCommandOptions) => handleCommand(async () => {
+      const structure = await resolveStructure(options.dir)
+      const titleParts = getTitleParts(title)
 
-        if (entry === "note") {
-          const note = await createNote(context, title)
-          process.stdout.write(`Created note #${note.number}: ${note.filePath}\n`)
-          return
-        }
+      if (entry === "note") {
+        const note = await createNote(structure, titleParts)
+        process.stdout.write(`Created note #${note.number}: ${note.filePath}\n`)
+        return
+      }
 
-        if (entry === "post") {
-          const post = await createPostDraft(context, title)
-          process.stdout.write(`Created post draft: ${post.filePath}\n`)
-          return
-        }
+      if (entry === "post") {
+        const post = await createPostDraft(structure, titleParts)
+        process.stdout.write(`Created post draft: ${post.filePath}\n`)
+        return
+      }
 
-        throw new CliError("Invalid entry type. Expected `note` or `post`.")
-      })
-    })
+      throw new CliError("Invalid entry type. Expected `note` or `post`.")
+    }))
 }
 
-export async function createNote(
-  context: SiteContext,
-  titleParts: string[] | undefined
-): Promise<PreparedNote> {
-  const note = await prepareNote(context, titleParts)
-  await writeEntryFile(note)
+async function createNote(structure: Structure, titleParts: TitleParts) {
+  const note = await prepareNote(structure, titleParts)
+  await writeFile(note.filePath, note.content)
   return note
 }
 
-export async function createPostDraft(
-  context: SiteContext,
-  titleParts: string[] | undefined
-): Promise<PreparedEntry> {
-  const post = await preparePostDraft(context, titleParts)
-  await writeEntryFile(post)
+async function createPostDraft(structure: Structure, titleParts: TitleParts) {
+  const post = await preparePostDraft(structure, titleParts)
+  await writeFile(post.filePath, post.content)
   return post
 }
 
-export async function prepareNote(
-  context: SiteContext,
-  titleParts: string[] | undefined,
-  options?: { post?: string }
-): Promise<PreparedNote> {
+export async function prepareNote(structure: Structure, titleParts: TitleParts, options?: { post?: string }) {
   const { date, year, month, day } = getDateParts()
-  const { title, rawTitle, hasTitle } = normalizeTitle(titleParts)
-  const slug = slugify(title)
-  const number = await getNextNoteNumber(context.notesRoot)
-  const dirPath = path.join(context.notesRoot, year, month, day)
-  const filePath = path.join(dirPath, `${slug}.md`)
+  const slug = slugify(titleParts.title)
+  const number = await getNextNoteNumber(structure.notesPath)
+  const datePath = path.join(structure.notesPath, year, month, day)
+  const filePath = path.join(datePath, `${slug}.md`)
 
   if (await pathExists(filePath)) {
     throw new CliError(`File already exists: ${filePath}`)
@@ -93,74 +70,61 @@ export async function prepareNote(
 
   const frontmatter: Frontmatter = {
     number,
-    ...(hasTitle && { title: rawTitle }),
+    ...(titleParts.hasTitle && { title: titleParts.rawTitle }),
     created: date,
     ...(options?.post && { post: options.post }),
   }
 
   return {
     filePath,
-    title,
-    slug,
     number,
-    content: serializeFrontmatter(frontmatter) + BODY_PLACEHOLDER,
+    title: titleParts.title,
+    slug,
+    content: stringify(frontmatter, BODY_PLACEHOLDER),
   }
 }
 
-export async function preparePostDraft(
-  context: SiteContext,
-  titleParts: string[] | undefined
-): Promise<PreparedEntry> {
+async function getNextNoteNumber(notesPath: string): Promise<number> {
+  let maxNumber = 0
+
+  for await (const filePath of glob(path.join(notesPath, "**/*.md"))) {
+    let fileContent: string
+    try {
+      fileContent = await fs.readFile(filePath, "utf8")
+    } catch {
+      continue
+    }
+
+    const { frontmatter } = parse(fileContent)
+    const value = frontmatter.number
+
+    if (typeof value === "number" && !Number.isNaN(value) && value > maxNumber) {
+      maxNumber = value
+    }
+  }
+
+  return maxNumber + 1
+}
+
+async function preparePostDraft(structure: Structure, titleParts: TitleParts) {
   const { date } = getDateParts()
-  const { title } = normalizeTitle(titleParts)
-  const slug = slugify(title)
-  const filePath = path.join(context.draftsRoot, `${slug}.md`)
+  const slug = slugify(titleParts.title)
+  const filePath = path.join(structure.draftsPath, `${slug}.md`)
 
   if (await pathExists(filePath)) {
     throw new CliError(`File already exists: ${filePath}`)
   }
 
   const frontmatter: Frontmatter = {
-    title,
+    title: titleParts.title,
     created: date,
     draft: true,
   }
 
   return {
     filePath,
-    title,
+    title: titleParts.title,
     slug,
-    content: serializeFrontmatter(frontmatter) + BODY_PLACEHOLDER,
+    content: stringify(frontmatter, BODY_PLACEHOLDER),
   }
-}
-
-async function writeEntryFile(entry: PreparedEntry) {
-  await fs.mkdir(path.dirname(entry.filePath), { recursive: true })
-  await fs.writeFile(entry.filePath, entry.content, "utf8")
-}
-
-async function getNextNoteNumber(notesRoot: string): Promise<number> {
-  let maxNumber = 0
-
-  for await (const filePath of glob(path.join(notesRoot, "**/*.md"))) {
-    let content: string
-    try {
-      content = await fs.readFile(filePath, "utf8")
-    } catch {
-      continue
-    }
-
-    const match = content.match(/^---\s*\n([\s\S]*?)\n---/)
-    if (!match) continue
-
-    const numberMatch = match[1].match(/^\s*number:\s*([0-9]+)/m)
-    if (!numberMatch) continue
-
-    const value = Number(numberMatch[1])
-    if (!Number.isNaN(value) && value > maxNumber) {
-      maxNumber = value
-    }
-  }
-
-  return maxNumber + 1
 }
