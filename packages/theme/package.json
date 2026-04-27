@@ -19,9 +19,8 @@
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
-    "@zlliang/rehype": "workspace:*",
-    "@zlliang/remark": "workspace:*",
-    "@zlliang/shared": "workspace:*",
+    "@zlliang/data": "workspace:*",
+    "@zlliang/markdown": "workspace:*",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "lodash-es": "^4.18.1",

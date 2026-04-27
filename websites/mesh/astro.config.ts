@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config"
 import vercel from "@astrojs/vercel"
 import theme from "@zlliang/theme/integration"
-import { siteData, authorData } from "@zlliang/shared"
+import { siteData, authorData } from "@zlliang/data"
 
 export default defineConfig({
   site: "https://mesh.zlliang.me",
