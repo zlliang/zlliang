@@ -4,7 +4,6 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts",
     "./integration": "./src/integration.ts",
     "./main.css": "./src/styles/main.css",
     "./schemas/content": "./src/schemas/content.ts",
