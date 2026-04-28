@@ -1,0 +1,34 @@
+---
+import PageTitle from "../../../components/PageTitle.astro"
+import Layout from "../../../components/Layout.astro"
+import PostList from "../../../components/PostList.astro"
+
+import { createI18n } from "../../../i18n"
+import { getPosts, getSeries, getSeriesById, filterPostsInSeries } from "../../../content/content"
+
+const t = createI18n()
+const { series: slug } = Astro.params
+if (!slug || !(await getSeries()).some((series) => series.id === slug)) {
+  return Astro.rewrite("/404")
+}
+
+const series = (await getSeriesById(slug))!
+const posts = filterPostsInSeries(await getPosts(), series.id)
+---
+
+<Layout title={series.data.title}>
+  {/* Title */}
+  <PageTitle>
+    <Fragment>{series.data.title}</Fragment>
+    <div slot="subtitle" class="space-y-1">
+      <div>{t.postsInSeriesUnit(posts.length)}</div>
+      <div class="flex justify-between">
+        <div>{t.oldestFirst}</div>
+        <a href="/posts/series"><span class="icon-[lucide--corner-left-up]" /> {t.backToAllSeries}</a>
+      </div>
+    </div>
+  </PageTitle>
+
+  {/* Posts */}
+  {posts.length > 0 ? <PostList posts={posts} showSeries={false} /> : <p class="text-neutral-500">{t.postsEmpty}</p>}
+</Layout>

@@ -1,30 +1,37 @@
 ---
-import { Font } from "astro:assets"
+import { Image, Font } from "astro:assets"
 import VercelWebAnalytics from "@vercel/analytics/astro"
 import VercelSpeedInsights from "@vercel/speed-insights/astro"
 
-import Header from "@zlliang/theme/components/Header.astro"
-import Footer from "@zlliang/theme/components/Footer.astro"
+import logo from "@/assets/logo.png"
 
-import { getTitle } from "@/utils/site"
-import { locales, t } from "@/utils/i18n"
+import "../styles/main.css"
 
 import type { Locale } from "@/utils/i18n"
 
-import "@/styles/main.css"
-
-import logo from "@/assets/images/logo.png"
-
 interface Props {
+  /** Raw page title. The doc `<title>` becomes `${title} - ${siteTitle}`, or just `siteTitle` when omitted. */
   title?: string
-  description?: string
-  lang?: Locale
-  showMenu?: boolean
+  locale: Locale
+  siteTitle: string
+  homeHref?: string
+  footerAuthor: string
+  /** When provided, emits `<link rel="alternate" hreflang>` for each entry. */
+  alternateLocales?: { code: string; href: string | URL }[]
 }
 
-const { title: rawTitle, description, lang = "en", showMenu = true } = Astro.props
-const title = getTitle(lang, rawTitle)
+const {
+  title: rawTitle,
+  locale,
+  siteTitle,
+  homeHref = "/",
+  footerAuthor,
+  alternateLocales,
+} = Astro.props
+
+const title = rawTitle ? `${rawTitle} - ${siteTitle}` : siteTitle
 const url = new URL(Astro.url.pathname, Astro.site)
+const lang = locale === "zh" ? "zh-Hans" : "en"
 ---
 
 <!DOCTYPE html>
@@ -45,36 +52,50 @@ const url = new URL(Astro.url.pathname, Astro.site)
   <Font cssVariable="--font-roboto-mono" preload />
 
   {/* SEO, OpenGraph and Twitter */}
-  <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="canonical" href={url} />
-  {locales.map((l) => <link rel="alternate" hreflang={l} href={new URL(`/${l}/`, Astro.site)} />)}
-  {Boolean(description) && <meta name="description" content={description} />}
-  <meta property="og:site_name" content={t(lang, "site.title")} />
+  {alternateLocales?.map(({ code, href }) => <link rel="alternate" hreflang={code} href={href} />)}
+  <meta property="og:site_name" content={siteTitle} />
   <meta property="og:url" content={url} />
   <meta property="og:title" content={title} />
-  {Boolean(description) && <meta property="og:description" content={description} />}
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content={title} />
-  {Boolean(description) && <meta name="twitter:description" content={description} />}
   <meta name="twitter:creator" content="@zlliang96" />
 
   {/* Title */}
   <title>{title}</title>
 </head>
 <body>
-  <div class="flex flex-col min-h-dvh max-w-3xl m-auto px-6">
-    <Header logo={logo} title={t(lang, "site.title")} homeHref={`/${lang}/`}>
-      {showMenu && (
-        <Fragment slot="menu">
-          {locales.map((l) => lang === l ? null : <a href={`/${l}/`}><span class="icon-[lucide--languages]" /> {t(l, "desc")}</a>)}
-        </Fragment>
-      )}
-    </Header>
+  <div class="flex flex-col min-h-dvh m-auto px-6 max-w-3xl">
+    <header class="flex justify-between items-center h-16 mb-12">
+      <a href={homeHref} class="nocolor flex items-center gap-2 font-display">
+        <Image src={logo} alt="logo" class="size-6" loading="eager" />
+        <strong>{siteTitle}</strong>
+      </a>
+      <div class="flex items-center gap-4">
+        <slot name="menu" />
+      </div>
+    </header>
+
     <main class="flex-1">
       <slot />
     </main>
-    <Footer author={t(lang, "site.title")} builtWithPrefix={t(lang, "ui.footer.builtWithPrefix")} builtWithSuffix={t(lang, "ui.footer.builtWithSuffix")} />
+
+    <footer class="mt-16 mb-8 text-xs text-neutral-400 dark:text-neutral-600">
+      <div class="space-x-2">
+        <a href="https://github.com/zlliang" class="icon-[simple-icons--github] secondary" aria-label="GitHub" />
+        <a href="https://x.com/zlliang96" class="icon-[simple-icons--x] secondary scale-80!" aria-label="X" />
+        <a href="https://www.instagram.com/zlliang96" class="icon-[simple-icons--instagram] secondary scale-90!" aria-label="Instagram" />
+        <a href="https://xhslink.com/m/7jXHMqj1j6Q" class="icon-[simple-icons--xiaohongshu] secondary ml-1 mr-2.5 scale-160!" aria-label="Xiaohongshu" />
+        <a href="https://space.bilibili.com/30470407" class="icon-[simple-icons--bilibili] secondary" aria-label="Bilibili" />
+      </div>
+      <div class="mt-2">
+        <a href="https://creativecommons.org/licenses/by/4.0/" class="secondary">CC BY 4.0</a>
+        <span>2025–PRESENT</span>
+        <span class="icon-[lucide--copyright] scale-90" />
+        <a href="https://zlliang.me/" class="secondary">{footerAuthor}</a>
+      </div>
+    </footer>
   </div>
 
   {/* Vercel */}

@@ -1,12 +1,10 @@
 import { defineConfig, fontProviders } from "astro/config"
 import vercel from "@astrojs/vercel"
 import tailwindcss from "@tailwindcss/vite"
-import { remarkCjkFriendly, remarkCodeTitles } from "@zlliang/remark"
-
-import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeImageLinks, rehypeCodeCopy } from "@zlliang/rehype"
 
 export default defineConfig({
   site: "https://zlliang.me",
+  output: "server",
   fonts: [
     {
       provider: fontProviders.fontsource(),
@@ -27,6 +25,9 @@ export default defineConfig({
       fallbacks: ["monospace"],
     },
   ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
   adapter: vercel({
     imageService: true,
     imagesConfig: {
@@ -42,31 +43,6 @@ export default defineConfig({
       prefixDefaultLocale: true,
       redirectToDefaultLocale: false,
     },
-  },
-  vite: {
-    plugins: [tailwindcss()],
-  },
-  markdown: {
-    shikiConfig: {
-      themes: { light: "github-light-default", dark: "github-dark-default" },
-    },
-    remarkPlugins: [
-      [remarkCjkFriendly, {}],
-      [remarkCodeTitles, {}],
-    ],
-    remarkRehype: {
-      footnoteLabel: " ",
-      footnoteLabelTagName: "div",
-      footnoteBackContent: "↵",
-    },
-    rehypePlugins: [
-      [rehypeHeadingIds, {}],
-      [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
-      [rehypeFootnotePrefixes, {}],
-      [rehypeImageCaptions, {}],
-      [rehypeImageLinks, {}],
-      [rehypeCodeCopy, {}],
-    ],
   },
   devToolbar: {
     enabled: false,

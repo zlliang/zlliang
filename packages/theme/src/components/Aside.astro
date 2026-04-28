@@ -1,0 +1,69 @@
+---
+import Section from "./Section.astro"
+import PostList from "./PostList.astro"
+import SearchForm from "./SearchForm.astro"
+import Heatmap from "./Heatmap.astro"
+
+import { cn } from "../styles"
+import { createI18n } from "../i18n"
+import { getNotes, getPosts, getPinnedPosts, getSeries } from "../content/content"
+
+// @ts-expect-error virtual module provided by the theme integration
+import * as Slots from "virtual:zlliang-theme/slots"
+
+import type { Locale } from "../i18n"
+
+interface Props {
+  /** Page locale. Defaults to the configured `locale`. */
+  locale?: Locale
+  showSearch?: boolean
+  showRecentPosts?: boolean
+  class?: string
+}
+
+const { locale, showSearch = true, showRecentPosts = true, class: className } = Astro.props
+const t = createI18n(locale)
+const notes = await getNotes()
+const posts = await getPosts()
+const pinnedPosts = await getPinnedPosts()
+const recentPosts = posts.slice(0, 10)
+const series = await getSeries()
+---
+
+<aside class={cn("space-y-6", className)}>
+  {showSearch && <SearchForm locale={locale} class="hidden lg:flex mb-6" />}
+
+  {/* Explore */}
+  <Section title={t.explore}>
+    <div class="flex justify-between items-center mb-1">
+      <a href="/notes"><span class="icon-[lucide--notebook-pen]" /> {t.notes}</a>
+      <span class="text-sm text-neutral-500">
+        <span>{t.notesUnit(notes.length)}</span>
+      </span>
+    </div>
+    <div class="flex justify-between items-center">
+      <a href="/posts"><span class="icon-[lucide--book-open-text]" /> {t.posts}</a>
+      <span class="text-sm text-neutral-500">
+        <span>{t.postsUnit(posts.length)}</span><span class="icon-[lucide--dot]" /><a href="/posts/series">{t.seriesUnit(series.length)}</a>
+      </span>
+    </div>
+    <Heatmap locale={locale} />
+  </Section>
+
+  {/* Pinned posts */}
+  {pinnedPosts.length > 0 && (
+    <Section title={t.pinnedPosts}>
+      <PostList locale={locale} posts={pinnedPosts} showMeta={false} />
+    </Section>
+  )}
+
+  {/* Recent posts */}
+  {showRecentPosts && recentPosts.length > 0 && (
+    <Section title={t.recentPosts}>
+      <PostList locale={locale} posts={recentPosts} />
+    </Section>
+  )}
+
+  {/* Site-supplied suffix */}
+  {Slots.asideSuffix && <Slots.asideSuffix locale={locale} />}
+</aside>

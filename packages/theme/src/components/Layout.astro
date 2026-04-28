@@ -1,0 +1,136 @@
+---
+import { Font } from "astro:assets"
+import VercelWebAnalytics from "@vercel/analytics/astro"
+import VercelSpeedInsights from "@vercel/speed-insights/astro"
+
+import Header from "./Header.astro"
+import Footer from "./Footer.astro"
+import Aside from "./Aside.astro"
+
+import { themeConfig, themeLogo } from "../runtime/config"
+import { createI18n } from "../i18n"
+
+// @ts-expect-error virtual module provided by the theme integration
+import * as Slots from "virtual:zlliang-theme/slots"
+
+import "../styles/main.css"
+
+import type { ImageMetadata } from "astro"
+import type { Locale } from "../i18n"
+
+interface Props {
+  /** Raw page title. The doc `<title>` becomes `${title} - ${siteTitle}`, or just `siteTitle` when omitted. */
+  title?: string
+  description?: string
+  /** Page locale. Determines `<html lang>` and UI text translations. Defaults to the configured `locale`. */
+  locale?: Locale
+  /** When provided, emits `<link rel="alternate" hreflang>` for each entry. */
+  alternateLocales?: { code: string; href: string | URL }[]
+  /** Emit `<meta name="robots" content="noindex, follow">`. */
+  noindex?: boolean
+  /** Header */
+  logo?: ImageMetadata
+  siteTitle?: string
+  homeHref?: string
+  /** OG / Twitter */
+  ogSiteName?: string
+  twitterCreator?: string | null
+  /** Footer */
+  footerAuthor?: string
+  /** Wider container that opens up room for an aside. Defaults to `aside`. */
+  wide?: boolean
+  /** Render the journal `Aside`. Defaults to `true`. */
+  aside?: boolean
+  showRecentPosts?: boolean
+  showSearch?: boolean
+}
+
+const {
+  title: rawTitle,
+  description = themeConfig.description,
+  locale,
+  alternateLocales,
+  noindex = false,
+  logo = themeLogo,
+  siteTitle = themeConfig.title,
+  homeHref = "/",
+  ogSiteName,
+  twitterCreator = themeConfig.twitterCreator,
+  footerAuthor = themeConfig.footerAuthor,
+  aside = true,
+  wide = aside,
+  showRecentPosts = true,
+  showSearch = true,
+} = Astro.props
+
+const t = createI18n(locale)
+const title = rawTitle ? `${rawTitle} - ${siteTitle}` : siteTitle
+const url = new URL(Astro.url.pathname, Astro.site)
+const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
+---
+
+<!DOCTYPE html>
+<html lang={t.lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+
+  {/* Favicon */}
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  {/* Fonts */}
+  <Font cssVariable="--font-public-sans" preload />
+  <Font cssVariable="--font-roboto-mono" preload />
+
+  {/* SEO, OpenGraph and Twitter */}
+  <link rel="canonical" href={url} />
+  {alternateLocales?.map(({ code, href }) => <link rel="alternate" hreflang={code} href={href} />)}
+  {Boolean(description) && <meta name="description" content={description} />}
+  {noindex && <meta name="robots" content="noindex, follow" />}
+  <meta property="og:site_name" content={ogSiteName ?? siteTitle} />
+  <meta property="og:url" content={url} />
+  <meta property="og:title" content={title} />
+  {Boolean(description) && <meta property="og:description" content={description} />}
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  {Boolean(description) && <meta name="twitter:description" content={description} />}
+  {twitterCreator && <meta name="twitter:creator" content={twitterCreator} />}
+
+  {/* Title */}
+  <title>{title}</title>
+</head>
+<body>
+  <div class:list={["flex flex-col min-h-dvh m-auto px-6", containerClass]}>
+    <Header logo={logo} title={siteTitle} homeHref={homeHref}>
+      <Fragment slot="menu">
+        <slot name="menu">
+          <a href="/search" class="lg:hidden"><span class="icon-[lucide--search]" /> {t.search}</a>
+        </slot>
+        {Slots.headerSuffix && <Slots.headerSuffix />}
+      </Fragment>
+    </Header>
+    {aside ? (
+      <div class="flex-1 lg:flex gap-12 w-full">
+        <main class="flex-1 min-w-0">
+          <slot />
+        </main>
+        <Aside locale={locale} showSearch={showSearch} showRecentPosts={showRecentPosts} class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80" />
+      </div>
+    ) : (
+      <main class="flex-1">
+        <slot />
+      </main>
+    )}
+    <Footer locale={locale} author={footerAuthor} />
+  </div>
+
+  {/* Vercel */}
+  <VercelWebAnalytics />
+  <VercelSpeedInsights />
+</body>
+</html>

@@ -1,0 +1,36 @@
+---
+import PostTitle from "./PostTitle.astro"
+
+import { cn } from "../styles"
+import { createI18n } from "../i18n"
+
+import type { CollectionEntry } from "astro:content"
+import type { Locale } from "../i18n"
+
+interface Props {
+  /** Page locale. Defaults to the configured `locale`. */
+  locale?: Locale
+  posts: CollectionEntry<"posts">[]
+  current?: string
+  showMeta?: boolean
+  showSeries?: boolean
+}
+
+const { locale, posts, current, showMeta = true, showSeries = true } = Astro.props
+const t = createI18n(locale)
+---
+
+<div class="@container">
+  {posts.map((post, index) => (
+    <div class={cn("@xl:flex justify-between items-start gap-4", index !== posts.length - 1 && "mb-1.5 pb-1.5 border-b border-neutral-200 dark:border-neutral-800")}>
+      <PostTitle post={post} current={post.id === current} showSeries={showSeries} />
+      {showMeta && (
+        <span class="shrink-0 text-sm text-neutral-500 @xl:translate-y-0.5">
+          <span>{t.formatDate(post.data.created)}</span>
+          {post.data.pinned && <span class="icon-[lucide--pin]" />}
+          {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">{t.postDraft}</span>}
+        </span>
+      )}
+    </div>
+  ))}
+</div>

@@ -1,0 +1,73 @@
+---
+import Section from "../../components/Section.astro"
+import Layout from "../../components/Layout.astro"
+import PostContent from "../../components/PostContent.astro"
+import PostTitle from "../../components/PostTitle.astro"
+import TableOfContents from "../../components/TableOfContents.astro"
+import PostList from "../../components/PostList.astro"
+
+import { cn } from "../../styles"
+import { createI18n } from "../../i18n"
+import { getAdjacentPosts, getPosts, getPostById, getSeriesById, filterPostsInSeries } from "../../content/content"
+
+const t = createI18n()
+const { slug } = Astro.params
+if (!slug) {
+  return Astro.rewrite("/404")
+}
+
+const post = await getPostById(slug)
+if (!post) {
+  return Astro.rewrite("/404")
+}
+
+const series = post.data.series ? await getSeriesById(post.data.series.id) : null
+const posts = series ? filterPostsInSeries(await getPosts(), series.id) : null
+const adjacent = await getAdjacentPosts(slug)
+const next = adjacent?.next ?? null
+const previous = adjacent?.previous ?? null
+const title = series ? `${series.data.title} / ${post.data.title}` : post.data.title
+---
+
+<Layout title={title}>
+  {/* Content */}
+  <PostContent post={post} />
+
+  {/* Links to next and previous posts */}
+  {(next || previous) && (
+    <div class="grid grid-cols-2 mt-16">
+      {next && (
+        <div class={cn("col-start-1 pr-4 text-neutral-500", !previous && "border-r border-neutral-200 dark:border-neutral-800")}>
+          <div class="text-sm mb-0.5">{t.next}</div>
+          <PostTitle post={next} class="mb-0.5" />
+          <div class="text-sm">
+            <span>{t.formatDate(next.data.created)}</span>
+          </div>
+        </div>
+      )}
+      {previous && (
+        <div class="col-start-2 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-right text-neutral-500">
+          <div class="text-sm mb-0.5">{t.previous}</div>
+          <PostTitle post={previous} class="mb-0.5" />
+          <div class="text-sm">
+            <span>{t.formatDate(previous.data.created)}</span>
+          </div>
+        </div>
+      )}
+    </div>
+  )}
+
+  {/* Aside */}
+  <Fragment slot="aside-prefix">
+    <TableOfContents post={post} class="hidden lg:block" />
+    {series && posts && (
+      <Section>
+        <div slot="title" class="flex justify-between">
+          <span>{t.series}: <a href={`/posts/series/${series.id}`}>{series.data.title}</a></span>
+          <span>{t.oldestFirst}</span>
+        </div>
+        <PostList posts={posts} current={post.id} showSeries={false} />
+      </Section>
+    )}
+  </Fragment>
+</Layout>

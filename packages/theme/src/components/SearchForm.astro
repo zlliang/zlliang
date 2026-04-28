@@ -1,0 +1,35 @@
+---
+import { cn } from "../styles"
+import { createI18n } from "../i18n"
+
+import type { Locale } from "../i18n"
+
+interface Props {
+  /** Page locale. Defaults to the configured `locale`. */
+  locale?: Locale
+  q?: string
+  class?: string
+}
+
+const { locale, q = "", class: className } = Astro.props
+const t = createI18n(locale)
+---
+
+<form action="/search" method="GET" class={cn("flex items-center gap-2 -mx-2", className)}>
+  {/* Keep the control height aligned with the Section header (`text-sm` + `py-1` = `h-7`). */}
+  <input
+    type="search"
+    name="q"
+    value={q}
+    placeholder={t.searchPlaceholder}
+    autocomplete="off"
+    class="h-7 flex-1 px-2 border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 text-sm placeholder:text-neutral-500 hover:border-primary-400 dark:hover:border-primary-600 outline-none focus:border-primary-400 dark:focus:border-primary-600"
+  />
+  <button
+    type="submit"
+    class="shrink-0 flex size-7 items-center justify-center border border-neutral-200 dark:border-neutral-800 hover:border-primary-400 dark:hover:border-primary-600 hover:bg-primary-50 dark:hover:bg-primary-950 text-sm text-neutral-700 dark:text-neutral-300 hover:text-primary-500 cursor-pointer"
+    aria-label={t.searchAriaLabel}
+  >
+    <span class="icon-[lucide--search]" />
+  </button>
+</form>

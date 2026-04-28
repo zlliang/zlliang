@@ -1,0 +1,23 @@
+---
+import PageTitle from "../../components/PageTitle.astro"
+import Layout from "../../components/Layout.astro"
+import PostList from "../../components/PostList.astro"
+
+import { createI18n } from "../../i18n"
+import { getPosts } from "../../content/content"
+
+const t = createI18n()
+const posts = await getPosts()
+const title = t.postsTitle
+---
+
+<Layout title={title} showRecentPosts={false}>
+  {/* Title */}
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <span slot="subtitle">{t.postsCountSubtitle(posts.length)}</span>
+  </PageTitle>
+
+  {/* Posts */}
+  {posts.length > 0 ? <PostList posts={posts} /> : <p class="text-neutral-500">{t.postsEmpty}</p>}
+</Layout>

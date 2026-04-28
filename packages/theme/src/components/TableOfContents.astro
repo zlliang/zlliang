@@ -1,0 +1,35 @@
+---
+import { render } from "astro:content"
+
+import Section from "./Section.astro"
+
+import { cn } from "../styles"
+import { createI18n } from "../i18n"
+
+import type { CollectionEntry } from "astro:content"
+import type { Locale } from "../i18n"
+
+interface Props {
+  /** Page locale. Defaults to the configured `locale`. */
+  locale?: Locale
+  post: CollectionEntry<"posts">
+  class?: string
+}
+
+const { locale, post, class: className } = Astro.props
+const t = createI18n(locale)
+const { headings } = await render(post)
+const filteredHeadings = headings.filter((h) => h.depth <= 3)
+---
+
+{filteredHeadings.length > 0 && (
+  <Section title={t.tableOfContents} class={cn(className)}>
+    <ul class="pl-0! list-none! text-sm">
+      {filteredHeadings.map((heading) => (
+        <li class={cn(heading.depth === 3 && "pl-4")}>
+          <a href={`#${heading.slug}`} class="secondary">{heading.text}</a>
+        </li>
+      ))}
+    </ul>
+  </Section>
+)}

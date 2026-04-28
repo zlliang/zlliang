@@ -1,9 +1,16 @@
-import { t } from "@/utils/i18n"
+import { locales, t } from "@/utils/i18n"
 
 import type { Locale } from "@/utils/i18n"
 
-/** Builds the localized page title from the optional page title. */
-export function getTitle(lang: Locale, title: string | undefined) {
-  const siteTitle = t(lang, "site.title")
-  return title ? `${title} - ${siteTitle}` : siteTitle
+/** Builds the props for the local `Layout` for a given locale. */
+export function getLayoutProps(locale: Locale, pageTitle?: string) {
+  const siteTitle = t(locale, "site.title")
+  return {
+    title: pageTitle,
+    locale,
+    siteTitle,
+    homeHref: `/${locale}/`,
+    footerAuthor: siteTitle,
+    alternateLocales: locales.map((code) => ({ code, href: `/${code}/` })),
+  }
 }

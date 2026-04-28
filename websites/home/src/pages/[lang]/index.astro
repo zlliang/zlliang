@@ -1,0 +1,37 @@
+---
+import Layout from "@/components/Layout.astro"
+import Section from "@zlliang/theme/components/Section.astro"
+import SiteCard from "@zlliang/theme/components/SiteCard.astro"
+
+import { getLayoutProps } from "@/utils/site"
+import { locales, t } from "@/utils/i18n"
+import { renderFragment } from "@/utils/content"
+
+import type { Locale } from "@/utils/i18n"
+
+const { lang } = Astro.params
+if (!lang || !locales.includes(lang as Locale)) {
+  return Astro.rewrite("/404")
+}
+const locale = lang as Locale
+
+const Bio = await renderFragment(`${locale}/bio`)
+---
+
+<Layout {...getLayoutProps(locale)}>
+  <Fragment slot="menu">
+    {locales.filter((l) => l !== locale).map((l) => <a href={`/${l}/`}><span class="icon-[lucide--languages]" /> {t(l, "desc")}</a>)}
+  </Fragment>
+
+  <div class="mb-12">
+    <Bio />
+  </div>
+
+  {/* Journals */}
+  <Section title={t(locale, "journals")}>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <SiteCard site="mesh" locale={locale} />
+      <SiteCard site="muse" locale={locale} />
+    </div>
+  </Section>
+</Layout>

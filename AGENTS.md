@@ -10,7 +10,7 @@ This repository contains Zilong's personal websites, shared packages, and a smal
 - `packages/toolkit`: CLI for note and post workflow based on the shared content structure used by `mesh` and `muse`
 - `packages/remark`: shared remark plugins
 - `packages/rehype`: shared rehype plugins
-- `packages/theme`: shared styles, utilities, and Astro components
+- `packages/theme`: Astro integration that ships shared layout, routes, content schemas, middleware, components, and styles for sites built on the shared model
 
 All websites are built with [Astro](https://astro.build/) and are deployed on [Vercel](https://vercel.com/).
 

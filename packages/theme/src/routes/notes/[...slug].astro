@@ -1,0 +1,55 @@
+---
+import Layout from "../../components/Layout.astro"
+import NoteContent from "../../components/NoteContent.astro"
+
+import { cn } from "../../styles"
+import { createI18n } from "../../i18n"
+import { getAdjacentNotes, getNoteById, getPostById } from "../../content/content"
+
+const t = createI18n()
+const { slug } = Astro.params
+if (!slug) {
+  return Astro.rewrite("/404")
+}
+
+const note = await getNoteById(slug)
+if (!note) {
+  return Astro.rewrite("/404")
+}
+
+const adjacent = await getAdjacentNotes(slug)
+const next = adjacent?.next ?? null
+const previous = adjacent?.previous ?? null
+const post = note.data.post ? await getPostById(note.data.post.id) : null
+
+const title = [note.data.title || post?.data.title, t.noteIdLabel(note.data.number)].filter(Boolean).join(" - ")
+---
+
+<Layout title={title}>
+  {/* Content */}
+  <NoteContent note={note} showLink={false} />
+
+  {/* Links to next and previous notes */}
+  {(next || previous) && (
+    <div class="grid grid-cols-2 mt-16">
+      {next && (
+        <div class={cn("col-start-1 pr-4 text-neutral-500", !previous && "border-r border-neutral-200 dark:border-neutral-800")} >
+          <div class="text-sm mb-0.5">{t.next}</div>
+          <a href={`/notes/${next.id}`} class="block mb-0.5">{next.data.title || t.noteUntitled}</a>
+          <div class="text-sm">
+            <span>{t.formatDate(next.data.created)}</span><span class="icon-[lucide--dot]" /><span>#{next.data.number}</span>
+          </div>
+        </div>
+      )}
+      {previous && (
+        <div class="col-start-2 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-right text-neutral-500">
+          <div class="text-sm mb-0.5">{t.previous}</div>
+          <a href={`/notes/${previous.id}`} class="block mb-0.5">{previous.data.title || t.noteUntitled}</a>
+          <div class="text-sm">
+            <span>#{previous.data.number}</span><span class="icon-[lucide--dot]" /><span>{t.formatDate(previous.data.created)}</span>
+          </div>
+        </div>
+      )}
+    </div>
+  )}
+</Layout>

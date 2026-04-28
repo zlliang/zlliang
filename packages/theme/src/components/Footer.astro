@@ -1,11 +1,16 @@
 ---
+import { createI18n } from "../i18n"
+
+import type { Locale } from "../i18n"
+
 interface Props {
   author: string
-  builtWithPrefix?: string
-  builtWithSuffix?: string
+  /** Page locale. Defaults to the configured `locale`. */
+  locale?: Locale
 }
 
-const { author, builtWithPrefix = "Built with", builtWithSuffix = "" } = Astro.props
+const { author, locale } = Astro.props
+const t = createI18n(locale)
 ---
 
 <footer class="mt-16 mb-8 text-xs text-neutral-400 dark:text-neutral-600">
@@ -23,10 +28,10 @@ const { author, builtWithPrefix = "Built with", builtWithSuffix = "" } = Astro.p
     <a href="https://zlliang.me/" class="secondary">{author}</a>
     <span class="hidden sm:inline">
       <span class="icon-[lucide--dot]" />
-      <span>{builtWithPrefix} <a href="https://astro.build" class="secondary">Astro</a> {builtWithSuffix}</span>
+      <span>{t.builtWithPrefix} <a href="https://astro.build" class="secondary">Astro</a> {t.builtWithSuffix}</span>
     </span>
   </div>
   <div class="mt-1 sm:hidden">
-    <span>{builtWithPrefix} <a href="https://astro.build" class="secondary">Astro</a> {builtWithSuffix}</span>
+    <span>{t.builtWithPrefix} <a href="https://astro.build" class="secondary">Astro</a> {t.builtWithSuffix}</span>
   </div>
 </footer>

@@ -1,0 +1,71 @@
+---
+import { countBy } from "lodash-es"
+
+import Section from "../../components/Section.astro"
+import PageTitle from "../../components/PageTitle.astro"
+import Layout from "../../components/Layout.astro"
+import ArchiveLinks from "../../components/ArchiveLinks.astro"
+import NoteList from "../../components/NoteList.astro"
+
+import { createI18n } from "../../i18n"
+import { getNotes } from "../../content/content"
+import { getArchiveBounds, getYearNotesPath } from "../../content/archive"
+import { paginate, parsePageParam, shouldRedirectPagination } from "../../content/pagination"
+
+const t = createI18n()
+const notes = await getNotes()
+const bounds = getArchiveBounds(notes)
+
+const yearRange = bounds?.getYearRange() ?? null
+const yearCounts = countBy(notes, (note) => note.data.created.getFullYear())
+const yearItems = yearRange ? Array.from({ length: yearRange.end - yearRange.start + 1 }, (_, index) => {
+  const y = yearRange.start + index
+  const count = yearCounts[y] ?? 0
+
+  return {
+    label: String(y),
+    count,
+    href: count > 0 ? getYearNotesPath(y) : undefined,
+  }
+}) : []
+
+const searchParams = Astro.url.searchParams
+const page = parsePageParam(searchParams.get("page"))
+
+function getPageUrl(page: number) {
+  const params = new URLSearchParams()
+
+  if (page > 1) {
+    params.set("page", page.toString())
+  }
+
+  return params.size > 0 ? `/notes?${params}` : "/notes"
+}
+
+const pagination = paginate(notes, page, getPageUrl)
+
+if (shouldRedirectPagination(searchParams, page, pagination)) {
+  return Astro.redirect(pagination.url.current)
+}
+
+const title = t.notesIndexTitle
+---
+
+<Layout title={title}>
+  {/* Archive */}
+  <Fragment slot="aside-prefix">
+    <Section title={t.archive}>
+      <div class="mb-2 text-xs text-neutral-500">{t.yearsLabel}</div>
+      <ArchiveLinks items={yearItems} />
+    </Section>
+  </Fragment>
+
+  {/* Title */}
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <span slot="subtitle">{t.notesCountSubtitle(notes.length)}</span>
+  </PageTitle>
+
+  {/* Notes */}
+  {pagination.data.length > 0 ? <NoteList notes={pagination.data} pagination={pagination} /> : <p class="text-neutral-500">{t.notesEmpty}</p>}
+</Layout>

@@ -1,0 +1,44 @@
+---
+import { render } from "astro:content"
+
+import PostTitle from "./PostTitle.astro"
+
+import { createI18n } from "../i18n"
+import { getPostById } from "../content/content"
+
+import type { CollectionEntry } from "astro:content"
+import type { Locale } from "../i18n"
+
+interface Props {
+  /** Page locale. Defaults to the configured `locale`. */
+  locale?: Locale
+  note: CollectionEntry<"notes">
+  showLink?: boolean
+}
+
+const { locale, note, showLink = true } = Astro.props
+const t = createI18n(locale)
+const { Content } = await render(note)
+const post = note.data.post ? await getPostById(note.data.post.id) : null
+---
+
+<div>
+  {/* Link to the post */}
+  {post && <div class="mb-4 leading-prose"><PostTitle post={post} class="font-bold" /></div>}
+
+  {/* Content */}
+  <div class="mb-4">
+    <Content />
+  </div>
+
+  {/* Metadata */}
+  <div class="flex justify-between items-center gap-2">
+    <div class="flex items-center text-sm text-neutral-500">
+      {showLink ? <a href={`/notes/${note.id}`}>#{note.data.number}</a> : <span>#{note.data.number}</span>}
+      <span class="icon-[lucide--dot]" />
+      <span>{t.formatDate(note.data.created)}</span>
+      {note.data.draft && <span class="ml-2 text-amber-600 dark:text-amber-400">{t.noteDraft}</span>}
+    </div>
+    {post && <a href={`/posts/${post.id}`} class="text-sm">{t.readPost} <span class="icon-[lucide--arrow-right] translate-y-px" /></a>}
+  </div>
+</div>

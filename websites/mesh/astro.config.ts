@@ -1,32 +1,23 @@
-import { defineConfig, fontProviders } from "astro/config"
+import { defineConfig } from "astro/config"
 import vercel from "@astrojs/vercel"
-import tailwindcss from "@tailwindcss/vite"
-import { remarkCjkFriendly, remarkCodeTitles } from "@zlliang/remark"
-
-import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeImageLinks, rehypeCodeCopy } from "@zlliang/rehype"
+import theme from "@zlliang/theme/integration"
+import { siteData, authorData } from "@zlliang/data"
 
 export default defineConfig({
   site: "https://mesh.zlliang.me",
   output: "server",
-  fonts: [
-    {
-      provider: fontProviders.fontsource(),
-      name: "Public Sans",
-      cssVariable: "--font-public-sans",
-      weights: [400, 700],
-      styles: ["normal", "italic"],
-      subsets: ["latin"],
-      fallbacks: ["sans-serif"],
-    },
-    {
-      provider: fontProviders.fontsource(),
-      name: "Roboto Mono",
-      cssVariable: "--font-roboto-mono",
-      weights: [400],
-      styles: ["normal"],
-      subsets: ["latin"],
-      fallbacks: ["monospace"],
-    },
+  integrations: [
+    theme({
+      color: "blue",
+      title: `${authorData.en.author} / ${siteData.mesh.copy.en.title}`,
+      description: siteData.mesh.copy.en.descriptionLines.join(""),
+      logo: "./src/assets/logo.png",
+      footerAuthor: authorData.en.author,
+      slots: {
+        headerSuffix: "./src/components/HeaderSuffix.astro",
+        asideSuffix: "./src/components/AsideSuffix.astro",
+      },
+    }),
   ],
   adapter: vercel({
     imageService: true,
@@ -36,31 +27,6 @@ export default defineConfig({
       formats: ["image/avif", "image/webp"],
     },
   }),
-  vite: {
-    plugins: [tailwindcss()],
-  },
-  markdown: {
-    shikiConfig: {
-      themes: { light: "github-light-default", dark: "github-dark-default" },
-    },
-    remarkPlugins: [
-      [remarkCjkFriendly, {}],
-      [remarkCodeTitles, {}],
-    ],
-    remarkRehype: {
-      footnoteLabel: " ",
-      footnoteLabelTagName: "div",
-      footnoteBackContent: "↵",
-    },
-    rehypePlugins: [
-      [rehypeHeadingIds, {}],
-      [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
-      [rehypeFootnotePrefixes, {}],
-      [rehypeImageCaptions, {}],
-      [rehypeImageLinks, {}],
-      [rehypeCodeCopy, {}],
-    ],
-  },
   devToolbar: {
     enabled: false,
   },

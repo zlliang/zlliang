@@ -10,6 +10,7 @@
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
+    "@zlliang/data": "workspace:*",
     "@zlliang/theme": "workspace:*"
   },
   "devDependencies": {
@@ -19,8 +20,6 @@
     "@iconify-json/simple-icons": "^1.2.79",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/vite": "^4.2.4",
-    "@zlliang/rehype": "workspace:*",
-    "@zlliang/remark": "workspace:*",
     "astro": "^6.1.9",
     "tailwindcss": "^4.2.4",
     "typescript": "^6.0.3"
