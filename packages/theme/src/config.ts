@@ -10,7 +10,7 @@ export interface ThemeSlots {
   asideSuffix?: string
 }
 
-export interface ThemeUserConfig {
+export interface ThemeConfig {
   /** Tailwind primary color palette. Maps `--color-primary-*` to the matching Tailwind palette. */
   color: keyof typeof colors
   /** Site title shown in the header, footer, and `<title>`. */
@@ -49,16 +49,16 @@ export interface ResolvedThemeConfig {
 const DEFAULT_NOTES_PER_PAGE = 20
 const DEFAULT_TWITTER_CREATOR = "@zlliang96"
 
-export function resolveThemeConfig(user: ThemeUserConfig): ResolvedThemeConfig {
+export function resolveThemeConfig(themConfig: ThemeConfig): ResolvedThemeConfig {
   return {
-    color: user.color,
-    title: user.title,
-    logo: user.logo,
-    footerAuthor: user.footerAuthor ?? user.title,
-    twitterCreator: user.twitterCreator ?? DEFAULT_TWITTER_CREATOR,
-    locale: user.locale ?? "en",
-    description: user.description,
-    notesPerPage: user.notesPerPage ?? DEFAULT_NOTES_PER_PAGE,
-    overrides: user.overrides ?? {},
+    color: themConfig.color,
+    title: themConfig.title,
+    logo: themConfig.logo,
+    footerAuthor: themConfig.footerAuthor ?? themConfig.title,
+    twitterCreator: themConfig.twitterCreator ?? DEFAULT_TWITTER_CREATOR,
+    locale: themConfig.locale ?? "en",
+    description: themConfig.description,
+    notesPerPage: themConfig.notesPerPage ?? DEFAULT_NOTES_PER_PAGE,
+    overrides: themConfig.overrides ?? {},
   }
 }
