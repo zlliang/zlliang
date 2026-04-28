@@ -8,15 +8,10 @@ export default defineConfig({
   output: "server",
   integrations: [
     theme({
-      color: "blue",
       title: `${authorData.en.author} / ${siteData.mesh.copy.en.title}`,
       description: siteData.mesh.copy.en.descriptionLines.join(""),
+      color: "blue",
       logo: "./src/assets/logo.png",
-      footerAuthor: authorData.en.author,
-      slots: {
-        headerSuffix: "./src/components/HeaderSuffix.astro",
-        asideSuffix: "./src/components/AsideSuffix.astro",
-      },
     }),
   ],
   adapter: vercel({

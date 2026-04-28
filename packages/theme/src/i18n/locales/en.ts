@@ -6,6 +6,9 @@ const tokens: Tokens = {
   lang: "en",
   formatDate: (date) => format(date, "PP"),
 
+  footerAuthor: "Zilong Liang",
+  twitterCreator: "@zlliang96",
+
   search: "Search",
   searchPlaceholder: "Search across notes and posts",
   searchAriaLabel: "Search",

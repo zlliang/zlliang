@@ -1,6 +1,6 @@
 import MiniSearch from "minisearch"
 
-import { themeConfig } from "../runtime/config"
+import { themeConfig } from "../runtime"
 import { createI18n } from "../i18n"
 import { getNotes, getPosts } from "./content"
 

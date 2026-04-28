@@ -8,16 +8,11 @@ export default defineConfig({
   output: "server",
   integrations: [
     theme({
-      locale: "zh",
-      color: "indigo",
       title: `${authorData.zh.author} / ${siteData.muse.copy.zh.title}`,
       description: siteData.muse.copy.zh.descriptionLines.join(""),
+      color: "indigo",
+      locale: "zh",
       logo: "./src/assets/logo.png",
-      footerAuthor: authorData.zh.author,
-      slots: {
-        headerSuffix: "./src/components/HeaderSuffix.astro",
-        asideSuffix: "./src/components/AsideSuffix.astro",
-      },
     }),
   ],
   adapter: vercel({

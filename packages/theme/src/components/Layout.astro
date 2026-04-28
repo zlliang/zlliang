@@ -7,7 +7,7 @@ import Header from "./Header.astro"
 import Footer from "./Footer.astro"
 import Aside from "./Aside.astro"
 
-import { themeConfig, themeLogo } from "../runtime/config"
+import { themeConfig, themeLogo } from "../runtime"
 import { createI18n } from "../i18n"
 
 // @ts-expect-error virtual module provided by the theme integration
@@ -55,8 +55,8 @@ const {
   siteTitle = themeConfig.title,
   homeHref = "/",
   ogSiteName,
-  twitterCreator = themeConfig.twitterCreator,
-  footerAuthor = themeConfig.footerAuthor,
+  twitterCreator,
+  footerAuthor,
   aside = true,
   wide = aside,
   showRecentPosts = true,
@@ -64,6 +64,8 @@ const {
 } = Astro.props
 
 const t = createI18n(locale)
+const resolvedTwitterCreator = twitterCreator === undefined ? t.twitterCreator : twitterCreator
+const resolvedFooterAuthor = footerAuthor ?? t.footerAuthor
 const title = rawTitle ? `${rawTitle} - ${siteTitle}` : siteTitle
 const url = new URL(Astro.url.pathname, Astro.site)
 const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
@@ -99,7 +101,7 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content={title} />
   {Boolean(description) && <meta name="twitter:description" content={description} />}
-  {twitterCreator && <meta name="twitter:creator" content={twitterCreator} />}
+  {resolvedTwitterCreator && <meta name="twitter:creator" content={resolvedTwitterCreator} />}
 
   {/* Title */}
   <title>{title}</title>
@@ -111,7 +113,7 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
         <slot name="menu">
           <a href="/search" class="lg:hidden"><span class="icon-[lucide--search]" /> {t.search}</a>
         </slot>
-        {Slots.headerSuffix && <Slots.headerSuffix />}
+        {Slots.HeaderEnd && <Slots.HeaderEnd />}
       </Fragment>
     </Header>
     {aside ? (
@@ -126,7 +128,7 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
         <slot />
       </main>
     )}
-    <Footer locale={locale} author={footerAuthor} />
+    <Footer locale={locale} author={resolvedFooterAuthor} />
   </div>
 
   {/* Vercel */}

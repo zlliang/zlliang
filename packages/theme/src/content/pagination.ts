@@ -1,4 +1,4 @@
-import { themeConfig } from "../runtime/config"
+export const NOTES_PER_PAGE = 20
 
 interface PaginationUrls {
   current: string
@@ -24,7 +24,7 @@ export function parsePageParam(value: string | null) {
 }
 
 /** Slices items for the current page and builds navigation URLs. */
-export function paginate<T>(items: T[], page: number, getPageUrl: (page: number) => string, pageSize = themeConfig.notesPerPage): PaginationData<T> {
+export function paginate<T>(items: T[], page: number, getPageUrl: (page: number) => string, pageSize = NOTES_PER_PAGE): PaginationData<T> {
   const total = items.length
   const last = Math.max(1, Math.ceil(total / pageSize))
   const current = Math.min(Math.max(1, page), last)

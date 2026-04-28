@@ -1,18 +1,19 @@
+import fs from "node:fs"
+import path from "node:path"
+
 import type { Plugin } from "vite"
 
 const ID = "virtual:zlliang-theme/slots"
 const RESOLVED_ID = "\0" + ID
 
-export type SlotKey = "headerSuffix" | "asideSuffix"
-
-export const SLOT_KEYS: readonly SlotKey[] = ["headerSuffix", "asideSuffix"]
+const SLOT_NAMES = ["HeaderEnd", "AsideEnd"] as const
 
 /**
- * Re-exports site-supplied Astro components as named exports of `virtual:zlliang-theme/slots`.
- * Each entry is the absolute path to an `.astro` file. Missing keys are exported as `null` so
- * theme components can render defaults without dynamic imports.
+ * Re-exports site-supplied Astro components from `<siteRoot>/src/theme/<Name>.astro` as named
+ * exports of `virtual:zlliang-theme/slots`. Missing files are exported as `null` so theme
+ * components can render defaults without dynamic imports.
  */
-export function virtualSlotsPlugin(slots: Partial<Record<SlotKey, string>>): Plugin {
+export function virtualSlotsPlugin(siteRoot: string): Plugin {
   return {
     name: "zlliang-theme:virtual-slots",
     enforce: "pre",
@@ -21,11 +22,11 @@ export function virtualSlotsPlugin(slots: Partial<Record<SlotKey, string>>): Plu
     },
     load(id) {
       if (id !== RESOLVED_ID) return null
-      const lines = SLOT_KEYS.map((key) => {
-        const path = slots[key]
-        return path
-          ? `export { default as ${key} } from ${JSON.stringify(path)}`
-          : `export const ${key} = null`
+      const lines = SLOT_NAMES.map((name) => {
+        const filePath = path.join(siteRoot, "src", "theme", `${name}.astro`)
+        return fs.existsSync(filePath)
+          ? `export { default as ${name} } from ${JSON.stringify(filePath)}`
+          : `export const ${name} = null`
       })
       return lines.join("\n") + "\n"
     },

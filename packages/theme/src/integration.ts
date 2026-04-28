@@ -10,27 +10,26 @@ import { resolveThemeConfig } from "./config"
 import { virtualConfigPlugin } from "./plugins/virtual-config"
 import { virtualLogoPlugin } from "./plugins/virtual-logo"
 import { virtualColorPlugin } from "./plugins/virtual-color"
-import { virtualSlotsPlugin, SLOT_KEYS } from "./plugins/virtual-slots"
+import { virtualSlotsPlugin } from "./plugins/virtual-slots"
 
 import type { AstroIntegration } from "astro"
 import type { ThemeConfig } from "./config"
-import type { SlotKey } from "./plugins/virtual-slots"
 
 const routes = [
-  { pattern: "/", entrypoint: new URL("./routes/index.astro", import.meta.url) },
-  { pattern: "/404", entrypoint: new URL("./routes/404.astro", import.meta.url) },
-  { pattern: "/image", entrypoint: new URL("./routes/image.astro", import.meta.url) },
-  { pattern: "/search", entrypoint: new URL("./routes/search.astro", import.meta.url) },
-  { pattern: "/notes", entrypoint: new URL("./routes/notes/index.astro", import.meta.url) },
-  { pattern: "/notes/[...slug]", entrypoint: new URL("./routes/notes/[...slug].astro", import.meta.url) },
-  { pattern: "/notes/[year]", entrypoint: new URL("./routes/notes/[year]/index.astro", import.meta.url) },
-  { pattern: "/notes/[year]/[month]", entrypoint: new URL("./routes/notes/[year]/[month]/index.astro", import.meta.url) },
-  { pattern: "/notes/[year]/[month]/[day]", entrypoint: new URL("./routes/notes/[year]/[month]/[day].astro", import.meta.url) },
-  { pattern: "/posts", entrypoint: new URL("./routes/posts/index.astro", import.meta.url) },
-  { pattern: "/posts/[...slug]", entrypoint: new URL("./routes/posts/[...slug].astro", import.meta.url) },
-  { pattern: "/posts/series", entrypoint: new URL("./routes/posts/series/index.astro", import.meta.url) },
-  { pattern: "/posts/series/[series]", entrypoint: new URL("./routes/posts/series/[series].astro", import.meta.url) },
-]
+  { pattern: "/", entrypoint: "./routes/index.astro" },
+  { pattern: "/404", entrypoint: "./routes/404.astro" },
+  { pattern: "/image", entrypoint: "./routes/image.astro" },
+  { pattern: "/search", entrypoint: "./routes/search.astro" },
+  { pattern: "/notes", entrypoint: "./routes/notes/index.astro" },
+  { pattern: "/notes/[...slug]", entrypoint: "./routes/notes/[...slug].astro" },
+  { pattern: "/notes/[year]", entrypoint: "./routes/notes/[year]/index.astro" },
+  { pattern: "/notes/[year]/[month]", entrypoint: "./routes/notes/[year]/[month]/index.astro" },
+  { pattern: "/notes/[year]/[month]/[day]", entrypoint: "./routes/notes/[year]/[month]/[day].astro" },
+  { pattern: "/posts", entrypoint: "./routes/posts/index.astro" },
+  { pattern: "/posts/[...slug]", entrypoint: "./routes/posts/[...slug].astro" },
+  { pattern: "/posts/series", entrypoint: "./routes/posts/series/index.astro" },
+  { pattern: "/posts/series/[series]", entrypoint: "./routes/posts/series/[series].astro" },
+] as const
 
 export default function theme(themeConfig: ThemeConfig): AstroIntegration {
   return {
@@ -38,16 +37,11 @@ export default function theme(themeConfig: ThemeConfig): AstroIntegration {
     hooks: {
       "astro:config:setup": ({ config: astroConfig, updateConfig, addMiddleware, injectRoute }) => {
         const config = resolveThemeConfig(themeConfig)
+        const { logo, ...serializableConfig } = config
         const siteRoot = fileURLToPath(astroConfig.root)
-        const logoAbsPath = resolvePath(siteRoot, config.logo)
-        const { logo: _omitLogo, overrides: _omitOverrides, ...serializableConfig } = config
-        const serializedConfig = JSON.stringify({ ...serializableConfig, overrides: {} })
+        const logoPath = resolvePath(siteRoot, logo)
 
-        const resolvedSlots: Partial<Record<SlotKey, string>> = {}
-        for (const key of SLOT_KEYS) {
-          const relPath = themeConfig.slots?.[key]
-          if (relPath) resolvedSlots[key] = resolvePath(siteRoot, relPath)
-        }
+        const serializedConfig = JSON.stringify(serializableConfig)
 
         updateConfig({
           fonts: [
@@ -94,10 +88,10 @@ export default function theme(themeConfig: ThemeConfig): AstroIntegration {
           },
           vite: {
             plugins: [
-              virtualColorPlugin(config.color),
               virtualConfigPlugin(serializedConfig),
-              virtualLogoPlugin(logoAbsPath),
-              virtualSlotsPlugin(resolvedSlots),
+              virtualColorPlugin(config.color),
+              virtualLogoPlugin(logoPath),
+              virtualSlotsPlugin(siteRoot),
               tailwindcss(),
             ],
           }
@@ -108,8 +102,11 @@ export default function theme(themeConfig: ThemeConfig): AstroIntegration {
           order: "pre",
         })
 
-        routes.forEach((route) => {
-          injectRoute(route)
+        routes.forEach(({ pattern, entrypoint }) => {
+          injectRoute({
+            pattern,
+            entrypoint: new URL(entrypoint, import.meta.url),
+          })
         })
       },
     },

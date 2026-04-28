@@ -1,5 +1,5 @@
-import type { ResolvedThemeConfig } from "../config"
 import type { ImageMetadata } from "astro"
+import type { ResolvedThemeConfig } from "./config"
 
 // @ts-expect-error virtual module provided by the theme integration
 import config from "virtual:zlliang-theme/config"

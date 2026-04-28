@@ -3,6 +3,10 @@ export interface Tokens {
   lang: string
   formatDate: (date: Date) => string
 
+  // Site identity
+  footerAuthor: string
+  twitterCreator: string
+
   // Search
   search: string
   searchPlaceholder: string
