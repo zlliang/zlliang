@@ -14,6 +14,6 @@ To make the codebase more elegant, and ambitiously speaking, to leave open the p
 
 I used PR [#84](https://github.com/zlliang/zlliang/pull/84) to track this refactor. It took 26 commits to get me there. The refactor doesn't affect the websites' experience at all; it only makes the repo better-organized and makes future development simpler.
 
-In this agentic engineering era, unsurprisingly this work was done mainly by [Amp](https://ampcode.com/), my favorite coding agent, though roughly 15% was still coded by hand. Astonishingly, it took me **23 threads** and **$92.82 ($33.51 free credits included)** to finish all the work. See this thread for the full analysis: [Analyze Amp usage and cost](https://ampcode.com/threads/T-019dd932-f1a1-755d-9533-984b791204c1).
+In this agentic engineering era, unsurprisingly this work was done mainly by [Amp](https://ampcode.com/), my favorite coding agent, though roughly 15% was still coded by hand. Astonishingly, it took me **23 threads** and **$92.82 ($33.51 free credits included)** to finish all the work. I really need to get better at using AI efficiently. See this thread for the full analysis: [Analyze Amp usage and cost](https://ampcode.com/threads/T-019dd932-f1a1-755d-9533-984b791204c1).
 
 I feel good about merging the refactor now, but I already have next steps in mind: productizing it into a polished, reusable Astro theme. I've opened issue [#86](https://github.com/zlliang/zlliang/issues/86) to track the follow-up tasks.
