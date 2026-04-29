@@ -4,11 +4,11 @@ import theme from "@zlliang/theme/integration"
 import { siteData, authorData } from "@zlliang/data"
 
 export default defineConfig({
-  site: "https://mesh.zlliang.me",
+  site: siteData.mesh.href,
   output: "server",
   integrations: [
     theme({
-      title: `${authorData.en.author} / ${siteData.mesh.copy.en.title}`,
+      title: `${authorData.en.author} / ${siteData.mesh.en.title}`,
       locale: "en",
       color: "blue",
     }),

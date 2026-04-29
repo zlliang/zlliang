@@ -5,16 +5,10 @@
   "type": "module",
   "exports": {
     "./integration": "./src/integration.ts",
-    "./main.css": "./src/styles/main.css",
     "./schemas/content": "./src/schemas/content.ts",
-    "./middlewares": "./src/middlewares/index.ts",
     "./components/Layout.astro": "./src/components/Layout.astro",
-    "./components/SiteCard.astro": "./src/components/SiteCard.astro",
     "./components/Section.astro": "./src/components/Section.astro",
-    "./components/Pagination.astro": "./src/components/Pagination.astro",
-    "./components/PageTitle.astro": "./src/components/PageTitle.astro",
-    "./components/Header.astro": "./src/components/Header.astro",
-    "./components/Footer.astro": "./src/components/Footer.astro"
+    "./components/SiteCard.astro": "./src/components/SiteCard.astro"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

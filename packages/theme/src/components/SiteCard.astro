@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets"
-
 import { siteData } from "@zlliang/data"
+
 import { cn } from "../styles"
 
 import type { Site, Locale } from "@zlliang/data"
@@ -13,8 +13,8 @@ interface Props {
 
 const { site, locale } = Astro.props
 
-const { href, domain, logo, copy } = siteData[site]
-const { title, descriptionLines, localeLabel } = copy[locale]
+const { href, domain, logo } = siteData[site]
+const { title, descriptionLines, localeLabel } = siteData[site][locale]
 
 const accentClasses = {
   mesh: "hover:border-blue-400 dark:hover:border-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950 hover:text-blue-500!",

@@ -4,13 +4,13 @@ import theme from "@zlliang/theme/integration"
 import { siteData, authorData } from "@zlliang/data"
 
 export default defineConfig({
-  site: "https://muse.zlliang.me",
+  site: siteData.muse.href,
   output: "server",
   integrations: [
     theme({
-      title: `${authorData.zh.author} / ${siteData.muse.copy.zh.title}`,
-      color: "indigo",
+      title: `${authorData.zh.author} / ${siteData.muse.zh.title}`,
       locale: "zh",
+      color: "indigo",
     }),
   ],
   adapter: vercel({
