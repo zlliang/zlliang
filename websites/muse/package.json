@@ -17,13 +17,13 @@
     "minisearch": "^7.2.0"
   },
   "devDependencies": {
-    "@astrojs/vercel": "^10.0.5",
-    "@iconify-json/lucide": "^1.2.103",
-    "@iconify-json/simple-icons": "^1.2.79",
+    "@astrojs/vercel": "^10.0.6",
+    "@iconify-json/lucide": "^1.2.104",
+    "@iconify-json/simple-icons": "^1.2.80",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/vite": "^4.2.4",
     "@types/lodash-es": "^4.17.12",
-    "astro": "^6.1.9",
+    "astro": "^6.1.10",
     "tailwindcss": "^4.2.4",
     "typescript": "^6.0.3"
   }
