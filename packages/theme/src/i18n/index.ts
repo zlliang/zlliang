@@ -6,7 +6,6 @@ import type { Locale } from "@zlliang/data"
 import type { Tokens } from "./tokens"
 
 export type { Locale }
-export type { Tokens }
 
 const tokens: Record<Locale, Tokens> = {
   en,

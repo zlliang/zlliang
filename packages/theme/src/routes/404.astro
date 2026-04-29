@@ -10,7 +10,7 @@ const error = Astro.locals.error ?? {
 }
 ---
 
-<Layout title={`${error.status} ${error.statusText}`} aside={false}>
+<Layout title={`${error.status} ${error.statusText}`} showAside={false}>
   <div class="flex flex-col justify-center items-center mt-32 text-neutral-400 dark:text-neutral-600">
     <div class="icon-[lucide--frown] text-5xl" />
     <div class="mt-2 text-2xl font-display font-bold">{error.status} {error.statusText}</div>

@@ -1,0 +1,31 @@
+---
+import { default as BaseLayout } from "@zlliang/theme/components/Layout.astro"
+
+import { createI18n } from "../i18n"
+
+import type { Locale } from "../i18n"
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = createI18n(locale)
+---
+
+<BaseLayout siteTitle={t.siteTitle} showAside={false} class="max-w-3xl">
+  <Fragment slot="head">
+    <slot name="head" />
+  </Fragment>
+  <Fragment slot="header-end">
+    <slot name="header-end" />
+  </Fragment>
+  <Fragment slot="aside-start">
+    <slot name="aside-start" />
+  </Fragment>
+  <Fragment slot="aside-end">
+    <slot name="aside-end" />
+  </Fragment>
+
+  <slot />
+</BaseLayout>

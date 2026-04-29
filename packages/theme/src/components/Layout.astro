@@ -20,47 +20,32 @@ import type { Locale } from "../i18n"
 import "../styles/main.css"
 
 interface Props {
-  /** Raw page title. The doc `<title>` becomes `${title} - ${siteTitle}`, or just `siteTitle` when omitted. */
   title?: string
-  /** Page locale. Determines `<html lang>` and UI text translations. Defaults to the configured `locale`. */
-  locale?: Locale
-  /** When provided, emits `<link rel="alternate" hreflang>` for each entry. */
-  alternateLocales?: { code: string; href: string | URL }[]
-  /** Emit `<meta name="robots" content="noindex, follow">`. */
-  noindex?: boolean
-  /** Header */
-  logo?: ImageMetadata
   siteTitle?: string
-  homeHref?: string
-  /** OG / Twitter */
-  ogSiteName?: string
-  /** Wider container that opens up room for an aside. Defaults to `aside`. */
-  wide?: boolean
-  /** Render the journal `Aside`. Defaults to `true`. */
-  aside?: boolean
+  logo?: ImageMetadata
+  showAside?: boolean
   showRecentPosts?: boolean
   showSearch?: boolean
+  noindex?: boolean
+  locale?: Locale
+  class?: string
 }
 
 const {
   title: rawTitle,
-  locale,
-  alternateLocales,
-  noindex = false,
-  logo = themeLogo,
   siteTitle = themeConfig.title,
-  homeHref = "/",
-  ogSiteName,
-  aside = true,
-  wide = aside,
+  locale = themeConfig.locale,
+  logo = themeLogo,
+  showAside = true,
   showRecentPosts = true,
   showSearch = true,
+  noindex = false,
+  class: className = "max-w-3xl lg:max-w-6xl",
 } = Astro.props
 
-const t = createI18n(locale)
 const title = rawTitle ? `${rawTitle} - ${siteTitle}` : siteTitle
 const url = new URL(Astro.url.pathname, Astro.site)
-const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
+const t = createI18n(locale)
 ---
 
 <!DOCTYPE html>
@@ -82,9 +67,8 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
 
   {/* SEO, OpenGraph and Twitter */}
   <link rel="canonical" href={url} />
-  {alternateLocales?.map(({ code, href }) => <link rel="alternate" hreflang={code} href={href} />)}
   {noindex && <meta name="robots" content="noindex, follow" />}
-  <meta property="og:site_name" content={ogSiteName ?? siteTitle} />
+  <meta property="og:site_name" content={siteTitle} />
   <meta property="og:url" content={url} />
   <meta property="og:title" content={title} />
   <meta property="og:type" content="website" />
@@ -94,17 +78,23 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
 
   {/* Title */}
   <title>{title}</title>
+
+  <Fragment slot="head">
+    <slot name="head">
+      {Slots.Head && <Slots.Head />}
+    </slot>
+  </Fragment>
 </head>
 <body>
-  <div class={cn("flex flex-col min-h-dvh m-auto px-6", containerClass)}>
-    <Header logo={logo} title={siteTitle} homeHref={homeHref}>
+  <div class={cn("flex flex-col min-h-dvh m-auto px-6", className)}>
+    <Header logo={logo} title={siteTitle}>
       <Fragment slot="header-end">
         <slot name="header-end">
           {Slots.HeaderEnd && <Slots.HeaderEnd />}
         </slot>
       </Fragment>
     </Header>
-    {aside ? (
+    {showAside ? (
       <div class="flex-1 lg:flex gap-12 w-full">
         <main class="flex-1 min-w-0">
           <slot />
