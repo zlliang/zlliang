@@ -9,8 +9,8 @@ export default defineConfig({
   integrations: [
     theme({
       title: `${authorData.en.author} / ${siteData.mesh.copy.en.title}`,
+      locale: "en",
       color: "blue",
-      logo: "./src/assets/logo.png",
     }),
   ],
   adapter: vercel({

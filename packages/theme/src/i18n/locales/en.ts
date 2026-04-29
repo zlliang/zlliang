@@ -8,7 +8,6 @@ const tokens: Tokens = {
   formatDate: (date) => format(date, "PP"),
 
   // Search
-  search: "Search",
   searchPlaceholder: "Search across notes and posts",
   searchAriaLabel: "Search",
   searchTitle: "Search",

@@ -52,20 +52,15 @@ const title = t.notesIndexTitle
 ---
 
 <Layout title={title}>
-  {/* Archive */}
-  <Fragment slot="aside-prefix">
-    <Section title={t.archive}>
-      <div class="mb-2 text-xs text-neutral-500">{t.yearsLabel}</div>
-      <ArchiveLinks items={yearItems} />
-    </Section>
-  </Fragment>
+  <Section slot="aside-start" title={t.archive}>
+    <div class="mb-2 text-xs text-neutral-500">{t.yearsLabel}</div>
+    <ArchiveLinks items={yearItems} />
+  </Section>
 
-  {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
     <span slot="subtitle">{t.notesCountSubtitle(notes.length)}</span>
   </PageTitle>
 
-  {/* Notes */}
   {pagination.data.length > 0 ? <NoteList notes={pagination.data} pagination={pagination} /> : <p class="text-neutral-500">{t.notesEmpty}</p>}
 </Layout>

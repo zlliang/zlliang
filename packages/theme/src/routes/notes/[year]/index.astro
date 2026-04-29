@@ -79,17 +79,13 @@ const title = t.notesYearTitle(year)
 ---
 
 <Layout title={title}>
-  {/* Archive */}
-  <Fragment slot="aside-prefix">
-    <Section title={t.archive}>
-      <div class="mb-2 text-xs text-neutral-500">{t.yearsLabel}</div>
-      <ArchiveLinks items={yearItems} />
-      <div class="mt-4 mb-2 text-xs text-neutral-500">{t.yearLabel(year)}</div>
-      <ArchiveLinks items={monthItems} />
-    </Section>
-  </Fragment>
+  <Section slot="aside-start" title={t.archive}>
+    <div class="mb-2 text-xs text-neutral-500">{t.yearsLabel}</div>
+    <ArchiveLinks items={yearItems} />
+    <div class="mt-4 mb-2 text-xs text-neutral-500">{t.yearLabel(year)}</div>
+    <ArchiveLinks items={monthItems} />
+  </Section>
 
-  {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
     <div slot="subtitle" class="flex justify-between gap-4">
@@ -98,6 +94,5 @@ const title = t.notesYearTitle(year)
     </div>
   </PageTitle>
 
-  {/* Notes */}
   {pagination.data.length > 0 ? <NoteList notes={pagination.data} pagination={pagination} /> : <p class="text-neutral-500">{t.notesEmpty}</p>}
 </Layout>

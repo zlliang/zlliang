@@ -82,3 +82,5 @@ export const redirects = sequence(
   redirectsBefore20260425,
   redirectsBefore20260426,
 )
+
+export const onRequest = redirects

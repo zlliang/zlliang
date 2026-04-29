@@ -6,7 +6,7 @@ import type { Plugin } from "vite"
 const ID = "virtual:zlliang-theme/slots"
 const RESOLVED_ID = "\0" + ID
 
-const SLOT_NAMES = ["HeaderEnd", "AsideEnd"] as const
+const SLOT_NAMES = ["HeaderEnd", "AsideStart", "AsideEnd"] as const
 
 /**
  * Re-exports site-supplied Astro components from `<siteRoot>/src/theme/<Name>.astro` as named

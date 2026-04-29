@@ -79,15 +79,11 @@ const title = t.notesDayTitle(targetDate)
 ---
 
 <Layout title={title}>
-  {/* Archive */}
-  <Fragment slot="aside-prefix">
-    <Section title={t.archive}>
-      <div class="mb-2 text-xs text-neutral-500">{t.monthYearLabel(targetDate)}</div>
-      <ArchiveCalendar year={year} month={month} items={dayItems} />
-    </Section>
-  </Fragment>
+  <Section slot="aside-start" title={t.archive}>
+    <div class="mb-2 text-xs text-neutral-500">{t.monthYearLabel(targetDate)}</div>
+    <ArchiveCalendar year={year} month={month} items={dayItems} />
+  </Section>
 
-  {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
     <div slot="subtitle" class="flex justify-between gap-4">
@@ -96,6 +92,5 @@ const title = t.notesDayTitle(targetDate)
     </div>
   </PageTitle>
 
-  {/* Notes */}
   {pagination.data.length > 0 ? <NoteList notes={pagination.data} pagination={pagination} /> : <p class="text-neutral-500">{t.notesEmpty}</p>}
 </Layout>

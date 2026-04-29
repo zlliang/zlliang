@@ -98,11 +98,10 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
 <body>
   <div class={cn("flex flex-col min-h-dvh m-auto px-6", containerClass)}>
     <Header logo={logo} title={siteTitle} homeHref={homeHref}>
-      <Fragment slot="menu">
-        <slot name="menu">
-          <a href="/search" class="lg:hidden"><span class="icon-[lucide--search]" /> {t.search}</a>
+      <Fragment slot="header-end">
+        <slot name="header-end">
+          {Slots.HeaderEnd && <Slots.HeaderEnd />}
         </slot>
-        {Slots.HeaderEnd && <Slots.HeaderEnd />}
       </Fragment>
     </Header>
     {aside ? (
@@ -110,7 +109,23 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
         <main class="flex-1 min-w-0">
           <slot />
         </main>
-        <Aside showSearch={showSearch} showRecentPosts={showRecentPosts} locale={locale} class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80" />
+        <Aside
+          showSearch={showSearch}
+          showRecentPosts={showRecentPosts}
+          locale={locale}
+          class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80"
+        >
+          <Fragment slot="aside-start">
+            <slot name="aside-start">
+              {Slots.AsideStart && <Slots.AsideStart />}
+            </slot>
+          </Fragment>
+          <Fragment slot="aside-end">
+            <slot name="aside-end">
+              {Slots.AsideEnd && <Slots.AsideEnd />}
+            </slot>
+          </Fragment>
+        </Aside>
       </div>
     ) : (
       <main class="flex-1">

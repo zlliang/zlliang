@@ -47,16 +47,13 @@ const title = q ? t.searchTitleWithQuery(q) : t.searchTitle
 ---
 
 <Layout title={title} noindex showSearch={false}>
-  {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>
     <span slot="subtitle">{q ? t.searchSubtitleCount(results.length) : t.searchSubtitleEmpty}</span>
   </PageTitle>
 
-  {/* Search form */}
   <SearchForm q={q} class="mb-6" />
 
-  {/* Search results */}
   {q && (
     results.length > 0 ? (
       <div class="pb-6 mb-6 border-b-2 border-neutral-200 dark:border-neutral-800">

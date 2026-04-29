@@ -31,28 +31,16 @@ const routes = [
   { pattern: "/posts/series/[series]", entrypoint: "./routes/posts/series/[series].astro" },
 ] as const
 
-export interface ThemeIntegrationOptions {
-  /**
-   * Inject the bundled journal routes (`/`, `/404`, `/search`, `/notes/*`, `/posts/*`), the
-   * journal middleware, and the markdown plugin pipeline. Set to `false` for sites that only
-   * consume the shared `Layout`. Defaults to `true`.
-   */
-  routes?: boolean
-}
-
-export default function theme(themeConfig: ThemeConfig, options: ThemeIntegrationOptions = {}): AstroIntegration {
-  const { routes: injectRoutes = true } = options
-
+export default function theme(themeConfig: ThemeConfig): AstroIntegration {
   return {
     name: "@zlliang/theme",
     hooks: {
       "astro:config:setup": ({ config: astroConfig, updateConfig, addMiddleware, injectRoute }) => {
         const config = resolveThemeConfig(themeConfig)
         const { logo, ...serializableConfig } = config
+        const serializedConfig = JSON.stringify(serializableConfig)
         const siteRoot = fileURLToPath(astroConfig.root)
         const logoPath = resolvePath(siteRoot, logo)
-
-        const serializedConfig = JSON.stringify(serializableConfig)
 
         updateConfig({
           fonts: [
@@ -75,30 +63,28 @@ export default function theme(themeConfig: ThemeConfig, options: ThemeIntegratio
               fallbacks: ["monospace"],
             },
           ],
-          ...(injectRoutes && {
-            markdown: {
-              shikiConfig: {
-                themes: { light: "github-light-default", dark: "github-dark-default" },
-              },
-              remarkPlugins: [
-                [remarkCjkFriendly, {}],
-                [remarkCodeTitles, {}],
-              ],
-              rehypePlugins: [
-                [rehypeHeadingIds, {}],
-                [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
-                [rehypeFootnotePrefixes, {}],
-                [rehypeImageCaptions, {}],
-                [rehypeImageLinks, {}],
-                [rehypeCodeCopy, {}],
-              ],
-              remarkRehype: {
-                footnoteLabel: " ",
-                footnoteLabelTagName: "div",
-                footnoteBackContent: "↵",
-              },
+          markdown: {
+            shikiConfig: {
+              themes: { light: "github-light-default", dark: "github-dark-default" },
             },
-          }),
+            remarkPlugins: [
+              [remarkCjkFriendly, {}],
+              [remarkCodeTitles, {}],
+            ],
+            rehypePlugins: [
+              [rehypeHeadingIds, {}],
+              [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
+              [rehypeFootnotePrefixes, {}],
+              [rehypeImageCaptions, {}],
+              [rehypeImageLinks, {}],
+              [rehypeCodeCopy, {}],
+            ],
+            remarkRehype: {
+              footnoteLabel: " ",
+              footnoteLabelTagName: "div",
+              footnoteBackContent: "↵",
+            },
+          },
           vite: {
             plugins: [
               virtualConfigPlugin(serializedConfig),
@@ -110,12 +96,13 @@ export default function theme(themeConfig: ThemeConfig, options: ThemeIntegratio
           }
         })
 
-        if (injectRoutes) {
-          addMiddleware({
-            entrypoint: new URL("./middlewares/index.ts", import.meta.url),
-            order: "pre",
-          })
+        const middlewarePath = config.injectRoutes ? "./middlewares/all.ts" : "./middlewares/cache.ts"
+        addMiddleware({
+          entrypoint: new URL(middlewarePath, import.meta.url),
+          order: "pre",
+        })
 
+        if (config.injectRoutes) {
           routes.forEach(({ pattern, entrypoint }) => {
             injectRoute({
               pattern,

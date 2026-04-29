@@ -3,17 +3,17 @@ import Layout from "@zlliang/theme/components/Layout.astro"
 import Section from "@zlliang/theme/components/Section.astro"
 import SiteCard from "@zlliang/theme/components/SiteCard.astro"
 
-import logo from "@/assets/logo.png"
-import { locales, t } from "@/utils/i18n"
 import { renderFragment } from "@/utils/content"
+import { parseLocale } from "@/i18n"
+import { locales, t } from "@/utils/i18n"
 
-import type { Locale } from "@/utils/i18n"
+import logo from "@/assets/logo.png"
 
-const { lang } = Astro.params
-if (!lang || !locales.includes(lang as Locale)) {
+const { locale: localeSegment } = Astro.params
+const locale = parseLocale(localeSegment)
+if (!locale) {
   return Astro.rewrite("/404")
 }
-const locale = lang as Locale
 
 const Bio = await renderFragment(`${locale}/bio`)
 ---
@@ -26,7 +26,7 @@ const Bio = await renderFragment(`${locale}/bio`)
   homeHref={`/${locale}/`}
   aside={false}
 >
-  <Fragment slot="menu">
+  <Fragment slot="header-end">
     {locales.filter((l) => l !== locale).map((l) => <a href={`/${l}/`}><span class="icon-[lucide--languages]" /> {t(l, "desc")}</a>)}
   </Fragment>
 
@@ -34,7 +34,6 @@ const Bio = await renderFragment(`${locale}/bio`)
     <Bio />
   </div>
 
-  {/* Journals */}
   <Section title={t(locale, "journals")}>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <SiteCard site="mesh" locale={locale} />

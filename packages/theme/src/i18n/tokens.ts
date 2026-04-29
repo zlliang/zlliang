@@ -4,7 +4,6 @@ export interface Tokens {
   formatDate: (date: Date) => string
 
   // Search
-  search: string
   searchPlaceholder: string
   searchAriaLabel: string
   searchTitle: string

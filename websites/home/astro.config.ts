@@ -7,11 +7,8 @@ export default defineConfig({
   output: "server",
   integrations: [
     theme({
-      title: "Zilong Liang",
       color: "cyan",
-      logo: "./src/assets/logo.png",
-    }, {
-      routes: false,
+      injectRoutes: false,
     }),
   ],
   adapter: vercel({

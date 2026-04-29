@@ -26,10 +26,8 @@ const title = [note.data.title || post?.data.title, t.noteIdLabel(note.data.numb
 ---
 
 <Layout title={title}>
-  {/* Content */}
   <NoteContent note={note} showLink={false} />
 
-  {/* Links to next and previous notes */}
   {(next || previous) && (
     <div class="grid grid-cols-2 mt-16">
       {next && (

@@ -13,10 +13,8 @@ const filteredNotes = notes.slice(0, NOTES_PER_PAGE)
 ---
 
 <Layout>
-  {/* Search form */}
   <SearchForm class="lg:hidden mb-6" />
 
-  {/* Notes */}
   {notes.length > 0 ? <NoteList notes={filteredNotes} /> : <p class="text-neutral-500">{t.notesEmpty}</p>}
   {notes.length > NOTES_PER_PAGE && (
     <div class="flex justify-end mt-6 pt-6 border-t-2 border-neutral-200 dark:border-neutral-800 text-sm">

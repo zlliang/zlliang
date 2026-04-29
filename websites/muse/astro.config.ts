@@ -11,7 +11,6 @@ export default defineConfig({
       title: `${authorData.zh.author} / ${siteData.muse.copy.zh.title}`,
       color: "indigo",
       locale: "zh",
-      logo: "./src/assets/logo.png",
     }),
   ],
   adapter: vercel({

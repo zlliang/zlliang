@@ -4,7 +4,9 @@ import logoMesh from "../assets/logo-mesh.png"
 import logoMuse from "../assets/logo-muse.png"
 
 export type Site = "mesh" | "muse"
-export type Locale = "en" | "zh"
+
+export const locales = ["en", "zh"] as const
+export type Locale = (typeof locales)[number]
 
 interface SiteData {
   href: string

@@ -8,7 +8,6 @@ const tokens: Tokens = {
   formatDate: (date) => format(date, "yyyy 年 M 月 d 日"),
 
   // Search
-  search: "搜索",
   searchPlaceholder: "搜索手记与文章",
   searchAriaLabel: "搜索",
   searchTitle: "搜索",
