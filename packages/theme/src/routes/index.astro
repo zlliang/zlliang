@@ -1,0 +1,24 @@
+---
+import Layout from "../components/Layout.astro"
+import SearchForm from "../components/SearchForm.astro"
+import NoteList from "../components/NoteList.astro"
+
+import { createI18n } from "../i18n"
+import { getNotes } from "../content/content"
+import { NOTES_PER_PAGE } from "../content/pagination"
+
+const t = createI18n()
+const notes = await getNotes()
+const filteredNotes = notes.slice(0, NOTES_PER_PAGE)
+---
+
+<Layout>
+  <SearchForm class="lg:hidden mb-6" />
+
+  {notes.length > 0 ? <NoteList notes={filteredNotes} /> : <p class="text-neutral-500">{t.notesEmpty}</p>}
+  {notes.length > NOTES_PER_PAGE && (
+    <div class="flex justify-end mt-6 pt-6 border-t-2 border-neutral-200 dark:border-neutral-800 text-sm">
+      <a href="/notes?page=2">{t.moreNotes(notes.length)} <span class="icon-[lucide--arrow-right] translate-y-px" /></a>
+    </div>
+  )}
+</Layout>

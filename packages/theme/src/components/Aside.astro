@@ -1,0 +1,63 @@
+---
+import Section from "./Section.astro"
+import PostList from "./PostList.astro"
+import SearchForm from "./SearchForm.astro"
+import Heatmap from "./Heatmap.astro"
+
+import { cn } from "../styles"
+import { createI18n } from "../i18n"
+import { getNotes, getPosts, getPinnedPosts, getSeries } from "../content/content"
+
+import type { Locale } from "../i18n"
+
+interface Props {
+  showSearch?: boolean
+  showRecentPosts?: boolean
+  locale?: Locale
+  class?: string
+}
+
+const { locale, showSearch = true, showRecentPosts = true, class: className } = Astro.props
+const t = createI18n(locale)
+const notes = await getNotes()
+const posts = await getPosts()
+const pinnedPosts = await getPinnedPosts()
+const recentPosts = posts.slice(0, 10)
+const series = await getSeries()
+---
+
+<aside class={cn("space-y-6", className)}>
+  {showSearch && <SearchForm locale={locale} class="hidden lg:flex mb-6" />}
+
+  <slot name="aside-start" />
+
+  <Section title={t.explore}>
+    <div class="flex justify-between items-center mb-1">
+      <a href="/notes"><span class="icon-[lucide--notebook-pen]" /> {t.notes}</a>
+      <span class="text-sm text-neutral-500">
+        <span>{t.notesUnit(notes.length)}</span>
+      </span>
+    </div>
+    <div class="flex justify-between items-center">
+      <a href="/posts"><span class="icon-[lucide--book-open-text]" /> {t.posts}</a>
+      <span class="text-sm text-neutral-500">
+        <span>{t.postsUnit(posts.length)}</span><span class="icon-[lucide--dot]" /><a href="/posts/series">{t.seriesUnit(series.length)}</a>
+      </span>
+    </div>
+    <Heatmap locale={locale} />
+  </Section>
+
+  {pinnedPosts.length > 0 && (
+    <Section title={t.pinnedPosts}>
+      <PostList posts={pinnedPosts} showMeta={false} locale={locale} />
+    </Section>
+  )}
+
+  {showRecentPosts && recentPosts.length > 0 && (
+    <Section title={t.recentPosts}>
+      <PostList posts={recentPosts} locale={locale} />
+    </Section>
+  )}
+
+  <slot name="aside-end" />
+</aside>

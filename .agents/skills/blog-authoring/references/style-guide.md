@@ -1,6 +1,6 @@
 # Content Style Guide
 
-Use this file for repo-specific style decisions for notes and posts on `mesh` and `muse`.
+Repo-specific style decisions for notes and posts on `mesh` and `muse`.
 
 ## Terms
 
@@ -10,9 +10,8 @@ Use this file for repo-specific style decisions for notes and posts on `mesh` an
 ## Titles and headings
 
 - Post titles use title case.
-- Note titles usually use sentence case; when a note introduces a linked item or a published post, match that item's or post's title if it reads better.
-- Section headings use sentence case.
-- Keep headings short and avoid trailing punctuation.
+- Note titles usually use sentence case; when a note introduces a linked item or a published post, match that item's title if it reads better.
+- Section headings use sentence case, stay short, and avoid trailing punctuation.
 
 ## English italics
 
@@ -23,7 +22,7 @@ Use this file for repo-specific style decisions for notes and posts on `mesh` an
 ## English quotation marks
 
 - Use double quotation marks for ordinary quoted words and phrases in prose.
-- Use double quotation marks, not italics, for short work titles when needed in running text.
+- Use double quotation marks, not italics, for short work titles in running text.
 - Keep punctuation inside quotation marks only when it belongs to the quoted material.
 
 ## Update notes
@@ -32,11 +31,10 @@ Use this file for repo-specific style decisions for notes and posts on `mesh` an
 - Put the block near the end by default.
 - Format each update as `**Update MMM D, YYYY:** ...` in English or `**YYYY 年 M 月 D 日更新：**...` in Chinese.
 - Order multiple updates from earliest to latest.
-- Move the update note to the top only if the original text would otherwise mislead readers before they reach the end.
 
 ## Dates and spacing
 
-- Frontmatter dates use `YYYY-MM-DD`.
-- English prose dates use `MMM D, YYYY`.
-- Chinese prose dates use `YYYY 年 M 月 D 日`.
+- Frontmatter dates: `YYYY-MM-DD`.
+- English prose dates: `MMM D, YYYY`.
+- Chinese prose dates: `YYYY 年 M 月 D 日`.
 - Insert spaces between English words and CJK characters.

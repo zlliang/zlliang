@@ -1,0 +1,33 @@
+---
+import Pagination from "./Pagination.astro"
+import NoteContent from "./NoteContent.astro"
+
+import { createI18n } from "../i18n"
+import { cn } from "../styles"
+
+import type { CollectionEntry } from "astro:content"
+import type { PaginationData } from "../content/pagination"
+import type { Locale } from "../i18n"
+
+interface Props {
+  notes: CollectionEntry<"notes">[]
+  pagination?: PaginationData<CollectionEntry<"notes">>
+  locale?: Locale
+}
+
+const { notes, pagination, locale } = Astro.props
+const t = createI18n(locale)
+---
+
+<div>
+  {notes.map((note, index) => (
+    <div class={cn(index !== notes.length - 1 && "mb-6 pb-6 border-b-2 border-neutral-200 dark:border-neutral-800")}>
+      <NoteContent note={note} locale={locale} />
+    </div>
+  ))}
+  {Boolean(pagination) && (
+    <div class="mt-6 pt-6 border-t-2 border-neutral-200 dark:border-neutral-800">
+      <Pagination {...pagination!} label={t.pageLabel} />
+    </div>
+  )}
+</div>

@@ -1,0 +1,37 @@
+---
+import { render } from "astro:content"
+
+import PageTitle from "./PageTitle.astro"
+
+import { getSeriesById } from "../content/content"
+import { createI18n } from "../i18n"
+
+import type { CollectionEntry } from "astro:content"
+import type { Locale } from "../i18n"
+
+interface Props {
+  post: CollectionEntry<"posts">
+  locale?: Locale
+}
+
+const { post, locale } = Astro.props
+const series = post.data.series ? await getSeriesById(post.data.series.id) : null
+const { Content } = await render(post)
+const t = createI18n(locale)
+---
+
+<div class="post-content">
+  <PageTitle>
+    <Fragment>{post.data.title}</Fragment>
+    <div slot="subtitle">
+      <span>{t.formatDate(post.data.created)}</span>
+      {post.data.pinned && <span class="icon-[lucide--pin]" />}
+      {series && <span class="ml-1">{t.partOfSeries} <a href={`/posts/series/${series.id}`}>{series.data.title}</a></span>}
+      {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">{t.postDraft}</span>}
+    </div>
+  </PageTitle>
+
+  <div class="mb-4">
+    <Content />
+  </div>
+</div>

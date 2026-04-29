@@ -1,0 +1,129 @@
+---
+import { Font } from "astro:assets"
+import VercelWebAnalytics from "@vercel/analytics/astro"
+import VercelSpeedInsights from "@vercel/speed-insights/astro"
+
+import Header from "./Header.astro"
+import Footer from "./Footer.astro"
+import Aside from "./Aside.astro"
+
+import { themeConfig, themeLogo, Slots } from "../runtime"
+import { createI18n } from "../i18n"
+import { cn } from "../styles"
+
+import type { ImageMetadata } from "astro"
+import type { Locale } from "../i18n"
+
+import "../styles/main.css"
+
+interface Props {
+  title?: string
+  siteTitle?: string
+  logo?: ImageMetadata
+  showAside?: boolean
+  showRecentPosts?: boolean
+  showSearch?: boolean
+  noindex?: boolean
+  locale?: Locale
+  class?: string
+}
+
+const {
+  title: rawTitle,
+  siteTitle = themeConfig.title,
+  locale = themeConfig.locale,
+  logo = themeLogo,
+  showAside = true,
+  showRecentPosts = true,
+  showSearch = true,
+  noindex = false,
+  class: className = "max-w-3xl lg:max-w-6xl",
+} = Astro.props
+
+const title = rawTitle ? `${rawTitle} - ${siteTitle}` : siteTitle
+const url = new URL(Astro.url.pathname, Astro.site)
+const t = createI18n(locale)
+---
+
+<!DOCTYPE html>
+<html lang={t.lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+
+  {/* Favicon */}
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  {/* Fonts */}
+  <Font cssVariable="--font-public-sans" preload />
+  <Font cssVariable="--font-roboto-mono" preload />
+
+  {/* SEO, OpenGraph and Twitter */}
+  <link rel="canonical" href={url} />
+  {noindex && <meta name="robots" content="noindex, follow" />}
+  <meta property="og:site_name" content={siteTitle} />
+  <meta property="og:url" content={url} />
+  <meta property="og:title" content={title} />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:creator" content="@zlliang96" />
+
+  {/* Title */}
+  <title>{title}</title>
+
+  <Fragment slot="head">
+    <slot name="head">
+      {Slots.Head && <Slots.Head />}
+    </slot>
+  </Fragment>
+</head>
+<body>
+  <div class={cn("flex flex-col min-h-dvh m-auto px-6", className)}>
+    <Header logo={logo} title={siteTitle}>
+      <Fragment slot="header-end">
+        <slot name="header-end">
+          {Slots.HeaderEnd && <Slots.HeaderEnd />}
+        </slot>
+      </Fragment>
+    </Header>
+    {showAside ? (
+      <div class="flex-1 lg:flex gap-12 w-full">
+        <main class="flex-1 min-w-0">
+          <slot />
+        </main>
+        <Aside
+          showSearch={showSearch}
+          showRecentPosts={showRecentPosts}
+          locale={locale}
+          class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80"
+        >
+          <Fragment slot="aside-start">
+            <slot name="aside-start">
+              {Slots.AsideStart && <Slots.AsideStart />}
+            </slot>
+          </Fragment>
+          <Fragment slot="aside-end">
+            <slot name="aside-end">
+              {Slots.AsideEnd && <Slots.AsideEnd />}
+            </slot>
+          </Fragment>
+        </Aside>
+      </div>
+    ) : (
+      <main class="flex-1">
+        <slot />
+      </main>
+    )}
+    <Footer locale={locale} />
+  </div>
+
+  {/* Vercel */}
+  <VercelWebAnalytics />
+  <VercelSpeedInsights />
+</body>
+</html>

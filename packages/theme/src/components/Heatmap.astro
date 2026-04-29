@@ -1,0 +1,119 @@
+---
+import { countBy } from "lodash-es"
+import { eachDayOfInterval, startOfDay, startOfWeek, subWeeks } from "date-fns"
+
+import { cn } from "../styles"
+import { createI18n } from "../i18n"
+import { getNotes, getPosts } from "../content/content"
+import { getArchiveBounds, getDayNotesPath } from "../content/archive"
+
+import type { Locale } from "../i18n"
+
+interface Props {
+  locale?: Locale
+}
+
+const WEEK_COLUMNS = 60
+
+const levels = [
+  "bg-transparent",
+  "bg-primary-200 dark:bg-primary-900",
+  "bg-primary-300 dark:bg-primary-800",
+  "bg-primary-400 dark:bg-primary-700",
+  "bg-primary-500 dark:bg-primary-600",
+] as const
+
+const { locale } = Astro.props
+const t = createI18n(locale)
+const notes = await getNotes()
+const posts = await getPosts()
+
+const today = startOfDay(new Date())
+const startDate = subWeeks(startOfWeek(today, { weekStartsOn: 1 }), WEEK_COLUMNS - 1)
+const archiveBounds = getArchiveBounds(notes)
+
+const noteCounts = countBy(notes, (note) => startOfDay(note.data.created).valueOf())
+const postCounts = countBy(posts, (post) => startOfDay(post.data.created).valueOf())
+const timeline = eachDayOfInterval({ start: startDate, end: today })
+
+const rawCells = timeline.map((date) => {
+  const dayKey = date.valueOf()
+  const noteCount = noteCounts[dayKey] ?? 0
+  const postCount = postCounts[dayKey] ?? 0
+  const count = noteCount + postCount
+  const canVisit = archiveBounds ? archiveBounds.includes(date) : false
+
+  return {
+    count,
+    href: canVisit ? getDayNotesPath(date) : undefined,
+    hoverLabel: formatHoverLabel(noteCount, postCount, date),
+  }
+})
+const maxCount = rawCells.reduce((max, cell) => Math.max(max, cell.count), 0)
+const cells = rawCells.map((cell) => ({ ...cell, level: getLevel(cell.count, maxCount) }))
+
+function formatHoverLabel(noteCount: number, postCount: number, date: Date) {
+  if (noteCount === 0 && postCount === 0) return t.heatmapEmpty(date)
+  if (postCount === 0) return t.heatmapNoteOnly(noteCount, date)
+  if (noteCount === 0) return t.heatmapPostOnly(postCount, date)
+  return t.heatmapNoteAndPost(noteCount, postCount, date)
+}
+
+function getLevel(count: number, maxCount: number) {
+  if (count <= 0) return 0
+  if (maxCount <= 1) return 4
+  return Math.min(4, Math.ceil((count / maxCount) * 4))
+}
+---
+
+<div class="mt-4" role="img" tabindex="-1" aria-label={t.heatmapTitle} data-heatmap>
+  <div class="mb-2 text-xs text-neutral-500" data-heatmap-title>{t.heatmapTitle}</div>
+  <div class="relative -ml-1.5 overflow-hidden">
+    <div class="flex justify-end">
+      <div class="grid grid-rows-7 grid-flow-col auto-cols-max gap-px w-max">
+        {cells.map((cell) => {
+          const Component = cell.href ? "a" : "div"
+          return <Component
+            href={cell.href}
+            class={cn(
+              "nocolor block size-3 border border-neutral-200 dark:border-neutral-800",
+              cell.href && "hover:border-primary-400 dark:hover:border-primary-600",
+              levels[cell.level],
+              !cell.href && "bg-neutral-100 border-neutral-100 dark:bg-neutral-900 dark:border-neutral-900"
+            )}
+            tabindex="-1"
+            aria-label={cell.hoverLabel}
+            data-heatmap-cell={Boolean(cell.href)}
+            data-hover-label={cell.hoverLabel}
+          />
+        })}
+      </div>
+    </div>
+    <div
+      class="absolute inset-y-0 left-0 w-8 bg-linear-to-r from-white dark:from-neutral-950 to-transparent pointer-events-none"
+      aria-hidden="true"
+    />
+  </div>
+</div>
+
+<script is:inline define:vars={{ defaultLabelFallback: t.heatmapTitle }}>
+  const currentScript = document.currentScript
+
+  if (currentScript instanceof HTMLScriptElement) {
+    const heatmap = currentScript.previousElementSibling
+
+    if (heatmap instanceof HTMLElement && heatmap.matches("[data-heatmap]")) {
+      const title = heatmap.querySelector("[data-heatmap-title]")
+      const cells = heatmap.querySelectorAll("[data-heatmap-cell=\"true\"]")
+
+      if (title && cells.length > 0) {
+        const defaultLabel = title.textContent ?? defaultLabelFallback
+
+        for (const cell of cells) {
+          cell.addEventListener("mouseenter", () => title.textContent = cell.getAttribute("data-hover-label") ?? defaultLabel)
+          cell.addEventListener("mouseleave", () => title.textContent = defaultLabel)
+        }
+      }
+    }
+  }
+</script>

@@ -1,0 +1,70 @@
+---
+import PageTitle from "../components/PageTitle.astro"
+import Layout from "../components/Layout.astro"
+import SearchForm from "../components/SearchForm.astro"
+import NoteSearchResults from "../components/NoteSearchResults.astro"
+
+import { createI18n } from "../i18n"
+import { paginate, parsePageParam, shouldRedirectPagination } from "../content/pagination"
+import { getSearchPageUrl, parseSearchSort, searchNotes } from "../content/search"
+
+import type { SearchSort } from "../content/search"
+
+Astro.response.headers.set("Cache-Control", "public, max-age=0, s-maxage=60")
+
+const t = createI18n()
+const searchParams = Astro.url.searchParams
+const q = searchParams.get("q")?.trim() ?? ""
+const page = parsePageParam(searchParams.get("page"))
+const sort = parseSearchSort(searchParams.get("sort"))
+
+if (!q && (searchParams.has("q") || searchParams.has("page"))) {
+  return Astro.redirect("/search")
+}
+
+if (searchParams.has("sort") && searchParams.get("sort") !== "date") {
+  return Astro.redirect(getSearchPageUrl(q, page, sort))
+}
+
+const results = q ? await searchNotes(q) : []
+const sortedResults = sort === "date" ? results.toSorted((a, b) => b.data.number - a.data.number) : results
+
+const pagination = paginate(sortedResults, page, (page) => getSearchPageUrl(q, page, sort))
+if (q && shouldRedirectPagination(searchParams, page, pagination)) {
+  return Astro.redirect(pagination.url.current)
+}
+
+const sortUrls = {
+  relevance: getSearchPageUrl(q, 1, "relevance"),
+  date: getSearchPageUrl(q, 1, "date"),
+}
+
+function getSearchSortDisplay(sort: SearchSort) {
+  return sort === "relevance" ? t.searchSortRelevance : t.searchSortDate
+}
+
+const title = q ? t.searchTitleWithQuery(q) : t.searchTitle
+---
+
+<Layout title={title} showSearch={false} noindex>
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <span slot="subtitle">{q ? t.searchSubtitleCount(results.length) : t.searchSubtitleEmpty}</span>
+  </PageTitle>
+
+  <SearchForm q={q} class="mb-6" />
+
+  {q && (
+    results.length > 0 ? (
+      <div class="pb-6 mb-6 border-b-2 border-neutral-200 dark:border-neutral-800">
+        <div class="flex items-center text-sm gap-2">
+          <span class="text-neutral-500">{t.searchSortedBy}</span>
+          {(["relevance", "date"] as const).map((item) => (
+            item === sort ? <span>{getSearchSortDisplay(item)}</span> : <a href={sortUrls[item]}>{getSearchSortDisplay(item)}</a>
+          ))}
+        </div>
+      </div>
+      <NoteSearchResults notes={pagination.data} pagination={pagination} />
+    ) : <p class="text-neutral-500">{t.searchNoResults(q)}</p>
+  )}
+</Layout>

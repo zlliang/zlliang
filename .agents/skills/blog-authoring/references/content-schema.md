@@ -1,10 +1,10 @@
 # Content Schema
 
-This file is a working summary for `mesh` and `muse`. The code-level source of truth is each site's `src/content.config.ts`.
+Working summary for `mesh` and `muse`. Source of truth: `packages/theme/src/schemas/content.ts`. Both sites re-export it through their own `src/content.config.ts`.
 
 ## Notes
 
-- Path: `content/notes/YYYY/MM/DD/slug.md`
+Path: `content/notes/YYYY/MM/DD/slug.md`
 
 ```yaml
 number: 1
@@ -14,19 +14,16 @@ post: 2026/03/14/example-post
 draft: true
 ```
 
-### Rules
-
-- `number`: required unique note number.
-- `title`: optional, but preferred when the note has a clear title.
+- `number`: required, unique note number.
+- `title`: optional; preferred when the note has a clear title.
 - `created`: required, `YYYY-MM-DD`.
-- `post`: optional reference to the related post; only for notes that introduce a published post.
-- `draft`: optional boolean; omit it or set it to `false` when published.
+- `post`: optional reference to a related published post; only for notes that introduce one.
+- `draft`: optional; omit or set to `false` when published.
 
 ## Posts
 
 - Draft path: `content/posts/drafts/slug.md`
 - Published path: `content/posts/YYYY/MM/DD/slug.md`
-- Series registry path: `content/posts/series.json`
 
 ```yaml
 title: Example title
@@ -36,17 +33,15 @@ pinned: true
 draft: true
 ```
 
-### Rules
-
 - `title`: required.
 - `created`: required, `YYYY-MM-DD`.
 - `series`: optional reference to a registered series id in `content/posts/series.json`.
-- `pinned`: optional; use it for long-lived reference posts.
-- `draft`: optional boolean; drafts are created with `true`, and shipping removes it.
+- `pinned`: optional; for long-lived reference posts.
+- `draft`: optional; drafts start with `true`, shipping removes it.
 
 ## Series
 
-- Path: `content/posts/series.json`
+Path: `content/posts/series.json`. Each site owns its own registry; `mesh` and `muse` do not share series entries.
 
 ```json
 [
@@ -58,9 +53,6 @@ draft: true
 ]
 ```
 
-### Rules
-
-- Each site owns its own series registry; `mesh` and `muse` do not share series entries.
 - `id`: required slug used by post frontmatter and by `/posts/series/[series]`.
 - `title`: required display name.
 - `description`: optional summary shown on the series index page.
