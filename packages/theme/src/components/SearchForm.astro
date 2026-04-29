@@ -1,17 +1,16 @@
 ---
-import { cn } from "../styles"
 import { createI18n } from "../i18n"
+import { cn } from "../styles"
 
 import type { Locale } from "../i18n"
 
 interface Props {
-  /** Page locale. Defaults to the configured `locale`. */
-  locale?: Locale
   q?: string
+  locale?: Locale
   class?: string
 }
 
-const { locale, q = "", class: className } = Astro.props
+const { q = "", locale, class: className } = Astro.props
 const t = createI18n(locale)
 ---
 

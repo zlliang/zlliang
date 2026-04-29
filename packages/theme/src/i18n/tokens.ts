@@ -3,10 +3,6 @@ export interface Tokens {
   lang: string
   formatDate: (date: Date) => string
 
-  // Site identity
-  footerAuthor: string
-  twitterCreator: string
-
   // Search
   search: string
   searchPlaceholder: string
@@ -63,6 +59,7 @@ export interface Tokens {
   postsEmpty: string
   readPost: string
   postsTitle: string
+  tableOfContents: string
 
   // Series
   seriesEmpty: string
@@ -84,11 +81,10 @@ export interface Tokens {
   heatmapNoteAndPost: (notes: number, posts: number, date: Date) => string
 
   // Page chrome
-  tableOfContents: string
-  otherSide: string
-  notFoundBack: string
-  imageTitle: (caption: string | null | undefined) => string
+  author: string
   builtWithPrefix: string
   builtWithSuffix: string
   pageLabel: string
+  notFoundBack: string
+  imageTitle: (caption: string | null | undefined) => string
 }

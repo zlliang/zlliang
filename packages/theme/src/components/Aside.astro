@@ -14,10 +14,9 @@ import * as Slots from "virtual:zlliang-theme/slots"
 import type { Locale } from "../i18n"
 
 interface Props {
-  /** Page locale. Defaults to the configured `locale`. */
-  locale?: Locale
   showSearch?: boolean
   showRecentPosts?: boolean
+  locale?: Locale
   class?: string
 }
 
@@ -33,7 +32,6 @@ const series = await getSeries()
 <aside class={cn("space-y-6", className)}>
   {showSearch && <SearchForm locale={locale} class="hidden lg:flex mb-6" />}
 
-  {/* Explore */}
   <Section title={t.explore}>
     <div class="flex justify-between items-center mb-1">
       <a href="/notes"><span class="icon-[lucide--notebook-pen]" /> {t.notes}</a>
@@ -50,17 +48,15 @@ const series = await getSeries()
     <Heatmap locale={locale} />
   </Section>
 
-  {/* Pinned posts */}
   {pinnedPosts.length > 0 && (
     <Section title={t.pinnedPosts}>
-      <PostList locale={locale} posts={pinnedPosts} showMeta={false} />
+      <PostList posts={pinnedPosts} showMeta={false} locale={locale} />
     </Section>
   )}
 
-  {/* Recent posts */}
   {showRecentPosts && recentPosts.length > 0 && (
     <Section title={t.recentPosts}>
-      <PostList locale={locale} posts={recentPosts} />
+      <PostList posts={recentPosts} locale={locale} />
     </Section>
   )}
 

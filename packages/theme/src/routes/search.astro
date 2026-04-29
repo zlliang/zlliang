@@ -46,7 +46,7 @@ function getSearchSortDisplay(sort: SearchSort) {
 const title = q ? t.searchTitleWithQuery(q) : t.searchTitle
 ---
 
-<Layout title={title} showSearch={false} noindex>
+<Layout title={title} noindex showSearch={false}>
   {/* Title */}
   <PageTitle>
     <Fragment>{title}</Fragment>

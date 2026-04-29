@@ -14,7 +14,7 @@ interface Props {
 const { site, locale } = Astro.props
 
 const { href, domain, logo, copy } = siteData[site]
-const { title, descriptionLines, localeLabel, logoAlt } = copy[locale]
+const { title, descriptionLines, localeLabel } = copy[locale]
 
 const accentClasses = {
   mesh: "hover:border-blue-400 dark:hover:border-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950 hover:text-blue-500!",
@@ -31,7 +31,7 @@ const secondaryClasses = {
   href={href}
   class={cn("secondary group flex gap-4 px-4 py-3 border border-neutral-200 dark:border-neutral-800", accentClasses[site])}
 >
-  <Image src={logo} alt={logoAlt} class="size-8" loading="eager" />
+  <Image src={logo} alt={`Logo of ${title}`} class="size-8" loading="eager" />
   <div class="flex-1">
     <div class="flex items-center justify-between gap-2">
       <div class="font-bold">{title}</div>

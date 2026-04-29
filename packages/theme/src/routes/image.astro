@@ -15,7 +15,7 @@ const rawFrom = Astro.url.searchParams.get("from")
 const from = rawFrom?.startsWith("/") ? rawFrom : null
 ---
 
-<Layout title={title} aside={false} noindex>
+<Layout title={title} noindex aside={false}>
   <img src={src} alt={caption} class="w-full" />
   <div class="flex justify-between gap-6 mt-4">
     <div class="text-neutral-500">{caption}</div>

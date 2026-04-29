@@ -4,12 +4,10 @@ import { createI18n } from "../i18n"
 import type { Locale } from "../i18n"
 
 interface Props {
-  author: string
-  /** Page locale. Defaults to the configured `locale`. */
   locale?: Locale
 }
 
-const { author, locale } = Astro.props
+const { locale } = Astro.props
 const t = createI18n(locale)
 ---
 
@@ -25,7 +23,7 @@ const t = createI18n(locale)
     <a href="https://creativecommons.org/licenses/by/4.0/" class="secondary">CC BY 4.0</a>
     <span>2025–PRESENT</span>
     <span class="icon-[lucide--copyright] scale-90" />
-    <a href="https://zlliang.me/" class="secondary">{author}</a>
+    <a href="https://zlliang.me/" class="secondary">{t.author}</a>
     <span class="hidden sm:inline">
       <span class="icon-[lucide--dot]" />
       <span>{t.builtWithPrefix} <a href="https://astro.build" class="secondary">Astro</a> {t.builtWithSuffix}</span>

@@ -9,19 +9,19 @@ import Aside from "./Aside.astro"
 
 import { themeConfig, themeLogo } from "../runtime"
 import { createI18n } from "../i18n"
+import { cn } from "../styles"
 
 // @ts-expect-error virtual module provided by the theme integration
 import * as Slots from "virtual:zlliang-theme/slots"
 
-import "../styles/main.css"
-
 import type { ImageMetadata } from "astro"
 import type { Locale } from "../i18n"
+
+import "../styles/main.css"
 
 interface Props {
   /** Raw page title. The doc `<title>` becomes `${title} - ${siteTitle}`, or just `siteTitle` when omitted. */
   title?: string
-  description?: string
   /** Page locale. Determines `<html lang>` and UI text translations. Defaults to the configured `locale`. */
   locale?: Locale
   /** When provided, emits `<link rel="alternate" hreflang>` for each entry. */
@@ -34,9 +34,6 @@ interface Props {
   homeHref?: string
   /** OG / Twitter */
   ogSiteName?: string
-  twitterCreator?: string | null
-  /** Footer */
-  footerAuthor?: string
   /** Wider container that opens up room for an aside. Defaults to `aside`. */
   wide?: boolean
   /** Render the journal `Aside`. Defaults to `true`. */
@@ -47,7 +44,6 @@ interface Props {
 
 const {
   title: rawTitle,
-  description = themeConfig.description,
   locale,
   alternateLocales,
   noindex = false,
@@ -55,8 +51,6 @@ const {
   siteTitle = themeConfig.title,
   homeHref = "/",
   ogSiteName,
-  twitterCreator,
-  footerAuthor,
   aside = true,
   wide = aside,
   showRecentPosts = true,
@@ -64,8 +58,6 @@ const {
 } = Astro.props
 
 const t = createI18n(locale)
-const resolvedTwitterCreator = twitterCreator === undefined ? t.twitterCreator : twitterCreator
-const resolvedFooterAuthor = footerAuthor ?? t.footerAuthor
 const title = rawTitle ? `${rawTitle} - ${siteTitle}` : siteTitle
 const url = new URL(Astro.url.pathname, Astro.site)
 const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
@@ -91,23 +83,20 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
   {/* SEO, OpenGraph and Twitter */}
   <link rel="canonical" href={url} />
   {alternateLocales?.map(({ code, href }) => <link rel="alternate" hreflang={code} href={href} />)}
-  {Boolean(description) && <meta name="description" content={description} />}
   {noindex && <meta name="robots" content="noindex, follow" />}
   <meta property="og:site_name" content={ogSiteName ?? siteTitle} />
   <meta property="og:url" content={url} />
   <meta property="og:title" content={title} />
-  {Boolean(description) && <meta property="og:description" content={description} />}
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content={title} />
-  {Boolean(description) && <meta name="twitter:description" content={description} />}
-  {resolvedTwitterCreator && <meta name="twitter:creator" content={resolvedTwitterCreator} />}
+  <meta name="twitter:creator" content="@zlliang96" />
 
   {/* Title */}
   <title>{title}</title>
 </head>
 <body>
-  <div class:list={["flex flex-col min-h-dvh m-auto px-6", containerClass]}>
+  <div class={cn("flex flex-col min-h-dvh m-auto px-6", containerClass)}>
     <Header logo={logo} title={siteTitle} homeHref={homeHref}>
       <Fragment slot="menu">
         <slot name="menu">
@@ -121,14 +110,14 @@ const containerClass = wide ? "max-w-3xl lg:max-w-6xl" : "max-w-3xl"
         <main class="flex-1 min-w-0">
           <slot />
         </main>
-        <Aside locale={locale} showSearch={showSearch} showRecentPosts={showRecentPosts} class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80" />
+        <Aside showSearch={showSearch} showRecentPosts={showRecentPosts} locale={locale} class="mt-16 lg:mt-0 lg:shrink-0 lg:w-80" />
       </div>
     ) : (
       <main class="flex-1">
         <slot />
       </main>
     )}
-    <Footer locale={locale} author={resolvedFooterAuthor} />
+    <Footer locale={locale} />
   </div>
 
   {/* Vercel */}

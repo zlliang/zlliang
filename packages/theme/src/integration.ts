@@ -31,7 +31,18 @@ const routes = [
   { pattern: "/posts/series/[series]", entrypoint: "./routes/posts/series/[series].astro" },
 ] as const
 
-export default function theme(themeConfig: ThemeConfig): AstroIntegration {
+export interface ThemeIntegrationOptions {
+  /**
+   * Inject the bundled journal routes (`/`, `/404`, `/search`, `/notes/*`, `/posts/*`), the
+   * journal middleware, and the markdown plugin pipeline. Set to `false` for sites that only
+   * consume the shared `Layout`. Defaults to `true`.
+   */
+  routes?: boolean
+}
+
+export default function theme(themeConfig: ThemeConfig, options: ThemeIntegrationOptions = {}): AstroIntegration {
+  const { routes: injectRoutes = true } = options
+
   return {
     name: "@zlliang/theme",
     hooks: {
@@ -64,28 +75,30 @@ export default function theme(themeConfig: ThemeConfig): AstroIntegration {
               fallbacks: ["monospace"],
             },
           ],
-          markdown: {
-            shikiConfig: {
-              themes: { light: "github-light-default", dark: "github-dark-default" },
+          ...(injectRoutes && {
+            markdown: {
+              shikiConfig: {
+                themes: { light: "github-light-default", dark: "github-dark-default" },
+              },
+              remarkPlugins: [
+                [remarkCjkFriendly, {}],
+                [remarkCodeTitles, {}],
+              ],
+              rehypePlugins: [
+                [rehypeHeadingIds, {}],
+                [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
+                [rehypeFootnotePrefixes, {}],
+                [rehypeImageCaptions, {}],
+                [rehypeImageLinks, {}],
+                [rehypeCodeCopy, {}],
+              ],
+              remarkRehype: {
+                footnoteLabel: " ",
+                footnoteLabelTagName: "div",
+                footnoteBackContent: "↵",
+              },
             },
-            remarkPlugins: [
-              [remarkCjkFriendly, {}],
-              [remarkCodeTitles, {}],
-            ],
-            rehypePlugins: [
-              [rehypeHeadingIds, {}],
-              [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
-              [rehypeFootnotePrefixes, {}],
-              [rehypeImageCaptions, {}],
-              [rehypeImageLinks, {}],
-              [rehypeCodeCopy, {}],
-            ],
-            remarkRehype: {
-              footnoteLabel: " ",
-              footnoteLabelTagName: "div",
-              footnoteBackContent: "↵",
-            },
-          },
+          }),
           vite: {
             plugins: [
               virtualConfigPlugin(serializedConfig),
@@ -97,17 +110,19 @@ export default function theme(themeConfig: ThemeConfig): AstroIntegration {
           }
         })
 
-        addMiddleware({
-          entrypoint: new URL("./middlewares/index.ts", import.meta.url),
-          order: "pre",
-        })
-
-        routes.forEach(({ pattern, entrypoint }) => {
-          injectRoute({
-            pattern,
-            entrypoint: new URL(entrypoint, import.meta.url),
+        if (injectRoutes) {
+          addMiddleware({
+            entrypoint: new URL("./middlewares/index.ts", import.meta.url),
+            order: "pre",
           })
-        })
+
+          routes.forEach(({ pattern, entrypoint }) => {
+            injectRoute({
+              pattern,
+              entrypoint: new URL(entrypoint, import.meta.url),
+            })
+          })
+        }
       },
     },
   }

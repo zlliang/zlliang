@@ -9,7 +9,6 @@ export default defineConfig({
   integrations: [
     theme({
       title: `${authorData.en.author} / ${siteData.mesh.copy.en.title}`,
-      description: siteData.mesh.copy.en.descriptionLines.join(""),
       color: "blue",
       logo: "./src/assets/logo.png",
     }),

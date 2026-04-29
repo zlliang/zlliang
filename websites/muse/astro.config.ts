@@ -9,7 +9,6 @@ export default defineConfig({
   integrations: [
     theme({
       title: `${authorData.zh.author} / ${siteData.muse.copy.zh.title}`,
-      description: siteData.muse.copy.zh.descriptionLines.join(""),
       color: "indigo",
       locale: "zh",
       logo: "./src/assets/logo.png",

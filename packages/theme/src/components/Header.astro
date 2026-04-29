@@ -7,16 +7,15 @@ interface Props {
   logo: ImageMetadata
   title: string
   homeHref?: string
-  logoAlt?: string
 }
 
-const { logo, title, homeHref = "/", logoAlt = "logo" } = Astro.props
+const { logo, title, homeHref = "/" } = Astro.props
 ---
 
 <header class="flex justify-between items-center h-16 mb-12">
   <div class="flex items-center gap-2">
     <a href={homeHref} class="nocolor flex items-center gap-2 font-display">
-      <Image src={logo} alt={logoAlt} class="size-6" loading="eager" />
+      <Image src={logo} alt="Logo" class="size-6" loading="eager" />
       <strong>{title}</strong>
     </a>
   </div>

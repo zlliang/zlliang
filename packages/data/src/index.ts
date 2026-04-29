@@ -16,7 +16,6 @@ interface SiteData {
       title: string
       descriptionLines: string[]
       localeLabel: string
-      logoAlt: string
     }
   >
 }
@@ -31,13 +30,11 @@ export const siteData: Record<Site, SiteData> = {
         title: "Mesh",
         descriptionLines: ["In this ever-changing world of technology, trying to see things a little more clearly."],
         localeLabel: "English",
-        logoAlt: "Logo of mesh.zlliang.me",
       },
       zh: {
         title: "技术手记",
         descriptionLines: ["在这个每天都在变的技术世界里，", "看得更清楚一点。"],
         localeLabel: "英文",
-        logoAlt: "mesh.zlliang.me 的图标",
       },
     },
   },
@@ -50,13 +47,11 @@ export const siteData: Record<Site, SiteData> = {
         title: "Muse",
         descriptionLines: ["Slowly writing down small things, passing thoughts, and the ones that linger a little longer."],
         localeLabel: "Chinese",
-        logoAlt: "Logo of muse.zlliang.me",
       },
       zh: {
         title: "随想手记",
         descriptionLines: ["慢慢记下一些小事和随想，还有那些", "停留更久的念头。"],
         localeLabel: "中文",
-        logoAlt: "muse.zlliang.me 的图标",
       },
     },
   },

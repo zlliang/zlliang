@@ -1,33 +1,19 @@
-import { defineConfig, fontProviders } from "astro/config"
+import { defineConfig } from "astro/config"
 import vercel from "@astrojs/vercel"
-import tailwindcss from "@tailwindcss/vite"
+import theme from "@zlliang/theme/integration"
 
 export default defineConfig({
   site: "https://zlliang.me",
   output: "server",
-  fonts: [
-    {
-      provider: fontProviders.fontsource(),
-      name: "Public Sans",
-      cssVariable: "--font-public-sans",
-      weights: [400, 700],
-      styles: ["normal", "italic"],
-      subsets: ["latin"],
-      fallbacks: ["sans-serif"],
-    },
-    {
-      provider: fontProviders.fontsource(),
-      name: "Roboto Mono",
-      cssVariable: "--font-roboto-mono",
-      weights: [400],
-      styles: ["normal"],
-      subsets: ["latin"],
-      fallbacks: ["monospace"],
-    },
+  integrations: [
+    theme({
+      title: "Zilong Liang",
+      color: "cyan",
+      logo: "./src/assets/logo.png",
+    }, {
+      routes: false,
+    }),
   ],
-  vite: {
-    plugins: [tailwindcss()],
-  },
   adapter: vercel({
     imageService: true,
     imagesConfig: {

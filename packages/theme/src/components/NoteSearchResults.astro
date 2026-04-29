@@ -2,28 +2,27 @@
 import Pagination from "./Pagination.astro"
 import NoteContent from "./NoteContent.astro"
 
-import { cn } from "../styles"
 import { createI18n } from "../i18n"
+import { cn } from "../styles"
 
 import type { CollectionEntry } from "astro:content"
-import type { Locale } from "../i18n"
 import type { PaginationData } from "../content/pagination"
+import type { Locale } from "../i18n"
 
 interface Props {
-  /** Page locale. Defaults to the configured `locale`. */
-  locale?: Locale
   notes: CollectionEntry<"notes">[]
   pagination?: PaginationData<CollectionEntry<"notes">>
+  locale?: Locale
 }
 
-const { locale, notes, pagination } = Astro.props
+const { notes, pagination, locale } = Astro.props
 const t = createI18n(locale)
 ---
 
 <div>
   {notes.map((note, index) => (
     <div class={cn(index !== notes.length - 1 && "mb-6 pb-6 border-b-2 border-neutral-200 dark:border-neutral-800")}>
-      <NoteContent locale={locale} note={note} />
+      <NoteContent note={note} locale={locale} />
     </div>
   ))}
   {Boolean(pagination) && (
