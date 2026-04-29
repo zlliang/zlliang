@@ -1,15 +1,15 @@
-# Bilingual Writing Workflow
+# English Writing Practice
 
-Use this optional workflow when the goal is to improve English writing, not just finish a draft.
+Optional bilingual practice loop. Use it when the goal is improving English writing, not just finishing a draft. Canonical home for this workflow lives here; `english-review` participates as the reviewer (see [`review-modes.md`](../../english-review/references/review-modes.md)).
 
-## What this workflow is for
+## What this loop is for
 
 - Preserve idea density with a Chinese thinking draft.
 - Train direct English expression with an English-only pass.
 - Use AI as a reference and reviewer rather than the default writer.
 - End with an author-owned final version and reusable writing notes.
 
-## Loop for the author
+## Author loop
 
 1. Capture the idea in Chinese, English, or mixed notes.
 2. Write a Chinese thinking draft.
@@ -41,7 +41,7 @@ Use this optional workflow when the goal is to improve English writing, not just
 ## AI's role
 
 - Help structure the Chinese draft without forcing English too early.
-- Review the author's English draft with `english-review`.
+- Review the author's English draft using `english-review`.
 - Generate the reference version only after the author's English pass exists.
 - Summarize reusable differences in expression, sentence pattern, paragraph flow, and voice.
 - Help turn the comparison into short writing notes.

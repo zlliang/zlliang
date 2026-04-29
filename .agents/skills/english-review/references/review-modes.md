@@ -1,6 +1,6 @@
-# Learning Loop
+# Review Modes
 
-Use this file when English review is part of practice, not just proofreading.
+Use this file when English review is part of practice, not just proofreading. For the full bilingual practice workflow, start with [`english-writing-practice.md`](../../blog-authoring/references/english-writing-practice.md) in the `blog-authoring` skill.
 
 ## Modes
 
@@ -24,12 +24,12 @@ Choose the lightest mode that matches the request.
 - Preserve the author's meaning and preferred voice.
 - Borrow stronger phrases or structures selectively instead of replacing everything.
 
-## Preferred output
+## Preferred output shape
 
 1. `What already works`
 2. `What to improve`
 3. `Better patterns to reuse`
-4. `Possible final version` if the user asks for synthesis
+4. `Possible final version` (only when the user asks for synthesis)
 
 ## Guardrails
 
