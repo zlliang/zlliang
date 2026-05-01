@@ -3,6 +3,8 @@ declare module "astro:content" {
 	type AllValuesOf<T> = T extends any ? T[keyof T] : never
 	type ReturnTypeOrOriginal<T> = T extends (...args: any[]) => infer R ? R : T
 
+	export type ContentConfig = typeof import("../src/schemas/content.js")
+
 	type InferEntrySchema<C extends keyof DataEntryMap> = import("astro/zod").infer<
 		ReturnTypeOrOriginal<Required<ContentConfig["collections"][C]>["schema"]>
 	>
