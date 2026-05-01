@@ -1,0 +1,19 @@
+---
+import path from "node:path"
+
+interface Props {
+  filePath?: string
+}
+
+const { filePath } = Astro.props
+const editUrl = import.meta.env.DEV && filePath ? encodeURI(`vscode://file/${path.resolve(process.cwd(), filePath)}`) : null
+---
+
+{
+  editUrl && (
+    <a href={editUrl}>
+      <span class="icon-[lucide--square-pen]" />
+      <span class="ml-1">Edit</span>
+    </a>
+  )
+}

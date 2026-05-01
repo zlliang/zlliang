@@ -2,6 +2,7 @@
 import { render } from "astro:content"
 
 import PageTitle from "./PageTitle.astro"
+import ContentEditButton from "./ContentEditButton.astro"
 
 import { createI18n } from "../i18n"
 import { getSeriesById } from "../content"
@@ -29,6 +30,7 @@ const { Content } = await render(post)
       {post.data.pinned && <span class="icon-[lucide--pin]" />}
       {series && <span class="px-1">{t.partOfSeries}<a href={`/posts/series/${series.id}`}>{series.data.title}</a></span>}
       {post.data.draft && <span class="text-amber-600 dark:text-amber-400">{t.draft}</span>}
+      <ContentEditButton filePath={post.filePath} />
     </div>
   </PageTitle>
 

@@ -2,6 +2,7 @@
 import { render } from "astro:content"
 
 import PostTitle from "./PostTitle.astro"
+import ContentEditButton from "./ContentEditButton.astro"
 
 import { createI18n } from "../i18n"
 import { getPostById } from "../content"
@@ -30,11 +31,11 @@ const post = note.data.post ? await getPostById(note.data.post.id) : null
   </div>
 
   <div class="flex justify-between items-center gap-2">
-    <div class="text-sm text-neutral-500">
+    <div class="space-x-2 text-sm text-neutral-500">
       {showLink ? <a href={`/notes/${note.id}`}>#{note.data.number}</a> : <span>#{note.data.number}</span>}
-      <span class="icon-[lucide--dot]" />
       <span>{t.formatDate(note.data.created)}</span>
-      {note.data.draft && <span class="ml-2 text-amber-600 dark:text-amber-400">{t.draft}</span>}
+      {note.data.draft && <span class="text-amber-600 dark:text-amber-400">{t.draft}</span>}
+      <ContentEditButton filePath={note.filePath} />
     </div>
     {post && <a href={`/posts/${post.id}`} class="text-sm">{t.readPost} <span class="icon-[lucide--arrow-right] translate-y-px" /></a>}
   </div>
