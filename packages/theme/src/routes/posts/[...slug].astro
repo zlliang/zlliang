@@ -12,6 +12,7 @@ import { SERIES_WINDOW_SIZE } from "../../content/constants"
 import { cn } from "../../styles"
 
 const t = createI18n()
+
 const { slug } = Astro.params
 if (!slug) {
   return Astro.rewrite("/404")

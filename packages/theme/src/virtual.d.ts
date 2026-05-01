@@ -1,5 +1,5 @@
 declare module "virtual:zlliang-theme/config" {
-  import type { ResolvedThemeConfig } from "./config"
+  type ResolvedThemeConfig = import("./config").ResolvedThemeConfig
 
   const config: Omit<ResolvedThemeConfig, "logo">
   export default config

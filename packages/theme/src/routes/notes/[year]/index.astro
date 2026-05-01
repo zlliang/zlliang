@@ -13,6 +13,7 @@ import { paginate, parsePageParam, shouldRedirectPagination } from "../../../con
 import { getArchiveBounds, getMonthNotesPath, getYearNotesPath, parseYear } from "../../../content/archive"
 
 const t = createI18n()
+
 const notes = await getNotes()
 
 const { year: yearSegment } = Astro.params

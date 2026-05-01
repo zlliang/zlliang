@@ -25,6 +25,7 @@ const levels = [
 
 const { locale } = Astro.props
 const t = createI18n(locale)
+
 const notes = await getNotes()
 const posts = await getPosts()
 

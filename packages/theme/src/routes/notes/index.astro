@@ -13,6 +13,7 @@ import { getArchiveBounds, getYearNotesPath } from "../../content/archive"
 import { paginate, parsePageParam, shouldRedirectPagination } from "../../content/pagination"
 
 const t = createI18n()
+
 const notes = await getNotes()
 const bounds = getArchiveBounds(notes)
 

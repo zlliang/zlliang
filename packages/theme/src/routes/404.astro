@@ -4,6 +4,7 @@ import Layout from "../components/Layout.astro"
 import { createI18n } from "../i18n"
 
 const t = createI18n()
+
 const error = Astro.locals.error ?? {
   status: 404,
   statusText: "Not Found",

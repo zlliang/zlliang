@@ -3,8 +3,8 @@ import Section from "@zlliang/theme/components/Section.astro"
 import SiteCard from "@zlliang/theme/components/SiteCard.astro"
 import Layout from "../../components/Layout.astro"
 
-import { renderFragment } from "../../utils/content"
 import { locales, parseLocale, createI18n } from "../../i18n"
+import { renderFragment } from "../../utils/content"
 
 const { locale: localeSegment } = Astro.params
 const locale = parseLocale(localeSegment)

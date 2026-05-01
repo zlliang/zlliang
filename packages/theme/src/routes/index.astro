@@ -8,6 +8,7 @@ import { getNotes } from "../content"
 import { NOTES_PER_PAGE } from "../content/constants"
 
 const t = createI18n()
+
 const notes = await getNotes()
 const filteredNotes = notes.slice(0, NOTES_PER_PAGE)
 ---

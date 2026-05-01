@@ -7,6 +7,7 @@ import { getAdjacentNotes, getNoteById, getPostById } from "../../content"
 import { cn } from "../../styles"
 
 const t = createI18n()
+
 const { slug } = Astro.params
 if (!slug) {
   return Astro.rewrite("/404")

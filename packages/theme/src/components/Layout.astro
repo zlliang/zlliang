@@ -39,9 +39,9 @@ const {
   class: className = "max-w-3xl lg:max-w-6xl",
 } = Astro.props
 
+const t = createI18n(locale)
 const title = rawTitle ? `${rawTitle} - ${siteTitle}` : siteTitle
 const url = new URL(Astro.url.pathname, Astro.site)
-const t = createI18n(locale)
 ---
 
 <!DOCTYPE html>

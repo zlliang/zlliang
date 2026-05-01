@@ -16,9 +16,10 @@ interface Props {
 }
 
 const { post, locale, class: className } = Astro.props
+const t = createI18n(locale)
+
 const { headings } = await render(post)
 const filteredHeadings = headings.filter((h) => h.depth <= 3)
-const t = createI18n(locale)
 ---
 
 {filteredHeadings.length > 0 && (

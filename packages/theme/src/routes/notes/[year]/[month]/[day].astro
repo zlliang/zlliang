@@ -14,6 +14,7 @@ import { getArchiveBounds, getDayNotesPath, getMonthNotesPath, pad, parseDay, pa
 import { paginate, parsePageParam, shouldRedirectPagination } from "../../../../content/pagination"
 
 const t = createI18n()
+
 const notes = await getNotes()
 
 const { year: yearSegment, month: monthSegment, day: daySegment } = Astro.params

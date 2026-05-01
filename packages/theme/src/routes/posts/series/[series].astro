@@ -7,6 +7,7 @@ import { createI18n } from "../../../i18n"
 import { getPosts, getSeries, getSeriesById, filterPostsInSeries } from "../../../content"
 
 const t = createI18n()
+
 const { series: slug } = Astro.params
 if (!slug || !(await getSeries()).some((series) => series.id === slug)) {
   return Astro.rewrite("/404")

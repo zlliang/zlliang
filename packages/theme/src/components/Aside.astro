@@ -20,6 +20,7 @@ interface Props {
 
 const { locale, showSearch = true, showRecentPosts = true, class: className } = Astro.props
 const t = createI18n(locale)
+
 const notes = await getNotes()
 const posts = await getPosts()
 const pinnedPosts = await getPinnedPosts()

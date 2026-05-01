@@ -13,6 +13,7 @@ import type { SearchSort } from "../content/search"
 Astro.response.headers.set("Cache-Control", "public, max-age=0, s-maxage=60")
 
 const t = createI18n()
+
 const searchParams = Astro.url.searchParams
 const q = searchParams.get("q")?.trim() ?? ""
 const page = parsePageParam(searchParams.get("page"))

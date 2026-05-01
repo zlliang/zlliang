@@ -3,8 +3,8 @@ import { render } from "astro:content"
 
 import PageTitle from "./PageTitle.astro"
 
-import { getSeriesById } from "../content"
 import { createI18n } from "../i18n"
+import { getSeriesById } from "../content"
 
 import type { CollectionEntry } from "astro:content"
 import type { Locale } from "../i18n"
@@ -15,9 +15,10 @@ interface Props {
 }
 
 const { post, locale } = Astro.props
+const t = createI18n(locale)
+
 const series = post.data.series ? await getSeriesById(post.data.series.id) : null
 const { Content } = await render(post)
-const t = createI18n(locale)
 ---
 
 <div class="post-content">
