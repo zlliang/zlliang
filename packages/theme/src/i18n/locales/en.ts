@@ -35,6 +35,18 @@ const tokens: Tokens = {
   nextNote: "Next note",
   previousNote: "Previous note",
 
+  // Threads
+  threads: "Threads",
+  thread: "Thread",
+  threadsUnit: (n) => `${n} threads`,
+  threadsCountSubtitle: (n) => `${n} total`,
+  notesInThreadUnit: (n) => `${n} notes in this thread`,
+  viewAllNotesInThread: (n) => `View all ${n} notes in this thread`,
+  threadsEmpty: "No threads found.",
+  threadLatestActivity: (date) => `Active ${format(date, "PP")}`,
+  threadNoActivity: "No activity yet",
+  backToAllThreads: "Back to all threads",
+
   // Posts
   posts: "Posts",
   postsUnit: (n) => `${n} total`,

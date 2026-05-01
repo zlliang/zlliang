@@ -1,0 +1,56 @@
+---
+import PageTitle from "../../../components/PageTitle.astro"
+import Layout from "../../../components/Layout.astro"
+import NoteList from "../../../components/NoteList.astro"
+
+import { createI18n } from "../../../i18n"
+import { filterNotesInThread, getNotes, getThreadById, getThreads } from "../../../content"
+import { paginate, parsePageParam, shouldRedirectPagination } from "../../../content/pagination"
+
+const t = createI18n()
+
+const { thread: slug } = Astro.params
+if (!slug) {
+  return Astro.rewrite("/404")
+}
+
+const thread = await getThreadById(slug)
+if (!thread) {
+  return Astro.rewrite("/404")
+}
+
+const notes = filterNotesInThread(await getNotes(), thread.id, await getThreads())
+
+const searchParams = Astro.url.searchParams
+const page = parsePageParam(searchParams.get("page"))
+
+function getPageUrl(page: number) {
+  const params = new URLSearchParams()
+
+  if (page > 1) {
+    params.set("page", page.toString())
+  }
+
+  return params.size > 0 ? `/notes/threads/${thread.id}?${params}` : `/notes/threads/${thread.id}`
+}
+
+const pagination = paginate(notes, page, getPageUrl)
+if (shouldRedirectPagination(searchParams, page, pagination)) {
+  return Astro.redirect(pagination.url.current)
+}
+---
+
+<Layout title={thread.data.title}>
+  <PageTitle>
+    <Fragment>{thread.data.title}</Fragment>
+    <div slot="subtitle" class="space-y-1">
+      {thread.data.description && <div>{thread.data.description}</div>}
+      <div class="flex justify-between">
+        <div>{t.notesInThreadUnit(pagination.total)}</div>
+        <a href="/notes/threads"><span class="icon-[lucide--corner-left-up]" /> {t.backToAllThreads}</a>
+      </div>
+    </div>
+  </PageTitle>
+
+  {pagination.data.length > 0 ? <NoteList notes={pagination.data} pagination={pagination} /> : <p class="text-neutral-500">{t.notesEmpty}</p>}
+</Layout>

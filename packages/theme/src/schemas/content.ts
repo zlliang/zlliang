@@ -8,8 +8,18 @@ const notes = defineCollection({
     number: z.number().int(),
     title: z.string().min(1).optional(),
     created: z.coerce.date(),
+    thread: reference("threads").optional(),
     post: reference("posts").optional(),
     draft: z.boolean().default(false),
+  }),
+})
+
+const threads = defineCollection({
+  loader: file("content/notes/threads.json"),
+  schema: z.object({
+    title: z.string().min(1),
+    description: z.string().optional(),
+    parent: reference("threads").optional(),
   }),
 })
 
@@ -34,6 +44,7 @@ const series = defineCollection({
 
 export const collections = {
   notes,
+  threads,
   posts,
   series,
 }

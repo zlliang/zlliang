@@ -21,6 +21,8 @@ const routes = [
   { pattern: "/image", entrypoint: "./routes/image.astro" },
   { pattern: "/search", entrypoint: "./routes/search.astro" },
   { pattern: "/notes", entrypoint: "./routes/notes/index.astro" },
+  { pattern: "/notes/threads", entrypoint: "./routes/notes/threads/index.astro" },
+  { pattern: "/notes/threads/[thread]", entrypoint: "./routes/notes/threads/[thread].astro" },
   { pattern: "/notes/[...slug]", entrypoint: "./routes/notes/[...slug].astro" },
   { pattern: "/notes/[year]", entrypoint: "./routes/notes/[year]/index.astro" },
   { pattern: "/notes/[year]/[month]", entrypoint: "./routes/notes/[year]/[month]/index.astro" },

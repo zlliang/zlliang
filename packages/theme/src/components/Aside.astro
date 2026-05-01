@@ -5,7 +5,7 @@ import SearchForm from "./SearchForm.astro"
 import Heatmap from "./Heatmap.astro"
 
 import { createI18n } from "../i18n"
-import { getNotes, getPosts, getPinnedPosts, getSeries } from "../content"
+import { getNotes, getThreads, getPosts, getPinnedPosts, getSeries } from "../content"
 import { RECENT_POSTS_COUNT } from "../content/constants"
 import { cn } from "../styles"
 
@@ -22,6 +22,7 @@ const { locale, showSearch = true, showRecentPosts = true, class: className } = 
 const t = createI18n(locale)
 
 const notes = await getNotes()
+const threads = await getThreads()
 const posts = await getPosts()
 const pinnedPosts = await getPinnedPosts()
 const recentPosts = posts.slice(0, RECENT_POSTS_COUNT)
@@ -37,7 +38,7 @@ const series = await getSeries()
     <div class="flex justify-between items-center mb-1">
       <a href="/notes"><span class="icon-[lucide--notebook-pen]" /> {t.notes}</a>
       <span class="text-sm text-neutral-500">
-        <span>{t.notesUnit(notes.length)}</span>
+        <span>{t.notesUnit(notes.length)}</span><span class="icon-[lucide--dot]" /><a href="/notes/threads">{t.threadsUnit(threads.length)}</a>
       </span>
     </div>
     <div class="flex justify-between items-center">
