@@ -19,11 +19,7 @@ const from = rawFrom?.startsWith("/") ? rawFrom : null
   <img src={src} alt={caption} class="w-full" />
   <div class="flex justify-between gap-6 mt-4">
     <div class="text-neutral-500">{caption}</div>
-    {Boolean(from) && (
-      <a id="back" href={from} class="shrink-0">
-        <span class="icon-[lucide--arrow-left]" /> {t.back}
-      </a>
-    )}
+    {Boolean(from) && <a id="back" href={from} class="shrink-0"><span class="icon-[lucide--arrow-left]" /> {t.back}</a>}
   </div>
 </Layout>
 

@@ -9,7 +9,8 @@ import { getPosts, getSeries, filterPostsInSeries } from "../../../content/conte
 const t = createI18n()
 const series = await getSeries()
 const posts = await getPosts()
-const title = t.seriesTitle
+
+const title = t.series
 ---
 
 <Layout title={title} showRecentPosts={false}>
@@ -19,7 +20,7 @@ const title = t.seriesTitle
       <div>{t.seriesCountSubtitle(series.length)}</div>
       <div class="flex justify-between gap-4">
         <span>{t.oldestFirst}</span>
-        <a href="/posts"><span class="icon-[lucide--corner-left-up]" /> {t.morePostsBackToAll}</a>
+        <a href="/posts"><span class="icon-[lucide--corner-left-up]" /> {t.backToAllPosts}</a>
       </div>
     </div>
   </PageTitle>

@@ -36,7 +36,7 @@ const title = series ? `${series.data.title} / ${post.data.title}` : post.data.t
     <div class="grid grid-cols-2 mt-16">
       {next && (
         <div class={cn("col-start-1 pr-4 text-neutral-500", !previous && "border-r border-neutral-200 dark:border-neutral-800")}>
-          <div class="text-sm mb-0.5">{t.next}</div>
+          <div class="text-sm mb-0.5">{t.nextPost}</div>
           <PostTitle post={next} class="mb-0.5" />
           <div class="text-sm">
             <span>{t.formatDate(next.data.created)}</span>
@@ -45,7 +45,7 @@ const title = series ? `${series.data.title} / ${post.data.title}` : post.data.t
       )}
       {previous && (
         <div class="col-start-2 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-right text-neutral-500">
-          <div class="text-sm mb-0.5">{t.previous}</div>
+          <div class="text-sm mb-0.5">{t.previousPost}</div>
           <PostTitle post={previous} class="mb-0.5" />
           <div class="text-sm">
             <span>{t.formatDate(previous.data.created)}</span>

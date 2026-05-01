@@ -4,69 +4,58 @@ export interface Tokens {
   formatDate: (date: Date) => string
 
   // Search
-  searchPlaceholder: string
-  searchAriaLabel: string
   searchTitle: string
   searchTitleWithQuery: (query: string) => string
   searchSubtitleEmpty: string
   searchSubtitleCount: (count: number) => string
+  searchPlaceholder: string
   searchSortedBy: string
   searchSortRelevance: string
   searchSortDate: string
   searchNoResults: (query: string) => string
 
-  // Navigation
-  about: string
-  explore: string
-  archive: string
-  back: string
-  next: string
-  previous: string
-  morePostsBackToAll: string
-  backToAllNotes: string
-  backToYear: (year: number) => string
-  backToMonth: (date: Date) => string
-  backToAllSeries: string
-
-  // Content labels and counts
-  notes: string
-  posts: string
-  series: string
-  notesUnit: (count: number) => string
-  postsUnit: (count: number) => string
-  seriesUnit: (count: number) => string
-  notesCountSubtitle: (count: number) => string
-  postsCountSubtitle: (count: number) => string
-  seriesCountSubtitle: (count: number) => string
-  postsInSeriesUnit: (count: number) => string
-
   // Notes
-  noteDraft: string
+  notes: string
   noteUntitled: string
+  notesUnit: (count: number) => string
+  notesCountSubtitle: (count: number) => string
   notesEmpty: string
   noteIdLabel: (number: number) => string
   moreNotes: (count: number) => string
-  notesIndexTitle: string
   notesYearTitle: (year: number) => string
   notesMonthTitle: (date: Date) => string
   notesDayTitle: (date: Date) => string
+  backToAllNotes: string
+  backToYear: (year: number) => string
+  backToMonth: (date: Date) => string
+  nextNote: string
+  previousNote: string
 
   // Posts
+  posts: string
+  postsUnit: (count: number) => string
+  postsCountSubtitle: (count: number) => string
+  postsEmpty: string
   pinnedPosts: string
   recentPosts: string
-  postDraft: string
-  postsEmpty: string
-  readPost: string
-  postsTitle: string
   tableOfContents: string
+  backToAllPosts: string
+  readPost: string
+  nextPost: string
+  previousPost: string
 
   // Series
+  series: string
+  seriesUnit: (count: number) => string
+  seriesCountSubtitle: (count: number) => string
+  postsInSeriesUnit: (count: number) => string
   seriesEmpty: string
-  seriesTitle: string
   partOfSeries: string
   oldestFirst: string
+  backToAllSeries: string
 
   // Archive
+  archive: string
   yearsLabel: string
   yearLabel: (year: number) => string
   monthYearLabel: (date: Date) => string
@@ -84,6 +73,9 @@ export interface Tokens {
   builtWithPrefix: string
   builtWithSuffix: string
   pageLabel: string
+  explore: string
+  back: string
+  draft: string
   notFoundBack: string
   imageTitle: (caption: string | null | undefined) => string
 }

@@ -28,5 +28,6 @@ const posts = filterPostsInSeries(await getPosts(), series.id)
     </div>
   </PageTitle>
 
+  {series.data.description && <p>{series.data.description}</p>}
   {posts.length > 0 ? <PostList posts={posts} showSeries={false} /> : <p class="text-neutral-500">{t.postsEmpty}</p>}
 </Layout>

@@ -29,11 +29,11 @@ const t = createI18n(locale)
   </div>
 
   <div class="flex justify-between items-center gap-2">
-    <div class="flex items-center text-sm text-neutral-500">
+    <div class="text-sm text-neutral-500">
       {showLink ? <a href={`/notes/${note.id}`}>#{note.data.number}</a> : <span>#{note.data.number}</span>}
       <span class="icon-[lucide--dot]" />
       <span>{t.formatDate(note.data.created)}</span>
-      {note.data.draft && <span class="ml-2 text-amber-600 dark:text-amber-400">{t.noteDraft}</span>}
+      {note.data.draft && <span class="ml-2 text-amber-600 dark:text-amber-400">{t.draft}</span>}
     </div>
     {post && <a href={`/posts/${post.id}`} class="text-sm">{t.readPost} <span class="icon-[lucide--arrow-right] translate-y-px" /></a>}
   </div>

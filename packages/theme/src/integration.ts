@@ -85,6 +85,7 @@ export default function theme(themeConfig: ThemeConfig): AstroIntegration {
               footnoteBackContent: "↵",
             },
           },
+          compressHTML: "jsx",
           vite: {
             plugins: [
               virtualConfigPlugin(serializedConfig),

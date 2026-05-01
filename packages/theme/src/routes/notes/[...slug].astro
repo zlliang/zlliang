@@ -32,19 +32,23 @@ const title = [note.data.title || post?.data.title, t.noteIdLabel(note.data.numb
     <div class="grid grid-cols-2 mt-16">
       {next && (
         <div class={cn("col-start-1 pr-4 text-neutral-500", !previous && "border-r border-neutral-200 dark:border-neutral-800")} >
-          <div class="text-sm mb-0.5">{t.next}</div>
+          <div class="text-sm mb-0.5">{t.nextNote}</div>
           <a href={`/notes/${next.id}`} class="block mb-0.5">{next.data.title || t.noteUntitled}</a>
           <div class="text-sm">
-            <span>{t.formatDate(next.data.created)}</span><span class="icon-[lucide--dot]" /><span>#{next.data.number}</span>
+            <span>{t.formatDate(next.data.created)}</span>
+            <span class="icon-[lucide--dot]" />
+            <span>#{next.data.number}</span>
           </div>
         </div>
       )}
       {previous && (
         <div class="col-start-2 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-right text-neutral-500">
-          <div class="text-sm mb-0.5">{t.previous}</div>
+          <div class="text-sm mb-0.5">{t.previousNote}</div>
           <a href={`/notes/${previous.id}`} class="block mb-0.5">{previous.data.title || t.noteUntitled}</a>
           <div class="text-sm">
-            <span>#{previous.data.number}</span><span class="icon-[lucide--dot]" /><span>{t.formatDate(previous.data.created)}</span>
+            <span>#{previous.data.number}</span>
+            <span class="icon-[lucide--dot]" />
+            <span>{t.formatDate(previous.data.created)}</span>
           </div>
         </div>
       )}

@@ -24,10 +24,10 @@ const t = createI18n(locale)
     <div class={cn("@xl:flex justify-between items-start gap-4", index !== posts.length - 1 && "mb-1.5 pb-1.5 border-b border-neutral-200 dark:border-neutral-800")}>
       <PostTitle post={post} current={post.id === current} showSeries={showSeries} />
       {showMeta && (
-        <span class="shrink-0 text-sm text-neutral-500 @xl:translate-y-0.5">
+        <span class="shrink-0 space-x-1 text-sm text-neutral-500 @xl:translate-y-0.5">
           <span>{t.formatDate(post.data.created)}</span>
           {post.data.pinned && <span class="icon-[lucide--pin]" />}
-          {post.data.draft && <span class="ml-1 text-amber-600 dark:text-amber-400">{t.postDraft}</span>}
+          {post.data.draft && <span class="text-amber-600 dark:text-amber-400">{t.draft}</span>}
         </span>
       )}
     </div>
