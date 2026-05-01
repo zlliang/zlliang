@@ -23,10 +23,23 @@ if (!post) {
 
 const series = post.data.series ? await getSeriesById(post.data.series.id) : null
 const posts = series ? filterPostsInSeries(await getPosts(), series.id) : null
+
 const adjacent = await getAdjacentPosts(slug)
 const next = adjacent?.next ?? null
 const previous = adjacent?.previous ?? null
 const title = series ? `${series.data.title} / ${post.data.title}` : post.data.title
+
+const SERIES_WINDOW_SIZE = 7
+let visiblePosts = posts
+let seriesTruncated = false
+if (posts && posts.length > SERIES_WINDOW_SIZE) {
+  const half = Math.floor(SERIES_WINDOW_SIZE / 2)
+  const currentIndex = posts.findIndex((p) => p.id === post.id)
+  const end = Math.min(posts.length, Math.max(currentIndex + half + 1, SERIES_WINDOW_SIZE))
+  const start = Math.max(0, end - SERIES_WINDOW_SIZE)
+  visiblePosts = posts.slice(start, end)
+  seriesTruncated = true
+}
 ---
 
 <Layout title={title}>
@@ -57,13 +70,18 @@ const title = series ? `${series.data.title} / ${post.data.title}` : post.data.t
 
   <Fragment slot="aside-start">
     <TableOfContents post={post} class="hidden lg:block" />
-    {series && posts && (
+    {series && posts && visiblePosts && (
       <Section>
         <div slot="title" class="flex justify-between">
           <span>{t.series}: <a href={`/posts/series/${series.id}`}>{series.data.title}</a></span>
           <span>{t.oldestFirst}</span>
         </div>
-        <PostList posts={posts} current={post.id} showSeries={false} />
+        <PostList posts={visiblePosts} current={post.id} showSeries={false} />
+        {seriesTruncated && (
+          <div class="mt-4 text-sm text-neutral-500">
+            <a href={`/posts/series/${series.id}`}>{t.viewAllPostsInSeries(posts.length)}</a>
+          </div>
+        )}
       </Section>
     )}
   </Fragment>

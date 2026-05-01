@@ -53,6 +53,7 @@ const tokens: Tokens = {
   seriesUnit: (n) => `${n} series`,
   seriesCountSubtitle: (n) => `${n} total`,
   postsInSeriesUnit: (n) => `${n} posts in this series`,
+  viewAllPostsInSeries: (n) => `View all ${n} posts in this series`,
   seriesEmpty: "No series found.",
   partOfSeries: "Part of the series: ",
   oldestFirst: "Oldest first",

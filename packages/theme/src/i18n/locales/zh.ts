@@ -53,6 +53,7 @@ const tokens: Tokens = {
   seriesUnit: (n) => `${n} 个系列`,
   seriesCountSubtitle: (n) => `共 ${n} 个`,
   postsInSeriesUnit: (n) => `系列文章共 ${n} 篇`,
+  viewAllPostsInSeries: (n) => `查看系列全部 ${n} 篇文章`,
   seriesEmpty: "暂无系列。",
   partOfSeries: "连载于系列：",
   oldestFirst: "按时间顺序排列",

@@ -49,6 +49,7 @@ export interface Tokens {
   seriesUnit: (count: number) => string
   seriesCountSubtitle: (count: number) => string
   postsInSeriesUnit: (count: number) => string
+  viewAllPostsInSeries: (count: number) => string
   seriesEmpty: string
   partOfSeries: string
   oldestFirst: string
