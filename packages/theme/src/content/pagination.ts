@@ -1,4 +1,4 @@
-export const NOTES_PER_PAGE = 20
+import { NOTES_PER_PAGE } from "./constants"
 
 interface PaginationUrls {
   current: string

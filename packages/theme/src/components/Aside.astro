@@ -4,9 +4,10 @@ import PostList from "./PostList.astro"
 import SearchForm from "./SearchForm.astro"
 import Heatmap from "./Heatmap.astro"
 
-import { cn } from "../styles"
 import { createI18n } from "../i18n"
-import { getNotes, getPosts, getPinnedPosts, getSeries } from "../content/content"
+import { getNotes, getPosts, getPinnedPosts, getSeries } from "../content"
+import { RECENT_POSTS_COUNT } from "../content/constants"
+import { cn } from "../styles"
 
 import type { Locale } from "../i18n"
 
@@ -22,7 +23,7 @@ const t = createI18n(locale)
 const notes = await getNotes()
 const posts = await getPosts()
 const pinnedPosts = await getPinnedPosts()
-const recentPosts = posts.slice(0, 10)
+const recentPosts = posts.slice(0, RECENT_POSTS_COUNT)
 const series = await getSeries()
 ---
 

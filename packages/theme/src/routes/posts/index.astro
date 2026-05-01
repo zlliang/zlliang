@@ -4,7 +4,7 @@ import Layout from "../../components/Layout.astro"
 import PostList from "../../components/PostList.astro"
 
 import { createI18n } from "../../i18n"
-import { getPosts } from "../../content/content"
+import { getPosts } from "../../content"
 
 const t = createI18n()
 const posts = await getPosts()

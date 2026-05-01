@@ -2,9 +2,9 @@
 import Layout from "../../components/Layout.astro"
 import NoteContent from "../../components/NoteContent.astro"
 
-import { cn } from "../../styles"
 import { createI18n } from "../../i18n"
-import { getAdjacentNotes, getNoteById, getPostById } from "../../content/content"
+import { getAdjacentNotes, getNoteById, getPostById } from "../../content"
+import { cn } from "../../styles"
 
 const t = createI18n()
 const { slug } = Astro.params
