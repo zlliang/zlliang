@@ -11,8 +11,11 @@
     "./components/SiteCard.astro": "./src/components/SiteCard.astro"
   },
   "dependencies": {
+    "@iconify-json/lucide": "^1.2.100",
+    "@iconify-json/simple-icons": "^1.2.75",
+    "@iconify/tailwind4": "^1.2.3",
+    "@tailwindcss/vite": "^4.2.1",
     "@vercel/analytics": "^2.0.1",
-    "@vercel/speed-insights": "^2.0.0",
     "@zlliang/data": "workspace:*",
     "@zlliang/markdown": "workspace:*",
     "clsx": "^2.1.1",
@@ -22,18 +25,10 @@
     "tailwind-merge": "^3.5.0"
   },
   "peerDependencies": {
-    "@iconify-json/lucide": "^1.2.100",
-    "@iconify-json/simple-icons": "^1.2.75",
-    "@iconify/tailwind4": "^1.2.3",
-    "@tailwindcss/vite": "^4.2.1",
-    "astro": "^6.1.10",
-    "tailwindcss": "^4.2.1"
+    "astro": "^6.2.1",
+    "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
-    "@iconify-json/lucide": "^1.2.105",
-    "@iconify-json/simple-icons": "^1.2.80",
-    "@iconify/tailwind4": "^1.2.3",
-    "@tailwindcss/vite": "^4.2.4",
     "@types/lodash-es": "^4.17.12",
     "astro": "^6.2.1",
     "tailwindcss": "^4.2.4",

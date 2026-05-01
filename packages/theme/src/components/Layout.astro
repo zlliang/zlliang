@@ -1,7 +1,6 @@
 ---
 import { Font } from "astro:assets"
 import VercelWebAnalytics from "@vercel/analytics/astro"
-import VercelSpeedInsights from "@vercel/speed-insights/astro"
 
 import Header from "./Header.astro"
 import Footer from "./Footer.astro"
@@ -124,6 +123,5 @@ const t = createI18n(locale)
 
   {/* Vercel */}
   <VercelWebAnalytics />
-  <VercelSpeedInsights />
 </body>
 </html>
