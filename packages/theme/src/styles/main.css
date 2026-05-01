@@ -172,7 +172,7 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 }
 
 pre {
-  @apply mb-4 px-4 py-3 border border-neutral-200 dark:border-neutral-800 text-sm;
+  @apply mb-4 px-3 py-2 border border-neutral-200 dark:border-neutral-800 text-sm;
 }
 
 pre code {
@@ -208,7 +208,7 @@ pre code {
 /* Code title */
 
 .remark-code-title {
-  @apply px-4 py-1.5 border border-b-0 border-neutral-200 dark:border-neutral-800 font-mono text-sm text-neutral-500;
+  @apply px-3 py-1 bg-neutral-50 dark:bg-neutral-900 border border-b-0 border-neutral-200 dark:border-neutral-800 font-mono text-sm text-neutral-500;
 }
 
 /* Table */
