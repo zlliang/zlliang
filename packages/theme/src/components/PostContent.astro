@@ -25,10 +25,10 @@ const { Content } = await render(post)
 <div class="post-content">
   <PageTitle>
     <Fragment>{post.data.title}</Fragment>
-    <div slot="subtitle" class="space-x-1">
+    <div slot="subtitle" class="space-x-2">
       <span>{t.formatDate(post.data.created)}</span>
-      {post.data.pinned && <span class="icon-[lucide--pin]" />}
-      {series && <span class="px-1">{t.partOfSeries}<a href={`/posts/series/${series.id}`}>{series.data.title}</a></span>}
+      {post.data.pinned && <span class="icon-[lucide--pin] -ml-1" />}
+      {series && <span>{t.partOfSeries}<a href={`/posts/series/${series.id}`}>{series.data.title}</a></span>}
       {post.data.draft && <span class="text-amber-600 dark:text-amber-400">{t.draft}</span>}
       <ContentEditButton filePath={post.filePath} />
     </div>

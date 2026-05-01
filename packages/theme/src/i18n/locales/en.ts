@@ -81,6 +81,7 @@ const tokens: Tokens = {
   explore: "Explore",
   back: "Back",
   draft: "Draft",
+  edit: "Edit",
   notFoundBack: "Back to home",
   imageTitle: (caption) => (caption ? `Image: ${caption}` : "Image"),
 }

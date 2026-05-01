@@ -81,6 +81,7 @@ const tokens: Tokens = {
   explore: "探索",
   back: "返回",
   draft: "草稿",
+  edit: "编辑",
   notFoundBack: "返回首页",
   imageTitle: (caption) => (caption ? `图片：${caption}` : "图片"),
 }

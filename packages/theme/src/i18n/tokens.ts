@@ -77,6 +77,7 @@ export interface Tokens {
   explore: string
   back: string
   draft: string
+  edit: string
   notFoundBack: string
   imageTitle: (caption: string | null | undefined) => string
 }

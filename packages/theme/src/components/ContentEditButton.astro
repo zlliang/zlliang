@@ -1,19 +1,26 @@
 ---
 import path from "node:path"
 
+import { createI18n } from "../i18n"
+
+import type { Locale } from "../i18n"
+
 interface Props {
   filePath?: string
+  locale?: Locale
 }
 
-const { filePath } = Astro.props
+const { filePath, locale } = Astro.props
+const t = createI18n(locale)
+
 const editUrl = import.meta.env.DEV && filePath ? encodeURI(`vscode://file/${path.resolve(process.cwd(), filePath)}`) : null
 ---
 
 {
   editUrl && (
-    <a href={editUrl}>
+    <a href={editUrl} class="opacity-70">
       <span class="icon-[lucide--square-pen]" />
-      <span class="ml-1">Edit</span>
+      <span class="ml-1">{t.edit}</span>
     </a>
   )
 }
