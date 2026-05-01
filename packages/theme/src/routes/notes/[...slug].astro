@@ -1,9 +1,11 @@
 ---
 import Layout from "../../components/Layout.astro"
 import NoteContent from "../../components/NoteContent.astro"
+import Section from "../../components/Section.astro"
 
 import { createI18n } from "../../i18n"
-import { getAdjacentNotes, getNoteById, getPostById } from "../../content"
+import { filterNotesInThread, getAdjacentNotes, getNoteById, getNotes, getPostById, getThreadById, getThreads } from "../../content"
+import { THREAD_WINDOW_SIZE } from "../../content/constants"
 import { cn } from "../../styles"
 
 const t = createI18n()
@@ -21,9 +23,22 @@ if (!note) {
 const adjacent = await getAdjacentNotes(slug)
 const next = adjacent?.next ?? null
 const previous = adjacent?.previous ?? null
+const thread = note.data.thread ? await getThreadById(note.data.thread.id) : null
+const threadNotes = thread ? filterNotesInThread(await getNotes(), thread.id, await getThreads()) : null
 const post = note.data.post ? await getPostById(note.data.post.id) : null
 
 const title = [note.data.title || post?.data.title, t.noteIdLabel(note.data.number)].filter(Boolean).join(" - ")
+
+let visibleThreadNotes = threadNotes
+let threadTruncated = false
+if (threadNotes && threadNotes.length > THREAD_WINDOW_SIZE) {
+  const half = Math.floor(THREAD_WINDOW_SIZE / 2)
+  const currentIndex = threadNotes.findIndex((item) => item.id === note.id)
+  const end = Math.min(threadNotes.length, Math.max(currentIndex + half + 1, THREAD_WINDOW_SIZE))
+  const start = Math.max(0, end - THREAD_WINDOW_SIZE)
+  visibleThreadNotes = threadNotes.slice(start, end)
+  threadTruncated = true
+}
 ---
 
 <Layout title={title}>
@@ -54,5 +69,37 @@ const title = [note.data.title || post?.data.title, t.noteIdLabel(note.data.numb
         </div>
       )}
     </div>
+  )}
+
+  {thread && threadNotes && visibleThreadNotes && (
+    <Fragment slot="aside-start">
+      <Section>
+        <div slot="title" class="flex justify-between">
+          <span>{t.thread}: <a href={`/notes/threads/${thread.id}`}>{thread.data.title}</a></span>
+          <span>{t.notesUnit(threadNotes.length)}</span>
+        </div>
+        <div>
+          {visibleThreadNotes.map((item, index) => (
+            <div class={cn(index !== visibleThreadNotes.length - 1 && "mb-1.5 pb-1.5 border-b border-neutral-200 dark:border-neutral-800")}>
+              {item.id === note.id ? (
+                <span class="font-bold">{item.data.title || t.noteUntitled}</span>
+              ) : (
+                <a href={`/notes/${item.id}`}>{item.data.title || t.noteUntitled}</a>
+              )}
+              <div class="text-sm text-neutral-500">
+                <span>{t.formatDate(item.data.created)}</span>
+                <span class="icon-[lucide--dot]" />
+                <span>#{item.data.number}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        {threadTruncated && (
+          <div class="mt-4 text-sm text-neutral-500">
+            <a href={`/notes/threads/${thread.id}`}>{t.viewAllNotesInThread(threadNotes.length)}</a>
+          </div>
+        )}
+      </Section>
+    </Fragment>
   )}
 </Layout>

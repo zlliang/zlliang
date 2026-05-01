@@ -31,6 +31,18 @@ export interface Tokens {
   nextNote: string
   previousNote: string
 
+  // Threads
+  threads: string
+  thread: string
+  threadsUnit: (count: number) => string
+  threadsCountSubtitle: (count: number) => string
+  notesInThreadUnit: (count: number) => string
+  viewAllNotesInThread: (count: number) => string
+  threadsEmpty: string
+  threadLatestActivity: (date: Date) => string
+  threadNoActivity: string
+  backToAllThreads: string
+
   // Posts
   posts: string
   postsUnit: (count: number) => string

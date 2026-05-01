@@ -35,6 +35,18 @@ const tokens: Tokens = {
   nextNote: "下一则",
   previousNote: "上一则",
 
+  // Threads
+  threads: "线索",
+  thread: "线索",
+  threadsUnit: (n) => `${n} 条线索`,
+  threadsCountSubtitle: (n) => `共 ${n} 条`,
+  notesInThreadUnit: (n) => `线索手记共 ${n} 则`,
+  viewAllNotesInThread: (n) => `查看线索全部 ${n} 则手记`,
+  threadsEmpty: "暂无线索。",
+  threadLatestActivity: (date) => `活跃于 ${format(date, "yyyy 年 M 月 d 日")}`,
+  threadNoActivity: "暂无活动",
+  backToAllThreads: "返回全部线索",
+
   // Posts
   posts: "文章",
   postsUnit: (n) => `${n} 篇`,

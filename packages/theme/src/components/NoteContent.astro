@@ -4,7 +4,7 @@ import { render } from "astro:content"
 import PostTitle from "./PostTitle.astro"
 
 import { createI18n } from "../i18n"
-import { getPostById } from "../content"
+import { getPostById, getThreadById } from "../content"
 
 import type { CollectionEntry } from "astro:content"
 import type { Locale } from "../i18n"
@@ -19,6 +19,7 @@ const { note, showLink = true, locale } = Astro.props
 const t = createI18n(locale)
 
 const { Content } = await render(note)
+const thread = note.data.thread ? await getThreadById(note.data.thread.id) : null
 const post = note.data.post ? await getPostById(note.data.post.id) : null
 ---
 
@@ -34,6 +35,12 @@ const post = note.data.post ? await getPostById(note.data.post.id) : null
       {showLink ? <a href={`/notes/${note.id}`}>#{note.data.number}</a> : <span>#{note.data.number}</span>}
       <span class="icon-[lucide--dot]" />
       <span>{t.formatDate(note.data.created)}</span>
+      {thread && (
+        <>
+          <span class="icon-[lucide--dot]" />
+          <a href={`/notes/threads/${thread.id}`}>{thread.data.title}</a>
+        </>
+      )}
       {note.data.draft && <span class="ml-2 text-amber-600 dark:text-amber-400">{t.draft}</span>}
     </div>
     {post && <a href={`/posts/${post.id}`} class="text-sm">{t.readPost} <span class="icon-[lucide--arrow-right] translate-y-px" /></a>}

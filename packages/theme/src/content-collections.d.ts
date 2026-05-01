@@ -32,6 +32,14 @@ declare module "astro:content" {
 			rendered?: RenderedContent
 			filePath?: string
 		}>
+		threads: Record<string, {
+			id: string
+			body?: string
+			collection: "threads"
+			data: InferEntrySchema<"threads">
+			rendered?: RenderedContent
+			filePath?: string
+		}>
 		posts: Record<string, {
 			id: string
 			body?: string

@@ -1,0 +1,93 @@
+---
+import PageTitle from "../../../components/PageTitle.astro"
+import Layout from "../../../components/Layout.astro"
+
+import { createI18n } from "../../../i18n"
+import { buildThreadTree, getNotes, getThreads } from "../../../content"
+
+import type { ThreadTreeNode } from "../../../content"
+
+const t = createI18n()
+
+const notes = await getNotes()
+const threads = await getThreads()
+const tree = buildThreadTree(threads, notes)
+const nodes = tree.flatMap((node) => [node, ...node.children])
+const maxActivity = Math.max(...nodes.map((node) => node.activity.count), 0)
+
+function getActivityWidth(node: ThreadTreeNode) {
+  if (node.activity.count === 0 || maxActivity === 0) {
+    return "0%"
+  }
+
+  return `${Math.max(16, Math.round(node.activity.count / maxActivity * 100))}%`
+}
+
+const title = t.threads
+---
+
+<Layout title={title}>
+  <PageTitle>
+    <Fragment>{title}</Fragment>
+    <div slot="subtitle" class="flex justify-between gap-4">
+      <span>{t.threadsCountSubtitle(threads.length)}</span>
+      <a href="/notes"><span class="icon-[lucide--corner-left-up]" /> {t.backToAllNotes}</a>
+    </div>
+  </PageTitle>
+
+  {tree.length > 0 ? (
+    <div class="space-y-6">
+      {tree.map((node) => (
+        <section>
+          <a
+            href={`/notes/threads/${node.thread.id}`}
+            class="secondary group block px-4 py-3 border border-neutral-200 dark:border-neutral-800 hover:border-primary-400 dark:hover:border-primary-600 hover:bg-primary-50 dark:hover:bg-primary-950"
+          >
+            <div class="flex items-start justify-between gap-4">
+              <div class="font-bold">{node.thread.data.title}</div>
+              <div class="shrink-0 text-sm text-neutral-500 group-hover:text-primary-400 dark:group-hover:text-primary-600">{t.notesUnit(node.activity.count)}</div>
+            </div>
+            {node.thread.data.description && (
+              <div class="mt-2 text-sm text-neutral-500 group-hover:text-primary-400 dark:group-hover:text-primary-600">{node.thread.data.description}</div>
+            )}
+            <div class="mt-3 flex items-center gap-3">
+              <div class="h-1.5 flex-1 bg-neutral-100 dark:bg-neutral-800">
+                <div class="h-full bg-primary-400 dark:bg-primary-600" style={`width: ${getActivityWidth(node)}`} />
+              </div>
+              <div class="shrink-0 text-xs text-neutral-500 group-hover:text-primary-400 dark:group-hover:text-primary-600">
+                {node.activity.latestAt ? t.threadLatestActivity(node.activity.latestAt) : t.threadNoActivity}
+              </div>
+            </div>
+          </a>
+
+          {node.children.length > 0 && (
+            <div class="mt-2 ml-4 pl-4 space-y-2 border-l border-neutral-200 dark:border-neutral-800">
+              {node.children.map((child) => (
+                <a
+                  href={`/notes/threads/${child.thread.id}`}
+                  class="secondary group block px-4 py-3 border border-neutral-200 dark:border-neutral-800 hover:border-primary-400 dark:hover:border-primary-600 hover:bg-primary-50 dark:hover:bg-primary-950"
+                >
+                  <div class="flex items-start justify-between gap-4">
+                    <div class="font-bold">{child.thread.data.title}</div>
+                    <div class="shrink-0 text-sm text-neutral-500 group-hover:text-primary-400 dark:group-hover:text-primary-600">{t.notesUnit(child.activity.count)}</div>
+                  </div>
+                  {child.thread.data.description && (
+                    <div class="mt-2 text-sm text-neutral-500 group-hover:text-primary-400 dark:group-hover:text-primary-600">{child.thread.data.description}</div>
+                  )}
+                  <div class="mt-3 flex items-center gap-3">
+                    <div class="h-1.5 flex-1 bg-neutral-100 dark:bg-neutral-800">
+                      <div class="h-full bg-primary-400 dark:bg-primary-600" style={`width: ${getActivityWidth(child)}`} />
+                    </div>
+                    <div class="shrink-0 text-xs text-neutral-500 group-hover:text-primary-400 dark:group-hover:text-primary-600">
+                      {child.activity.latestAt ? t.threadLatestActivity(child.activity.latestAt) : t.threadNoActivity}
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          )}
+        </section>
+      ))}
+    </div>
+  ) : <p class="text-neutral-500">{t.threadsEmpty}</p>}
+</Layout>
