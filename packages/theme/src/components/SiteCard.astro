@@ -38,7 +38,7 @@ const secondaryClasses = {
       <div class={cn("shrink-0 text-sm", secondaryClasses[site])}>{localeLabel}</div>
     </div>
     <div class={cn("text-sm", secondaryClasses[site])}>{domain}</div>
-    <div class="mt-2 text-sm leading-6">
+    <div class="mt-2 text-sm leading-[var(--leading-prose)]">
       {descriptionLines.map((line) => <div>{line}</div>)}
     </div>
   </div>

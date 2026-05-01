@@ -22,7 +22,7 @@ const t = createI18n(locale)
   </Fragment>
 
   <Fragment slot="header-end">
-    {locales.filter((l) => l !== locale).map((l) => <a href={`/${l}/`}><span class="icon-[lucide--languages]" /> {t.localeDisplay}</a>)}
+    {locales.filter((l) => l !== locale).map((l) => <a href={`/${l}/`}><span class="icon-[lucide--languages]" /> {createI18n(l).localeDisplay}</a>)}
   </Fragment>
 
   <div class="mb-12">

@@ -6,14 +6,15 @@ import { createI18n } from "../i18n"
 import type { Locale } from "../i18n"
 
 interface Props {
+  title?: string
   locale: Locale
 }
 
-const { locale } = Astro.props
+const { title, locale } = Astro.props
 const t = createI18n(locale)
 ---
 
-<BaseLayout siteTitle={t.siteTitle} showAside={false} class="max-w-3xl">
+<BaseLayout title={title} siteTitle={t.siteTitle} showAside={false} locale={locale} class="max-w-3xl">
   <Fragment slot="head">
     <slot name="head" />
   </Fragment>

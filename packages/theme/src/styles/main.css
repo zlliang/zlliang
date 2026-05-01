@@ -15,8 +15,8 @@
 }
 
 @theme {
-  --leading-prose-en: 1.7;
-  --leading-prose-zh: 1.8;
+  --leading-prose-en: 1.6;
+  --leading-prose-zh: 1.7;
   --leading-prose: var(--leading-prose-en);
 }
 
