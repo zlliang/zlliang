@@ -115,9 +115,7 @@ export async function getSeriesById(id: string) {
   return series.find((series) => series.id === id) ?? null
 }
 
-/** Filter posts in a series, sorted by created date in ascending order */
+/** Filter posts in a series */
 export function filterPostsInSeries(posts: CollectionEntry<"posts">[], seriesId: string) {
-  return posts
-    .filter((post) => post.data.series?.id === seriesId)
-    .toSorted((a, b) => a.data.created.valueOf() - b.data.created.valueOf())
+  return posts.filter((post) => post.data.series?.id === seriesId)
 }

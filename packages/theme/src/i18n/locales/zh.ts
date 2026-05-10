@@ -56,7 +56,6 @@ const tokens: Tokens = {
   viewAllPostsInSeries: (n) => `查看系列全部 ${n} 篇文章`,
   seriesEmpty: "暂无系列。",
   partOfSeries: "连载于系列：",
-  oldestFirst: "按时间顺序排列",
   backToAllSeries: "返回全部系列",
 
   // Archive

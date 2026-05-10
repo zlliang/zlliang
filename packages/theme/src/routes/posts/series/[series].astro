@@ -20,12 +20,9 @@ const posts = filterPostsInSeries(await getPosts(), series.id)
 <Layout title={series.data.title}>
   <PageTitle>
     <Fragment>{series.data.title}</Fragment>
-    <div slot="subtitle" class="space-y-1">
+    <div slot="subtitle" class="flex justify-between gap-4">
       <div>{t.postsInSeriesUnit(posts.length)}</div>
-      <div class="flex justify-between">
-        <div>{t.oldestFirst}</div>
-        <a href="/posts/series"><span class="icon-[lucide--corner-left-up]" /> {t.backToAllSeries}</a>
-      </div>
+      <a href="/posts/series"><span class="icon-[lucide--corner-left-up]" /> {t.backToAllSeries}</a>
     </div>
   </PageTitle>
 

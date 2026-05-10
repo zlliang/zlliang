@@ -52,7 +52,6 @@ export interface Tokens {
   viewAllPostsInSeries: (count: number) => string
   seriesEmpty: string
   partOfSeries: string
-  oldestFirst: string
   backToAllSeries: string
 
   // Archive

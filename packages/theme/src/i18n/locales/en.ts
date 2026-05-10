@@ -56,7 +56,6 @@ const tokens: Tokens = {
   viewAllPostsInSeries: (n) => `View all ${n} posts in this series`,
   seriesEmpty: "No series found.",
   partOfSeries: "Part of the series: ",
-  oldestFirst: "Oldest first",
   backToAllSeries: "Back to all series",
 
   // Archive

@@ -73,9 +73,10 @@ if (posts && posts.length > SERIES_WINDOW_SIZE) {
     <TableOfContents post={post} class="hidden lg:block" />
     {series && posts && visiblePosts && (
       <Section>
-        <div slot="title" class="flex justify-between">
-          <span>{t.series}: <a href={`/posts/series/${series.id}`}>{series.data.title}</a></span>
-          <span>{t.oldestFirst}</span>
+        <div slot="title">
+          <span>{t.series}</span>
+          <span class="icon-[lucide--dot]" />
+          <a href={`/posts/series/${series.id}`}>{series.data.title}</a>
         </div>
         <PostList posts={visiblePosts} current={post.id} showSeries={false} />
         {seriesTruncated && (
