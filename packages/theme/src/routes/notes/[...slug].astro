@@ -22,7 +22,6 @@ const adjacent = await getAdjacentNotes(slug)
 const next = adjacent?.next ?? null
 const previous = adjacent?.previous ?? null
 const post = note.data.post ? await getPostById(note.data.post.id) : null
-
 const title = [note.data.title || post?.data.title, t.noteIdLabel(note.data.number)].filter(Boolean).join(" - ")
 ---
 
