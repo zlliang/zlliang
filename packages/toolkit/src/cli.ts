@@ -3,6 +3,7 @@ import { cac } from "cac"
 import { registerNewCommand } from "./commands/new"
 import { registerShipCommand } from "./commands/ship"
 import { registerOptimizeImageCommand } from "./commands/optimize-image"
+import { registerReplaceTextCommand } from "./commands/replace-text"
 
 import packageJson from "../package.json"
 
@@ -17,6 +18,7 @@ cli
 registerNewCommand(cli)
 registerShipCommand(cli)
 registerOptimizeImageCommand(cli)
+registerReplaceTextCommand(cli)
 
 if (process.argv.slice(2).length === 0) {
   cli.outputHelp()

@@ -29,7 +29,7 @@ const posts = series ? filterPostsInSeries(await getPosts(), series.id) : null
 const adjacent = await getAdjacentPosts(slug)
 const next = adjacent?.next ?? null
 const previous = adjacent?.previous ?? null
-const title = [series?.data.title, post.data.title].filter(Boolean).join(" · ")
+const title = [series?.data.title, post.data.title].filter(Boolean).join("・")
 
 let visiblePosts = posts
 let seriesTruncated = false

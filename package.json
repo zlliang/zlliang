@@ -17,7 +17,8 @@
     "toolkit:muse": "pnpm exec toolkit --dir websites/muse"
   },
   "lint-staged": {
-    "*.{jpg,jpeg,png,webp,avif}": "pnpm exec toolkit optimize-image"
+    "*.{jpg,jpeg,png,webp,avif}": "pnpm exec toolkit optimize-image",
+    "*.{astro,md,mdx}": "pnpm exec toolkit replace-text"
   },
   "devDependencies": {
     "@zlliang/toolkit": "workspace:*",
