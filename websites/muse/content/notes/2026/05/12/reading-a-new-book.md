@@ -8,4 +8,4 @@ created: 2026-05-12
 
 ![《富士日记》厚度更甚，有上中下三册](./images/fujinikki.jpg)
 
-[^1]: 2026 年 4 月 21 日手记：[三月的生活月刊](/notes/2026/04/21)
+[^1]: 2026 年 4 月 21 日手记：[三月的生活月刊](/notes/2026/04/21/writing-life-monthly-for-march)
