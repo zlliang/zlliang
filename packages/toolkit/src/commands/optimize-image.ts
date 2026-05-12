@@ -179,7 +179,6 @@ async function optimize(candidate: OptimizationCandidate): Promise<boolean> {
   }
 
   await fs.writeFile(candidate.absolutePath, output)
-
   process.stdout.write(`Optimized ${candidate.displayPath} (${prettyBytes(input.byteLength)} -> ${prettyBytes(output.byteLength)})\n`)
   return true
 }
