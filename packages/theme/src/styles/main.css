@@ -146,8 +146,8 @@ img {
   @apply mx-auto;
 }
 
-p > img {
-  @apply max-h-120 object-contain;
+p img {
+  @apply max-h-144 object-contain;
 }
 
 /* Code */
