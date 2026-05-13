@@ -8,7 +8,7 @@ export default defineConfig({
   output: "server",
   integrations: [
     theme({
-      title: `${authorData.en.author} / ${siteData.mesh.en.title}`,
+      title: `${authorData.en.author}・${siteData.mesh.en.title}`,
       locale: "en",
       color: "blue",
     }),

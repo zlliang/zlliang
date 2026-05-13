@@ -8,7 +8,7 @@ export default defineConfig({
   output: "server",
   integrations: [
     theme({
-      title: `${authorData.zh.author} / ${siteData.muse.zh.title}`,
+      title: `${authorData.zh.author}・${siteData.muse.zh.title}`,
       locale: "zh",
       color: "indigo",
     }),
