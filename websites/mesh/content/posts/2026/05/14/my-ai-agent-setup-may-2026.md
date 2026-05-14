@@ -23,7 +23,7 @@ Amp doesn't provide a model selector. Instead, it uses a managed approach that b
 
 Recently, the Amp team has been building the next version, [Amp Neo](https://ampcode.com/news/neo), and gradually rolling it out. By cutting features they do not see as part of the future and adding new ones, Amp stays close to the frontier of agentic engineering workflows.
 
-Amp uses pay-as-you-go pricing. Not cheap, to be honest, but the frontier experience is worth it. I got access to $10/day in free credits, which covers a large part of my daily usage.
+Amp uses pay-as-you-go pricing. Not cheap, to be honest, but the frontier experience is worth it. I got access to $10/day in [free credits](https://ampcode.com/free), which covers a large part of my daily usage.
 
 Here are my Amp settings:
 
