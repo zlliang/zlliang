@@ -11,8 +11,8 @@
     "./components/SiteCard.astro": "./src/components/SiteCard.astro"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.106",
-    "@iconify-json/simple-icons": "^1.2.81",
+    "@iconify-json/lucide": "^1.2.107",
+    "@iconify-json/simple-icons": "^1.2.82",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/vite": "^4.3.0",
     "@vercel/analytics": "^2.0.1",
