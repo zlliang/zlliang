@@ -70,7 +70,7 @@ const tokens: Tokens = {
   heatmapEmpty: (date) => `No writing on ${format(date, "MMM d, yyyy")}`,
   heatmapNoteOnly: (n, date) => `${n} ${n === 1 ? "note" : "notes"} on ${format(date, "MMM d, yyyy")}`,
   heatmapPostOnly: (n, date) => `${n} ${n === 1 ? "post" : "posts"} on ${format(date, "MMM d, yyyy")}`,
-  heatmapNoteAndPost: (notes, posts, date) => `${notes} ${notes === 1 ? "note" : "notes"} with ${posts} ${posts === 1 ? "post" : "posts"} on ${format(date, "MMM d, yyyy")}`,
+  heatmapNoteAndPost: (notes, posts, date) => `${notes} ${notes === 1 ? "note" : "notes"} and ${posts} ${posts === 1 ? "post" : "posts"} on ${format(date, "MMM d, yyyy")}`,
 
   // Page chrome
   author: "Zilong Liang",

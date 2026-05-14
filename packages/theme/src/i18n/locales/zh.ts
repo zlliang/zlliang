@@ -70,7 +70,7 @@ const tokens: Tokens = {
   heatmapEmpty: (date) => `${format(date, "yyyy 年 M 月 d 日")}：无写作`,
   heatmapNoteOnly: (n, date) => `${format(date, "yyyy 年 M 月 d 日")}：${n} 则手记`,
   heatmapPostOnly: (n, date) => `${format(date, "yyyy 年 M 月 d 日")}：${n} 篇文章`,
-  heatmapNoteAndPost: (notes, posts, date) => `${format(date, "yyyy 年 M 月 d 日")}：${notes} 则手记 和 ${posts} 篇文章`,
+  heatmapNoteAndPost: (notes, posts, date) => `${format(date, "yyyy 年 M 月 d 日")}：${notes} 则手记和 ${posts} 篇文章`,
 
   // Page chrome
   author: "梁子龙",
