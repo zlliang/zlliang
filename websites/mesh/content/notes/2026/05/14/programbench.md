@@ -12,5 +12,7 @@ Unlike previous benchmarks such as SWE-bench, which work with existing codebases
 
 This is a difficult benchmark. As of today (May 14), only one task had been fully solved by GPT-5.5[^2], giving it a score of 0.5% across the 200 tasks.
 
-[^1]: [Post on X by Kilian Lieret](https://x.com/KLieret/status/2054215545663144217).
-[^2]: ProgramBench blog: [GPT 5.5 high Solves First Instance!](https://programbench.com/blog/gpt-5-5-first-solve/).
+![ProgramBench leaderboard](./images/programbench.png)
+
+[^1]: [Post on X by Kilian Lieret](https://x.com/KLieret/status/2054215545663144217)
+[^2]: ProgramBench blog: [GPT 5.5 high Solves First Instance!](https://programbench.com/blog/gpt-5-5-first-solve/)
