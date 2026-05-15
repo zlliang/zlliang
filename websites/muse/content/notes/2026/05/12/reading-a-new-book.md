@@ -6,6 +6,6 @@ created: 2026-05-12
 
 上个月就想读《[富士日记](https://book.douban.com/subject/36883000/)》了[^1]。读完大厚书《[梦想机器](https://book.douban.com/subject/38373965/)》后，迫不及待买来，今天到了。
 
-![《富士日记》厚度更甚，有上中下三册](./images/fujinikki.jpg)
+![《富士日记》厚度更甚，有上中下三册](./images/fuji-nikki.jpg)
 
 [^1]: 2026 年 4 月 21 日手记：[三月的生活月刊](/notes/2026/04/21/writing-life-monthly-for-march)
