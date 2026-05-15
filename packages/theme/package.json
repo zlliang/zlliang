@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
-    "astro": "^6.3.1",
+    "astro": "^6.3.2",
     "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3",
     "vite": "^7.3.2"
