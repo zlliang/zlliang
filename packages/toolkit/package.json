@@ -12,11 +12,11 @@
     "globby": "^16.2.0",
     "pretty-bytes": "^7.1.0",
     "sharp": "^0.34.5",
-    "tsx": "^4.21.0",
+    "tsx": "^4.22.0",
     "yaml": "^2.9.0"
   },
   "devDependencies": {
-    "@types/node": "^25.7.0",
+    "@types/node": "^25.8.0",
     "typescript": "^6.0.3"
   }
 }
