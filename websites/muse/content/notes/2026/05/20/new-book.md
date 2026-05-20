@@ -4,7 +4,7 @@ title: 漫画《故纸浮生》到了
 created: 2026-05-20
 ---
 
-漫画《[故纸浮生](https://book.douban.com/subject/37648813/)》第一、二卷到了。很久没读漫画了，我迫不及待想开始读。
+漫画《[故纸浮生](https://book.douban.com/subject/37648813/)》第一、二卷到了。很久没读漫画了，我迫不及待开始读。
 
 <div class="image-grid">
 
