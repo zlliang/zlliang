@@ -62,10 +62,19 @@ memories = true
 [plugins."computer-use@openai-bundled"]
 enabled = true
 
-[plugins."browser-use@openai-bundled"]
+[plugins."browser@openai-bundled"]
 enabled = true
 
 [plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
 enabled = true
 ```
 
@@ -90,6 +99,7 @@ Here are my Claude Code settings:
   "theme": "auto",
   "model": "opus[1m]",
   "effortLevel": "high",
+  "attribution": { "commit": "", "pr": "" },
   "skipDangerousModePermissionPrompt": true
 }
 ```
@@ -138,3 +148,9 @@ My company uses Google Workspace, and fortunately Google released a [CLI](https:
 I install these skills under `~/.agents/skills` and symlink them to `~/.claude/skills`. Project-wise, I use `.agents/skills` and `.claude/skills`.
 
 This setup will probably look different in a few months. The agent space is moving fast, and many of these tools are still changing their core interaction models. For now, Amp is my daily driver, Codex is the most rapidly expanding alternative, and Claude Code remains useful in work environments where it is already integrated.
+
+<div class="update-note">
+
+**Update May 21, 2026:** Slightly updated the settings of Codex and Claude Code.
+
+</div>
