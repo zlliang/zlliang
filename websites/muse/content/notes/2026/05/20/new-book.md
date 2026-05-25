@@ -8,7 +8,7 @@ created: 2026-05-20
 
 <div class="image-grid">
 
-![《故知浮生》第一、二卷](./images/book.jpg)
+![《故纸浮生》第一、二卷](./images/book.jpg)
 
 ![上周特意去书店试读。这本漫画确实有人气，书店还精心做了一格小小的特展。](./images/store.jpg)
 
