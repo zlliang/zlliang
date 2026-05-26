@@ -14,7 +14,7 @@ Overall, Pi's minimality and flexibility make everything clear and nothing magic
 
 Here are some articles and videos I bookmarked about Pi:
 
-- Mario Zechner's original post where Pi originated: [What I learned building an opinionated and minimal coding agent](https://mariozechner.at/posts/2025-11-30-pi-coding-agent/)
+- Mario Zechner's post where Pi originated: [What I learned building an opinionated and minimal coding agent](https://mariozechner.at/posts/2025-11-30-pi-coding-agent/)
 - Armin Ronacher's introduction: [Pi: The Minimal Agent Within OpenClaw](https://lucumr.pocoo.org/2026/1/31/pi/)
 - Mario's post announcing Pi and his move to Armin's company Earendil: [I've sold out](https://mariozechner.at/posts/2026-04-08-ive-sold-out/); and meanwhile, Armin's post: [Mario and Earendil](https://lucumr.pocoo.org/2026/4/8/mario-and-earendil/)
 - Armin's post: [Building Pi With Pi](https://lucumr.pocoo.org/2026/5/24/pi-oss/)
