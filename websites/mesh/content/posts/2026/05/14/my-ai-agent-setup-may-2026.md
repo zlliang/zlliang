@@ -38,7 +38,7 @@ Here are my Amp settings:
 
 ### Codex
 
-[Codex](https://openai.com/codex/) is my secondary agent. I installed the standalone Codex app and mostly use it there. I also installed the CLI, but I barely use it. I use Codex through my ChatGPT Plus subscription on my personal laptop and my company's ChatGPT Enterprise subscription on my work laptop.
+[Codex](https://openai.com/codex/) is my secondary agent. I installed the standalone Codex app and mostly use it there. I also installed the CLI, but I barely use it. I use Codex through my ChatGPT Plus subscription.
 
 The Codex team has been shipping new features very actively over the past few months. Recent additions like [computer use](https://developers.openai.com/codex/app/computer-use), [browser use](https://developers.openai.com/codex/app/browser), and [Codex for Chrome](https://developers.openai.com/codex/app/chrome-extension) have hugely expanded its capabilities. Codex now feels like it is growing into a [superapp](https://openai.com/index/codex-for-almost-everything/), not merely a coding agent. Also, GPT-5.5, released in late April, is a very strong model.
 
@@ -80,7 +80,7 @@ enabled = true
 
 ### Claude Code
 
-I mainly use [Claude Code](https://claude.com/product/claude-code) on my work laptop, via my company's API gateway. On my personal laptop, I use it via [Vercel AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/claude-code).
+I mainly use [Claude Code](https://claude.com/product/claude-code) on my work laptop, via my company's model provider. On my personal laptop, I use it via [Vercel AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/claude-code).
 
 ![Claude Code](./images/claude-code.png)
 
@@ -132,7 +132,7 @@ Project-wise, I create AGENTS.md and CLAUDE.md, and only mention AGENTS.md in th
 
 ### MCP
 
-I don't use MCP for my personal use. In my company, we have a unified MCP server providing access to multiple internal engineering platforms.
+I don't use MCP for my personal use. On my work laptop, I use several MCP servers to interact with multiple internal engineering platforms.
 
 ### Skills
 
@@ -143,7 +143,7 @@ I'm using [skills.sh](https://skills.sh/) to manage my skills, with the followin
 - [issue-pr-writing](https://skills.sh/zlliang/skills/issue-pr-writing)
 - [agent-browser](https://skills.sh/vercel-labs/agent-browser/agent-browser)
 
-My company uses Google Workspace, and fortunately Google released a [CLI](https://github.com/googleworkspace/cli) and a bunch of agent skills to work with it.
+For Google Docs, fortunately Google released a [CLI](https://github.com/googleworkspace/cli) and a bunch of agent skills to work with it.
 
 I install these skills under `~/.agents/skills` and symlink them to `~/.claude/skills`. Project-wise, I use `.agents/skills` and `.claude/skills`.
 

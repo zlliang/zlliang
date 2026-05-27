@@ -8,7 +8,7 @@ created: 2025-12-23
 
 Today, the updated GLM 4.7 and MiniMax M2.1 dropped on the same day. As public holidays approach in the US, Chinese AI labs keep pushing forward, making good use of the time 😉
 
-AI is a rapidly changing field. I'm not one to chase every new model release, though I do find myself following this topic more recently. I'm still learning these concepts and trying to find a pragmatic way to use AI tools. I use [ChatGPT](https://chatgpt.com/) as my daily driver, [Gemini](https://gemini.google.com/) for work (my company subscribes to it), and [Amp](https://ampcode.com) as my coding agent.
+AI is a rapidly changing field. I'm not one to chase every new model release, though I do find myself following this topic more recently. I'm still learning these concepts and trying to find a pragmatic way to use AI tools. I use [ChatGPT](https://chatgpt.com/) as my daily driver, [Gemini](https://gemini.google.com/) for work, and [Amp](https://ampcode.com) as my coding agent.
 
 I may not post about every model release in the future, but here are the models on my radar:
 

@@ -6,7 +6,7 @@ created: 2026-05-26
 
 Today, I started trying out [Pi](https://pi.dev), the minimal coding agent created by [Mario Zechner](https://mariozechner.at/) and now developed at [Earendil](https://earendil.com/). It is known for its minimal harness, few tools, no built-in MCP support, etc., and high extensibility.
 
-I haven't settled on my perfect Pi setup yet, but I've already found a neat way to add MCP support with [MCPorter](https://github.com/openclaw/mcporter), which lets me use [Exa MCP](https://exa.ai/mcp) for web search. I also discovered that defining a [custom provider](https://pi.dev/docs/latest/custom-provider) makes it easy to use my company's API gateway, which was originally designed for Claude Code.
+I haven't settled on my perfect Pi setup yet, but I've already found a neat way to add MCP support with [MCPorter](https://github.com/openclaw/mcporter), which lets me use [Exa MCP](https://exa.ai/mcp) for web search. I also discovered that defining a [custom provider](https://pi.dev/docs/latest/custom-provider) makes it easy to use my company's model provider, which was originally designed for other agents.
 
 Overall, Pi's minimality and flexibility make everything clear and nothing magical, which feels very developer-friendly. I'm considering dropping Codex and Claude Code, and using Pi along with Amp as my main agents.
 
