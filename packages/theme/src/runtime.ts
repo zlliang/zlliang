@@ -1,3 +1,5 @@
+/// <reference path="./virtual.d.ts" />
+
 import config from "virtual:zlliang-theme/config"
 import logo from "virtual:zlliang-theme/logo"
 

@@ -2,7 +2,6 @@ import { visit } from "unist-util-visit"
 
 import type { Root, Element } from "hast"
 
-export { rehypeHeadingIds } from "@astrojs/markdown-remark"
 export { default as rehypeAutolinkHeadings } from "rehype-autolink-headings"
 
 /** Prefix footnote IDs with the file path to avoid collisions when multiple notes render on one page. */

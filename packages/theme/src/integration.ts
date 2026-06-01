@@ -2,9 +2,10 @@ import { fileURLToPath } from "node:url"
 import { resolve as resolvePath } from "node:path"
 
 import { fontProviders } from "astro/config"
+import { unified, rehypeHeadingIds } from "@astrojs/markdown-remark"
 import tailwindcss from "@tailwindcss/vite"
 import { remarkCjkFriendly, remarkCodeTitles } from "@zlliang/markdown/remark"
-import { rehypeHeadingIds, rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeImageLinks, rehypeCodeCopy } from "@zlliang/markdown/rehype"
+import { rehypeAutolinkHeadings, rehypeFootnotePrefixes, rehypeImageCaptions, rehypeImageLinks, rehypeCodeCopy } from "@zlliang/markdown/rehype"
 
 import { resolveThemeConfig } from "./config"
 import { virtualConfigPlugin } from "./plugins/virtual-config"
@@ -67,23 +68,25 @@ export default function theme(themeConfig: ThemeConfig): AstroIntegration {
             shikiConfig: {
               themes: { light: "github-light-default", dark: "github-dark-default" },
             },
-            remarkPlugins: [
-              [remarkCjkFriendly, {}],
-              [remarkCodeTitles, {}],
-            ],
-            rehypePlugins: [
-              [rehypeHeadingIds, {}],
-              [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
-              [rehypeFootnotePrefixes, {}],
-              [rehypeImageCaptions, {}],
-              [rehypeImageLinks, {}],
-              [rehypeCodeCopy, {}],
-            ],
-            remarkRehype: {
-              footnoteLabel: " ",
-              footnoteLabelTagName: "div",
-              footnoteBackContent: "↵",
-            },
+            processor: unified({
+              remarkPlugins: [
+                [remarkCjkFriendly, {}],
+                [remarkCodeTitles, {}],
+              ],
+              rehypePlugins: [
+                [rehypeHeadingIds, {}],
+                [rehypeAutolinkHeadings, { behavior: "wrap", properties: { class: "nocolor" } }],
+                [rehypeFootnotePrefixes, {}],
+                [rehypeImageCaptions, {}],
+                [rehypeImageLinks, {}],
+                [rehypeCodeCopy, {}],
+              ],
+              remarkRehype: {
+                footnoteLabel: " ",
+                footnoteLabelTagName: "div",
+                footnoteBackContent: "↵",
+              },
+            }),
           },
           compressHTML: "jsx",
           vite: {
