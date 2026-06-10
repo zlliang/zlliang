@@ -2,7 +2,12 @@ packages:
   - packages/*
   - websites/*
 
-allowBuilds:
-  '@parcel/watcher': true
-  esbuild: true
-  sharp: true
+# Hoist Astro's bundled vite and markdown-remark to the workspace root so the theme can import them
+# (type-only `Plugin`, plus `unified`/`rehypeHeadingIds`) while always tracking the exact versions
+# Astro ships, without declaring them.
+publicHoistPattern:
+  - vite
+  - '@astrojs/markdown-remark'
+
+dangerouslyAllowAllBuilds: true
+minimumReleaseAge: 0
