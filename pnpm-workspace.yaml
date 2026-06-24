@@ -2,12 +2,12 @@ packages:
   - packages/*
   - websites/*
 
-# Hoist Astro's bundled vite and markdown-remark to the workspace root so the theme can import them
-# (type-only `Plugin`, plus `unified`/`rehypeHeadingIds`) while always tracking the exact versions
-# Astro ships, without declaring them.
+# Hoist Astro's bundled dependencies to the workspace root so the theme can import them while
+# always tracking the exact versions Astro ships, without declaring them.
 publicHoistPattern:
+  - '@astrojs/markdown-satteri'
+  - satteri
   - vite
-  - '@astrojs/markdown-remark'
 
 dangerouslyAllowAllBuilds: true
 minimumReleaseAge: 0

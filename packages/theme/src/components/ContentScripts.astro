@@ -1,0 +1,38 @@
+<script>
+  // Image viewer: redirect clicks on standalone images to the dedicated viewer page.
+  document.addEventListener("click", (event) => {
+    const link = event.target instanceof Element ? event.target.closest("a.image-link") : null
+    if (!link) return
+
+    event.preventDefault()
+
+    const img = link.querySelector("img")
+    if (!img || !img.src) return
+
+    try {
+      const imgUrl = new URL(img.src)
+      const params = new URLSearchParams()
+      params.set("src", imgUrl.href)
+      if (img.alt) params.set("caption", img.alt)
+      params.set("from", window.location.pathname + window.location.search)
+
+      window.location.href = "/image?" + params.toString()
+    } catch {}
+  })
+
+  // Code copy: copy fenced code block text to clipboard.
+  document.addEventListener("click", async (event) => {
+    const button = event.target instanceof Element ? event.target.closest(".code-copy-button") : null
+    if (!(button instanceof HTMLButtonElement)) return
+
+    const code = button.parentElement?.querySelector("pre code")
+    const text = code?.textContent?.replace(/\n$/, "")
+    if (!text) return
+
+    await navigator.clipboard.writeText(text).catch(() => {})
+    if (!button.isConnected) return
+
+    button.classList.add("copied")
+    window.setTimeout(() => button.classList.remove("copied"), 2000)
+  })
+</script>

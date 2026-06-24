@@ -13,7 +13,6 @@ Websites (all built with [Astro](https://astro.build/), deployed on [Vercel](htt
 Shared packages:
 
 - `@zlliang/data`: site, author, and brand data consumed by all websites
-- `@zlliang/markdown`: shared remark and rehype plugins, exposed as `@zlliang/markdown/remark` and `@zlliang/markdown/rehype`
 - `@zlliang/theme`: Astro integration that ships shared routes, middleware, content schemas, layout, components, and styles
 - `@zlliang/toolkit`: CLI for the shared note and post workflow
 

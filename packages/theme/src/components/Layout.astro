@@ -5,6 +5,7 @@ import VercelWebAnalytics from "@vercel/analytics/astro"
 import Header from "./Header.astro"
 import Footer from "./Footer.astro"
 import Aside from "./Aside.astro"
+import ContentScripts from "./ContentScripts.astro"
 
 import { themeConfig, themeLogo, Slots } from "../runtime"
 import { createI18n } from "../i18n"
@@ -120,6 +121,8 @@ const url = new URL(Astro.url.pathname, Astro.site)
     )}
     <Footer locale={locale} />
   </div>
+
+  <ContentScripts />
 
   {/* Vercel */}
   <VercelWebAnalytics />

@@ -207,7 +207,7 @@ pre code {
 
 /* Code title */
 
-.remark-code-title {
+.satteri-code-title {
   @apply px-3 py-1 bg-neutral-50 dark:bg-neutral-900 border border-b-0 border-neutral-200 dark:border-neutral-800 font-mono text-sm text-neutral-500;
 }
 
@@ -260,7 +260,7 @@ span.caption {
 }
 
 #footnote-label {
-  @apply mb-4 w-16 border-b border-neutral-200 dark:border-neutral-800;
+  @apply mt-0 mb-4 w-16 border-b border-neutral-200 dark:border-neutral-800;
 }
 
 .post-content #footnote-label {

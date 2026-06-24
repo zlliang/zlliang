@@ -8,7 +8,6 @@ Use this file when ownership or shared boundaries matter.
 - `websites/mesh`: English note and post site; full theme route injection
 - `websites/muse`: Chinese note and post site; full theme route injection
 - `packages/data`: shared site, author, and brand data
-- `packages/markdown`: shared remark and rehype plugins, exposed via subpath exports `/remark` and `/rehype`
 - `packages/theme`: Astro integration that ships shared routes, middleware, content schemas, layout, components, and styles
 - `packages/toolkit`: CLI for the shared note and post workflow
 
@@ -31,7 +30,7 @@ import theme from "@zlliang/theme/integration"
 - `injectRoutes: true` (default; `mesh` and `muse`): injects shared routes for the home page, 404, search, image redirect, notes, and posts (including series), plus the full middleware stack.
 - `injectRoutes: false` (`home`): still configures fonts, the markdown pipeline, and Vite virtual modules, but skips route and most middleware injection so the site can keep its own pages.
 
-The integration always wires shared fonts, the remark/rehype pipeline from `@zlliang/markdown`, and the Tailwind Vite plugin.
+The integration always wires shared fonts, the Sätteri Markdown pipeline (plugins from `packages/theme/src/content/markdown.ts`, processor from `@astrojs/markdown-satteri`), and the Tailwind Vite plugin.
 
 ## Slot overrides
 

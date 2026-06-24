@@ -19,7 +19,6 @@ In each site's `astro.config.ts` and source files:
 - Content schemas: `@zlliang/theme/schemas/content`
 - Layout, section, and site-card components: `@zlliang/theme/components/*.astro`
 - Site, author, and brand data: `@zlliang/data`
-- Markdown plugins: `@zlliang/markdown/remark` and `@zlliang/markdown/rehype`
 
 ## Validation
 
