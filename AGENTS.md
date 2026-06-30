@@ -27,19 +27,19 @@ Shared packages:
 
 ## Skills
 
-- `website-development`: website code, shared packages, the `toolkit` CLI, builds, and validation
-- `blog-authoring`: note/post workflow, schema, style, and publishing readiness for `mesh` and `muse` (including the optional bilingual English-writing practice loop)
-- `english-review`: English prose review, comparison, synthesis, and voice coaching
+- `developing-websites`: website code, shared packages, the `toolkit` CLI, builds, and validation
+- `authoring-blogs`: note/post workflow, schema, style, and publishing readiness for `mesh` and `muse` (including the optional bilingual English-writing practice loop)
+- `reviewing-english`: English prose review, comparison, synthesis, and voice coaching
 
 How to combine:
 
-- Pair `blog-authoring` with `english-review` for English notes and posts.
-- Use `website-development` alongside content skills only when the task changes site behavior, shared code, or build output.
-- For `home` fragment or copy edits, use `website-development` for file ownership and `english-review` when prose quality matters; `blog-authoring` does not cover `home`.
+- Pair `authoring-blogs` with `reviewing-english` for English notes and posts.
+- Use `developing-websites` alongside content skills only when the task changes site behavior, shared code, or build output.
+- For `home` fragment or copy edits, use `developing-websites` for file ownership and `reviewing-english` when prose quality matters; `authoring-blogs` does not cover `home`.
 
 ## Repo conventions
 
-- Run commands from the repository root. See the `website-development` skill for the command surface.
+- Run commands from the repository root. See the `developing-websites` skill for the command surface.
 - A pre-commit hook runs `toolkit optimize-image` on staged image files (`*.{jpg,jpeg,png,webp,avif}`).
 - Treat `Deploy`, `发布`, and similar short commands as a request to write a Conventional Commit message, commit the current work, and push to GitHub so Vercel can deploy automatically.
 

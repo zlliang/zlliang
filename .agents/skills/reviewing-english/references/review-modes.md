@@ -1,6 +1,6 @@
 # Review Modes
 
-Use this file when English review is part of practice, not just proofreading. For the full bilingual practice workflow, start with [`english-writing-practice.md`](../../blog-authoring/references/english-writing-practice.md) in the `blog-authoring` skill.
+Use this file when English review is part of practice, not just proofreading. For the full bilingual practice workflow, start with [`english-writing-practice.md`](../../authoring-blogs/references/english-writing-practice.md) in the `authoring-blogs` skill.
 
 ## Modes
 
@@ -34,5 +34,5 @@ Choose the lightest mode that matches the request.
 ## Guardrails
 
 - Do not assume the AI reference is always better.
-- Do not erase the author's voice.
 - Do not over-explain small edits in a quick review.
+- Preserve the author's voice (see [voice.md](./voice.md)).

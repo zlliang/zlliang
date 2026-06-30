@@ -1,6 +1,6 @@
 # English Writing Practice
 
-Optional bilingual practice loop. Use it when the goal is improving English writing, not just finishing a draft. Canonical home for this workflow lives here; `english-review` participates as the reviewer (see [`review-modes.md`](../../english-review/references/review-modes.md)).
+Optional bilingual practice loop. Use it when the goal is improving English writing, not just finishing a draft. Canonical home for this workflow lives here; `reviewing-english` participates as the reviewer (see [`review-modes.md`](../../reviewing-english/references/review-modes.md)).
 
 ## What this loop is for
 
@@ -41,7 +41,7 @@ Optional bilingual practice loop. Use it when the goal is improving English writ
 ## AI's role
 
 - Help structure the Chinese draft without forcing English too early.
-- Review the author's English draft using `english-review`.
+- Review the author's English draft using `reviewing-english`.
 - Generate the reference version only after the author's English pass exists.
 - Summarize reusable differences in expression, sentence pattern, paragraph flow, and voice.
 - Help turn the comparison into short writing notes.
