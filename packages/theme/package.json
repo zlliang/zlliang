@@ -11,10 +11,10 @@
     "./components/SiteCard.astro": "./src/components/SiteCard.astro"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.114",
-    "@iconify-json/simple-icons": "^1.2.87",
+    "@iconify-json/lucide": "^1.2.115",
+    "@iconify-json/simple-icons": "^1.2.88",
     "@iconify/tailwind4": "^1.2.3",
-    "@tailwindcss/vite": "^4.3.1",
+    "@tailwindcss/vite": "^4.3.2",
     "@vercel/analytics": "^2.0.1",
     "@zlliang/data": "workspace:*",
     "clsx": "^2.1.1",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
     "astro": "^7.0.3",
-    "tailwindcss": "^4.3.1",
+    "tailwindcss": "^4.3.2",
     "typescript": "^6.0.3"
   }
 }
