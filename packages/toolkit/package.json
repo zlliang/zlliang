@@ -11,12 +11,12 @@
     "github-slugger": "^2.0.0",
     "globby": "^16.2.0",
     "pretty-bytes": "^7.1.0",
-    "sharp": "^0.35.2",
-    "tsx": "^4.22.4",
+    "sharp": "^0.35.3",
+    "tsx": "^4.22.5",
     "yaml": "^2.9.0"
   },
   "devDependencies": {
-    "@types/node": "^26.0.1",
+    "@types/node": "^26.1.0",
     "typescript": "^6.0.3"
   }
 }
