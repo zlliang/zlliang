@@ -9,10 +9,10 @@
   "dependencies": {
     "cac": "^7.0.0",
     "github-slugger": "^2.0.0",
-    "globby": "^16.2.0",
+    "globby": "^16.2.1",
     "pretty-bytes": "^7.1.0",
     "sharp": "^0.35.3",
-    "tsx": "^4.22.5",
+    "tsx": "^4.23.0",
     "yaml": "^2.9.0"
   },
   "devDependencies": {
