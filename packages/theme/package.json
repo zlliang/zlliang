@@ -31,6 +31,6 @@
     "@types/lodash-es": "^4.17.12",
     "astro": "^7.0.7",
     "tailwindcss": "^4.3.2",
-    "typescript": "^7.0.2"
+    "typescript": "^6.0.3"
   }
 }
