@@ -1,0 +1,19 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directories:
+      - "/"
+      - "/packages/*"
+      - "/websites/*"
+    schedule:
+      interval: "weekly"
+    groups:
+      # One PR per dependency across all workspace directories, instead of one per directory
+      deps:
+        group-by: "dependency-name"
+        patterns:
+          - "*"
+    ignore:
+      # Minor/patch only; keep major upgrades manual
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
