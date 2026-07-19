@@ -1,16 +1,15 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directories:
-      - "/"
-      - "/packages/*"
-      - "/websites/*"
+    # pnpm workspace: point at the root only. Dependabot runs `pnpm recursive update`
+    # from the root, updating every workspace package.json and the shared lockfile.
+    # Listing workspace subdirectories here is unsupported and causes errors.
+    directory: "/"
     schedule:
       interval: "weekly"
     groups:
-      # One PR per dependency across all workspace directories, instead of one per directory
-      deps:
-        group-by: "dependency-name"
+      # Consolidate all updates into a single weekly PR
+      all:
         patterns:
           - "*"
     ignore:
