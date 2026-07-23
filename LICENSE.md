@@ -1,6 +1,6 @@
 # License
 
-Different parts of this monorepo are licensed under different terms:
+Different parts of this repository are licensed under different terms:
 
 ## Code license (MIT)
 
