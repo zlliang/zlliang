@@ -1,39 +1,29 @@
 # License
 
-This monorepo is dual-licensed under different terms depending on the type of content:
+Different parts of this monorepo are licensed under different terms:
 
-## Code License (MIT)
+## Code license (MIT)
 
-The source code of these websites, including but not limited to HTML, CSS, TypeScript, Astro components, and configuration files, is licensed under the MIT License.
+The source code and related software files in this repository are licensed under the MIT License.
 
-Copyright (c) 2025–PRESENT Zilong Liang
+Copyright (c) 2025-present Zilong Liang
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-## Content License (CC BY 4.0)
+## Content license (CC BY 4.0)
 
-All written content, including but not limited to blog notes, posts, and other prose in the `websites/*/content` directories, is licensed under the Creative Commons Attribution 4.0 International License.
+The written content, images, and other media in the `websites/*/content` directories are licensed under the Creative Commons Attribution 4.0 International License. Third-party material is excluded and remains subject to its original terms.
 
-This means you are free to:
+Copyright (c) 2025-present Zilong Liang
+
+You are free to:
 
 - **Share** — copy and redistribute the material in any medium or format for any purpose, even commercially.
-- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially.
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially. The licensor cannot revoke these freedoms as long as you follow the license terms.
 
 Under the following terms:
 
