@@ -11,8 +11,8 @@
     "./components/SiteCard.astro": "./src/components/SiteCard.astro"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.125",
-    "@iconify-json/simple-icons": "^1.2.93",
+    "@iconify-json/lucide": "^1.2.127",
+    "@iconify-json/simple-icons": "^1.2.94",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/vite": "^4.3.3",
     "@vercel/analytics": "^2.0.1",
@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
-    "astro": "^7.2.4",
+    "astro": "^7.2.9",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"
   }
