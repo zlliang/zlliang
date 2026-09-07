@@ -10,7 +10,7 @@ function getDefaultCacheControl(status: number) {
   return "no-store"
 }
 
-/** Add a default cache policy unless the page has already set one. */
+/** Adds a default cache policy unless the page has already set one. */
 export const cache = defineMiddleware(async (_, next) => {
   if (import.meta.env.DEV) return next()
 

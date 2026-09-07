@@ -12,7 +12,7 @@ const tokens: Record<Locale, Tokens> = {
   zh,
 }
 
-/** Build a `Tokens` object for the given locale, falling back to the configured default. */
+/** Builds a `Tokens` object for the given locale, falling back to the configured default. */
 export function createI18n(locale?: Locale): Tokens {
   return tokens[locale ?? themeConfig.locale]
 }

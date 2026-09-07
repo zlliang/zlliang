@@ -17,7 +17,7 @@ export class ArchiveBounds {
     this.end = startOfDay(end)
   }
 
-  /** Return the year range that has archive pages */
+  /** Returns the year range that has archive pages */
   getYearRange(): ArchiveRange {
     return {
       start: this.start.getFullYear(),
@@ -25,7 +25,7 @@ export class ArchiveBounds {
     }
   }
 
-  /** Return the month range that has archive pages in a year */
+  /** Returns the month range that has archive pages in a year */
   getMonthRange(year: number): ArchiveRange | null {
     const yearRange = this.getYearRange()
     if (year < yearRange.start || year > yearRange.end) {
@@ -38,7 +38,7 @@ export class ArchiveBounds {
     }
   }
 
-  /** Return the day range that has archive pages in a month */
+  /** Returns the day range that has archive pages in a month */
   getDayRange(year: number, month: number): ArchiveRange | null {
     const monthRange = this.getMonthRange(year)
     if (!monthRange || month < monthRange.start || month > monthRange.end) {
@@ -52,13 +52,13 @@ export class ArchiveBounds {
     return { start, end }
   }
 
-  /** Check whether a date is inside archive bounds */
+  /** Checks whether a date is inside archive bounds */
   includes(date: Date): boolean {
     return isWithinInterval(startOfDay(date), { start: this.start, end: this.end })
   }
 }
 
-/** Return the first and last note day for archive navigation */
+/** Returns the first and last note day for archive navigation */
 export function getArchiveBounds(notes: CollectionEntry<"notes">[]): ArchiveBounds | null {
   if (notes.length === 0) {
     return null
@@ -68,7 +68,7 @@ export function getArchiveBounds(notes: CollectionEntry<"notes">[]): ArchiveBoun
   return new ArchiveBounds(new Date(Math.min(...created)), new Date())
 }
 
-/** Parse and validate a year route segment */
+/** Parses and validates a year route segment */
 export function parseYear(value?: string) {
   if (!value || !/^\d{4}$/.test(value)) {
     return null
@@ -78,27 +78,27 @@ export function parseYear(value?: string) {
   return Number.isInteger(year) ? year : null
 }
 
-/** Parse and validate a month route segment */
+/** Parses and validates a month route segment */
 export function parseMonth(value?: string) {
   return parseInRange(value, 1, 12)
 }
 
-/** Parse and validate a day route segment */
+/** Parses and validates a day route segment */
 export function parseDay(value: string | undefined, year: number, month: number) {
   return parseInRange(value, 1, getDaysInMonth(new Date(year, month - 1, 1)))
 }
 
-/** Build the notes year archive path */
+/** Builds the notes year archive path */
 export function getYearNotesPath(year: number) {
   return `/notes/${year}`
 }
 
-/** Build the notes month archive path */
+/** Builds the notes month archive path */
 export function getMonthNotesPath(year: number, month: number) {
   return `${getYearNotesPath(year)}/${pad(month)}`
 }
 
-/** Build the notes day archive path */
+/** Builds the notes day archive path */
 export function getDayNotesPath(date: Date): string
 export function getDayNotesPath(year: number, month: number, day: number): string
 export function getDayNotesPath(dateOrYear: Date | number, month?: number, day?: number) {
@@ -113,7 +113,7 @@ export function getDayNotesPath(dateOrYear: Date | number, month?: number, day?:
   return `${getMonthNotesPath(dateOrYear, month)}/${pad(day)}`
 }
 
-/** Pad numbers to 2-digit route segments */
+/** Pads numbers to 2-digit route segments */
 export function pad(value: number) {
   return String(value).padStart(2, "0")
 }

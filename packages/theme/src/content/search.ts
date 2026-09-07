@@ -23,7 +23,7 @@ const segmenter = new Intl.Segmenter(themeConfig.locale, { granularity: "word" }
 
 let searchIndexPromise: Promise<SearchIndex> | undefined
 
-/** Search notes by query relevance */
+/** Searches notes by query relevance */
 export async function searchNotes(query: string) {
   const normalizedQuery = normalizeSearchText(query)
 
@@ -56,12 +56,12 @@ export async function searchNotes(query: string) {
 /** Supported search result sort modes */
 export type SearchSort = "relevance" | "date"
 
-/** Parse the search sort query parameter */
+/** Parses the search sort query parameter */
 export function parseSearchSort(value: string | null): SearchSort {
   return value === "date" ? "date" : "relevance"
 }
 
-/** Build the canonical search page URL */
+/** Builds the canonical search page URL */
 export function getSearchPageUrl(query: string, page = 1, sort: SearchSort = "relevance") {
   const searchParams = new URLSearchParams({
     q: query,

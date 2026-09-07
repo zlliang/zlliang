@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge"
 
 import type { ClassValue } from "clsx"
 
-/** Compose classnames */
+/** Composes classnames */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }

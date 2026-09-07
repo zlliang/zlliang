@@ -7,7 +7,7 @@ let notesPromise: Promise<CollectionEntry<"notes">[]> | undefined
 let postsPromise: Promise<CollectionEntry<"posts">[]> | undefined
 let seriesPromise: Promise<CollectionEntry<"series">[]> | undefined
 
-/** Get all notes */
+/** Gets all notes */
 export function getNotes() {
   notesPromise ??= loadNotes()
 
@@ -21,14 +21,14 @@ async function loadNotes() {
   return notes
 }
 
-/** Get a note by id */
+/** Gets a note by id */
 export async function getNoteById(id: string) {
   const notes = await getNotes()
 
   return notes.find((note) => note.id === id) ?? null
 }
 
-/** Get the next and previous notes for a note id */
+/** Gets the next and previous notes for a note id */
 export async function getAdjacentNotes(id: string) {
   const notes = await getNotes()
   const index = notes.findIndex((note) => note.id === id)
@@ -43,7 +43,7 @@ export async function getAdjacentNotes(id: string) {
   }
 }
 
-/** Group notes by created date */
+/** Groups notes by created date */
 export async function groupNotesByDate(notes: CollectionEntry<"notes">[]) {
   const grouped = Object.entries(groupBy(notes, (note) => note.data.created))
     .map(([date, notes]) => ({ date: new Date(date), notes }))
@@ -52,7 +52,7 @@ export async function groupNotesByDate(notes: CollectionEntry<"notes">[]) {
   return grouped
 }
 
-/** Get all posts */
+/** Gets all posts */
 export function getPosts() {
   postsPromise ??= loadPosts()
 
@@ -66,14 +66,14 @@ async function loadPosts() {
   return posts
 }
 
-/** Get a post by id */
+/** Gets a post by id */
 export async function getPostById(id: string) {
   const posts = await getPosts()
 
   return posts.find((post) => post.id === id) ?? null
 }
 
-/** Get the next and previous posts for a post id */
+/** Gets the next and previous posts for a post id */
 export async function getAdjacentPosts(id: string) {
   const posts = await getPosts()
   const index = posts.findIndex((post) => post.id === id)
@@ -88,14 +88,14 @@ export async function getAdjacentPosts(id: string) {
   }
 }
 
-/** Get all pinned posts */
+/** Gets all pinned posts */
 export async function getPinnedPosts() {
   const posts = await getPosts()
 
   return posts.filter((post) => post.data.pinned)
 }
 
-/** Get all series */
+/** Gets all series */
 export function getSeries() {
   seriesPromise ??= loadSeries()
 
@@ -108,14 +108,14 @@ async function loadSeries() {
   return collection
 }
 
-/** Get a series by id */
+/** Gets a series by id */
 export async function getSeriesById(id: string) {
   const series = await getSeries()
 
   return series.find((series) => series.id === id) ?? null
 }
 
-/** Filter posts in a series */
+/** Filters posts in a series */
 export function filterPostsInSeries(posts: CollectionEntry<"posts">[], seriesId: string) {
   return posts.filter((post) => post.data.series?.id === seriesId)
 }

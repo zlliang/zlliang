@@ -2,7 +2,7 @@ import { fileURLToPath } from "node:url"
 
 import { defineMdastPlugin, defineHastPlugin } from "satteri"
 
-/** Support titles for fenced code blocks. */
+/** Supports titles for fenced code blocks. */
 export const codeTitles = defineMdastPlugin({
   name: "code-titles",
   code(node, ctx) {
@@ -21,7 +21,7 @@ export const codeTitles = defineMdastPlugin({
 })
 
 /**
- * Prefix footnote IDs and backref hrefs with the document slug so multiple notes rendered on one
+ * Prefixes footnote IDs and backref hrefs with the document slug so multiple notes rendered on one
  * page can't collide.
  */
 export const footnotePrefixes = defineHastPlugin({
@@ -47,7 +47,7 @@ export const footnotePrefixes = defineHastPlugin({
 })
 
 /**
- * Append the image `alt` text as a caption after the image, matching the
+ * Appends the image `alt` text as a caption after the image, matching the
  * previous rehype plugin's push-to-end-of-parent behavior.
  */
 export const imageCaptions = defineHastPlugin({
@@ -72,7 +72,7 @@ export const imageCaptions = defineHastPlugin({
 })
 
 /**
- * Wrap standalone images in a link to the dedicated image viewer page. Images already inside a link
+ * Wraps standalone images in a link to the dedicated image viewer page. Images already inside a link
  * are left alone.
  */
 export const imageLinks = defineHastPlugin({
@@ -93,7 +93,7 @@ export const imageLinks = defineHastPlugin({
   },
 })
 
-/** Add a copy button around Shiki-highlighted code blocks. */
+/** Adds a copy button around Shiki-highlighted code blocks. */
 export const codeCopy = defineHastPlugin({
   name: "code-copy",
   raw(node) {

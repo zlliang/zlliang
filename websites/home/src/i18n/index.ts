@@ -9,7 +9,7 @@ import type { Tokens } from "./tokens"
 export { locales }
 export type { Locale }
 
-/** Parse and validate a locale route segment */
+/** Parses and validates a locale route segment */
 export function parseLocale(value?: string): Locale | null {
   if (!value || !locales.includes(value as Locale)) {
     return null
@@ -23,7 +23,7 @@ const tokens: Record<Locale, Tokens> = {
   zh,
 }
 
-/** Build a `Tokens` object for the given locale, falling back to the configured default. */
+/** Builds a `Tokens` object for the given locale, falling back to the configured default. */
 export function createI18n(locale: Locale): Tokens {
   return tokens[locale]
 }
