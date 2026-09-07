@@ -1,6 +1,6 @@
 ---
 name: authoring-blogs
-description: Create, draft, edit, review, and publish notes and posts for the `mesh` and `muse` websites. Use when working on blog content structure, frontmatter, publishing workflow, bilingual content conventions, or repo-specific writing and review tasks for these sites.
+description: Creates, drafts, edits, reviews, and publishes notes and posts for the `mesh` and `muse` websites. Use when working on blog content structure, frontmatter, publishing workflow, bilingual content conventions, or repo-specific writing and review tasks for these sites.
 ---
 
 # Authoring Blogs

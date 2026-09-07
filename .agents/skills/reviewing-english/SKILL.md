@@ -1,6 +1,6 @@
 ---
 name: reviewing-english
-description: Review and revise English prose for technical writing. Use when improving grammar, phrasing, tone, structure, or voice in English notes, posts, drafts, and related writing, including English blog content in this repo.
+description: Reviews and revises English prose for technical writing. Use when improving grammar, phrasing, tone, structure, or voice in English notes, posts, drafts, and related writing, including English blog content in this repo.
 ---
 
 # Reviewing English
