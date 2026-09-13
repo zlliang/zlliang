@@ -1,4 +1,6 @@
 ---
+import { cn } from "cn"
+
 import Section from "../../components/Section.astro"
 import Layout from "../../components/Layout.astro"
 import PostContent from "../../components/PostContent.astro"
@@ -9,7 +11,6 @@ import PostList from "../../components/PostList.astro"
 import { createI18n } from "../../i18n"
 import { getAdjacentPosts, getPosts, getPostById, getSeriesById, filterPostsInSeries } from "../../content"
 import { SERIES_WINDOW_SIZE } from "../../content/constants"
-import { cn } from "../../styles"
 
 const t = createI18n()
 
