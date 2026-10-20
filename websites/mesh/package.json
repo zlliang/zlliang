@@ -12,8 +12,8 @@
     "@zlliang/theme": "workspace:*"
   },
   "devDependencies": {
-    "@astrojs/vercel": "11.0.13",
-    "astro": "7.3.8",
+    "@astrojs/vercel": "11.0.16",
+    "astro": "7.4.1",
     "typescript": "^6.0.3"
   }
 }

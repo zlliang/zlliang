@@ -7,7 +7,7 @@
     "toolkit": "./bin/toolkit.js"
   },
   "dependencies": {
-    "cac": "^7.0.1",
+    "cac": "^7.1.0",
     "github-slugger": "^2.0.0",
     "globby": "^16.2.4",
     "pretty-bytes": "^7.2.0",
