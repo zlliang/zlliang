@@ -1,4 +1,4 @@
-# Repo structure
+# Repo Structure
 
 Use this file when ownership or shared boundaries matter.
 

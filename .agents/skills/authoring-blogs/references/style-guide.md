@@ -1,4 +1,4 @@
-# Content style guide
+# Content Style Guide
 
 Repo-specific style decisions for notes and posts on `mesh` and `muse`.
 

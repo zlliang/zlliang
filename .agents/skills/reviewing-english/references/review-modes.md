@@ -1,4 +1,4 @@
-# Review modes
+# Review Modes
 
 Use this file when English review is part of practice, not just proofreading. For the full bilingual practice workflow, start with [`english-writing-practice.md`](../../authoring-blogs/references/english-writing-practice.md) in the `authoring-blogs` skill.
 
