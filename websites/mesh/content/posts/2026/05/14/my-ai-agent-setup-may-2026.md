@@ -1,5 +1,5 @@
 ---
-title: My AI Agent Setup, May 2026
+title: My AI agent setup, May 2026
 created: 2026-05-14
 ---
 

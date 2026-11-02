@@ -47,7 +47,7 @@ Path: `content/posts/series.json`. Each site owns its own registry; `mesh` and `
 [
   {
     "id": "example-series",
-    "title": "Example series",
+    "title": "Example Series",
     "description": "Optional short summary"
   }
 ]

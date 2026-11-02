@@ -1,6 +1,6 @@
 ---
 number: 22
-title: Splitting My Websites and Finalizing My Writing Framework
+title: Splitting my websites and finalizing my writing framework
 created: 2026-01-13
 post: 2026/01/13/splitting-my-websites-and-finalizing-my-writing-framework
 ---
