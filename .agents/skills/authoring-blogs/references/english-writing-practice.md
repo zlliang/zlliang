@@ -1,4 +1,4 @@
-# English Writing Practice
+# English writing practice
 
 Optional bilingual practice loop. Use it when the goal is improving English writing, not just finishing a draft. Canonical home for this workflow lives here; `reviewing-english` participates as the reviewer (see [`review-modes.md`](../../reviewing-english/references/review-modes.md)).
 

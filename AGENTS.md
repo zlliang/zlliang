@@ -1,4 +1,4 @@
-# Repository Guide
+# Repository guide
 
 This repository contains Zilong's personal websites, shared packages, and a small set of root workspace commands. Use this file as the high-level map; load the local skills for task-specific workflow.
 

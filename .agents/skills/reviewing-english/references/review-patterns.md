@@ -1,4 +1,4 @@
-# Review Patterns
+# Review patterns
 
 Order and shape of an English review.
 

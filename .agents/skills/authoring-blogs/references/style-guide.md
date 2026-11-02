@@ -1,4 +1,4 @@
-# Content Style Guide
+# Content style guide
 
 Repo-specific style decisions for notes and posts on `mesh` and `muse`.
 
@@ -9,8 +9,8 @@ Repo-specific style decisions for notes and posts on `mesh` and `muse`.
 
 ## Titles and headings
 
-- Post titles use title case.
-- Note titles usually use sentence case; when a note introduces a linked item or a published post, match that item's title if it reads better.
+- Post, series, and note titles use sentence case.
+- When a note introduces a linked item or a published post, match that item's title if it reads better; keep an external title's original capitalization.
 - Section headings use sentence case, stay short, and avoid trailing punctuation.
 
 ## English italics

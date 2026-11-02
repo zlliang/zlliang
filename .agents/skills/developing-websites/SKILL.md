@@ -3,7 +3,7 @@ name: developing-websites
 description: Develops and maintains the Astro-based websites in this monorepo. Use when building features, fixing bugs, refactoring code, running dev or build checks, or working on shared packages or any of the `home`, `mesh`, or `muse` websites.
 ---
 
-# Developing Websites
+# Developing websites
 
 Implementation work on the websites, the shared packages, and the `toolkit` CLI: features, bug fixes, refactors, styling, dependency edits, and dev/build validation in `websites/*` or `packages/*`.
 

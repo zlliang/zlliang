@@ -1,4 +1,4 @@
-# Common Issues
+# Common issues
 
 Watch for these recurring patterns in English technical writing.
 

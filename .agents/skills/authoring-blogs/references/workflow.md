@@ -1,4 +1,4 @@
-# Blog Authoring Workflow
+# Blog authoring workflow
 
 Repo-specific sequence for `mesh` and `muse`. Frontmatter rules live in [content-schema.md](./content-schema.md); formatting and update note rules live in [style-guide.md](./style-guide.md).
 

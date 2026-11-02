@@ -1,4 +1,4 @@
-# Content Schema
+# Content schema
 
 Working summary for `mesh` and `muse`. Source of truth: `packages/theme/src/schemas/content.ts`. Both sites re-export it through their own `src/content.config.ts`.
 
