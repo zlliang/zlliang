@@ -1,5 +1,5 @@
 ---
-title: Demonstrate Markdown Capabilities of This Website
+title: Demonstrate Markdown capabilities of this website
 created: 2025-12-17
 pinned: true
 draft: true

@@ -1,5 +1,5 @@
 ---
-title: Splitting My Websites and Finalizing My Writing Framework
+title: Splitting my websites and finalizing my writing framework
 created: 2026-01-13
 series: how-i-write
 ---
@@ -16,7 +16,7 @@ In short, my personal websites are now organized into three parts:
 
 ## A week's journey
 
-When I started this blog, I decided to write in English. My native language is Chinese, and I've never lived in an English-speaking country. I'm writing an English blog with a clear goal: not just to publish polished posts, but to internalize native-style writing intuition and build my own distinctive English writing style — to write with precision, logic, and quiet confidence. Also, English is the common language of the tech industry. I want to engage with the tech community by sharing my learning, research, and projects with readers around the world. The post I wrote last month explained my motivation in detail: [Starting a Blog at the End of 2025](/posts/2025/12/25/starting-a-blog-at-the-end-of-2025).
+When I started this blog, I decided to write in English. My native language is Chinese, and I've never lived in an English-speaking country. I'm writing an English blog with a clear goal: not just to publish polished posts, but to internalize native-style writing intuition and build my own distinctive English writing style — to write with precision, logic, and quiet confidence. Also, English is the common language of the tech industry. I want to engage with the tech community by sharing my learning, research, and projects with readers around the world. The post I wrote last month explained my motivation in detail: [Starting a blog at the end of 2025](/posts/2025/12/25/starting-a-blog-at-the-end-of-2025).
 
 But after writing a bit, another side of me started calling out — the "personal" me. I also wanted to write about my personal life: my feelings and reflections on daily experiences — food, music, travel, and more. Writing isn't just about sharing with readers; it's also a way to think clearly. I believe writing about my life can help me rebuild my sensitivity to life and emotional expression, which I've been gradually losing these years. Without this part, my writing wouldn't be complete. And for these topics, I want to use the language I'm most comfortable with: Chinese.
 
