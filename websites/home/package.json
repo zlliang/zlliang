@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@astrojs/vercel": "11.0.22",
-    "astro": "7.4.12",
+    "astro": "7.4.13",
     "typescript": "^6.0.3"
   }
 }
